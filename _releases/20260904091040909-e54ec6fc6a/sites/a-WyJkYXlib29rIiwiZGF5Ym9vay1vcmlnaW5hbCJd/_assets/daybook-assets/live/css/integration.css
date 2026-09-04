@@ -1,0 +1,158 @@
+/*
+ * Current daybook.page production CSS, loaded only by the Daybook layout.
+ * Layout-scoped source fonts are supplied from packaged assets without root
+ * /vendor URLs. The three Maple subsets below cover the bilingual control.
+ */
+@import url("tokens.05d18c5e63.css");
+@import url("base.4130fe03e0.css");
+@import url("layout.9b3a915050.css");
+@import url("components.4ece0686af.css");
+@import url("settings-overlay.78f47255f8.css");
+@import url("share-overlay.6f7ede55bb.css");
+@import url("embed-skeleton.2744fdd757.css");
+@import url("custom-cursor.a451616a6f.css");
+@import url("media-manager.85f4579f7d.css");
+@import url("media-manager-mobile.d1581de035.css");
+@import url("bilingual-toggle.710a2bfee5.css");
+@import url("home.adedc0cc72.css");
+@import url("notes.bb3b1cc69f.css");
+@import url("note.0c0b1f75cc.css");
+@import url("archive.0139360993.css");
+@import url("about.5422ce6b51.css");
+@import url("graph.45e3eeb2a1.css");
+@import url("markdown.ecc2c49a26.css");
+@import url("transitions.d69dd2d9b3.css");
+
+@font-face {
+  font-family: "Maple Mono CN";
+  src: local("Maple Mono CN"), url("../fonts/maple-mono-cn/regular/977d55204b55cc4810b6e33915d95720.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  unicode-range: U+4E00, U+4E0A, U+4E0D, U+4E1A, U+4E2A, U+4E2D, U+4E3A, U+4E86, U+4E8E, U+4EBA, U+4EE5, U+4F1A, U+4F5C, U+51FA, U+5206, U+5230, U+5316, U+53D1, U+53EF, U+548C, U+56FD, U+5728, U+5730, U+5927, U+5B66, U+5B9A, U+5B9E, U+5BF9, U+5DE5, U+5E74, U+6210, U+65B9, U+65F6, U+662F, U+6709, U+6CD5, U+7406, U+751F, U+7528, U+7684, U+80FD, U+884C, U+8981, U+8FD9;
+}
+
+@font-face {
+  font-family: "Maple Mono CN";
+  src: local("Maple Mono CN"), url("../fonts/maple-mono-cn/regular/4eee787d900af2eff915fa460dcc0904.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  unicode-range: U+D, U+20-4A, U+6F;
+}
+
+@font-face {
+  font-family: "Maple Mono CN";
+  src: local("Maple Mono CN"), url("../fonts/maple-mono-cn/regular/2f04d0609cf5de6e65c92a1db9b41dee.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  unicode-range: U+4B-6E, U+70-7E;
+}
+
+body[data-blog-layout="daybook"] {
+  --font-logo: var(--db-logo);
+  --font-ui: var(--db-body);
+  --font-body: var(--db-body);
+  --font-serif: var(--db-serif);
+  --font-meta: var(--db-meta);
+  --font-signature-cn: var(--db-signature);
+  --font-signature-en: HtmlServerDaybookAllura, cursive;
+  --font-icon: HtmlServerDaybookIcons;
+  --color-page: var(--db-page);
+  --color-paper: var(--db-paper);
+  --color-text: var(--db-text);
+  --color-muted: var(--db-muted);
+  --color-faint: var(--db-faint);
+  --color-line: var(--db-line);
+  --color-accent: var(--db-accent);
+  --color-hover-text: var(--db-accent);
+  --color-accent-soft: var(--db-soft);
+}
+
+/* The upstream relative URL resolves two directories above components/. The
+ * vendored CSS is flattened into live/css/, so point at the identical packaged
+ * texture (same SHA-256) without changing its rendered pixels. */
+body[data-blog-layout="daybook"] :is(.settings-paper, .html-server-daybook-settings-paper),
+body[data-blog-layout="daybook"] :is(.settings-paper, .html-server-daybook-settings-paper)::before {
+  background-image: url("../../paper-texture.png");
+}
+
+@media (max-width: 960px) {
+  body[data-blog-layout="daybook"] :is(.setting-item-cursor, .setting-item-clock-cursor) {
+    display: none !important;
+  }
+}
+
+/*
+ * The source article template renders every Markdown block as a direct child
+ * of .post-content. HTML Server keeps Obsidian's preview wrappers so embeds,
+ * callouts, and plugin-rendered blocks retain their runtime contract. Move the
+ * unchanged source stagger from that compatibility wrapper to the equivalent
+ * rendered blocks. This bridge belongs to Daybook Original only: list-card
+ * reveal effects and every other layout/theme remain independent.
+ */
+body[data-blog-layout="daybook"]:is([data-blog-layout-theme="daybook-original"], [data-blog-layout-theme="inherit"]).note-body
+  .post-content > .markdown-preview-view {
+  animation: none;
+  opacity: 1;
+  transform: none;
+}
+
+body[data-blog-layout="daybook"]:is([data-blog-layout-theme="daybook-original"], [data-blog-layout-theme="inherit"]).note-body
+  .post-content > .markdown-preview-view > .markdown-preview-sizer > * {
+  animation: article-content-enter var(--post-enter-duration) var(--ease-page) both;
+  opacity: 0;
+}
+
+body[data-blog-layout="daybook"]:is([data-blog-layout-theme="daybook-original"], [data-blog-layout-theme="inherit"]).note-body
+  .post-content > .markdown-preview-view > .markdown-preview-sizer > *:nth-child(1) { animation-delay: 150ms; }
+body[data-blog-layout="daybook"]:is([data-blog-layout-theme="daybook-original"], [data-blog-layout-theme="inherit"]).note-body
+  .post-content > .markdown-preview-view > .markdown-preview-sizer > *:nth-child(2) { animation-delay: 200ms; }
+body[data-blog-layout="daybook"]:is([data-blog-layout-theme="daybook-original"], [data-blog-layout-theme="inherit"]).note-body
+  .post-content > .markdown-preview-view > .markdown-preview-sizer > *:nth-child(3) { animation-delay: 250ms; }
+body[data-blog-layout="daybook"]:is([data-blog-layout-theme="daybook-original"], [data-blog-layout-theme="inherit"]).note-body
+  .post-content > .markdown-preview-view > .markdown-preview-sizer > *:nth-child(4) { animation-delay: 300ms; }
+body[data-blog-layout="daybook"]:is([data-blog-layout-theme="daybook-original"], [data-blog-layout-theme="inherit"]).note-body
+  .post-content > .markdown-preview-view > .markdown-preview-sizer > *:nth-child(5) { animation-delay: 350ms; }
+body[data-blog-layout="daybook"]:is([data-blog-layout-theme="daybook-original"], [data-blog-layout-theme="inherit"]).note-body
+  .post-content > .markdown-preview-view > .markdown-preview-sizer > *:nth-child(6) { animation-delay: 400ms; }
+body[data-blog-layout="daybook"]:is([data-blog-layout-theme="daybook-original"], [data-blog-layout-theme="inherit"]).note-body
+  .post-content > .markdown-preview-view > .markdown-preview-sizer > *:nth-child(7) { animation-delay: 450ms; }
+body[data-blog-layout="daybook"]:is([data-blog-layout-theme="daybook-original"], [data-blog-layout-theme="inherit"]).note-body
+  .post-content > .markdown-preview-view > .markdown-preview-sizer > *:nth-child(8) { animation-delay: 500ms; }
+body[data-blog-layout="daybook"]:is([data-blog-layout-theme="daybook-original"], [data-blog-layout-theme="inherit"]).note-body
+  .post-content > .markdown-preview-view > .markdown-preview-sizer > *:nth-child(9) { animation-delay: 550ms; }
+body[data-blog-layout="daybook"]:is([data-blog-layout-theme="daybook-original"], [data-blog-layout-theme="inherit"]).note-body
+  .post-content > .markdown-preview-view > .markdown-preview-sizer > *:nth-child(10) { animation-delay: 600ms; }
+body[data-blog-layout="daybook"]:is([data-blog-layout-theme="daybook-original"], [data-blog-layout-theme="inherit"]).note-body
+  .post-content > .markdown-preview-view > .markdown-preview-sizer > *:nth-child(11) { animation-delay: 650ms; }
+body[data-blog-layout="daybook"]:is([data-blog-layout-theme="daybook-original"], [data-blog-layout-theme="inherit"]).note-body
+  .post-content > .markdown-preview-view > .markdown-preview-sizer > *:nth-child(12) { animation-delay: 700ms; }
+body[data-blog-layout="daybook"]:is([data-blog-layout-theme="daybook-original"], [data-blog-layout-theme="inherit"]).note-body
+  .post-content > .markdown-preview-view > .markdown-preview-sizer > *:nth-child(13) { animation-delay: 750ms; }
+body[data-blog-layout="daybook"]:is([data-blog-layout-theme="daybook-original"], [data-blog-layout-theme="inherit"]).note-body
+  .post-content > .markdown-preview-view > .markdown-preview-sizer > *:nth-child(14) { animation-delay: 800ms; }
+body[data-blog-layout="daybook"]:is([data-blog-layout-theme="daybook-original"], [data-blog-layout-theme="inherit"]).note-body
+  .post-content > .markdown-preview-view > .markdown-preview-sizer > *:nth-child(15) { animation-delay: 850ms; }
+body[data-blog-layout="daybook"]:is([data-blog-layout-theme="daybook-original"], [data-blog-layout-theme="inherit"]).note-body
+  .post-content > .markdown-preview-view > .markdown-preview-sizer > *:nth-child(n + 16) { animation-delay: 900ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-blog-layout="daybook"]:is([data-blog-layout-theme="daybook-original"], [data-blog-layout-theme="inherit"]).note-body
+    .post-content > .markdown-preview-view > .markdown-preview-sizer > * {
+    animation: none !important;
+    clip-path: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+html[data-reduced-motion="true"]
+  body[data-blog-layout="daybook"]:is([data-blog-layout-theme="daybook-original"], [data-blog-layout-theme="inherit"]).note-body
+  .post-content > .markdown-preview-view > .markdown-preview-sizer > * {
+  animation: none !important;
+  clip-path: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
