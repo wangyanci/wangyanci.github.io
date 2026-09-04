@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en" data-html-server-theme="light" data-blog-layout="style-lab-literary" data-blog-layout-theme="literary-quarterly" data-blog-page-kind="article" data-blog-mobile-zoom="false" data-theme="literary" data-mode="light" data-page="article" data-blog-theme-control="style-lab" data-blog-main-loading-class="html-server-blog-main-loading" data-blog-overview-loading-class="html-server-blog-overview-loading" data-blog-folder-loading-class="html-server-blog-folder-loading" data-blog-pagination-scroll="item" data-blog-pin-progress="true" data-blog-outline-shell-selector=".html-server-style-lab-outline" data-blog-outline-auto-hide="true" data-blog-sticky-header-selector=".html-server-style-lab-header,.html-server-lab-swiss-rail" data-blog-scroll-mode="app" data-blog-document-pinning="false" data-blog-document-pinning-filter-regular="false" style="--html-server-navigation-surface-light: #eee9df;--html-server-navigation-surface-dark: #201c18">
+<head><!--html-server-dynamic:start--><meta name="html-server-dynamic-page" data-html-server-dynamic-page data-html-server-dynamic-assertion-mode="every-page" data-html-server-dynamic-cache-ttl-ms="1800000" content="a-WyJzdHlsZS1sYWItbGl0ZXJhcnkiLCJsaXRlcmFyeS1xdWFydGVybHkiXQ"><style data-html-server-dynamic-prepaint>html{--html-server-navigation-surface-active:var(--html-server-navigation-surface-light,var(--html-server-blog-background-light,#f5f7fa));background:var(--html-server-navigation-surface-active)}html[data-html-server-theme="dark"]{--html-server-navigation-surface-active:var(--html-server-navigation-surface-dark,var(--html-server-blog-background-dark,#151515))}html[data-html-server-navigation-entering],html[data-html-server-dynamic-pending]{background:var(--html-server-navigation-surface-active)!important}html[data-html-server-navigation-entering] body,html[data-html-server-dynamic-pending] body{opacity:0!important}html[data-html-server-navigation-entering]::before,html[data-html-server-dynamic-pending]::before{content:"";position:fixed;inset:0;z-index:2147483646;background:var(--html-server-navigation-surface-active);pointer-events:none}html[data-html-server-navigation-entering]::after,html[data-html-server-dynamic-pending]::after{content:"";position:fixed;top:0;left:0;z-index:2147483647;width:38%;height:2px;background:var(--interactive-accent,#8b6f47);box-shadow:0 0 10px currentColor;animation:html-server-navigation-prepaint 1s ease-in-out infinite;pointer-events:none}@keyframes html-server-navigation-prepaint{0%{transform:translateX(-110%)}100%{transform:translateX(370%)}}@media(prefers-reduced-motion:reduce){html[data-html-server-navigation-entering]::after,html[data-html-server-dynamic-pending]::after{animation:none;width:100%;opacity:.7}}</style><script data-blog-navigation-bootstrap>(function(){
+  var root=document.documentElement,key='html-server:navigation-handoff',handoff=null;
+  try{handoff=JSON.parse(sessionStorage.getItem(key)||'null');}catch(error){}
+  var target=location.pathname+location.search;
+  if(handoff&&handoff.target===target&&Date.now()-Number(handoff.createdAt||0)<5000){
+    root.setAttribute('data-html-server-navigation-entering','');
+    var reveal=function(){requestAnimationFrame(function(){requestAnimationFrame(function(){root.removeAttribute('data-html-server-navigation-entering');try{sessionStorage.removeItem(key);}catch(error){}});});};
+    if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',reveal,{once:true});else reveal();
+    setTimeout(function(){root.removeAttribute('data-html-server-navigation-entering');},5000);
+  }else if(handoff){try{sessionStorage.removeItem(key);}catch(error){}}
+})();</script><script data-html-server-dynamic-bootstrap>(()=>{
+const m={"releaseId":"20260904091040909-e54ec6fc6a","appearanceKey":"a-WyJzdHlsZS1sYWItbGl0ZXJhcnkiLCJsaXRlcmFyeS1xdWFydGVybHkiXQ","route":"大模型/大模型面试/题集/00-Meta/MOCs/推理与规划MOC/index.html","outputRootRelativeUrl":"../../../../../../../../../../","siteRootRelativeUrl":"../../../../../../","assertionPolicy":{"mode":"every-page","cacheTtlMs":1800000}},S=1,C="html-server:dynamic-appearance:v1";
+const html=document.documentElement,pending='data-html-server-dynamic-pending';if(!html)return;html.setAttribute(pending,'');
+try{Object.defineProperty(window,'__htmlServerDynamicSiteRoot',{configurable:true,value:new URL(m.siteRootRelativeUrl||m.outputRootRelativeUrl,document.baseURI||location.href).href});}catch(_){}
+const reveal=()=>html.removeAttribute(pending);
+const safe=p=>{p=String(p||'').replace(/\\/g,'/').replace(/^\/+/, '');return !!p&&!p.split('/').includes('..')&&!/^[a-z][a-z\d+.-]*:/i.test(p)};
+const routeUrl=p=>String(p).split('/').map(encodeURIComponent).join('/');
+const get=async u=>{const c=new AbortController(),t=setTimeout(()=>c.abort(),2000);try{const r=await fetch(u,{cache:'no-store',credentials:'same-origin',signal:c.signal});if(!r.ok)throw Error(String(r.status));return await r.json()}finally{clearTimeout(t)}};
+const p=m.assertionPolicy||{},mode=p.mode==='home-only'||p.mode==='cache'?p.mode:'every-page',ttl=Math.max(60000,Number(p.cacheTtlMs)||1800000);
+let storage;try{storage=localStorage}catch(_){}
+const clear=()=>{try{storage&&storage.removeItem(C)}catch(_){}};
+try{Object.defineProperty(window,'HtmlServerDynamicAppearanceCache',{configurable:true,value:{key:C,clear,refresh:()=>{clear();location.reload()}}})}catch(_){}
+const read=()=>{try{const v=JSON.parse(storage&&storage.getItem(C)||'null');return v&&v.schemaVersion===S&&typeof v.appearanceKey==='string'&&typeof v.releaseId==='string'&&safe(v.path)&&Number.isFinite(v.selectionRevision)&&Number.isFinite(v.expiresAt)?v:null}catch(_){return null}};
+const cached=read(),home=m.route==='index.html',reload=(()=>{try{return performance.getEntriesByType('navigation')[0]?.type==='reload'}catch(_){return false}})();
+const cacheValid=!!cached&&cached.releaseId===m.releaseId&&(mode!=='cache'||cached.expiresAt>Date.now()),refresh=mode==='every-page'||(mode==='home-only'&&home)||(mode==='cache'&&(!cacheValid||reload));
+(async()=>{let navigating=false;
+const rootForPage=async()=>{const fallback=window.__htmlServerStaticFallbackRoot,discovered=fallback&&typeof fallback.then==='function'?await fallback:null;return new URL(discovered&&discovered.siteRoot?discovered.siteRoot:m.outputRootRelativeUrl,document.baseURI||location.href)};
+const move=async(key,pathValue,releaseId,canonical)=>{if(key===m.appearanceKey)return false;if(!safe(m.route)||!safe(pathValue))return false;const root=await rootForPage(),encoded=routeUrl(m.route),rel=canonical?encoded:pathValue.replace(/\/+$/,'')+'/'+encoded,guard='html-server-dynamic:'+releaseId+':'+key+':'+m.route;if(sessionStorage.getItem(guard)==='1')return false;const target=new URL(rel,root);target.search=location.search;target.hash=location.hash;sessionStorage.setItem(guard,'1');navigating=true;location.replace(target.href);return true};
+try{
+if(!refresh){if(!cacheValid)return;if(cached.appearanceKey===m.appearanceKey){sessionStorage.removeItem('html-server-dynamic:'+cached.releaseId+':'+cached.appearanceKey+':'+m.route);return;}await move(cached.appearanceKey,cached.path,cached.releaseId,false);return;}
+const root=await rootForPage(),pair=await Promise.all([get(new URL('_config/data.json',root)),get(new URL('_config/release.json',root))]),cfg=pair[0],ptr=pair[1];
+if(cfg.schemaVersion!==S)return;
+if(ptr.schemaVersion!==S||(cfg.selectionRevision!==undefined&&cfg.selectionRevision!==ptr.selectionRevision)||!safe(ptr.manifest))return;
+const man=await get(new URL(ptr.manifest,root));if(man.schemaVersion!==S||man.releaseId!==ptr.releaseId||man.selectionRevision!==ptr.selectionRevision||man.primaryAppearance!==ptr.primaryAppearance||!safe(m.route))return;
+const hit=Object.entries(man.sites||{}).find(([,v])=>v.appearance&&v.appearance.layout===cfg.blogLayout&&v.appearance.theme===cfg.blogLayoutTheme);if(!hit)return;
+const key=hit[0],site=hit[1];if(!Array.isArray(site.routes)||!site.routes.includes(m.route))return;
+if(!safe(site.path))return;const record={schemaVersion:S,appearanceKey:key,layout:site.appearance.layout,theme:site.appearance.theme,path:site.path,releaseId:ptr.releaseId,selectionRevision:ptr.selectionRevision,expiresAt:mode==='home-only'?0:Date.now()+ttl};try{storage&&storage.setItem(C,JSON.stringify(record))}catch(_){}
+const guard='html-server-dynamic:'+ptr.releaseId+':'+key+':'+m.route;if(key===m.appearanceKey){sessionStorage.removeItem(guard);return;}
+await move(key,site.path,ptr.releaseId,key===man.primaryAppearance);
+}catch(_){if(mode!=='every-page'&&cacheValid&&!navigating)await move(cached.appearanceKey,cached.path,cached.releaseId,false).catch(()=>{})}finally{if(!navigating)reveal();}})();
+})();</script><!--html-server-dynamic:end-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  
+  <script defer src="../../../../../../_assets/script.6d4f546be5f896d5.js"></script>
+  <script data-blog-theme-bootstrap>(function(){
+  var root = document.documentElement;
+  var theme = root.getAttribute('data-html-server-theme') || 'light';
+  try {
+    var stored = localStorage.getItem('html-server-blog-theme');
+    if (stored === 'dark' || stored === 'light') theme = stored;
+  } catch (error) {}
+  root.setAttribute('data-html-server-theme', theme);
+  root.classList.toggle('theme-dark', theme === 'dark');
+  root.classList.toggle('theme-light', theme !== 'dark');
+  root.style.backgroundColor = theme === 'dark'
+    ? 'var(--html-server-navigation-surface-dark, var(--html-server-blog-background-dark, #151515))'
+    : 'var(--html-server-navigation-surface-light, var(--html-server-blog-background-light, #f5f7fa))';
+})();</script>
+  
+  <title>推理与规划 MOC · Digital Garden</title>
+  <link rel="shortcut icon" href="//obsidian.md/favicon.ico">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Mono:wght@300;400;500&family=IBM+Plex+Sans+Condensed:wght@400;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&family=Manrope:wght@400;600;800&family=Noto+Serif+SC:wght@400;600;800&family=Playfair+Display:wght@600;800&family=Space+Grotesk:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="../../../../../../_assets/blog.css">
+<link rel="preload" as="script" href="../../../../../../_assets/blog.js" fetchpriority="high"><script>window.__htmlServerStaticSearch="../../../../../../_assets/meta.json";window.__htmlServerStaticSidebar="../../../../../../_assets/sidebar.json?v=mtmqp68z-2gf";window.__htmlServerStaticPluginOverrides=window.__htmlServerStaticPluginOverrides||{};Object.assign(window.__htmlServerStaticPluginOverrides["blog-live2d"]||(window.__htmlServerStaticPluginOverrides["blog-live2d"]={}),{"localScriptUrl":"../../../../../../_assets/live2d-widget/L2Dwidget.min.js","localModelUrl":"../../../../../../_assets/live2d-widget/assets/koharu.model.json","assetBaseUrl":"../../../../../../_assets/live2d-widget"});</script></head>
+<body class="theme-light html-server-blog-body" data-blog-layout="style-lab-literary" data-blog-layout-theme="literary-quarterly" data-blog-page-kind="article" data-blog-style-isolation="strict" data-theme="literary" data-mode="light" data-page="article" data-blog-theme-control="style-lab" data-blog-main-loading-class="html-server-blog-main-loading" data-blog-overview-loading-class="html-server-blog-overview-loading" data-blog-folder-loading-class="html-server-blog-folder-loading" data-blog-pagination-scroll="item" data-blog-pin-progress="true" data-blog-outline-shell-selector=".html-server-style-lab-outline" data-blog-outline-auto-hide="true" data-blog-sticky-header-selector=".html-server-style-lab-header,.html-server-lab-swiss-rail" data-blog-scroll-mode="app" data-blog-document-pinning="false" data-blog-document-pinning-filter-regular="false" style="--html-server-navigation-surface-light: #eee9df;--html-server-navigation-surface-dark: #201c18">
+  <script data-blog-theme-bootstrap>(function(){
+  var theme = document.documentElement.getAttribute('data-html-server-theme') || 'light';
+  document.body.classList.toggle('theme-dark', theme === 'dark');
+  document.body.classList.toggle('theme-light', theme !== 'dark');
+})();</script>
+  <script type="application/json" data-blog-theme-image-groups>{}</script>
+  
+  <div class="html-server-blog-app">
+    <div class="html-server-style-lab-shell html-server-style-lab-literary">
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="html-server-style-lab-header site-header"><a class="html-server-style-lab-brand brand" href="../../../../../../" aria-label="回到文章列表"><b class="brand-mark">刊</b><span class="brand-copy"><strong>纸上季刊</strong><small>缓慢阅读与长篇写作</small></span></a><button class="menu-toggle" type="button" data-style-lab-menu aria-expanded="false" aria-controls="style-lab-main-nav">菜单</button><nav class="html-server-style-lab-nav main-nav" id="style-lab-main-nav" aria-label="主导航"><button type="button" data-style-lab-route="/">文章</button><button type="button" data-style-lab-route="/tags/">标签</button><button type="button" data-style-lab-route="/series/">系列</button><button type="button" data-style-lab-route="/archive/">归档</button></nav><div class="html-server-style-lab-tools header-tools" aria-label="站点工具"><button class="directory-toggle" type="button" data-blog-folder-open aria-label="打开目录"><span aria-hidden="true">▤</span><span>目录</span></button><button class="search-toggle" type="button" data-blog-search-open aria-label="打开搜索"><span aria-hidden="true">⌕</span><span>搜索</span></button><button class="mode-toggle" type="button" data-blog-theme aria-label="切换明暗主题"><span aria-hidden="true">◐</span><span class="mode-label">黑色</span></button></div></header>
+  <main id="content" class="html-server-style-lab-page html-server-blog-main html-server-style-lab-main" data-blog-main>
+    <div class="article-shell"><aside class="html-server-style-lab-outline article-toc"><nav class="html-server-blog-outline" data-blog-outline aria-label="Article outline">
+  <button class="html-server-blog-outline-toggle" type="button" data-blog-outline-toggle aria-expanded="true" aria-controls="html-server-blog-outline-list"><span>本文目录</span><b aria-hidden="true"><svg viewBox="0 0 20 20" focusable="false"><path d="m4.5 7.25 5.5 5.5 5.5-5.5"/></svg></b></button>
+  <strong>本文目录</strong>
+  <ol id="html-server-blog-outline-list"><li style="--outline-depth:0"><a href="#%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92%20MOC" data-blog-outline-link>推理与规划 MOC</a></li><li style="--outline-depth:1"><a href="#%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5%E9%80%9F%E8%A7%88" data-blog-outline-link>核心概念速览</a></li><li style="--outline-depth:1"><a href="#%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86" data-blog-outline-link>面试题集</a></li><li style="--outline-depth:2"><a href="#%E5%9F%BA%E7%A1%80%20(Fundamental)%20%E2%80%94%203%E9%A2%98" data-blog-outline-link>基础 (Fundamental) — 3题</a></li><li style="--outline-depth:2"><a href="#%E4%B8%AD%E7%BA%A7%20(Intermediate)%20%E2%80%94%208%E9%A2%98" data-blog-outline-link>中级 (Intermediate) — 8题</a></li><li style="--outline-depth:2"><a href="#%E9%AB%98%E7%BA%A7%20(Advanced)%20%E2%80%94%204%E9%A2%98" data-blog-outline-link>高级 (Advanced) — 4题</a></li><li style="--outline-depth:1"><a href="#%E5%AD%90%E4%B8%93%E9%A2%98%EF%BC%9AMemory%20%E6%9C%BA%E5%88%B6" data-blog-outline-link>子专题：Memory 机制</a></li><li style="--outline-depth:2"><a href="#Memory%20%E9%A2%98%E7%9B%AE%E9%80%9F%E6%9F%A5" data-blog-outline-link>Memory 题目速查</a></li><li style="--outline-depth:1"><a href="#%E6%8E%A8%E7%90%86%E8%8C%83%E5%BC%8F%E6%BC%94%E8%BF%9B%E8%B7%AF%E7%BA%BF" data-blog-outline-link>推理范式演进路线</a></li><li style="--outline-depth:1"><a href="#%E8%A7%84%E5%88%92%E6%A8%A1%E5%BC%8F%E5%AF%B9%E6%AF%94" data-blog-outline-link>规划模式对比</a></li><li style="--outline-depth:1"><a href="#%E7%9B%B8%E5%85%B3%20MOC" data-blog-outline-link>相关 MOC</a></li></ol>
+</nav></aside><article class="html-server-blog-article article-body">
+    <nav class="html-server-blog-breadcrumb breadcrumbs" aria-label="Breadcrumb"><a href="../../../../../../" data-blog-folder-path="">Home</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../../../../folders/_/大模型/" data-blog-folder-path="大模型">大模型</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../../../../folders/_/大模型/_/大模型面试/" data-blog-folder-path="大模型/大模型面试">大模型面试</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../../../../folders/_/大模型/_/大模型面试/_/题集/" data-blog-folder-path="大模型/大模型面试/题集">题集</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../../../../folders/_/大模型/_/大模型面试/_/题集/_/00-Meta/" data-blog-folder-path="大模型/大模型面试/题集/00-Meta">00-Meta</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../../../../folders/_/大模型/_/大模型面试/_/题集/_/00-Meta/_/MOCs/" data-blog-folder-path="大模型/大模型面试/题集/00-Meta/MOCs">MOCs</a></nav>
+    <header class="html-server-blog-article-header"><div class="post-meta"><time>Jul 3, 2026</time><span>2 分钟</span><span>最后更新 Jul 3, 2026</span></div><h2>推理与规划 MOC</h2><p class="article-deck">Navigation: 总纲MOC | 目录</p><div class="tag-line"><button type="button" data-style-lab-href="../../../../../../tags/meta%252Fmoc/"># meta/moc</button><button type="button" data-style-lab-href="../../../../../../tags/agent%252F%25E6%258E%25A8%25E7%2590%2586/"># agent/推理</button><button type="button" data-style-lab-href="../../../../../../tags/agent%252F%25E8%25A7%2584%25E5%2588%2592/"># agent/规划</button><button type="button" data-style-lab-href="../../../../../../tags/%25E6%258E%25A8%25E7%2590%2586%25E5%259F%25BA%25E7%25A1%2580/"># 推理基础</button><button type="button" data-style-lab-href="../../../../../../tags/%25E6%25A0%25B8%25E5%25BF%2583%25E8%258C%2583%25E5%25BC%258F/"># 核心范式</button><button type="button" data-style-lab-href="../../../../../../tags/Memory/"># Memory</button><button type="button" data-style-lab-href="../../../../../../tags/%25E6%258E%25A8%25E7%2590%2586%25E8%25BF%259B%25E9%2598%25B6/"># 推理进阶</button><button type="button" data-style-lab-href="../../../../../../tags/%25E8%25A7%2584%25E5%2588%2592%25E5%25AF%25B9%25E6%25AF%2594/"># 规划对比</button><button type="button" data-style-lab-href="../../../../../../tags/%25E8%2587%25AA%25E6%2588%2591%25E4%25BC%2598%25E5%258C%2596/"># 自我优化</button><button type="button" data-style-lab-href="../../../../../../tags/%25E5%259B%25BE%25E6%258E%25A8%25E7%2590%2586/"># 图推理</button><button type="button" data-style-lab-href="../../../../../../tags/%25E8%2592%2599%25E7%2589%25B9%25E5%258D%25A1%25E6%25B4%259B%25E6%2590%259C%25E7%25B4%25A2/"># 蒙特卡洛搜索</button><button type="button" data-style-lab-href="../../../../../../tags/%25E7%259F%25A5%25E8%25AF%2586%25E5%259B%25BE%25E8%25B0%25B1/"># 知识图谱</button><button type="button" data-style-lab-href="../../../../../../tags/Memory%25E6%259E%25B6%25E6%259E%2584/"># Memory架构</button></div></header>
+    
+    <div class="markdown-reading-view html-server-blog-reading-view article-content"><div class="markdown-preview-view markdown-rendered node-insert-event is-readable-line-width allow-fold-headings allow-fold-lists" tabindex="-1"><div class="markdown-preview-sizer markdown-preview-section"><pre class="frontmatter language-yaml" style="display: none; overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-yaml is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token key atrule">title</span><span class="token punctuation">:</span> <span class="token string">"推理与规划 MOC"</span>
+<span class="token key atrule">type</span><span class="token punctuation">:</span> moc
+<span class="token key atrule">topic</span><span class="token punctuation">:</span> <span class="token string">"推理与规划"</span>
+<span class="token key atrule">tags</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> meta/moc
+  <span class="token punctuation">-</span> agent/推理
+  <span class="token punctuation">-</span> agent/规划</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto"><strong>Navigation</strong>: <a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/00-Meta/MOCs/%E6%80%BB%E7%BA%B2MOC/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/00-Meta/MOCs/%E6%80%BB%E7%BA%B2MOC/" class="internal-link" target="" rel="noopener nofollow">总纲MOC</a> | <a data-tooltip-position="top" aria-label="01-面试题集/02-推理与规划/" data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/00-Meta/MOCs/%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92MOC/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/00-Meta/MOCs/%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92MOC/" class="internal-link" target="" rel="noopener nofollow">目录</a></p>
+<h1 data-heading="推理与规划 MOC" dir="auto">推理与规划 MOC</h1>
+<blockquote dir="auto">
+<p>Agent 的推理范式（CoT、ToT、ReAct）与规划机制，以及 Memory 系统的设计与实现。共 <strong>15 题</strong>。</p>
+</blockquote>
+<hr>
+<h2 data-heading="核心概念速览" dir="auto">核心概念速览</h2>
+<ul>
+<li dir="auto"><a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/02-%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/%E6%A6%82%E5%BF%B5%E8%A7%A3%E6%9E%90/CoT%E6%80%9D%E7%BB%B4%E9%93%BE/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/02-%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/%E6%A6%82%E5%BF%B5%E8%A7%A3%E6%9E%90/CoT%E6%80%9D%E7%BB%B4%E9%93%BE/" class="internal-link" target="" rel="noopener nofollow">CoT思维链</a> — Chain-of-Thought 原理与应用</li>
+<li dir="auto"><a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/02-%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/%E6%A6%82%E5%BF%B5%E8%A7%A3%E6%9E%90/ToT%E6%A0%91%E7%8A%B6%E6%8E%A8%E7%90%86/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/02-%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/%E6%A6%82%E5%BF%B5%E8%A7%A3%E6%9E%90/ToT%E6%A0%91%E7%8A%B6%E6%8E%A8%E7%90%86/" class="internal-link" target="" rel="noopener nofollow">ToT树状推理</a> — Tree-of-Thoughts 搜索推理</li>
+<li dir="auto"><a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/02-%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/%E6%A6%82%E5%BF%B5%E8%A7%A3%E6%9E%90/ReAct%E6%A1%86%E6%9E%B6%E8%AF%A6%E8%A7%A3/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/02-%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/%E6%A6%82%E5%BF%B5%E8%A7%A3%E6%9E%90/ReAct%E6%A1%86%E6%9E%B6%E8%AF%A6%E8%A7%A3/" class="internal-link" target="" rel="noopener nofollow">ReAct框架详解</a> — Reasoning + Acting 结合范式</li>
+</ul>
+<hr>
+<h2 data-heading="面试题集" dir="auto">面试题集</h2>
+<h3 data-heading="基础 (Fundamental) — 3题" dir="auto">基础 (Fundamental) — 3题</h3>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>题目</th>
+<th>标签</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a data-tooltip-position="top" aria-label="Q01-CoT思维链" data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q01-CoT%E6%80%9D%E7%BB%B4%E9%93%BE/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q01-CoT%E6%80%9D%E7%BB%B4%E9%93%BE/" class="internal-link" target="" rel="noopener nofollow">Q01</a></td>
+<td>Chain-of-Thought (CoT) 思维链</td>
+<td><a href="#推理基础" class="tag" target="_blank" rel="noopener nofollow">#推理基础</a></td>
+</tr>
+<tr>
+<td><a data-tooltip-position="top" aria-label="Q03-ReAct框架" data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q03-ReAct%E6%A1%86%E6%9E%B6/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q03-ReAct%E6%A1%86%E6%9E%B6/" class="internal-link" target="" rel="noopener nofollow">Q03</a></td>
+<td>ReAct (Reasoning + Acting) 框架</td>
+<td><a href="#核心范式" class="tag" target="_blank" rel="noopener nofollow">#核心范式</a></td>
+</tr>
+<tr>
+<td><a data-tooltip-position="top" aria-label="Q08-短期记忆与长期记忆" data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q08-%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86%E4%B8%8E%E9%95%BF%E6%9C%9F%E8%AE%B0%E5%BF%86/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q08-%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86%E4%B8%8E%E9%95%BF%E6%9C%9F%E8%AE%B0%E5%BF%86/" class="internal-link" target="" rel="noopener nofollow">Q08</a></td>
+<td>短期记忆与长期记忆的设计</td>
+<td><a href="#Memory" class="tag" target="_blank" rel="noopener nofollow">#Memory</a></td>
+</tr>
+</tbody>
+</table>
+<h3 data-heading="中级 (Intermediate) — 8题" dir="auto">中级 (Intermediate) — 8题</h3>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>题目</th>
+<th>标签</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a data-tooltip-position="top" aria-label="Q02-ToT树状推理" data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q02-ToT%E6%A0%91%E7%8A%B6%E6%8E%A8%E7%90%86/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q02-ToT%E6%A0%91%E7%8A%B6%E6%8E%A8%E7%90%86/" class="internal-link" target="" rel="noopener nofollow">Q02</a></td>
+<td>Tree-of-Thoughts (ToT) 树状推理</td>
+<td><a href="#推理进阶" class="tag" target="_blank" rel="noopener nofollow">#推理进阶</a></td>
+</tr>
+<tr>
+<td><a data-tooltip-position="top" aria-label="Q04-Plan-and-Execute-vs-ReAct" data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q04-Plan-and-Execute-vs-ReAct/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q04-Plan-and-Execute-vs-ReAct/" class="internal-link" target="" rel="noopener nofollow">Q04</a></td>
+<td>Plan-and-Execute vs ReAct</td>
+<td><a href="#规划对比" class="tag" target="_blank" rel="noopener nofollow">#规划对比</a></td>
+</tr>
+<tr>
+<td><a data-tooltip-position="top" aria-label="Q06-Reflection反思机制" data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q06-Reflection%E5%8F%8D%E6%80%9D%E6%9C%BA%E5%88%B6/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q06-Reflection%E5%8F%8D%E6%80%9D%E6%9C%BA%E5%88%B6/" class="internal-link" target="" rel="noopener nofollow">Q06</a></td>
+<td>Reflection / Reflexion 反思机制</td>
+<td><a href="#自我优化" class="tag" target="_blank" rel="noopener nofollow">#自我优化</a></td>
+</tr>
+<tr>
+<td><a data-tooltip-position="top" aria-label="Q09-向量数据库与记忆检索" data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q09-%E5%90%91%E9%87%8F%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E8%AE%B0%E5%BF%86%E6%A3%80%E7%B4%A2/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q09-%E5%90%91%E9%87%8F%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E8%AE%B0%E5%BF%86%E6%A3%80%E7%B4%A2/" class="internal-link" target="" rel="noopener nofollow">Q09</a></td>
+<td>向量数据库与记忆检索</td>
+<td><a href="#Memory" class="tag" target="_blank" rel="noopener nofollow">#Memory</a></td>
+</tr>
+<tr>
+<td><a data-tooltip-position="top" aria-label="Q10-Memory压缩与总结" data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q10-Memory%E5%8E%8B%E7%BC%A9%E4%B8%8E%E6%80%BB%E7%BB%93/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q10-Memory%E5%8E%8B%E7%BC%A9%E4%B8%8E%E6%80%BB%E7%BB%93/" class="internal-link" target="" rel="noopener nofollow">Q10</a></td>
+<td>Memory 压缩与总结技术</td>
+<td><a href="#Memory" class="tag" target="_blank" rel="noopener nofollow">#Memory</a></td>
+</tr>
+<tr>
+<td><a data-tooltip-position="top" aria-label="Q11-上下文管理与滑动窗口" data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q11-%E4%B8%8A%E4%B8%8B%E6%96%87%E7%AE%A1%E7%90%86%E4%B8%8E%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q11-%E4%B8%8A%E4%B8%8B%E6%96%87%E7%AE%A1%E7%90%86%E4%B8%8E%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" class="internal-link" target="" rel="noopener nofollow">Q11</a></td>
+<td>上下文管理与滑动窗口策略</td>
+<td><a href="#Memory" class="tag" target="_blank" rel="noopener nofollow">#Memory</a></td>
+</tr>
+<tr>
+<td><a data-tooltip-position="top" aria-label="Q12-Scratchpad-Working-Memory" data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q12-Scratchpad-Working-Memory/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q12-Scratchpad-Working-Memory/" class="internal-link" target="" rel="noopener nofollow">Q12</a></td>
+<td>Scratchpad / Working Memory 设计</td>
+<td><a href="#Memory" class="tag" target="_blank" rel="noopener nofollow">#Memory</a></td>
+</tr>
+<tr>
+<td><a data-tooltip-position="top" aria-label="Q14-记忆冲突解决与时间衰减" data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q14-%E8%AE%B0%E5%BF%86%E5%86%B2%E7%AA%81%E8%A7%A3%E5%86%B3%E4%B8%8E%E6%97%B6%E9%97%B4%E8%A1%B0%E5%87%8F/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q14-%E8%AE%B0%E5%BF%86%E5%86%B2%E7%AA%81%E8%A7%A3%E5%86%B3%E4%B8%8E%E6%97%B6%E9%97%B4%E8%A1%B0%E5%87%8F/" class="internal-link" target="" rel="noopener nofollow">Q14</a></td>
+<td>记忆冲突解决与时间衰减</td>
+<td><a href="#Memory" class="tag" target="_blank" rel="noopener nofollow">#Memory</a></td>
+</tr>
+</tbody>
+</table>
+<h3 data-heading="高级 (Advanced) — 4题" dir="auto">高级 (Advanced) — 4题</h3>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>题目</th>
+<th>标签</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a data-tooltip-position="top" aria-label="Q05-GoT思维图" data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q05-GoT%E6%80%9D%E7%BB%B4%E5%9B%BE/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q05-GoT%E6%80%9D%E7%BB%B4%E5%9B%BE/" class="internal-link" target="" rel="noopener nofollow">Q05</a></td>
+<td>Graph-of-Thoughts (GoT) 思维图</td>
+<td><a href="#图推理" class="tag" target="_blank" rel="noopener nofollow">#图推理</a></td>
+</tr>
+<tr>
+<td><a data-tooltip-position="top" aria-label="Q07-LATS-MCTS结合" data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q07-LATS-MCTS%E7%BB%93%E5%90%88/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q07-LATS-MCTS%E7%BB%93%E5%90%88/" class="internal-link" target="" rel="noopener nofollow">Q07</a></td>
+<td>MCTS 与 ToT 的结合（LATS）</td>
+<td><a href="#蒙特卡洛搜索" class="tag" target="_blank" rel="noopener nofollow">#蒙特卡洛搜索</a></td>
+</tr>
+<tr>
+<td><a data-tooltip-position="top" aria-label="Q13-知识图谱与Agent记忆" data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q13-%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E4%B8%8EAgent%E8%AE%B0%E5%BF%86/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q13-%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E4%B8%8EAgent%E8%AE%B0%E5%BF%86/" class="internal-link" target="" rel="noopener nofollow">Q13</a></td>
+<td>知识图谱与 Agent 记忆</td>
+<td><a href="#知识图谱" class="tag" target="_blank" rel="noopener nofollow">#知识图谱</a></td>
+</tr>
+<tr>
+<td><a data-tooltip-position="top" aria-label="Q15-Memory系统完整架构" data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q15-Memory%E7%B3%BB%E7%BB%9F%E5%AE%8C%E6%95%B4%E6%9E%B6%E6%9E%84/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q15-Memory%E7%B3%BB%E7%BB%9F%E5%AE%8C%E6%95%B4%E6%9E%B6%E6%9E%84/" class="internal-link" target="" rel="noopener nofollow">Q15</a></td>
+<td>Memory 系统的完整架构设计</td>
+<td><a href="#Memory架构" class="tag" target="_blank" rel="noopener nofollow">#Memory架构</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 data-heading="子专题：Memory 机制" dir="auto">子专题：Memory 机制</h2>
+<p dir="auto">Memory 相关题目共 <strong>8 题</strong>（Q08~Q15），涵盖从基础概念到完整架构设计。</p>
+<p dir="auto">详见独立专题：<a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/00-Meta/MOCs/Memory%E6%9C%BA%E5%88%B6MOC/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/00-Meta/MOCs/Memory%E6%9C%BA%E5%88%B6MOC/" class="internal-link" target="" rel="noopener nofollow">Memory机制MOC</a></p>
+<h3 data-heading="Memory 题目速查" dir="auto">Memory 题目速查</h3>
+<ul>
+<li dir="auto"><a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q08-%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86%E4%B8%8E%E9%95%BF%E6%9C%9F%E8%AE%B0%E5%BF%86/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q08-%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86%E4%B8%8E%E9%95%BF%E6%9C%9F%E8%AE%B0%E5%BF%86/" class="internal-link" target="" rel="noopener nofollow">Q08-短期记忆与长期记忆</a> — STM vs LTM 区别与实现</li>
+<li dir="auto"><a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q09-%E5%90%91%E9%87%8F%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E8%AE%B0%E5%BF%86%E6%A3%80%E7%B4%A2/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q09-%E5%90%91%E9%87%8F%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%8E%E8%AE%B0%E5%BF%86%E6%A3%80%E7%B4%A2/" class="internal-link" target="" rel="noopener nofollow">Q09-向量数据库与记忆检索</a> — 向量 DB 选型与检索策略</li>
+<li dir="auto"><a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q10-Memory%E5%8E%8B%E7%BC%A9%E4%B8%8E%E6%80%BB%E7%BB%93/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q10-Memory%E5%8E%8B%E7%BC%A9%E4%B8%8E%E6%80%BB%E7%BB%93/" class="internal-link" target="" rel="noopener nofollow">Q10-Memory压缩与总结</a> — 记忆压缩算法</li>
+<li dir="auto"><a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q11-%E4%B8%8A%E4%B8%8B%E6%96%87%E7%AE%A1%E7%90%86%E4%B8%8E%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q11-%E4%B8%8A%E4%B8%8B%E6%96%87%E7%AE%A1%E7%90%86%E4%B8%8E%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/" class="internal-link" target="" rel="noopener nofollow">Q11-上下文管理与滑动窗口</a> — 窗口策略与 Token 管理</li>
+<li dir="auto"><a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q12-Scratchpad-Working-Memory/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q12-Scratchpad-Working-Memory/" class="internal-link" target="" rel="noopener nofollow">Q12-Scratchpad-Working-Memory</a> — Scratchpad 工作记忆设计</li>
+<li dir="auto"><a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q13-%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E4%B8%8EAgent%E8%AE%B0%E5%BF%86/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q13-%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%E4%B8%8EAgent%E8%AE%B0%E5%BF%86/" class="internal-link" target="" rel="noopener nofollow">Q13-知识图谱与Agent记忆</a> — KG + Agent Memory 结合</li>
+<li dir="auto"><a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q14-%E8%AE%B0%E5%BF%86%E5%86%B2%E7%AA%81%E8%A7%A3%E5%86%B3%E4%B8%8E%E6%97%B6%E9%97%B4%E8%A1%B0%E5%87%8F/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q14-%E8%AE%B0%E5%BF%86%E5%86%B2%E7%AA%81%E8%A7%A3%E5%86%B3%E4%B8%8E%E6%97%B6%E9%97%B4%E8%A1%B0%E5%87%8F/" class="internal-link" target="" rel="noopener nofollow">Q14-记忆冲突解决与时间衰减</a> — 冲突解决与 TTL 机制</li>
+<li dir="auto"><a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q15-Memory%E7%B3%BB%E7%BB%9F%E5%AE%8C%E6%95%B4%E6%9E%B6%E6%9E%84/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q15-Memory%E7%B3%BB%E7%BB%9F%E5%AE%8C%E6%95%B4%E6%9E%B6%E6%9E%84/" class="internal-link" target="" rel="noopener nofollow">Q15-Memory系统完整架构</a> — 生产级 Memory 架构</li>
+</ul>
+<hr>
+<h2 data-heading="推理范式演进路线" dir="auto">推理范式演进路线</h2>
+<pre style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">基础推理 → 链式推理 → 树状搜索 → 图推理
+[[Q01-CoT思维链|CoT]]     → [[Q02-ToT树状推理|ToT]]      → [[Q05-GoT思维图|GoT]]
+    ↓           ↓              ↓
+ 直接输出    多路径探索     结构化图遍历
+   简单       中等复杂度      复杂依赖推理
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<h2 data-heading="规划模式对比" dir="auto">规划模式对比</h2>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>特点</th>
+<th>适用场景</th>
+<th>题目</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a data-tooltip-position="top" aria-label="Q03-ReAct框架" data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q03-ReAct%E6%A1%86%E6%9E%B6/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q03-ReAct%E6%A1%86%E6%9E%B6/" class="internal-link" target="" rel="noopener nofollow">ReAct</a></td>
+<td>交替推理+执行</td>
+<td>工具调用、动态环境</td>
+<td>Q03</td>
+</tr>
+<tr>
+<td><a data-tooltip-position="top" aria-label="Q04-Plan-and-Execute-vs-ReAct" data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q04-Plan-and-Execute-vs-ReAct/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q04-Plan-and-Execute-vs-ReAct/" class="internal-link" target="" rel="noopener nofollow">Plan-and-Execute</a></td>
+<td>先规划后执行</td>
+<td>明确目标、多步骤任务</td>
+<td>Q04</td>
+</tr>
+<tr>
+<td><a data-tooltip-position="top" aria-label="Q06-Reflection反思机制" data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q06-Reflection%E5%8F%8D%E6%80%9D%E6%9C%BA%E5%88%B6/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q06-Reflection%E5%8F%8D%E6%80%9D%E6%9C%BA%E5%88%B6/" class="internal-link" target="" rel="noopener nofollow">Reflection</a></td>
+<td>执行后反思优化</td>
+<td>需要自我改进的场景</td>
+<td>Q06</td>
+</tr>
+<tr>
+<td><a data-tooltip-position="top" aria-label="Q07-LATS-MCTS结合" data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q07-LATS-MCTS%E7%BB%93%E5%90%88/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/Q07-LATS-MCTS%E7%BB%93%E5%90%88/" class="internal-link" target="" rel="noopener nofollow">LATS</a></td>
+<td>MCTS 搜索最优路径</td>
+<td>决策空间大、需要回溯</td>
+<td>Q07</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 data-heading="相关 MOC" dir="auto">相关 MOC</h2>
+<ul>
+<li dir="auto"><a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/00-Meta/MOCs/Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5MOC/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/00-Meta/MOCs/Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5MOC/" class="internal-link" target="" rel="noopener nofollow">Agent基础概念MOC</a> — Agent 整体基础</li>
+<li dir="auto"><a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/00-Meta/MOCs/Memory%E6%9C%BA%E5%88%B6MOC/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/00-Meta/MOCs/Memory%E6%9C%BA%E5%88%B6MOC/" class="internal-link" target="" rel="noopener nofollow">Memory机制MOC</a> — Memory 深度专题</li>
+<li dir="auto"><a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/00-Meta/MOCs/LLM%E5%9F%BA%E7%A1%80MOC/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/00-Meta/MOCs/LLM%E5%9F%BA%E7%A1%80MOC/" class="internal-link" target="" rel="noopener nofollow">LLM基础MOC</a> — Transformer、Prompt Engineering</li>
+<li dir="auto"><a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/00-Meta/MOCs/%E4%B8%BB%E6%B5%81%E6%A1%86%E6%9E%B6MOC/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/00-Meta/MOCs/%E4%B8%BB%E6%B5%81%E6%A1%86%E6%9E%B6MOC/" class="internal-link" target="" rel="noopener nofollow">主流框架MOC</a> — LangChain/LangGraph 实现规划</li>
+</ul>
+<script defer src="../../../../../../_assets/script.fad57313884515cf.js"></script>
+</div></div></div>
+    
+    
+    
+  </article></div>
+  </main>
+  <footer class="site-footer"><span>纸上季刊</span><span>缓慢阅读与长篇写作</span></footer>
+</div><div class="html-server-blog-progress html-server-style-lab-progress is-rule" data-blog-progress data-blog-runtime-progress data-progress-state="idle" role="progressbar" aria-label="Loading page" aria-hidden="true"><span class="html-server-blog-progress-track"><i></i><b></b><em></em><em></em><em></em></span></div>
+    <div class="html-server-blog-related-modal" data-blog-related-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-related-close aria-label="Close related articles"></button>
+      <section class="html-server-blog-related-panel" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-related-title">
+        <header><div><span class="html-server-blog-kicker" data-blog-related-kind></span><h2 id="html-server-blog-related-title" data-blog-related-title></h2></div><button type="button" data-blog-related-close aria-label="Close"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <p data-blog-related-count></p>
+        <div class="html-server-blog-related-list" data-blog-related-list></div>
+      </section>
+    </div>
+    <div class="html-server-blog-search-modal" data-blog-search-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-search-close aria-label="Close search"></button>
+      <section class="html-server-blog-search-panel site-dialog" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-search-title">
+        <header class="dialog-head"><div><span class="html-server-blog-kicker">SEARCH</span><h2 id="html-server-blog-search-title">搜索文章</h2></div><button type="button" data-blog-search-close aria-label="关闭"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <label class="search-field"><span>支持标题、标签、系列、目录和属性</span><input id="search-input" type="search" data-blog-global-search placeholder="输入关键词开始搜索" autocomplete="off"></label>
+        <p class="search-summary" id="search-summary" data-blog-search-count>输入关键词开始搜索</p>
+        <div class="html-server-blog-search-results search-results dialog-list" id="search-results" data-blog-search-results></div>
+      </section>
+    </div>
+    <div class="html-server-blog-folder-modal" data-blog-folder-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-folder-close aria-label="Close folders"></button>
+      <section class="html-server-blog-folder-panel site-dialog" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-folder-title">
+        <header class="dialog-head"><div><span class="html-server-blog-kicker">VAULT</span><h2 id="html-server-blog-folder-title" data-blog-folder-title>浏览根目录</h2></div><button type="button" data-blog-folder-close aria-label="关闭"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <nav class="html-server-blog-folder-breadcrumb directory-breadcrumbs" data-blog-folder-breadcrumb aria-label="目录面包屑"></nav>
+        <p data-blog-folder-count></p>
+        <div class="html-server-blog-folder-browser directory-list dialog-list" data-blog-folder-browser></div>
+      </section>
+    </div>
+    <script type="application/json" data-blog-article-index>[]</script>
+    <script type="application/json" data-blog-folder-index data-current-folder="大模型/大模型面试/题集/00-Meta/MOCs">[]</script>
+    <script type="application/json" data-blog-appearance-contract>{"version":1,"layouts":[{"id":"default","themes":["inherit"]},{"id":"next","themes":["inherit","next-classic","swiss-index","literary-quarterly","terminal-manual","quiet-journal","newspaper-daily","mint-notebook","tailwind-workspace"]},{"id":"butterfly","themes":["inherit","butterfly-colorful","brutal-broadcast","future-signal","field-notes","gallery-canvas","toy-modules","sakura-notes","clear-sky"]},{"id":"akilar","themes":["inherit","akilar-ark"]},{"id":"noionion","themes":["inherit","noionion-original"]},{"id":"kratos","themes":["inherit","kratos-rebirth"]},{"id":"leezhiy","themes":["inherit","leezhiy-next"]},{"id":"daybook","themes":["inherit","daybook-original"]},{"id":"style-lab-swiss","themes":["inherit","swiss-index"]},{"id":"style-lab-literary","themes":["inherit","literary-quarterly"]},{"id":"style-lab-terminal","themes":["inherit","terminal-manual"]},{"id":"style-lab-brutal","themes":["inherit","brutal-broadcast"]},{"id":"style-lab-quiet","themes":["inherit","quiet-journal"]},{"id":"style-lab-newspaper","themes":["inherit","newspaper-daily"]},{"id":"style-lab-future","themes":["inherit","future-signal"]},{"id":"style-lab-field","themes":["inherit","field-notes"]},{"id":"style-lab-gallery","themes":["inherit","gallery-canvas"]},{"id":"style-lab-toy","themes":["inherit","toy-modules"]},{"id":"style-lab-mint","themes":["inherit","mint-notebook"]},{"id":"style-lab-sakura","themes":["inherit","sakura-notes"]},{"id":"style-lab-sky","themes":["inherit","clear-sky"]},{"id":"style-lab-tailwind","themes":["inherit","tailwind-workspace"]}]}</script>
+  </div>
+  <script defer src="../../../../../../_assets/script.905a72eede1c8c41.js"></script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en" data-html-server-theme="light" data-blog-layout="style-lab-literary" data-blog-layout-theme="literary-quarterly" data-blog-page-kind="article" data-blog-mobile-zoom="false" data-theme="literary" data-mode="light" data-page="article" data-blog-theme-control="style-lab" data-blog-main-loading-class="html-server-blog-main-loading" data-blog-overview-loading-class="html-server-blog-overview-loading" data-blog-folder-loading-class="html-server-blog-folder-loading" data-blog-pagination-scroll="item" data-blog-pin-progress="true" data-blog-outline-shell-selector=".html-server-style-lab-outline" data-blog-outline-auto-hide="true" data-blog-sticky-header-selector=".html-server-style-lab-header,.html-server-lab-swiss-rail" data-blog-scroll-mode="app" data-blog-document-pinning="false" data-blog-document-pinning-filter-regular="false" style="--html-server-navigation-surface-light: #eee9df;--html-server-navigation-surface-dark: #201c18">
+<head><!--html-server-dynamic:start--><meta name="html-server-dynamic-page" data-html-server-dynamic-page data-html-server-dynamic-assertion-mode="every-page" data-html-server-dynamic-cache-ttl-ms="1800000" content="a-WyJzdHlsZS1sYWItbGl0ZXJhcnkiLCJsaXRlcmFyeS1xdWFydGVybHkiXQ"><style data-html-server-dynamic-prepaint>html{--html-server-navigation-surface-active:var(--html-server-navigation-surface-light,var(--html-server-blog-background-light,#f5f7fa));background:var(--html-server-navigation-surface-active)}html[data-html-server-theme="dark"]{--html-server-navigation-surface-active:var(--html-server-navigation-surface-dark,var(--html-server-blog-background-dark,#151515))}html[data-html-server-navigation-entering],html[data-html-server-dynamic-pending]{background:var(--html-server-navigation-surface-active)!important}html[data-html-server-navigation-entering] body,html[data-html-server-dynamic-pending] body{opacity:0!important}html[data-html-server-navigation-entering]::before,html[data-html-server-dynamic-pending]::before{content:"";position:fixed;inset:0;z-index:2147483646;background:var(--html-server-navigation-surface-active);pointer-events:none}html[data-html-server-navigation-entering]::after,html[data-html-server-dynamic-pending]::after{content:"";position:fixed;top:0;left:0;z-index:2147483647;width:38%;height:2px;background:var(--interactive-accent,#8b6f47);box-shadow:0 0 10px currentColor;animation:html-server-navigation-prepaint 1s ease-in-out infinite;pointer-events:none}@keyframes html-server-navigation-prepaint{0%{transform:translateX(-110%)}100%{transform:translateX(370%)}}@media(prefers-reduced-motion:reduce){html[data-html-server-navigation-entering]::after,html[data-html-server-dynamic-pending]::after{animation:none;width:100%;opacity:.7}}</style><script data-blog-navigation-bootstrap>(function(){
+  var root=document.documentElement,key='html-server:navigation-handoff',handoff=null;
+  try{handoff=JSON.parse(sessionStorage.getItem(key)||'null');}catch(error){}
+  var target=location.pathname+location.search;
+  if(handoff&&handoff.target===target&&Date.now()-Number(handoff.createdAt||0)<5000){
+    root.setAttribute('data-html-server-navigation-entering','');
+    var reveal=function(){requestAnimationFrame(function(){requestAnimationFrame(function(){root.removeAttribute('data-html-server-navigation-entering');try{sessionStorage.removeItem(key);}catch(error){}});});};
+    if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',reveal,{once:true});else reveal();
+    setTimeout(function(){root.removeAttribute('data-html-server-navigation-entering');},5000);
+  }else if(handoff){try{sessionStorage.removeItem(key);}catch(error){}}
+})();</script><script data-html-server-dynamic-bootstrap>(()=>{
+const m={"releaseId":"20260904091040909-e54ec6fc6a","appearanceKey":"a-WyJzdHlsZS1sYWItbGl0ZXJhcnkiLCJsaXRlcmFyeS1xdWFydGVybHkiXQ","route":"大模型/大模型面试/题集/01-面试题集/05-RAG技术/Q12-GraphRAG原理/index.html","outputRootRelativeUrl":"../../../../../../../../../../","siteRootRelativeUrl":"../../../../../../","assertionPolicy":{"mode":"every-page","cacheTtlMs":1800000}},S=1,C="html-server:dynamic-appearance:v1";
+const html=document.documentElement,pending='data-html-server-dynamic-pending';if(!html)return;html.setAttribute(pending,'');
+try{Object.defineProperty(window,'__htmlServerDynamicSiteRoot',{configurable:true,value:new URL(m.siteRootRelativeUrl||m.outputRootRelativeUrl,document.baseURI||location.href).href});}catch(_){}
+const reveal=()=>html.removeAttribute(pending);
+const safe=p=>{p=String(p||'').replace(/\\/g,'/').replace(/^\/+/, '');return !!p&&!p.split('/').includes('..')&&!/^[a-z][a-z\d+.-]*:/i.test(p)};
+const routeUrl=p=>String(p).split('/').map(encodeURIComponent).join('/');
+const get=async u=>{const c=new AbortController(),t=setTimeout(()=>c.abort(),2000);try{const r=await fetch(u,{cache:'no-store',credentials:'same-origin',signal:c.signal});if(!r.ok)throw Error(String(r.status));return await r.json()}finally{clearTimeout(t)}};
+const p=m.assertionPolicy||{},mode=p.mode==='home-only'||p.mode==='cache'?p.mode:'every-page',ttl=Math.max(60000,Number(p.cacheTtlMs)||1800000);
+let storage;try{storage=localStorage}catch(_){}
+const clear=()=>{try{storage&&storage.removeItem(C)}catch(_){}};
+try{Object.defineProperty(window,'HtmlServerDynamicAppearanceCache',{configurable:true,value:{key:C,clear,refresh:()=>{clear();location.reload()}}})}catch(_){}
+const read=()=>{try{const v=JSON.parse(storage&&storage.getItem(C)||'null');return v&&v.schemaVersion===S&&typeof v.appearanceKey==='string'&&typeof v.releaseId==='string'&&safe(v.path)&&Number.isFinite(v.selectionRevision)&&Number.isFinite(v.expiresAt)?v:null}catch(_){return null}};
+const cached=read(),home=m.route==='index.html',reload=(()=>{try{return performance.getEntriesByType('navigation')[0]?.type==='reload'}catch(_){return false}})();
+const cacheValid=!!cached&&cached.releaseId===m.releaseId&&(mode!=='cache'||cached.expiresAt>Date.now()),refresh=mode==='every-page'||(mode==='home-only'&&home)||(mode==='cache'&&(!cacheValid||reload));
+(async()=>{let navigating=false;
+const rootForPage=async()=>{const fallback=window.__htmlServerStaticFallbackRoot,discovered=fallback&&typeof fallback.then==='function'?await fallback:null;return new URL(discovered&&discovered.siteRoot?discovered.siteRoot:m.outputRootRelativeUrl,document.baseURI||location.href)};
+const move=async(key,pathValue,releaseId,canonical)=>{if(key===m.appearanceKey)return false;if(!safe(m.route)||!safe(pathValue))return false;const root=await rootForPage(),encoded=routeUrl(m.route),rel=canonical?encoded:pathValue.replace(/\/+$/,'')+'/'+encoded,guard='html-server-dynamic:'+releaseId+':'+key+':'+m.route;if(sessionStorage.getItem(guard)==='1')return false;const target=new URL(rel,root);target.search=location.search;target.hash=location.hash;sessionStorage.setItem(guard,'1');navigating=true;location.replace(target.href);return true};
+try{
+if(!refresh){if(!cacheValid)return;if(cached.appearanceKey===m.appearanceKey){sessionStorage.removeItem('html-server-dynamic:'+cached.releaseId+':'+cached.appearanceKey+':'+m.route);return;}await move(cached.appearanceKey,cached.path,cached.releaseId,false);return;}
+const root=await rootForPage(),pair=await Promise.all([get(new URL('_config/data.json',root)),get(new URL('_config/release.json',root))]),cfg=pair[0],ptr=pair[1];
+if(cfg.schemaVersion!==S)return;
+if(ptr.schemaVersion!==S||(cfg.selectionRevision!==undefined&&cfg.selectionRevision!==ptr.selectionRevision)||!safe(ptr.manifest))return;
+const man=await get(new URL(ptr.manifest,root));if(man.schemaVersion!==S||man.releaseId!==ptr.releaseId||man.selectionRevision!==ptr.selectionRevision||man.primaryAppearance!==ptr.primaryAppearance||!safe(m.route))return;
+const hit=Object.entries(man.sites||{}).find(([,v])=>v.appearance&&v.appearance.layout===cfg.blogLayout&&v.appearance.theme===cfg.blogLayoutTheme);if(!hit)return;
+const key=hit[0],site=hit[1];if(!Array.isArray(site.routes)||!site.routes.includes(m.route))return;
+if(!safe(site.path))return;const record={schemaVersion:S,appearanceKey:key,layout:site.appearance.layout,theme:site.appearance.theme,path:site.path,releaseId:ptr.releaseId,selectionRevision:ptr.selectionRevision,expiresAt:mode==='home-only'?0:Date.now()+ttl};try{storage&&storage.setItem(C,JSON.stringify(record))}catch(_){}
+const guard='html-server-dynamic:'+ptr.releaseId+':'+key+':'+m.route;if(key===m.appearanceKey){sessionStorage.removeItem(guard);return;}
+await move(key,site.path,ptr.releaseId,key===man.primaryAppearance);
+}catch(_){if(mode!=='every-page'&&cacheValid&&!navigating)await move(cached.appearanceKey,cached.path,cached.releaseId,false).catch(()=>{})}finally{if(!navigating)reveal();}})();
+})();</script><!--html-server-dynamic:end-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  
+  <script defer src="../../../../../../_assets/script.6d4f546be5f896d5.js"></script>
+  <script data-blog-theme-bootstrap>(function(){
+  var root = document.documentElement;
+  var theme = root.getAttribute('data-html-server-theme') || 'light';
+  try {
+    var stored = localStorage.getItem('html-server-blog-theme');
+    if (stored === 'dark' || stored === 'light') theme = stored;
+  } catch (error) {}
+  root.setAttribute('data-html-server-theme', theme);
+  root.classList.toggle('theme-dark', theme === 'dark');
+  root.classList.toggle('theme-light', theme !== 'dark');
+  root.style.backgroundColor = theme === 'dark'
+    ? 'var(--html-server-navigation-surface-dark, var(--html-server-blog-background-dark, #151515))'
+    : 'var(--html-server-navigation-surface-light, var(--html-server-blog-background-light, #f5f7fa))';
+})();</script>
+  
+  <title>GraphRAG 原理与应用 · Digital Garden</title>
+  <link rel="shortcut icon" href="//obsidian.md/favicon.ico">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Mono:wght@300;400;500&family=IBM+Plex+Sans+Condensed:wght@400;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&family=Manrope:wght@400;600;800&family=Noto+Serif+SC:wght@400;600;800&family=Playfair+Display:wght@600;800&family=Space+Grotesk:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="../../../../../../_assets/blog.css">
+<link rel="preload" as="script" href="../../../../../../_assets/blog.js" fetchpriority="high"><script>window.__htmlServerStaticSearch="../../../../../../_assets/meta.json";window.__htmlServerStaticSidebar="../../../../../../_assets/sidebar.json?v=mtmqp68z-2gf";window.__htmlServerStaticPluginOverrides=window.__htmlServerStaticPluginOverrides||{};Object.assign(window.__htmlServerStaticPluginOverrides["blog-live2d"]||(window.__htmlServerStaticPluginOverrides["blog-live2d"]={}),{"localScriptUrl":"../../../../../../_assets/live2d-widget/L2Dwidget.min.js","localModelUrl":"../../../../../../_assets/live2d-widget/assets/koharu.model.json","assetBaseUrl":"../../../../../../_assets/live2d-widget"});</script></head>
+<body class="theme-light html-server-blog-body" data-blog-layout="style-lab-literary" data-blog-layout-theme="literary-quarterly" data-blog-page-kind="article" data-blog-style-isolation="strict" data-theme="literary" data-mode="light" data-page="article" data-blog-theme-control="style-lab" data-blog-main-loading-class="html-server-blog-main-loading" data-blog-overview-loading-class="html-server-blog-overview-loading" data-blog-folder-loading-class="html-server-blog-folder-loading" data-blog-pagination-scroll="item" data-blog-pin-progress="true" data-blog-outline-shell-selector=".html-server-style-lab-outline" data-blog-outline-auto-hide="true" data-blog-sticky-header-selector=".html-server-style-lab-header,.html-server-lab-swiss-rail" data-blog-scroll-mode="app" data-blog-document-pinning="false" data-blog-document-pinning-filter-regular="false" style="--html-server-navigation-surface-light: #eee9df;--html-server-navigation-surface-dark: #201c18">
+  <script data-blog-theme-bootstrap>(function(){
+  var theme = document.documentElement.getAttribute('data-html-server-theme') || 'light';
+  document.body.classList.toggle('theme-dark', theme === 'dark');
+  document.body.classList.toggle('theme-light', theme !== 'dark');
+})();</script>
+  <script type="application/json" data-blog-theme-image-groups>{}</script>
+  
+  <div class="html-server-blog-app">
+    <div class="html-server-style-lab-shell html-server-style-lab-literary">
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="html-server-style-lab-header site-header"><a class="html-server-style-lab-brand brand" href="../../../../../../" aria-label="回到文章列表"><b class="brand-mark">刊</b><span class="brand-copy"><strong>纸上季刊</strong><small>缓慢阅读与长篇写作</small></span></a><button class="menu-toggle" type="button" data-style-lab-menu aria-expanded="false" aria-controls="style-lab-main-nav">菜单</button><nav class="html-server-style-lab-nav main-nav" id="style-lab-main-nav" aria-label="主导航"><button type="button" data-style-lab-route="/">文章</button><button type="button" data-style-lab-route="/tags/">标签</button><button type="button" data-style-lab-route="/series/">系列</button><button type="button" data-style-lab-route="/archive/">归档</button></nav><div class="html-server-style-lab-tools header-tools" aria-label="站点工具"><button class="directory-toggle" type="button" data-blog-folder-open aria-label="打开目录"><span aria-hidden="true">▤</span><span>目录</span></button><button class="search-toggle" type="button" data-blog-search-open aria-label="打开搜索"><span aria-hidden="true">⌕</span><span>搜索</span></button><button class="mode-toggle" type="button" data-blog-theme aria-label="切换明暗主题"><span aria-hidden="true">◐</span><span class="mode-label">黑色</span></button></div></header>
+  <main id="content" class="html-server-style-lab-page html-server-blog-main html-server-style-lab-main" data-blog-main><article class="html-server-blog-article article-body">
+    <nav class="html-server-blog-breadcrumb breadcrumbs" aria-label="Breadcrumb"><a href="../../../../../../" data-blog-folder-path="">Home</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../../../../folders/_/大模型/" data-blog-folder-path="大模型">大模型</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../../../../folders/_/大模型/_/大模型面试/" data-blog-folder-path="大模型/大模型面试">大模型面试</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../../../../folders/_/大模型/_/大模型面试/_/题集/" data-blog-folder-path="大模型/大模型面试/题集">题集</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../../../../folders/_/大模型/_/大模型面试/_/题集/_/01-面试题集/" data-blog-folder-path="大模型/大模型面试/题集/01-面试题集">01-面试题集</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../../../../folders/_/大模型/_/大模型面试/_/题集/_/01-面试题集/_/05-RAG技术/" data-blog-folder-path="大模型/大模型面试/题集/01-面试题集/05-RAG技术">05-RAG技术</a></nav>
+    <header class="html-server-blog-article-header"><div class="post-meta"><time>Jul 3, 2026</time><span>3 分钟</span><span>最后更新 Jul 3, 2026</span></div><h2>GraphRAG 原理与应用</h2><p class="article-deck">Navigation: RAG技术MOC</p><div class="tag-line"><button type="button" data-style-lab-href="../../../../../../tags/agent%252FRAG%25E6%258A%2580%25E6%259C%25AF/"># agent/RAG技术</button><button type="button" data-style-lab-href="../../../../../../tags/type%252Finterview/"># type/interview</button><button type="button" data-style-lab-href="../../../../../../tags/diff%252Fintermediate/"># diff/intermediate</button></div></header>
+    
+    <div class="markdown-reading-view html-server-blog-reading-view article-content"><div class="markdown-preview-view markdown-rendered node-insert-event is-readable-line-width allow-fold-headings allow-fold-lists" tabindex="-1"><div class="markdown-preview-sizer markdown-preview-section"><pre class="frontmatter language-yaml" style="display: none; overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-yaml is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token key atrule">title</span><span class="token punctuation">:</span> <span class="token string">"GraphRAG 原理与应用"</span>
+<span class="token key atrule">type</span><span class="token punctuation">:</span> interview
+<span class="token key atrule">topic</span><span class="token punctuation">:</span> <span class="token string">"RAG技术"</span>
+<span class="token key atrule">difficulty</span><span class="token punctuation">:</span> intermediate
+<span class="token key atrule">importance</span><span class="token punctuation">:</span> high
+<span class="token key atrule">tags</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> agent/RAG技术
+  <span class="token punctuation">-</span> type/interview
+  <span class="token punctuation">-</span> diff/intermediate</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto"><strong>Navigation</strong>: <a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/05-RAG%E6%8A%80%E6%9C%AF/RAG%E6%8A%80%E6%9C%AFMOC/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/05-RAG%E6%8A%80%E6%9C%AF/RAG%E6%8A%80%E6%9C%AFMOC/" class="internal-link" target="" rel="noopener nofollow">RAG技术MOC</a></p>
+<pre style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">
+## 问题
+什么是 GraphRAG？它与传统 RAG 的核心区别是什么？请描述其工作流程和适用场景。
+
+## 答案
+
+**GraphRAG** 是由微软研究院开发的一种增强型 RAG 框架，它通过**知识图谱**来组织和理解信息，解决传统 RAG 在关系推理、跨文档关联和全局总结上的不足。
+
+**传统 RAG vs GraphRAG：**
+
+| 维度 | 传统 RAG | GraphRAG |
+|------|---------|----------|
+| **检索单元** | 文本 Chunk（基于相似度） | 实体、关系、社区摘要 |
+| **知识表示** | 平面向量空间 | 结构化图（节点+边） |
+| **擅长问题** | "是什么"（单点事实） | "为什么""有什么关联"（关系推理） |
+| **跨文档能力** | 弱（每篇文档独立切片） | 强（实体关联跨文档） |
+| **全局理解** | 弱 | 强（社区摘要提供全局视角） |
+
+**GraphRAG 的核心工作流程：**
+
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">┌─────────────────────────────────────────────────────────────────┐<br>
+│                    GraphRAG 流程                                │<br>
+├────────────────────────┬────────────────────────────────────────┤<br>
+│        索引阶段         │            查询阶段                     │<br>
+├────────────────────────┼────────────────────────────────────────┤<br>
+│ 1. 文档解析与切片       │ 1. 判断查询类型                         │<br>
+│ 2. 实体抽取(人/组织/概念) │   ├── 局部查询 ──▶ 实体层图检索         │<br>
+│ 3. 关系抽取(边)         │   └── 全局查询 ──▶ 社区摘要检索          │<br>
+│ 4. 知识图谱构建         │ 2. 图遍历获取相关上下文                  │<br>
+│ 5. 社区发现(Leiden算法) │ 3. LLM 生成答案                        │<br>
+│ 6. 社区摘要生成         │                                         │<br>
+└────────────────────────┴────────────────────────────────────────┘</p>
+<pre style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">
+**详细步骤：**
+
+**索引阶段（离线）：**
+
+1. **实体抽取**：LLM 从文档中提取实体（人名、组织、概念等）
+2. **关系抽取**：识别实体之间的关系（"工作于"、"属于"、"导致"等）
+3. **知识图谱构建**：将实体和关系组织成图结构
+4. **社区发现**：使用 Leiden 算法将图划分为社区（相关概念的集群）
+5. **社区摘要**：为每个社区生成摘要，捕捉主要观点
+
+**查询阶段（在线）：**
+
+- **局部搜索**：针对具体实体的问题，在图中遍历相关节点和边
+- **全局搜索**：针对概括性问题，利用社区摘要生成答案
+
+**核心优势：**
+
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">传统 RAG 解决："在哪个片段里"<br>
+GraphRAG 解决："这些片段之间是什么关系"</p>
+<p dir="auto">示例问题："张三在公司里扮演什么角色？"<br>
+传统 RAG：可能找到提到"张三"的片段，但无法知道他的完整角色<br>
+GraphRAG：可以遍历图发现 "张三 --工作于--&gt; 技术部 --负责--&gt; AI项目"</p>
+<pre style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">
+**GraphRAG vs LightRAG：**
+
+| 维度 | GraphRAG（微软） | LightRAG（港大） |
+|------|-----------------|-----------------|
+| 知识结构 | 知识图谱 + Leiden 社区层级 | 双层图谱（实体层 + 关系层） |
+| 全局理解 | 预计算社区摘要（Map-Reduce） | 关系层图谱实时检索 |
+| 索引成本 | 高（2-5x 源 token） | 中（少约 40-60%） |
+| 增量更新 | 难（需重建社区） | 易（直接加节点和边） |
+| 查询模式 | 局部 + 全局 | 朴素 + 局部 + 全局 + 混合 |
+
+**适用场景：**
+
+| 场景 | 说明 |
+|------|------|
+| 法律文档分析 | 案件之间关系、判例关联 |
+| 医疗文献 | 药物相互作用、症状-疾病关联 |
+| 企业知识 | 组织架构、项目依赖关系 |
+| 情报分析 | 实体关系网络、影响分析 |
+
+## 延伸追问
+
+**Q: GraphRAG 什么时候不值得用？**
+
+A: 如果：1) 问题都是简单的单点事实查询；2) 知识库很小（&lt;1000 篇文档）；3) 预算有限（GraphRAG 索引成本高）；4) 知识更新频繁（图谱更新成本高）。这些场景传统 RAG 更简单高效。
+
+**Q: GraphRAG 和知识图谱问答(KGQA)有什么区别？**
+
+A: KGQA 依赖预构建的知识图谱（如 Wikidata），GraphRAG 的图谱是从非结构化文档中自动抽取构建的。KGQA 图谱质量高但覆盖有限，GraphRAG 覆盖广但抽取可能有误差。
+
+## 常见误区
+
+1. **GraphRAG 替代传统 RAG** — 两者是互补关系，最佳实践是组合使用
+2. **GraphRAG 一定更好** — 简单场景下传统 RAG 更简单高效
+3. **忽略图谱构建成本** — GraphRAG 索引阶段需要大量 LLM 调用，成本高
+
+---
+
+## &lt;a id="高级题"&gt;&lt;/a&gt;高级题 (Advanced)
+
+---
+
+### &lt;a id="q13"&gt;&lt;/a&gt;Q13: Self-RAG 的工作原理是什么？如何通过反思令牌实现主动检索？
+
+```yaml
+
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<script defer src="../../../../../../_assets/script.fad57313884515cf.js"></script>
+</div></div></div>
+    
+    
+    
+  </article></main>
+  <footer class="site-footer"><span>纸上季刊</span><span>缓慢阅读与长篇写作</span></footer>
+</div><div class="html-server-blog-progress html-server-style-lab-progress is-rule" data-blog-progress data-blog-runtime-progress data-progress-state="idle" role="progressbar" aria-label="Loading page" aria-hidden="true"><span class="html-server-blog-progress-track"><i></i><b></b><em></em><em></em><em></em></span></div>
+    <div class="html-server-blog-related-modal" data-blog-related-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-related-close aria-label="Close related articles"></button>
+      <section class="html-server-blog-related-panel" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-related-title">
+        <header><div><span class="html-server-blog-kicker" data-blog-related-kind></span><h2 id="html-server-blog-related-title" data-blog-related-title></h2></div><button type="button" data-blog-related-close aria-label="Close"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <p data-blog-related-count></p>
+        <div class="html-server-blog-related-list" data-blog-related-list></div>
+      </section>
+    </div>
+    <div class="html-server-blog-search-modal" data-blog-search-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-search-close aria-label="Close search"></button>
+      <section class="html-server-blog-search-panel site-dialog" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-search-title">
+        <header class="dialog-head"><div><span class="html-server-blog-kicker">SEARCH</span><h2 id="html-server-blog-search-title">搜索文章</h2></div><button type="button" data-blog-search-close aria-label="关闭"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <label class="search-field"><span>支持标题、标签、系列、目录和属性</span><input id="search-input" type="search" data-blog-global-search placeholder="输入关键词开始搜索" autocomplete="off"></label>
+        <p class="search-summary" id="search-summary" data-blog-search-count>输入关键词开始搜索</p>
+        <div class="html-server-blog-search-results search-results dialog-list" id="search-results" data-blog-search-results></div>
+      </section>
+    </div>
+    <div class="html-server-blog-folder-modal" data-blog-folder-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-folder-close aria-label="Close folders"></button>
+      <section class="html-server-blog-folder-panel site-dialog" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-folder-title">
+        <header class="dialog-head"><div><span class="html-server-blog-kicker">VAULT</span><h2 id="html-server-blog-folder-title" data-blog-folder-title>浏览根目录</h2></div><button type="button" data-blog-folder-close aria-label="关闭"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <nav class="html-server-blog-folder-breadcrumb directory-breadcrumbs" data-blog-folder-breadcrumb aria-label="目录面包屑"></nav>
+        <p data-blog-folder-count></p>
+        <div class="html-server-blog-folder-browser directory-list dialog-list" data-blog-folder-browser></div>
+      </section>
+    </div>
+    <script type="application/json" data-blog-article-index>[]</script>
+    <script type="application/json" data-blog-folder-index data-current-folder="大模型/大模型面试/题集/01-面试题集/05-RAG技术">[]</script>
+    <script type="application/json" data-blog-appearance-contract>{"version":1,"layouts":[{"id":"default","themes":["inherit"]},{"id":"next","themes":["inherit","next-classic","swiss-index","literary-quarterly","terminal-manual","quiet-journal","newspaper-daily","mint-notebook","tailwind-workspace"]},{"id":"butterfly","themes":["inherit","butterfly-colorful","brutal-broadcast","future-signal","field-notes","gallery-canvas","toy-modules","sakura-notes","clear-sky"]},{"id":"akilar","themes":["inherit","akilar-ark"]},{"id":"noionion","themes":["inherit","noionion-original"]},{"id":"kratos","themes":["inherit","kratos-rebirth"]},{"id":"leezhiy","themes":["inherit","leezhiy-next"]},{"id":"daybook","themes":["inherit","daybook-original"]},{"id":"style-lab-swiss","themes":["inherit","swiss-index"]},{"id":"style-lab-literary","themes":["inherit","literary-quarterly"]},{"id":"style-lab-terminal","themes":["inherit","terminal-manual"]},{"id":"style-lab-brutal","themes":["inherit","brutal-broadcast"]},{"id":"style-lab-quiet","themes":["inherit","quiet-journal"]},{"id":"style-lab-newspaper","themes":["inherit","newspaper-daily"]},{"id":"style-lab-future","themes":["inherit","future-signal"]},{"id":"style-lab-field","themes":["inherit","field-notes"]},{"id":"style-lab-gallery","themes":["inherit","gallery-canvas"]},{"id":"style-lab-toy","themes":["inherit","toy-modules"]},{"id":"style-lab-mint","themes":["inherit","mint-notebook"]},{"id":"style-lab-sakura","themes":["inherit","sakura-notes"]},{"id":"style-lab-sky","themes":["inherit","clear-sky"]},{"id":"style-lab-tailwind","themes":["inherit","tailwind-workspace"]}]}</script>
+  </div>
+  <script defer src="../../../../../../_assets/script.905a72eede1c8c41.js"></script>
+</body>
+</html>

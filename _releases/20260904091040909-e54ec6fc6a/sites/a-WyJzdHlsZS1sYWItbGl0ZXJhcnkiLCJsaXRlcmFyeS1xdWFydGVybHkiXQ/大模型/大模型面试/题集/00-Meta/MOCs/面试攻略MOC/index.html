@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en" data-html-server-theme="light" data-blog-layout="style-lab-literary" data-blog-layout-theme="literary-quarterly" data-blog-page-kind="article" data-blog-mobile-zoom="false" data-theme="literary" data-mode="light" data-page="article" data-blog-theme-control="style-lab" data-blog-main-loading-class="html-server-blog-main-loading" data-blog-overview-loading-class="html-server-blog-overview-loading" data-blog-folder-loading-class="html-server-blog-folder-loading" data-blog-pagination-scroll="item" data-blog-pin-progress="true" data-blog-outline-shell-selector=".html-server-style-lab-outline" data-blog-outline-auto-hide="true" data-blog-sticky-header-selector=".html-server-style-lab-header,.html-server-lab-swiss-rail" data-blog-scroll-mode="app" data-blog-document-pinning="false" data-blog-document-pinning-filter-regular="false" style="--html-server-navigation-surface-light: #eee9df;--html-server-navigation-surface-dark: #201c18">
+<head><!--html-server-dynamic:start--><meta name="html-server-dynamic-page" data-html-server-dynamic-page data-html-server-dynamic-assertion-mode="every-page" data-html-server-dynamic-cache-ttl-ms="1800000" content="a-WyJzdHlsZS1sYWItbGl0ZXJhcnkiLCJsaXRlcmFyeS1xdWFydGVybHkiXQ"><style data-html-server-dynamic-prepaint>html{--html-server-navigation-surface-active:var(--html-server-navigation-surface-light,var(--html-server-blog-background-light,#f5f7fa));background:var(--html-server-navigation-surface-active)}html[data-html-server-theme="dark"]{--html-server-navigation-surface-active:var(--html-server-navigation-surface-dark,var(--html-server-blog-background-dark,#151515))}html[data-html-server-navigation-entering],html[data-html-server-dynamic-pending]{background:var(--html-server-navigation-surface-active)!important}html[data-html-server-navigation-entering] body,html[data-html-server-dynamic-pending] body{opacity:0!important}html[data-html-server-navigation-entering]::before,html[data-html-server-dynamic-pending]::before{content:"";position:fixed;inset:0;z-index:2147483646;background:var(--html-server-navigation-surface-active);pointer-events:none}html[data-html-server-navigation-entering]::after,html[data-html-server-dynamic-pending]::after{content:"";position:fixed;top:0;left:0;z-index:2147483647;width:38%;height:2px;background:var(--interactive-accent,#8b6f47);box-shadow:0 0 10px currentColor;animation:html-server-navigation-prepaint 1s ease-in-out infinite;pointer-events:none}@keyframes html-server-navigation-prepaint{0%{transform:translateX(-110%)}100%{transform:translateX(370%)}}@media(prefers-reduced-motion:reduce){html[data-html-server-navigation-entering]::after,html[data-html-server-dynamic-pending]::after{animation:none;width:100%;opacity:.7}}</style><script data-blog-navigation-bootstrap>(function(){
+  var root=document.documentElement,key='html-server:navigation-handoff',handoff=null;
+  try{handoff=JSON.parse(sessionStorage.getItem(key)||'null');}catch(error){}
+  var target=location.pathname+location.search;
+  if(handoff&&handoff.target===target&&Date.now()-Number(handoff.createdAt||0)<5000){
+    root.setAttribute('data-html-server-navigation-entering','');
+    var reveal=function(){requestAnimationFrame(function(){requestAnimationFrame(function(){root.removeAttribute('data-html-server-navigation-entering');try{sessionStorage.removeItem(key);}catch(error){}});});};
+    if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',reveal,{once:true});else reveal();
+    setTimeout(function(){root.removeAttribute('data-html-server-navigation-entering');},5000);
+  }else if(handoff){try{sessionStorage.removeItem(key);}catch(error){}}
+})();</script><script data-html-server-dynamic-bootstrap>(()=>{
+const m={"releaseId":"20260904091040909-e54ec6fc6a","appearanceKey":"a-WyJzdHlsZS1sYWItbGl0ZXJhcnkiLCJsaXRlcmFyeS1xdWFydGVybHkiXQ","route":"大模型/大模型面试/题集/00-Meta/MOCs/面试攻略MOC/index.html","outputRootRelativeUrl":"../../../../../../../../../../","siteRootRelativeUrl":"../../../../../../","assertionPolicy":{"mode":"every-page","cacheTtlMs":1800000}},S=1,C="html-server:dynamic-appearance:v1";
+const html=document.documentElement,pending='data-html-server-dynamic-pending';if(!html)return;html.setAttribute(pending,'');
+try{Object.defineProperty(window,'__htmlServerDynamicSiteRoot',{configurable:true,value:new URL(m.siteRootRelativeUrl||m.outputRootRelativeUrl,document.baseURI||location.href).href});}catch(_){}
+const reveal=()=>html.removeAttribute(pending);
+const safe=p=>{p=String(p||'').replace(/\\/g,'/').replace(/^\/+/, '');return !!p&&!p.split('/').includes('..')&&!/^[a-z][a-z\d+.-]*:/i.test(p)};
+const routeUrl=p=>String(p).split('/').map(encodeURIComponent).join('/');
+const get=async u=>{const c=new AbortController(),t=setTimeout(()=>c.abort(),2000);try{const r=await fetch(u,{cache:'no-store',credentials:'same-origin',signal:c.signal});if(!r.ok)throw Error(String(r.status));return await r.json()}finally{clearTimeout(t)}};
+const p=m.assertionPolicy||{},mode=p.mode==='home-only'||p.mode==='cache'?p.mode:'every-page',ttl=Math.max(60000,Number(p.cacheTtlMs)||1800000);
+let storage;try{storage=localStorage}catch(_){}
+const clear=()=>{try{storage&&storage.removeItem(C)}catch(_){}};
+try{Object.defineProperty(window,'HtmlServerDynamicAppearanceCache',{configurable:true,value:{key:C,clear,refresh:()=>{clear();location.reload()}}})}catch(_){}
+const read=()=>{try{const v=JSON.parse(storage&&storage.getItem(C)||'null');return v&&v.schemaVersion===S&&typeof v.appearanceKey==='string'&&typeof v.releaseId==='string'&&safe(v.path)&&Number.isFinite(v.selectionRevision)&&Number.isFinite(v.expiresAt)?v:null}catch(_){return null}};
+const cached=read(),home=m.route==='index.html',reload=(()=>{try{return performance.getEntriesByType('navigation')[0]?.type==='reload'}catch(_){return false}})();
+const cacheValid=!!cached&&cached.releaseId===m.releaseId&&(mode!=='cache'||cached.expiresAt>Date.now()),refresh=mode==='every-page'||(mode==='home-only'&&home)||(mode==='cache'&&(!cacheValid||reload));
+(async()=>{let navigating=false;
+const rootForPage=async()=>{const fallback=window.__htmlServerStaticFallbackRoot,discovered=fallback&&typeof fallback.then==='function'?await fallback:null;return new URL(discovered&&discovered.siteRoot?discovered.siteRoot:m.outputRootRelativeUrl,document.baseURI||location.href)};
+const move=async(key,pathValue,releaseId,canonical)=>{if(key===m.appearanceKey)return false;if(!safe(m.route)||!safe(pathValue))return false;const root=await rootForPage(),encoded=routeUrl(m.route),rel=canonical?encoded:pathValue.replace(/\/+$/,'')+'/'+encoded,guard='html-server-dynamic:'+releaseId+':'+key+':'+m.route;if(sessionStorage.getItem(guard)==='1')return false;const target=new URL(rel,root);target.search=location.search;target.hash=location.hash;sessionStorage.setItem(guard,'1');navigating=true;location.replace(target.href);return true};
+try{
+if(!refresh){if(!cacheValid)return;if(cached.appearanceKey===m.appearanceKey){sessionStorage.removeItem('html-server-dynamic:'+cached.releaseId+':'+cached.appearanceKey+':'+m.route);return;}await move(cached.appearanceKey,cached.path,cached.releaseId,false);return;}
+const root=await rootForPage(),pair=await Promise.all([get(new URL('_config/data.json',root)),get(new URL('_config/release.json',root))]),cfg=pair[0],ptr=pair[1];
+if(cfg.schemaVersion!==S)return;
+if(ptr.schemaVersion!==S||(cfg.selectionRevision!==undefined&&cfg.selectionRevision!==ptr.selectionRevision)||!safe(ptr.manifest))return;
+const man=await get(new URL(ptr.manifest,root));if(man.schemaVersion!==S||man.releaseId!==ptr.releaseId||man.selectionRevision!==ptr.selectionRevision||man.primaryAppearance!==ptr.primaryAppearance||!safe(m.route))return;
+const hit=Object.entries(man.sites||{}).find(([,v])=>v.appearance&&v.appearance.layout===cfg.blogLayout&&v.appearance.theme===cfg.blogLayoutTheme);if(!hit)return;
+const key=hit[0],site=hit[1];if(!Array.isArray(site.routes)||!site.routes.includes(m.route))return;
+if(!safe(site.path))return;const record={schemaVersion:S,appearanceKey:key,layout:site.appearance.layout,theme:site.appearance.theme,path:site.path,releaseId:ptr.releaseId,selectionRevision:ptr.selectionRevision,expiresAt:mode==='home-only'?0:Date.now()+ttl};try{storage&&storage.setItem(C,JSON.stringify(record))}catch(_){}
+const guard='html-server-dynamic:'+ptr.releaseId+':'+key+':'+m.route;if(key===m.appearanceKey){sessionStorage.removeItem(guard);return;}
+await move(key,site.path,ptr.releaseId,key===man.primaryAppearance);
+}catch(_){if(mode!=='every-page'&&cacheValid&&!navigating)await move(cached.appearanceKey,cached.path,cached.releaseId,false).catch(()=>{})}finally{if(!navigating)reveal();}})();
+})();</script><!--html-server-dynamic:end-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  
+  <script defer src="../../../../../../_assets/script.6d4f546be5f896d5.js"></script>
+  <script data-blog-theme-bootstrap>(function(){
+  var root = document.documentElement;
+  var theme = root.getAttribute('data-html-server-theme') || 'light';
+  try {
+    var stored = localStorage.getItem('html-server-blog-theme');
+    if (stored === 'dark' || stored === 'light') theme = stored;
+  } catch (error) {}
+  root.setAttribute('data-html-server-theme', theme);
+  root.classList.toggle('theme-dark', theme === 'dark');
+  root.classList.toggle('theme-light', theme !== 'dark');
+  root.style.backgroundColor = theme === 'dark'
+    ? 'var(--html-server-navigation-surface-dark, var(--html-server-blog-background-dark, #151515))'
+    : 'var(--html-server-navigation-surface-light, var(--html-server-blog-background-light, #f5f7fa))';
+})();</script>
+  
+  <title>面试攻略 MOC · Digital Garden</title>
+  <link rel="shortcut icon" href="//obsidian.md/favicon.ico">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Mono:wght@300;400;500&family=IBM+Plex+Sans+Condensed:wght@400;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&family=Manrope:wght@400;600;800&family=Noto+Serif+SC:wght@400;600;800&family=Playfair+Display:wght@600;800&family=Space+Grotesk:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="../../../../../../_assets/blog.css">
+<link rel="preload" as="script" href="../../../../../../_assets/blog.js" fetchpriority="high"><script>window.__htmlServerStaticSearch="../../../../../../_assets/meta.json";window.__htmlServerStaticSidebar="../../../../../../_assets/sidebar.json?v=mtmqp68z-2gf";window.__htmlServerStaticPluginOverrides=window.__htmlServerStaticPluginOverrides||{};Object.assign(window.__htmlServerStaticPluginOverrides["blog-live2d"]||(window.__htmlServerStaticPluginOverrides["blog-live2d"]={}),{"localScriptUrl":"../../../../../../_assets/live2d-widget/L2Dwidget.min.js","localModelUrl":"../../../../../../_assets/live2d-widget/assets/koharu.model.json","assetBaseUrl":"../../../../../../_assets/live2d-widget"});</script></head>
+<body class="theme-light html-server-blog-body" data-blog-layout="style-lab-literary" data-blog-layout-theme="literary-quarterly" data-blog-page-kind="article" data-blog-style-isolation="strict" data-theme="literary" data-mode="light" data-page="article" data-blog-theme-control="style-lab" data-blog-main-loading-class="html-server-blog-main-loading" data-blog-overview-loading-class="html-server-blog-overview-loading" data-blog-folder-loading-class="html-server-blog-folder-loading" data-blog-pagination-scroll="item" data-blog-pin-progress="true" data-blog-outline-shell-selector=".html-server-style-lab-outline" data-blog-outline-auto-hide="true" data-blog-sticky-header-selector=".html-server-style-lab-header,.html-server-lab-swiss-rail" data-blog-scroll-mode="app" data-blog-document-pinning="false" data-blog-document-pinning-filter-regular="false" style="--html-server-navigation-surface-light: #eee9df;--html-server-navigation-surface-dark: #201c18">
+  <script data-blog-theme-bootstrap>(function(){
+  var theme = document.documentElement.getAttribute('data-html-server-theme') || 'light';
+  document.body.classList.toggle('theme-dark', theme === 'dark');
+  document.body.classList.toggle('theme-light', theme !== 'dark');
+})();</script>
+  <script type="application/json" data-blog-theme-image-groups>{}</script>
+  
+  <div class="html-server-blog-app">
+    <div class="html-server-style-lab-shell html-server-style-lab-literary">
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="html-server-style-lab-header site-header"><a class="html-server-style-lab-brand brand" href="../../../../../../" aria-label="回到文章列表"><b class="brand-mark">刊</b><span class="brand-copy"><strong>纸上季刊</strong><small>缓慢阅读与长篇写作</small></span></a><button class="menu-toggle" type="button" data-style-lab-menu aria-expanded="false" aria-controls="style-lab-main-nav">菜单</button><nav class="html-server-style-lab-nav main-nav" id="style-lab-main-nav" aria-label="主导航"><button type="button" data-style-lab-route="/">文章</button><button type="button" data-style-lab-route="/tags/">标签</button><button type="button" data-style-lab-route="/series/">系列</button><button type="button" data-style-lab-route="/archive/">归档</button></nav><div class="html-server-style-lab-tools header-tools" aria-label="站点工具"><button class="directory-toggle" type="button" data-blog-folder-open aria-label="打开目录"><span aria-hidden="true">▤</span><span>目录</span></button><button class="search-toggle" type="button" data-blog-search-open aria-label="打开搜索"><span aria-hidden="true">⌕</span><span>搜索</span></button><button class="mode-toggle" type="button" data-blog-theme aria-label="切换明暗主题"><span aria-hidden="true">◐</span><span class="mode-label">黑色</span></button></div></header>
+  <main id="content" class="html-server-style-lab-page html-server-blog-main html-server-style-lab-main" data-blog-main>
+    <div class="article-shell"><aside class="html-server-style-lab-outline article-toc"><nav class="html-server-blog-outline" data-blog-outline aria-label="Article outline">
+  <button class="html-server-blog-outline-toggle" type="button" data-blog-outline-toggle aria-expanded="true" aria-controls="html-server-blog-outline-list"><span>本文目录</span><b aria-hidden="true"><svg viewBox="0 0 20 20" focusable="false"><path d="m4.5 7.25 5.5 5.5 5.5-5.5"/></svg></b></button>
+  <strong>本文目录</strong>
+  <ol id="html-server-blog-outline-list"><li style="--outline-depth:0"><a href="#%E9%9D%A2%E8%AF%95%E6%94%BB%E7%95%A5%20MOC" data-blog-outline-link>面试攻略 MOC</a></li><li style="--outline-depth:1"><a href="#%E6%94%BB%E7%95%A5%E6%B8%85%E5%8D%95" data-blog-outline-link>攻略清单</a></li><li style="--outline-depth:1"><a href="#%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D%E6%94%BB%E7%95%A5%20(S01)" data-blog-outline-link>自我介绍攻略 (S01)</a></li><li style="--outline-depth:2"><a href="#%E9%BB%84%E9%87%91%E7%BB%93%E6%9E%84%EF%BC%881-3%E5%88%86%E9%92%9F%EF%BC%89" data-blog-outline-link>黄金结构（1-3分钟）</a></li><li style="--outline-depth:1"><a href="#%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D%E6%94%BB%E7%95%A5%20(S02)" data-blog-outline-link>项目介绍攻略 (S02)</a></li><li style="--outline-depth:2"><a href="#STAR%20%E6%B3%95%E5%88%99%E6%A8%A1%E6%9D%BF" data-blog-outline-link>STAR 法则模板</a></li><li style="--outline-depth:2"><a href="#Agent%20%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D%E7%9A%84%E8%A6%81%E7%82%B9" data-blog-outline-link>Agent 项目介绍的要点</a></li><li style="--outline-depth:1"><a href="#%E6%8A%80%E6%9C%AF%E6%B7%B1%E6%8C%96%E5%87%86%E5%A4%87%20(S03)" data-blog-outline-link>技术深挖准备 (S03)</a></li><li style="--outline-depth:2"><a href="#Agent%20%E9%A1%B9%E7%9B%AE%E5%B8%B8%E8%A7%81%E6%B7%B1%E6%8C%96%E6%96%B9%E5%90%91" data-blog-outline-link>Agent 项目常见深挖方向</a></li><li style="--outline-depth:1"><a href="#%E5%8F%8D%E9%97%AE%E6%B8%85%E5%8D%95%20(S04)" data-blog-outline-link>反问清单 (S04)</a></li><li style="--outline-depth:2"><a href="#%E6%8A%80%E6%9C%AF%E6%96%B9%E5%90%91" data-blog-outline-link>技术方向</a></li><li style="--outline-depth:2"><a href="#%E4%B8%9A%E5%8A%A1%E6%96%B9%E5%90%91" data-blog-outline-link>业务方向</a></li><li style="--outline-depth:2"><a href="#%E5%9B%A2%E9%98%9F%E6%96%B9%E5%90%91" data-blog-outline-link>团队方向</a></li><li style="--outline-depth:2"><a href="#%E9%81%BF%E5%85%8D%E7%9A%84%E9%97%AE%E9%A2%98" data-blog-outline-link>避免的问题</a></li><li style="--outline-depth:1"><a href="#%E9%9D%A2%E8%AF%95%20Checklist%20(S05)" data-blog-outline-link>面试 Checklist (S05)</a></li><li style="--outline-depth:2"><a href="#%E9%9D%A2%E8%AF%95%E5%89%8D" data-blog-outline-link>面试前</a></li><li style="--outline-depth:2"><a href="#%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95" data-blog-outline-link>技术面试</a></li><li style="--outline-depth:2"><a href="#%E8%A1%8C%E4%B8%BA%E9%9D%A2%E8%AF%95" data-blog-outline-link>行为面试</a></li><li style="--outline-depth:2"><a href="#%E9%9D%A2%E8%AF%95%E5%90%8E" data-blog-outline-link>面试后</a></li><li style="--outline-depth:1"><a href="#%E7%9B%B8%E5%85%B3%20MOC" data-blog-outline-link>相关 MOC</a></li></ol>
+</nav></aside><article class="html-server-blog-article article-body">
+    <nav class="html-server-blog-breadcrumb breadcrumbs" aria-label="Breadcrumb"><a href="../../../../../../" data-blog-folder-path="">Home</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../../../../folders/_/大模型/" data-blog-folder-path="大模型">大模型</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../../../../folders/_/大模型/_/大模型面试/" data-blog-folder-path="大模型/大模型面试">大模型面试</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../../../../folders/_/大模型/_/大模型面试/_/题集/" data-blog-folder-path="大模型/大模型面试/题集">题集</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../../../../folders/_/大模型/_/大模型面试/_/题集/_/00-Meta/" data-blog-folder-path="大模型/大模型面试/题集/00-Meta">00-Meta</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../../../../folders/_/大模型/_/大模型面试/_/题集/_/00-Meta/_/MOCs/" data-blog-folder-path="大模型/大模型面试/题集/00-Meta/MOCs">MOCs</a></nav>
+    <header class="html-server-blog-article-header"><div class="post-meta"><time>Jul 3, 2026</time><span>3 分钟</span><span>最后更新 Jul 3, 2026</span></div><h2>面试攻略 MOC</h2><p class="article-deck">Navigation: 总纲MOC</p><div class="tag-line"><button type="button" data-style-lab-href="../../../../../../tags/meta%252Fmoc/"># meta/moc</button><button type="button" data-style-lab-href="../../../../../../tags/interview%252F%25E6%2594%25BB%25E7%2595%25A5/"># interview/攻略</button></div></header>
+    
+    <div class="markdown-reading-view html-server-blog-reading-view article-content"><div class="markdown-preview-view markdown-rendered node-insert-event is-readable-line-width allow-fold-headings allow-fold-lists" tabindex="-1"><div class="markdown-preview-sizer markdown-preview-section"><pre class="frontmatter language-yaml" style="display: none; overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-yaml is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token key atrule">title</span><span class="token punctuation">:</span> <span class="token string">"面试攻略 MOC"</span>
+<span class="token key atrule">type</span><span class="token punctuation">:</span> moc
+<span class="token key atrule">topic</span><span class="token punctuation">:</span> <span class="token string">"面试攻略"</span>
+<span class="token key atrule">tags</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> meta/moc
+  <span class="token punctuation">-</span> interview/攻略</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto"><strong>Navigation</strong>: <a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/00-Meta/MOCs/%E6%80%BB%E7%BA%B2MOC/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/00-Meta/MOCs/%E6%80%BB%E7%BA%B2MOC/" class="internal-link" target="" rel="noopener nofollow">总纲MOC</a></p>
+<h1 data-heading="面试攻略 MOC" dir="auto">面试攻略 MOC</h1>
+<blockquote dir="auto">
+<p>系统化的面试准备攻略，包括自我介绍、项目介绍、反问清单、面试 Checklist 等。共 <strong>7 份攻略</strong>。</p>
+</blockquote>
+<hr>
+<h2 data-heading="攻略清单" dir="auto">攻略清单</h2>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>攻略主题</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S01</td>
+<td>自我介绍攻略</td>
+<td>1-3 分钟自我介绍的黄金结构</td>
+</tr>
+<tr>
+<td>S02</td>
+<td>项目介绍攻略</td>
+<td>如何用 STAR 法则介绍项目</td>
+</tr>
+<tr>
+<td>S03</td>
+<td>技术深挖准备</td>
+<td>Agent 项目常见深挖方向</td>
+</tr>
+<tr>
+<td>S04</td>
+<td>反问清单</td>
+<td>面试结束时的高质量反问</td>
+</tr>
+<tr>
+<td>S05</td>
+<td>面试 Checklist</td>
+<td>面试前的全面检查清单</td>
+</tr>
+<tr>
+<td>S06</td>
+<td>薪资谈判攻略</td>
+<td>如何谈薪水和职级</td>
+</tr>
+<tr>
+<td>S07</td>
+<td>面试后跟进</td>
+<td>面试后的感谢信和复盘</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 data-heading="自我介绍攻略 (S01)" dir="auto">自我介绍攻略 (S01)</h2>
+<h3 data-heading="黄金结构（1-3分钟）" dir="auto">黄金结构（1-3分钟）</h3>
+<pre style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">1. 基本信息（10秒）
+   "我是XX，XX年毕业于XX大学XX专业"
+
+2. 工作经历（30秒）
+   "毕业后先后在XX公司和XX公司工作，主要负责..."
+
+3. Agent 相关经验（60秒）
+   "在 Agent 领域，我主导/参与了以下项目：
+    - 项目A：XX（技术栈、成果）
+    - 项目B：XX（技术栈、成果）"
+
+4. 应聘动机（20秒）
+   "我对贵公司的XX业务非常感兴趣，
+    希望将我在 Agent 方面的经验应用到..."
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<hr>
+<h2 data-heading="项目介绍攻略 (S02)" dir="auto">项目介绍攻略 (S02)</h2>
+<h3 data-heading="STAR 法则模板" dir="auto">STAR 法则模板</h3>
+<p dir="auto">详见 <a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/00-Meta/MOCs/%E8%A1%8C%E4%B8%BA%E9%9D%A2%E8%AF%95MOC/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/00-Meta/MOCs/%E8%A1%8C%E4%B8%BA%E9%9D%A2%E8%AF%95MOC/" class="internal-link" target="" rel="noopener nofollow">行为面试MOC</a></p>
+<h3 data-heading="Agent 项目介绍的要点" dir="auto">Agent 项目介绍的要点</h3>
+<ol>
+<li dir="auto"><strong>业务背景</strong> — 为什么要做这个 Agent？</li>
+<li dir="auto"><strong>技术架构</strong> — 用了什么框架？模型？工具？</li>
+<li dir="auto"><strong>核心挑战</strong> — 遇到的最大技术难题是什么？</li>
+<li dir="auto"><strong>量化成果</strong> — 准确率、延迟、成本、用户满意度</li>
+<li dir="auto"><strong>个人贡献</strong> — 你在其中做了什么？</li>
+</ol>
+<hr>
+<h2 data-heading="技术深挖准备 (S03)" dir="auto">技术深挖准备 (S03)</h2>
+<h3 data-heading="Agent 项目常见深挖方向" dir="auto">Agent 项目常见深挖方向</h3>
+<pre style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">深挖方向
+├── 架构设计
+│   ├── 为什么选这个框架？
+│   ├── 模型选型的依据？
+│   └── 如何评估系统效果？
+├── 记忆系统
+│   ├── 记忆如何设计？
+│   ├── 检索精度如何？
+│   └── 如何更新记忆？
+├── 工具调用
+│   ├── 有哪些工具？
+│   ├── 工具如何选择？
+│   └── 工具调用失败怎么办？
+├── 安全与鲁棒
+│   ├── 如何处理幻觉？
+│   ├── 如何防御 Prompt 注入？
+│   └── 超时和降级策略？
+├── 性能与成本
+│   ├── Token 成本如何控制？
+│   ├── 响应延迟多少？
+│   └── 并发处理能力？
+└── 迭代优化
+    ├── 如何收集 Bad Case？
+    ├── 迭代频率和流程？
+    └── A/B 测试方案？
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<hr>
+<h2 data-heading="反问清单 (S04)" dir="auto">反问清单 (S04)</h2>
+<p dir="auto">面试结束时的高质量反问：</p>
+<h3 data-heading="技术方向" dir="auto">技术方向</h3>
+<ul>
+<li dir="auto">"团队目前使用的 Agent 框架和模型是什么？"</li>
+<li dir="auto">"Agent 项目目前面临的最大技术挑战是什么？"</li>
+<li dir="auto">"团队对 Agent 的评估指标是什么？"</li>
+</ul>
+<h3 data-heading="业务方向" dir="auto">业务方向</h3>
+<ul>
+<li dir="auto">"Agent 产品在业务中的定位和价值是什么？"</li>
+<li dir="auto">"未来半年 Agent 产品的主要目标是什么？"</li>
+</ul>
+<h3 data-heading="团队方向" dir="auto">团队方向</h3>
+<ul>
+<li dir="auto">"团队的技术氛围和学习机会如何？"</li>
+<li dir="auto">"导师制度或新人培养机制是怎样的？"</li>
+</ul>
+<h3 data-heading="避免的问题" dir="auto">避免的问题</h3>
+<ul>
+<li dir="auto">❌ "我面试通过了吗？"</li>
+<li dir="auto">❌ "加班多吗？"</li>
+<li dir="auto">❌ "薪资能给多少？"</li>
+</ul>
+<hr>
+<h2 data-heading="面试 Checklist (S05)" dir="auto">面试 Checklist (S05)</h2>
+<h3 data-heading="面试前" dir="auto">面试前</h3>
+<ul class="contains-task-list">
+<li data-task="" class="task-list-item" dir="auto"><input type="checkbox" class="task-list-item-checkbox">研究公司背景和业务</li>
+<li data-task="" class="task-list-item" dir="auto"><input type="checkbox" class="task-list-item-checkbox">复习 <a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/00-Meta/MOCs/Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5MOC/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/00-Meta/MOCs/Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5MOC/" class="internal-link" target="" rel="noopener nofollow">Agent基础概念MOC</a> 核心题目</li>
+<li data-task="" class="task-list-item" dir="auto"><input type="checkbox" class="task-list-item-checkbox">准备 3-5 个项目案例</li>
+<li data-task="" class="task-list-item" dir="auto"><input type="checkbox" class="task-list-item-checkbox">准备自我介绍（1分钟/3分钟版本）</li>
+<li data-task="" class="task-list-item" dir="auto"><input type="checkbox" class="task-list-item-checkbox">准备反问清单</li>
+<li data-task="" class="task-list-item" dir="auto"><input type="checkbox" class="task-list-item-checkbox">测试设备和网络</li>
+</ul>
+<h3 data-heading="技术面试" dir="auto">技术面试</h3>
+<ul class="contains-task-list">
+<li data-task="" class="task-list-item" dir="auto"><input type="checkbox" class="task-list-item-checkbox">能清晰画出项目架构图</li>
+<li data-task="" class="task-list-item" dir="auto"><input type="checkbox" class="task-list-item-checkbox">能解释技术选型的理由</li>
+<li data-task="" class="task-list-item" dir="auto"><input type="checkbox" class="task-list-item-checkbox">准备了核心指标数据</li>
+<li data-task="" class="task-list-item" dir="auto"><input type="checkbox" class="task-list-item-checkbox">能处理假设性场景题</li>
+</ul>
+<h3 data-heading="行为面试" dir="auto">行为面试</h3>
+<ul class="contains-task-list">
+<li data-task="" class="task-list-item" dir="auto"><input type="checkbox" class="task-list-item-checkbox">用 STAR 法则准备了案例</li>
+<li data-task="" class="task-list-item" dir="auto"><input type="checkbox" class="task-list-item-checkbox">案例中有明确的个人贡献</li>
+<li data-task="" class="task-list-item" dir="auto"><input type="checkbox" class="task-list-item-checkbox">准备了失败案例及反思</li>
+</ul>
+<h3 data-heading="面试后" dir="auto">面试后</h3>
+<ul class="contains-task-list">
+<li data-task="" class="task-list-item" dir="auto"><input type="checkbox" class="task-list-item-checkbox">发送感谢邮件</li>
+<li data-task="" class="task-list-item" dir="auto"><input type="checkbox" class="task-list-item-checkbox">复盘面试表现</li>
+<li data-task="" class="task-list-item" dir="auto"><input type="checkbox" class="task-list-item-checkbox">记录被问到的新问题</li>
+</ul>
+<hr>
+<h2 data-heading="相关 MOC" dir="auto">相关 MOC</h2>
+<ul>
+<li dir="auto"><a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/00-Meta/MOCs/%E8%A1%8C%E4%B8%BA%E9%9D%A2%E8%AF%95MOC/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/00-Meta/MOCs/%E8%A1%8C%E4%B8%BA%E9%9D%A2%E8%AF%95MOC/" class="internal-link" target="" rel="noopener nofollow">行为面试MOC</a> — 行为面试题详解</li>
+<li dir="auto"><a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/00-Meta/MOCs/%E6%80%BB%E7%BA%B2MOC/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/00-Meta/MOCs/%E6%80%BB%E7%BA%B2MOC/" class="internal-link" target="" rel="noopener nofollow">总纲MOC</a> — 全部面试题导航</li>
+<li dir="auto"><a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/00-Meta/MOCs/%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5MOC/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/00-Meta/MOCs/%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5MOC/" class="internal-link" target="" rel="noopener nofollow">工程实践MOC</a> — 工程实践技术深度</li>
+</ul>
+<script defer src="../../../../../../_assets/script.fad57313884515cf.js"></script>
+</div></div></div>
+    
+    
+    
+  </article></div>
+  </main>
+  <footer class="site-footer"><span>纸上季刊</span><span>缓慢阅读与长篇写作</span></footer>
+</div><div class="html-server-blog-progress html-server-style-lab-progress is-rule" data-blog-progress data-blog-runtime-progress data-progress-state="idle" role="progressbar" aria-label="Loading page" aria-hidden="true"><span class="html-server-blog-progress-track"><i></i><b></b><em></em><em></em><em></em></span></div>
+    <div class="html-server-blog-related-modal" data-blog-related-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-related-close aria-label="Close related articles"></button>
+      <section class="html-server-blog-related-panel" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-related-title">
+        <header><div><span class="html-server-blog-kicker" data-blog-related-kind></span><h2 id="html-server-blog-related-title" data-blog-related-title></h2></div><button type="button" data-blog-related-close aria-label="Close"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <p data-blog-related-count></p>
+        <div class="html-server-blog-related-list" data-blog-related-list></div>
+      </section>
+    </div>
+    <div class="html-server-blog-search-modal" data-blog-search-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-search-close aria-label="Close search"></button>
+      <section class="html-server-blog-search-panel site-dialog" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-search-title">
+        <header class="dialog-head"><div><span class="html-server-blog-kicker">SEARCH</span><h2 id="html-server-blog-search-title">搜索文章</h2></div><button type="button" data-blog-search-close aria-label="关闭"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <label class="search-field"><span>支持标题、标签、系列、目录和属性</span><input id="search-input" type="search" data-blog-global-search placeholder="输入关键词开始搜索" autocomplete="off"></label>
+        <p class="search-summary" id="search-summary" data-blog-search-count>输入关键词开始搜索</p>
+        <div class="html-server-blog-search-results search-results dialog-list" id="search-results" data-blog-search-results></div>
+      </section>
+    </div>
+    <div class="html-server-blog-folder-modal" data-blog-folder-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-folder-close aria-label="Close folders"></button>
+      <section class="html-server-blog-folder-panel site-dialog" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-folder-title">
+        <header class="dialog-head"><div><span class="html-server-blog-kicker">VAULT</span><h2 id="html-server-blog-folder-title" data-blog-folder-title>浏览根目录</h2></div><button type="button" data-blog-folder-close aria-label="关闭"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <nav class="html-server-blog-folder-breadcrumb directory-breadcrumbs" data-blog-folder-breadcrumb aria-label="目录面包屑"></nav>
+        <p data-blog-folder-count></p>
+        <div class="html-server-blog-folder-browser directory-list dialog-list" data-blog-folder-browser></div>
+      </section>
+    </div>
+    <script type="application/json" data-blog-article-index>[]</script>
+    <script type="application/json" data-blog-folder-index data-current-folder="大模型/大模型面试/题集/00-Meta/MOCs">[]</script>
+    <script type="application/json" data-blog-appearance-contract>{"version":1,"layouts":[{"id":"default","themes":["inherit"]},{"id":"next","themes":["inherit","next-classic","swiss-index","literary-quarterly","terminal-manual","quiet-journal","newspaper-daily","mint-notebook","tailwind-workspace"]},{"id":"butterfly","themes":["inherit","butterfly-colorful","brutal-broadcast","future-signal","field-notes","gallery-canvas","toy-modules","sakura-notes","clear-sky"]},{"id":"akilar","themes":["inherit","akilar-ark"]},{"id":"noionion","themes":["inherit","noionion-original"]},{"id":"kratos","themes":["inherit","kratos-rebirth"]},{"id":"leezhiy","themes":["inherit","leezhiy-next"]},{"id":"daybook","themes":["inherit","daybook-original"]},{"id":"style-lab-swiss","themes":["inherit","swiss-index"]},{"id":"style-lab-literary","themes":["inherit","literary-quarterly"]},{"id":"style-lab-terminal","themes":["inherit","terminal-manual"]},{"id":"style-lab-brutal","themes":["inherit","brutal-broadcast"]},{"id":"style-lab-quiet","themes":["inherit","quiet-journal"]},{"id":"style-lab-newspaper","themes":["inherit","newspaper-daily"]},{"id":"style-lab-future","themes":["inherit","future-signal"]},{"id":"style-lab-field","themes":["inherit","field-notes"]},{"id":"style-lab-gallery","themes":["inherit","gallery-canvas"]},{"id":"style-lab-toy","themes":["inherit","toy-modules"]},{"id":"style-lab-mint","themes":["inherit","mint-notebook"]},{"id":"style-lab-sakura","themes":["inherit","sakura-notes"]},{"id":"style-lab-sky","themes":["inherit","clear-sky"]},{"id":"style-lab-tailwind","themes":["inherit","tailwind-workspace"]}]}</script>
+  </div>
+  <script defer src="../../../../../../_assets/script.905a72eede1c8c41.js"></script>
+</body>
+</html>

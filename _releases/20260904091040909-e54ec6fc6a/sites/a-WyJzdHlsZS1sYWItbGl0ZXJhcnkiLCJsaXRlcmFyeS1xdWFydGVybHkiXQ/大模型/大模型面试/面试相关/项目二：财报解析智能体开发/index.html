@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en" data-html-server-theme="light" data-blog-layout="style-lab-literary" data-blog-layout-theme="literary-quarterly" data-blog-page-kind="article" data-blog-mobile-zoom="false" data-theme="literary" data-mode="light" data-page="article" data-blog-theme-control="style-lab" data-blog-main-loading-class="html-server-blog-main-loading" data-blog-overview-loading-class="html-server-blog-overview-loading" data-blog-folder-loading-class="html-server-blog-folder-loading" data-blog-pagination-scroll="item" data-blog-pin-progress="true" data-blog-outline-shell-selector=".html-server-style-lab-outline" data-blog-outline-auto-hide="true" data-blog-sticky-header-selector=".html-server-style-lab-header,.html-server-lab-swiss-rail" data-blog-scroll-mode="app" data-blog-document-pinning="false" data-blog-document-pinning-filter-regular="false" style="--html-server-navigation-surface-light: #eee9df;--html-server-navigation-surface-dark: #201c18">
+<head><!--html-server-dynamic:start--><meta name="html-server-dynamic-page" data-html-server-dynamic-page data-html-server-dynamic-assertion-mode="every-page" data-html-server-dynamic-cache-ttl-ms="1800000" content="a-WyJzdHlsZS1sYWItbGl0ZXJhcnkiLCJsaXRlcmFyeS1xdWFydGVybHkiXQ"><style data-html-server-dynamic-prepaint>html{--html-server-navigation-surface-active:var(--html-server-navigation-surface-light,var(--html-server-blog-background-light,#f5f7fa));background:var(--html-server-navigation-surface-active)}html[data-html-server-theme="dark"]{--html-server-navigation-surface-active:var(--html-server-navigation-surface-dark,var(--html-server-blog-background-dark,#151515))}html[data-html-server-navigation-entering],html[data-html-server-dynamic-pending]{background:var(--html-server-navigation-surface-active)!important}html[data-html-server-navigation-entering] body,html[data-html-server-dynamic-pending] body{opacity:0!important}html[data-html-server-navigation-entering]::before,html[data-html-server-dynamic-pending]::before{content:"";position:fixed;inset:0;z-index:2147483646;background:var(--html-server-navigation-surface-active);pointer-events:none}html[data-html-server-navigation-entering]::after,html[data-html-server-dynamic-pending]::after{content:"";position:fixed;top:0;left:0;z-index:2147483647;width:38%;height:2px;background:var(--interactive-accent,#8b6f47);box-shadow:0 0 10px currentColor;animation:html-server-navigation-prepaint 1s ease-in-out infinite;pointer-events:none}@keyframes html-server-navigation-prepaint{0%{transform:translateX(-110%)}100%{transform:translateX(370%)}}@media(prefers-reduced-motion:reduce){html[data-html-server-navigation-entering]::after,html[data-html-server-dynamic-pending]::after{animation:none;width:100%;opacity:.7}}</style><script data-blog-navigation-bootstrap>(function(){
+  var root=document.documentElement,key='html-server:navigation-handoff',handoff=null;
+  try{handoff=JSON.parse(sessionStorage.getItem(key)||'null');}catch(error){}
+  var target=location.pathname+location.search;
+  if(handoff&&handoff.target===target&&Date.now()-Number(handoff.createdAt||0)<5000){
+    root.setAttribute('data-html-server-navigation-entering','');
+    var reveal=function(){requestAnimationFrame(function(){requestAnimationFrame(function(){root.removeAttribute('data-html-server-navigation-entering');try{sessionStorage.removeItem(key);}catch(error){}});});};
+    if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',reveal,{once:true});else reveal();
+    setTimeout(function(){root.removeAttribute('data-html-server-navigation-entering');},5000);
+  }else if(handoff){try{sessionStorage.removeItem(key);}catch(error){}}
+})();</script><script data-html-server-dynamic-bootstrap>(()=>{
+const m={"releaseId":"20260904091040909-e54ec6fc6a","appearanceKey":"a-WyJzdHlsZS1sYWItbGl0ZXJhcnkiLCJsaXRlcmFyeS1xdWFydGVybHkiXQ","route":"大模型/大模型面试/面试相关/项目二：财报解析智能体开发/index.html","outputRootRelativeUrl":"../../../../../../../../","siteRootRelativeUrl":"../../../../","assertionPolicy":{"mode":"every-page","cacheTtlMs":1800000}},S=1,C="html-server:dynamic-appearance:v1";
+const html=document.documentElement,pending='data-html-server-dynamic-pending';if(!html)return;html.setAttribute(pending,'');
+try{Object.defineProperty(window,'__htmlServerDynamicSiteRoot',{configurable:true,value:new URL(m.siteRootRelativeUrl||m.outputRootRelativeUrl,document.baseURI||location.href).href});}catch(_){}
+const reveal=()=>html.removeAttribute(pending);
+const safe=p=>{p=String(p||'').replace(/\\/g,'/').replace(/^\/+/, '');return !!p&&!p.split('/').includes('..')&&!/^[a-z][a-z\d+.-]*:/i.test(p)};
+const routeUrl=p=>String(p).split('/').map(encodeURIComponent).join('/');
+const get=async u=>{const c=new AbortController(),t=setTimeout(()=>c.abort(),2000);try{const r=await fetch(u,{cache:'no-store',credentials:'same-origin',signal:c.signal});if(!r.ok)throw Error(String(r.status));return await r.json()}finally{clearTimeout(t)}};
+const p=m.assertionPolicy||{},mode=p.mode==='home-only'||p.mode==='cache'?p.mode:'every-page',ttl=Math.max(60000,Number(p.cacheTtlMs)||1800000);
+let storage;try{storage=localStorage}catch(_){}
+const clear=()=>{try{storage&&storage.removeItem(C)}catch(_){}};
+try{Object.defineProperty(window,'HtmlServerDynamicAppearanceCache',{configurable:true,value:{key:C,clear,refresh:()=>{clear();location.reload()}}})}catch(_){}
+const read=()=>{try{const v=JSON.parse(storage&&storage.getItem(C)||'null');return v&&v.schemaVersion===S&&typeof v.appearanceKey==='string'&&typeof v.releaseId==='string'&&safe(v.path)&&Number.isFinite(v.selectionRevision)&&Number.isFinite(v.expiresAt)?v:null}catch(_){return null}};
+const cached=read(),home=m.route==='index.html',reload=(()=>{try{return performance.getEntriesByType('navigation')[0]?.type==='reload'}catch(_){return false}})();
+const cacheValid=!!cached&&cached.releaseId===m.releaseId&&(mode!=='cache'||cached.expiresAt>Date.now()),refresh=mode==='every-page'||(mode==='home-only'&&home)||(mode==='cache'&&(!cacheValid||reload));
+(async()=>{let navigating=false;
+const rootForPage=async()=>{const fallback=window.__htmlServerStaticFallbackRoot,discovered=fallback&&typeof fallback.then==='function'?await fallback:null;return new URL(discovered&&discovered.siteRoot?discovered.siteRoot:m.outputRootRelativeUrl,document.baseURI||location.href)};
+const move=async(key,pathValue,releaseId,canonical)=>{if(key===m.appearanceKey)return false;if(!safe(m.route)||!safe(pathValue))return false;const root=await rootForPage(),encoded=routeUrl(m.route),rel=canonical?encoded:pathValue.replace(/\/+$/,'')+'/'+encoded,guard='html-server-dynamic:'+releaseId+':'+key+':'+m.route;if(sessionStorage.getItem(guard)==='1')return false;const target=new URL(rel,root);target.search=location.search;target.hash=location.hash;sessionStorage.setItem(guard,'1');navigating=true;location.replace(target.href);return true};
+try{
+if(!refresh){if(!cacheValid)return;if(cached.appearanceKey===m.appearanceKey){sessionStorage.removeItem('html-server-dynamic:'+cached.releaseId+':'+cached.appearanceKey+':'+m.route);return;}await move(cached.appearanceKey,cached.path,cached.releaseId,false);return;}
+const root=await rootForPage(),pair=await Promise.all([get(new URL('_config/data.json',root)),get(new URL('_config/release.json',root))]),cfg=pair[0],ptr=pair[1];
+if(cfg.schemaVersion!==S)return;
+if(ptr.schemaVersion!==S||(cfg.selectionRevision!==undefined&&cfg.selectionRevision!==ptr.selectionRevision)||!safe(ptr.manifest))return;
+const man=await get(new URL(ptr.manifest,root));if(man.schemaVersion!==S||man.releaseId!==ptr.releaseId||man.selectionRevision!==ptr.selectionRevision||man.primaryAppearance!==ptr.primaryAppearance||!safe(m.route))return;
+const hit=Object.entries(man.sites||{}).find(([,v])=>v.appearance&&v.appearance.layout===cfg.blogLayout&&v.appearance.theme===cfg.blogLayoutTheme);if(!hit)return;
+const key=hit[0],site=hit[1];if(!Array.isArray(site.routes)||!site.routes.includes(m.route))return;
+if(!safe(site.path))return;const record={schemaVersion:S,appearanceKey:key,layout:site.appearance.layout,theme:site.appearance.theme,path:site.path,releaseId:ptr.releaseId,selectionRevision:ptr.selectionRevision,expiresAt:mode==='home-only'?0:Date.now()+ttl};try{storage&&storage.setItem(C,JSON.stringify(record))}catch(_){}
+const guard='html-server-dynamic:'+ptr.releaseId+':'+key+':'+m.route;if(key===m.appearanceKey){sessionStorage.removeItem(guard);return;}
+await move(key,site.path,ptr.releaseId,key===man.primaryAppearance);
+}catch(_){if(mode!=='every-page'&&cacheValid&&!navigating)await move(cached.appearanceKey,cached.path,cached.releaseId,false).catch(()=>{})}finally{if(!navigating)reveal();}})();
+})();</script><!--html-server-dynamic:end-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  
+  <script defer src="../../../../_assets/script.6d4f546be5f896d5.js"></script>
+  <script data-blog-theme-bootstrap>(function(){
+  var root = document.documentElement;
+  var theme = root.getAttribute('data-html-server-theme') || 'light';
+  try {
+    var stored = localStorage.getItem('html-server-blog-theme');
+    if (stored === 'dark' || stored === 'light') theme = stored;
+  } catch (error) {}
+  root.setAttribute('data-html-server-theme', theme);
+  root.classList.toggle('theme-dark', theme === 'dark');
+  root.classList.toggle('theme-light', theme !== 'dark');
+  root.style.backgroundColor = theme === 'dark'
+    ? 'var(--html-server-navigation-surface-dark, var(--html-server-blog-background-dark, #151515))'
+    : 'var(--html-server-navigation-surface-light, var(--html-server-blog-background-light, #f5f7fa))';
+})();</script>
+  
+  <title>项目二：财报解析智能体开发 · Digital Garden</title>
+  <link rel="shortcut icon" href="//obsidian.md/favicon.ico">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Mono:wght@300;400;500&family=IBM+Plex+Sans+Condensed:wght@400;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&family=Manrope:wght@400;600;800&family=Noto+Serif+SC:wght@400;600;800&family=Playfair+Display:wght@600;800&family=Space+Grotesk:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="../../../../_assets/blog.css">
+<link rel="preload" as="script" href="../../../../_assets/blog.js" fetchpriority="high"><script>window.__htmlServerStaticSearch="../../../../_assets/meta.json";window.__htmlServerStaticSidebar="../../../../_assets/sidebar.json?v=mtmqp68z-2gf";window.__htmlServerStaticPluginOverrides=window.__htmlServerStaticPluginOverrides||{};Object.assign(window.__htmlServerStaticPluginOverrides["blog-live2d"]||(window.__htmlServerStaticPluginOverrides["blog-live2d"]={}),{"localScriptUrl":"../../../../_assets/live2d-widget/L2Dwidget.min.js","localModelUrl":"../../../../_assets/live2d-widget/assets/koharu.model.json","assetBaseUrl":"../../../../_assets/live2d-widget"});</script></head>
+<body class="theme-light html-server-blog-body" data-blog-layout="style-lab-literary" data-blog-layout-theme="literary-quarterly" data-blog-page-kind="article" data-blog-style-isolation="strict" data-theme="literary" data-mode="light" data-page="article" data-blog-theme-control="style-lab" data-blog-main-loading-class="html-server-blog-main-loading" data-blog-overview-loading-class="html-server-blog-overview-loading" data-blog-folder-loading-class="html-server-blog-folder-loading" data-blog-pagination-scroll="item" data-blog-pin-progress="true" data-blog-outline-shell-selector=".html-server-style-lab-outline" data-blog-outline-auto-hide="true" data-blog-sticky-header-selector=".html-server-style-lab-header,.html-server-lab-swiss-rail" data-blog-scroll-mode="app" data-blog-document-pinning="false" data-blog-document-pinning-filter-regular="false" style="--html-server-navigation-surface-light: #eee9df;--html-server-navigation-surface-dark: #201c18">
+  <script data-blog-theme-bootstrap>(function(){
+  var theme = document.documentElement.getAttribute('data-html-server-theme') || 'light';
+  document.body.classList.toggle('theme-dark', theme === 'dark');
+  document.body.classList.toggle('theme-light', theme !== 'dark');
+})();</script>
+  <script type="application/json" data-blog-theme-image-groups>{}</script>
+  
+  <div class="html-server-blog-app">
+    <div class="html-server-style-lab-shell html-server-style-lab-literary">
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="html-server-style-lab-header site-header"><a class="html-server-style-lab-brand brand" href="../../../../" aria-label="回到文章列表"><b class="brand-mark">刊</b><span class="brand-copy"><strong>纸上季刊</strong><small>缓慢阅读与长篇写作</small></span></a><button class="menu-toggle" type="button" data-style-lab-menu aria-expanded="false" aria-controls="style-lab-main-nav">菜单</button><nav class="html-server-style-lab-nav main-nav" id="style-lab-main-nav" aria-label="主导航"><button type="button" data-style-lab-route="/">文章</button><button type="button" data-style-lab-route="/tags/">标签</button><button type="button" data-style-lab-route="/series/">系列</button><button type="button" data-style-lab-route="/archive/">归档</button></nav><div class="html-server-style-lab-tools header-tools" aria-label="站点工具"><button class="directory-toggle" type="button" data-blog-folder-open aria-label="打开目录"><span aria-hidden="true">▤</span><span>目录</span></button><button class="search-toggle" type="button" data-blog-search-open aria-label="打开搜索"><span aria-hidden="true">⌕</span><span>搜索</span></button><button class="mode-toggle" type="button" data-blog-theme aria-label="切换明暗主题"><span aria-hidden="true">◐</span><span class="mode-label">黑色</span></button></div></header>
+  <main id="content" class="html-server-style-lab-page html-server-blog-main html-server-style-lab-main" data-blog-main>
+    <div class="article-shell"><aside class="html-server-style-lab-outline article-toc"><nav class="html-server-blog-outline" data-blog-outline aria-label="Article outline">
+  <button class="html-server-blog-outline-toggle" type="button" data-blog-outline-toggle aria-expanded="true" aria-controls="html-server-blog-outline-list"><span>本文目录</span><b aria-hidden="true"><svg viewBox="0 0 20 20" focusable="false"><path d="m4.5 7.25 5.5 5.5 5.5-5.5"/></svg></b></button>
+  <strong>本文目录</strong>
+  <ol id="html-server-blog-outline-list"><li style="--outline-depth:0"><a href="#%E8%81%8C%E8%B4%A3" data-blog-outline-link>职责</a></li><li style="--outline-depth:0"><a href="#%E8%81%8C%E8%B4%A3%E8%AF%B4%E6%98%8E" data-blog-outline-link>职责说明</a></li><li style="--outline-depth:1"><a href="#1.%20%E6%A0%B8%E5%BF%83Agent" data-blog-outline-link>1. 核心Agent</a></li><li style="--outline-depth:1"><a href="#2.%20Agent%E5%8D%8F%E4%BD%9C%E4%B8%8E%E6%95%B0%E6%8D%AE%E6%B5%81%E8%BD%AC" data-blog-outline-link>2. Agent协作与数据流转</a></li><li style="--outline-depth:1"><a href="#3.%20%E5%8F%8CLLM%E5%B9%B6%E5%8F%91%E6%9E%B6%E6%9E%84" data-blog-outline-link>3. 双LLM并发架构</a></li><li style="--outline-depth:1"><a href="#4.%20%E8%AE%A1%E7%AE%97%E5%BC%95%E6%93%8E" data-blog-outline-link>4. 计算引擎</a></li><li style="--outline-depth:1"><a href="#5.%20%E5%A6%82%E4%BD%95%E7%A1%AE%E4%BF%9D%E8%B4%A2%E6%8A%A5%E6%95%B0%E6%8D%AE%E7%9A%84%E5%87%86%E7%A1%AE%E6%80%A7" data-blog-outline-link>5. 如何确保财报数据的准确性</a></li><li style="--outline-depth:1"><a href="#6.%20%E5%A6%82%E4%BD%95%E6%8F%90%E9%AB%98PDF%E7%9A%84%E8%AF%86%E5%88%AB%E5%87%86%E7%A1%AE%E7%8E%87" data-blog-outline-link>6. 如何提高PDF的识别准确率</a></li><li style="--outline-depth:1"><a href="#7.%20%E6%8F%90%E7%A4%BA%E8%AF%8D" data-blog-outline-link>7. 提示词</a></li><li style="--outline-depth:2"><a href="#7.1.%20%E9%A3%8E%E9%99%A9%E5%88%86%E6%9E%90" data-blog-outline-link>7.1. 风险分析</a></li><li style="--outline-depth:0"><a href="#%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D" data-blog-outline-link>项目介绍</a></li></ol>
+</nav></aside><article class="html-server-blog-article article-body">
+    <nav class="html-server-blog-breadcrumb breadcrumbs" aria-label="Breadcrumb"><a href="../../../../" data-blog-folder-path="">Home</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../../folders/_/大模型/" data-blog-folder-path="大模型">大模型</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../../folders/_/大模型/_/大模型面试/" data-blog-folder-path="大模型/大模型面试">大模型面试</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../../folders/_/大模型/_/大模型面试/_/面试相关/" data-blog-folder-path="大模型/大模型面试/面试相关">面试相关</a></nav>
+    <header class="html-server-blog-article-header"><div class="post-meta"><time>Jul 3, 2026</time><span>8 分钟</span><span>最后更新 Jul 3, 2026</span></div><h2>项目二：财报解析智能体开发</h2><p class="article-deck">• 设计并实现 5 个核心 Agent（数据预处理、时序审计、指标计算、风险分析、信息收集），通过工作流编排实现多 Agent 协作与数据流转</p></header>
+    
+    <div class="markdown-reading-view html-server-blog-reading-view article-content"><div class="markdown-preview-view markdown-rendered node-insert-event is-readable-line-width allow-fold-headings allow-fold-lists" tabindex="-1"><div class="markdown-preview-sizer markdown-preview-section"><h1 data-heading="职责" dir="auto">职责</h1>
+<p dir="auto">• 设计并实现 5 个核心 Agent（数据预处理、时序审计、指标计算、风险分析、信息收集），通过工作流编排实现多 Agent 协作与数据流转  </p>
+<p dir="auto">• 设计双 LLM 并发架构，将 Markdown 报告与 JSON 结构化数据分离到独立 LLM 并发生成  </p>
+<p dir="auto">• 实现表达式驱动的财务指标计算引擎，支持多期趋势分析与环比增长率计算</p>
+<h1 data-heading="职责说明" dir="auto">职责说明</h1>
+<h2 data-heading="1. 核心Agent" dir="auto">1. 核心Agent</h2>
+<table>
+<thead>
+<tr>
+<th>Agent</th>
+<th>中文</th>
+<th>职责</th>
+<th>技术特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>IngestionAgent</strong></td>
+<td>数据预处理</td>
+<td>数据预处理：PDF 解析、LLM 清洗、科目映射</td>
+<td>ReAct Agent, 多工具协作</td>
+</tr>
+<tr>
+<td><strong>IntegrityAgent</strong></td>
+<td>时序审计</td>
+<td>时序审计：数据连续性检查、完整性验证</td>
+<td>跳过 LLM 直接计算</td>
+</tr>
+<tr>
+<td><strong>CalcAgent</strong></td>
+<td>指标计算</td>
+<td>指标加工：表达式驱动的财务指标计算</td>
+<td>eval() 安全执行, 多期趋势计算</td>
+</tr>
+<tr>
+<td><strong>AnalysisAgent</strong></td>
+<td>风险分析</td>
+<td>风险分析：生成 Markdown 报告 + JSON 数据</td>
+<td>双 LLM 并发, 智能流式输出</td>
+</tr>
+<tr>
+<td><strong>CollectionAgent</strong></td>
+<td>信息收集</td>
+<td>信息收集：多轮对话收集分析所需信息</td>
+<td>OpenAI 协议, 自动数据提取</td>
+</tr>
+</tbody>
+</table>
+<h2 data-heading="2. Agent协作与数据流转" dir="auto">2. Agent协作与数据流转</h2>
+<p dir="auto">采用 agentUniverse 的 Workflow DAG 编排，通过 YAML 文件定义节点和边，无需代码即可调整流程。核心工作流 financial_report_workflow 的 DAG 结构：</p>
+<pre style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">Start
+  │
+  ▼
+IngestionAgent (数据预处理)
+  │
+  ├──→ IntegrityAgent (时序审计) ──→ CalcAgent (指标计算) ──→┐
+  │                                                          │
+  └──────────────────────────────────────────────────────────┤
+                                                             ▼
+                                                    AnalysisAgent → End
+关键设计：IngestionAgent 的输出同时流入 IntegrityAgent 和 AnalysisAgent，实现数据并行处理。
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">每个 Agent 的输入输出通过 引用机制（reference） 连接。YAML 中定义：</p>
+<pre style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"># IngestionAgent 的输出 → CalcAgent 的输入
+input_param:
+  - name: input
+    value:
+      type: reference
+      content:
+        - agent-cea0105a   # IngestionAgent 的节点 ID
+        - output           # 引用其 output 字段
+数据在节点间自动传递，Workflow 引擎负责 DAG 拓扑排序和并行调度。
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<table>
+<thead>
+<tr>
+<th>Agent</th>
+<th>输入</th>
+<th>输出</th>
+<th>职责</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IngestionAgent</td>
+<td>user_input (base64 PDF + 元数据)</td>
+<td>gent	标准化 JSON: {task_id, company_id, company_name, data: [...]}</td>
+<td>PDF 解析 → LLM 清洗 → 科目映射 → ES 存储</td>
+</tr>
+<tr>
+<td>IntegrityAgent</td>
+<td>IngestionAgent.output</td>
+<td>{audit_result: {time_series_continuity, trend_analysis_feasibility, ...}}</td>
+<td>检查数据连续性，验证完整性</td>
+</tr>
+<tr>
+<td>CalcAgent</td>
+<td>IngestionAgent.output + IntegrityAgent.output</td>
+<td>{metrics: {...}, multi_period_metrics: {...}, trend_metrics: {...}}</td>
+<td>表达式计算 14 项财务指标 + 趋势</td>
+</tr>
+<tr>
+<td>AnalysisAgent</td>
+<td>IngestionAgent.output + CalcAgent.output + IntegrityAgent.output</td>
+<td>Markdown 报告 + 结构化 JSON</td>
+<td>双 LLM 并发生成报告和数据</td>
+</tr>
+<tr>
+<td>Collection</td>
+<td>user messages</td>
+<td>{collected_data, status, ready_for_analysis}</td>
+<td>多轮对话收集信息</td>
+</tr>
+</tbody>
+</table>
+<h2 data-heading="3. 双LLM并发架构" dir="auto">3. 双LLM并发架构</h2>
+<p dir="auto">单 LLM 同时生成报告和 JSON 容易截断，所以我把 Markdown 和 JSON 分离到两个独立 LLM 并发生成。</p>
+<table>
+<thead>
+<tr>
+<th>输出</th>
+<th>用途</th>
+<th>格式</th>
+<th>要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Markdown</td>
+<td>报告</td>
+<td>人工阅读，风险分析报告</td>
+<td>自然语言，可读性强</td>
+</tr>
+<tr>
+<td>JSON 数据</td>
+<td>前端渲染图表、风险评分展示</td>
+<td>严格结构化，必须完整</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p dir="auto">单 LLM 同时生成两部分时存在三个致命问题：<br>
+问题一：JSON 截断</p>
+<blockquote dir="auto">
+<p>LLM 生成 Markdown 报告通常需要 2000-3000 tokens，JSON 数据需要 1000-2000 tokens。当 max_tokens 限制或网络超时时，JSON 经常被截断，导致括号不匹配、字段缺失，前端无法解析。<br>
+问题二：目标相互干扰<br>
+Markdown 要求"语言流畅、逻辑清晰"，JSON 要求"结构严谨、字段完整"。一个 prompt 同时要求 LLM 做两件风格完全不同的事，生成质量互相拖累。<br>
+问题三：流式输出矛盾<br>
+Markdown 适合流式输出（用户实时看到报告生成），但 JSON 必须完整才能解析。如果 JSON 也流式输出，前端收到一半的 { "meta": { "company_name": "XX 是没法用的。</p>
+</blockquote>
+<p dir="auto">还有可以使用不同的温度，JSON格式温度可以更低。</p>
+<h2 data-heading="4. 计算引擎" dir="auto">4. 计算引擎</h2>
+<p dir="auto">表达式驱动的财务指标计算引擎，把 14 个财务指标的计算公式配置化，通过安全 eval() 执行，支持多期趋势分析和环比增长率自动计算。</p>
+<p dir="auto">CalcAgent 的职责是把原始财务科目数据转换成业务可用的财务指标。比如从资产负债表的"资产总计"和"负债合计"算出"资产负债率"。</p>
+<p dir="auto">核心是 METRIC_FORMULAS 字典 + 安全 eval()：</p>
+<pre style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">METRIC_FORMULAS = {
+    "资产负债率": "100 * BS_4000 / BS_3000",
+    "流动比率": "BS_1000 / BS_5000",
+    "速动比率": "(BS_1000 - BS_1401) / BS_5000",
+    "净资产收益率(ROE)": "100 * IS_6701 / BS_7000",
+    # ... 共 14 个指标
+}
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<pre style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">原始财务数据                     科目数值字典                    指标结果
+{                               {                              
+  "balance_sheet": [             "BS_3000": 10000,              "资产负债率": 40.0
+    {subject_code: "3000",       "BS_4000": 4000,               "流动比率": 2.0
+     field_value: 10000},        "BS_1000": 6000,               "ROE": 5.33
+    ...                          "IS_6001": 20000,               ...
+  ]                              ...
+}                                }
+     ↓                                ↓
+  _build_subject_values    →    eval("100 * BS_4000 / BS_3000")
+  (科目名→编码映射)              (安全执行公式)
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">安全 eval() 的关键：</p>
+<pre style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">result = eval(expr, {"__builtins__": {}}, local_vars)
+#                     ↑ 禁用所有内置函数    ↑ 只注入科目数值
+# 这样 LLM 或用户无法注入恶意代码，只能做数学运算
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<ol>
+<li dir="auto">"eval() 不安全怎么办？"
+<blockquote dir="auto">
+<p>通过 {"<strong>builtins</strong>": {}} 禁用了所有内置函数，变量只注入了数值类型的科目数据，无法执行文件操作或系统命令。并且公式是固定配置，不是用户输入的。</p>
+</blockquote>
+</li>
+<li dir="auto">"科目编码怎么来的？"
+<blockquote dir="auto">
+<p>有两层：一是 subject_mapping.py 定义了 57 个科目中文名到编码的映射；二是 IngestionAgent 通过 LLM 做科目映射，给每个字段打上 subject_code。CalcAgent 优先用 subject_code，没有时 fallback 到 field_name 映射。</p>
+</blockquote>
+</li>
+<li dir="auto">"如果科目数据缺失怎么办？"
+<blockquote dir="auto">
+<p>公式中任意变量为 None 或分母为 0，该指标返回 None，不会报错。CalcAgent 还会自动补算缺失的合计科目（如流动资产合计 = 各流动资产之和）。</p>
+</blockquote>
+</li>
+</ol>
+<h2 data-heading="5. 如何确保财报数据的准确性" dir="auto">5. 如何确保财报数据的准确性</h2>
+<ol>
+<li dir="auto">
+<p>科目映射双保险<br>
+科目中文名 ──→ subject_mapping.py (57个硬编码映射)<br>
+──→ IngestionAgent LLM 映射 (动态匹配)<br>
+优先使用 subject_code（如 BS_3000），没有时 fallback 到 field_name 映射。避免因科目名称中英文差异导致数据错位</p>
+</li>
+<li dir="auto">
+<p>数据格式标准化<br>
+IngestionAgent 的 _normalize_financial_data() 统一处理多种输入格式：</p>
+</li>
+</ol>
+<ul>
+<li dir="auto">识别报表类型（资产负债表/利润表/现金流量表）</li>
+<li dir="auto">统一字段结构：{flag, subject_code, field_name, field_value}</li>
+<li dir="auto">自动计算季度 period_date（_calculate_quarter_period_date()）</li>
+</ul>
+<p dir="auto">二、计算过程：防御性编程</p>
+<ol>
+<li dir="auto">安全 eval()</li>
+</ol>
+<pre style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">result = eval(expr, {"__builtins__": {}}, local_vars)
+# 禁用内置函数，只注入数值变量
+# 分母为 0 返回 None，不抛异常
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<ol start="2">
+<li dir="auto">缺失科目自动补算</li>
+</ol>
+<pre style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">_calculate_missing_totals() 自动计算缺失的合计科目：
+# 如果 BS_1000（流动资产合计）缺失
+# 自动累加：应收款项融资 + 其他应收款 + 存货 + 合同资产 + ...
+# 如果 BS_4000（负债合计）缺失
+# 自动计算：BS_5000（流动负债） + BS_6000（非流动负债）
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<ol start="3">
+<li dir="auto">空值安全处理</li>
+</ol>
+<pre style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">def _get_value(self, data, key):
+    value = data.get(key)
+    return float(value) if value is not None else None
+# 任意变量为 None → 该指标返回 None（不报错）
+# 分母为 0 → 返回 None（不抛 ZeroDivisionError）
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">三、数据验证：多层交叉校验</p>
+<ol>
+<li dir="auto">CalcAgent 内置单测</li>
+</ol>
+<pre style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">def _test_all_metrics(self):
+    # 构造已知输入，验证输出是否匹配手工计算结果
+    raw_input = {
+        "balance_sheet": [
+            {"subject_code": "3000", "field_value": 10000},  # 资产总计
+            {"subject_code": "4000", "field_value": 4000},   # 负债合计
+        ],
+        ...
+    }
+    # 预期：资产负债率 = 100 * 4000 / 10000 = 40.0
+    assert abs(metrics["资产负债率"] - 40.0) &lt; 1e-6
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<ol start="2">
+<li dir="auto">IntegrityAgent 时序审计<br>
+在指标计算之前，先验证数据完整性：</li>
+</ol>
+<ul>
+<li dir="auto">检查时间序列是否连续（季度数据是否缺失）</li>
+<li dir="auto">判断是否满足趋势分析要求（至少 2 期数据）</li>
+<li dir="auto">生成审计结论，供 AnalysisAgent 参考</li>
+</ul>
+<ol start="3">
+<li dir="auto">AnalysisAgent 交叉验证<br>
+Prompt 中要求 LLM 将指标计算结果与原始财务数据交叉验证：
+<blockquote dir="auto">
+<p>"从 indictor 中提取多期财务指标，与 data_preprocessing 中的原始数据进行交叉验证"</p>
+</blockquote>
+</li>
+</ol>
+<blockquote dir="auto">
+<p>我从四个层面保障数据准确性：</p>
+<p>源头：IngestionAgent 做数据标准化，科目映射有硬编码字典和 LLM 动态匹配双保险，统一输出 {subject_code, field_value} 格式。</p>
+<p>计算：CalcAgent 用安全 eval() 执行公式，禁用内置函数；任意变量缺失或分母为 0 返回 None 不报错；还会自动补算缺失的合计科目。</p>
+<p>验证：IntegrityAgent 在计算前先做时序审计，检查数据连续性和完整性；CalcAgent 自带单测，用已知输入验证输出是否匹配手工计算。</p>
+<p>交叉：AnalysisAgent 拿到指标后，与原始财务数据交叉验证，发现异常会在报告中标注。</p>
+</blockquote>
+<h2 data-heading="6. 如何提高PDF的识别准确率" dir="auto">6. 如何提高PDF的识别准确率</h2>
+<p dir="auto">一、当前方案：双层解析架构</p>
+<pre style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">PDF 文件
+  │
+  ├──→ 优先：外部 API (192.168.10.149 专业财报解析服务)
+  │         │
+  │         ├── 成功 → 返回结构化结果
+  │         └── 失败 ↓
+  │
+  └──→ Fallback：pdfplumber 本地解析
+            │
+            ├── 提取表格 → 转 HTML → 分类
+            └── 提取纯文本
+
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">为什么用双层？ 专业 OCR 服务识别率高但可能不可用（网络、部署），pdfplumber 免费可靠但对扫描件效果差。双层保证系统永远有输出。</p>
+<p dir="auto">二、提高准确率的具体手段</p>
+<ol>
+<li dir="auto">表格分类：双重匹配<br>
+关键词匹配 + 内容特征匹配</li>
+</ol>
+<pre style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">self.balance_sheet_keywords = ['资产负债表', 'balance sheet']
+self.balance_sheet_content_keywords = [
+    '资产总计', '负债总计', '所有者权益合计',
+    '流动资产合计', '货币资金', '应收账款', '存货'
+]
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">不只看表格标题，还看表格内容是否包含该类报表的特征科目。避免标题被截断时仍能正确分类。</p>
+<ol start="2">
+<li dir="auto">
+<p>科目名称标准化<br>
+不同企业财报的科目名称可能不同（如"应收账款" vs "应收款项"），通过 subject_mapping.py 的 57 个映射统一到标准编码：<br>
+"应收账款": "1122",<br>
+"应收票据": "1121",<br>
+"存货": "1401",<br>
+LLM 清洗阶段也会做名称归一化。</p>
+</li>
+<li dir="auto">
+<p>数据清洗：LLM 辅助<br>
+IngestionAgent 调用 LLM 对 pdfplumber 提取的原始数据做清洗：</p>
+</li>
+</ol>
+<ul>
+<li dir="auto">识别并纠正 OCR 识别错误（如 0 vs O，1 vs l）</li>
+<li dir="auto">提取嵌套在表格中的数值</li>
+<li dir="auto">从非结构化文本中抽取科目和金额</li>
+</ul>
+<ol start="4">
+<li dir="auto">合计行自动补算</li>
+</ol>
+<pre style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">CalcAgent._calculate_missing_totals() 在计算前自动补算缺失的合计科目：
+# 如果"流动资产合计"缺失
+# 自动累加：货币资金 + 应收账款 + 存货 + 预付款项 + ...
+if "BS_1000" not in subject_values:
+    current_assets = sum(各项流动资产)
+    subject_values["BS_1000"] = current_assets
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">即使 pdfplumber 提取时漏掉了合计行，指标计算仍能正常进行。</p>
+<ol start="5">
+<li dir="auto">多页表格拼接</li>
+</ol>
+<pre style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">def extract_tables_from_pdf(self, pdf_data):
+    for page_num, page in enumerate(pdf.pages):
+        page_tables = page.extract_tables()
+        # 每页的表格都提取，后续按类型归类
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">跨页表格会被拆成多个子表，分类后合并到同一报表类型下。</p>
+<p dir="auto">追问预判</p>
+<ol>
+<li dir="auto">"扫描件 PDF 怎么处理？"
+<blockquote dir="auto">
+<p>pdfplumber 对扫描件效果差，需要 OCR 服务。当前 fallback 方案依赖外部 API（192.168.10.149），如果需要纯本地处理，可以集成 Tesseract 或 PaddleOCR。</p>
+</blockquote>
+</li>
+<li dir="auto">"如果表格线不清晰怎么办？"
+<blockquote dir="auto">
+<p>pdfplumber 的 extract_tables() 依赖表格线检测。对于无边框表格，可以改用 extract_text() + 正则解析，或调用外部 OCR 服务。</p>
+</blockquote>
+</li>
+<li dir="auto">"识别错了怎么发现？"
+<blockquote dir="auto">
+<p>CalcAgent 的指标计算会暴露问题——如果科目值为 None 或异常大/小，对应的指标会返回 None 或异常值。AnalysisAgent 在报告中标注数据异常。</p>
+</blockquote>
+</li>
+</ol>
+<h2 data-heading="7. 提示词" dir="auto">7. 提示词</h2>
+<h3 data-heading="7.1. 风险分析" dir="auto">7.1. 风险分析</h3>
+<p dir="auto">角色定位：你是一位拥有 15 年经验的银行对公风险专家，专门负责企业财务风险识别和预警。<br>
+核心能力：<br>
+工作原则：<br>
+分析理念：<br>
+专业素养：<br>
+输出格式要求：<br>
+分析步骤：<br>
+指标的数据来源和要求：</p>
+<p dir="auto">还有一份JSON输出版本，给了输出示例，需要严格按格式来。</p>
+<h1 data-heading="项目介绍" dir="auto">项目介绍</h1>
+<p dir="auto">用 AI Agent 自动化完成财报分析和风险评估，实现批量排查和前瞻性预警。</p>
+<script defer src="../../../../_assets/script.fad57313884515cf.js"></script>
+</div></div></div>
+    
+    
+    
+  </article></div>
+  </main>
+  <footer class="site-footer"><span>纸上季刊</span><span>缓慢阅读与长篇写作</span></footer>
+</div><div class="html-server-blog-progress html-server-style-lab-progress is-rule" data-blog-progress data-blog-runtime-progress data-progress-state="idle" role="progressbar" aria-label="Loading page" aria-hidden="true"><span class="html-server-blog-progress-track"><i></i><b></b><em></em><em></em><em></em></span></div>
+    <div class="html-server-blog-related-modal" data-blog-related-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-related-close aria-label="Close related articles"></button>
+      <section class="html-server-blog-related-panel" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-related-title">
+        <header><div><span class="html-server-blog-kicker" data-blog-related-kind></span><h2 id="html-server-blog-related-title" data-blog-related-title></h2></div><button type="button" data-blog-related-close aria-label="Close"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <p data-blog-related-count></p>
+        <div class="html-server-blog-related-list" data-blog-related-list></div>
+      </section>
+    </div>
+    <div class="html-server-blog-search-modal" data-blog-search-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-search-close aria-label="Close search"></button>
+      <section class="html-server-blog-search-panel site-dialog" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-search-title">
+        <header class="dialog-head"><div><span class="html-server-blog-kicker">SEARCH</span><h2 id="html-server-blog-search-title">搜索文章</h2></div><button type="button" data-blog-search-close aria-label="关闭"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <label class="search-field"><span>支持标题、标签、系列、目录和属性</span><input id="search-input" type="search" data-blog-global-search placeholder="输入关键词开始搜索" autocomplete="off"></label>
+        <p class="search-summary" id="search-summary" data-blog-search-count>输入关键词开始搜索</p>
+        <div class="html-server-blog-search-results search-results dialog-list" id="search-results" data-blog-search-results></div>
+      </section>
+    </div>
+    <div class="html-server-blog-folder-modal" data-blog-folder-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-folder-close aria-label="Close folders"></button>
+      <section class="html-server-blog-folder-panel site-dialog" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-folder-title">
+        <header class="dialog-head"><div><span class="html-server-blog-kicker">VAULT</span><h2 id="html-server-blog-folder-title" data-blog-folder-title>浏览根目录</h2></div><button type="button" data-blog-folder-close aria-label="关闭"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <nav class="html-server-blog-folder-breadcrumb directory-breadcrumbs" data-blog-folder-breadcrumb aria-label="目录面包屑"></nav>
+        <p data-blog-folder-count></p>
+        <div class="html-server-blog-folder-browser directory-list dialog-list" data-blog-folder-browser></div>
+      </section>
+    </div>
+    <script type="application/json" data-blog-article-index>[]</script>
+    <script type="application/json" data-blog-folder-index data-current-folder="大模型/大模型面试/面试相关">[]</script>
+    <script type="application/json" data-blog-appearance-contract>{"version":1,"layouts":[{"id":"default","themes":["inherit"]},{"id":"next","themes":["inherit","next-classic","swiss-index","literary-quarterly","terminal-manual","quiet-journal","newspaper-daily","mint-notebook","tailwind-workspace"]},{"id":"butterfly","themes":["inherit","butterfly-colorful","brutal-broadcast","future-signal","field-notes","gallery-canvas","toy-modules","sakura-notes","clear-sky"]},{"id":"akilar","themes":["inherit","akilar-ark"]},{"id":"noionion","themes":["inherit","noionion-original"]},{"id":"kratos","themes":["inherit","kratos-rebirth"]},{"id":"leezhiy","themes":["inherit","leezhiy-next"]},{"id":"daybook","themes":["inherit","daybook-original"]},{"id":"style-lab-swiss","themes":["inherit","swiss-index"]},{"id":"style-lab-literary","themes":["inherit","literary-quarterly"]},{"id":"style-lab-terminal","themes":["inherit","terminal-manual"]},{"id":"style-lab-brutal","themes":["inherit","brutal-broadcast"]},{"id":"style-lab-quiet","themes":["inherit","quiet-journal"]},{"id":"style-lab-newspaper","themes":["inherit","newspaper-daily"]},{"id":"style-lab-future","themes":["inherit","future-signal"]},{"id":"style-lab-field","themes":["inherit","field-notes"]},{"id":"style-lab-gallery","themes":["inherit","gallery-canvas"]},{"id":"style-lab-toy","themes":["inherit","toy-modules"]},{"id":"style-lab-mint","themes":["inherit","mint-notebook"]},{"id":"style-lab-sakura","themes":["inherit","sakura-notes"]},{"id":"style-lab-sky","themes":["inherit","clear-sky"]},{"id":"style-lab-tailwind","themes":["inherit","tailwind-workspace"]}]}</script>
+  </div>
+  <script defer src="../../../../_assets/script.905a72eede1c8c41.js"></script>
+</body>
+</html>

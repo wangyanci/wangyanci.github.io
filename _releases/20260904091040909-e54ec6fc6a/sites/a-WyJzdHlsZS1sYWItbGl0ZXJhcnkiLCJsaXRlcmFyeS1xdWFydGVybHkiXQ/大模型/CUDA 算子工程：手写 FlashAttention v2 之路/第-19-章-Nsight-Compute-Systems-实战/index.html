@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en" data-html-server-theme="light" data-blog-layout="style-lab-literary" data-blog-layout-theme="literary-quarterly" data-blog-page-kind="article" data-blog-mobile-zoom="false" data-theme="literary" data-mode="light" data-page="seriesDetail" data-blog-theme-control="style-lab" data-blog-main-loading-class="html-server-blog-main-loading" data-blog-overview-loading-class="html-server-blog-overview-loading" data-blog-folder-loading-class="html-server-blog-folder-loading" data-blog-pagination-scroll="item" data-blog-pin-progress="true" data-blog-outline-shell-selector=".html-server-style-lab-outline" data-blog-outline-auto-hide="true" data-blog-sticky-header-selector=".html-server-style-lab-header,.html-server-lab-swiss-rail" data-blog-scroll-mode="app" data-blog-document-pinning="false" data-blog-document-pinning-filter-regular="false" style="--html-server-navigation-surface-light: #eee9df;--html-server-navigation-surface-dark: #201c18">
+<head><!--html-server-dynamic:start--><meta name="html-server-dynamic-page" data-html-server-dynamic-page data-html-server-dynamic-assertion-mode="every-page" data-html-server-dynamic-cache-ttl-ms="1800000" content="a-WyJzdHlsZS1sYWItbGl0ZXJhcnkiLCJsaXRlcmFyeS1xdWFydGVybHkiXQ"><style data-html-server-dynamic-prepaint>html{--html-server-navigation-surface-active:var(--html-server-navigation-surface-light,var(--html-server-blog-background-light,#f5f7fa));background:var(--html-server-navigation-surface-active)}html[data-html-server-theme="dark"]{--html-server-navigation-surface-active:var(--html-server-navigation-surface-dark,var(--html-server-blog-background-dark,#151515))}html[data-html-server-navigation-entering],html[data-html-server-dynamic-pending]{background:var(--html-server-navigation-surface-active)!important}html[data-html-server-navigation-entering] body,html[data-html-server-dynamic-pending] body{opacity:0!important}html[data-html-server-navigation-entering]::before,html[data-html-server-dynamic-pending]::before{content:"";position:fixed;inset:0;z-index:2147483646;background:var(--html-server-navigation-surface-active);pointer-events:none}html[data-html-server-navigation-entering]::after,html[data-html-server-dynamic-pending]::after{content:"";position:fixed;top:0;left:0;z-index:2147483647;width:38%;height:2px;background:var(--interactive-accent,#8b6f47);box-shadow:0 0 10px currentColor;animation:html-server-navigation-prepaint 1s ease-in-out infinite;pointer-events:none}@keyframes html-server-navigation-prepaint{0%{transform:translateX(-110%)}100%{transform:translateX(370%)}}@media(prefers-reduced-motion:reduce){html[data-html-server-navigation-entering]::after,html[data-html-server-dynamic-pending]::after{animation:none;width:100%;opacity:.7}}</style><script data-blog-navigation-bootstrap>(function(){
+  var root=document.documentElement,key='html-server:navigation-handoff',handoff=null;
+  try{handoff=JSON.parse(sessionStorage.getItem(key)||'null');}catch(error){}
+  var target=location.pathname+location.search;
+  if(handoff&&handoff.target===target&&Date.now()-Number(handoff.createdAt||0)<5000){
+    root.setAttribute('data-html-server-navigation-entering','');
+    var reveal=function(){requestAnimationFrame(function(){requestAnimationFrame(function(){root.removeAttribute('data-html-server-navigation-entering');try{sessionStorage.removeItem(key);}catch(error){}});});};
+    if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',reveal,{once:true});else reveal();
+    setTimeout(function(){root.removeAttribute('data-html-server-navigation-entering');},5000);
+  }else if(handoff){try{sessionStorage.removeItem(key);}catch(error){}}
+})();</script><script data-html-server-dynamic-bootstrap>(()=>{
+const m={"releaseId":"20260904091040909-e54ec6fc6a","appearanceKey":"a-WyJzdHlsZS1sYWItbGl0ZXJhcnkiLCJsaXRlcmFyeS1xdWFydGVybHkiXQ","route":"大模型/CUDA 算子工程：手写 FlashAttention v2 之路/第-19-章-Nsight-Compute-Systems-实战/index.html","outputRootRelativeUrl":"../../../../../../../","siteRootRelativeUrl":"../../../","assertionPolicy":{"mode":"every-page","cacheTtlMs":1800000}},S=1,C="html-server:dynamic-appearance:v1";
+const html=document.documentElement,pending='data-html-server-dynamic-pending';if(!html)return;html.setAttribute(pending,'');
+try{Object.defineProperty(window,'__htmlServerDynamicSiteRoot',{configurable:true,value:new URL(m.siteRootRelativeUrl||m.outputRootRelativeUrl,document.baseURI||location.href).href});}catch(_){}
+const reveal=()=>html.removeAttribute(pending);
+const safe=p=>{p=String(p||'').replace(/\\/g,'/').replace(/^\/+/, '');return !!p&&!p.split('/').includes('..')&&!/^[a-z][a-z\d+.-]*:/i.test(p)};
+const routeUrl=p=>String(p).split('/').map(encodeURIComponent).join('/');
+const get=async u=>{const c=new AbortController(),t=setTimeout(()=>c.abort(),2000);try{const r=await fetch(u,{cache:'no-store',credentials:'same-origin',signal:c.signal});if(!r.ok)throw Error(String(r.status));return await r.json()}finally{clearTimeout(t)}};
+const p=m.assertionPolicy||{},mode=p.mode==='home-only'||p.mode==='cache'?p.mode:'every-page',ttl=Math.max(60000,Number(p.cacheTtlMs)||1800000);
+let storage;try{storage=localStorage}catch(_){}
+const clear=()=>{try{storage&&storage.removeItem(C)}catch(_){}};
+try{Object.defineProperty(window,'HtmlServerDynamicAppearanceCache',{configurable:true,value:{key:C,clear,refresh:()=>{clear();location.reload()}}})}catch(_){}
+const read=()=>{try{const v=JSON.parse(storage&&storage.getItem(C)||'null');return v&&v.schemaVersion===S&&typeof v.appearanceKey==='string'&&typeof v.releaseId==='string'&&safe(v.path)&&Number.isFinite(v.selectionRevision)&&Number.isFinite(v.expiresAt)?v:null}catch(_){return null}};
+const cached=read(),home=m.route==='index.html',reload=(()=>{try{return performance.getEntriesByType('navigation')[0]?.type==='reload'}catch(_){return false}})();
+const cacheValid=!!cached&&cached.releaseId===m.releaseId&&(mode!=='cache'||cached.expiresAt>Date.now()),refresh=mode==='every-page'||(mode==='home-only'&&home)||(mode==='cache'&&(!cacheValid||reload));
+(async()=>{let navigating=false;
+const rootForPage=async()=>{const fallback=window.__htmlServerStaticFallbackRoot,discovered=fallback&&typeof fallback.then==='function'?await fallback:null;return new URL(discovered&&discovered.siteRoot?discovered.siteRoot:m.outputRootRelativeUrl,document.baseURI||location.href)};
+const move=async(key,pathValue,releaseId,canonical)=>{if(key===m.appearanceKey)return false;if(!safe(m.route)||!safe(pathValue))return false;const root=await rootForPage(),encoded=routeUrl(m.route),rel=canonical?encoded:pathValue.replace(/\/+$/,'')+'/'+encoded,guard='html-server-dynamic:'+releaseId+':'+key+':'+m.route;if(sessionStorage.getItem(guard)==='1')return false;const target=new URL(rel,root);target.search=location.search;target.hash=location.hash;sessionStorage.setItem(guard,'1');navigating=true;location.replace(target.href);return true};
+try{
+if(!refresh){if(!cacheValid)return;if(cached.appearanceKey===m.appearanceKey){sessionStorage.removeItem('html-server-dynamic:'+cached.releaseId+':'+cached.appearanceKey+':'+m.route);return;}await move(cached.appearanceKey,cached.path,cached.releaseId,false);return;}
+const root=await rootForPage(),pair=await Promise.all([get(new URL('_config/data.json',root)),get(new URL('_config/release.json',root))]),cfg=pair[0],ptr=pair[1];
+if(cfg.schemaVersion!==S)return;
+if(ptr.schemaVersion!==S||(cfg.selectionRevision!==undefined&&cfg.selectionRevision!==ptr.selectionRevision)||!safe(ptr.manifest))return;
+const man=await get(new URL(ptr.manifest,root));if(man.schemaVersion!==S||man.releaseId!==ptr.releaseId||man.selectionRevision!==ptr.selectionRevision||man.primaryAppearance!==ptr.primaryAppearance||!safe(m.route))return;
+const hit=Object.entries(man.sites||{}).find(([,v])=>v.appearance&&v.appearance.layout===cfg.blogLayout&&v.appearance.theme===cfg.blogLayoutTheme);if(!hit)return;
+const key=hit[0],site=hit[1];if(!Array.isArray(site.routes)||!site.routes.includes(m.route))return;
+if(!safe(site.path))return;const record={schemaVersion:S,appearanceKey:key,layout:site.appearance.layout,theme:site.appearance.theme,path:site.path,releaseId:ptr.releaseId,selectionRevision:ptr.selectionRevision,expiresAt:mode==='home-only'?0:Date.now()+ttl};try{storage&&storage.setItem(C,JSON.stringify(record))}catch(_){}
+const guard='html-server-dynamic:'+ptr.releaseId+':'+key+':'+m.route;if(key===m.appearanceKey){sessionStorage.removeItem(guard);return;}
+await move(key,site.path,ptr.releaseId,key===man.primaryAppearance);
+}catch(_){if(mode!=='every-page'&&cacheValid&&!navigating)await move(cached.appearanceKey,cached.path,cached.releaseId,false).catch(()=>{})}finally{if(!navigating)reveal();}})();
+})();</script><!--html-server-dynamic:end-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  
+  <script defer src="../../../_assets/script.6d4f546be5f896d5.js"></script>
+  <script data-blog-theme-bootstrap>(function(){
+  var root = document.documentElement;
+  var theme = root.getAttribute('data-html-server-theme') || 'light';
+  try {
+    var stored = localStorage.getItem('html-server-blog-theme');
+    if (stored === 'dark' || stored === 'light') theme = stored;
+  } catch (error) {}
+  root.setAttribute('data-html-server-theme', theme);
+  root.classList.toggle('theme-dark', theme === 'dark');
+  root.classList.toggle('theme-light', theme !== 'dark');
+  root.style.backgroundColor = theme === 'dark'
+    ? 'var(--html-server-navigation-surface-dark, var(--html-server-blog-background-dark, #151515))'
+    : 'var(--html-server-navigation-surface-light, var(--html-server-blog-background-light, #f5f7fa))';
+})();</script>
+  
+  <title>第19章：Nsight-Compute-Systems-实战 · Digital Garden</title>
+  <link rel="shortcut icon" href="//obsidian.md/favicon.ico">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Mono:wght@300;400;500&family=IBM+Plex+Sans+Condensed:wght@400;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&family=Manrope:wght@400;600;800&family=Noto+Serif+SC:wght@400;600;800&family=Playfair+Display:wght@600;800&family=Space+Grotesk:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="../../../_assets/blog.css">
+<link rel="preload" as="script" href="../../../_assets/blog.js" fetchpriority="high"><script>window.__htmlServerStaticSearch="../../../_assets/meta.json";window.__htmlServerStaticSidebar="../../../_assets/sidebar.json?v=mtmqp68z-2gf";window.__htmlServerStaticPluginOverrides=window.__htmlServerStaticPluginOverrides||{};Object.assign(window.__htmlServerStaticPluginOverrides["blog-live2d"]||(window.__htmlServerStaticPluginOverrides["blog-live2d"]={}),{"localScriptUrl":"../../../_assets/live2d-widget/L2Dwidget.min.js","localModelUrl":"../../../_assets/live2d-widget/assets/koharu.model.json","assetBaseUrl":"../../../_assets/live2d-widget"});</script></head>
+<body class="theme-light html-server-blog-body" data-blog-layout="style-lab-literary" data-blog-layout-theme="literary-quarterly" data-blog-page-kind="article" data-blog-style-isolation="strict" data-theme="literary" data-mode="light" data-page="seriesDetail" data-blog-theme-control="style-lab" data-blog-main-loading-class="html-server-blog-main-loading" data-blog-overview-loading-class="html-server-blog-overview-loading" data-blog-folder-loading-class="html-server-blog-folder-loading" data-blog-pagination-scroll="item" data-blog-pin-progress="true" data-blog-outline-shell-selector=".html-server-style-lab-outline" data-blog-outline-auto-hide="true" data-blog-sticky-header-selector=".html-server-style-lab-header,.html-server-lab-swiss-rail" data-blog-scroll-mode="app" data-blog-document-pinning="false" data-blog-document-pinning-filter-regular="false" style="--html-server-navigation-surface-light: #eee9df;--html-server-navigation-surface-dark: #201c18">
+  <script data-blog-theme-bootstrap>(function(){
+  var theme = document.documentElement.getAttribute('data-html-server-theme') || 'light';
+  document.body.classList.toggle('theme-dark', theme === 'dark');
+  document.body.classList.toggle('theme-light', theme !== 'dark');
+})();</script>
+  <script type="application/json" data-blog-theme-image-groups>{}</script>
+  
+  <div class="html-server-blog-app">
+    <div class="html-server-style-lab-shell html-server-style-lab-literary">
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="html-server-style-lab-header site-header"><a class="html-server-style-lab-brand brand" href="../../../" aria-label="回到文章列表"><b class="brand-mark">刊</b><span class="brand-copy"><strong>纸上季刊</strong><small>缓慢阅读与长篇写作</small></span></a><button class="menu-toggle" type="button" data-style-lab-menu aria-expanded="false" aria-controls="style-lab-main-nav">菜单</button><nav class="html-server-style-lab-nav main-nav" id="style-lab-main-nav" aria-label="主导航"><button type="button" data-style-lab-route="/">文章</button><button type="button" data-style-lab-route="/tags/">标签</button><button type="button" data-style-lab-route="/series/">系列</button><button type="button" data-style-lab-route="/archive/">归档</button></nav><div class="html-server-style-lab-tools header-tools" aria-label="站点工具"><button class="directory-toggle" type="button" data-blog-folder-open aria-label="打开目录"><span aria-hidden="true">▤</span><span>目录</span></button><button class="search-toggle" type="button" data-blog-search-open aria-label="打开搜索"><span aria-hidden="true">⌕</span><span>搜索</span></button><button class="mode-toggle" type="button" data-blog-theme aria-label="切换明暗主题"><span aria-hidden="true">◐</span><span class="mode-label">黑色</span></button></div></header>
+  <div id="content" class="html-server-style-lab-page series-shell" data-blog-course-page>
+    <aside class="html-server-style-lab-course series-tree" data-blog-course aria-label="Series chapters">
+  <header data-blog-course-header-toggle><a href="../../../series/">SERIES</a><h2>CUDA 算子工程：手写 FlashAttention v2 之路</h2><p>大模型/CUDA 算子工程：手写 FlashAttention v2 之路 · 24 chapters</p><button type="button" data-blog-course-toggle aria-expanded="false" aria-label="Toggle series chapters"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="m7.5 10 4.5 4 4.5-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></header>
+  <nav class="tree-root" data-blog-course-scroll-handoff><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/%E7%AC%AC-1-%E7%AB%A0-GPU-%E8%8C%83%E5%BC%8F-%E4%BB%8E-CPU-%E6%80%9D%E7%BB%B4%E5%88%B0-SIMT-%E6%80%9D%E7%BB%B4/?series=CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第1章：GPU-范式-从-CPU-思维到-SIMT-思维">第1章：GPU-范式-从-CPU-思维到-SIMT-思维</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/%E7%AC%AC-2-%E7%AB%A0-Hopper-%E5%BE%AE%E6%9E%B6%E6%9E%84%E5%9C%B0%E5%9B%BE/?series=CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第2章：Hopper-微架构地图">第2章：Hopper-微架构地图</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/%E7%AC%AC-3-%E7%AB%A0-CUDA-%E7%BC%96%E7%A8%8B%E6%A8%A1%E5%9E%8B%E4%B8%83%E5%B1%82/?series=CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第3章：CUDA-编程模型七层">第3章：CUDA-编程模型七层</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/%E7%AC%AC-4-%E7%AB%A0-%E5%86%85%E5%AD%98%E5%B1%82%E7%BA%A7%E4%B8%8E%E4%BB%A3%E4%BB%B7%E8%A1%A8/?series=CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第4章：内存层级与代价表">第4章：内存层级与代价表</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/%E7%AC%AC-5-%E7%AB%A0-Reduction-%E4%BB%8E-atomic-%E5%88%B0-cluster-reduce/?series=CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第5章：Reduction-从-atomic-到-cluster-reduce">第5章：Reduction-从-atomic-到-cluster-reduce</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/%E7%AC%AC-6-%E7%AB%A0-Softmax-%E4%B8%8E-Online-Softmax/?series=CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第6章：Softmax-与-Online-Softmax">第6章：Softmax-与-Online-Softmax</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/%E7%AC%AC-7-%E7%AB%A0-LayerNorm-%E4%B8%8E-RMSNorm/?series=CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第7章：LayerNorm-与-RMSNorm">第7章：LayerNorm-与-RMSNorm</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/%E7%AC%AC-8-%E7%AB%A0-Element-wise-%E4%B8%8E%E7%AE%97%E5%AD%90%E8%9E%8D%E5%90%88/?series=CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第8章：Element-wise-与算子融合">第8章：Element-wise-与算子融合</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/%E7%AC%AC-9-%E7%AB%A0-%E9%87%8F%E5%8C%96-Kernel-INT8-FP8-INT4/?series=CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第9章：量化-Kernel-INT8-FP8-INT4">第9章：量化-Kernel-INT8-FP8-INT4</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/%E7%AC%AC-10-%E7%AB%A0-%E6%9C%B4%E7%B4%A0-GEMM-%E4%B8%8E-Roofline-%E5%88%86%E6%9E%90/?series=CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第10章：朴素-GEMM-与-Roofline-分析">第10章：朴素-GEMM-与-Roofline-分析</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/%E7%AC%AC-11-%E7%AB%A0-Tiled-GEMM-Shared-Memory-%E4%B8%8E-Double-Buffer/?series=CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第11章：Tiled-GEMM-Shared-Memory-与-Double-Buffer">第11章：Tiled-GEMM-Shared-Memory-与-Double-Buffer</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/%E7%AC%AC-12-%E7%AB%A0-Tensor-Core-GEMM-mma.sync-%E4%B8%8E-ldmatrix/?series=CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第12章：Tensor-Core-GEMM-mma.sync-与-ldmatrix">第12章：Tensor-Core-GEMM-mma.sync-与-ldmatrix</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/%E7%AC%AC-13-%E7%AB%A0-CUTLASS-3.x-%E8%AE%BE%E8%AE%A1%E5%93%B2%E5%AD%A6/?series=CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第13章：CUTLASS-3.x-设计哲学">第13章：CUTLASS-3.x-设计哲学</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/%E7%AC%AC-14-%E7%AB%A0-Attention-%E7%9A%84%E8%AE%BF%E5%AD%98%E7%93%B6%E9%A2%88%E4%B8%8E-IO-Aware-%E6%80%9D%E6%83%B3/?series=CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第14章：Attention-的访存瓶颈与-IO-Aware-思想">第14章：Attention-的访存瓶颈与-IO-Aware-思想</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/%E7%AC%AC-15-%E7%AB%A0-FA2-%E5%89%8D%E5%90%91-Tiling-%E4%B8%8E-Online-Softmax/?series=CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第15章：FA2-前向-Tiling-与-Online-Softmax">第15章：FA2-前向-Tiling-与-Online-Softmax</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/%E7%AC%AC-16-%E7%AB%A0-FA2-%E5%8F%8D%E5%90%91-dQ-dK-dV-%E7%9A%84%E9%87%8D%E8%AE%A1%E7%AE%97/?series=CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第16章：FA2-反向-dQ-dK-dV-的重计算">第16章：FA2-反向-dQ-dK-dV-的重计算</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/%E7%AC%AC-17-%E7%AB%A0-TMA-Warp-Specialization-%E6%8A%8A-FA2-%E5%86%99%E5%88%B0-SOTA/?series=CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第17章：TMA-Warp-Specialization-把-FA2-写到-SOTA">第17章：TMA-Warp-Specialization-把-FA2-写到-SOTA</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/%E7%AC%AC-18-%E7%AB%A0-Persistent-Kernel-%E4%B8%8E-Producer-Consumer/?series=CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第18章：Persistent-Kernel-与-Producer-Consumer">第18章：Persistent-Kernel-与-Producer-Consumer</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/%E7%AC%AC-19-%E7%AB%A0-Nsight-Compute-Systems-%E5%AE%9E%E6%88%98/?series=CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF" aria-current="page"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第19章：Nsight-Compute-Systems-实战">第19章：Nsight-Compute-Systems-实战</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/%E7%AC%AC-20-%E7%AB%A0-PTX-%E4%B8%8E-SASS-%E7%BC%96%E8%AF%91%E5%99%A8%E5%88%B0%E5%BA%95%E5%B9%B2%E4%BA%86%E4%BB%80%E4%B9%88/?series=CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第20章：PTX-与-SASS-编译器到底干了什么">第20章：PTX-与-SASS-编译器到底干了什么</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/%E7%AC%AC-21-%E7%AB%A0-%E6%80%A7%E8%83%BD%E9%99%B7%E9%98%B1%E4%B8%8E%E5%8F%8D%E6%A8%A1%E5%BC%8F/?series=CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第21章：性能陷阱与反模式">第21章：性能陷阱与反模式</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/%E5%89%8D%E8%A8%80-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%88%E4%B8%80%E6%9C%AC-CUDA-%E4%B9%A6/?series=CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="前言：为什么又一本-CUDA-书">前言：为什么又一本-CUDA-书</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/INDEX/?series=CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="章节目录">章节目录</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/README/?series=CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="CUDA 算子工程：手写 FlashAttention v2 之路">CUDA 算子工程：手写 FlashAttention v2 之路</span></a></nav>
+</aside>
+    <main class="html-server-blog-main html-server-style-lab-main series-reader" data-blog-main>
+      <div class="article-shell"><aside class="html-server-style-lab-outline article-toc"><nav class="html-server-blog-outline" data-blog-outline aria-label="Article outline">
+  <button class="html-server-blog-outline-toggle" type="button" data-blog-outline-toggle aria-expanded="true" aria-controls="html-server-blog-outline-list"><span>本文目录</span><b aria-hidden="true"><svg viewBox="0 0 20 20" focusable="false"><path d="m4.5 7.25 5.5 5.5 5.5-5.5"/></svg></b></button>
+  <strong>本文目录</strong>
+  <ol id="html-server-blog-outline-list"><li style="--outline-depth:0"><a href="#%E4%B8%A4%E4%B8%AA%E5%B7%A5%E5%85%B7%E7%9A%84%E5%88%86%E5%B7%A5" data-blog-outline-link>两个工具的分工</a></li><li style="--outline-depth:0"><a href="#Nsight%20Systems%20%E5%AE%9E%E6%88%98" data-blog-outline-link>Nsight Systems 实战</a></li><li style="--outline-depth:1"><a href="#%E6%8A%93%20trace" data-blog-outline-link>抓 trace</a></li><li style="--outline-depth:1"><a href="#%E7%9C%8B%20timeline%20%E7%9A%84%E5%85%B3%E9%94%AE%E7%82%B9" data-blog-outline-link>看 timeline 的关键点</a></li><li style="--outline-depth:1"><a href="#%E5%B8%B8%E8%A7%81%20timeline%20pattern" data-blog-outline-link>常见 timeline pattern</a></li><li style="--outline-depth:0"><a href="#Nsight%20Compute%20%E5%AE%9E%E6%88%98" data-blog-outline-link>Nsight Compute 实战</a></li><li style="--outline-depth:1"><a href="#%E6%8A%93%20metrics" data-blog-outline-link>抓 metrics</a></li><li style="--outline-depth:1"><a href="#ncu%20%E7%9A%84%E5%85%B3%E9%94%AE%E6%8C%87%E6%A0%87" data-blog-outline-link>ncu 的关键指标</a></li><li style="--outline-depth:2"><a href="#A.%20SM%20utilization" data-blog-outline-link>A. SM utilization</a></li><li style="--outline-depth:2"><a href="#B.%20Compute%20%2F%20Memory%20Throughput" data-blog-outline-link>B. Compute / Memory Throughput</a></li><li style="--outline-depth:2"><a href="#C.%20Roofline%20Plot" data-blog-outline-link>C. Roofline Plot</a></li><li style="--outline-depth:2"><a href="#D.%20Stall%20Reason" data-blog-outline-link>D. Stall Reason</a></li><li style="--outline-depth:2"><a href="#E.%20Memory%20Workload%20Analysis" data-blog-outline-link>E. Memory Workload Analysis</a></li><li style="--outline-depth:2"><a href="#F.%20Source-level%20Counters" data-blog-outline-link>F. Source-level Counters</a></li><li style="--outline-depth:1"><a href="#%E4%B8%80%E4%B8%AA%E5%AE%8C%E6%95%B4%E6%A1%88%E4%BE%8B" data-blog-outline-link>一个完整案例</a></li><li style="--outline-depth:0"><a href="#%E4%B8%80%E7%BB%84%E9%AB%98%E9%A2%91%E6%8C%87%E6%A0%87%E9%80%9F%E6%9F%A5" data-blog-outline-link>一组高频指标速查</a></li><li style="--outline-depth:0"><a href="#NVTX%EF%BC%9A%E8%AE%A9%20nsys%20timeline%20%E6%9B%B4%E5%8F%AF%E8%AF%BB" data-blog-outline-link>NVTX：让 nsys timeline 更可读</a></li><li style="--outline-depth:0"><a href="#%E8%87%AA%E5%8A%A8%E5%8C%96%20profiling%EF%BC%9ACUPTI%20%E4%B8%8E%20PyTorch%20profiler" data-blog-outline-link>自动化 profiling：CUPTI 与 PyTorch profiler</a></li><li style="--outline-depth:0"><a href="#%E8%BF%99%E4%B8%80%E7%AB%A0%E7%9A%84%E5%B0%8F%E7%BB%93%E4%B8%8E%E4%B8%8B%E4%B8%80%E7%AB%A0" data-blog-outline-link>这一章的小结与下一章</a></li></ol>
+</nav></aside><article class="html-server-blog-article article-body">
+    <nav class="html-server-blog-breadcrumb breadcrumbs" aria-label="Breadcrumb"><a href="../../../" data-blog-folder-path="">Home</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../folders/_/大模型/" data-blog-folder-path="大模型">大模型</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../folders/_/大模型/_/CUDA 算子工程：手写 FlashAttention v2 之路/" data-blog-folder-path="大模型/CUDA 算子工程：手写 FlashAttention v2 之路">CUDA 算子工程：手写 FlashAttention v2 之路</a></nav>
+    <header class="html-server-blog-article-header"><div class="post-meta"><time>Jul 15, 2026</time><span>6 分钟</span><span>最后更新 Jul 15, 2026</span></div><h2>第19章：Nsight-Compute-Systems-实战</h2><p class="article-deck">CUDA 算子工程：手写 FlashAttention v2 之路</p><div class="tag-line"><button type="button" data-style-lab-href="../../../tags/gpu-computing/"># gpu-computing</button><button type="button" data-style-lab-href="../../../tags/CUDA/"># CUDA</button><button type="button" data-style-lab-href="../../../tags/%25E7%25B3%25BB%25E5%2588%2597%25E6%2595%2599%25E7%25A8%258B/"># 系列教程</button></div></header>
+    
+    <div class="markdown-reading-view html-server-blog-reading-view article-content"><div class="markdown-preview-view markdown-rendered node-insert-event is-readable-line-width allow-fold-headings allow-fold-lists" tabindex="-1"><div class="markdown-preview-sizer markdown-preview-section"><pre class="frontmatter language-yaml" style="display: none; overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-yaml is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token key atrule">created</span><span class="token punctuation">:</span> 2026<span class="token punctuation">-</span>07<span class="token punctuation">-</span>14 21<span class="token punctuation">:</span><span class="token number">43</span>
+<span class="token key atrule">updated</span><span class="token punctuation">:</span> 2026<span class="token punctuation">-</span>07<span class="token punctuation">-</span>14 21<span class="token punctuation">:</span><span class="token number">43</span>
+<span class="token key atrule">aliases</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> 第19章：Nsight<span class="token punctuation">-</span>Compute<span class="token punctuation">-</span>Systems<span class="token punctuation">-</span>实战
+<span class="token key atrule">title</span><span class="token punctuation">:</span> 第19章：Nsight<span class="token punctuation">-</span>Compute<span class="token punctuation">-</span>Systems<span class="token punctuation">-</span>实战
+<span class="token key atrule">source</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//www.yangyitao.com/books/cuda/chapters/19<span class="token punctuation">-</span>nsight
+<span class="token key atrule">tags</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> gpu<span class="token punctuation">-</span>computing
+  <span class="token punctuation">-</span> CUDA
+  <span class="token punctuation">-</span> 系列教程
+<span class="token key atrule">type</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> AI
+<span class="token key atrule">category</span><span class="token punctuation">:</span> GPU计算/CUDA
+<span class="token key atrule">cssclasses</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> gpu<span class="token punctuation">-</span>computing
+  <span class="token punctuation">-</span> series
+<span class="token key atrule">note</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">series</span><span class="token punctuation">:</span> CUDA 算子工程：手写 FlashAttention v2 之路</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout drop-shadow"><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg></div><div class="callout-title-inner">文档定位</div></div><div class="callout-content ab-note">
+<p dir="auto"><strong>AI 整理 + 学习笔记</strong>。原文出自杨艺韬《CUDA 算子工程：手写 FlashAttention v2 之路》一书。</p>
+<p dir="auto">原文链接:<a rel="noopener nofollow" class="external-link" href="https://www.yangyitao.com/books/cuda/chapters/19-nsight" target="_blank">https://www.yangyitao.com/books/cuda/chapters/19-nsight</a><br>
+系列入口:<a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/README/" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/README/" class="internal-link" target="" rel="noopener nofollow">大模型/CUDA 算子工程：手写 FlashAttention v2 之路/README</a></p>
+</div></div>
+<p dir="auto">CUDA 算子工程：手写 FlashAttention v2 之路</p>
+<p dir="auto">"Premature optimization is the root of all evil — except in CUDA, where every cycle counts and the only sin is optimizing without a profiler."<br>
+——一句被 CUDA 团队改写过的 Knuth</p>
+<h2 data-heading="两个工具的分工" dir="auto">两个工具的分工</h2>
+<p dir="auto">NVIDIA 的 profiler 有两个：</p>
+<div class="mermaid"><svg id="m4cf351633fbc4a6f" width="3073.765625" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flowchart" height="145" viewBox="0 0 3073.765625 145" role="graphics-document document" aria-roledescription="flowchart-v2"><style>#m4cf351633fbc4a6f{font-family:var(--font-mermaid);font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#m4cf351633fbc4a6f .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#m4cf351633fbc4a6f .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#m4cf351633fbc4a6f .error-icon{fill:#552222;}#m4cf351633fbc4a6f .error-text{fill:#552222;stroke:#552222;}#m4cf351633fbc4a6f .edge-thickness-normal{stroke-width:1px;}#m4cf351633fbc4a6f .edge-thickness-thick{stroke-width:3.5px;}#m4cf351633fbc4a6f .edge-pattern-solid{stroke-dasharray:0;}#m4cf351633fbc4a6f .edge-thickness-invisible{stroke-width:0;fill:none;}#m4cf351633fbc4a6f .edge-pattern-dashed{stroke-dasharray:3;}#m4cf351633fbc4a6f .edge-pattern-dotted{stroke-dasharray:2;}#m4cf351633fbc4a6f .marker{fill:#333333;stroke:#333333;}#m4cf351633fbc4a6f .marker.cross{stroke:#333333;}#m4cf351633fbc4a6f svg{font-family:var(--font-mermaid);font-size:16px;}#m4cf351633fbc4a6f p{margin:0;}#m4cf351633fbc4a6f .label{font-family:var(--font-mermaid);color:#333;}#m4cf351633fbc4a6f .cluster-label text{fill:#333;}#m4cf351633fbc4a6f .cluster-label span{color:#333;}#m4cf351633fbc4a6f .cluster-label span p{background-color:transparent;}#m4cf351633fbc4a6f .label text,#m4cf351633fbc4a6f span{fill:#333;color:#333;}#m4cf351633fbc4a6f .node rect,#m4cf351633fbc4a6f .node circle,#m4cf351633fbc4a6f .node ellipse,#m4cf351633fbc4a6f .node polygon,#m4cf351633fbc4a6f .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#m4cf351633fbc4a6f .rough-node .label text,#m4cf351633fbc4a6f .node .label text,#m4cf351633fbc4a6f .image-shape .label,#m4cf351633fbc4a6f .icon-shape .label{text-anchor:middle;}#m4cf351633fbc4a6f .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#m4cf351633fbc4a6f .rough-node .label,#m4cf351633fbc4a6f .node .label,#m4cf351633fbc4a6f .image-shape .label,#m4cf351633fbc4a6f .icon-shape .label{text-align:center;}#m4cf351633fbc4a6f .node.clickable{cursor:pointer;}#m4cf351633fbc4a6f .root .anchor path{fill:#333333!important;stroke-width:0;stroke:#333333;}#m4cf351633fbc4a6f .arrowheadPath{fill:#333333;}#m4cf351633fbc4a6f .edgePath .path{stroke:#333333;stroke-width:2.0px;}#m4cf351633fbc4a6f .flowchart-link{stroke:#333333;fill:none;}#m4cf351633fbc4a6f .edgeLabel{background-color:rgba(232,232,232, 0.8);text-align:center;}#m4cf351633fbc4a6f .edgeLabel p{background-color:rgba(232,232,232, 0.8);}#m4cf351633fbc4a6f .edgeLabel rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#m4cf351633fbc4a6f .labelBkg{background-color:rgba(232, 232, 232, 0.5);}#m4cf351633fbc4a6f .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#m4cf351633fbc4a6f .cluster text{fill:#333;}#m4cf351633fbc4a6f .cluster span{color:#333;}#m4cf351633fbc4a6f div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:var(--font-mermaid);font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#m4cf351633fbc4a6f .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#333;}#m4cf351633fbc4a6f rect.text{fill:none;stroke-width:0;}#m4cf351633fbc4a6f .icon-shape,#m4cf351633fbc4a6f .image-shape{background-color:rgba(232,232,232, 0.8);text-align:center;}#m4cf351633fbc4a6f .icon-shape p,#m4cf351633fbc4a6f .image-shape p{background-color:rgba(232,232,232, 0.8);padding:2px;}#m4cf351633fbc4a6f .icon-shape .label rect,#m4cf351633fbc4a6f .image-shape .label rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#m4cf351633fbc4a6f .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#m4cf351633fbc4a6f .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#m4cf351633fbc4a6f :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g><marker id="m4cf351633fbc4a6f-m4cf351633fbc4a6f_flowchart-v2-pointEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="m4cf351633fbc4a6f-m4cf351633fbc4a6f_flowchart-v2-pointStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="4.5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="m4cf351633fbc4a6f-m4cf351633fbc4a6f_flowchart-v2-circleEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="m4cf351633fbc4a6f-m4cf351633fbc4a6f_flowchart-v2-circleStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="m4cf351633fbc4a6f-m4cf351633fbc4a6f_flowchart-v2-crossEnd" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><marker id="m4cf351633fbc4a6f-m4cf351633fbc4a6f_flowchart-v2-crossStart" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><g class="root"><g class="clusters"></g><g class="edgePaths"><path d="M1227.906,72.5L1245.977,72.5C1264.047,72.5,1300.188,72.5,1335.661,72.5C1371.135,72.5,1405.943,72.5,1423.346,72.5L1440.75,72.5" id="L_NSYS_NCU_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_NSYS_NCU_0" data-points="W3sieCI6MTIyNy45MDYyNSwieSI6NzIuNX0seyJ4IjoxMzM2LjMyODEyNSwieSI6NzIuNX0seyJ4IjoxNDQ0Ljc1LCJ5Ijo3Mi41fV0=" marker-end="url(#m4cf351633fbc4a6f-m4cf351633fbc4a6f_flowchart-v2-pointEnd)"></path><path d="M2707.766,72.5L2728.599,72.5C2749.432,72.5,2791.099,72.5,2832.099,72.5C2873.099,72.5,2913.432,72.5,2933.599,72.5L2953.766,72.5" id="L_NCU_FIX_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_NCU_FIX_0" data-points="W3sieCI6MjcwNy43NjU2MjUsInkiOjcyLjV9LHsieCI6MjgzMi43NjU2MjUsInkiOjcyLjV9LHsieCI6Mjk1Ny43NjU2MjUsInkiOjcyLjV9XQ==" marker-end="url(#m4cf351633fbc4a6f-m4cf351633fbc4a6f_flowchart-v2-pointEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel" transform="translate(1336.328125, 72.5)"><g class="label" data-id="L_NSYS_NCU_0" transform="translate(-83.421875, -12)"><foreignObject width="166.84375" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"><p>发现『哪个 kernel 慢』</p></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(2832.765625, 72.5)"><g class="label" data-id="L_NCU_FIX_0" transform="translate(-100, -12)"><foreignObject width="200" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"><p>发现『为什么这个 kernel 慢』</p></span></div></foreignObject></g></g></g><g class="nodes"><g class="root" transform="translate(1436.75, 0)"><g class="clusters"><g class="cluster" id="NCU" data-look="classic"><rect style="" x="8" y="8" width="1263.015625" height="129"></rect><g class="cluster-label" transform="translate(568.67578125, 8)"><foreignObject width="141.6640625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5;"><span class="nodeLabel"><p>Nsight Compute · ncu</p></span></div></foreignObject></g></g></g><g class="edgePaths"></g><g class="edgeLabels"></g><g class="nodes"><g class="node default" id="flowchart-NC1-5" transform="translate(130.33203125, 72.5)"><rect class="basic label-container" style="" x="-87.33203125" y="-27" width="174.6640625" height="54"></rect><g class="label" style="" transform="translate(-57.33203125, -12)"><rect></rect><foreignObject width="114.6640625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>Kernel 内部细节</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-NC2-6" transform="translate(365.18359375, 72.5)"><rect class="basic label-container" style="" x="-97.51953125" y="-27" width="195.0390625" height="54"></rect><g class="label" style="" transform="translate(-67.51953125, -12)"><rect></rect><foreignObject width="135.0390625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>每个 SM 的 metrics</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-NC3-7" transform="translate(618.6328125, 72.5)"><rect class="basic label-container" style="" x="-105.9296875" y="-27" width="211.859375" height="54"></rect><g class="label" style="" transform="translate(-75.9296875, -12)"><rect></rect><foreignObject width="151.859375" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>Memory 层级 hit rate</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-NC4-8" transform="translate(864.90234375, 72.5)"><rect class="basic label-container" style="" x="-90.33984375" y="-27" width="180.6796875" height="54"></rect><g class="label" style="" transform="translate(-60.33984375, -12)"><rect></rect><foreignObject width="120.6796875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>Stall reason 分解</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-NC5-9" transform="translate(1120.62890625, 72.5)"><rect class="basic label-container" style="" x="-115.38671875" y="-27" width="230.7734375" height="54"></rect><g class="label" style="" transform="translate(-85.38671875, -12)"><rect></rect><foreignObject width="170.7734375" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>Source-level annotation</p></span></div></foreignObject></g></g></g></g><g class="root" transform="translate(0, 0)"><g class="clusters"><g class="cluster" id="NSYS" data-look="classic"><rect style="" x="8" y="8" width="1219.90625" height="129"></rect><g class="cluster-label" transform="translate(543.17578125, 8)"><foreignObject width="149.5546875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5;"><span class="nodeLabel"><p>Nsight Systems · nsys</p></span></div></foreignObject></g></g></g><g class="edgePaths"></g><g class="edgeLabels"></g><g class="nodes"><g class="node default" id="flowchart-NS1-0" transform="translate(129.2421875, 72.5)"><rect class="basic label-container" style="" x="-86.2421875" y="-27" width="172.484375" height="54"></rect><g class="label" style="" transform="translate(-56.2421875, -12)"><rect></rect><foreignObject width="112.484375" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>系统级 timeline</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-NS2-1" transform="translate(352.40234375, 72.5)"><rect class="basic label-container" style="" x="-86.91796875" y="-27" width="173.8359375" height="54"></rect><g class="label" style="" transform="translate(-56.91796875, -12)"><rect></rect><foreignObject width="113.8359375" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>CPU + GPU 行为</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-NS3-2" transform="translate(586.69921875, 72.5)"><rect class="basic label-container" style="" x="-97.37890625" y="-27" width="194.7578125" height="54"></rect><g class="label" style="" transform="translate(-67.37890625, -12)"><rect></rect><foreignObject width="134.7578125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>Kernel launch 顺序</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-NS4-3" transform="translate(840.6875, 72.5)"><rect class="basic label-container" style="" x="-106.609375" y="-27" width="213.21875" height="54"></rect><g class="label" style="" transform="translate(-76.609375, -12)"><rect></rect><foreignObject width="153.21875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>CUDA API call latency</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-NS5-4" transform="translate(1095.1015625, 72.5)"><rect class="basic label-container" style="" x="-97.8046875" y="-27" width="195.609375" height="54"></rect><g class="label" style="" transform="translate(-67.8046875, -12)"><rect></rect><foreignObject width="135.609375" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>NVLink / PCIe 流量</p></span></div></foreignObject></g></g></g></g><g class="node default" id="flowchart-FIX-13" transform="translate(3011.765625, 72.5)"><rect class="basic label-container" style="" x="-54" y="-27" width="108" height="54"></rect><g class="label" style="" transform="translate(-24, -12)"><rect></rect><foreignObject width="48" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>修代码</p></span></div></foreignObject></g></g></g></g></g></svg></div>
+<p dir="auto"><strong>Nsight Systems（nsys）回答"哪个慢"</strong>：拿到一段完整的 LLM 推理 trace，看哪些 kernel 占了大头、kernel 之间的 gap 是不是有问题、是否有 host 端阻塞。</p>
+<p dir="auto"><strong>Nsight Compute（ncu）回答"为什么慢"</strong>：选定一个 kernel 后，深入到 SM 内部——algorithm level 是带宽 bound 还是算力 bound？memory level 是 L1 miss 还是 L2 miss？warp 是否在等内存？</p>
+<p dir="auto">新人常见的错误是<strong>直接用 ncu 看一切</strong>。但 ncu 的 metrics 很多很复杂，没有 nsys 提供的"宏观视角"，容易陷入"调一个不是瓶颈的 kernel"的陷阱。</p>
+<h2 data-heading="Nsight Systems 实战" dir="auto">Nsight Systems 实战</h2>
+<h3 data-heading="抓 trace" dir="auto">抓 trace</h3>
+<p dir="auto">最简单的命令：</p>
+<pre class="language-text" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-text is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">nsys profile \
+    --output=my_trace \
+    --trace=cuda,nvtx,cudnn,cublas \
+    --capture-range=cudaProfilerApi \
+    python my_inference.py
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">参数说明：</p>
+<ul>
+<li dir="auto"><code class="code-styler-inline">--trace</code>：跟踪哪些层。<code class="code-styler-inline">cuda</code>是 CUDA API 和 kernel；<code class="code-styler-inline">nvtx</code>是用户自定义 marker；<code class="code-styler-inline">cudnn</code>/<code class="code-styler-inline">cublas</code>是这些库的内部细节。</li>
+<li dir="auto"><code class="code-styler-inline">--capture-range=cudaProfilerApi</code>：只在 <code class="code-styler-inline">cudaProfilerStart() / cudaProfilerStop()</code>之间录制，避免初始化阶段干扰。</li>
+</ul>
+<p dir="auto">跑完得到一个 <code class="code-styler-inline">.nsys-rep</code>文件，用 Nsight Systems GUI 打开看 timeline。</p>
+<h3 data-heading="看 timeline 的关键点" dir="auto">看 timeline 的关键点</h3>
+<p dir="auto">打开 timeline 后，关注几条 row：</p>
+<ol>
+<li dir="auto"><strong>CUDA API row</strong>：CPU 上的 CUDA API 调用（<code class="code-styler-inline">cudaMemcpyAsync</code>、<code class="code-styler-inline">cudaLaunchKernel</code>）。每个 API call 有 latency；如果某个 API 阻塞太久（比如 <code class="code-styler-inline">cudaStreamSynchronize</code>），可能是同步逻辑写错。</li>
+<li dir="auto"><strong>GPU Kernels row</strong>：实际跑在 SM 上的 kernel。看 kernel 之间有没有 gap。</li>
+<li dir="auto"><strong>NVLink / PCIe Throughput</strong>：多卡推理时跨卡通信带宽。如果跨卡是瓶颈，会看到 NVLink 带宽贴近 900 GB/s 上限。</li>
+<li dir="auto"><strong>NVTX ranges</strong>（如果你打了 marker）：用户标注的逻辑段，方便定位代码位置。</li>
+</ol>
+<h3 data-heading="常见 timeline pattern" dir="auto">常见 timeline pattern</h3>
+<p dir="auto"><strong>Pattern 1：Kernel 之间有大 gap</strong></p>
+<pre class="language-text" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-text is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">GPU:  [kernel1]                [kernel2]                  [kernel3]
+              ←   gap 5μs   ←        ←   gap 8μs   ←
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">可能原因：</p>
+<ul>
+<li dir="auto">CPU 端有同步等待（<code class="code-styler-inline">cudaDeviceSynchronize</code>）</li>
+<li dir="auto">Kernel launch 慢（参数太多、没有 graph capture）</li>
+<li dir="auto">上下游依赖（kernel2 需要 kernel1 的输出）</li>
+</ul>
+<p dir="auto">修复：把多个 kernel 用 CUDA Graph 录制，整体提交。</p>
+<p dir="auto"><strong>Pattern 2：CPU 串行调度</strong></p>
+<pre class="language-text" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-text is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">CPU: [launch1] [launch2] [launch3] [launch4] ...
+GPU: [k1][k2][k3][k4][...]
+              ↑ GPU 已经空闲, CPU 还在派发
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">可能原因：CPU 单线程串行调度太慢。</p>
+<p dir="auto">修复：用 multi-stream + cudaLaunchCooperativeKernel + Graph。</p>
+<p dir="auto"><strong>Pattern 3：内存拷贝阻塞</strong></p>
+<pre class="language-text" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-text is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">GPU:  [kernel1]            [memcpy H2D]            [kernel2]
+                                ↑ 5ms 拷贝
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">修复：用 page-locked memory + async memcpy + 用 stream 把 memcpy 和 kernel 重叠。</p>
+<h2 data-heading="Nsight Compute 实战" dir="auto">Nsight Compute 实战</h2>
+<h3 data-heading="抓 metrics" dir="auto">抓 metrics</h3>
+<p dir="auto">最常用的命令：</p>
+<pre class="language-text" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-text is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">ncu --set full \
+    --launch-skip 5 --launch-count 1 \
+    --target-processes all \
+    -o my_kernel_profile \
+    python my_inference.py
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<ul>
+<li dir="auto"><code class="code-styler-inline">--set full</code>：抓所有 metrics。可以用 <code class="code-styler-inline">--set basic</code>或 <code class="code-styler-inline">--set roofline</code>限制范围（更快）。</li>
+<li dir="auto"><code class="code-styler-inline">--launch-skip 5 --launch-count 1</code>：跳过前 5 次 launch（warm-up），抓第 6 次。</li>
+<li dir="auto"><code class="code-styler-inline">-o</code>：输出文件名。</li>
+</ul>
+<p dir="auto">运行时 ncu 会插入 instrumentation，<strong>会让 kernel 跑慢 10-100×</strong>——所以不要用 ncu 测最终性能，只用来诊断。</p>
+<h3 data-heading="ncu 的关键指标" dir="auto">ncu 的关键指标</h3>
+<p dir="auto">打开 <code class="code-styler-inline">.ncu-rep</code>文件，最重要的几个指标：</p>
+<h4 data-heading="A. SM utilization" dir="auto">A. SM utilization</h4>
+<pre class="language-text" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-text is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">SM Active                 : 96.3%   ← 几乎所有 SM 都在算
+SM Issue Active           : 78.5%   ← 78.5% 周期发出指令
+SM Issued Slot Utilization: 65.2%   ← 65.2% issue slot 在用
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">这三个数字反映 SM 的"忙碌程度"。如果 <code class="code-styler-inline">SM Active</code>低（&lt; 50%），说明某些 SM 闲置——可能是 grid 太小或负载不均。</p>
+<h4 data-heading="B. Compute / Memory Throughput" dir="auto">B. Compute / Memory Throughput</h4>
+<pre class="language-text" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-text is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">Compute (SM) Throughput   : 72.1%
+Memory Throughput          : 35.4%
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<ul>
+<li dir="auto"><code class="code-styler-inline">Compute Throughput</code>高 + <code class="code-styler-inline">Memory Throughput</code>低 → 算力 bound（已经把 Tensor Core 喂饱）。</li>
+<li dir="auto"><code class="code-styler-inline">Compute Throughput</code>低 + <code class="code-styler-inline">Memory Throughput</code>高 → 带宽 bound（HBM 是瓶颈）。</li>
+<li dir="auto">两个都高 → 接近最优。</li>
+<li dir="auto">两个都低 → kernel 有其他瓶颈（latency hiding 不够、寄存器 spill、warp stall）。</li>
+</ul>
+<h4 data-heading="C. Roofline Plot" dir="auto">C. Roofline Plot</h4>
+<p dir="auto">ncu 直接给出 Roofline 图，<strong>自动标出当前 kernel 的位置</strong>。看到一个点在带宽屋顶下方很远，说明带宽利用率低；在算力屋顶下方，说明算力利用率低。</p>
+<h4 data-heading="D. Stall Reason" dir="auto">D. Stall Reason</h4>
+<p dir="auto">ncu 把每个 warp 在执行时 stall 的原因分解成几类：</p>
+<pre class="language-text" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-text is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">Warp Stall Reasons:
+  Stall Long Scoreboard       : 23.5%   ← 等内存
+  Stall MIO Throttle          :  8.2%   ← MIO 队列满
+  Stall Wait                  : 12.1%   ← 等指令依赖
+  Stall Tex Throttle          :  3.4%
+  Stall Math Pipe Throttle    :  5.1%
+  ...
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto"><strong>Stall Long Scoreboard</strong>高 → 内存延迟没掩盖好，需要更多 warp（提高 occupancy）或更深 pipeline。<br>
+<strong>Stall Wait</strong>高 → 指令依赖链长，需要重排指令或减少串行依赖。<br>
+<strong>Stall Math Pipe Throttle</strong>高 → ALU 队列满，可能是 Tensor Core 用不上需要降低 issue rate。</p>
+<h4 data-heading="E. Memory Workload Analysis" dir="auto">E. Memory Workload Analysis</h4>
+<pre class="language-text" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-text is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">L1/TEX Hit Rate              : 92.1%
+L2 Hit Rate                  : 65.3%
+DRAM Throughput              : 78.5%
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<ul>
+<li dir="auto">L1 命中率 高 → 数据访问局部性好（典型 GEMM）。</li>
+<li dir="auto">L2 命中率 低 → 跨 block 数据复用差。</li>
+<li dir="auto">DRAM Throughput 78.5% → 已经把 HBM 用得差不多。</li>
+</ul>
+<h4 data-heading="F. Source-level Counters" dir="auto">F. Source-level Counters</h4>
+<p dir="auto">ncu 最强大的功能之一：<strong>把 PTX 指令和 CUDA 源码对应</strong>，每行看 stall 占比、access 数量。</p>
+<p dir="auto">打开 source view，能看到类似：</p>
+<pre class="language-text" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-text is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">// CUDA C source           |  Counter (Stall)
+for (int k = 0; k &lt; K; ++k) {     // 0.1%
+    sum += A[i*K + k] * B[k*N + j]; // 23.5%   ← 这一行卡了
+}                                  // 0.0%
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">可以精确定位到"哪一行代码导致最多 stall"。</p>
+<h3 data-heading="一个完整案例" dir="auto">一个完整案例</h3>
+<p dir="auto">假设一个 GEMM kernel 实测 30% 算力，预期 80%。怎么诊断？</p>
+<p dir="auto"><strong>Step 1</strong>：跑 nsys 确认 GEMM kernel 是否真的是热点。</p>
+<ul>
+<li dir="auto">时间占总推理 80%? → 是热点。</li>
+<li dir="auto">时间占 5%? → 不是瓶颈，去优化别的。</li>
+</ul>
+<p dir="auto"><strong>Step 2</strong>：跑 ncu 看 GEMM kernel 的 metrics。</p>
+<ul>
+<li dir="auto"><code class="code-styler-inline">Compute Throughput = 30%</code>, <code class="code-styler-inline">Memory Throughput = 65%</code>→ 带宽 bound。</li>
+</ul>
+<p dir="auto"><strong>Step 3</strong>：检查 Memory Workload。</p>
+<ul>
+<li dir="auto"><code class="code-styler-inline">L2 Hit Rate = 30%</code>→ L2 miss 很多。</li>
+<li dir="auto"><code class="code-styler-inline">DRAM Throughput = 88%</code>→ HBM 已经接近峰值。</li>
+</ul>
+<p dir="auto"><strong>结论</strong>：当前 kernel 已经把 HBM 带宽用到 88%，但因为 L2 miss 导致从 HBM 拉数据多于必要——可能是访存模式让 L2 cache 频繁驱逐。</p>
+<p dir="auto"><strong>修复方向</strong>：</p>
+<ul>
+<li dir="auto">调 tile 大小，让一个 SM 上的连续 tile 复用同一份 K/V data。</li>
+<li dir="auto">用 L2 Persistence API 锁定热数据。</li>
+<li dir="auto">重新排列 GEMM 的 swizzle，让 L2 cache 友好。</li>
+</ul>
+<p dir="auto">这种诊断流程在生产环境每天发生几十次。熟练掌握 ncu 是 CUDA 工程师的核心技能。</p>
+<h2 data-heading="一组高频指标速查" dir="auto">一组高频指标速查</h2>
+<p dir="auto">常用指标速查表：</p>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>意义</th>
+<th>健康值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sm__cycles_active.avg.pct_of_peak_sustained_elapsed</td>
+<td>SM 活跃率</td>
+<td>&gt; 90%</td>
+</tr>
+<tr>
+<td>sm__sass_thread_inst_executed_op_dadd_pred_on.sum</td>
+<td>FP64 加法数</td>
+<td>量化算法用量</td>
+</tr>
+<tr>
+<td>dram__throughput.avg.pct_of_peak_sustained_elapsed</td>
+<td>HBM 利用率</td>
+<td>&gt; 85%</td>
+</tr>
+<tr>
+<td>lts<strong>t_sectors_op_read_lookup_hit.sum / lts</strong>t_sectors_op_read_lookup_miss.sum</td>
+<td>L2 hit/miss</td>
+<td>hit rate &gt; 70%</td>
+</tr>
+<tr>
+<td>smsp__sass_l1tex_data_bank_conflicts_pipe_lsu_mem_shared_op_ld.sum</td>
+<td>SMEM bank conflict</td>
+<td>0 是理想</td>
+</tr>
+<tr>
+<td>sm__warps_active.avg.pct_of_peak_sustained_active</td>
+<td>Warp occupancy</td>
+<td>看具体场景</td>
+</tr>
+<tr>
+<td>smsp__sass_average_branch_targets_threads_uniform.pct</td>
+<td>分支一致性</td>
+<td>&gt; 95% (避免 divergence)</td>
+</tr>
+<tr>
+<td>sm__inst_executed_pipe_tensor.sum.per_cycle_active</td>
+<td>Tensor Core 利用</td>
+<td>接近 1 是峰值</td>
+</tr>
+</tbody>
+</table>
+<h2 data-heading="NVTX：让 nsys timeline 更可读" dir="auto">NVTX：让 nsys timeline 更可读</h2>
+<p dir="auto">默认情况下 nsys timeline 上每个 kernel 是它的真实 C++ 名字（很长很难读）。可以用 NVTX 给关键代码段打 marker：</p>
+<pre class="language-text" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-text is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">#include &lt;nvtx3/nvtx3.hpp&gt;
+
+void llm_forward(...) {
+    nvtx3::scoped_range layer_range{"layer-12"};
+
+    {
+        nvtx3::scoped_range attn_range{"attention"};
+        attention_kernel&lt;&lt;&lt;...&gt;&gt;&gt;(...);
+    }
+    {
+        nvtx3::scoped_range ffn_range{"ffn"};
+        gemm_kernel&lt;&lt;&lt;...&gt;&gt;&gt;(...);
+        gemm_kernel&lt;&lt;&lt;...&gt;&gt;&gt;(...);
+    }
+}
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">跑 nsys 时加 <code class="code-styler-inline">--trace=nvtx</code>，timeline 上会显示这些 marker——一眼看出每一层、每个子模块的耗时。</p>
+<h2 data-heading="自动化 profiling：CUPTI 与 PyTorch profiler" dir="auto">自动化 profiling：CUPTI 与 PyTorch profiler</h2>
+<p dir="auto">工业级生产环境的 profiling 通常是自动化的：</p>
+<ul>
+<li dir="auto"><strong>CUPTI</strong>(CUDA Profiling Tools Interface)：底层 C API，自定义抓 metrics。</li>
+<li dir="auto"><strong>PyTorch Profiler</strong>：PyTorch 内置的 profiler，可以一键导出 Chrome trace 格式。</li>
+<li dir="auto"><strong>NVIDIA DCGM</strong>+ <strong>Nsight Systems</strong>：服务器级监控。</li>
+</ul>
+<p dir="auto">常用工作流：</p>
+<pre class="language-text" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-text is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">import torch.profiler as profiler
+
+with profiler.profile(
+    activities=[profiler.ProfilerActivity.CPU,
+                profiler.ProfilerActivity.CUDA],
+    schedule=profiler.schedule(wait=1, warmup=1, active=3),
+    on_trace_ready=profiler.tensorboard_trace_handler('./logs'),
+    record_shapes=True,
+    with_stack=True,
+) as prof:
+    for step, batch in enumerate(loader):
+        outputs = model(batch)
+        prof.step()
+        if step &gt;= 5:
+            break
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">输出可以在 TensorBoard 里看，或者导出 Chrome trace 用 Perfetto 看。</p>
+<h2 data-heading="这一章的小结与下一章" dir="auto">这一章的小结与下一章</h2>
+<p dir="auto">性能调优的工具链是日常必备：</p>
+<ol>
+<li dir="auto"><strong>nsys 看宏观，ncu 看微观</strong>：先 nsys 定位热点 kernel，再 ncu 深入分析。</li>
+<li dir="auto"><strong>关键指标三件套</strong>：Compute Throughput、Memory Throughput、Stall Reason。</li>
+<li dir="auto"><strong>Source view 是诊断神器</strong>：把 stall 精确归到代码行。</li>
+<li dir="auto"><strong>NVTX marker 让 timeline 可读</strong>：花几分钟标记关键代码段，省几小时盯着名字猜。</li>
+<li dir="auto"><strong>生产环境用 PyTorch Profiler / DCGM</strong>：自动化抓 trace，不用每次手动跑。</li>
+</ol>
+<p dir="auto">第 20 章我们继续往低层走——讲 <strong>PTX 与 SASS</strong>。当 ncu 已经告诉你"这一行慢"，下一步可能需要看编译出的 PTX 中间代码、甚至 SASS 机器码，才能搞清楚"编译器到底干了什么"。读完第 20 章，读者掌握读 PTX/SASS 的能力，能诊断那些 ncu 都看不出来的"指令级"问题。</p>
+<p dir="auto"><strong>本章动手练习</strong>：</p>
+<ol>
+<li dir="auto">用 nsys 抓一段 LLM 推理 trace，找出占时最长的 5 个 kernel。</li>
+<li dir="auto">用 ncu 分析其中一个 kernel，记录 SM Active、Compute / Memory Throughput、Top 3 Stall Reason。</li>
+<li dir="auto">给你的 kernel 加 NVTX marker（attention、FFN、layernorm 各一个），看 timeline 区分。</li>
+</ol>
+<script defer src="../../../_assets/script.fad57313884515cf.js"></script>
+</div></div></div>
+    
+    <nav class="html-server-blog-chapter-navigation article-footer" data-blog-chapter-navigation aria-label="Tutorial chapters">
+      <a href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/%E7%AC%AC-18-%E7%AB%A0-Persistent-Kernel-%E4%B8%8E-Producer-Consumer/?series=CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF"><small>← Previous</small><strong>第18章：Persistent-Kernel-与-Producer-Consumer</strong></a>
+      <a href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/%E7%AC%AC-20-%E7%AB%A0-PTX-%E4%B8%8E-SASS-%E7%BC%96%E8%AF%91%E5%99%A8%E5%88%B0%E5%BA%95%E5%B9%B2%E4%BA%86%E4%BB%80%E4%B9%88/?series=CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF"><small>Next →</small><strong>第20章：PTX-与-SASS-编译器到底干了什么</strong></a>
+    </nav>
+    
+  </article></div>
+    </main>
+  </div>
+  <footer class="site-footer"><span>纸上季刊</span><span>缓慢阅读与长篇写作</span></footer>
+</div><div class="html-server-blog-progress html-server-style-lab-progress is-rule" data-blog-progress data-blog-runtime-progress data-progress-state="idle" role="progressbar" aria-label="Loading page" aria-hidden="true"><span class="html-server-blog-progress-track"><i></i><b></b><em></em><em></em><em></em></span></div>
+    <div class="html-server-blog-related-modal" data-blog-related-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-related-close aria-label="Close related articles"></button>
+      <section class="html-server-blog-related-panel" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-related-title">
+        <header><div><span class="html-server-blog-kicker" data-blog-related-kind></span><h2 id="html-server-blog-related-title" data-blog-related-title></h2></div><button type="button" data-blog-related-close aria-label="Close"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <p data-blog-related-count></p>
+        <div class="html-server-blog-related-list" data-blog-related-list></div>
+      </section>
+    </div>
+    <div class="html-server-blog-search-modal" data-blog-search-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-search-close aria-label="Close search"></button>
+      <section class="html-server-blog-search-panel site-dialog" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-search-title">
+        <header class="dialog-head"><div><span class="html-server-blog-kicker">SEARCH</span><h2 id="html-server-blog-search-title">搜索文章</h2></div><button type="button" data-blog-search-close aria-label="关闭"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <label class="search-field"><span>支持标题、标签、系列、目录和属性</span><input id="search-input" type="search" data-blog-global-search placeholder="输入关键词开始搜索" autocomplete="off"></label>
+        <p class="search-summary" id="search-summary" data-blog-search-count>输入关键词开始搜索</p>
+        <div class="html-server-blog-search-results search-results dialog-list" id="search-results" data-blog-search-results></div>
+      </section>
+    </div>
+    <div class="html-server-blog-folder-modal" data-blog-folder-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-folder-close aria-label="Close folders"></button>
+      <section class="html-server-blog-folder-panel site-dialog" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-folder-title">
+        <header class="dialog-head"><div><span class="html-server-blog-kicker">VAULT</span><h2 id="html-server-blog-folder-title" data-blog-folder-title>浏览根目录</h2></div><button type="button" data-blog-folder-close aria-label="关闭"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <nav class="html-server-blog-folder-breadcrumb directory-breadcrumbs" data-blog-folder-breadcrumb aria-label="目录面包屑"></nav>
+        <p data-blog-folder-count></p>
+        <div class="html-server-blog-folder-browser directory-list dialog-list" data-blog-folder-browser></div>
+      </section>
+    </div>
+    <script type="application/json" data-blog-article-index>[]</script>
+    <script type="application/json" data-blog-folder-index data-current-folder="大模型/CUDA 算子工程：手写 FlashAttention v2 之路">[]</script>
+    <script type="application/json" data-blog-appearance-contract>{"version":1,"layouts":[{"id":"default","themes":["inherit"]},{"id":"next","themes":["inherit","next-classic","swiss-index","literary-quarterly","terminal-manual","quiet-journal","newspaper-daily","mint-notebook","tailwind-workspace"]},{"id":"butterfly","themes":["inherit","butterfly-colorful","brutal-broadcast","future-signal","field-notes","gallery-canvas","toy-modules","sakura-notes","clear-sky"]},{"id":"akilar","themes":["inherit","akilar-ark"]},{"id":"noionion","themes":["inherit","noionion-original"]},{"id":"kratos","themes":["inherit","kratos-rebirth"]},{"id":"leezhiy","themes":["inherit","leezhiy-next"]},{"id":"daybook","themes":["inherit","daybook-original"]},{"id":"style-lab-swiss","themes":["inherit","swiss-index"]},{"id":"style-lab-literary","themes":["inherit","literary-quarterly"]},{"id":"style-lab-terminal","themes":["inherit","terminal-manual"]},{"id":"style-lab-brutal","themes":["inherit","brutal-broadcast"]},{"id":"style-lab-quiet","themes":["inherit","quiet-journal"]},{"id":"style-lab-newspaper","themes":["inherit","newspaper-daily"]},{"id":"style-lab-future","themes":["inherit","future-signal"]},{"id":"style-lab-field","themes":["inherit","field-notes"]},{"id":"style-lab-gallery","themes":["inherit","gallery-canvas"]},{"id":"style-lab-toy","themes":["inherit","toy-modules"]},{"id":"style-lab-mint","themes":["inherit","mint-notebook"]},{"id":"style-lab-sakura","themes":["inherit","sakura-notes"]},{"id":"style-lab-sky","themes":["inherit","clear-sky"]},{"id":"style-lab-tailwind","themes":["inherit","tailwind-workspace"]}]}</script>
+  </div>
+  <script defer src="../../../_assets/script.905a72eede1c8c41.js"></script>
+</body>
+</html>

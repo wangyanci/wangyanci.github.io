@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="en" data-html-server-theme="light" data-blog-layout="style-lab-literary" data-blog-layout-theme="literary-quarterly" data-blog-page-kind="article" data-blog-mobile-zoom="false" data-theme="literary" data-mode="light" data-page="seriesDetail" data-blog-theme-control="style-lab" data-blog-main-loading-class="html-server-blog-main-loading" data-blog-overview-loading-class="html-server-blog-overview-loading" data-blog-folder-loading-class="html-server-blog-folder-loading" data-blog-pagination-scroll="item" data-blog-pin-progress="true" data-blog-outline-shell-selector=".html-server-style-lab-outline" data-blog-outline-auto-hide="true" data-blog-sticky-header-selector=".html-server-style-lab-header,.html-server-lab-swiss-rail" data-blog-scroll-mode="app" data-blog-document-pinning="false" data-blog-document-pinning-filter-regular="false" style="--html-server-navigation-surface-light: #eee9df;--html-server-navigation-surface-dark: #201c18">
+<head><!--html-server-dynamic:start--><meta name="html-server-dynamic-page" data-html-server-dynamic-page data-html-server-dynamic-assertion-mode="every-page" data-html-server-dynamic-cache-ttl-ms="1800000" content="a-WyJzdHlsZS1sYWItbGl0ZXJhcnkiLCJsaXRlcmFyeS1xdWFydGVybHkiXQ"><style data-html-server-dynamic-prepaint>html{--html-server-navigation-surface-active:var(--html-server-navigation-surface-light,var(--html-server-blog-background-light,#f5f7fa));background:var(--html-server-navigation-surface-active)}html[data-html-server-theme="dark"]{--html-server-navigation-surface-active:var(--html-server-navigation-surface-dark,var(--html-server-blog-background-dark,#151515))}html[data-html-server-navigation-entering],html[data-html-server-dynamic-pending]{background:var(--html-server-navigation-surface-active)!important}html[data-html-server-navigation-entering] body,html[data-html-server-dynamic-pending] body{opacity:0!important}html[data-html-server-navigation-entering]::before,html[data-html-server-dynamic-pending]::before{content:"";position:fixed;inset:0;z-index:2147483646;background:var(--html-server-navigation-surface-active);pointer-events:none}html[data-html-server-navigation-entering]::after,html[data-html-server-dynamic-pending]::after{content:"";position:fixed;top:0;left:0;z-index:2147483647;width:38%;height:2px;background:var(--interactive-accent,#8b6f47);box-shadow:0 0 10px currentColor;animation:html-server-navigation-prepaint 1s ease-in-out infinite;pointer-events:none}@keyframes html-server-navigation-prepaint{0%{transform:translateX(-110%)}100%{transform:translateX(370%)}}@media(prefers-reduced-motion:reduce){html[data-html-server-navigation-entering]::after,html[data-html-server-dynamic-pending]::after{animation:none;width:100%;opacity:.7}}</style><script data-blog-navigation-bootstrap>(function(){
+  var root=document.documentElement,key='html-server:navigation-handoff',handoff=null;
+  try{handoff=JSON.parse(sessionStorage.getItem(key)||'null');}catch(error){}
+  var target=location.pathname+location.search;
+  if(handoff&&handoff.target===target&&Date.now()-Number(handoff.createdAt||0)<5000){
+    root.setAttribute('data-html-server-navigation-entering','');
+    var reveal=function(){requestAnimationFrame(function(){requestAnimationFrame(function(){root.removeAttribute('data-html-server-navigation-entering');try{sessionStorage.removeItem(key);}catch(error){}});});};
+    if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',reveal,{once:true});else reveal();
+    setTimeout(function(){root.removeAttribute('data-html-server-navigation-entering');},5000);
+  }else if(handoff){try{sessionStorage.removeItem(key);}catch(error){}}
+})();</script><script data-html-server-dynamic-bootstrap>(()=>{
+const m={"releaseId":"20260904091040909-e54ec6fc6a","appearanceKey":"a-WyJzdHlsZS1sYWItbGl0ZXJhcnkiLCJsaXRlcmFyeS1xdWFydGVybHkiXQ","route":"大模型/vLLM 推理内核深度解析/前言-走进-LLM-推理引擎的心脏/index.html","outputRootRelativeUrl":"../../../../../../../","siteRootRelativeUrl":"../../../","assertionPolicy":{"mode":"every-page","cacheTtlMs":1800000}},S=1,C="html-server:dynamic-appearance:v1";
+const html=document.documentElement,pending='data-html-server-dynamic-pending';if(!html)return;html.setAttribute(pending,'');
+try{Object.defineProperty(window,'__htmlServerDynamicSiteRoot',{configurable:true,value:new URL(m.siteRootRelativeUrl||m.outputRootRelativeUrl,document.baseURI||location.href).href});}catch(_){}
+const reveal=()=>html.removeAttribute(pending);
+const safe=p=>{p=String(p||'').replace(/\\/g,'/').replace(/^\/+/, '');return !!p&&!p.split('/').includes('..')&&!/^[a-z][a-z\d+.-]*:/i.test(p)};
+const routeUrl=p=>String(p).split('/').map(encodeURIComponent).join('/');
+const get=async u=>{const c=new AbortController(),t=setTimeout(()=>c.abort(),2000);try{const r=await fetch(u,{cache:'no-store',credentials:'same-origin',signal:c.signal});if(!r.ok)throw Error(String(r.status));return await r.json()}finally{clearTimeout(t)}};
+const p=m.assertionPolicy||{},mode=p.mode==='home-only'||p.mode==='cache'?p.mode:'every-page',ttl=Math.max(60000,Number(p.cacheTtlMs)||1800000);
+let storage;try{storage=localStorage}catch(_){}
+const clear=()=>{try{storage&&storage.removeItem(C)}catch(_){}};
+try{Object.defineProperty(window,'HtmlServerDynamicAppearanceCache',{configurable:true,value:{key:C,clear,refresh:()=>{clear();location.reload()}}})}catch(_){}
+const read=()=>{try{const v=JSON.parse(storage&&storage.getItem(C)||'null');return v&&v.schemaVersion===S&&typeof v.appearanceKey==='string'&&typeof v.releaseId==='string'&&safe(v.path)&&Number.isFinite(v.selectionRevision)&&Number.isFinite(v.expiresAt)?v:null}catch(_){return null}};
+const cached=read(),home=m.route==='index.html',reload=(()=>{try{return performance.getEntriesByType('navigation')[0]?.type==='reload'}catch(_){return false}})();
+const cacheValid=!!cached&&cached.releaseId===m.releaseId&&(mode!=='cache'||cached.expiresAt>Date.now()),refresh=mode==='every-page'||(mode==='home-only'&&home)||(mode==='cache'&&(!cacheValid||reload));
+(async()=>{let navigating=false;
+const rootForPage=async()=>{const fallback=window.__htmlServerStaticFallbackRoot,discovered=fallback&&typeof fallback.then==='function'?await fallback:null;return new URL(discovered&&discovered.siteRoot?discovered.siteRoot:m.outputRootRelativeUrl,document.baseURI||location.href)};
+const move=async(key,pathValue,releaseId,canonical)=>{if(key===m.appearanceKey)return false;if(!safe(m.route)||!safe(pathValue))return false;const root=await rootForPage(),encoded=routeUrl(m.route),rel=canonical?encoded:pathValue.replace(/\/+$/,'')+'/'+encoded,guard='html-server-dynamic:'+releaseId+':'+key+':'+m.route;if(sessionStorage.getItem(guard)==='1')return false;const target=new URL(rel,root);target.search=location.search;target.hash=location.hash;sessionStorage.setItem(guard,'1');navigating=true;location.replace(target.href);return true};
+try{
+if(!refresh){if(!cacheValid)return;if(cached.appearanceKey===m.appearanceKey){sessionStorage.removeItem('html-server-dynamic:'+cached.releaseId+':'+cached.appearanceKey+':'+m.route);return;}await move(cached.appearanceKey,cached.path,cached.releaseId,false);return;}
+const root=await rootForPage(),pair=await Promise.all([get(new URL('_config/data.json',root)),get(new URL('_config/release.json',root))]),cfg=pair[0],ptr=pair[1];
+if(cfg.schemaVersion!==S)return;
+if(ptr.schemaVersion!==S||(cfg.selectionRevision!==undefined&&cfg.selectionRevision!==ptr.selectionRevision)||!safe(ptr.manifest))return;
+const man=await get(new URL(ptr.manifest,root));if(man.schemaVersion!==S||man.releaseId!==ptr.releaseId||man.selectionRevision!==ptr.selectionRevision||man.primaryAppearance!==ptr.primaryAppearance||!safe(m.route))return;
+const hit=Object.entries(man.sites||{}).find(([,v])=>v.appearance&&v.appearance.layout===cfg.blogLayout&&v.appearance.theme===cfg.blogLayoutTheme);if(!hit)return;
+const key=hit[0],site=hit[1];if(!Array.isArray(site.routes)||!site.routes.includes(m.route))return;
+if(!safe(site.path))return;const record={schemaVersion:S,appearanceKey:key,layout:site.appearance.layout,theme:site.appearance.theme,path:site.path,releaseId:ptr.releaseId,selectionRevision:ptr.selectionRevision,expiresAt:mode==='home-only'?0:Date.now()+ttl};try{storage&&storage.setItem(C,JSON.stringify(record))}catch(_){}
+const guard='html-server-dynamic:'+ptr.releaseId+':'+key+':'+m.route;if(key===m.appearanceKey){sessionStorage.removeItem(guard);return;}
+await move(key,site.path,ptr.releaseId,key===man.primaryAppearance);
+}catch(_){if(mode!=='every-page'&&cacheValid&&!navigating)await move(cached.appearanceKey,cached.path,cached.releaseId,false).catch(()=>{})}finally{if(!navigating)reveal();}})();
+})();</script><!--html-server-dynamic:end-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  
+  <script defer src="../../../_assets/script.6d4f546be5f896d5.js"></script>
+  <script data-blog-theme-bootstrap>(function(){
+  var root = document.documentElement;
+  var theme = root.getAttribute('data-html-server-theme') || 'light';
+  try {
+    var stored = localStorage.getItem('html-server-blog-theme');
+    if (stored === 'dark' || stored === 'light') theme = stored;
+  } catch (error) {}
+  root.setAttribute('data-html-server-theme', theme);
+  root.classList.toggle('theme-dark', theme === 'dark');
+  root.classList.toggle('theme-light', theme !== 'dark');
+  root.style.backgroundColor = theme === 'dark'
+    ? 'var(--html-server-navigation-surface-dark, var(--html-server-blog-background-dark, #151515))'
+    : 'var(--html-server-navigation-surface-light, var(--html-server-blog-background-light, #f5f7fa))';
+})();</script>
+  
+  <title>前言：走进-LLM-推理引擎的心脏 · Digital Garden</title>
+  <link rel="shortcut icon" href="//obsidian.md/favicon.ico">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Mono:wght@300;400;500&family=IBM+Plex+Sans+Condensed:wght@400;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&family=Manrope:wght@400;600;800&family=Noto+Serif+SC:wght@400;600;800&family=Playfair+Display:wght@600;800&family=Space+Grotesk:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="../../../_assets/blog.css">
+<link rel="preload" as="script" href="../../../_assets/blog.js" fetchpriority="high"><script>window.__htmlServerStaticSearch="../../../_assets/meta.json";window.__htmlServerStaticSidebar="../../../_assets/sidebar.json?v=mtmqp68z-2gf";window.__htmlServerStaticPluginOverrides=window.__htmlServerStaticPluginOverrides||{};Object.assign(window.__htmlServerStaticPluginOverrides["blog-live2d"]||(window.__htmlServerStaticPluginOverrides["blog-live2d"]={}),{"localScriptUrl":"../../../_assets/live2d-widget/L2Dwidget.min.js","localModelUrl":"../../../_assets/live2d-widget/assets/koharu.model.json","assetBaseUrl":"../../../_assets/live2d-widget"});</script></head>
+<body class="theme-light html-server-blog-body" data-blog-layout="style-lab-literary" data-blog-layout-theme="literary-quarterly" data-blog-page-kind="article" data-blog-style-isolation="strict" data-theme="literary" data-mode="light" data-page="seriesDetail" data-blog-theme-control="style-lab" data-blog-main-loading-class="html-server-blog-main-loading" data-blog-overview-loading-class="html-server-blog-overview-loading" data-blog-folder-loading-class="html-server-blog-folder-loading" data-blog-pagination-scroll="item" data-blog-pin-progress="true" data-blog-outline-shell-selector=".html-server-style-lab-outline" data-blog-outline-auto-hide="true" data-blog-sticky-header-selector=".html-server-style-lab-header,.html-server-lab-swiss-rail" data-blog-scroll-mode="app" data-blog-document-pinning="false" data-blog-document-pinning-filter-regular="false" style="--html-server-navigation-surface-light: #eee9df;--html-server-navigation-surface-dark: #201c18">
+  <script data-blog-theme-bootstrap>(function(){
+  var theme = document.documentElement.getAttribute('data-html-server-theme') || 'light';
+  document.body.classList.toggle('theme-dark', theme === 'dark');
+  document.body.classList.toggle('theme-light', theme !== 'dark');
+})();</script>
+  <script type="application/json" data-blog-theme-image-groups>{}</script>
+  
+  <div class="html-server-blog-app">
+    <div class="html-server-style-lab-shell html-server-style-lab-literary">
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="html-server-style-lab-header site-header"><a class="html-server-style-lab-brand brand" href="../../../" aria-label="回到文章列表"><b class="brand-mark">刊</b><span class="brand-copy"><strong>纸上季刊</strong><small>缓慢阅读与长篇写作</small></span></a><button class="menu-toggle" type="button" data-style-lab-menu aria-expanded="false" aria-controls="style-lab-main-nav">菜单</button><nav class="html-server-style-lab-nav main-nav" id="style-lab-main-nav" aria-label="主导航"><button type="button" data-style-lab-route="/">文章</button><button type="button" data-style-lab-route="/tags/">标签</button><button type="button" data-style-lab-route="/series/">系列</button><button type="button" data-style-lab-route="/archive/">归档</button></nav><div class="html-server-style-lab-tools header-tools" aria-label="站点工具"><button class="directory-toggle" type="button" data-blog-folder-open aria-label="打开目录"><span aria-hidden="true">▤</span><span>目录</span></button><button class="search-toggle" type="button" data-blog-search-open aria-label="打开搜索"><span aria-hidden="true">⌕</span><span>搜索</span></button><button class="mode-toggle" type="button" data-blog-theme aria-label="切换明暗主题"><span aria-hidden="true">◐</span><span class="mode-label">黑色</span></button></div></header>
+  <div id="content" class="html-server-style-lab-page series-shell" data-blog-course-page>
+    <aside class="html-server-style-lab-course series-tree" data-blog-course aria-label="Series chapters">
+  <header data-blog-course-header-toggle><a href="../../../series/">SERIES</a><h2>vLLM 推理内核深度解析</h2><p>大模型/vLLM 推理内核深度解析 · 21 chapters</p><button type="button" data-blog-course-toggle aria-expanded="false" aria-label="Toggle series chapters"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="m7.5 10 4.5 4 4.5-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></header>
+  <nav class="tree-root" data-blog-course-scroll-handoff><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/%E7%AC%AC1%E7%AB%A0-%E6%9E%B6%E6%9E%84%E6%80%BB%E8%A7%88-%E4%BB%8E%E4%B8%80%E6%9D%A1%E8%AF%B7%E6%B1%82%E8%AF%BB%E6%87%82%E6%95%B4%E4%B8%AA-vLLM/?series=vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第1章：架构总览-从一条请求读懂整个-vLLM">第1章：架构总览-从一条请求读懂整个-vLLM</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/%E7%AC%AC2%E7%AB%A0-EngineCore-%E5%BC%95%E6%93%8E%E7%9A%84%E5%BF%83%E8%84%8F/?series=vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第2章：EngineCore-引擎的心脏">第2章：EngineCore-引擎的心脏</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/%E7%AC%AC3%E7%AB%A0-%E8%B0%83%E5%BA%A6%E5%99%A8-Token-%E7%9A%84%E4%BA%A4%E9%80%9A%E6%8C%87%E6%8C%A5/?series=vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第3章：调度器-Token-的交通指挥">第3章：调度器-Token-的交通指挥</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/%E7%AC%AC4%E7%AB%A0-PagedAttention-%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98%E7%9A%84%E5%90%AF%E7%A4%BA/?series=vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第4章：PagedAttention-虚拟内存的启示">第4章：PagedAttention-虚拟内存的启示</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/%E7%AC%AC5%E7%AB%A0-KV-Cache-%E7%AE%A1%E7%90%86-%E5%AF%B8%E5%9C%9F%E5%AF%B8%E9%87%91%E7%9A%84%E6%98%BE%E5%AD%98/?series=vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第5章：KV-Cache-管理-寸土寸金的显存">第5章：KV-Cache-管理-寸土寸金的显存</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/%E7%AC%AC6%E7%AB%A0-Worker-%E4%B8%8E-Executor-GPU-%E5%86%9B%E5%9B%A2/?series=vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第6章：Worker-与-Executor-GPU-军团">第6章：Worker-与-Executor-GPU-军团</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/%E7%AC%AC7%E7%AB%A0-%E6%A8%A1%E5%9E%8B%E5%8A%A0%E8%BD%BD%E4%B8%8E%E6%9D%83%E9%87%8D%E7%AE%A1%E7%90%86-%E4%BB%8E%E7%A3%81%E7%9B%98%E5%88%B0-GPU-%E7%9A%84-140-GB-%E6%97%85%E7%A8%8B/?series=vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第7章：模型加载与权重管理-从磁盘到-GPU-的-140-GB-旅程">第7章：模型加载与权重管理-从磁盘到-GPU-的-140-GB-旅程</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/%E7%AC%AC8%E7%AB%A0-ModelRunner-%E4%BB%8E-SchedulerOutput-%E5%88%B0-GPU-Kernel/?series=vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第8章：ModelRunner-从-SchedulerOutput-到-GPU-Kernel">第8章：ModelRunner-从-SchedulerOutput-到-GPU-Kernel</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/%E7%AC%AC9%E7%AB%A0-%E9%87%87%E6%A0%B7%E4%B8%8E%E8%BE%93%E5%87%BA%E5%A4%84%E7%90%86-%E4%BB%8E-Logits-%E5%88%B0-Token/?series=vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第9章：采样与输出处理-从-Logits-到-Token">第9章：采样与输出处理-从-Logits-到-Token</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/%E7%AC%AC10%E7%AB%A0-%E5%89%8D%E7%BC%80%E7%BC%93%E5%AD%98-%E9%BB%98%E8%AE%A4%E5%BC%80%E5%90%AF%E7%9A%84%E9%9B%B6%E5%BC%80%E9%94%80%E5%8A%A0%E9%80%9F/?series=vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第10章：前缀缓存-默认开启的零开销加速">第10章：前缀缓存-默认开启的零开销加速</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/%E7%AC%AC11%E7%AB%A0-%E5%88%86%E5%9D%97%E9%A2%84%E5%A1%AB%E5%85%85%E4%B8%8E%E6%B7%B7%E5%90%88%E6%89%B9%E5%A4%84%E7%90%86/?series=vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第11章：分块预填充与混合批处理">第11章：分块预填充与混合批处理</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/%E7%AC%AC12%E7%AB%A0-%E6%8A%95%E6%9C%BA%E8%A7%A3%E7%A0%81-%E4%BB%A5%E5%B0%8F%E5%8D%9A%E5%A4%A7/?series=vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第12章：投机解码-以小博大">第12章：投机解码-以小博大</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/%E7%AC%AC13%E7%AB%A0-%E9%87%8F%E5%8C%96-%E7%B2%BE%E5%BA%A6%E4%B8%8E%E9%80%9F%E5%BA%A6%E7%9A%84%E5%B7%A5%E7%A8%8B%E5%B9%B3%E8%A1%A1/?series=vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第13章：量化-精度与速度的工程平衡">第13章：量化-精度与速度的工程平衡</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/%E7%AC%AC14%E7%AB%A0-%E5%88%86%E5%B8%83%E5%BC%8F%E5%B9%B6%E8%A1%8C-TP-PP-EP-DP/?series=vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第14章：分布式并行-TP-PP-EP-DP">第14章：分布式并行-TP-PP-EP-DP</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/%E7%AC%AC15%E7%AB%A0-%E5%A4%9A%E6%A8%A1%E6%80%81%E6%8E%A8%E7%90%86-%E5%9B%BE%E5%83%8F-%E8%A7%86%E9%A2%91%E4%B8%8E%E9%9F%B3%E9%A2%91%E7%9A%84%E4%B8%80%E7%AD%89%E5%85%AC%E6%B0%91%E5%8C%96/?series=vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第15章：多模态推理-图像-视频与音频的一等公民化">第15章：多模态推理-图像-视频与音频的一等公民化</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/%E7%AC%AC16%E7%AB%A0-LoRA-%E9%80%82%E9%85%8D%E5%99%A8%E7%83%AD%E5%88%87%E6%8D%A2-%E4%B8%80%E4%B8%AA%E5%BC%95%E6%93%8E%E6%89%BF%E8%BD%BD%E5%A4%9A%E4%B8%AA%E5%BE%AE%E8%B0%83/?series=vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第16章：LoRA-适配器热切换-一个引擎承载多个微调">第16章：LoRA-适配器热切换-一个引擎承载多个微调</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/%E7%AC%AC17%E7%AB%A0-API-%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8E%E7%94%9F%E4%BA%A7%E9%83%A8%E7%BD%B2/?series=vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第17章：API-服务器与生产部署">第17章：API-服务器与生产部署</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/%E7%AC%AC18%E7%AB%A0-%E8%AE%BE%E8%AE%A1%E5%93%B2%E5%AD%A6%E4%B8%8E%E6%9E%B6%E6%9E%84%E6%99%BA%E6%85%A7/?series=vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第18章：设计哲学与架构智慧">第18章：设计哲学与架构智慧</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/%E5%89%8D%E8%A8%80-%E8%B5%B0%E8%BF%9B-LLM-%E6%8E%A8%E7%90%86%E5%BC%95%E6%93%8E%E7%9A%84%E5%BF%83%E8%84%8F/?series=vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90" aria-current="page"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="前言：走进-LLM-推理引擎的心脏">前言：走进-LLM-推理引擎的心脏</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/INDEX/?series=vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="章节目录">章节目录</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/README/?series=vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="vLLM 推理内核深度解析">vLLM 推理内核深度解析</span></a></nav>
+</aside>
+    <main class="html-server-blog-main html-server-style-lab-main series-reader" data-blog-main>
+      <div class="article-shell"><aside class="html-server-style-lab-outline article-toc"><nav class="html-server-blog-outline" data-blog-outline aria-label="Article outline">
+  <button class="html-server-blog-outline-toggle" type="button" data-blog-outline-toggle aria-expanded="true" aria-controls="html-server-blog-outline-list"><span>本文目录</span><b aria-hidden="true"><svg viewBox="0 0 20 20" focusable="false"><path d="m4.5 7.25 5.5 5.5 5.5-5.5"/></svg></b></button>
+  <strong>本文目录</strong>
+  <ol id="html-server-blog-outline-list"><li style="--outline-depth:0"><a href="#%E4%B8%80%E5%88%87%E7%9A%84%E8%B5%B7%E7%82%B9%EF%BC%9A%E4%BC%AF%E5%85%8B%E5%88%A9%E5%AE%9E%E9%AA%8C%E5%AE%A4%E9%82%A3%E6%9D%A1%2040%25%20%E7%9A%84%E5%88%A9%E7%94%A8%E7%8E%87%E6%9B%B2%E7%BA%BF" data-blog-outline-link>一切的起点：伯克利实验室那条 40% 的利用率曲线</a></li><li style="--outline-depth:1"><a href="#%E4%BB%8E%20OS%20%E5%88%B0%20GPU%EF%BC%9A%E4%B8%80%E6%AC%A1%E8%B7%A8%E9%A2%86%E5%9F%9F%E7%9A%84%E6%80%9D%E6%83%B3%E8%BF%81%E7%A7%BB" data-blog-outline-link>从 OS 到 GPU：一次跨领域的思想迁移</a></li><li style="--outline-depth:1"><a href="#%E4%B8%80%E4%B8%AA%E6%95%B0%E5%AD%97%E8%AF%B4%E6%98%8E%E4%B8%80%E5%88%87" data-blog-outline-link>一个数字说明一切</a></li><li style="--outline-depth:0"><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%88%E4%B8%80%E6%9C%AC%20vLLM%20%E4%B9%A6" data-blog-outline-link>为什么又一本 vLLM 书</a></li><li style="--outline-depth:1"><a href="#%E5%B7%A5%E7%A8%8B%E5%B8%88%E7%9C%9F%E6%AD%A3%E6%83%B3%E7%9F%A5%E9%81%93%E7%9A%84" data-blog-outline-link>工程师真正想知道的</a></li><li style="--outline-depth:1"><a href="#%E6%9C%AC%E4%B9%A6%E7%9A%84%E5%AE%9A%E4%BD%8D" data-blog-outline-link>本书的定位</a></li><li style="--outline-depth:0"><a href="#%E6%9C%AC%E4%B9%A6%E5%9F%BA%E4%BA%8E%E7%9A%84%E6%BA%90%E7%A0%81%E7%89%88%E6%9C%AC" data-blog-outline-link>本书基于的源码版本</a></li><li style="--outline-depth:1"><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%20V1%20%E8%80%8C%E9%9D%9E%20V0" data-blog-outline-link>为什么选 V1 而非 V0</a></li><li style="--outline-depth:1"><a href="#%E6%BA%90%E7%A0%81%E5%AF%B9%E7%85%A7%E6%8C%87%E5%8D%97" data-blog-outline-link>源码对照指南</a></li><li style="--outline-depth:1"><a href="#%E5%BC%95%E7%94%A8%E6%A0%87%E6%B3%A8%E8%A7%84%E8%8C%83" data-blog-outline-link>引用标注规范</a></li><li style="--outline-depth:0"><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF%20vLLM" data-blog-outline-link>为什么是 vLLM</a></li><li style="--outline-depth:1"><a href="#vLLM%20%E6%89%BE%E5%88%B0%E7%9A%84%E9%BB%84%E9%87%91%E5%B9%B3%E8%A1%A1%E7%82%B9" data-blog-outline-link>vLLM 找到的黄金平衡点</a></li><li style="--outline-depth:1"><a href="#%E6%97%A0%E4%B8%8E%E4%BC%A6%E6%AF%94%E7%9A%84%E6%95%99%E8%82%B2%E4%BB%B7%E5%80%BC" data-blog-outline-link>无与伦比的教育价值</a></li><li style="--outline-depth:0"><a href="#V0%20%E2%86%92%20V1%EF%BC%9A%E4%B8%80%E6%AC%A1%E6%BF%80%E8%BF%9B%E4%B8%94%E5%BF%85%E8%A6%81%E7%9A%84%E9%87%8D%E6%9E%84" data-blog-outline-link>V0 → V1：一次激进且必要的重构</a></li><li style="--outline-depth:1"><a href="#V0%20%E7%9A%84%E4%BA%94%E5%A4%A7%E7%97%85%E7%97%87" data-blog-outline-link>V0 的五大病症</a></li><li style="--outline-depth:1"><a href="#V1%20%E7%9A%84%E4%B8%83%E5%A4%A7%E6%9E%B6%E6%9E%84%E9%9D%A9%E6%96%B0" data-blog-outline-link>V1 的七大架构革新</a></li><li style="--outline-depth:0"><a href="#%E6%9C%AC%E4%B9%A6%E7%9A%84%E8%AF%BB%E8%80%85" data-blog-outline-link>本书的读者</a></li><li style="--outline-depth:1"><a href="#%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86" data-blog-outline-link>前置知识</a></li><li style="--outline-depth:0"><a href="#%E6%9C%AC%E4%B9%A6%E7%9A%84%E7%BB%84%E7%BB%87" data-blog-outline-link>本书的组织</a></li><li style="--outline-depth:1"><a href="#%E6%AF%8F%E4%B8%80%E7%AB%A0%E7%9A%84%E5%86%99%E4%BD%9C%E8%8A%82%E5%A5%8F" data-blog-outline-link>每一章的写作节奏</a></li><li style="--outline-depth:0"><a href="#%E9%98%85%E8%AF%BB%E5%BB%BA%E8%AE%AE" data-blog-outline-link>阅读建议</a></li><li style="--outline-depth:1"><a href="#%E7%BA%BF%E6%80%A7%E8%AF%BB" data-blog-outline-link>线性读</a></li><li style="--outline-depth:1"><a href="#%E6%A8%A1%E5%9D%97%E8%AF%BB" data-blog-outline-link>模块读</a></li><li style="--outline-depth:1"><a href="#%E9%97%AE%E9%A2%98%E9%A9%B1%E5%8A%A8%E8%AF%BB" data-blog-outline-link>问题驱动读</a></li><li style="--outline-depth:1"><a href="#%E5%8F%8D%E5%A4%8D%E8%AF%BB" data-blog-outline-link>反复读</a></li><li style="--outline-depth:0"><a href="#%E5%8A%A8%E6%89%8B%E5%AE%9E%E9%AA%8C%EF%BC%9A%E8%B7%9F%E7%9D%80%E4%B9%A6%E4%B8%80%E8%B5%B7%E8%B7%91%20benchmark" data-blog-outline-link>动手实验：跟着书一起跑 benchmark</a></li><li style="--outline-depth:0"><a href="#%E4%B8%80%E7%82%B9%E7%A7%81%E5%BF%83" data-blog-outline-link>一点私心</a></li><li style="--outline-depth:1"><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%99%E5%BE%88%E9%87%8D%E8%A6%81" data-blog-outline-link>为什么这很重要</a></li><li style="--outline-depth:1"><a href="#%E6%BA%90%E7%A0%81%E4%B8%8D%E4%BC%9A%E9%AA%97%E4%BA%BA" data-blog-outline-link>源码不会骗人</a></li></ol>
+</nav></aside><article class="html-server-blog-article article-body">
+    <nav class="html-server-blog-breadcrumb breadcrumbs" aria-label="Breadcrumb"><a href="../../../" data-blog-folder-path="">Home</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../folders/_/大模型/" data-blog-folder-path="大模型">大模型</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../folders/_/大模型/_/vLLM 推理内核深度解析/" data-blog-folder-path="大模型/vLLM 推理内核深度解析">vLLM 推理内核深度解析</a></nav>
+    <header class="html-server-blog-article-header"><div class="post-meta"><time>Jul 15, 2026</time><span>11 分钟</span><span>最后更新 Jul 15, 2026</span></div><h2>前言：走进-LLM-推理引擎的心脏</h2><p class="article-deck">vLLM 推理内核深度解析</p><div class="tag-line"><button type="button" data-style-lab-href="../../../tags/ai-infra/"># ai-infra</button><button type="button" data-style-lab-href="../../../tags/vLLM/"># vLLM</button><button type="button" data-style-lab-href="../../../tags/%25E7%25B3%25BB%25E5%2588%2597%25E6%2595%2599%25E7%25A8%258B/"># 系列教程</button></div></header>
+    
+    <div class="markdown-reading-view html-server-blog-reading-view article-content"><div class="markdown-preview-view markdown-rendered node-insert-event is-readable-line-width allow-fold-headings allow-fold-lists" tabindex="-1"><div class="markdown-preview-sizer markdown-preview-section"><pre class="frontmatter language-yaml" style="display: none; overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-yaml is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token key atrule">created</span><span class="token punctuation">:</span> 2026<span class="token punctuation">-</span>07<span class="token punctuation">-</span>14 20<span class="token punctuation">:</span><span class="token number">48</span>
+<span class="token key atrule">updated</span><span class="token punctuation">:</span> 2026<span class="token punctuation">-</span>07<span class="token punctuation">-</span>14 20<span class="token punctuation">:</span><span class="token number">48</span>
+<span class="token key atrule">aliases</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> 前言：走进<span class="token punctuation">-</span>LLM<span class="token punctuation">-</span>推理引擎的心脏
+<span class="token key atrule">title</span><span class="token punctuation">:</span> 前言：走进<span class="token punctuation">-</span>LLM<span class="token punctuation">-</span>推理引擎的心脏
+<span class="token key atrule">source</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//www.yangyitao.com/books/vllm/chapters/00<span class="token punctuation">-</span>preface
+<span class="token key atrule">tags</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> ai<span class="token punctuation">-</span>infra
+  <span class="token punctuation">-</span> vLLM
+  <span class="token punctuation">-</span> 系列教程
+<span class="token key atrule">type</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> AI
+<span class="token key atrule">category</span><span class="token punctuation">:</span> AI基础设施/vLLM
+<span class="token key atrule">cssclasses</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> ai<span class="token punctuation">-</span>infra
+  <span class="token punctuation">-</span> series
+<span class="token key atrule">note</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">series</span><span class="token punctuation">:</span> vLLM 推理内核深度解析</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout drop-shadow"><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg></div><div class="callout-title-inner">文档定位</div></div><div class="callout-content ab-note">
+<p dir="auto"><strong>AI 整理 + 学习笔记</strong>。原文出自杨艺韬《vLLM 推理内核深度解析》一书。</p>
+<p dir="auto">原文链接:<a rel="noopener nofollow" class="external-link" href="https://www.yangyitao.com/books/vllm/chapters/00-preface" target="_blank">https://www.yangyitao.com/books/vllm/chapters/00-preface</a><br>
+系列入口:<a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/README/" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/README/" class="internal-link" target="" rel="noopener nofollow">大模型/vLLM 推理内核深度解析/README</a></p>
+</div></div>
+<p dir="auto">vLLM 推理内核深度解析</p>
+<p dir="auto">"The best engineering is indistinguishable from physics — it makes the impossible feel inevitable."</p>
+<p dir="auto">推理引擎是 AI 应用真正的瓶颈。模型再强，喂不进 GPU 也是白搭。</p>
+<h2 data-heading="一切的起点：伯克利实验室那条 40% 的利用率曲线" dir="auto">一切的起点：伯克利实验室那条 40% 的利用率曲线</h2>
+<p dir="auto">2023 年春，加州大学伯克利分校一间挤满了监控屏的实验室里，几个研究生盯着 GPU 利用率曲线发愁。</p>
+<p dir="auto">他们在用 HuggingFace Transformers 部署一个 13B 参数的语言模型，GPU 显存看上去已经被占满，但 <strong>GPU 计算核的利用率始终在 40% 上下徘徊</strong>——大量显存被浪费在碎片化的 KV Cache 分配上，请求排着队，首 Token 延迟飙升，而 GPU 的 TensorCore 却一直在"发呆"。</p>
+<pre class="language-text" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-text is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">GPU 利用率:     ████████████░░░░░░░░░░░░░░░░░░  40%
+GPU 显存占用:   ██████████████████████████████  95%
+实际有效显存:   ████████████████░░░░░░░░░░░░░░  40%
+浪费在碎片上:   ░░░░░░░░░░░░░░░░██████████████  55%
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">"操作系统早就解决了这个问题，"其中一个人说，"<strong>内存分页</strong>。"</p>
+<p dir="auto">这句话成了一切的起点。</p>
+<h3 data-heading="从 OS 到 GPU：一次跨领域的思想迁移" dir="auto">从 OS 到 GPU：一次跨领域的思想迁移</h3>
+<p dir="auto">他们把操作系统里虚拟内存的分页机制引入到 KV Cache 管理中，设计出 <strong>PagedAttention</strong>算法。KV Cache 不再按请求整块预留，而是被切分为固定大小的 Block，按需映射，动态回收——就像操作系统管理物理内存一样优雅。</p>
+<pre class="language-text" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-text is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">传统 KV Cache:
+  请求 A: ████████████████────────     (预留 512，实际用 320，浪费 192)
+  请求 B: ████████────────────────     (预留 512，实际用 160，浪费 352)
+
+PagedAttention:
+  Block Pool: [B1][B2][B3][B4][B5][B6][B7][B8][B9][B10]...
+  请求 A → 用 B1/B3/B7                     (按需分配)
+  请求 B → 用 B2/B5                        (按需分配)
+  释放的 B4/B6 → 立即给新请求              (动态回收)
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">这个想法最终凝结成一篇 SOSP'23 论文和一个开源项目——<strong>vLLM</strong>。</p>
+<p dir="auto">论文发表后不到一年，vLLM 的 GitHub 星标突破 6 万。从硅谷创业公司到国内大厂，从学术实验室到千卡集群，几乎所有严肃对待 LLM 推理效率的团队都在用它。<strong>它成了 LLM 推理基础设施的事实标准</strong>。</p>
+<h3 data-heading="一个数字说明一切" dir="auto">一个数字说明一切</h3>
+<pre class="language-text" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-text is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">2023 年 H100 单卡价格:  $30,000
+全球部署的 H100 数量:  ~300 万张 (2025 年估计)
+总硬件价值:             ~$900 亿
+
+如果推理效率提升 2 倍:
+等价节省:              $450 亿的硬件成本
+或者:                  服务 2 倍的用户
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto"><strong>每提升一个百分点的推理效率，都是在给 AI 产业腾挪万亿级的空间</strong>。vLLM 的历史地位就建立在这个数字上。</p>
+<h2 data-heading="为什么又一本 vLLM 书" dir="auto">为什么又一本 vLLM 书</h2>
+<p dir="auto">如果你搜 "vLLM tutorial"，能找到几十篇博客、十几个视频教程、一份越来越厚的官方文档。它们大多数的套路是：</p>
+<ul>
+<li dir="auto">怎么安装 vLLM</li>
+<li dir="auto">怎么启动一个 OpenAI 兼容服务</li>
+<li dir="auto">有哪些命令行参数</li>
+<li dir="auto">遇到 OOM 怎么办</li>
+</ul>
+<p dir="auto">这些都有用，但合起来仍然只是<strong>"使用手册"</strong>——告诉你按哪些按钮，却不告诉你按钮背后有什么线路。</p>
+<h3 data-heading="工程师真正想知道的" dir="auto">工程师真正想知道的</h3>
+<p dir="auto">而工程师真正想知道的是另一组问题：</p>
+<ul>
+<li dir="auto">为什么 V1 引擎要从单进程拆成多进程？多出来的 ZMQ 通信成本从哪里赚回来？</li>
+<li dir="auto">连续批处理里那个神秘的"预算"究竟怎么算？<code class="code-styler-inline">max_num_batched_tokens</code>调大调小各自有什么代价？</li>
+<li dir="auto">PagedAttention 到底是怎么让一个不连续的 KV Cache 跑 attention 的？Block Table 的间接寻址不会拖慢 kernel 吗？</li>
+<li dir="auto">前缀缓存为什么能做到"命中一块就省一块预算"？它怎么和抢占机制互动？</li>
+<li dir="auto">调度器决定谁进 batch、谁被抢占时究竟怎么选受害者？</li>
+<li dir="auto">Worker 为什么从 V0 的无状态变成 V1 的有状态？差量同步的可靠性边界在哪里？</li>
+<li dir="auto">CUDA Graph、torch.compile、FlashAttention-3 三套优化是怎么叠加的？</li>
+<li dir="auto">当流量上来，系统的第一个瓶颈会出现在哪里，第二个、第三个又在哪里？</li>
+<li dir="auto">Chunked Prefill 如何避免 prefill 独占 GPU 而让 decode 请求饿死？</li>
+<li dir="auto">投机解码是怎么在保证采样分布不变的前提下获得 2-3x 加速的？</li>
+</ul>
+<p dir="auto">这些"<strong>为什么</strong>"藏在代码注释里、PR 讨论里、issue 追踪里、作者在 GTC 大会上的一句口误里。你要把它们拼起来，才能真正理解 vLLM。</p>
+<h3 data-heading="本书的定位" dir="auto">本书的定位</h3>
+<p dir="auto">本书做的就是这件事——把源码、PR 讨论、benchmark 数据和生产踩坑经验串成可读的章节——<strong>不是源码导读，是源码之后的思考</strong>。</p>
+<div class="mermaid"><svg id="mbe7d94c59142328f" width="821.171875" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flowchart" height="94" viewBox="0 0 821.171875 94" role="graphics-document document" aria-roledescription="flowchart-v2"><style>#mbe7d94c59142328f{font-family:var(--font-mermaid);font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#mbe7d94c59142328f .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#mbe7d94c59142328f .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#mbe7d94c59142328f .error-icon{fill:#552222;}#mbe7d94c59142328f .error-text{fill:#552222;stroke:#552222;}#mbe7d94c59142328f .edge-thickness-normal{stroke-width:1px;}#mbe7d94c59142328f .edge-thickness-thick{stroke-width:3.5px;}#mbe7d94c59142328f .edge-pattern-solid{stroke-dasharray:0;}#mbe7d94c59142328f .edge-thickness-invisible{stroke-width:0;fill:none;}#mbe7d94c59142328f .edge-pattern-dashed{stroke-dasharray:3;}#mbe7d94c59142328f .edge-pattern-dotted{stroke-dasharray:2;}#mbe7d94c59142328f .marker{fill:#333333;stroke:#333333;}#mbe7d94c59142328f .marker.cross{stroke:#333333;}#mbe7d94c59142328f svg{font-family:var(--font-mermaid);font-size:16px;}#mbe7d94c59142328f p{margin:0;}#mbe7d94c59142328f .label{font-family:var(--font-mermaid);color:#333;}#mbe7d94c59142328f .cluster-label text{fill:#333;}#mbe7d94c59142328f .cluster-label span{color:#333;}#mbe7d94c59142328f .cluster-label span p{background-color:transparent;}#mbe7d94c59142328f .label text,#mbe7d94c59142328f span{fill:#333;color:#333;}#mbe7d94c59142328f .node rect,#mbe7d94c59142328f .node circle,#mbe7d94c59142328f .node ellipse,#mbe7d94c59142328f .node polygon,#mbe7d94c59142328f .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mbe7d94c59142328f .rough-node .label text,#mbe7d94c59142328f .node .label text,#mbe7d94c59142328f .image-shape .label,#mbe7d94c59142328f .icon-shape .label{text-anchor:middle;}#mbe7d94c59142328f .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#mbe7d94c59142328f .rough-node .label,#mbe7d94c59142328f .node .label,#mbe7d94c59142328f .image-shape .label,#mbe7d94c59142328f .icon-shape .label{text-align:center;}#mbe7d94c59142328f .node.clickable{cursor:pointer;}#mbe7d94c59142328f .root .anchor path{fill:#333333!important;stroke-width:0;stroke:#333333;}#mbe7d94c59142328f .arrowheadPath{fill:#333333;}#mbe7d94c59142328f .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mbe7d94c59142328f .flowchart-link{stroke:#333333;fill:none;}#mbe7d94c59142328f .edgeLabel{background-color:rgba(232,232,232, 0.8);text-align:center;}#mbe7d94c59142328f .edgeLabel p{background-color:rgba(232,232,232, 0.8);}#mbe7d94c59142328f .edgeLabel rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#mbe7d94c59142328f .labelBkg{background-color:rgba(232, 232, 232, 0.5);}#mbe7d94c59142328f .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mbe7d94c59142328f .cluster text{fill:#333;}#mbe7d94c59142328f .cluster span{color:#333;}#mbe7d94c59142328f div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:var(--font-mermaid);font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mbe7d94c59142328f .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#333;}#mbe7d94c59142328f rect.text{fill:none;stroke-width:0;}#mbe7d94c59142328f .icon-shape,#mbe7d94c59142328f .image-shape{background-color:rgba(232,232,232, 0.8);text-align:center;}#mbe7d94c59142328f .icon-shape p,#mbe7d94c59142328f .image-shape p{background-color:rgba(232,232,232, 0.8);padding:2px;}#mbe7d94c59142328f .icon-shape .label rect,#mbe7d94c59142328f .image-shape .label rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#mbe7d94c59142328f .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#mbe7d94c59142328f .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#mbe7d94c59142328f :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g><marker id="mbe7d94c59142328f-mbe7d94c59142328f_flowchart-v2-pointEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="mbe7d94c59142328f-mbe7d94c59142328f_flowchart-v2-pointStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="4.5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="mbe7d94c59142328f-mbe7d94c59142328f_flowchart-v2-circleEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="mbe7d94c59142328f-mbe7d94c59142328f_flowchart-v2-circleStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="mbe7d94c59142328f-mbe7d94c59142328f_flowchart-v2-crossEnd" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><marker id="mbe7d94c59142328f-mbe7d94c59142328f_flowchart-v2-crossStart" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><g class="root"><g class="clusters"></g><g class="edgePaths"><path d="M132,47L136.167,47C140.333,47,148.667,47,156.333,47C164,47,171,47,174.5,47L178,47" id="L_A_B_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_A_B_0" data-points="W3sieCI6MTMyLCJ5Ijo0N30seyJ4IjoxNTcsInkiOjQ3fSx7IngiOjE4MiwieSI6NDd9XQ==" marker-end="url(#mbe7d94c59142328f-mbe7d94c59142328f_flowchart-v2-pointEnd)"></path><path d="M348.391,47L352.557,47C356.724,47,365.057,47,372.724,47C380.391,47,387.391,47,390.891,47L394.391,47" id="L_B_C_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_B_C_0" data-points="W3sieCI6MzQ4LjM5MDYyNSwieSI6NDd9LHsieCI6MzczLjM5MDYyNSwieSI6NDd9LHsieCI6Mzk4LjM5MDYyNSwieSI6NDd9XQ==" marker-end="url(#mbe7d94c59142328f-mbe7d94c59142328f_flowchart-v2-pointEnd)"></path><path d="M580.781,47L584.948,47C589.115,47,597.448,47,605.115,47C612.781,47,619.781,47,623.281,47L626.781,47" id="L_C_D_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_C_D_0" data-points="W3sieCI6NTgwLjc4MTI1LCJ5Ijo0N30seyJ4Ijo2MDUuNzgxMjUsInkiOjQ3fSx7IngiOjYzMC43ODEyNSwieSI6NDd9XQ==" marker-end="url(#mbe7d94c59142328f-mbe7d94c59142328f_flowchart-v2-pointEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" data-id="L_A_B_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_B_C_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_C_D_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-A-0" transform="translate(70, 47)"><rect class="basic label-container" style="fill:#fef3c7 !important;stroke:#f59e0b !important" x="-62" y="-39" width="124" height="78"></rect><g class="label" style="" transform="translate(-32, -24)"><rect></rect><foreignObject width="64" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>官方文档<br>"怎么用"</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-B-1" transform="translate(265.1953125, 47)"><rect class="basic label-container" style="fill:#fef3c7 !important;stroke:#f59e0b !important" x="-83.1953125" y="-39" width="166.390625" height="78"></rect><g class="label" style="" transform="translate(-53.1953125, -24)"><rect></rect><foreignObject width="106.390625" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>社区博客<br>"为什么这样用"</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-C-3" transform="translate(489.5859375, 47)"><rect class="basic label-container" style="fill:#dbeafe !important;stroke:#3b82f6 !important" x="-91.1953125" y="-39" width="182.390625" height="78"></rect><g class="label" style="" transform="translate(-61.1953125, -24)"><rect></rect><foreignObject width="122.390625" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>源码<br>"到底是怎么做的"</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-D-5" transform="translate(721.9765625, 47)"><rect class="basic label-container" style="fill:#dcfce7 !important;stroke:#22c55e !important;stroke-width:2px !important" x="-91.1953125" y="-39" width="182.390625" height="78"></rect><g class="label" style="" transform="translate(-61.1953125, -24)"><rect></rect><foreignObject width="122.390625" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>本书<br>"为什么这样设计"</p></span></div></foreignObject></g></g></g></g></g></svg></div>
+<h2 data-heading="本书基于的源码版本" dir="auto">本书基于的源码版本</h2>
+<p dir="auto">本书基于 <strong>vLLM v0.8.x</strong>，这是一个里程碑版本：<strong>V1 引擎在这个版本中正式成为默认架构</strong>。</p>
+<p dir="auto">V1 是对整个推理引擎的重新设计——多进程架构、统一 Token 调度、零开销前缀缓存、分段 CUDA 图、有状态 Worker——几乎每个核心子系统都被重写过。</p>
+<h3 data-heading="为什么选 V1 而非 V0" dir="auto">为什么选 V1 而非 V0</h3>
+<p dir="auto">选择 v0.8.x 而不是更早的 V0 版本，是因为 V1 代表了 vLLM 团队对"推理引擎应该长什么样"这个问题的<strong>最新答案</strong>。理解 V1，就是理解 LLM 推理系统设计的当前边界。</p>
+<h3 data-heading="源码对照指南" dir="auto">源码对照指南</h3>
+<p dir="auto">我建议你在阅读时同步打开源码对照：</p>
+<pre class="language-shell" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-shell is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token function">git</span> clone <span class="token parameter variable">--branch</span> v0.8.5 https://github.com/vllm-project/vllm.git
+<span class="token builtin class-name">cd</span> vllm
+
+<span class="token comment"># V1 引擎核心路径</span>
+<span class="token function">ls</span> vllm/v1/engine/    <span class="token comment"># EngineCore、EngineCoreProc、EngineCoreClient</span>
+<span class="token function">ls</span> vllm/v1/core/      <span class="token comment"># Scheduler、KVCacheManager、BlockPool</span>
+<span class="token function">ls</span> vllm/v1/worker/    <span class="token comment"># Worker、GPUModelRunner、InputBatch</span>
+<span class="token function">ls</span> vllm/v1/executor/  <span class="token comment"># UniProc / Multiproc / Ray 三种执行器</span>
+<span class="token function">ls</span> vllm/v1/attention/ <span class="token comment"># FlashAttention / FlashInfer 等 Attention 后端</span>
+
+<span class="token comment"># 为对照理解 V1 重构动因，保留一份 V0 源码很有帮助</span>
+<span class="token function">ls</span> vllm/engine/       <span class="token comment"># V0 的 LLMEngine / AsyncLLMEngine</span>
+<span class="token function">ls</span> vllm/core/         <span class="token comment"># V0 的 Scheduler / BlockSpaceManager</span>
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<h3 data-heading="引用标注规范" dir="auto">引用标注规范</h3>
+<p dir="auto">书中所有源码引用都标注了具体路径，形如：</p>
+<pre class="language-text" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-text is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">vllm/v1/engine/core.py:142      ← 精确行号引用
+vllm/v1/core/sched/scheduler.py ← 模块级引用
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">遇到一个<strong>精确的行号引用</strong>，说明那一行的代码足够关键，值得你停下来对照读一遍。</p>
+<h2 data-heading="为什么是 vLLM" dir="auto">为什么是 vLLM</h2>
+<p dir="auto">在 vLLM 之前，LLM 推理领域并不缺方案：</p>
+<table>
+<thead>
+<tr>
+<th>方案</th>
+<th>擅长</th>
+<th>不足</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HuggingFace Transformers</td>
+<td>直接从训练流程衔接，生态最广</td>
+<td>推理效率低，批处理原生支持弱</td>
+</tr>
+<tr>
+<td>NVIDIA TensorRT-LLM</td>
+<td>极致 kernel 优化，延迟最低</td>
+<td>C++ 为主，模型转换门槛高，迭代慢</td>
+</tr>
+<tr>
+<td>DeepSpeed-Inference</td>
+<td>大模型 TP / PP 的工程先行者</td>
+<td>后续维护放缓，社区活跃度下降</td>
+</tr>
+<tr>
+<td>llama.cpp</td>
+<td>CPU / Apple Silicon 本地推理之王</td>
+<td>不是为多卡云端服务设计的</td>
+</tr>
+<tr>
+<td>SGLang / LMDeploy / MLC-LLM</td>
+<td>新一代竞争者</td>
+<td>功能覆盖不如 vLLM 全</td>
+</tr>
+<tr>
+<td>Ollama</td>
+<td>桌面端开箱即用</td>
+<td>单用户 only，不适合服务化</td>
+</tr>
+</tbody>
+</table>
+<h3 data-heading="vLLM 找到的黄金平衡点" dir="auto">vLLM 找到的黄金平衡点</h3>
+<p dir="auto">vLLM 找到的是一个<strong>黄金平衡点</strong>：</p>
+<ul>
+<li dir="auto">比 Transformers <strong>快 14-24 倍</strong>（来自原论文的对照实验，在真实混合负载下）</li>
+<li dir="auto">比 TensorRT-LLM <strong>易用百倍</strong>——纯 Python 接口，<code class="code-styler-inline">pip install vllm</code>就跑，不需要模型转换、不需要 C++ 编译</li>
+<li dir="auto">架构<strong>开放且社区驱动</strong>——Apache 2.0 协议，超过 2000 位贡献者，PR 平均 48 小时内被 review</li>
+</ul>
+<h3 data-heading="无与伦比的教育价值" dir="auto">无与伦比的教育价值</h3>
+<p dir="auto">更重要的是，vLLM 源码的<strong>教育价值</strong>独一无二：</p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>复杂度</th>
+<th>学习成本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TensorRT-LLM</td>
+<td>CUDA + C++ 深水区</td>
+<td>一个 kernel 看一天</td>
+</tr>
+<tr>
+<td>llama.cpp</td>
+<td>GGML 后端</td>
+<td>对 Python 工程师陌生</td>
+</tr>
+<tr>
+<td>HF Transformers</td>
+<td>训练 + 推理混合</td>
+<td>路径被"污染"得复杂</td>
+</tr>
+<tr>
+<td>vLLM</td>
+<td>Python + 必要 CUDA</td>
+<td>一两小时读懂一个子系统</td>
+</tr>
+</tbody>
+</table>
+<p dir="auto">vLLM 用 Python（加上必要的 CUDA kernel）实现了生产级的推理引擎，<strong>代码可读性和系统复杂度之比恰到好处</strong>——足够复杂能教会你真实的工程权衡，又足够清晰能让你在一两小时内读懂一个子系统。</p>
+<p dir="auto">对想"真正理解推理引擎"的工程师来说，vLLM 就是当下最好的教材。</p>
+<h2 data-heading="V0 → V1：一次激进且必要的重构" dir="auto">V0 → V1：一次激进且必要的重构</h2>
+<p dir="auto">V0 是 vLLM 的第一代实现，从 2023 到 2024 年支撑了社区爆发性增长。但代码积累到一定程度，V0 开始显露出难以修补的病：</p>
+<h3 data-heading="V0 的五大病症" dir="auto">V0 的五大病症</h3>
+<table>
+<thead>
+<tr>
+<th>症状</th>
+<th>表现</th>
+<th>影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>God Object</td>
+<td>LLMEngine 单文件 1500+ 行</td>
+<td>维护噩梦</td>
+</tr>
+<tr>
+<td>调度重复</td>
+<td>Prefill/Decode/Chunked 三套代码</td>
+<td>Bug 容易，优化难做</td>
+</tr>
+<tr>
+<td>无状态 Worker</td>
+<td>每 step 广播 KB 级冗余数据</td>
+<td>网络成为瓶颈</td>
+</tr>
+<tr>
+<td>职责耦合</td>
+<td>Block 分配/前缀缓存/抢占在一起</td>
+<td>改一处动全身</td>
+</tr>
+<tr>
+<td>单进程</td>
+<td>API 和 Engine 在同一个进程</td>
+<td>前端压力卡住推理</td>
+</tr>
+</tbody>
+</table>
+<h3 data-heading="V1 的七大架构革新" dir="auto">V1 的七大架构革新</h3>
+<p dir="auto">2024 年下半年 vLLM 团队启动 V1 重构。V1 不是"给 V0 打补丁"，是<strong>推倒重来</strong>的架构级改造。主要思想：</p>
+<div class="mermaid"><svg id="m0d2ecc24c5eef214" width="2091.109375" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flowchart" height="222" viewBox="0 0 2091.109375 222" role="graphics-document document" aria-roledescription="flowchart-v2"><style>#m0d2ecc24c5eef214{font-family:var(--font-mermaid);font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#m0d2ecc24c5eef214 .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#m0d2ecc24c5eef214 .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#m0d2ecc24c5eef214 .error-icon{fill:#552222;}#m0d2ecc24c5eef214 .error-text{fill:#552222;stroke:#552222;}#m0d2ecc24c5eef214 .edge-thickness-normal{stroke-width:1px;}#m0d2ecc24c5eef214 .edge-thickness-thick{stroke-width:3.5px;}#m0d2ecc24c5eef214 .edge-pattern-solid{stroke-dasharray:0;}#m0d2ecc24c5eef214 .edge-thickness-invisible{stroke-width:0;fill:none;}#m0d2ecc24c5eef214 .edge-pattern-dashed{stroke-dasharray:3;}#m0d2ecc24c5eef214 .edge-pattern-dotted{stroke-dasharray:2;}#m0d2ecc24c5eef214 .marker{fill:#333333;stroke:#333333;}#m0d2ecc24c5eef214 .marker.cross{stroke:#333333;}#m0d2ecc24c5eef214 svg{font-family:var(--font-mermaid);font-size:16px;}#m0d2ecc24c5eef214 p{margin:0;}#m0d2ecc24c5eef214 .label{font-family:var(--font-mermaid);color:#333;}#m0d2ecc24c5eef214 .cluster-label text{fill:#333;}#m0d2ecc24c5eef214 .cluster-label span{color:#333;}#m0d2ecc24c5eef214 .cluster-label span p{background-color:transparent;}#m0d2ecc24c5eef214 .label text,#m0d2ecc24c5eef214 span{fill:#333;color:#333;}#m0d2ecc24c5eef214 .node rect,#m0d2ecc24c5eef214 .node circle,#m0d2ecc24c5eef214 .node ellipse,#m0d2ecc24c5eef214 .node polygon,#m0d2ecc24c5eef214 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#m0d2ecc24c5eef214 .rough-node .label text,#m0d2ecc24c5eef214 .node .label text,#m0d2ecc24c5eef214 .image-shape .label,#m0d2ecc24c5eef214 .icon-shape .label{text-anchor:middle;}#m0d2ecc24c5eef214 .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#m0d2ecc24c5eef214 .rough-node .label,#m0d2ecc24c5eef214 .node .label,#m0d2ecc24c5eef214 .image-shape .label,#m0d2ecc24c5eef214 .icon-shape .label{text-align:center;}#m0d2ecc24c5eef214 .node.clickable{cursor:pointer;}#m0d2ecc24c5eef214 .root .anchor path{fill:#333333!important;stroke-width:0;stroke:#333333;}#m0d2ecc24c5eef214 .arrowheadPath{fill:#333333;}#m0d2ecc24c5eef214 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#m0d2ecc24c5eef214 .flowchart-link{stroke:#333333;fill:none;}#m0d2ecc24c5eef214 .edgeLabel{background-color:rgba(232,232,232, 0.8);text-align:center;}#m0d2ecc24c5eef214 .edgeLabel p{background-color:rgba(232,232,232, 0.8);}#m0d2ecc24c5eef214 .edgeLabel rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#m0d2ecc24c5eef214 .labelBkg{background-color:rgba(232, 232, 232, 0.5);}#m0d2ecc24c5eef214 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#m0d2ecc24c5eef214 .cluster text{fill:#333;}#m0d2ecc24c5eef214 .cluster span{color:#333;}#m0d2ecc24c5eef214 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:var(--font-mermaid);font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#m0d2ecc24c5eef214 .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#333;}#m0d2ecc24c5eef214 rect.text{fill:none;stroke-width:0;}#m0d2ecc24c5eef214 .icon-shape,#m0d2ecc24c5eef214 .image-shape{background-color:rgba(232,232,232, 0.8);text-align:center;}#m0d2ecc24c5eef214 .icon-shape p,#m0d2ecc24c5eef214 .image-shape p{background-color:rgba(232,232,232, 0.8);padding:2px;}#m0d2ecc24c5eef214 .icon-shape .label rect,#m0d2ecc24c5eef214 .image-shape .label rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#m0d2ecc24c5eef214 .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#m0d2ecc24c5eef214 .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#m0d2ecc24c5eef214 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g><marker id="m0d2ecc24c5eef214-m0d2ecc24c5eef214_flowchart-v2-pointEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="m0d2ecc24c5eef214-m0d2ecc24c5eef214_flowchart-v2-pointStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="4.5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="m0d2ecc24c5eef214-m0d2ecc24c5eef214_flowchart-v2-circleEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="m0d2ecc24c5eef214-m0d2ecc24c5eef214_flowchart-v2-circleStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="m0d2ecc24c5eef214-m0d2ecc24c5eef214_flowchart-v2-crossEnd" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><marker id="m0d2ecc24c5eef214-m0d2ecc24c5eef214_flowchart-v2-crossStart" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><g class="root"><g class="clusters"></g><g class="edgePaths"><path d="M994.695,39.099L851.913,47.082C709.13,55.066,423.565,71.033,280.783,82.516C138,94,138,101,138,104.5L138,108" id="L_V1_F1_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_V1_F1_0" data-points="W3sieCI6OTk0LjY5NTMxMjUsInkiOjM5LjA5ODc1NjcyMDQzMDExfSx7IngiOjEzOCwieSI6ODd9LHsieCI6MTM4LCJ5IjoxMTJ9XQ==" marker-end="url(#m0d2ecc24c5eef214-m0d2ecc24c5eef214_flowchart-v2-pointEnd)"></path><path d="M994.695,41.148L903.579,48.79C812.464,56.432,630.232,71.716,539.116,82.858C448,94,448,101,448,104.5L448,108" id="L_V1_F2_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_V1_F2_0" data-points="W3sieCI6OTk0LjY5NTMxMjUsInkiOjQxLjE0ODEzNTA4MDY0NTE2fSx7IngiOjQ0OCwieSI6ODd9LHsieCI6NDQ4LCJ5IjoxMTJ9XQ==" marker-end="url(#m0d2ecc24c5eef214-m0d2ecc24c5eef214_flowchart-v2-pointEnd)"></path><path d="M994.695,47.296L955.246,53.914C915.797,60.531,836.898,73.765,797.449,83.883C758,94,758,101,758,104.5L758,108" id="L_V1_F3_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_V1_F3_0" data-points="W3sieCI6OTk0LjY5NTMxMjUsInkiOjQ3LjI5NjI3MDE2MTI5MDMyfSx7IngiOjc1OCwieSI6ODd9LHsieCI6NzU4LCJ5IjoxMTJ9XQ==" marker-end="url(#m0d2ecc24c5eef214-m0d2ecc24c5eef214_flowchart-v2-pointEnd)"></path><path d="M1068,62L1068,66.167C1068,70.333,1068,78.667,1068,86.333C1068,94,1068,101,1068,104.5L1068,108" id="L_V1_F4_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_V1_F4_0" data-points="W3sieCI6MTA2OCwieSI6NjJ9LHsieCI6MTA2OCwieSI6ODd9LHsieCI6MTA2OCwieSI6MTEyfV0=" marker-end="url(#m0d2ecc24c5eef214-m0d2ecc24c5eef214_flowchart-v2-pointEnd)"></path><path d="M1141.305,48.795L1175.141,55.162C1208.978,61.53,1276.651,74.265,1310.488,86.132C1344.324,98,1344.324,109,1344.324,114.5L1344.324,120" id="L_V1_F5_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_V1_F5_0" data-points="W3sieCI6MTE0MS4zMDQ2ODc1LCJ5Ijo0OC43OTQ4MjMyMjMzOTg2OTR9LHsieCI6MTM0NC4zMjQyMTg3NSwieSI6ODd9LHsieCI6MTM0NC4zMjQyMTg3NSwieSI6MTI0fV0=" marker-end="url(#m0d2ecc24c5eef214-m0d2ecc24c5eef214_flowchart-v2-pointEnd)"></path><path d="M1141.305,41.897L1221.195,49.415C1301.086,56.932,1460.867,71.966,1540.758,82.983C1620.648,94,1620.648,101,1620.648,104.5L1620.648,108" id="L_V1_F6_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_V1_F6_0" data-points="W3sieCI6MTE0MS4zMDQ2ODc1LCJ5Ijo0MS44OTc0MTE2MTE2OTkzNX0seyJ4IjoxNjIwLjY0ODQzNzUsInkiOjg3fSx7IngiOjE2MjAuNjQ4NDM3NSwieSI6MTEyfV0=" marker-end="url(#m0d2ecc24c5eef214-m0d2ecc24c5eef214_flowchart-v2-pointEnd)"></path><path d="M1141.305,39.362L1274.734,47.302C1408.163,55.241,1675.021,71.121,1808.45,82.56C1941.879,94,1941.879,101,1941.879,104.5L1941.879,108" id="L_V1_F7_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_V1_F7_0" data-points="W3sieCI6MTE0MS4zMDQ2ODc1LCJ5IjozOS4zNjE5ODE2NDYxMjY5Nn0seyJ4IjoxOTQxLjg3ODkwNjI1LCJ5Ijo4N30seyJ4IjoxOTQxLjg3ODkwNjI1LCJ5IjoxMTJ9XQ==" marker-end="url(#m0d2ecc24c5eef214-m0d2ecc24c5eef214_flowchart-v2-pointEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" data-id="L_V1_F1_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_V1_F2_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_V1_F3_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_V1_F4_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_V1_F5_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_V1_F6_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_V1_F7_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-V1-0" transform="translate(1068, 35)"><rect class="basic label-container" style="fill:#dbeafe !important;stroke:#3b82f6 !important;stroke-width:2px !important" x="-73.3046875" y="-27" width="146.609375" height="54"></rect><g class="label" style="" transform="translate(-43.3046875, -12)"><rect></rect><foreignObject width="86.609375" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>V1 架构革新</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-F1-2" transform="translate(138, 163)"><rect class="basic label-container" style="" x="-130" y="-51" width="260" height="102"></rect><g class="label" style="" transform="translate(-100, -36)"><rect></rect><foreignObject width="200" height="72"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;"><span class="nodeLabel"><p>① 单线程 EngineCore 主循环<br>消除并发复杂度</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-F2-4" transform="translate(448, 163)"><rect class="basic label-container" style="" x="-130" y="-51" width="260" height="102"></rect><g class="label" style="" transform="translate(-100, -36)"><rect></rect><foreignObject width="200" height="72"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;"><span class="nodeLabel"><p>② 统一 Token 调度<br>Prefill/Decode/Spec 都是分配 N 个 Token</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-F3-6" transform="translate(758, 163)"><rect class="basic label-container" style="" x="-130" y="-51" width="260" height="102"></rect><g class="label" style="" transform="translate(-100, -36)"><rect></rect><foreignObject width="200" height="72"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;"><span class="nodeLabel"><p>③ Block Pool / KVCache / Scheduler 解耦<br>每层只做自己的事</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-F4-8" transform="translate(1068, 163)"><rect class="basic label-container" style="" x="-130" y="-51" width="260" height="102"></rect><g class="label" style="" transform="translate(-100, -36)"><rect></rect><foreignObject width="200" height="72"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;"><span class="nodeLabel"><p>④ 有状态 Worker + 差量同步<br>O-全状态 → O-变化量</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-F5-10" transform="translate(1344.32421875, 163)"><rect class="basic label-container" style="" x="-96.32421875" y="-39" width="192.6484375" height="78"></rect><g class="label" style="" transform="translate(-66.32421875, -24)"><rect></rect><foreignObject width="132.6484375" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>⑤ 多进程 + ZMQ<br>API 和 Engine 分离</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-F6-12" transform="translate(1620.6484375, 163)"><rect class="basic label-container" style="" x="-130" y="-51" width="260" height="102"></rect><g class="label" style="" transform="translate(-100, -36)"><rect></rect><foreignObject width="200" height="72"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;"><span class="nodeLabel"><p>⑥ Executor 抽象<br>UniProc/Multiproc/Ray 同一接口</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-F7-14" transform="translate(1941.87890625, 163)"><rect class="basic label-container" style="" x="-141.23046875" y="-51" width="282.4609375" height="102"></rect><g class="label" style="" transform="translate(-111.23046875, -36)"><rect></rect><foreignObject width="222.4609375" height="72"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;"><span class="nodeLabel"><p>⑦ Attention Backend 抽象<br>Flash/FlashInfer/Triton/ROCm 可插拔</p></span></div></foreignObject></g></g></g></g></g></svg></div>
+<ol>
+<li dir="auto"><strong>单线程 EngineCore 主循环</strong>——消除并发复杂度</li>
+<li dir="auto"><strong>统一 Token 调度</strong>——Prefill / Decode / Spec Decode 都是"给请求分配 N 个 Token"</li>
+<li dir="auto"><strong>Block Pool / KVCacheManager / Scheduler 解耦</strong>——每层只做自己的事</li>
+<li dir="auto"><strong>有状态 Worker + 差量同步</strong>——通信量从 O(总状态) 降到 O(变化量)</li>
+<li dir="auto"><strong>多进程 + ZMQ</strong>——API Server 和 EngineCore 分离，前端扩展不阻塞推理</li>
+<li dir="auto"><strong>Executor 抽象层</strong>——UniProc / Multiproc / Ray 同一套接口，部署拓扑和业务逻辑彻底脱钩</li>
+<li dir="auto"><strong>Attention Backend 抽象</strong>——FlashAttention-2/3、FlashInfer、Triton、ROCm 可插拔</li>
+</ol>
+<p dir="auto"><strong>V0 的重要组件在 V1 几乎都有对应的重新实现，但形态完全不同</strong>。本书以 V1 为主线讲解，V0 的历史经验作为对照出现——"<strong>当年的 V0 是怎么做的 / 后来为什么要改</strong>"是理解 V1 设计意图的最短路径。</p>
+<h2 data-heading="本书的读者" dir="auto">本书的读者</h2>
+<p dir="auto">本书面向这几类人：</p>
+<table>
+<thead>
+<tr>
+<th>读者</th>
+<th>典型问题</th>
+<th>对应章节</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI 基础设施工程师</td>
+<td>生产部署、容量规划、调优</td>
+<td>ch02/ch03/ch14/ch17</td>
+</tr>
+<tr>
+<td>推理系统研发者</td>
+<td>架构设计、工程实践</td>
+<td>ch01-ch18 全书</td>
+</tr>
+<tr>
+<td>研究者</td>
+<td>新算法的工程实现</td>
+<td>ch04/ch05/ch10/ch12</td>
+</tr>
+<tr>
+<td>技术好奇者</td>
+<td>"数十亿 Token 怎么跑"</td>
+<td>ch01 + ch18</td>
+</tr>
+<tr>
+<td>模型部署工程师</td>
+<td>选型、参数调优</td>
+<td>ch03/ch08/ch13/ch16</td>
+</tr>
+</tbody>
+</table>
+<h3 data-heading="前置知识" dir="auto">前置知识</h3>
+<p dir="auto">你不需要精通 CUDA C++，但需要具备：</p>
+<ul>
+<li dir="auto"><strong>熟练 Python</strong>（读懂 async / multiprocessing / shared_memory 等标准库）</li>
+<li dir="auto"><strong>Transformer 基础</strong>（QKV、Attention、Softmax、LayerNorm 这些词能说出个大概）</li>
+<li dir="auto"><strong>对深度学习推理有基本概念</strong>（知道什么是前向传播、什么是 logits）</li>
+<li dir="auto"><strong>基本的 GPU 知识</strong>（什么是显存、什么是 TensorCore）</li>
+<li dir="auto"><strong>操作系统基础</strong>（进程、虚拟内存的概念——PagedAttention 直接借用这些思想）</li>
+</ul>
+<p dir="auto">没有这些前置也能读，只是在某些段落需要查一下维基。</p>
+<h2 data-heading="本书的组织" dir="auto">本书的组织</h2>
+<p dir="auto">全书 18 章，按"<strong>从外到内 → 从核心到外围</strong>"的顺序组织：</p>
+<div class="mermaid"><svg id="mbbde063432711e1b" width="235.515625" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flowchart" height="606" viewBox="0 0 235.515625 606" role="graphics-document document" aria-roledescription="flowchart-v2"><style>#mbbde063432711e1b{font-family:var(--font-mermaid);font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#mbbde063432711e1b .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#mbbde063432711e1b .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#mbbde063432711e1b .error-icon{fill:#552222;}#mbbde063432711e1b .error-text{fill:#552222;stroke:#552222;}#mbbde063432711e1b .edge-thickness-normal{stroke-width:1px;}#mbbde063432711e1b .edge-thickness-thick{stroke-width:3.5px;}#mbbde063432711e1b .edge-pattern-solid{stroke-dasharray:0;}#mbbde063432711e1b .edge-thickness-invisible{stroke-width:0;fill:none;}#mbbde063432711e1b .edge-pattern-dashed{stroke-dasharray:3;}#mbbde063432711e1b .edge-pattern-dotted{stroke-dasharray:2;}#mbbde063432711e1b .marker{fill:#333333;stroke:#333333;}#mbbde063432711e1b .marker.cross{stroke:#333333;}#mbbde063432711e1b svg{font-family:var(--font-mermaid);font-size:16px;}#mbbde063432711e1b p{margin:0;}#mbbde063432711e1b .label{font-family:var(--font-mermaid);color:#333;}#mbbde063432711e1b .cluster-label text{fill:#333;}#mbbde063432711e1b .cluster-label span{color:#333;}#mbbde063432711e1b .cluster-label span p{background-color:transparent;}#mbbde063432711e1b .label text,#mbbde063432711e1b span{fill:#333;color:#333;}#mbbde063432711e1b .node rect,#mbbde063432711e1b .node circle,#mbbde063432711e1b .node ellipse,#mbbde063432711e1b .node polygon,#mbbde063432711e1b .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mbbde063432711e1b .rough-node .label text,#mbbde063432711e1b .node .label text,#mbbde063432711e1b .image-shape .label,#mbbde063432711e1b .icon-shape .label{text-anchor:middle;}#mbbde063432711e1b .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#mbbde063432711e1b .rough-node .label,#mbbde063432711e1b .node .label,#mbbde063432711e1b .image-shape .label,#mbbde063432711e1b .icon-shape .label{text-align:center;}#mbbde063432711e1b .node.clickable{cursor:pointer;}#mbbde063432711e1b .root .anchor path{fill:#333333!important;stroke-width:0;stroke:#333333;}#mbbde063432711e1b .arrowheadPath{fill:#333333;}#mbbde063432711e1b .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mbbde063432711e1b .flowchart-link{stroke:#333333;fill:none;}#mbbde063432711e1b .edgeLabel{background-color:rgba(232,232,232, 0.8);text-align:center;}#mbbde063432711e1b .edgeLabel p{background-color:rgba(232,232,232, 0.8);}#mbbde063432711e1b .edgeLabel rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#mbbde063432711e1b .labelBkg{background-color:rgba(232, 232, 232, 0.5);}#mbbde063432711e1b .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mbbde063432711e1b .cluster text{fill:#333;}#mbbde063432711e1b .cluster span{color:#333;}#mbbde063432711e1b div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:var(--font-mermaid);font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mbbde063432711e1b .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#333;}#mbbde063432711e1b rect.text{fill:none;stroke-width:0;}#mbbde063432711e1b .icon-shape,#mbbde063432711e1b .image-shape{background-color:rgba(232,232,232, 0.8);text-align:center;}#mbbde063432711e1b .icon-shape p,#mbbde063432711e1b .image-shape p{background-color:rgba(232,232,232, 0.8);padding:2px;}#mbbde063432711e1b .icon-shape .label rect,#mbbde063432711e1b .image-shape .label rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#mbbde063432711e1b .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#mbbde063432711e1b .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#mbbde063432711e1b :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g><marker id="mbbde063432711e1b-mbbde063432711e1b_flowchart-v2-pointEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="mbbde063432711e1b-mbbde063432711e1b_flowchart-v2-pointStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="4.5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="mbbde063432711e1b-mbbde063432711e1b_flowchart-v2-circleEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="mbbde063432711e1b-mbbde063432711e1b_flowchart-v2-circleStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="mbbde063432711e1b-mbbde063432711e1b_flowchart-v2-crossEnd" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><marker id="mbbde063432711e1b-mbbde063432711e1b_flowchart-v2-crossStart" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><g class="root"><g class="clusters"></g><g class="edgePaths"><path d="M117.758,86L117.758,90.167C117.758,94.333,117.758,102.667,117.758,110.333C117.758,118,117.758,125,117.758,128.5L117.758,132" id="L_P1_P2_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_P1_P2_0" data-points="W3sieCI6MTE3Ljc1NzgxMjUsInkiOjg2fSx7IngiOjExNy43NTc4MTI1LCJ5IjoxMTF9LHsieCI6MTE3Ljc1NzgxMjUsInkiOjEzNn1d" marker-end="url(#mbbde063432711e1b-mbbde063432711e1b_flowchart-v2-pointEnd)"></path><path d="M117.758,214L117.758,218.167C117.758,222.333,117.758,230.667,117.758,238.333C117.758,246,117.758,253,117.758,256.5L117.758,260" id="L_P2_P3_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_P2_P3_0" data-points="W3sieCI6MTE3Ljc1NzgxMjUsInkiOjIxNH0seyJ4IjoxMTcuNzU3ODEyNSwieSI6MjM5fSx7IngiOjExNy43NTc4MTI1LCJ5IjoyNjR9XQ==" marker-end="url(#mbbde063432711e1b-mbbde063432711e1b_flowchart-v2-pointEnd)"></path><path d="M117.758,342L117.758,346.167C117.758,350.333,117.758,358.667,117.758,366.333C117.758,374,117.758,381,117.758,384.5L117.758,388" id="L_P3_P4_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_P3_P4_0" data-points="W3sieCI6MTE3Ljc1NzgxMjUsInkiOjM0Mn0seyJ4IjoxMTcuNzU3ODEyNSwieSI6MzY3fSx7IngiOjExNy43NTc4MTI1LCJ5IjozOTJ9XQ==" marker-end="url(#mbbde063432711e1b-mbbde063432711e1b_flowchart-v2-pointEnd)"></path><path d="M117.758,470L117.758,474.167C117.758,478.333,117.758,486.667,117.758,494.333C117.758,502,117.758,509,117.758,512.5L117.758,516" id="L_P4_P5_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_P4_P5_0" data-points="W3sieCI6MTE3Ljc1NzgxMjUsInkiOjQ3MH0seyJ4IjoxMTcuNzU3ODEyNSwieSI6NDk1fSx7IngiOjExNy43NTc4MTI1LCJ5Ijo1MjB9XQ==" marker-end="url(#mbbde063432711e1b-mbbde063432711e1b_flowchart-v2-pointEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" data-id="L_P1_P2_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_P2_P3_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_P3_P4_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_P4_P5_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-P1-0" transform="translate(117.7578125, 47)"><rect class="basic label-container" style="fill:#dbeafe !important;stroke:#3b82f6 !important" x="-77.7578125" y="-39" width="155.515625" height="78"></rect><g class="label" style="" transform="translate(-47.7578125, -24)"><rect></rect><foreignObject width="95.515625" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>第一篇 · 全景<br>ch01</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-P2-1" transform="translate(117.7578125, 175)"><rect class="basic label-container" style="fill:#fef3c7 !important;stroke:#f59e0b !important" x="-93.7578125" y="-39" width="187.515625" height="78"></rect><g class="label" style="" transform="translate(-63.7578125, -24)"><rect></rect><foreignObject width="127.515625" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>第二篇 · 引擎核心<br>ch02-05</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-P3-2" transform="translate(117.7578125, 303)"><rect class="basic label-container" style="fill:#dcfce7 !important;stroke:#22c55e !important" x="-85.7578125" y="-39" width="171.515625" height="78"></rect><g class="label" style="" transform="translate(-55.7578125, -24)"><rect></rect><foreignObject width="111.515625" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>第三篇 · 执行层<br>ch06-09</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-P4-3" transform="translate(117.7578125, 431)"><rect class="basic label-container" style="fill:#f3e8ff !important;stroke:#a855f7 !important" x="-93.7578125" y="-39" width="187.515625" height="78"></rect><g class="label" style="" transform="translate(-63.7578125, -24)"><rect></rect><foreignObject width="127.515625" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>第四篇 · 性能优化<br>ch10-13</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-P5-4" transform="translate(117.7578125, 559)"><rect class="basic label-container" style="fill:#fce7f3 !important;stroke:#ec4899 !important" x="-109.7578125" y="-39" width="219.515625" height="78"></rect><g class="label" style="" transform="translate(-79.7578125, -24)"><rect></rect><foreignObject width="159.515625" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>第五篇 · 分布式与工程<br>ch14-18</p></span></div></foreignObject></g></g></g></g></g></svg></div>
+<p dir="auto"><strong>第一篇 · 全景</strong>（第 1 章）<br>
+: 从一个推理请求的完整生命旅程出发，建立对整个系统的直觉。这是全书的地图。</p>
+<p dir="auto"><strong>第二篇 · 引擎核心</strong>（第 2-5 章）<br>
+: 深入 vLLM 的心脏：<br>
+: - <strong>ch02 EngineCore</strong>—— 协调者的艺术<br>
+: - <strong>ch03 Scheduler</strong>—— Token 的交通指挥<br>
+: - <strong>ch04 PagedAttention</strong>—— 虚拟内存的启示<br>
+: - <strong>ch05 KV Cache Manager</strong>—— 寸土寸金的显存</p>
+<p dir="auto"><strong>第三篇 · 执行层</strong>（第 6-9 章）<br>
+: 从调度决策到 GPU 计算：<br>
+: - <strong>ch06 Worker &amp; Executor</strong>—— GPU 军团<br>
+: - <strong>ch07 模型加载</strong>—— 权重从磁盘到显存<br>
+: - <strong>ch08 ModelRunner</strong>—— 前向计算与 CUDA Graph<br>
+: - <strong>ch09 采样</strong>—— 从 logits 到 Token</p>
+<p dir="auto"><strong>第四篇 · 性能优化</strong>（第 10-13 章）<br>
+: 让 vLLM 快人一步的四把利器：<br>
+: - <strong>ch10 前缀缓存</strong>—— 零开销的"记忆"<br>
+: - <strong>ch11 Chunked Prefill</strong>—— 把长 prompt 切开<br>
+: - <strong>ch12 投机解码</strong>—— 以小博大<br>
+: - <strong>ch13 量化</strong>—— 精度与速度的取舍</p>
+<p dir="auto"><strong>第五篇 · 分布式与工程</strong>（第 14-18 章）<br>
+: 从单机走向千卡：<br>
+: - <strong>ch14 分布式并行</strong>—— TP / PP / EP / DP<br>
+: - <strong>ch15 多模态</strong>—— 图像视频入场<br>
+: - <strong>ch16 LoRA 热切换</strong>—— 一个引擎服务百个微调<br>
+: - <strong>ch17 API Server &amp; 生产部署</strong>—— 到一线士兵<br>
+: - <strong>ch18 设计哲学</strong>—— 回看整幅画</p>
+<h3 data-heading="每一章的写作节奏" dir="auto">每一章的写作节奏</h3>
+<p dir="auto">每一章都遵循同样的节奏：</p>
+<pre class="language-text" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-text is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">为什么需要 → 怎么设计 → 怎么实现 → 生产中怎么调
+
+(问题域)    (架构思想)  (源码解析)  (实战经验)
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">理论 → 设计 → 代码 → 实战，循环往复，螺旋上升。</p>
+<h2 data-heading="阅读建议" dir="auto">阅读建议</h2>
+<h3 data-heading="线性读" dir="auto">线性读</h3>
+<p dir="auto">从第 1 章读到第 18 章，建立完整的知识地图。适合第一次系统学 vLLM 的读者。</p>
+<h3 data-heading="模块读" dir="auto">模块读</h3>
+<p dir="auto">如果你已经熟悉 LLM 推理，直接进第 2-5 章引擎核心，再根据兴趣跳读后面的优化章节。适合想"快速看懂 vLLM 做了什么"的工程师。</p>
+<h3 data-heading="问题驱动读" dir="auto">问题驱动读</h3>
+<p dir="auto">带着具体问题读对应章节：</p>
+<table>
+<thead>
+<tr>
+<th>生产问题</th>
+<th>对应章节</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>线上 p99 TTFT 不稳定</td>
+<td>ch03 Scheduler + ch11 Chunked Prefill</td>
+</tr>
+<tr>
+<td>KV OOM 频繁</td>
+<td>ch04 PagedAttention + ch05 KV Cache + ch10 Prefix Cache</td>
+</tr>
+<tr>
+<td>想加一个新模型</td>
+<td>ch07 模型加载 + ch08 ModelRunner</td>
+</tr>
+<tr>
+<td>想做低延迟推理</td>
+<td>ch12 Spec Decode + ch13 量化 + ch08 CUDA Graph</td>
+</tr>
+<tr>
+<td>想上多机部署</td>
+<td>ch06 Executor + ch14 分布式</td>
+</tr>
+<tr>
+<td>想做多租户服务</td>
+<td>ch16 LoRA + ch17 API Server</td>
+</tr>
+<tr>
+<td>想加新的采样策略</td>
+<td>ch09 采样</td>
+</tr>
+<tr>
+<td>想优化 batch 大小</td>
+<td>ch03 Scheduler + ch10 Prefix Cache</td>
+</tr>
+<tr>
+<td>想支持图片输入</td>
+<td>ch15 多模态</td>
+</tr>
+<tr>
+<td>想做 8-bit/4-bit 部署</td>
+<td>ch13 量化</td>
+</tr>
+</tbody>
+</table>
+<h3 data-heading="反复读" dir="auto">反复读</h3>
+<p dir="auto">好的系统设计需要反复回味。第一遍看觉得复杂，第二遍看理解动机，第三遍看感叹优雅。</p>
+<p dir="auto">vLLM 的很多段代码——第一次读和第五次读的理解完全不是一个层次。耐心反复，是读懂它的必要代价。</p>
+<h2 data-heading="动手实验：跟着书一起跑 benchmark" dir="auto">动手实验：跟着书一起跑 benchmark</h2>
+<p dir="auto">每一章都鼓励你<strong>亲手实验</strong>，不只是读。vLLM 团队提供了现成的 benchmark 工具：</p>
+<pre class="language-shell" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-shell is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token comment"># 启动一个服务</span>
+python <span class="token parameter variable">-m</span> vllm.entrypoints.openai.api_server <span class="token punctuation">\</span>
+  <span class="token parameter variable">--model</span> meta-llama/Meta-Llama-3-8B-Instruct <span class="token punctuation">\</span>
+  --max-model-len <span class="token number">8192</span>
+
+<span class="token comment"># 跑 benchmark</span>
+python benchmarks/benchmark_serving.py <span class="token punctuation">\</span>
+  <span class="token parameter variable">--model</span> meta-llama/Meta-Llama-3-8B-Instruct <span class="token punctuation">\</span>
+  --dataset-name sharegpt <span class="token punctuation">\</span>
+  --num-prompts <span class="token number">200</span>
+
+<span class="token comment"># 对比调度参数</span>
+python benchmarks/benchmark_serving.py <span class="token punctuation">\</span>
+  <span class="token punctuation">..</span>. --max-num-batched-tokens <span class="token number">2048</span>      <span class="token comment"># 默认</span>
+python benchmarks/benchmark_serving.py <span class="token punctuation">\</span>
+  <span class="token punctuation">..</span>. --max-num-batched-tokens <span class="token number">8192</span>      <span class="token comment"># 更大</span>
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto"><strong>边读边跑，比任何文档都更深入</strong>。</p>
+<h2 data-heading="一点私心" dir="auto">一点私心</h2>
+<p dir="auto">推理引擎是 AI 基础设施里最"隐形"的一层——用户看到的是 ChatGPT 流畅的回答，应用开发者看到的是 OpenAI 兼容的 API，但很少有人关心中间那个把 Token 一个一个"挤"出来的引擎在干什么。</p>
+<p dir="auto">它就像<strong>自来水管道</strong>——打开水龙头就有水，但没人想过水是怎么从水库送到你家的。</p>
+<p dir="auto">我希望这本书能让更多人看到管道里的风景。</p>
+<h3 data-heading="为什么这很重要" dir="auto">为什么这很重要</h3>
+<p dir="auto">不是每个人都需要自己造管道。但<strong>理解管道的人，才能在需要时修好它、改进它，甚至设计出更好的管道</strong>。</p>
+<p dir="auto">在 AI 大规模落地的今天，推理效率决定了 AI 能服务多少人：</p>
+<ul>
+<li dir="auto">每省下 10% GPU 成本 → 10% 以上的用户能被服务到</li>
+<li dir="auto">某个原本成本不合算的产品形态变得可能</li>
+<li dir="auto">某个需要 P99 TTFT &lt; 200ms 的实时场景变得可行</li>
+</ul>
+<p dir="auto"><strong>理解推理引擎，就是理解 AI 普惠的底层逻辑</strong>。</p>
+<h3 data-heading="源码不会骗人" dir="auto">源码不会骗人</h3>
+<p dir="auto">vLLM 源码里很多设计第一遍读会疑惑"为什么要这么复杂"，对照 issue 和 PR 才理解它解决的是哪个具体问题，再回头读就能看出它的优雅。本书尝试把这个"为什么"前置给读者，让你少走那两遍。</p>
+<p dir="auto"><strong>源码不会骗人。框架在变、API 在变，但好的设计思想不会过时。</strong></p>
+<p dir="auto">vLLM 今天用 PagedAttention，明天可能有更好的算法替代它——但"<strong>用操作系统的思想管理 GPU 资源</strong>"这个跨领域思维，会在你未来的工程生涯里反复发挥价值。</p>
+<p dir="auto">让我们开始这段旅程。</p>
+<p dir="auto"><em>杨艺韬**2026 年 4 月 · 于北京</em></p>
+<p dir="auto"><strong>源码导航</strong></p>
+<ul>
+<li dir="auto">GitHub: <a data-tooltip-position="top" aria-label="https://github.com/vllm-project/vllm" rel="noopener nofollow" class="external-link" href="https://github.com/vllm-project/vllm" target="_blank">vllm-project/vllm</a></li>
+<li dir="auto">本书基准分支: v0.8.5</li>
+<li dir="auto">PagedAttention 原论文: Kwon et al., "Efficient Memory Management for Large Language Model Serving with PagedAttention", SOSP 2023 (arXiv:2309.06180)</li>
+<li dir="auto">FlashAttention 系列: Dao et al., NeurIPS 2022/2023</li>
+<li dir="auto">V1 RFC: <a data-tooltip-position="top" aria-label="https://github.com/vllm-project/vllm/issues/8779" rel="noopener nofollow" class="external-link" href="https://github.com/vllm-project/vllm/issues/8779" target="_blank">vLLM V1 Roadmap Discussion</a></li>
+<li dir="auto">杨艺韬讲堂 vLLM 系列首页: <a rel="noopener nofollow" class="external-link" href="https://yangyitao.com/books/vllm/" target="_blank">https://yangyitao.com/books/vllm/</a></li>
+</ul>
+<script defer src="../../../_assets/script.fad57313884515cf.js"></script>
+</div></div></div>
+    
+    <nav class="html-server-blog-chapter-navigation article-footer" data-blog-chapter-navigation aria-label="Tutorial chapters">
+      <a href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/%E7%AC%AC18%E7%AB%A0-%E8%AE%BE%E8%AE%A1%E5%93%B2%E5%AD%A6%E4%B8%8E%E6%9E%B6%E6%9E%84%E6%99%BA%E6%85%A7/?series=vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90"><small>← Previous</small><strong>第18章：设计哲学与架构智慧</strong></a>
+      <a href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/INDEX/?series=vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90"><small>Next →</small><strong>章节目录</strong></a>
+    </nav>
+    
+  </article></div>
+    </main>
+  </div>
+  <footer class="site-footer"><span>纸上季刊</span><span>缓慢阅读与长篇写作</span></footer>
+</div><div class="html-server-blog-progress html-server-style-lab-progress is-rule" data-blog-progress data-blog-runtime-progress data-progress-state="idle" role="progressbar" aria-label="Loading page" aria-hidden="true"><span class="html-server-blog-progress-track"><i></i><b></b><em></em><em></em><em></em></span></div>
+    <div class="html-server-blog-related-modal" data-blog-related-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-related-close aria-label="Close related articles"></button>
+      <section class="html-server-blog-related-panel" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-related-title">
+        <header><div><span class="html-server-blog-kicker" data-blog-related-kind></span><h2 id="html-server-blog-related-title" data-blog-related-title></h2></div><button type="button" data-blog-related-close aria-label="Close"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <p data-blog-related-count></p>
+        <div class="html-server-blog-related-list" data-blog-related-list></div>
+      </section>
+    </div>
+    <div class="html-server-blog-search-modal" data-blog-search-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-search-close aria-label="Close search"></button>
+      <section class="html-server-blog-search-panel site-dialog" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-search-title">
+        <header class="dialog-head"><div><span class="html-server-blog-kicker">SEARCH</span><h2 id="html-server-blog-search-title">搜索文章</h2></div><button type="button" data-blog-search-close aria-label="关闭"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <label class="search-field"><span>支持标题、标签、系列、目录和属性</span><input id="search-input" type="search" data-blog-global-search placeholder="输入关键词开始搜索" autocomplete="off"></label>
+        <p class="search-summary" id="search-summary" data-blog-search-count>输入关键词开始搜索</p>
+        <div class="html-server-blog-search-results search-results dialog-list" id="search-results" data-blog-search-results></div>
+      </section>
+    </div>
+    <div class="html-server-blog-folder-modal" data-blog-folder-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-folder-close aria-label="Close folders"></button>
+      <section class="html-server-blog-folder-panel site-dialog" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-folder-title">
+        <header class="dialog-head"><div><span class="html-server-blog-kicker">VAULT</span><h2 id="html-server-blog-folder-title" data-blog-folder-title>浏览根目录</h2></div><button type="button" data-blog-folder-close aria-label="关闭"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <nav class="html-server-blog-folder-breadcrumb directory-breadcrumbs" data-blog-folder-breadcrumb aria-label="目录面包屑"></nav>
+        <p data-blog-folder-count></p>
+        <div class="html-server-blog-folder-browser directory-list dialog-list" data-blog-folder-browser></div>
+      </section>
+    </div>
+    <script type="application/json" data-blog-article-index>[]</script>
+    <script type="application/json" data-blog-folder-index data-current-folder="大模型/vLLM 推理内核深度解析">[]</script>
+    <script type="application/json" data-blog-appearance-contract>{"version":1,"layouts":[{"id":"default","themes":["inherit"]},{"id":"next","themes":["inherit","next-classic","swiss-index","literary-quarterly","terminal-manual","quiet-journal","newspaper-daily","mint-notebook","tailwind-workspace"]},{"id":"butterfly","themes":["inherit","butterfly-colorful","brutal-broadcast","future-signal","field-notes","gallery-canvas","toy-modules","sakura-notes","clear-sky"]},{"id":"akilar","themes":["inherit","akilar-ark"]},{"id":"noionion","themes":["inherit","noionion-original"]},{"id":"kratos","themes":["inherit","kratos-rebirth"]},{"id":"leezhiy","themes":["inherit","leezhiy-next"]},{"id":"daybook","themes":["inherit","daybook-original"]},{"id":"style-lab-swiss","themes":["inherit","swiss-index"]},{"id":"style-lab-literary","themes":["inherit","literary-quarterly"]},{"id":"style-lab-terminal","themes":["inherit","terminal-manual"]},{"id":"style-lab-brutal","themes":["inherit","brutal-broadcast"]},{"id":"style-lab-quiet","themes":["inherit","quiet-journal"]},{"id":"style-lab-newspaper","themes":["inherit","newspaper-daily"]},{"id":"style-lab-future","themes":["inherit","future-signal"]},{"id":"style-lab-field","themes":["inherit","field-notes"]},{"id":"style-lab-gallery","themes":["inherit","gallery-canvas"]},{"id":"style-lab-toy","themes":["inherit","toy-modules"]},{"id":"style-lab-mint","themes":["inherit","mint-notebook"]},{"id":"style-lab-sakura","themes":["inherit","sakura-notes"]},{"id":"style-lab-sky","themes":["inherit","clear-sky"]},{"id":"style-lab-tailwind","themes":["inherit","tailwind-workspace"]}]}</script>
+  </div>
+  <script defer src="../../../_assets/script.905a72eede1c8c41.js"></script>
+</body>
+</html>

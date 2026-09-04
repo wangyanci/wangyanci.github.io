@@ -1,0 +1,696 @@
+<!doctype html>
+<html lang="en" data-html-server-theme="light" data-blog-layout="style-lab-literary" data-blog-layout-theme="literary-quarterly" data-blog-page-kind="article" data-blog-mobile-zoom="false" data-theme="literary" data-mode="light" data-page="seriesDetail" data-blog-theme-control="style-lab" data-blog-main-loading-class="html-server-blog-main-loading" data-blog-overview-loading-class="html-server-blog-overview-loading" data-blog-folder-loading-class="html-server-blog-folder-loading" data-blog-pagination-scroll="item" data-blog-pin-progress="true" data-blog-outline-shell-selector=".html-server-style-lab-outline" data-blog-outline-auto-hide="true" data-blog-sticky-header-selector=".html-server-style-lab-header,.html-server-lab-swiss-rail" data-blog-scroll-mode="app" data-blog-document-pinning="false" data-blog-document-pinning-filter-regular="false" style="--html-server-navigation-surface-light: #eee9df;--html-server-navigation-surface-dark: #201c18">
+<head><!--html-server-dynamic:start--><meta name="html-server-dynamic-page" data-html-server-dynamic-page data-html-server-dynamic-assertion-mode="every-page" data-html-server-dynamic-cache-ttl-ms="1800000" content="a-WyJzdHlsZS1sYWItbGl0ZXJhcnkiLCJsaXRlcmFyeS1xdWFydGVybHkiXQ"><style data-html-server-dynamic-prepaint>html{--html-server-navigation-surface-active:var(--html-server-navigation-surface-light,var(--html-server-blog-background-light,#f5f7fa));background:var(--html-server-navigation-surface-active)}html[data-html-server-theme="dark"]{--html-server-navigation-surface-active:var(--html-server-navigation-surface-dark,var(--html-server-blog-background-dark,#151515))}html[data-html-server-navigation-entering],html[data-html-server-dynamic-pending]{background:var(--html-server-navigation-surface-active)!important}html[data-html-server-navigation-entering] body,html[data-html-server-dynamic-pending] body{opacity:0!important}html[data-html-server-navigation-entering]::before,html[data-html-server-dynamic-pending]::before{content:"";position:fixed;inset:0;z-index:2147483646;background:var(--html-server-navigation-surface-active);pointer-events:none}html[data-html-server-navigation-entering]::after,html[data-html-server-dynamic-pending]::after{content:"";position:fixed;top:0;left:0;z-index:2147483647;width:38%;height:2px;background:var(--interactive-accent,#8b6f47);box-shadow:0 0 10px currentColor;animation:html-server-navigation-prepaint 1s ease-in-out infinite;pointer-events:none}@keyframes html-server-navigation-prepaint{0%{transform:translateX(-110%)}100%{transform:translateX(370%)}}@media(prefers-reduced-motion:reduce){html[data-html-server-navigation-entering]::after,html[data-html-server-dynamic-pending]::after{animation:none;width:100%;opacity:.7}}</style><script data-blog-navigation-bootstrap>(function(){
+  var root=document.documentElement,key='html-server:navigation-handoff',handoff=null;
+  try{handoff=JSON.parse(sessionStorage.getItem(key)||'null');}catch(error){}
+  var target=location.pathname+location.search;
+  if(handoff&&handoff.target===target&&Date.now()-Number(handoff.createdAt||0)<5000){
+    root.setAttribute('data-html-server-navigation-entering','');
+    var reveal=function(){requestAnimationFrame(function(){requestAnimationFrame(function(){root.removeAttribute('data-html-server-navigation-entering');try{sessionStorage.removeItem(key);}catch(error){}});});};
+    if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',reveal,{once:true});else reveal();
+    setTimeout(function(){root.removeAttribute('data-html-server-navigation-entering');},5000);
+  }else if(handoff){try{sessionStorage.removeItem(key);}catch(error){}}
+})();</script><script data-html-server-dynamic-bootstrap>(()=>{
+const m={"releaseId":"20260904091040909-e54ec6fc6a","appearanceKey":"a-WyJzdHlsZS1sYWItbGl0ZXJhcnkiLCJsaXRlcmFyeS1xdWFydGVybHkiXQ","route":"大模型/OpenClaw/第10章-工具系统/index.html","outputRootRelativeUrl":"../../../../../../../","siteRootRelativeUrl":"../../../","assertionPolicy":{"mode":"every-page","cacheTtlMs":1800000}},S=1,C="html-server:dynamic-appearance:v1";
+const html=document.documentElement,pending='data-html-server-dynamic-pending';if(!html)return;html.setAttribute(pending,'');
+try{Object.defineProperty(window,'__htmlServerDynamicSiteRoot',{configurable:true,value:new URL(m.siteRootRelativeUrl||m.outputRootRelativeUrl,document.baseURI||location.href).href});}catch(_){}
+const reveal=()=>html.removeAttribute(pending);
+const safe=p=>{p=String(p||'').replace(/\\/g,'/').replace(/^\/+/, '');return !!p&&!p.split('/').includes('..')&&!/^[a-z][a-z\d+.-]*:/i.test(p)};
+const routeUrl=p=>String(p).split('/').map(encodeURIComponent).join('/');
+const get=async u=>{const c=new AbortController(),t=setTimeout(()=>c.abort(),2000);try{const r=await fetch(u,{cache:'no-store',credentials:'same-origin',signal:c.signal});if(!r.ok)throw Error(String(r.status));return await r.json()}finally{clearTimeout(t)}};
+const p=m.assertionPolicy||{},mode=p.mode==='home-only'||p.mode==='cache'?p.mode:'every-page',ttl=Math.max(60000,Number(p.cacheTtlMs)||1800000);
+let storage;try{storage=localStorage}catch(_){}
+const clear=()=>{try{storage&&storage.removeItem(C)}catch(_){}};
+try{Object.defineProperty(window,'HtmlServerDynamicAppearanceCache',{configurable:true,value:{key:C,clear,refresh:()=>{clear();location.reload()}}})}catch(_){}
+const read=()=>{try{const v=JSON.parse(storage&&storage.getItem(C)||'null');return v&&v.schemaVersion===S&&typeof v.appearanceKey==='string'&&typeof v.releaseId==='string'&&safe(v.path)&&Number.isFinite(v.selectionRevision)&&Number.isFinite(v.expiresAt)?v:null}catch(_){return null}};
+const cached=read(),home=m.route==='index.html',reload=(()=>{try{return performance.getEntriesByType('navigation')[0]?.type==='reload'}catch(_){return false}})();
+const cacheValid=!!cached&&cached.releaseId===m.releaseId&&(mode!=='cache'||cached.expiresAt>Date.now()),refresh=mode==='every-page'||(mode==='home-only'&&home)||(mode==='cache'&&(!cacheValid||reload));
+(async()=>{let navigating=false;
+const rootForPage=async()=>{const fallback=window.__htmlServerStaticFallbackRoot,discovered=fallback&&typeof fallback.then==='function'?await fallback:null;return new URL(discovered&&discovered.siteRoot?discovered.siteRoot:m.outputRootRelativeUrl,document.baseURI||location.href)};
+const move=async(key,pathValue,releaseId,canonical)=>{if(key===m.appearanceKey)return false;if(!safe(m.route)||!safe(pathValue))return false;const root=await rootForPage(),encoded=routeUrl(m.route),rel=canonical?encoded:pathValue.replace(/\/+$/,'')+'/'+encoded,guard='html-server-dynamic:'+releaseId+':'+key+':'+m.route;if(sessionStorage.getItem(guard)==='1')return false;const target=new URL(rel,root);target.search=location.search;target.hash=location.hash;sessionStorage.setItem(guard,'1');navigating=true;location.replace(target.href);return true};
+try{
+if(!refresh){if(!cacheValid)return;if(cached.appearanceKey===m.appearanceKey){sessionStorage.removeItem('html-server-dynamic:'+cached.releaseId+':'+cached.appearanceKey+':'+m.route);return;}await move(cached.appearanceKey,cached.path,cached.releaseId,false);return;}
+const root=await rootForPage(),pair=await Promise.all([get(new URL('_config/data.json',root)),get(new URL('_config/release.json',root))]),cfg=pair[0],ptr=pair[1];
+if(cfg.schemaVersion!==S)return;
+if(ptr.schemaVersion!==S||(cfg.selectionRevision!==undefined&&cfg.selectionRevision!==ptr.selectionRevision)||!safe(ptr.manifest))return;
+const man=await get(new URL(ptr.manifest,root));if(man.schemaVersion!==S||man.releaseId!==ptr.releaseId||man.selectionRevision!==ptr.selectionRevision||man.primaryAppearance!==ptr.primaryAppearance||!safe(m.route))return;
+const hit=Object.entries(man.sites||{}).find(([,v])=>v.appearance&&v.appearance.layout===cfg.blogLayout&&v.appearance.theme===cfg.blogLayoutTheme);if(!hit)return;
+const key=hit[0],site=hit[1];if(!Array.isArray(site.routes)||!site.routes.includes(m.route))return;
+if(!safe(site.path))return;const record={schemaVersion:S,appearanceKey:key,layout:site.appearance.layout,theme:site.appearance.theme,path:site.path,releaseId:ptr.releaseId,selectionRevision:ptr.selectionRevision,expiresAt:mode==='home-only'?0:Date.now()+ttl};try{storage&&storage.setItem(C,JSON.stringify(record))}catch(_){}
+const guard='html-server-dynamic:'+ptr.releaseId+':'+key+':'+m.route;if(key===m.appearanceKey){sessionStorage.removeItem(guard);return;}
+await move(key,site.path,ptr.releaseId,key===man.primaryAppearance);
+}catch(_){if(mode!=='every-page'&&cacheValid&&!navigating)await move(cached.appearanceKey,cached.path,cached.releaseId,false).catch(()=>{})}finally{if(!navigating)reveal();}})();
+})();</script><!--html-server-dynamic:end-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  
+  <script defer src="../../../_assets/script.6d4f546be5f896d5.js"></script>
+  <script data-blog-theme-bootstrap>(function(){
+  var root = document.documentElement;
+  var theme = root.getAttribute('data-html-server-theme') || 'light';
+  try {
+    var stored = localStorage.getItem('html-server-blog-theme');
+    if (stored === 'dark' || stored === 'light') theme = stored;
+  } catch (error) {}
+  root.setAttribute('data-html-server-theme', theme);
+  root.classList.toggle('theme-dark', theme === 'dark');
+  root.classList.toggle('theme-light', theme !== 'dark');
+  root.style.backgroundColor = theme === 'dark'
+    ? 'var(--html-server-navigation-surface-dark, var(--html-server-blog-background-dark, #151515))'
+    : 'var(--html-server-navigation-surface-light, var(--html-server-blog-background-light, #f5f7fa))';
+})();</script>
+  
+  <title>第10章：工具系统 · Digital Garden</title>
+  <link rel="shortcut icon" href="//obsidian.md/favicon.ico">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Mono:wght@300;400;500&family=IBM+Plex+Sans+Condensed:wght@400;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&family=Manrope:wght@400;600;800&family=Noto+Serif+SC:wght@400;600;800&family=Playfair+Display:wght@600;800&family=Space+Grotesk:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="../../../_assets/blog.css">
+<link rel="preload" as="script" href="../../../_assets/blog.js" fetchpriority="high"><script>window.__htmlServerStaticSearch="../../../_assets/meta.json";window.__htmlServerStaticSidebar="../../../_assets/sidebar.json?v=mtmqp68z-2gf";window.__htmlServerStaticPluginOverrides=window.__htmlServerStaticPluginOverrides||{};Object.assign(window.__htmlServerStaticPluginOverrides["blog-live2d"]||(window.__htmlServerStaticPluginOverrides["blog-live2d"]={}),{"localScriptUrl":"../../../_assets/live2d-widget/L2Dwidget.min.js","localModelUrl":"../../../_assets/live2d-widget/assets/koharu.model.json","assetBaseUrl":"../../../_assets/live2d-widget"});</script></head>
+<body class="theme-light html-server-blog-body" data-blog-layout="style-lab-literary" data-blog-layout-theme="literary-quarterly" data-blog-page-kind="article" data-blog-style-isolation="strict" data-theme="literary" data-mode="light" data-page="seriesDetail" data-blog-theme-control="style-lab" data-blog-main-loading-class="html-server-blog-main-loading" data-blog-overview-loading-class="html-server-blog-overview-loading" data-blog-folder-loading-class="html-server-blog-folder-loading" data-blog-pagination-scroll="item" data-blog-pin-progress="true" data-blog-outline-shell-selector=".html-server-style-lab-outline" data-blog-outline-auto-hide="true" data-blog-sticky-header-selector=".html-server-style-lab-header,.html-server-lab-swiss-rail" data-blog-scroll-mode="app" data-blog-document-pinning="false" data-blog-document-pinning-filter-regular="false" style="--html-server-navigation-surface-light: #eee9df;--html-server-navigation-surface-dark: #201c18">
+  <script data-blog-theme-bootstrap>(function(){
+  var theme = document.documentElement.getAttribute('data-html-server-theme') || 'light';
+  document.body.classList.toggle('theme-dark', theme === 'dark');
+  document.body.classList.toggle('theme-light', theme !== 'dark');
+})();</script>
+  <script type="application/json" data-blog-theme-image-groups>{}</script>
+  
+  <div class="html-server-blog-app">
+    <div class="html-server-style-lab-shell html-server-style-lab-literary">
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="html-server-style-lab-header site-header"><a class="html-server-style-lab-brand brand" href="../../../" aria-label="回到文章列表"><b class="brand-mark">刊</b><span class="brand-copy"><strong>纸上季刊</strong><small>缓慢阅读与长篇写作</small></span></a><button class="menu-toggle" type="button" data-style-lab-menu aria-expanded="false" aria-controls="style-lab-main-nav">菜单</button><nav class="html-server-style-lab-nav main-nav" id="style-lab-main-nav" aria-label="主导航"><button type="button" data-style-lab-route="/">文章</button><button type="button" data-style-lab-route="/tags/">标签</button><button type="button" data-style-lab-route="/series/">系列</button><button type="button" data-style-lab-route="/archive/">归档</button></nav><div class="html-server-style-lab-tools header-tools" aria-label="站点工具"><button class="directory-toggle" type="button" data-blog-folder-open aria-label="打开目录"><span aria-hidden="true">▤</span><span>目录</span></button><button class="search-toggle" type="button" data-blog-search-open aria-label="打开搜索"><span aria-hidden="true">⌕</span><span>搜索</span></button><button class="mode-toggle" type="button" data-blog-theme aria-label="切换明暗主题"><span aria-hidden="true">◐</span><span class="mode-label">黑色</span></button></div></header>
+  <div id="content" class="html-server-style-lab-page series-shell" data-blog-course-page>
+    <aside class="html-server-style-lab-course series-tree" data-blog-course aria-label="Series chapters">
+  <header data-blog-course-header-toggle><a href="../../../series/">SERIES</a><h2>OpenClaw</h2><p>大模型/OpenClaw · 21 chapters</p><button type="button" data-blog-course-toggle aria-expanded="false" aria-label="Toggle series chapters"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="m7.5 10 4.5 4 4.5-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></header>
+  <nav class="tree-root" data-blog-course-scroll-handoff><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/OpenClaw/%E7%AC%AC1%E7%AB%A0-%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81-OpenClaw/?series=OpenClaw"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第1章：为什么需要-OpenClaw">第1章：为什么需要-OpenClaw</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/OpenClaw/%E7%AC%AC2%E7%AB%A0-%E6%9E%B6%E6%9E%84%E6%80%BB%E8%A7%88/?series=OpenClaw"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第2章：架构总览">第2章：架构总览</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/OpenClaw/%E7%AC%AC3%E7%AB%A0-Gateway-%E7%BD%91%E5%85%B3%E5%BC%95%E6%93%8E/?series=OpenClaw"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第3章：Gateway-网关引擎">第3章：Gateway-网关引擎</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/OpenClaw/%E7%AC%AC4%E7%AB%A0-Provider-%E6%8A%BD%E8%B1%A1%E5%B1%82/?series=OpenClaw"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第4章：Provider-抽象层">第4章：Provider-抽象层</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/OpenClaw/%E7%AC%AC5%E7%AB%A0-Session-%E4%B8%8E%E5%AF%B9%E8%AF%9D%E7%AE%A1%E7%90%86/?series=OpenClaw"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第5章：Session-与对话管理">第5章：Session-与对话管理</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/OpenClaw/%E7%AC%AC6%E7%AB%A0-Agent-%E7%B3%BB%E7%BB%9F/?series=OpenClaw"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第6章：Agent-系统">第6章：Agent-系统</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/OpenClaw/%E7%AC%AC7%E7%AB%A0-%E9%80%9A%E9%81%93%E6%9E%B6%E6%9E%84/?series=OpenClaw"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第7章：通道架构">第7章：通道架构</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/OpenClaw/%E7%AC%AC8%E7%AB%A0-%E9%80%9A%E9%81%93%E5%AE%9E%E7%8E%B0%E6%B7%B1%E5%BA%A6%E5%89%96%E6%9E%90/?series=OpenClaw"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第8章：通道实现深度剖析">第8章：通道实现深度剖析</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/OpenClaw/%E7%AC%AC9%E7%AB%A0-%E6%8F%92%E4%BB%B6%E4%B8%8E%E6%89%A9%E5%B1%95%E7%B3%BB%E7%BB%9F/?series=OpenClaw"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第9章：插件与扩展系统">第9章：插件与扩展系统</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/OpenClaw/%E7%AC%AC10%E7%AB%A0-%E5%B7%A5%E5%85%B7%E7%B3%BB%E7%BB%9F/?series=OpenClaw" aria-current="page"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第10章：工具系统">第10章：工具系统</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/OpenClaw/%E7%AC%AC11%E7%AB%A0-Node-%E7%B3%BB%E7%BB%9F%E4%B8%8E%E8%AE%BE%E5%A4%87%E8%BF%9E%E6%8E%A5/?series=OpenClaw"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第11章：Node-系统与设备连接">第11章：Node-系统与设备连接</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/OpenClaw/%E7%AC%AC12%E7%AB%A0-%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E4%B8%8E%E8%87%AA%E5%8A%A8%E5%8C%96/?series=OpenClaw"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第12章：定时任务与自动化">第12章：定时任务与自动化</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/OpenClaw/%E7%AC%AC13%E7%AB%A0-%E5%AE%89%E5%85%A8%E4%B8%8E%E6%9D%83%E9%99%90/?series=OpenClaw"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第13章：安全与权限">第13章：安全与权限</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/OpenClaw/%E7%AC%AC14%E7%AB%A0-CLI-%E4%B8%8E%E4%BA%A4%E4%BA%92%E7%95%8C%E9%9D%A2/?series=OpenClaw"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第14章：CLI-与交互界面">第14章：CLI-与交互界面</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/OpenClaw/%E7%AC%AC15%E7%AB%A0-%E9%83%A8%E7%BD%B2%E4%B8%8E%E8%BF%90%E7%BB%B4/?series=OpenClaw"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第15章：部署与运维">第15章：部署与运维</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/OpenClaw/%E7%AC%AC16%E7%AB%A0-%E6%8A%80%E8%83%BD%E7%B3%BB%E7%BB%9F/?series=OpenClaw"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第16章：技能系统">第16章：技能系统</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/OpenClaw/%E7%AC%AC17%E7%AB%A0-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8E%E6%9E%B6%E6%9E%84%E5%86%B3%E7%AD%96/?series=OpenClaw"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第17章：设计模式与架构决策">第17章：设计模式与架构决策</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/OpenClaw/%E7%AC%AC18%E7%AB%A0-%E6%9E%84%E5%BB%BA%E4%BD%A0%E8%87%AA%E5%B7%B1%E7%9A%84-Agent-%E5%B8%9D%E5%9B%BD/?series=OpenClaw"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第18章：构建你自己的-Agent-帝国">第18章：构建你自己的-Agent-帝国</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/OpenClaw/%E5%89%8D%E8%A8%80/?series=OpenClaw"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="前言">前言</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/OpenClaw/INDEX/?series=OpenClaw"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="章节目录">章节目录</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/OpenClaw/README/?series=OpenClaw"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="OpenClaw">OpenClaw</span></a></nav>
+</aside>
+    <main class="html-server-blog-main html-server-style-lab-main series-reader" data-blog-main>
+      <div class="article-shell"><aside class="html-server-style-lab-outline article-toc"><nav class="html-server-blog-outline" data-blog-outline aria-label="Article outline">
+  <button class="html-server-blog-outline-toggle" type="button" data-blog-outline-toggle aria-expanded="true" aria-controls="html-server-blog-outline-list"><span>本文目录</span><b aria-hidden="true"><svg viewBox="0 0 20 20" focusable="false"><path d="m4.5 7.25 5.5 5.5 5.5-5.5"/></svg></b></button>
+  <strong>本文目录</strong>
+  <ol id="html-server-blog-outline-list"><li style="--outline-depth:0"><a href="#Agent%20%E5%B7%A5%E5%85%B7%E7%9A%84%E6%A0%B8%E5%BF%83%E6%82%96%E8%AE%BA" data-blog-outline-link>Agent 工具的核心悖论</a></li><li style="--outline-depth:1"><a href="#%E5%A6%82%E6%9E%9C%E6%B2%A1%E6%9C%89%E5%B7%A5%E5%85%B7%E7%B3%BB%E7%BB%9F%E4%BC%9A%E6%80%8E%E6%A0%B7%EF%BC%9F" data-blog-outline-link>如果没有工具系统会怎样？</a></li><li style="--outline-depth:1"><a href="#%E5%B7%A5%E5%85%B7%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%9B%AE%E6%A0%87" data-blog-outline-link>工具系统的设计目标</a></li><li style="--outline-depth:0"><a href="#%E5%B7%A5%E5%85%B7%E6%9E%B6%E6%9E%84%EF%BC%9A%E4%B8%89%E5%B1%82%E6%8A%BD%E8%B1%A1" data-blog-outline-link>工具架构：三层抽象</a></li><li style="--outline-depth:1"><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF%E4%B8%89%E5%B1%82%E8%80%8C%E4%B8%8D%E6%98%AF%E4%B8%A4%E5%B1%82%EF%BC%9F" data-blog-outline-link>为什么是三层而不是两层？</a></li><li style="--outline-depth:1"><a href="#%E5%B7%A5%E5%85%B7%E7%9B%AE%E5%BD%95%E7%9A%84%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B" data-blog-outline-link>工具目录的数据模型</a></li><li style="--outline-depth:0"><a href="#%E7%AD%96%E7%95%A5%E7%AE%A1%E7%BA%BF%EF%BC%9A%E4%B8%83%E5%B1%82%E9%98%B2%E5%BE%A1" data-blog-outline-link>策略管线：七层防御</a></li><li style="--outline-depth:1"><a href="#%E9%97%AE%E9%A2%98%E7%9A%84%E6%9C%AC%E8%B4%A8" data-blog-outline-link>问题的本质</a></li><li style="--outline-depth:1"><a href="#%E7%AE%A1%E7%BA%BF%E6%96%B9%E6%A1%88" data-blog-outline-link>管线方案</a></li><li style="--outline-depth:1"><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF%E4%B8%83%E5%B1%82%E8%80%8C%E4%B8%8D%E6%98%AF%E4%B8%89%E5%B1%82%EF%BC%9F" data-blog-outline-link>为什么是七层而不是三层？</a></li><li style="--outline-depth:1"><a href="#%E6%9C%AA%E7%9F%A5%20Allowlist%20%E6%9D%A1%E7%9B%AE%E7%9A%84%E6%99%BA%E8%83%BD%E5%A4%84%E7%90%86" data-blog-outline-link>未知 Allowlist 条目的智能处理</a></li><li style="--outline-depth:1"><a href="#HTTP%20%E5%B7%A5%E5%85%B7%E6%8B%92%E7%BB%9D%E5%88%97%E8%A1%A8" data-blog-outline-link>HTTP 工具拒绝列表</a></li><li style="--outline-depth:0"><a href="#%E5%B7%A5%E5%85%B7%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%EF%BC%9A%E8%83%BD%E5%8A%9B%E5%8C%85" data-blog-outline-link>工具配置文件：能力包</a></li><li style="--outline-depth:1"><a href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%8A%A8%E6%9C%BA" data-blog-outline-link>配置文件的设计动机</a></li><li style="--outline-depth:1"><a href="#%E6%9B%BF%E4%BB%A3%E6%96%B9%E6%A1%88%E7%9A%84%E8%80%83%E9%87%8F" data-blog-outline-link>替代方案的考量</a></li><li style="--outline-depth:1"><a href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%B8%8E%E7%AD%96%E7%95%A5%E7%9A%84%E4%BA%A4%E4%BA%92" data-blog-outline-link>配置文件与策略的交互</a></li><li style="--outline-depth:0"><a href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E8%87%AA%E5%8A%A8%E5%8C%96%EF%BC%9A%E6%9C%80%E5%A4%8D%E6%9D%82%E7%9A%84%E5%B7%A5%E5%85%B7" data-blog-outline-link>浏览器自动化：最复杂的工具</a></li><li style="--outline-depth:1"><a href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E8%87%AA%E5%8A%A8%E5%8C%96%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%93%B2%E5%AD%A6" data-blog-outline-link>浏览器自动化的设计哲学</a></li><li style="--outline-depth:1"><a href="#%E5%BF%AB%E7%85%A7%E6%9C%BA%E5%88%B6%E7%9A%84%E5%B7%A5%E7%A8%8B%E5%AE%9E%E7%8E%B0" data-blog-outline-link>快照机制的工程实现</a></li><li style="--outline-depth:1"><a href="#%E5%AF%BC%E8%88%AA%E5%AE%88%E5%8D%AB" data-blog-outline-link>导航守卫</a></li><li style="--outline-depth:1"><a href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E9%9A%94%E7%A6%BB" data-blog-outline-link>配置文件隔离</a></li><li style="--outline-depth:1"><a href="#%E4%B8%8E%E5%85%B6%E4%BB%96%E6%A1%86%E6%9E%B6%E7%9A%84%E6%B5%8F%E8%A7%88%E5%99%A8%E6%96%B9%E6%A1%88%E5%AF%B9%E6%AF%94" data-blog-outline-link>与其他框架的浏览器方案对比</a></li><li style="--outline-depth:0"><a href="#%E8%BF%9B%E7%A8%8B%E6%89%A7%E8%A1%8C%EF%BC%9A%E5%8F%97%E6%8E%A7%E7%9A%84%E5%8A%9B%E9%87%8F" data-blog-outline-link>进程执行：受控的力量</a></li><li style="--outline-depth:1"><a href="#%E4%B8%89%E6%A8%A1%E5%BC%8F%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9E%8B" data-blog-outline-link>三模式安全模型</a></li><li style="--outline-depth:1"><a href="#SafeBins%20%E7%9A%84%E6%B7%B1%E5%B1%82%E8%AE%BE%E8%AE%A1" data-blog-outline-link>SafeBins 的深层设计</a></li><li style="--outline-depth:1"><a href="#%E5%91%BD%E4%BB%A4%E6%B3%A8%E5%85%A5%E9%98%B2%E5%BE%A1" data-blog-outline-link>命令注入防御</a></li><li style="--outline-depth:1"><a href="#%E5%90%8E%E5%8F%B0%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86" data-blog-outline-link>后台进程管理</a></li><li style="--outline-depth:0"><a href="#Web%20%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%86%85%E5%AE%B9%E7%90%86%E8%A7%A3" data-blog-outline-link>Web 搜索与内容理解</a></li><li style="--outline-depth:1"><a href="#%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E6%8A%BD%E8%B1%A1" data-blog-outline-link>搜索引擎抽象</a></li><li style="--outline-depth:1"><a href="#%E5%86%85%E5%AE%B9%E6%8F%90%E5%8F%96%E7%9A%84%E6%9D%83%E8%A1%A1" data-blog-outline-link>内容提取的权衡</a></li><li style="--outline-depth:1"><a href="#%E5%AA%92%E4%BD%93%E7%90%86%E8%A7%A3" data-blog-outline-link>媒体理解</a></li><li style="--outline-depth:0"><a href="#%E8%AF%AD%E9%9F%B3%E5%90%88%E6%88%90" data-blog-outline-link>语音合成</a></li><li style="--outline-depth:0"><a href="#%E5%B7%A5%E5%85%B7%E7%B3%BB%E7%BB%9F%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E5%BC%95%E6%93%8E%E7%9A%84%E5%85%B3%E7%B3%BB" data-blog-outline-link>工具系统与上下文引擎的关系</a></li><li style="--outline-depth:0"><a href="#%E5%AE%9E%E6%88%98%E6%8E%A8%E6%BC%94%EF%BC%9AAgent%20%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AE%8C%E6%88%90%E8%A1%A8%E5%8D%95%E5%A1%AB%E5%86%99" data-blog-outline-link>实战推演：Agent 自动化浏览器完成表单填写</a></li><li style="--outline-depth:1"><a href="#%E5%9C%BA%E6%99%AF%E6%8F%8F%E8%BF%B0" data-blog-outline-link>场景描述</a></li><li style="--outline-depth:1"><a href="#Agent%20%E7%9A%84%E6%89%A7%E8%A1%8C%E5%BA%8F%E5%88%97" data-blog-outline-link>Agent 的执行序列</a></li><li style="--outline-depth:1"><a href="#%E4%B8%8A%E4%B8%8B%E6%96%87%E6%95%88%E7%8E%87%E7%9A%84%E5%85%B3%E9%94%AE%E4%BD%9C%E7%94%A8" data-blog-outline-link>上下文效率的关键作用</a></li><li style="--outline-depth:0"><a href="#%E8%B7%A8%E7%AB%A0%E5%85%B3%E8%81%94" data-blog-outline-link>跨章关联</a></li><li style="--outline-depth:0"><a href="#%E6%A1%86%E6%9E%B6%E5%AF%B9%E6%AF%94" data-blog-outline-link>框架对比</a></li><li style="--outline-depth:0"><a href="#%E5%8E%86%E5%8F%B2%E6%BC%94%E8%BF%9B" data-blog-outline-link>历史演进</a></li><li style="--outline-depth:0"><a href="#%E5%85%B3%E9%94%AE%E6%BA%90%E7%A0%81%E6%96%87%E4%BB%B6" data-blog-outline-link>关键源码文件</a></li><li style="--outline-depth:0"><a href="#%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%93" data-blog-outline-link>本章小结</a></li><li style="--outline-depth:1"><a href="#%F0%9F%9B%A0%EF%B8%8F%20%E8%AF%95%E4%B8%80%E8%AF%95%EF%BC%9A%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AA%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B7%A5%E5%85%B7" data-blog-outline-link>🛠️ 试一试：编写一个自定义工具</a></li><li style="--outline-depth:1"><a href="#%E6%80%9D%E8%80%83%E9%A2%98" data-blog-outline-link>思考题</a></li><li style="--outline-depth:1"><a href="#%F0%9F%93%9A%20%E6%8E%A8%E8%8D%90%E9%98%85%E8%AF%BB" data-blog-outline-link>📚 推荐阅读</a></li></ol>
+</nav></aside><article class="html-server-blog-article article-body">
+    <nav class="html-server-blog-breadcrumb breadcrumbs" aria-label="Breadcrumb"><a href="../../../" data-blog-folder-path="">Home</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../folders/_/大模型/" data-blog-folder-path="大模型">大模型</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../folders/_/大模型/_/OpenClaw/" data-blog-folder-path="大模型/OpenClaw">OpenClaw</a></nav>
+    <header class="html-server-blog-article-header"><div class="post-meta"><time>Jul 15, 2026</time><span>28 分钟</span><span>最后更新 Jul 15, 2026</span></div><h2>第10章：工具系统</h2><p class="article-deck">“工具安全的最难问题不是’如何阻止恶意调用’，而是’如何区分一次危险但正确的操作和一次安全但错误的操作’——前者应该放行，后者应该拦截，而 LLM 给你的信号往往不足以可靠区分两者。”</p><div class="tag-line"><button type="button" data-style-lab-href="../../../tags/ai-agent/"># ai-agent</button><button type="button" data-style-lab-href="../../../tags/OpenClaw/"># OpenClaw</button><button type="button" data-style-lab-href="../../../tags/%25E7%25B3%25BB%25E5%2588%2597%25E6%2595%2599%25E7%25A8%258B/"># 系列教程</button></div></header>
+    
+    <div class="markdown-reading-view html-server-blog-reading-view article-content"><div class="markdown-preview-view markdown-rendered node-insert-event is-readable-line-width allow-fold-headings allow-fold-lists" tabindex="-1"><div class="markdown-preview-sizer markdown-preview-section"><pre class="frontmatter language-yaml" style="display: none; overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-yaml is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token key atrule">created</span><span class="token punctuation">:</span> 2026<span class="token punctuation">-</span>07<span class="token punctuation">-</span>14 21<span class="token punctuation">:</span><span class="token number">07</span>
+<span class="token key atrule">updated</span><span class="token punctuation">:</span> 2026<span class="token punctuation">-</span>07<span class="token punctuation">-</span>14 21<span class="token punctuation">:</span><span class="token number">07</span>
+<span class="token key atrule">aliases</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> 第10章：工具系统
+<span class="token key atrule">title</span><span class="token punctuation">:</span> 第10章：工具系统
+<span class="token key atrule">source</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//www.yangyitao.com/books/openclaw/chapters/10<span class="token punctuation">-</span>tool
+<span class="token key atrule">tags</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> ai<span class="token punctuation">-</span>agent
+  <span class="token punctuation">-</span> OpenClaw
+  <span class="token punctuation">-</span> 系列教程
+<span class="token key atrule">type</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> AI
+<span class="token key atrule">category</span><span class="token punctuation">:</span> AI工程/OpenClaw
+<span class="token key atrule">cssclasses</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> ai<span class="token punctuation">-</span>agent
+  <span class="token punctuation">-</span> series
+<span class="token key atrule">note</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">series</span><span class="token punctuation">:</span> OpenClaw</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout drop-shadow"><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg></div><div class="callout-title-inner">文档定位</div></div><div class="callout-content ab-note">
+<p dir="auto"><strong>AI 整理 + 学习笔记</strong>。原文出自杨艺韬《OpenClaw》一书。</p>
+<p dir="auto">原文链接:<a rel="noopener nofollow" class="external-link" href="https://www.yangyitao.com/books/openclaw/chapters/10-tool" target="_blank">https://www.yangyitao.com/books/openclaw/chapters/10-tool</a><br>
+系列入口:<a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/OpenClaw/README/" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/OpenClaw/README/" class="internal-link" target="" rel="noopener nofollow">大模型/OpenClaw/README</a></p>
+</div></div>
+<p dir="auto">OpenClaw</p>
+<p dir="auto"><em>“工具安全的最难问题不是’如何阻止恶意调用’，而是’如何区分一次危险但正确的操作和一次安全但错误的操作’——前者应该放行，后者应该拦截，而 LLM 给你的信号往往不足以可靠区分两者。”</em></p>
+<p dir="auto"><strong>本章要点</strong></p>
+<ul>
+<li dir="auto">理解 Agent 工具的核心悖论：能力越强，风险越大</li>
+<li dir="auto">掌握三层工具抽象与七层策略防御管线</li>
+<li dir="auto">深入浏览器自动化、进程执行、Web 搜索等核心工具实现</li>
+<li dir="auto">理解工具系统与上下文引擎的协同关系</li>
+</ul>
+<p dir="auto">前九章，我们构建了 OpenClaw 的完整骨架：Gateway 调度全局、Provider 连接模型、Session 管理记忆、Agent 编排决策、通道对接用户、插件开放生态。骨架已成，但 Agent 仍然只是一个”能说会道的嘴”——它能生成文字，却无法触碰真实世界。</p>
+<p dir="auto">工具系统，就是给 Agent 装上的双手。</p>
+<h2 data-heading="Agent 工具的核心悖论" dir="auto">Agent 工具的核心悖论</h2>
+<p dir="auto">什么区分了 AI Agent 和聊天机器人？答案看似简单：<strong>行动的能力</strong>。聊天机器人生成”我可以帮你搜索”的文本；Agent 真正打开浏览器、输入查询、返回结果。一个是纸上谈兵，一个是真刀真枪。</p>
+<p dir="auto">但这种简单性掩盖了一个困扰所有 Agent 框架的设计难题：如何让 AI <em>安全地</em>、<em>可扩展地</em>、<em>智能地</em>调用系统能力？</p>
+<p dir="auto">考虑最朴素的方案：将每个操作系统能力暴露为 LLM 可调用的函数。这在演示中行得通，但在生产环境中必然崩溃。没有权限控制，Agent 可能因误解指令而执行 <code class="code-styler-inline">rm -rf /</code>；没有路由智能，用户要搜索它却去生成图片；没有并发管理，并行工具调用耗尽系统资源。<strong>能力越大，责任越大——也越需要精密的管控。</strong></p>
+<p dir="auto">好的工具系统不是给 Agent 更多的刀——而是一套完整的刀具管理体系：哪些刀放在台面上，哪些锁在柜子里，谁有钥匙，什么情况下可以用。</p>
+<p dir="auto">🔥 <strong>深度洞察：工具是 Agent 的”宪法修正案”</strong></p>
+<p dir="auto">从政治学的视角看工具系统，你会获得一个全新的理解。LLM 的基础能力（文本生成）就像宪法原文——庄严但抽象。每一个工具的添加，就像一条宪法修正案——它赋予 Agent 新的权力（执行命令、浏览网页、操作设备），但同时必须有对应的约束条款。美国宪法第二修正案赋予公民持枪权，但配套了无数的联邦和州法律来规范这一权力的行使。OpenClaw 的工具系统遵循完全相同的逻辑：<code class="code-styler-inline">exec</code>工具赋予 Agent 执行 Shell 命令的能力（强大的”武器”），但七层策略管线确保这一能力在严格约束下行使。<strong>没有约束的能力不是能力，是隐患。</strong></p>
+<h3 data-heading="如果没有工具系统会怎样？" dir="auto">如果没有工具系统会怎样？</h3>
+<p dir="auto">让我们做一个思想实验。假设 OpenClaw 没有专门的工具系统，而是像早期的 LangChain 那样，让开发者自己将函数注册到 LLM 的工具列表中。会发生什么？</p>
+<p dir="auto"><strong>第一个问题是安全真空。</strong>没有统一的策略层，每个工具自行决定”谁能调用我”。浏览器工具可能有 URL 白名单，但 exec 工具完全不设防。安全变成了一个个孤岛——有的工具很安全，有的工具裸奔，整体安全性取决于最弱的那一环。</p>
+<p dir="auto"><strong>第二个问题是配置爆炸。</strong>运营者需要为每个工具单独配置权限、超时、资源限制。10 个工具需要 10 套配置。50 个工具需要 50 套。配置的复杂度与工具数量线性增长，维护成本很快超过工具本身的价值。</p>
+<p dir="auto"><strong>第三个问题是上下文浪费。</strong>没有统一的输出格式控制，每个工具返回自己认为合理的格式——浏览器返回完整 HTML（50K token），搜索返回原始 JSON（30K token），一次工具调用就可能耗尽整个上下文窗口。Agent 变成了只能使用一次工具的”一次性工人”。</p>
+<p dir="auto">OpenClaw 的工具系统正是对这三个问题的系统性回应。它不是简单的函数注册表，而是一个<strong>完整的工具治理框架</strong>——在安全、配置和效率三个维度上提供统一的解决方案。</p>
+<h3 data-heading="工具系统的设计目标" dir="auto">工具系统的设计目标</h3>
+<p dir="auto">在深入实现之前，让我们明确工具系统要解决的核心需求：</p>
+<ol>
+<li dir="auto"><strong>安全隔离</strong>：不同利益相关者（平台运营者、Agent 开发者、模型提供商）能独立控制工具访问，且安全策略可组合。</li>
+<li dir="auto"><strong>上下文效率</strong>：工具的输出必须经过压缩和格式化，使之适合有限的上下文窗口。</li>
+<li dir="auto"><strong>配置简洁</strong>：运营者能用一行配置（如 <code class="code-styler-inline">tools.profile: coding</code>）获得一组合理的工具默认值。</li>
+<li dir="auto"><strong>扩展透明</strong>：添加新工具不需要修改安全系统；修改安全策略不需要理解工具实现。</li>
+<li dir="auto"><strong>优雅降级</strong>：工具不可用时（如浏览器未安装），系统平滑降级而非崩溃。</li>
+</ol>
+<p dir="auto">这五个目标之间存在张力。例如，安全隔离要求细粒度控制，但配置简洁要求粗粒度抽象。工具系统的架构设计本质上是在这些张力之间寻找平衡。</p>
+<p dir="auto"><strong>关键概念：工具策略管线（Tool Policy Pipeline）</strong>工具策略管线是 OpenClaw 工具安全的核心机制——在任何工具进入 LLM 的可用工具列表之前，它必须通过多达七个独立的过滤阶段（Agent 级、Owner-Only、通道级、Provider 级、沙箱级等）。每个阶段可以独立允许或拒绝工具，且修改安全策略不需要修改工具实现，反之亦然。</p>
+<h2 data-heading="工具架构：三层抽象" dir="auto">工具架构：三层抽象</h2>
+<p dir="auto">工具系统不是一个扁平的函数列表。它在三个层次上运作，每层解决不同类别的问题。</p>
+<p dir="auto"><strong>第一层：工具目录</strong>（<code class="code-styler-inline">src/agents/tool-catalog.ts</code>）。所有工具的主注册表——文件操作（<code class="code-styler-inline">read</code>、<code class="code-styler-inline">write</code>、<code class="code-styler-inline">edit</code>）、运行时操作（<code class="code-styler-inline">exec</code>、<code class="code-styler-inline">process</code>）、Web 操作（<code class="code-styler-inline">browser</code>、<code class="code-styler-inline">web_search</code>、<code class="code-styler-inline">web_fetch</code>）、媒体操作（<code class="code-styler-inline">image</code>、<code class="code-styler-inline">tts</code>、<code class="code-styler-inline">pdf</code>）和会话操作（<code class="code-styler-inline">sessions_spawn</code>、<code class="code-styler-inline">sessions_yield</code>）。每个工具属于一个<strong>分区</strong>（section），并声明参与哪些<strong>配置文件</strong>（profile）。</p>
+<p dir="auto"><strong>第二层：工具策略管线</strong>（<code class="code-styler-inline">src/agents/tool-policy-pipeline.ts</code>）。安全性的核心。在任何工具进入 LLM 的意识之前，它通过多达七个独立过滤阶段——配置文件策略、提供商策略、全局策略、Agent 级策略和群组策略（策略管线的详细架构如图 6-3 所示，安全模型详见第13章）。每个阶段可以允许、拒绝或对任何工具保持沉默。管线遵循”最后一个明确意见胜出”的语义。</p>
+<p dir="auto"><strong>第三层：工具执行</strong>（各 <code class="code-styler-inline">src/</code>模块）。每个工具的实际实现——用于浏览器自动化的 Playwright、用于命令执行的 Node.js <code class="code-styler-inline">child_process</code>、用于网页搜索的 HTTP 客户端等。</p>
+<figure><img alt="图 10-1：工具系统三层架构" referrerpolicy="no-referrer" decoding="async" src="https://www.yangyitao.com/_astro/fig-10-m1.B0tgRO6E_ZvCUVh.webp" loading="eager"><figcaption>图 10-1：工具系统三层架构</figcaption></figure>
+<div class="mermaid"><svg id="m70137fcaa6ba2be1" width="821" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flowchart" height="164" viewBox="0 0 821 164" role="graphics-document document" aria-roledescription="flowchart-v2"><style>#m70137fcaa6ba2be1{font-family:var(--font-mermaid);font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#m70137fcaa6ba2be1 .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#m70137fcaa6ba2be1 .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#m70137fcaa6ba2be1 .error-icon{fill:#552222;}#m70137fcaa6ba2be1 .error-text{fill:#552222;stroke:#552222;}#m70137fcaa6ba2be1 .edge-thickness-normal{stroke-width:1px;}#m70137fcaa6ba2be1 .edge-thickness-thick{stroke-width:3.5px;}#m70137fcaa6ba2be1 .edge-pattern-solid{stroke-dasharray:0;}#m70137fcaa6ba2be1 .edge-thickness-invisible{stroke-width:0;fill:none;}#m70137fcaa6ba2be1 .edge-pattern-dashed{stroke-dasharray:3;}#m70137fcaa6ba2be1 .edge-pattern-dotted{stroke-dasharray:2;}#m70137fcaa6ba2be1 .marker{fill:#333333;stroke:#333333;}#m70137fcaa6ba2be1 .marker.cross{stroke:#333333;}#m70137fcaa6ba2be1 svg{font-family:var(--font-mermaid);font-size:16px;}#m70137fcaa6ba2be1 p{margin:0;}#m70137fcaa6ba2be1 .label{font-family:var(--font-mermaid);color:#333;}#m70137fcaa6ba2be1 .cluster-label text{fill:#333;}#m70137fcaa6ba2be1 .cluster-label span{color:#333;}#m70137fcaa6ba2be1 .cluster-label span p{background-color:transparent;}#m70137fcaa6ba2be1 .label text,#m70137fcaa6ba2be1 span{fill:#333;color:#333;}#m70137fcaa6ba2be1 .node rect,#m70137fcaa6ba2be1 .node circle,#m70137fcaa6ba2be1 .node ellipse,#m70137fcaa6ba2be1 .node polygon,#m70137fcaa6ba2be1 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#m70137fcaa6ba2be1 .rough-node .label text,#m70137fcaa6ba2be1 .node .label text,#m70137fcaa6ba2be1 .image-shape .label,#m70137fcaa6ba2be1 .icon-shape .label{text-anchor:middle;}#m70137fcaa6ba2be1 .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#m70137fcaa6ba2be1 .rough-node .label,#m70137fcaa6ba2be1 .node .label,#m70137fcaa6ba2be1 .image-shape .label,#m70137fcaa6ba2be1 .icon-shape .label{text-align:center;}#m70137fcaa6ba2be1 .node.clickable{cursor:pointer;}#m70137fcaa6ba2be1 .root .anchor path{fill:#333333!important;stroke-width:0;stroke:#333333;}#m70137fcaa6ba2be1 .arrowheadPath{fill:#333333;}#m70137fcaa6ba2be1 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#m70137fcaa6ba2be1 .flowchart-link{stroke:#333333;fill:none;}#m70137fcaa6ba2be1 .edgeLabel{background-color:rgba(232,232,232, 0.8);text-align:center;}#m70137fcaa6ba2be1 .edgeLabel p{background-color:rgba(232,232,232, 0.8);}#m70137fcaa6ba2be1 .edgeLabel rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#m70137fcaa6ba2be1 .labelBkg{background-color:rgba(232, 232, 232, 0.5);}#m70137fcaa6ba2be1 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#m70137fcaa6ba2be1 .cluster text{fill:#333;}#m70137fcaa6ba2be1 .cluster span{color:#333;}#m70137fcaa6ba2be1 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:var(--font-mermaid);font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#m70137fcaa6ba2be1 .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#333;}#m70137fcaa6ba2be1 rect.text{fill:none;stroke-width:0;}#m70137fcaa6ba2be1 .icon-shape,#m70137fcaa6ba2be1 .image-shape{background-color:rgba(232,232,232, 0.8);text-align:center;}#m70137fcaa6ba2be1 .icon-shape p,#m70137fcaa6ba2be1 .image-shape p{background-color:rgba(232,232,232, 0.8);padding:2px;}#m70137fcaa6ba2be1 .icon-shape .label rect,#m70137fcaa6ba2be1 .image-shape .label rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#m70137fcaa6ba2be1 .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#m70137fcaa6ba2be1 .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#m70137fcaa6ba2be1 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g><marker id="m70137fcaa6ba2be1-m70137fcaa6ba2be1_flowchart-v2-pointEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="m70137fcaa6ba2be1-m70137fcaa6ba2be1_flowchart-v2-pointStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="4.5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="m70137fcaa6ba2be1-m70137fcaa6ba2be1_flowchart-v2-circleEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="m70137fcaa6ba2be1-m70137fcaa6ba2be1_flowchart-v2-circleStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="m70137fcaa6ba2be1-m70137fcaa6ba2be1_flowchart-v2-crossEnd" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><marker id="m70137fcaa6ba2be1-m70137fcaa6ba2be1_flowchart-v2-crossStart" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><g class="root"><g class="clusters"></g><g class="edgePaths"></g><g class="edgeLabels"></g><g class="nodes"><g class="root" transform="translate(0, 0)"><g class="clusters"><g class="cluster" id="subGraph0" data-look="classic"><rect style="" x="8" y="8" width="805" height="148"></rect><g class="cluster-label" transform="translate(318.234375, 8)"><foreignObject width="184.53125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5;"><span class="nodeLabel"><p>图 10-1：工具系统三层架构</p></span></div></foreignObject></g></g></g><g class="edgePaths"><path d="M233.5,82L239.75,82C246,82,258.5,82,270.333,82C282.167,82,293.333,82,298.917,82L304.5,82" id="L_Catalog_Pipeline_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_Catalog_Pipeline_0" data-points="W3sieCI6MjMzLjUsInkiOjgyfSx7IngiOjI3MSwieSI6ODJ9LHsieCI6MzA4LjUsInkiOjgyfV0=" marker-end="url(#m70137fcaa6ba2be1-m70137fcaa6ba2be1_flowchart-v2-pointEnd)"></path><path d="M496.5,82L502.75,82C509,82,521.5,82,533.333,82C545.167,82,556.333,82,561.917,82L567.5,82" id="L_Pipeline_Execution_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_Pipeline_Execution_0" data-points="W3sieCI6NDk2LjUsInkiOjgyfSx7IngiOjUzNCwieSI6ODJ9LHsieCI6NTcxLjUsInkiOjgyfV0=" marker-end="url(#m70137fcaa6ba2be1-m70137fcaa6ba2be1_flowchart-v2-pointEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" data-id="L_Catalog_Pipeline_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_Pipeline_Execution_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-Catalog-0" transform="translate(139.5, 82)"><rect class="basic label-container" style="fill:#3498db !important" x="-94" y="-39" width="188" height="78"></rect><g class="label" style="color:#fff !important" transform="translate(-64, -24)"><rect></rect><foreignObject width="128" height="48"><div style="color: rgb(255, 255, 255) !important; display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="color:#fff !important" class="nodeLabel"><p>第一层：工具目录<br>有哪些工具？</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-Pipeline-1" transform="translate(402.5, 82)"><rect class="basic label-container" style="fill:#e74c3c !important" x="-94" y="-39" width="188" height="78"></rect><g class="label" style="color:#fff !important" transform="translate(-64, -24)"><rect></rect><foreignObject width="128" height="48"><div style="color: rgb(255, 255, 255) !important; display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="color:#fff !important" class="nodeLabel"><p>第二层：策略管线<br>允许哪些工具？</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-Execution-2" transform="translate(673.5, 82)"><rect class="basic label-container" style="fill:#27ae60 !important" x="-102" y="-39" width="204" height="78"></rect><g class="label" style="color:#fff !important" transform="translate(-72, -24)"><rect></rect><foreignObject width="144" height="48"><div style="color: rgb(255, 255, 255) !important; display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="color:#fff !important" class="nodeLabel"><p>第三层：工具执行<br>每个工具怎么工作？</p></span></div></foreignObject></g></g></g></g></g></g></g></svg></div>
+<p dir="auto">这种分离至关重要。目录是静态且全面的。管线是动态且安全感知的。执行层是模块化且可独立测试的。改变安全策略永远不需要修改工具实现，添加新工具永远不需要理解策略系统。</p>
+<p dir="auto">⚠️ <strong>注意</strong>：<code class="code-styler-inline">exec</code>工具的默认安全模式为 <code class="code-styler-inline">"allowlist"</code>——只有在白名单中的命令才会被自动执行。如果你需要 Agent 执行任意命令（如开发环境），可以将安全模式设置为 <code class="code-styler-inline">"full"</code>，但务必确保 Agent 仅面向受信任的用户。在面向公众的 Agent 上使用 <code class="code-styler-inline">"full"</code>模式是严重的安全风险。</p>
+<h3 data-heading="为什么是三层而不是两层？" dir="auto">为什么是三层而不是两层？</h3>
+<p dir="auto">一个自然的疑问：为什么不把目录和策略合并为一层？答案在于<strong>关注点的独立演化速度</strong>。</p>
+<p dir="auto">工具目录的变更频率较低——当 OpenClaw 添加新工具（如 <code class="code-styler-inline">canvas</code>、<code class="code-styler-inline">feishu_doc</code>）时才变化，这可能是几周一次。策略管线的变更频率中等——运营者调整安全配置时变化，可能是每天。工具执行的变更频率最高——Bug 修复、性能优化、API 适配，几乎每次提交都涉及。</p>
+<p dir="auto">如果目录和策略耦合，每次添加新工具都要重新审视安全策略的组合逻辑。如果策略和执行耦合，每次修改浏览器自动化的细节都可能意外改变安全行为。三层分离让每一层按自己的节奏演化，互不干扰。</p>
+<h3 data-heading="工具目录的数据模型" dir="auto">工具目录的数据模型</h3>
+<p dir="auto">让我们看看工具目录的核心数据结构（<code class="code-styler-inline">src/agents/tool-catalog.ts</code>）：</p>
+<pre class="language-typescript" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-typescript is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token comment">// 工具的核心定义——每个工具是一个静态声明</span>
+<span class="token keyword">type</span> <span class="token class-name">CoreToolDefinition</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  id<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>              <span class="token comment">// 工具唯一标识</span>
+  label<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>           <span class="token comment">// 显示名称</span>
+  description<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>     <span class="token comment">// 功能描述</span>
+  sectionId<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>       <span class="token comment">// 所属分区（fs/runtime/web/media/...）</span>
+  profiles<span class="token operator">:</span> ToolProfileId<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment">// 属于哪些配置文件</span>
+  includeInOpenClawGroup<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">boolean</span><span class="token punctuation">;</span>  <span class="token comment">// 是否归入 OpenClaw 工具组</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">这个定义有几个微妙的设计决策：</p>
+<p dir="auto"><strong><code class="code-styler-inline">sectionId</code>的分区设计</strong>。11 个分区（<code class="code-styler-inline">fs</code>、<code class="code-styler-inline">runtime</code>、<code class="code-styler-inline">web</code>、<code class="code-styler-inline">memory</code>、<code class="code-styler-inline">sessions</code>、<code class="code-styler-inline">ui</code>、<code class="code-styler-inline">messaging</code>、<code class="code-styler-inline">automation</code>、<code class="code-styler-inline">nodes</code>、<code class="code-styler-inline">agents</code>、<code class="code-styler-inline">media</code>）不是按技术实现分的，而是按<strong>用户心理模型</strong>分的。运营者不会想”我要允许使用 Playwright 的工具”，而是”我要允许 Web 相关的工具”。分区对齐了运营者的思维方式，让配置更直觉。</p>
+<p dir="auto"><strong><code class="code-styler-inline">profiles</code>的多重归属</strong>。一个工具可以属于多个配置文件。例如 <code class="code-styler-inline">web_search</code>同时属于 <code class="code-styler-inline">coding</code>和 <code class="code-styler-inline">full</code>配置文件。这意味着切换配置文件不需要手动调整个别工具——配置文件是工具子集的有名字的快捷方式。</p>
+<p dir="auto"><strong><code class="code-styler-inline">includeInOpenClawGroup</code>的插件边界标识</strong>。这个布尔值标记哪些工具在策略过滤中应该被视为”核心 OpenClaw 工具”而非”插件提供的工具”。这影响当 allowlist 中出现未知条目时的降级行为——如果 allowlist 仅包含插件工具名，系统会剥离该 allowlist（让所有核心工具保持可用），而非错误地禁用所有核心工具。</p>
+<h2 data-heading="策略管线：七层防御" dir="auto">策略管线：七层防御</h2>
+<p dir="auto">如果你只能理解整个工具系统的一个机制，那应该是策略管线。这是 OpenClaw 安全态势的执行点——它的设计揭示了关于 Agent 安全的深刻洞察。</p>
+<h3 data-heading="问题的本质" dir="auto">问题的本质</h3>
+<p dir="auto">不同利益相关者需要不同级别的工具控制。平台运营者想全局禁止 <code class="code-styler-inline">sessions_spawn</code>（防止远程代码执行）。Agent 配置想将某个 Agent 限制为只读工具（数据分析场景）。模型提供商策略想根据模型能力限制工具（某些模型不支持工具调用）。群组管理员想在特定 Discord 群里禁用 <code class="code-styler-inline">exec</code>（安全考虑）。</p>
+<p dir="auto">传统的做法是把所有这些规则塞进一个巨大的 <code class="code-styler-inline">if-else</code>树。但这种方案有致命缺陷：<strong>规则之间会产生意外的交互效应</strong>。当运营者的全局禁止和 Agent 的局部允许冲突时，谁赢？当模型提供商策略和群组策略都对同一个工具有意见时，优先级怎么定？</p>
+<h3 data-heading="管线方案" dir="auto">管线方案</h3>
+<p dir="auto">OpenClaw 的回答是：独立过滤阶段的<strong>有序管线</strong>，每个阶段有自己的作用域和真实来源：</p>
+<pre class="language-typescript" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-typescript is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token comment">// src/agents/tool-policy-pipeline.ts（简化）</span>
+<span class="token keyword">const</span> stages <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">{</span> policy<span class="token operator">:</span> profilePolicy<span class="token punctuation">,</span>         label<span class="token operator">:</span> <span class="token string">"tools.profile"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> policy<span class="token operator">:</span> providerProfilePolicy<span class="token punctuation">,</span> label<span class="token operator">:</span> <span class="token string">"tools.byProvider.profile"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> policy<span class="token operator">:</span> globalPolicy<span class="token punctuation">,</span>          label<span class="token operator">:</span> <span class="token string">"tools.allow"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> policy<span class="token operator">:</span> globalProviderPolicy<span class="token punctuation">,</span>  label<span class="token operator">:</span> <span class="token string">"tools.byProvider.allow"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> policy<span class="token operator">:</span> agentPolicy<span class="token punctuation">,</span>           label<span class="token operator">:</span> <span class="token string">"agents.X.tools.allow"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> policy<span class="token operator">:</span> agentProviderPolicy<span class="token punctuation">,</span>   label<span class="token operator">:</span> <span class="token string">"agents.X.tools.byProvider.allow"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span> policy<span class="token operator">:</span> groupPolicy<span class="token punctuation">,</span>           label<span class="token operator">:</span> <span class="token string">"group tools.allow"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">管线的执行语义简洁但强大：每个阶段独立决定允许或拒绝某些工具。阶段按顺序执行，后面的阶段可以覆盖前面的决策。通过所有七个阶段的工具对 LLM 可用。在<em>任何</em>阶段被阻止的工具从 LLM 的工具目录中移除——<strong>模型甚至不知道它的存在</strong>。</p>
+<p dir="auto">这最后一点至关重要。被策略拒绝的工具不是”显示为不可用”，而是从 LLM 的世界中彻底消失。LLM 不能请求使用它不知道存在的工具，这从根本上消除了模型试图绕过工具限制的可能性。</p>
+<h3 data-heading="为什么是七层而不是三层？" dir="auto">为什么是七层而不是三层？</h3>
+<p dir="auto">七层看起来过度设计了？让我们通过一个具体场景理解为什么每一层都不可或缺。</p>
+<p dir="auto">想象这个场景：运营者部署了一个 OpenClaw 实例，同时服务于三个 Agent——<code class="code-styler-inline">coder</code>（编码助手）、<code class="code-styler-inline">researcher</code>（研究助手）和 <code class="code-styler-inline">support</code>（客户支持）。</p>
+<ul>
+<li dir="auto"><strong>配置文件层</strong>：<code class="code-styler-inline">coder</code>使用 <code class="code-styler-inline">coding</code>配置文件（包含 <code class="code-styler-inline">exec</code>、<code class="code-styler-inline">browser</code>），<code class="code-styler-inline">support</code>使用 <code class="code-styler-inline">messaging</code>配置文件（只有 <code class="code-styler-inline">message</code>、<code class="code-styler-inline">tts</code>）。这一层决定了每个 Agent 的”能力天花板”。</li>
+<li dir="auto"><strong>提供商配置文件层</strong>：<code class="code-styler-inline">researcher</code>使用 DeepSeek，它不支持工具调用。这一层确保不向不支持的模型发送工具定义。</li>
+<li dir="auto"><strong>全局策略层</strong>：运营者全局禁止 <code class="code-styler-inline">sessions_spawn</code>，因为这是远程代码执行向量。这一层实施”绝对不可逾越的红线”。</li>
+<li dir="auto"><strong>全局提供商策略层</strong>：对所有使用 OpenAI 的 Agent，禁止 <code class="code-styler-inline">browser</code>（因为 OpenAI 的使用条款限制）。</li>
+<li dir="auto"><strong>Agent 策略层</strong>：<code class="code-styler-inline">coder</code>只允许在 <code class="code-styler-inline">~/projects/</code>下操作文件。这一层实施每个 Agent 的最小权限原则。</li>
+<li dir="auto"><strong>Agent 提供商策略层</strong>：<code class="code-styler-inline">coder</code>在使用低端模型时禁止 <code class="code-styler-inline">process</code>（防止长时间运行的命令浪费 token）。</li>
+<li dir="auto"><strong>群组策略层</strong>：在 Discord 的 <code class="code-styler-inline">#general</code>频道中禁用 <code class="code-styler-inline">exec</code>（公共频道安全考虑），但在 <code class="code-styler-inline">#dev</code>频道中允许。</li>
+</ul>
+<p dir="auto">七层，每一层回答一个独立的问题，没有任何两层的关注点完全重叠。这就是为什么不能简化到三层——那样必然会把不同关注点混在一起，导致配置变得混乱。</p>
+<h3 data-heading="未知 Allowlist 条目的智能处理" dir="auto">未知 Allowlist 条目的智能处理</h3>
+<p dir="auto">管线中有一个容易被忽视但极其重要的细节：当 allowlist 包含未知的工具名时会怎样？</p>
+<pre class="language-typescript" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-typescript is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token comment">// src/agents/tool-policy-pipeline.ts — 未知 allowlist 处理</span>
+<span class="token keyword">const</span> resolved <span class="token operator">=</span> <span class="token function">stripPluginOnlyAllowlist</span><span class="token punctuation">(</span>policy<span class="token punctuation">,</span> pluginGroups<span class="token punctuation">,</span> coreToolNames<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>resolved<span class="token punctuation">.</span>unknownAllowlist<span class="token punctuation">.</span>length <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 区分两种情况：</span>
+  <span class="token comment">// 1. 已知核心工具但当前不可用（受限于运行时/提供商/模型/配置）</span>
+  <span class="token comment">// 2. 完全未知的条目（可能是拼写错误或未启用的插件）</span>
+  <span class="token keyword">const</span> gatedCoreEntries <span class="token operator">=</span> resolved<span class="token punctuation">.</span>unknownAllowlist<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>isKnownCoreToolId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> otherEntries <span class="token operator">=</span> resolved<span class="token punctuation">.</span>unknownAllowlist<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>e <span class="token operator">=&gt;</span> <span class="token operator">!</span><span class="token function">isKnownCoreToolId</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">如果 allowlist 中<em>只</em>包含插件工具名（没有任何核心工具），系统会<strong>剥离整个 allowlist</strong>。为什么？因为这种情况通常意味着运营者是在为插件配置允许列表，而不是想禁止所有核心工具。如果不做这个处理，一个 <code class="code-styler-inline">tools.allow: [my_custom_tool]</code>的配置会意外地禁止 <code class="code-styler-inline">read</code>、<code class="code-styler-inline">write</code>、<code class="code-styler-inline">exec</code>等所有核心工具——这几乎肯定不是运营者的意图。</p>
+<p dir="auto">这种”猜测运营者意图”的启发式处理，是安全系统中罕见的”宁可放行一些、不要误杀关键功能”的设计取舍。它反映了一个务实的认知：<strong>安全系统如果太难用，运营者会绕过它，最终导致更差的安全态势</strong>。</p>
+<h3 data-heading="HTTP 工具拒绝列表" dir="auto">HTTP 工具拒绝列表</h3>
+<p dir="auto"><code class="code-styler-inline">src/security/dangerous-tools.ts</code>中的默认 HTTP 工具拒绝列表特别值得深入分析：</p>
+<pre class="language-typescript" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-typescript is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token constant">DEFAULT_GATEWAY_HTTP_TOOL_DENY</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token string">"sessions_spawn"</span><span class="token punctuation">,</span>   <span class="token comment">// 远程 Agent 生成 = RCE 向量</span>
+  <span class="token string">"sessions_send"</span><span class="token punctuation">,</span>    <span class="token comment">// 跨会话消息注入</span>
+  <span class="token string">"cron"</span><span class="token punctuation">,</span>             <span class="token comment">// 持久化自动化控制面板</span>
+  <span class="token string">"gateway"</span><span class="token punctuation">,</span>          <span class="token comment">// 网关重配置</span>
+<span class="token punctuation">]</span> <span class="token keyword">as</span> <span class="token keyword">const</span><span class="token punctuation">;</span>
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">为什么这四个工具被特别对待？因为它们代表了四种不同类别的<strong>持久化威胁</strong>：</p>
+<ol>
+<li dir="auto"><strong><code class="code-styler-inline">sessions_spawn</code></strong>— 能力放大。一次 spawn 可以创建一个拥有完整工具集的新 Agent 进程，等于远程代码执行。</li>
+<li dir="auto"><strong><code class="code-styler-inline">sessions_send</code></strong>— 横向移动。攻击者可以通过一个已入侵的会话向其他会话注入消息。</li>
+<li dir="auto"><strong><code class="code-styler-inline">cron</code></strong>— 持久化。攻击者可以创建定时任务植入持久后门，即使清除原始会话也能继续执行。</li>
+<li dir="auto"><strong><code class="code-styler-inline">gateway</code></strong>— 特权提升。修改网关配置可以改变安全策略本身。</li>
+</ol>
+<p dir="auto">这四个工具的共同特征是<strong>效果超出当前会话的生命周期</strong>。<code class="code-styler-inline">exec</code>虽然危险，但它的影响范围局限于当前进程；<code class="code-styler-inline">sessions_spawn</code>却能创造新的持久进程。这就是为什么 <code class="code-styler-inline">exec</code>不在默认拒绝列表中而 <code class="code-styler-inline">sessions_spawn</code>在——拒绝列表的标准不是”是否危险”，而是”是否具有持久化和放大效应”。</p>
+<p dir="auto">即使有有效认证，这些工具在 HTTP API 表面也被默认拒绝。当运营者明确重新启用被拒绝的工具时，安全审计系统根据网关暴露级别评估风险——在回环绑定的网关上重新启用 <code class="code-styler-inline">sessions_spawn</code>触发 <code class="code-styler-inline">warn</code>；在公开暴露的网关上重新启用则触发 <code class="code-styler-inline">critical</code>。</p>
+<h2 data-heading="工具配置文件：能力包" dir="auto">工具配置文件：能力包</h2>
+<h3 data-heading="配置文件的设计动机" dir="auto">配置文件的设计动机</h3>
+<p dir="auto">不必逐个配置每个工具，OpenClaw 将工具分组为匹配常见用例的<strong>配置文件</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>配置文件</th>
+<th>包含的工具</th>
+<th>典型用例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>minimal</td>
+<td>read、write、基础文件系统</td>
+<td>受限环境</td>
+</tr>
+<tr>
+<td>coding</td>
+<td>完整文件系统、exec、process、browser</td>
+<td>开发工作流</td>
+</tr>
+<tr>
+<td>messaging</td>
+<td>message、tts</td>
+<td>通信 Agent</td>
+</tr>
+<tr>
+<td>full</td>
+<td>所有可用工具</td>
+<td>不受限操作</td>
+</tr>
+</tbody>
+</table>
+<p dir="auto">配置文件既简化了配置（运营者设置 <code class="code-styler-inline">tools.profile: coding</code>而不是列出 15 个工具），又作为文档（读取配置文件定义即可了解 Agent 的能力级别）。</p>
+<p dir="auto">💡 <strong>最佳实践</strong>：为不同场景的 Agent 选择合适的工具配置文件。面向公众的客服 Agent 使用 <code class="code-styler-inline">minimal</code>；内部开发 Agent 使用 <code class="code-styler-inline">coding</code>；个人助手使用 <code class="code-styler-inline">full</code>。可以在配置文件基础上通过 <code class="code-styler-inline">tools.allow</code>/ <code class="code-styler-inline">tools.deny</code>进一步微调。</p>
+<h3 data-heading="替代方案的考量" dir="auto">替代方案的考量</h3>
+<p dir="auto">在设计配置文件时，OpenClaw 团队考虑过至少三种替代方案：</p>
+<p dir="auto"><strong>方案 A：纯 Allowlist/Denylist</strong>。运营者显式列出每个允许或拒绝的工具。优点：完全精确。缺点：随着工具数量增长，配置变得冗长且脆弱——新工具添加时，所有现有配置都需要更新。</p>
+<p dir="auto"><strong>方案 B：角色基础访问控制（RBAC）</strong>。定义”管理员”、“开发者”、“只读用户”等角色，每个角色有固定的工具集。优点：企业用户熟悉。缺点：角色是面向<em>人</em>的抽象，不适合面向<em>Agent</em>的场景——Agent 的能力需求由任务决定而非由身份决定。</p>
+<p dir="auto"><strong>方案 C：配置文件 + 叠加层（最终选择）</strong>。提供几个有名字的配置文件作为基线，再允许通过 allowlist/denylist 微调。优点：兼得便捷性（一行配置）和精确性（可微调）。缺点：增加了概念数量（配置文件 + 策略 + 管线）。</p>
+<p dir="auto">最终选择方案 C 的原因是它最符合 OpenClaw 的运营者画像：大多数情况下，<code class="code-styler-inline">coding</code>或 <code class="code-styler-inline">minimal</code>就够了；少数需要精细控制的场景，可以叠加策略层。<strong>80% 的用户只需要一行配置，20% 的用户有完整的策略管线</strong>——这是对 Pareto 原则的精准应用。</p>
+<h3 data-heading="配置文件与策略的交互" dir="auto">配置文件与策略的交互</h3>
+<p dir="auto">配置文件不是策略管线之外的独立机制——它本身就是管线的<strong>第一阶段</strong>。这意味着：</p>
+<ol>
+<li dir="auto">配置文件设置的是<strong>最大可用工具集</strong>。</li>
+<li dir="auto">后续的策略阶段只能<strong>从中减少</strong>，不能增加。</li>
+<li dir="auto">如果配置文件中没有 <code class="code-styler-inline">exec</code>，即使 Agent 级策略显式允许 <code class="code-styler-inline">exec</code>也无效。</li>
+</ol>
+<p dir="auto">这种”配置文件封顶、策略精简”的语义，确保了一个重要的安全属性：运营者设置 <code class="code-styler-inline">tools.profile: minimal</code>后，无论后续配置如何变化，Agent 的能力不会超过 <code class="code-styler-inline">minimal</code>的范围。这就像一个保险丝——它设定了系统的绝对上限。</p>
+<h2 data-heading="浏览器自动化：最复杂的工具" dir="auto">浏览器自动化：最复杂的工具</h2>
+<p dir="auto">浏览器工具（<code class="code-styler-inline">src/browser/</code>）基于 Playwright 构建。它是 OpenClaw 中最复杂的单一工具——不是因为”让 AI 控制浏览器”概念复杂，而是因为<strong>浏览器是通往整个互联网的门</strong>，安全、效率和可靠性的挑战在这里被极限放大。</p>
+<h3 data-heading="浏览器自动化的设计哲学" dir="auto">浏览器自动化的设计哲学</h3>
+<p dir="auto">浏览器自动化面临一个根本性的表示问题：<strong>如何将一个视觉化的、交互式的、状态丰富的网页，转化为 LLM 能够高效推理和操作的文本表示？</strong></p>
+<p dir="auto">考虑三种方案：</p>
+<p dir="auto"><strong>方案 A：截图 + 视觉模型</strong>。将网页截图发送给视觉 LLM，让它基于图像理解进行操作。优点：最接近人类的浏览方式。缺点：每次截图消耗大量 token（一张 1080p 截图约 1,000 token），且视觉模型对精确坐标的推理并不可靠，“点击搜索框”可能因为几像素的偏差而点到其他元素。</p>
+<p dir="auto"><strong>方案 B：完整 DOM/HTML</strong>。将网页的 HTML 源码发送给 LLM。优点：信息完整。缺点：一个典型网页的 HTML 有 50,000+ token，仅一次浏览就可能耗尽整个上下文窗口。而且 HTML 中充斥着样式、脚本、广告代码等 Agent 不需要的噪音。</p>
+<p dir="auto"><strong>方案 C：无障碍树（Accessibility Tree）</strong>。提取网页的无障碍语义结构——标题、链接、按钮、输入框——以紧凑的文本形式呈现。优点：25 倍压缩（50K token → 2K token），且语义明确（每个元素的角色和用途都清晰标注）。缺点：丢失了视觉布局信息（元素的相对位置、颜色、大小）。</p>
+<p dir="auto">OpenClaw 选择了方案 C 作为主方案，方案 A 作为补充——需要视觉信息时可以请求截图。这个选择反映了一个核心洞察：<strong>Agent 浏览网页的目的是获取信息或执行操作，而不是欣赏设计</strong>。无障碍树恰好捕获了”信息”和”操作”两个维度，同时抛弃了”视觉”维度。</p>
+<h3 data-heading="快照机制的工程实现" dir="auto">快照机制的工程实现</h3>
+<p dir="auto">快照机制（<code class="code-styler-inline">src/browser/pw-role-snapshot.ts</code>）是浏览器工具最具创新性的部分。它将完整的 DOM 转化为紧凑的无障碍树表示：</p>
+<pre class="language-text" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-text is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">[ref=e1] heading "Hacker News"
+[ref=e2] link "Show HN: My Project" → 点击导航
+[ref=e3] link "142 comments" → 点击导航
+[ref=e4] textbox "搜索..."
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">系统为每个交互元素分配一个简短的 <code class="code-styler-inline">ref</code>标识符（如 <code class="code-styler-inline">e3</code>）。Agent 基于这种紧凑表示推理并发出类似 <code class="code-styler-inline">click ref=e3</code>的动作。这将典型网页从 50,000+ token 的 HTML 压缩到约 2,000 token 的无障碍树——<strong>25 倍压缩</strong>，使浏览器自动化在上下文窗口约束内变得实用。</p>
+<p dir="auto">快照实现中有几个精妙的细节：</p>
+<p dir="auto"><strong>角色分类体系</strong>。源码（<code class="code-styler-inline">src/browser/snapshot-roles.ts</code>）将 HTML 元素角色分为三类：<code class="code-styler-inline">STRUCTURAL_ROLES</code>（<code class="code-styler-inline">heading</code>、<code class="code-styler-inline">list</code>、<code class="code-styler-inline">navigation</code>）、<code class="code-styler-inline">CONTENT_ROLES</code>（<code class="code-styler-inline">text</code>、<code class="code-styler-inline">img</code>）和 <code class="code-styler-inline">INTERACTIVE_ROLES</code>（<code class="code-styler-inline">button</code>、<code class="code-styler-inline">link</code>、<code class="code-styler-inline">textbox</code>）。快照在紧凑模式下只保留交互和内容角色，进一步压缩无关信息。</p>
+<p dir="auto"><strong>去重机制</strong>。当同一角色和名称出现多次时（如页面上有多个”Submit”按钮），<code class="code-styler-inline">RoleNameTracker</code>自动为它们分配 <code class="code-styler-inline">nth</code>索引以消除歧义。</p>
+<p dir="auto"><strong>深度限制</strong>。<code class="code-styler-inline">maxDepth</code>参数控制树的遍历深度——对于深层嵌套的 SPA 页面，限制深度可以在信息完整性和 token 开销之间取得平衡。</p>
+<h3 data-heading="导航守卫" dir="auto">导航守卫</h3>
+<p dir="auto"><strong>导航守卫</strong>（<code class="code-styler-inline">src/browser/navigation-guard.ts</code>）是浏览器安全的第一道防线。它在 Playwright 层面拦截每一次导航请求，检查：</p>
+<ol>
+<li dir="auto"><strong>协议验证</strong>：只允许 <code class="code-styler-inline">http://</code>和 <code class="code-styler-inline">https://</code>，阻止 <code class="code-styler-inline">file://</code>、<code class="code-styler-inline">javascript:</code>和 <code class="code-styler-inline">data:</code>协议。</li>
+<li dir="auto"><strong>域名过滤</strong>：支持白名单和黑名单，使用 URL 模式匹配（<code class="code-styler-inline">src/browser/url-pattern.ts</code>）。</li>
+<li dir="auto"><strong>SSRF 防护</strong>：阻止导航到内部网络地址（<code class="code-styler-inline">127.0.0.1</code>、<code class="code-styler-inline">192.168.x.x</code>、<code class="code-styler-inline">10.x.x.x</code>），防止 Agent 被利用来探测内部服务。</li>
+</ol>
+<p dir="auto">导航守卫的设计权衡值得讨论。更严格的方案是只允许白名单域名——但这会让 Agent 在面对新网站时完全无能为力。更宽松的方案是不做任何限制——但这会让 Agent 成为 SSRF 攻击的跳板。OpenClaw 选择了中间路线：默认允许所有公共 URL，阻止已知危险模式，并提供白名单/黑名单让运营者自定义。</p>
+<h3 data-heading="配置文件隔离" dir="auto">配置文件隔离</h3>
+<p dir="auto">配置文件隔离（<code class="code-styler-inline">src/browser/profiles-service.ts</code>）确保不同 Agent 获得独立的浏览器上下文——独立的 Cookie、本地存储和会话状态。这不仅是安全隔离（Agent A 不能读取 Agent B 的登录凭证），也是功能隔离（Agent A 登录 Gmail 不影响 Agent B 的浏览）。</p>
+<h3 data-heading="与其他框架的浏览器方案对比" dir="auto">与其他框架的浏览器方案对比</h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>OpenClaw</th>
+<th>Anthropic Computer Use</th>
+<th>AutoGPT</th>
+<th>Browser Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>表示方式</td>
+<td>无障碍树</td>
+<td>截图 + 坐标</td>
+<td>Selenium DOM</td>
+<td>混合（视觉+DOM）</td>
+</tr>
+<tr>
+<td>Token 效率</td>
+<td>~2K/页面</td>
+<td>~1K/截图</td>
+<td>~50K/页面</td>
+<td>~5K/页面</td>
+</tr>
+<tr>
+<td>操作精度</td>
+<td>高（语义引用）</td>
+<td>中（坐标可能漂移）</td>
+<td>高（CSS 选择器）</td>
+<td>中高</td>
+</tr>
+<tr>
+<td>安全隔离</td>
+<td>配置文件隔离</td>
+<td>沙箱</td>
+<td>无</td>
+<td>无</td>
+</tr>
+<tr>
+<td>导航守卫</td>
+<td>URL 模式 + SSRF</td>
+<td>无</td>
+<td>无</td>
+<td>无</td>
+</tr>
+</tbody>
+</table>
+<p dir="auto">OpenClaw 的无障碍树方案在 token 效率和操作精度之间取得了最佳平衡。截图方案更”自然”但更浪费且更不精确。完整 DOM 方案最精确但完全无法在上下文窗口中使用。</p>
+<h2 data-heading="进程执行：受控的力量" dir="auto">进程执行：受控的力量</h2>
+<p dir="auto"><code class="code-styler-inline">exec</code>工具（<code class="code-styler-inline">src/process/</code>）提供 Shell 命令执行。它是 Agent 最强大也最危险的能力——一条命令可以创建文件、安装软件、启动服务，也可以删除数据、暴露密钥或攻击网络。</p>
+<h3 data-heading="三模式安全模型" dir="auto">三模式安全模型</h3>
+<p dir="auto"><strong><code class="code-styler-inline">deny</code></strong>— 完全禁止命令执行。适用于纯对话 Agent（客户支持、内容生成）。</p>
+<p dir="auto"><strong><code class="code-styler-inline">allowlist</code></strong>— 仅匹配 SafeBins 的命令执行。这是推荐的生产配置。SafeBins 超越简单的命令名匹配，包括<strong>参数级别的配置</strong>——<code class="code-styler-inline">git</code>可以在 SafeBins 中，但 <code class="code-styler-inline">git --exec="rm -rf /"</code>被参数配置阻止。</p>
+<p dir="auto"><strong><code class="code-styler-inline">full</code></strong>— 任何命令都执行。仅用于完全可信的本地开发环境。</p>
+<h3 data-heading="SafeBins 的深层设计" dir="auto">SafeBins 的深层设计</h3>
+<p dir="auto">SafeBins 的设计体现了”最小权限”原则的精细应用。考虑这个场景：运营者想让 Agent 能使用 Python 来分析数据。</p>
+<p dir="auto">天真的做法是把 <code class="code-styler-inline">python</code>加入 SafeBins。但 <code class="code-styler-inline">python</code>能做的事情几乎无限——它可以调用 <code class="code-styler-inline">os.system("rm -rf /")</code>、可以开启网络监听、可以读取 <code class="code-styler-inline">/etc/passwd</code>。把 <code class="code-styler-inline">python</code>加入 SafeBins 等于授予完整代码执行能力，SafeBins 名存实亡。</p>
+<p dir="auto">OpenClaw 的安全审计系统会标记这种情况：<code class="code-styler-inline">src/security/audit.ts</code>中的检查会将”解释器类”（interpreter-like）的 SafeBin 条目标记为 <code class="code-styler-inline">warn</code>或 <code class="code-styler-inline">critical</code>。<code class="code-styler-inline">listInterpreterLikeSafeBins()</code>函数维护了一个已知解释器列表（<code class="code-styler-inline">python</code>、<code class="code-styler-inline">node</code>、<code class="code-styler-inline">ruby</code>、<code class="code-styler-inline">perl</code>、<code class="code-styler-inline">bash</code>），遇到这些条目时警告运营者：“你加了一个解释器，这基本等于 full 模式”。</p>
+<h3 data-heading="命令注入防御" dir="auto">命令注入防御</h3>
+<p dir="auto">命令安全验证（<code class="code-styler-inline">src/infra/exec-safety.ts</code>）遵循<strong>默认拒绝</strong>原则：包含 Shell 元字符（<code class="code-styler-inline">;</code>、<code class="code-styler-inline">|</code>、<code class="code-styler-inline">$</code>、```）的任何值都被视为不安全。</p>
+<p dir="auto">为什么不解析 Shell 语法来”理解”命令的真实意图？因为 Shell 语法的复杂性远超想象——变量展开、命令替换、进程替换、Here Documents、转义序列…可靠地解析所有 Shell 方言几乎不可能。与其追求”完美理解”，不如采取”遇到可疑就拒绝”的保守策略。宁可拒绝合法命令（需要手动批准）也不允许注入向量通过。</p>
+<h3 data-heading="后台进程管理" dir="auto">后台进程管理</h3>
+<p dir="auto">后台进程管理允许 Agent 启动长时间运行的进程并稍后检查，通过唯一 ID 跟踪活动会话，支持标准输入/输出交互，并强制执行资源限制。</p>
+<p dir="auto">这个能力解锁了一类重要的工作流：Agent 启动一个 <code class="code-styler-inline">npm run dev</code>开发服务器，然后继续编辑代码，定期检查服务器日志看是否有错误。在传统的”执行-等待-返回”模式下，Agent 必须等待进程结束才能做其他事——但开发服务器不会”结束”。后台进程管理让 Agent 能像人类开发者一样同时管理多个终端。</p>
+<h2 data-heading="Web 搜索与内容理解" dir="auto">Web 搜索与内容理解</h2>
+<h3 data-heading="搜索引擎抽象" dir="auto">搜索引擎抽象</h3>
+<p dir="auto"><strong>Web 搜索</strong>（<code class="code-styler-inline">src/web-search/</code>）采用多搜索引擎统一接口设计，支持 Brave、Google、Bing、DuckDuckGo 等。关键设计决策是<strong>搜索结果的结构化提取</strong>——10 个搜索结果只需 200-300 token，而原始 HTML 可能超过 50,000 token。</p>
+<p dir="auto">为什么支持多个搜索引擎而不只用一个？三个原因：</p>
+<ol>
+<li dir="auto"><strong>可用性</strong>：任何单一搜索 API 都可能限流或宕机。多引擎提供回退。</li>
+<li dir="auto"><strong>结果多样性</strong>：不同引擎的索引覆盖不同（Brave 更注重隐私站点，Google 更全面），多引擎搜索能捕获单引擎遗漏的结果。</li>
+<li dir="auto"><strong>成本优化</strong>：不同引擎的 API 定价和免费额度不同，运营者可以根据预算选择。</li>
+</ol>
+<h3 data-heading="内容提取的权衡" dir="auto">内容提取的权衡</h3>
+<p dir="auto"><strong><code class="code-styler-inline">web_fetch</code></strong>使用可读性算法从 URL 提取内容，将 HTML 转为干净的 Markdown。这里的核心权衡是<strong>信息保真度 vs. Token 效率</strong>。</p>
+<p dir="auto">完整的 HTML 保留了所有信息但对 LLM 来说 90% 是噪音。纯文本提取丢失了结构（标题层次、列表、链接）。Markdown 是折中——保留语义结构，去除视觉样式，在信息密度和 token 效率之间取得平衡。</p>
+<h3 data-heading="媒体理解" dir="auto">媒体理解</h3>
+<p dir="auto"><strong><code class="code-styler-inline">image</code>工具</strong>：发送图片到视觉模型分析。支持本地路径、HTTP URL 和 Base64 数据 URI。这里的设计决策是<strong>不预处理图片</strong>——将图片原样发送给视觉模型，因为压缩或裁剪可能丢失模型需要的细节。</p>
+<p dir="auto"><strong><code class="code-styler-inline">pdf</code>工具</strong>：处理 PDF 文档，支持页面范围选择（<code class="code-styler-inline">pages: "1-5,8"</code>）以避免处理不相关页面。这是 token 预算意识的又一体现——一个 100 页的 PDF 全部发送是灾难性的，页面选择让 Agent 能精确加载需要的部分。</p>
+<h2 data-heading="语音合成" dir="auto">语音合成</h2>
+<p dir="auto">TTS 工具（<code class="code-styler-inline">src/tts/</code>）遵循多提供商模式。值得注意的设计是合成前的<strong>文本预处理管线</strong>：</p>
+<ol>
+<li dir="auto"><strong>Markdown 剥离</strong>：去除标题标记、粗体/斜体语法等——TTS 引擎不需要这些。</li>
+<li dir="auto"><strong>SSML 转义</strong>：特殊字符（<code class="code-styler-inline">&lt;</code>、<code class="code-styler-inline">&gt;</code>、<code class="code-styler-inline">&amp;</code>）在 SSML 提供商中需要转义。</li>
+<li dir="auto"><strong>长文本摘要</strong>：超过提供商限制的文本自动通过 LLM 摘要——与其截断导致句子不完整，不如智能压缩保持连贯性。</li>
+<li dir="auto"><strong>速率限制</strong>：每个提供商有独立的速率计数器，防止突发请求。</li>
+</ol>
+<p dir="auto">提供商选择使用评分算法，平衡语音可用性、成本、质量和延迟。这个算法不是简单的”选最便宜的”——如果用户请求特定语音，系统会优先选择支持该语音的提供商，即使成本更高。</p>
+<h2 data-heading="工具系统与上下文引擎的关系" dir="auto">工具系统与上下文引擎的关系</h2>
+<p dir="auto">工具系统不是孤立存在的——它与上下文引擎（第5章）形成一个紧密的<strong>反馈回路</strong>。</p>
+<p dir="auto">每次工具调用产生的输出都进入会话的上下文历史。如果浏览器返回 5,000 token 的页面内容，这 5,000 token 就永久占据上下文窗口的一部分，直到被上下文压缩算法摘要。这意味着<strong>工具的输出格式直接影响 Agent 的后续推理能力</strong>。</p>
+<p dir="auto">这就是为什么无障碍树（2K token）比完整 HTML（50K token）不仅仅是”省 token”——它实际上让 Agent 在同一次对话中能使用更多次工具。一个 128K token 的上下文窗口，如果每次浏览器调用消耗 50K token，Agent 最多浏览 2-3 次就耗尽了；如果每次只消耗 2K token，Agent 可以浏览 50+ 次。</p>
+<p dir="auto">这种乘数效应意味着<strong>工具输出压缩不是性能优化，而是功能使能</strong>——它决定了 Agent 能做多少事。</p>
+<h2 data-heading="实战推演：Agent 自动化浏览器完成表单填写" dir="auto">实战推演：Agent 自动化浏览器完成表单填写</h2>
+<p dir="auto">让我们通过一个真实场景，展示浏览器工具的完整交互过程——Agent 帮用户在线填写一份多页表单。这个场景综合了快照机制、导航守卫、配置文件隔离和上下文效率的所有设计决策。</p>
+<h3 data-heading="场景描述" dir="auto">场景描述</h3>
+<p dir="auto">用户对 Agent 说：“帮我到 <a rel="noopener nofollow" class="external-link" href="https://forms.example.com" target="_blank">https://forms.example.com</a> 填写参会报名表，我的信息是：姓名张三，邮箱 <a data-tooltip-position="top" aria-label="mailto:zhang@example.com" rel="noopener nofollow" class="external-link" href="mailto:zhang@example.com" target="_blank">zhang@example.com</a> ，参加第二天的工作坊。“</p>
+<h3 data-heading="Agent 的执行序列" dir="auto">Agent 的执行序列</h3>
+<pre class="language-text" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-text is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">回合1: Agent 决策 → 调用 browser(action: "navigate", url: "https://forms.example.com")
+  ↳ 导航守卫检查: https://forms.example.com → 公共域名 ✅, 非 SSRF 目标 ✅ → 放行
+  ↳ 配置文件隔离: 使用 Agent 专属浏览器上下文（独立 Cookie）
+
+回合2: Agent 调用 browser(action: "snapshot")
+  ↳ 快照引擎生成无障碍树（约 1,800 token，而非 45,000 token 的完整 HTML）:
+    [ref=e1] heading "会议报名表"
+    [ref=e2] textbox "姓名" (required)
+    [ref=e3] textbox "邮箱" (required)
+    [ref=e4] radio "第一天" 
+    [ref=e5] radio "第二天"
+    [ref=e6] checkbox "参加工作坊"
+    [ref=e7] button "下一页"
+
+回合3: Agent 推理 → 依次执行:
+  browser(action: "act", kind: "fill", ref: "e2", text: "张三")
+  browser(action: "act", kind: "fill", ref: "e3", text: "zhang@example.com")
+  browser(action: "act", kind: "click", ref: "e5")  // 选择"第二天"
+  browser(action: "act", kind: "click", ref: "e6")  // 勾选"工作坊"
+  browser(action: "act", kind: "click", ref: "e7")  // 点击"下一页"
+
+回合4: 新页面加载 → Agent 调用 snapshot → 确认页快照:
+    [ref=e10] heading "确认您的信息"
+    [ref=e11] text "姓名: 张三"
+    [ref=e12] text "邮箱: zhang@example.com"
+    [ref=e13] button "提交"
+    [ref=e14] button "返回修改"
+
+回合5: Agent 确认信息正确 → browser(action: "act", kind: "click", ref: "e13")
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<h3 data-heading="上下文效率的关键作用" dir="auto">上下文效率的关键作用</h3>
+<p dir="auto">整个 5 回合交互中，浏览器产生的总 token 消耗约为 <strong>1,800 × 2 = 3,600 token</strong>（两次快照）。如果使用完整 HTML 方案，两次页面加载就需要 <strong>90,000 token</strong>——在 128K 上下文中几乎不留空间给 Agent 推理。</p>
+<p dir="auto">浏览器自动化的本质不是”让 AI 看到网页”——而是”让 AI 以最小认知成本理解网页的交互结构”。无障碍树是为残障人士设计的语义抽象，恰好也是 AI 最高效的网页理解方式。技术的美在于：为一类用户设计的无障碍方案，意外地成为了另一类”用户”（AI）的最佳接口。</p>
+<h2 data-heading="跨章关联" dir="auto">跨章关联</h2>
+<p dir="auto">工具系统既消费其他系统的能力，也向其他系统提供服务：</p>
+<p dir="auto"><strong>消费 Agent 系统（第6章）</strong>：Agent 决定何时调用哪个工具。工具系统提供工具目录供 Agent 发现和选择。</p>
+<p dir="auto"><strong>消费策略管线 → 安全系统（第13章）</strong>：策略管线的过滤规则来自安全配置。安全审计扫描工具配置的合理性。</p>
+<p dir="auto"><strong>向 Node 系统（第11章）提供接口</strong>：Node 系统的设备能力（相机、GPS）以工具的形式暴露给 Agent。Node 系统可以看作”物理世界的工具扩展”。</p>
+<p dir="auto"><strong>Cron 系统（第12章）消费工具</strong>：定时任务通过调用工具执行实际操作——Agent 处理 Cron 作业的消息时，使用工具来完成任务。</p>
+<p dir="auto"><strong>技能系统（第16章）消费工具</strong>：技能通过 <code class="code-styler-inline">command-dispatch: tool</code>绕过 LLM 直接触发工具调用，为工具提供”使用方法”的知识。</p>
+<figure><img alt="图 10-2：工具系统的跨模块关联" referrerpolicy="no-referrer" decoding="async" src="https://www.yangyitao.com/_astro/fig-10-m2.B8LBWEx6_2g32kk.webp" loading="lazy"><figcaption>图 10-2：工具系统的跨模块关联</figcaption></figure>
+<div class="mermaid"><svg id="m7427172ae8dc2332" width="693" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flowchart" height="676" viewBox="0 0 693 676" role="graphics-document document" aria-roledescription="flowchart-v2"><style>#m7427172ae8dc2332{font-family:var(--font-mermaid);font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#m7427172ae8dc2332 .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#m7427172ae8dc2332 .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#m7427172ae8dc2332 .error-icon{fill:#552222;}#m7427172ae8dc2332 .error-text{fill:#552222;stroke:#552222;}#m7427172ae8dc2332 .edge-thickness-normal{stroke-width:1px;}#m7427172ae8dc2332 .edge-thickness-thick{stroke-width:3.5px;}#m7427172ae8dc2332 .edge-pattern-solid{stroke-dasharray:0;}#m7427172ae8dc2332 .edge-thickness-invisible{stroke-width:0;fill:none;}#m7427172ae8dc2332 .edge-pattern-dashed{stroke-dasharray:3;}#m7427172ae8dc2332 .edge-pattern-dotted{stroke-dasharray:2;}#m7427172ae8dc2332 .marker{fill:#333333;stroke:#333333;}#m7427172ae8dc2332 .marker.cross{stroke:#333333;}#m7427172ae8dc2332 svg{font-family:var(--font-mermaid);font-size:16px;}#m7427172ae8dc2332 p{margin:0;}#m7427172ae8dc2332 .label{font-family:var(--font-mermaid);color:#333;}#m7427172ae8dc2332 .cluster-label text{fill:#333;}#m7427172ae8dc2332 .cluster-label span{color:#333;}#m7427172ae8dc2332 .cluster-label span p{background-color:transparent;}#m7427172ae8dc2332 .label text,#m7427172ae8dc2332 span{fill:#333;color:#333;}#m7427172ae8dc2332 .node rect,#m7427172ae8dc2332 .node circle,#m7427172ae8dc2332 .node ellipse,#m7427172ae8dc2332 .node polygon,#m7427172ae8dc2332 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#m7427172ae8dc2332 .rough-node .label text,#m7427172ae8dc2332 .node .label text,#m7427172ae8dc2332 .image-shape .label,#m7427172ae8dc2332 .icon-shape .label{text-anchor:middle;}#m7427172ae8dc2332 .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#m7427172ae8dc2332 .rough-node .label,#m7427172ae8dc2332 .node .label,#m7427172ae8dc2332 .image-shape .label,#m7427172ae8dc2332 .icon-shape .label{text-align:center;}#m7427172ae8dc2332 .node.clickable{cursor:pointer;}#m7427172ae8dc2332 .root .anchor path{fill:#333333!important;stroke-width:0;stroke:#333333;}#m7427172ae8dc2332 .arrowheadPath{fill:#333333;}#m7427172ae8dc2332 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#m7427172ae8dc2332 .flowchart-link{stroke:#333333;fill:none;}#m7427172ae8dc2332 .edgeLabel{background-color:rgba(232,232,232, 0.8);text-align:center;}#m7427172ae8dc2332 .edgeLabel p{background-color:rgba(232,232,232, 0.8);}#m7427172ae8dc2332 .edgeLabel rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#m7427172ae8dc2332 .labelBkg{background-color:rgba(232, 232, 232, 0.5);}#m7427172ae8dc2332 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#m7427172ae8dc2332 .cluster text{fill:#333;}#m7427172ae8dc2332 .cluster span{color:#333;}#m7427172ae8dc2332 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:var(--font-mermaid);font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#m7427172ae8dc2332 .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#333;}#m7427172ae8dc2332 rect.text{fill:none;stroke-width:0;}#m7427172ae8dc2332 .icon-shape,#m7427172ae8dc2332 .image-shape{background-color:rgba(232,232,232, 0.8);text-align:center;}#m7427172ae8dc2332 .icon-shape p,#m7427172ae8dc2332 .image-shape p{background-color:rgba(232,232,232, 0.8);padding:2px;}#m7427172ae8dc2332 .icon-shape .label rect,#m7427172ae8dc2332 .image-shape .label rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#m7427172ae8dc2332 .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#m7427172ae8dc2332 .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#m7427172ae8dc2332 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g><marker id="m7427172ae8dc2332-m7427172ae8dc2332_flowchart-v2-pointEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="m7427172ae8dc2332-m7427172ae8dc2332_flowchart-v2-pointStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="4.5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="m7427172ae8dc2332-m7427172ae8dc2332_flowchart-v2-circleEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="m7427172ae8dc2332-m7427172ae8dc2332_flowchart-v2-circleStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="m7427172ae8dc2332-m7427172ae8dc2332_flowchart-v2-crossEnd" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><marker id="m7427172ae8dc2332-m7427172ae8dc2332_flowchart-v2-crossStart" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><g class="root"><g class="clusters"></g><g class="edgePaths"></g><g class="edgeLabels"></g><g class="nodes"><g class="root" transform="translate(0, 0)"><g class="clusters"><g class="cluster" id="subGraph0" data-look="classic"><rect style="" x="8" y="8" width="677" height="660"></rect><g class="cluster-label" transform="translate(237.6171875, 8)"><foreignObject width="217.765625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5;"><span class="nodeLabel"><p>图 10-2：工具系统的跨模块关联</p></span></div></foreignObject></g></g></g><g class="edgePaths"><path d="M192.551,82L200.292,82C208.034,82,223.517,82,245.074,117.545C266.631,153.091,294.262,224.181,308.077,259.726L321.893,295.272" id="L_Agent_Tools_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_Agent_Tools_0" data-points="W3sieCI6MTkyLjU1MDc4MTI1LCJ5Ijo4Mn0seyJ4IjoyMzksInkiOjgyfSx7IngiOjMyMy4zNDE3OTY4NzUsInkiOjI5OX1d" marker-end="url(#m7427172ae8dc2332-m7427172ae8dc2332_flowchart-v2-pointEnd)"></path><path d="M185.5,210L194.417,210C203.333,210,221.167,210,241.205,224.307C261.243,238.614,283.486,267.228,294.607,281.535L305.729,295.842" id="L_Security_Tools_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_Security_Tools_0" data-points="W3sieCI6MTg1LjUsInkiOjIxMH0seyJ4IjoyMzksInkiOjIxMH0seyJ4IjozMDguMTgzNTkzNzUsInkiOjI5OX1d" marker-end="url(#m7427172ae8dc2332-m7427172ae8dc2332_flowchart-v2-pointEnd)"></path><path d="M400.5,338L406.75,338C413,338,425.5,338,437.333,338C449.167,338,460.333,338,465.917,338L471.5,338" id="L_Tools_Context_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_Tools_Context_0" data-points="W3sieCI6NDAwLjUsInkiOjMzOH0seyJ4Ijo0MzgsInkiOjMzOH0seyJ4Ijo0NzUuNSwieSI6MzM4fV0=" marker-end="url(#m7427172ae8dc2332-m7427172ae8dc2332_flowchart-v2-pointEnd)"></path><path d="M190.129,338L198.274,338C206.419,338,222.71,338,236.438,338C250.167,338,261.333,338,266.917,338L272.5,338" id="L_Node_Tools_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_Node_Tools_0" data-points="W3sieCI6MTkwLjEyODkwNjI1LCJ5IjozMzh9LHsieCI6MjM5LCJ5IjozMzh9LHsieCI6Mjc2LjUsInkiOjMzOH1d" marker-end="url(#m7427172ae8dc2332-m7427172ae8dc2332_flowchart-v2-pointEnd)"></path><path d="M185.5,466L194.417,466C203.333,466,221.167,466,241.205,451.693C261.243,437.386,283.486,408.772,294.607,394.465L305.729,380.158" id="L_Skills_Tools_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_Skills_Tools_0" data-points="W3sieCI6MTg1LjUsInkiOjQ2Nn0seyJ4IjoyMzksInkiOjQ2Nn0seyJ4IjozMDguMTgzNTkzNzUsInkiOjM3N31d" marker-end="url(#m7427172ae8dc2332-m7427172ae8dc2332_flowchart-v2-pointEnd)"></path><path d="M201.5,594L207.75,594C214,594,226.5,594,246.565,558.455C266.631,522.909,294.262,451.819,308.077,416.274L321.893,380.728" id="L_Cron_Tools_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_Cron_Tools_0" data-points="W3sieCI6MjAxLjUsInkiOjU5NH0seyJ4IjoyMzksInkiOjU5NH0seyJ4IjozMjMuMzQxNzk2ODc1LCJ5IjozNzd9XQ==" marker-end="url(#m7427172ae8dc2332-m7427172ae8dc2332_flowchart-v2-pointEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" data-id="L_Agent_Tools_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_Security_Tools_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_Tools_Context_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_Node_Tools_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_Skills_Tools_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_Cron_Tools_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-Agent-0" transform="translate(123.5, 82)"><rect class="basic label-container" style="fill:#3498db !important" x="-69.05078125" y="-39" width="138.1015625" height="78"></rect><g class="label" style="color:#fff !important" transform="translate(-39.05078125, -24)"><rect></rect><foreignObject width="78.1015625" height="48"><div style="color: rgb(255, 255, 255) !important; display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="color:#fff !important" class="nodeLabel"><p>Agent 系统<br>决策层</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-Tools-1" transform="translate(338.5, 338)"><rect class="basic label-container" style="fill:#e74c3c !important" x="-62" y="-39" width="124" height="78"></rect><g class="label" style="color:#fff !important" transform="translate(-32, -24)"><rect></rect><foreignObject width="64" height="48"><div style="color: rgb(255, 255, 255) !important; display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="color:#fff !important" class="nodeLabel"><p>工具系统<br>执行层</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-Security-2" transform="translate(123.5, 210)"><rect class="basic label-container" style="fill:#f39c12 !important" x="-62" y="-39" width="124" height="78"></rect><g class="label" style="color:#000 !important" transform="translate(-32, -24)"><rect></rect><foreignObject width="64" height="48"><div style="color: rgb(0, 0, 0) !important; display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="color:#000 !important" class="nodeLabel"><p>安全系统<br>策略层</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-Context-5" transform="translate(561.5, 338)"><rect class="basic label-container" style="" x="-86" y="-39" width="172" height="78"></rect><g class="label" style="" transform="translate(-56, -24)"><rect></rect><foreignObject width="112" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>上下文引擎<br>输出进入上下文</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-Node-6" transform="translate(123.5, 338)"><rect class="basic label-container" style="" x="-66.62890625" y="-39" width="133.2578125" height="78"></rect><g class="label" style="" transform="translate(-36.62890625, -24)"><rect></rect><foreignObject width="73.2578125" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>Node 系统<br>物理扩展</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-Skills-8" transform="translate(123.5, 466)"><rect class="basic label-container" style="" x="-62" y="-39" width="124" height="78"></rect><g class="label" style="" transform="translate(-32, -24)"><rect></rect><foreignObject width="64" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>技能系统<br>知识注入</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-Cron-10" transform="translate(123.5, 594)"><rect class="basic label-container" style="" x="-78" y="-39" width="156" height="78"></rect><g class="label" style="" transform="translate(-48, -24)"><rect></rect><foreignObject width="96" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>Cron 系统<br>触发工具调用</p></span></div></foreignObject></g></g></g></g></g></g></g></svg></div>
+<h2 data-heading="框架对比" dir="auto">框架对比</h2>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>OpenClaw</th>
+<th>LangChain</th>
+<th>AutoGPT</th>
+<th>CrewAI</th>
+<th>Semantic Kernel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>工具访问控制</td>
+<td>7 层策略管线</td>
+<td>无内建</td>
+<td>基本权限模式</td>
+<td>角色绑定</td>
+<td>有限</td>
+</tr>
+<tr>
+<td>浏览器自动化</td>
+<td>Playwright + 无障碍树</td>
+<td>第三方</td>
+<td>Selenium 封装</td>
+<td>无</td>
+<td>无</td>
+</tr>
+<tr>
+<td>命令执行</td>
+<td>deny/allowlist/full + SafeBins</td>
+<td>不受限</td>
+<td>基于权限</td>
+<td>无</td>
+<td>沙箱</td>
+</tr>
+<tr>
+<td>上下文效率</td>
+<td>快照压缩，token 感知</td>
+<td>原始输出</td>
+<td>原始输出</td>
+<td>原始输出</td>
+<td>原始输出</td>
+</tr>
+<tr>
+<td>工具输出格式</td>
+<td>结构化压缩</td>
+<td>原始返回</td>
+<td>原始返回</td>
+<td>原始返回</td>
+<td>原始返回</td>
+</tr>
+</tbody>
+</table>
+<p dir="auto">最显著的差异化因素是<strong>上下文效率</strong>。OpenClaw 的浏览器无障碍树、搜索结构化提取和 PDF 页面选择都反映了对工具输出与对话历史竞争相同有限上下文窗口的深刻认识。</p>
+<figure><img alt="图 10-3：工具输出的上下文效率" referrerpolicy="no-referrer" decoding="async" src="https://www.yangyitao.com/_astro/fig-10-m3.DprUTEXp_ZLAhy8.webp" loading="lazy"><figcaption>图 10-3：工具输出的上下文效率</figcaption></figure>
+<div class="mermaid"><svg id="m2c6dccaa5e1bf989" width="641.765625" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flowchart" height="322" viewBox="0 0 641.765625 322" role="graphics-document document" aria-roledescription="flowchart-v2"><style>#m2c6dccaa5e1bf989{font-family:var(--font-mermaid);font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#m2c6dccaa5e1bf989 .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#m2c6dccaa5e1bf989 .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#m2c6dccaa5e1bf989 .error-icon{fill:#552222;}#m2c6dccaa5e1bf989 .error-text{fill:#552222;stroke:#552222;}#m2c6dccaa5e1bf989 .edge-thickness-normal{stroke-width:1px;}#m2c6dccaa5e1bf989 .edge-thickness-thick{stroke-width:3.5px;}#m2c6dccaa5e1bf989 .edge-pattern-solid{stroke-dasharray:0;}#m2c6dccaa5e1bf989 .edge-thickness-invisible{stroke-width:0;fill:none;}#m2c6dccaa5e1bf989 .edge-pattern-dashed{stroke-dasharray:3;}#m2c6dccaa5e1bf989 .edge-pattern-dotted{stroke-dasharray:2;}#m2c6dccaa5e1bf989 .marker{fill:#333333;stroke:#333333;}#m2c6dccaa5e1bf989 .marker.cross{stroke:#333333;}#m2c6dccaa5e1bf989 svg{font-family:var(--font-mermaid);font-size:16px;}#m2c6dccaa5e1bf989 p{margin:0;}#m2c6dccaa5e1bf989 .label{font-family:var(--font-mermaid);color:#333;}#m2c6dccaa5e1bf989 .cluster-label text{fill:#333;}#m2c6dccaa5e1bf989 .cluster-label span{color:#333;}#m2c6dccaa5e1bf989 .cluster-label span p{background-color:transparent;}#m2c6dccaa5e1bf989 .label text,#m2c6dccaa5e1bf989 span{fill:#333;color:#333;}#m2c6dccaa5e1bf989 .node rect,#m2c6dccaa5e1bf989 .node circle,#m2c6dccaa5e1bf989 .node ellipse,#m2c6dccaa5e1bf989 .node polygon,#m2c6dccaa5e1bf989 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#m2c6dccaa5e1bf989 .rough-node .label text,#m2c6dccaa5e1bf989 .node .label text,#m2c6dccaa5e1bf989 .image-shape .label,#m2c6dccaa5e1bf989 .icon-shape .label{text-anchor:middle;}#m2c6dccaa5e1bf989 .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#m2c6dccaa5e1bf989 .rough-node .label,#m2c6dccaa5e1bf989 .node .label,#m2c6dccaa5e1bf989 .image-shape .label,#m2c6dccaa5e1bf989 .icon-shape .label{text-align:center;}#m2c6dccaa5e1bf989 .node.clickable{cursor:pointer;}#m2c6dccaa5e1bf989 .root .anchor path{fill:#333333!important;stroke-width:0;stroke:#333333;}#m2c6dccaa5e1bf989 .arrowheadPath{fill:#333333;}#m2c6dccaa5e1bf989 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#m2c6dccaa5e1bf989 .flowchart-link{stroke:#333333;fill:none;}#m2c6dccaa5e1bf989 .edgeLabel{background-color:rgba(232,232,232, 0.8);text-align:center;}#m2c6dccaa5e1bf989 .edgeLabel p{background-color:rgba(232,232,232, 0.8);}#m2c6dccaa5e1bf989 .edgeLabel rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#m2c6dccaa5e1bf989 .labelBkg{background-color:rgba(232, 232, 232, 0.5);}#m2c6dccaa5e1bf989 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#m2c6dccaa5e1bf989 .cluster text{fill:#333;}#m2c6dccaa5e1bf989 .cluster span{color:#333;}#m2c6dccaa5e1bf989 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:var(--font-mermaid);font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#m2c6dccaa5e1bf989 .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#333;}#m2c6dccaa5e1bf989 rect.text{fill:none;stroke-width:0;}#m2c6dccaa5e1bf989 .icon-shape,#m2c6dccaa5e1bf989 .image-shape{background-color:rgba(232,232,232, 0.8);text-align:center;}#m2c6dccaa5e1bf989 .icon-shape p,#m2c6dccaa5e1bf989 .image-shape p{background-color:rgba(232,232,232, 0.8);padding:2px;}#m2c6dccaa5e1bf989 .icon-shape .label rect,#m2c6dccaa5e1bf989 .image-shape .label rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#m2c6dccaa5e1bf989 .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#m2c6dccaa5e1bf989 .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#m2c6dccaa5e1bf989 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g><marker id="m2c6dccaa5e1bf989-m2c6dccaa5e1bf989_flowchart-v2-pointEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="m2c6dccaa5e1bf989-m2c6dccaa5e1bf989_flowchart-v2-pointStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="4.5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="m2c6dccaa5e1bf989-m2c6dccaa5e1bf989_flowchart-v2-circleEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="m2c6dccaa5e1bf989-m2c6dccaa5e1bf989_flowchart-v2-circleStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="m2c6dccaa5e1bf989-m2c6dccaa5e1bf989_flowchart-v2-crossEnd" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><marker id="m2c6dccaa5e1bf989-m2c6dccaa5e1bf989_flowchart-v2-crossStart" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><g class="root"><g class="clusters"></g><g class="edgePaths"></g><g class="edgeLabels"></g><g class="nodes"><g class="root" transform="translate(0, 0)"><g class="clusters"><g class="cluster" id="subGraph0" data-look="classic"><rect style="" x="8" y="8" width="625.765625" height="306"></rect><g class="cluster-label" transform="translate(211.78515625, 8)"><foreignObject width="218.1953125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5;"><span class="nodeLabel"><p>图 10-3：工具输出的上下文效率</p></span></div></foreignObject></g></g></g><g class="edgePaths"><path d="M112.836,123.5L112.836,129.75C112.836,136,112.836,148.5,112.836,160.333C112.836,172.167,112.836,183.333,112.836,188.917L112.836,194.5" id="L_Raw_Compressed_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_Raw_Compressed_0" data-points="W3sieCI6MTEyLjgzNTkzNzUsInkiOjEyMy41fSx7IngiOjExMi44MzU5Mzc1LCJ5IjoxNjF9LHsieCI6MTEyLjgzNTkzNzUsInkiOjE5OC41fV0=" marker-end="url(#m2c6dccaa5e1bf989-m2c6dccaa5e1bf989_flowchart-v2-pointEnd)"></path><path d="M316.688,123.5L316.688,129.75C316.688,136,316.688,148.5,316.688,160.333C316.688,172.167,316.688,183.333,316.688,188.917L316.688,194.5" id="L_RawSearch_Structured_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_RawSearch_Structured_0" data-points="W3sieCI6MzE2LjY4NzUsInkiOjEyMy41fSx7IngiOjMxNi42ODc1LCJ5IjoxNjF9LHsieCI6MzE2LjY4NzUsInkiOjE5OC41fV0=" marker-end="url(#m2c6dccaa5e1bf989-m2c6dccaa5e1bf989_flowchart-v2-pointEnd)"></path><path d="M524.734,123.5L524.734,129.75C524.734,136,524.734,148.5,524.734,160.333C524.734,172.167,524.734,183.333,524.734,188.917L524.734,194.5" id="L_RawPDF_Selected_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_RawPDF_Selected_0" data-points="W3sieCI6NTI0LjczNDM3NSwieSI6MTIzLjV9LHsieCI6NTI0LjczNDM3NSwieSI6MTYxfSx7IngiOjUyNC43MzQzNzUsInkiOjE5OC41fV0=" marker-end="url(#m2c6dccaa5e1bf989-m2c6dccaa5e1bf989_flowchart-v2-pointEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" data-id="L_Raw_Compressed_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_RawSearch_Structured_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_RawPDF_Selected_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-Raw-0" transform="translate(112.8359375, 84.5)"><rect class="basic label-container" style="fill:#e74c3c !important" x="-69.8359375" y="-39" width="139.671875" height="78"></rect><g class="label" style="color:#fff !important" transform="translate(-39.8359375, -24)"><rect></rect><foreignObject width="79.671875" height="48"><div style="color: rgb(255, 255, 255) !important; display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="color:#fff !important" class="nodeLabel"><p>原始 HTML<br>~50K token</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-Compressed-1" transform="translate(112.8359375, 237.5)"><rect class="basic label-container" style="fill:#27ae60 !important" x="-65.640625" y="-39" width="131.28125" height="78"></rect><g class="label" style="color:#fff !important" transform="translate(-35.640625, -24)"><rect></rect><foreignObject width="71.28125" height="48"><div style="color: rgb(255, 255, 255) !important; display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="color:#fff !important" class="nodeLabel"><p>无障碍树<br>~2K token</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-RawSearch-2" transform="translate(316.6875, 84.5)"><rect class="basic label-container" style="fill:#e74c3c !important" x="-84.015625" y="-39" width="168.03125" height="78"></rect><g class="label" style="color:#fff !important" transform="translate(-54.015625, -24)"><rect></rect><foreignObject width="108.03125" height="48"><div style="color: rgb(255, 255, 255) !important; display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="color:#fff !important" class="nodeLabel"><p>原始搜索 HTML<br>~30K token</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-Structured-3" transform="translate(316.6875, 237.5)"><rect class="basic label-container" style="fill:#27ae60 !important" x="-70" y="-39" width="140" height="78"></rect><g class="label" style="color:#fff !important" transform="translate(-40, -24)"><rect></rect><foreignObject width="80" height="48"><div style="color: rgb(255, 255, 255) !important; display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="color:#fff !important" class="nodeLabel"><p>结构化结果<br>~300 token</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-RawPDF-4" transform="translate(524.734375, 84.5)"><rect class="basic label-container" style="fill:#e74c3c !important" x="-74.03125" y="-39" width="148.0625" height="78"></rect><g class="label" style="color:#fff !important" transform="translate(-44.03125, -24)"><rect></rect><foreignObject width="88.0625" height="48"><div style="color: rgb(255, 255, 255) !important; display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="color:#fff !important" class="nodeLabel"><p>完整 PDF<br>~100K token</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-Selected-5" transform="translate(524.734375, 237.5)"><rect class="basic label-container" style="fill:#27ae60 !important" x="-65.640625" y="-39" width="131.28125" height="78"></rect><g class="label" style="color:#fff !important" transform="translate(-35.640625, -24)"><rect></rect><foreignObject width="71.28125" height="48"><div style="color: rgb(255, 255, 255) !important; display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="color:#fff !important" class="nodeLabel"><p>页面选择<br>~5K token</p></span></div></foreignObject></g></g></g></g></g></g></g></svg></div>
+<h2 data-heading="历史演进" dir="auto">历史演进</h2>
+<p dir="auto">工具系统的设计不是一蹴而就的，它经历了清晰的演进路径：</p>
+<p dir="auto"><strong>阶段1：朴素函数注册</strong>。早期版本中，工具是简单的函数列表，直接注册到 LLM 的工具调用接口。没有安全策略，没有配置文件，所有工具对所有 Agent 可见。</p>
+<p dir="auto"><strong>阶段2：全局 Allowlist/Denylist</strong>。随着工具数量增长，引入了全局的 <code class="code-styler-inline">tools.allow</code>和 <code class="code-styler-inline">tools.deny</code>配置。一个配置控制所有——简单但不灵活。</p>
+<p dir="auto"><strong>阶段3：配置文件系统</strong>。认识到大多数运营者只需要几种典型的工具组合后，引入了命名配置文件。这是从”列出每个工具”到”选择一种模式”的范式转变。</p>
+<p dir="auto"><strong>阶段4：多层策略管线</strong>。随着多 Agent 和多通道支持的成熟，单一的全局配置无法满足”不同 Agent 不同策略”的需求。策略管线应运而生，从两层逐渐增加到七层。</p>
+<p dir="auto"><strong>阶段5：提供商感知策略</strong>。不同 LLM 提供商对工具的支持能力不同——有些模型不支持工具调用，有些模型不支持并行工具调用。提供商配置文件层和提供商策略层是为了适应这种异构性。</p>
+<p dir="auto">这个演进路径反映了一个更普遍的规律：<strong>系统的安全模型总是追赶系统的能力模型</strong>。每次添加新能力（多 Agent、多通道、多提供商），安全模型都需要跟着扩展。</p>
+<h2 data-heading="关键源码文件" dir="auto">关键源码文件</h2>
+<table>
+<thead>
+<tr>
+<th>目录/文件</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>src/agents/tool-catalog.ts</td>
+<td>工具定义和配置文件分配</td>
+</tr>
+<tr>
+<td>src/agents/tool-policy-pipeline.ts</td>
+<td>多阶段访问控制</td>
+</tr>
+<tr>
+<td>src/agents/tool-policy.ts</td>
+<td>策略标准化和插件组扩展</td>
+</tr>
+<tr>
+<td>src/security/dangerous-tools.ts</td>
+<td>HTTP 和 ACP 拒绝列表</td>
+</tr>
+<tr>
+<td>src/browser/</td>
+<td>基于 Playwright 的浏览器自动化（130+ 文件）</td>
+</tr>
+<tr>
+<td>src/browser/pw-role-snapshot.ts</td>
+<td>无障碍树快照生成</td>
+</tr>
+<tr>
+<td>src/browser/navigation-guard.ts</td>
+<td>URL 安全过滤</td>
+</tr>
+<tr>
+<td>src/process/</td>
+<td>命令执行和进程管理</td>
+</tr>
+<tr>
+<td>src/web-search/</td>
+<td>多提供商 Web 搜索</td>
+</tr>
+<tr>
+<td>src/tts/</td>
+<td>语音合成</td>
+</tr>
+<tr>
+<td>src/infra/exec-safety.ts</td>
+<td>命令注入检测</td>
+</tr>
+</tbody>
+</table>
+<h2 data-heading="本章小结" dir="auto">本章小结</h2>
+<p dir="auto">OpenClaw 的工具系统解决了 Agent 工具的根本张力：<strong>最大能力与最小风险</strong>。三层架构（目录→策略→执行）清晰分离关注点，让每一层按自己的节奏演化。七阶段策略管线组合独立的安全关注而不纠缠它们，每个利益相关者获得独立的控制面。上下文高效的输出格式（无障碍树、结构化搜索结果、页面选择的 PDF）不只是节省 token——它们决定了 Agent 在一次对话中能使用多少次工具，是功能使能而非性能优化。</p>
+<p dir="auto"><strong>核心洞察</strong>：Agent 工具的最难问题不是实现工具——而是控制对它们的访问。OpenClaw 的策略管线证明，有效的工具安全需要<strong>组合式设计</strong>，而非单体访问控制列表。每个利益相关者（平台运营者、Agent 开发者、模型提供商）获得独立的策略阶段，它们的组合效果从管线的有序组合中自然涌现。而工具输出的上下文效率设计，揭示了一个 LLM 系统独有的架构约束：<strong>所有工具输出都在与对话历史争夺同一个有限的上下文窗口——工具的价值不只取决于它能做什么，更取决于它的输出占用多少 token</strong>。</p>
+<p dir="auto"><strong>工具系统的终极使命，不是让 Agent 能做更多事——而是让它在做正确的事时毫无阻碍，在做危险的事前悬崖勒马。</strong>给一个人一把锤子，他看什么都像钉子。给一个 Agent 所有工具但不加管控，它做什么都像冒险。</p>
+<p dir="auto">工具让 Agent 拥有了在数字世界中行动的能力——执行命令、浏览网页、搜索信息。但 Agent 的活动空间不必局限于服务器边界之内。下一章，我们将看到 Node 系统如何将 Agent 的触角从虚拟世界延伸到物理世界——相机、屏幕、传感器，一切物理设备都将成为 Agent 可调用的”远程工具”。</p>
+<h3 data-heading="🛠️ 试一试：编写一个自定义工具" dir="auto">🛠️ 试一试：编写一个自定义工具</h3>
+<p dir="auto">通过 Agent 的工具系统，你可以让 Agent 调用自定义脚本。以下示例创建一个”磁盘用量检查”工具：</p>
+<pre class="language-bash" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-bash is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token comment"># 1. 创建工具脚本目录</span>
+<span class="token function">mkdir</span> <span class="token parameter variable">-p</span> ~/.openclaw/workspace/tools
+
+<span class="token comment"># 2. 编写工具脚本</span>
+<span class="token function">cat</span> <span class="token operator">&gt;</span> ~/.openclaw/workspace/tools/disk-usage.sh <span class="token operator">&lt;&lt;</span> <span class="token string">'EOF'
+#!/bin/bash
+# 磁盘用量检查工具
+# 用法: disk-usage.sh [path]
+TARGET="${1:-/}"
+echo "=== Disk Usage Report ==="
+echo "Target: $TARGET"
+df -h "$TARGET" | tail -1 | awk '{print "Total:", $2, "| Used:", $3, "| Available:", $4, "| Usage:", $5}'
+echo ""
+echo "Top 5 largest directories:"
+du -sh "$TARGET"/*/ 2&gt;/dev/null | sort -rh | head -5
+EOF</span>
+<span class="token function">chmod</span> +x ~/.openclaw/workspace/tools/disk-usage.sh
+
+<span class="token comment"># 3. 在 Agent 配置中启用 exec 工具</span>
+<span class="token comment"># openclaw.json5:</span>
+<span class="token comment"># {</span>
+<span class="token comment">#   "agents": {</span>
+<span class="token comment">#     "main": {</span>
+<span class="token comment">#       "tools": {</span>
+<span class="token comment">#         "allow": ["exec", "read", "write"],  // ← exec 允许 Agent 执行脚本</span>
+<span class="token comment">#         "exec": {</span>
+<span class="token comment">#           "allowlist": [                      // ← 白名单控制可执行的命令</span>
+<span class="token comment">#             "~/.openclaw/workspace/tools/*"</span>
+<span class="token comment">#           ]</span>
+<span class="token comment">#         }</span>
+<span class="token comment">#       }</span>
+<span class="token comment">#     }</span>
+<span class="token comment">#   }</span>
+<span class="token comment"># }</span>
+
+<span class="token comment"># 4. 测试：让 Agent 检查磁盘用量</span>
+<span class="token comment"># 向 Agent 发送消息："请检查一下根目录的磁盘使用情况"</span>
+<span class="token comment"># Agent 会自动调用 exec 工具执行你的脚本</span>
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">💡 <strong>观察要点</strong>：注意工具的 <code class="code-styler-inline">allowlist</code>配置——这正是 10.6 节所述的七阶段策略管线中”命令白名单”层在起作用。尝试执行一个不在白名单中的命令，观察策略管线如何拦截。</p>
+<h3 data-heading="思考题" dir="auto">思考题</h3>
+<ol>
+<li dir="auto"><strong>概念理解</strong>：工具系统的七层策略管线为什么采用”有序组合”而非”单一 ACL”？每个利益相关方（平台运营者、Agent 开发者、模型提供商）拥有独立的策略阶段有什么好处？</li>
+<li dir="auto"><strong>实践应用</strong>：如果要为 OpenClaw 添加一个”数据库查询”工具，允许 Agent 执行 SQL 查询，你会在策略管线中如何配置安全限制（防止 DROP TABLE 等危险操作）？</li>
+<li dir="auto"><strong>开放讨论</strong>：工具输出与对话历史竞争同一个有限的上下文窗口——这是 LLM 系统独有的架构约束。你认为未来有没有可能从根本上解决这个”上下文预算”问题？</li>
+</ol>
+<h3 data-heading="📚 推荐阅读" dir="auto">📚 推荐阅读</h3>
+<ul>
+<li dir="auto"><a data-tooltip-position="top" aria-label="https://arxiv.org/abs/2302.04761" rel="noopener nofollow" class="external-link" href="https://arxiv.org/abs/2302.04761" target="_blank">Toolformer: Language Models Can Teach Themselves to Use Tools (arXiv 2023)</a> — LLM 自主学习使用工具的里程碑论文</li>
+<li dir="auto"><a data-tooltip-position="top" aria-label="https://docs.anthropic.com/en/docs/build-with-claude/tool-use" rel="noopener nofollow" class="external-link" href="https://docs.anthropic.com/en/docs/build-with-claude/tool-use" target="_blank">Anthropic Tool Use 文档</a> — Claude 工具调用的设计理念与最佳实践</li>
+<li dir="auto"><a data-tooltip-position="top" aria-label="https://playwright.dev/" rel="noopener nofollow" class="external-link" href="https://playwright.dev/" target="_blank">Playwright 自动化框架</a> — OpenClaw 浏览器自动化的底层依赖，理解其设计有助于理解工具系统</li>
+</ul>
+<script defer src="../../../_assets/script.fad57313884515cf.js"></script>
+</div></div></div>
+    
+    <nav class="html-server-blog-chapter-navigation article-footer" data-blog-chapter-navigation aria-label="Tutorial chapters">
+      <a href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/OpenClaw/%E7%AC%AC9%E7%AB%A0-%E6%8F%92%E4%BB%B6%E4%B8%8E%E6%89%A9%E5%B1%95%E7%B3%BB%E7%BB%9F/?series=OpenClaw"><small>← Previous</small><strong>第9章：插件与扩展系统</strong></a>
+      <a href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/OpenClaw/%E7%AC%AC11%E7%AB%A0-Node-%E7%B3%BB%E7%BB%9F%E4%B8%8E%E8%AE%BE%E5%A4%87%E8%BF%9E%E6%8E%A5/?series=OpenClaw"><small>Next →</small><strong>第11章：Node-系统与设备连接</strong></a>
+    </nav>
+    
+  </article></div>
+    </main>
+  </div>
+  <footer class="site-footer"><span>纸上季刊</span><span>缓慢阅读与长篇写作</span></footer>
+</div><div class="html-server-blog-progress html-server-style-lab-progress is-rule" data-blog-progress data-blog-runtime-progress data-progress-state="idle" role="progressbar" aria-label="Loading page" aria-hidden="true"><span class="html-server-blog-progress-track"><i></i><b></b><em></em><em></em><em></em></span></div>
+    <div class="html-server-blog-related-modal" data-blog-related-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-related-close aria-label="Close related articles"></button>
+      <section class="html-server-blog-related-panel" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-related-title">
+        <header><div><span class="html-server-blog-kicker" data-blog-related-kind></span><h2 id="html-server-blog-related-title" data-blog-related-title></h2></div><button type="button" data-blog-related-close aria-label="Close"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <p data-blog-related-count></p>
+        <div class="html-server-blog-related-list" data-blog-related-list></div>
+      </section>
+    </div>
+    <div class="html-server-blog-search-modal" data-blog-search-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-search-close aria-label="Close search"></button>
+      <section class="html-server-blog-search-panel site-dialog" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-search-title">
+        <header class="dialog-head"><div><span class="html-server-blog-kicker">SEARCH</span><h2 id="html-server-blog-search-title">搜索文章</h2></div><button type="button" data-blog-search-close aria-label="关闭"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <label class="search-field"><span>支持标题、标签、系列、目录和属性</span><input id="search-input" type="search" data-blog-global-search placeholder="输入关键词开始搜索" autocomplete="off"></label>
+        <p class="search-summary" id="search-summary" data-blog-search-count>输入关键词开始搜索</p>
+        <div class="html-server-blog-search-results search-results dialog-list" id="search-results" data-blog-search-results></div>
+      </section>
+    </div>
+    <div class="html-server-blog-folder-modal" data-blog-folder-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-folder-close aria-label="Close folders"></button>
+      <section class="html-server-blog-folder-panel site-dialog" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-folder-title">
+        <header class="dialog-head"><div><span class="html-server-blog-kicker">VAULT</span><h2 id="html-server-blog-folder-title" data-blog-folder-title>浏览根目录</h2></div><button type="button" data-blog-folder-close aria-label="关闭"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <nav class="html-server-blog-folder-breadcrumb directory-breadcrumbs" data-blog-folder-breadcrumb aria-label="目录面包屑"></nav>
+        <p data-blog-folder-count></p>
+        <div class="html-server-blog-folder-browser directory-list dialog-list" data-blog-folder-browser></div>
+      </section>
+    </div>
+    <script type="application/json" data-blog-article-index>[]</script>
+    <script type="application/json" data-blog-folder-index data-current-folder="大模型/OpenClaw">[]</script>
+    <script type="application/json" data-blog-appearance-contract>{"version":1,"layouts":[{"id":"default","themes":["inherit"]},{"id":"next","themes":["inherit","next-classic","swiss-index","literary-quarterly","terminal-manual","quiet-journal","newspaper-daily","mint-notebook","tailwind-workspace"]},{"id":"butterfly","themes":["inherit","butterfly-colorful","brutal-broadcast","future-signal","field-notes","gallery-canvas","toy-modules","sakura-notes","clear-sky"]},{"id":"akilar","themes":["inherit","akilar-ark"]},{"id":"noionion","themes":["inherit","noionion-original"]},{"id":"kratos","themes":["inherit","kratos-rebirth"]},{"id":"leezhiy","themes":["inherit","leezhiy-next"]},{"id":"daybook","themes":["inherit","daybook-original"]},{"id":"style-lab-swiss","themes":["inherit","swiss-index"]},{"id":"style-lab-literary","themes":["inherit","literary-quarterly"]},{"id":"style-lab-terminal","themes":["inherit","terminal-manual"]},{"id":"style-lab-brutal","themes":["inherit","brutal-broadcast"]},{"id":"style-lab-quiet","themes":["inherit","quiet-journal"]},{"id":"style-lab-newspaper","themes":["inherit","newspaper-daily"]},{"id":"style-lab-future","themes":["inherit","future-signal"]},{"id":"style-lab-field","themes":["inherit","field-notes"]},{"id":"style-lab-gallery","themes":["inherit","gallery-canvas"]},{"id":"style-lab-toy","themes":["inherit","toy-modules"]},{"id":"style-lab-mint","themes":["inherit","mint-notebook"]},{"id":"style-lab-sakura","themes":["inherit","sakura-notes"]},{"id":"style-lab-sky","themes":["inherit","clear-sky"]},{"id":"style-lab-tailwind","themes":["inherit","tailwind-workspace"]}]}</script>
+  </div>
+  <script defer src="../../../_assets/script.905a72eede1c8c41.js"></script>
+</body>
+</html>

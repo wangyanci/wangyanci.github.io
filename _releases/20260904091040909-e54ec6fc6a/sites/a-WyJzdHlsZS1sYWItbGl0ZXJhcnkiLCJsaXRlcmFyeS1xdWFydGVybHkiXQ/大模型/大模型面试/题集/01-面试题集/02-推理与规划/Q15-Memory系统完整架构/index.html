@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en" data-html-server-theme="light" data-blog-layout="style-lab-literary" data-blog-layout-theme="literary-quarterly" data-blog-page-kind="article" data-blog-mobile-zoom="false" data-theme="literary" data-mode="light" data-page="article" data-blog-theme-control="style-lab" data-blog-main-loading-class="html-server-blog-main-loading" data-blog-overview-loading-class="html-server-blog-overview-loading" data-blog-folder-loading-class="html-server-blog-folder-loading" data-blog-pagination-scroll="item" data-blog-pin-progress="true" data-blog-outline-shell-selector=".html-server-style-lab-outline" data-blog-outline-auto-hide="true" data-blog-sticky-header-selector=".html-server-style-lab-header,.html-server-lab-swiss-rail" data-blog-scroll-mode="app" data-blog-document-pinning="false" data-blog-document-pinning-filter-regular="false" style="--html-server-navigation-surface-light: #eee9df;--html-server-navigation-surface-dark: #201c18">
+<head><!--html-server-dynamic:start--><meta name="html-server-dynamic-page" data-html-server-dynamic-page data-html-server-dynamic-assertion-mode="every-page" data-html-server-dynamic-cache-ttl-ms="1800000" content="a-WyJzdHlsZS1sYWItbGl0ZXJhcnkiLCJsaXRlcmFyeS1xdWFydGVybHkiXQ"><style data-html-server-dynamic-prepaint>html{--html-server-navigation-surface-active:var(--html-server-navigation-surface-light,var(--html-server-blog-background-light,#f5f7fa));background:var(--html-server-navigation-surface-active)}html[data-html-server-theme="dark"]{--html-server-navigation-surface-active:var(--html-server-navigation-surface-dark,var(--html-server-blog-background-dark,#151515))}html[data-html-server-navigation-entering],html[data-html-server-dynamic-pending]{background:var(--html-server-navigation-surface-active)!important}html[data-html-server-navigation-entering] body,html[data-html-server-dynamic-pending] body{opacity:0!important}html[data-html-server-navigation-entering]::before,html[data-html-server-dynamic-pending]::before{content:"";position:fixed;inset:0;z-index:2147483646;background:var(--html-server-navigation-surface-active);pointer-events:none}html[data-html-server-navigation-entering]::after,html[data-html-server-dynamic-pending]::after{content:"";position:fixed;top:0;left:0;z-index:2147483647;width:38%;height:2px;background:var(--interactive-accent,#8b6f47);box-shadow:0 0 10px currentColor;animation:html-server-navigation-prepaint 1s ease-in-out infinite;pointer-events:none}@keyframes html-server-navigation-prepaint{0%{transform:translateX(-110%)}100%{transform:translateX(370%)}}@media(prefers-reduced-motion:reduce){html[data-html-server-navigation-entering]::after,html[data-html-server-dynamic-pending]::after{animation:none;width:100%;opacity:.7}}</style><script data-blog-navigation-bootstrap>(function(){
+  var root=document.documentElement,key='html-server:navigation-handoff',handoff=null;
+  try{handoff=JSON.parse(sessionStorage.getItem(key)||'null');}catch(error){}
+  var target=location.pathname+location.search;
+  if(handoff&&handoff.target===target&&Date.now()-Number(handoff.createdAt||0)<5000){
+    root.setAttribute('data-html-server-navigation-entering','');
+    var reveal=function(){requestAnimationFrame(function(){requestAnimationFrame(function(){root.removeAttribute('data-html-server-navigation-entering');try{sessionStorage.removeItem(key);}catch(error){}});});};
+    if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',reveal,{once:true});else reveal();
+    setTimeout(function(){root.removeAttribute('data-html-server-navigation-entering');},5000);
+  }else if(handoff){try{sessionStorage.removeItem(key);}catch(error){}}
+})();</script><script data-html-server-dynamic-bootstrap>(()=>{
+const m={"releaseId":"20260904091040909-e54ec6fc6a","appearanceKey":"a-WyJzdHlsZS1sYWItbGl0ZXJhcnkiLCJsaXRlcmFyeS1xdWFydGVybHkiXQ","route":"大模型/大模型面试/题集/01-面试题集/02-推理与规划/Q15-Memory系统完整架构/index.html","outputRootRelativeUrl":"../../../../../../../../../../","siteRootRelativeUrl":"../../../../../../","assertionPolicy":{"mode":"every-page","cacheTtlMs":1800000}},S=1,C="html-server:dynamic-appearance:v1";
+const html=document.documentElement,pending='data-html-server-dynamic-pending';if(!html)return;html.setAttribute(pending,'');
+try{Object.defineProperty(window,'__htmlServerDynamicSiteRoot',{configurable:true,value:new URL(m.siteRootRelativeUrl||m.outputRootRelativeUrl,document.baseURI||location.href).href});}catch(_){}
+const reveal=()=>html.removeAttribute(pending);
+const safe=p=>{p=String(p||'').replace(/\\/g,'/').replace(/^\/+/, '');return !!p&&!p.split('/').includes('..')&&!/^[a-z][a-z\d+.-]*:/i.test(p)};
+const routeUrl=p=>String(p).split('/').map(encodeURIComponent).join('/');
+const get=async u=>{const c=new AbortController(),t=setTimeout(()=>c.abort(),2000);try{const r=await fetch(u,{cache:'no-store',credentials:'same-origin',signal:c.signal});if(!r.ok)throw Error(String(r.status));return await r.json()}finally{clearTimeout(t)}};
+const p=m.assertionPolicy||{},mode=p.mode==='home-only'||p.mode==='cache'?p.mode:'every-page',ttl=Math.max(60000,Number(p.cacheTtlMs)||1800000);
+let storage;try{storage=localStorage}catch(_){}
+const clear=()=>{try{storage&&storage.removeItem(C)}catch(_){}};
+try{Object.defineProperty(window,'HtmlServerDynamicAppearanceCache',{configurable:true,value:{key:C,clear,refresh:()=>{clear();location.reload()}}})}catch(_){}
+const read=()=>{try{const v=JSON.parse(storage&&storage.getItem(C)||'null');return v&&v.schemaVersion===S&&typeof v.appearanceKey==='string'&&typeof v.releaseId==='string'&&safe(v.path)&&Number.isFinite(v.selectionRevision)&&Number.isFinite(v.expiresAt)?v:null}catch(_){return null}};
+const cached=read(),home=m.route==='index.html',reload=(()=>{try{return performance.getEntriesByType('navigation')[0]?.type==='reload'}catch(_){return false}})();
+const cacheValid=!!cached&&cached.releaseId===m.releaseId&&(mode!=='cache'||cached.expiresAt>Date.now()),refresh=mode==='every-page'||(mode==='home-only'&&home)||(mode==='cache'&&(!cacheValid||reload));
+(async()=>{let navigating=false;
+const rootForPage=async()=>{const fallback=window.__htmlServerStaticFallbackRoot,discovered=fallback&&typeof fallback.then==='function'?await fallback:null;return new URL(discovered&&discovered.siteRoot?discovered.siteRoot:m.outputRootRelativeUrl,document.baseURI||location.href)};
+const move=async(key,pathValue,releaseId,canonical)=>{if(key===m.appearanceKey)return false;if(!safe(m.route)||!safe(pathValue))return false;const root=await rootForPage(),encoded=routeUrl(m.route),rel=canonical?encoded:pathValue.replace(/\/+$/,'')+'/'+encoded,guard='html-server-dynamic:'+releaseId+':'+key+':'+m.route;if(sessionStorage.getItem(guard)==='1')return false;const target=new URL(rel,root);target.search=location.search;target.hash=location.hash;sessionStorage.setItem(guard,'1');navigating=true;location.replace(target.href);return true};
+try{
+if(!refresh){if(!cacheValid)return;if(cached.appearanceKey===m.appearanceKey){sessionStorage.removeItem('html-server-dynamic:'+cached.releaseId+':'+cached.appearanceKey+':'+m.route);return;}await move(cached.appearanceKey,cached.path,cached.releaseId,false);return;}
+const root=await rootForPage(),pair=await Promise.all([get(new URL('_config/data.json',root)),get(new URL('_config/release.json',root))]),cfg=pair[0],ptr=pair[1];
+if(cfg.schemaVersion!==S)return;
+if(ptr.schemaVersion!==S||(cfg.selectionRevision!==undefined&&cfg.selectionRevision!==ptr.selectionRevision)||!safe(ptr.manifest))return;
+const man=await get(new URL(ptr.manifest,root));if(man.schemaVersion!==S||man.releaseId!==ptr.releaseId||man.selectionRevision!==ptr.selectionRevision||man.primaryAppearance!==ptr.primaryAppearance||!safe(m.route))return;
+const hit=Object.entries(man.sites||{}).find(([,v])=>v.appearance&&v.appearance.layout===cfg.blogLayout&&v.appearance.theme===cfg.blogLayoutTheme);if(!hit)return;
+const key=hit[0],site=hit[1];if(!Array.isArray(site.routes)||!site.routes.includes(m.route))return;
+if(!safe(site.path))return;const record={schemaVersion:S,appearanceKey:key,layout:site.appearance.layout,theme:site.appearance.theme,path:site.path,releaseId:ptr.releaseId,selectionRevision:ptr.selectionRevision,expiresAt:mode==='home-only'?0:Date.now()+ttl};try{storage&&storage.setItem(C,JSON.stringify(record))}catch(_){}
+const guard='html-server-dynamic:'+ptr.releaseId+':'+key+':'+m.route;if(key===m.appearanceKey){sessionStorage.removeItem(guard);return;}
+await move(key,site.path,ptr.releaseId,key===man.primaryAppearance);
+}catch(_){if(mode!=='every-page'&&cacheValid&&!navigating)await move(cached.appearanceKey,cached.path,cached.releaseId,false).catch(()=>{})}finally{if(!navigating)reveal();}})();
+})();</script><!--html-server-dynamic:end-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  
+  <script defer src="../../../../../../_assets/script.6d4f546be5f896d5.js"></script>
+  <script data-blog-theme-bootstrap>(function(){
+  var root = document.documentElement;
+  var theme = root.getAttribute('data-html-server-theme') || 'light';
+  try {
+    var stored = localStorage.getItem('html-server-blog-theme');
+    if (stored === 'dark' || stored === 'light') theme = stored;
+  } catch (error) {}
+  root.setAttribute('data-html-server-theme', theme);
+  root.classList.toggle('theme-dark', theme === 'dark');
+  root.classList.toggle('theme-light', theme !== 'dark');
+  root.style.backgroundColor = theme === 'dark'
+    ? 'var(--html-server-navigation-surface-dark, var(--html-server-blog-background-dark, #151515))'
+    : 'var(--html-server-navigation-surface-light, var(--html-server-blog-background-light, #f5f7fa))';
+})();</script>
+  
+  <title>Memory 系统的完整架构设计 · Digital Garden</title>
+  <link rel="shortcut icon" href="//obsidian.md/favicon.ico">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Mono:wght@300;400;500&family=IBM+Plex+Sans+Condensed:wght@400;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&family=Manrope:wght@400;600;800&family=Noto+Serif+SC:wght@400;600;800&family=Playfair+Display:wght@600;800&family=Space+Grotesk:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="../../../../../../_assets/blog.css">
+<link rel="preload" as="script" href="../../../../../../_assets/blog.js" fetchpriority="high"><script>window.__htmlServerStaticSearch="../../../../../../_assets/meta.json";window.__htmlServerStaticSidebar="../../../../../../_assets/sidebar.json?v=mtmqp68z-2gf";window.__htmlServerStaticPluginOverrides=window.__htmlServerStaticPluginOverrides||{};Object.assign(window.__htmlServerStaticPluginOverrides["blog-live2d"]||(window.__htmlServerStaticPluginOverrides["blog-live2d"]={}),{"localScriptUrl":"../../../../../../_assets/live2d-widget/L2Dwidget.min.js","localModelUrl":"../../../../../../_assets/live2d-widget/assets/koharu.model.json","assetBaseUrl":"../../../../../../_assets/live2d-widget"});</script></head>
+<body class="theme-light html-server-blog-body" data-blog-layout="style-lab-literary" data-blog-layout-theme="literary-quarterly" data-blog-page-kind="article" data-blog-style-isolation="strict" data-theme="literary" data-mode="light" data-page="article" data-blog-theme-control="style-lab" data-blog-main-loading-class="html-server-blog-main-loading" data-blog-overview-loading-class="html-server-blog-overview-loading" data-blog-folder-loading-class="html-server-blog-folder-loading" data-blog-pagination-scroll="item" data-blog-pin-progress="true" data-blog-outline-shell-selector=".html-server-style-lab-outline" data-blog-outline-auto-hide="true" data-blog-sticky-header-selector=".html-server-style-lab-header,.html-server-lab-swiss-rail" data-blog-scroll-mode="app" data-blog-document-pinning="false" data-blog-document-pinning-filter-regular="false" style="--html-server-navigation-surface-light: #eee9df;--html-server-navigation-surface-dark: #201c18">
+  <script data-blog-theme-bootstrap>(function(){
+  var theme = document.documentElement.getAttribute('data-html-server-theme') || 'light';
+  document.body.classList.toggle('theme-dark', theme === 'dark');
+  document.body.classList.toggle('theme-light', theme !== 'dark');
+})();</script>
+  <script type="application/json" data-blog-theme-image-groups>{}</script>
+  
+  <div class="html-server-blog-app">
+    <div class="html-server-style-lab-shell html-server-style-lab-literary">
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="html-server-style-lab-header site-header"><a class="html-server-style-lab-brand brand" href="../../../../../../" aria-label="回到文章列表"><b class="brand-mark">刊</b><span class="brand-copy"><strong>纸上季刊</strong><small>缓慢阅读与长篇写作</small></span></a><button class="menu-toggle" type="button" data-style-lab-menu aria-expanded="false" aria-controls="style-lab-main-nav">菜单</button><nav class="html-server-style-lab-nav main-nav" id="style-lab-main-nav" aria-label="主导航"><button type="button" data-style-lab-route="/">文章</button><button type="button" data-style-lab-route="/tags/">标签</button><button type="button" data-style-lab-route="/series/">系列</button><button type="button" data-style-lab-route="/archive/">归档</button></nav><div class="html-server-style-lab-tools header-tools" aria-label="站点工具"><button class="directory-toggle" type="button" data-blog-folder-open aria-label="打开目录"><span aria-hidden="true">▤</span><span>目录</span></button><button class="search-toggle" type="button" data-blog-search-open aria-label="打开搜索"><span aria-hidden="true">⌕</span><span>搜索</span></button><button class="mode-toggle" type="button" data-blog-theme aria-label="切换明暗主题"><span aria-hidden="true">◐</span><span class="mode-label">黑色</span></button></div></header>
+  <main id="content" class="html-server-style-lab-page html-server-blog-main html-server-style-lab-main" data-blog-main>
+    <div class="article-shell"><aside class="html-server-style-lab-outline article-toc"><nav class="html-server-blog-outline" data-blog-outline aria-label="Article outline">
+  <button class="html-server-blog-outline-toggle" type="button" data-blog-outline-toggle aria-expanded="true" aria-controls="html-server-blog-outline-list"><span>本文目录</span><b aria-hidden="true"><svg viewBox="0 0 20 20" focusable="false"><path d="m4.5 7.25 5.5 5.5 5.5-5.5"/></svg></b></button>
+  <strong>本文目录</strong>
+  <ol id="html-server-blog-outline-list"><li style="--outline-depth:0"><a href="#%E9%97%AE%E9%A2%98" data-blog-outline-link>问题</a></li><li style="--outline-depth:1"><a href="#1.%20%E7%AD%94%E6%A1%88" data-blog-outline-link>1. 答案</a></li><li style="--outline-depth:1"><a href="#2.%20%E5%BB%B6%E4%BC%B8%E8%BF%BD%E9%97%AE" data-blog-outline-link>2. 延伸追问</a></li><li style="--outline-depth:1"><a href="#3.%20%E5%B8%B8%E8%A7%81%E8%AF%AF%E5%8C%BA" data-blog-outline-link>3. 常见误区</a></li><li style="--outline-depth:1"><a href="#4.%20%E7%9B%B8%E5%85%B3" data-blog-outline-link>4. 相关</a></li></ol>
+</nav></aside><article class="html-server-blog-article article-body">
+    <nav class="html-server-blog-breadcrumb breadcrumbs" aria-label="Breadcrumb"><a href="../../../../../../" data-blog-folder-path="">Home</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../../../../folders/_/大模型/" data-blog-folder-path="大模型">大模型</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../../../../folders/_/大模型/_/大模型面试/" data-blog-folder-path="大模型/大模型面试">大模型面试</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../../../../folders/_/大模型/_/大模型面试/_/题集/" data-blog-folder-path="大模型/大模型面试/题集">题集</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../../../../folders/_/大模型/_/大模型面试/_/题集/_/01-面试题集/" data-blog-folder-path="大模型/大模型面试/题集/01-面试题集">01-面试题集</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../../../../folders/_/大模型/_/大模型面试/_/题集/_/01-面试题集/_/02-推理与规划/" data-blog-folder-path="大模型/大模型面试/题集/01-面试题集/02-推理与规划">02-推理与规划</a></nav>
+    <header class="html-server-blog-article-header"><div class="post-meta"><time>Jul 3, 2026</time><span>3 分钟</span><span>最后更新 Jul 3, 2026</span></div><h2>Memory 系统的完整架构设计</h2><p class="article-deck">Navigation: 推理与规划MOC</p><div class="tag-line"><button type="button" data-style-lab-href="../../../../../../tags/agent%252F%25E6%258E%25A8%25E7%2590%2586%25E8%25A7%2584%25E5%2588%2592/"># agent/推理规划</button><button type="button" data-style-lab-href="../../../../../../tags/type%252Finterview/"># type/interview</button><button type="button" data-style-lab-href="../../../../../../tags/diff%252Fadvanced/"># diff/advanced</button></div></header>
+    
+    <div class="markdown-reading-view html-server-blog-reading-view article-content"><div class="markdown-preview-view markdown-rendered node-insert-event is-readable-line-width allow-fold-headings allow-fold-lists" tabindex="-1"><div class="markdown-preview-sizer markdown-preview-section"><pre class="frontmatter language-yaml" style="display: none; overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-yaml is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token key atrule">title</span><span class="token punctuation">:</span> <span class="token string">"Memory 系统的完整架构设计"</span>
+<span class="token key atrule">type</span><span class="token punctuation">:</span> interview
+<span class="token key atrule">topic</span><span class="token punctuation">:</span> <span class="token string">"推理与规划"</span>
+<span class="token key atrule">difficulty</span><span class="token punctuation">:</span> advanced
+<span class="token key atrule">importance</span><span class="token punctuation">:</span> high
+<span class="token key atrule">tags</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> agent/推理规划
+  <span class="token punctuation">-</span> type/interview
+  <span class="token punctuation">-</span> diff/advanced</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto"><strong>Navigation</strong>: <a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92MOC/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/02-%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92/%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92MOC/" class="internal-link" target="" rel="noopener nofollow">推理与规划MOC</a></p>
+<h1 data-heading="问题" dir="auto">问题</h1>
+<p dir="auto">请设计一个完整的 Agent Memory 系统，涵盖写入、存储、检索、更新、遗忘全链路，说明每个模块的职责和关键技术选型。</p>
+<h2 data-heading="1. 答案" dir="auto">1. 答案</h2>
+<p dir="auto"><strong>系统架构总览</strong>：</p>
+<pre style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">┌─────────────────────────────────────────────────────────────┐
+│                      Agent Memory System                       │
+├──────────┬──────────┬───────────┬──────────┬─────────────────┤
+│  写入     │  存储     │  检索      │  更新     │     遗忘        │
+│ (Write)  │ (Store)  │ (Retrieve) │ (Update) │   (Forget)      │
+├──────────┼──────────┼───────────┼──────────┼─────────────────┤
+│Embedding │Vector DB │Embedding  │语义聚类   │多因子评分        │
+│  编码    │KV Store  │相似度搜索  │增量摘要   │LRU/LFU          │
+│元数据标注│图数据库  │Cross-Enc  │冲突检测   │分层淘汰         │
+│触发器    │关系数据库│时间加权   │版本管理   │定期清理         │
+└──────────┴──────────┴───────────┴──────────┴─────────────────┘
+                         ↕
+                    Context Assembly
+                    （上下文组装）
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto"><strong>全链路实现</strong>：</p>
+<pre class="language-python" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-python is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token keyword">class</span> <span class="token class-name">CompleteMemorySystem</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""完整的记忆系统"""</span>
+    
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> config<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>llm <span class="token operator">=</span> config<span class="token punctuation">.</span>llm
+        self<span class="token punctuation">.</span>embedder <span class="token operator">=</span> config<span class="token punctuation">.</span>embedder
+        
+        <span class="token comment"># 存储层</span>
+        self<span class="token punctuation">.</span>vector_store <span class="token operator">=</span> config<span class="token punctuation">.</span>vector_store   <span class="token comment"># Milvus/Pinecone</span>
+        self<span class="token punctuation">.</span>kv_store <span class="token operator">=</span> config<span class="token punctuation">.</span>kv_store           <span class="token comment"># Redis</span>
+        self<span class="token punctuation">.</span>graph_db <span class="token operator">=</span> config<span class="token punctuation">.</span>graph_db           <span class="token comment"># Neo4j</span>
+        self<span class="token punctuation">.</span>rel_db <span class="token operator">=</span> config<span class="token punctuation">.</span>rel_db               <span class="token comment"># PostgreSQL</span>
+        
+        <span class="token comment"># 子模块</span>
+        self<span class="token punctuation">.</span>writer <span class="token operator">=</span> MemoryWriter<span class="token punctuation">(</span>self<span class="token punctuation">.</span>llm<span class="token punctuation">,</span> self<span class="token punctuation">.</span>embedder<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>retriever <span class="token operator">=</span> MemoryRetriever<span class="token punctuation">(</span>self<span class="token punctuation">.</span>vector_store<span class="token punctuation">,</span> self<span class="token punctuation">.</span>graph_db<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>updater <span class="token operator">=</span> MemoryUpdater<span class="token punctuation">(</span>self<span class="token punctuation">.</span>llm<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>forgetter <span class="token operator">=</span> MemoryForgetter<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    <span class="token comment"># ========== 写入链路 ==========</span>
+    <span class="token keyword">def</span> <span class="token function">write</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> content<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> memory_type<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> metadata<span class="token punctuation">:</span> Dict <span class="token operator">=</span> <span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        记忆写入流程:
+        1. 生成 Embedding
+        2. 提取元数据（时间、重要性、实体等）
+        3. 写入对应存储层
+        4. 触发更新（如去重、摘要）
+        """</span>
+        <span class="token comment"># 1. Embedding</span>
+        embedding <span class="token operator">=</span> self<span class="token punctuation">.</span>embedder<span class="token punctuation">.</span>embed<span class="token punctuation">(</span>content<span class="token punctuation">)</span>
+        
+        <span class="token comment"># 2. 提取元数据</span>
+        entry <span class="token operator">=</span> MemoryEntry<span class="token punctuation">(</span>
+            content<span class="token operator">=</span>content<span class="token punctuation">,</span>
+            embedding<span class="token operator">=</span>embedding<span class="token punctuation">,</span>
+            timestamp<span class="token operator">=</span>time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            importance<span class="token operator">=</span>self<span class="token punctuation">.</span>writer<span class="token punctuation">.</span>score_importance<span class="token punctuation">(</span>content<span class="token punctuation">)</span><span class="token punctuation">,</span>
+            memory_type<span class="token operator">=</span>memory_type<span class="token punctuation">,</span>
+            metadata<span class="token operator">=</span>metadata <span class="token keyword">or</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+        <span class="token punctuation">)</span>
+        
+        <span class="token comment"># 3. 写入向量库</span>
+        memory_id <span class="token operator">=</span> self<span class="token punctuation">.</span>vector_store<span class="token punctuation">.</span>add<span class="token punctuation">(</span>
+            embedding<span class="token operator">=</span>embedding<span class="token punctuation">,</span>
+            content<span class="token operator">=</span>content<span class="token punctuation">,</span>
+            metadata<span class="token operator">=</span>entry<span class="token punctuation">.</span>to_metadata<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">)</span>
+        entry<span class="token punctuation">.</span><span class="token builtin">id</span> <span class="token operator">=</span> memory_id
+        
+        <span class="token comment"># 4. 提取实体关系写入知识图谱</span>
+        <span class="token keyword">if</span> memory_type <span class="token keyword">in</span> <span class="token punctuation">(</span><span class="token string">"fact"</span><span class="token punctuation">,</span> <span class="token string">"dialogue"</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            triples <span class="token operator">=</span> self<span class="token punctuation">.</span>writer<span class="token punctuation">.</span>extract_triples<span class="token punctuation">(</span>content<span class="token punctuation">)</span>
+            <span class="token keyword">for</span> s<span class="token punctuation">,</span> r<span class="token punctuation">,</span> o <span class="token keyword">in</span> triples<span class="token punctuation">:</span>
+                self<span class="token punctuation">.</span>graph_db<span class="token punctuation">.</span>add_fact<span class="token punctuation">(</span>s<span class="token punctuation">,</span> r<span class="token punctuation">,</span> o<span class="token punctuation">,</span> memory_id<span class="token operator">=</span>memory_id<span class="token punctuation">)</span>
+        
+        <span class="token comment"># 5. 写入 KV 缓存（热数据）</span>
+        self<span class="token punctuation">.</span>kv_store<span class="token punctuation">.</span><span class="token builtin">set</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"mem:</span><span class="token interpolation"><span class="token punctuation">{</span>memory_id<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">,</span> entry<span class="token punctuation">.</span>serialize<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> ttl<span class="token operator">=</span><span class="token number">3600</span><span class="token punctuation">)</span>
+        
+        <span class="token keyword">return</span> memory_id
+    
+    <span class="token comment"># ========== 检索链路 ==========</span>
+    <span class="token keyword">def</span> <span class="token function">retrieve</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> query<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> top_k<span class="token punctuation">:</span> <span class="token builtin">int</span> <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">,</span> 
+                 filters<span class="token punctuation">:</span> Dict <span class="token operator">=</span> <span class="token boolean">None</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> List<span class="token punctuation">[</span>MemoryEntry<span class="token punctuation">]</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        记忆检索流程:
+        1. 查询 Embedding
+        2. 粗排（ANN 搜索召回 Top-200）
+        3. 精排（Cross-Encoder Rerank）
+        4. 时间加权
+        5. 返回 Top-K
+        """</span>
+        <span class="token comment"># 1. 查询 Embedding</span>
+        query_embedding <span class="token operator">=</span> self<span class="token punctuation">.</span>embedder<span class="token punctuation">.</span>embed<span class="token punctuation">(</span>query<span class="token punctuation">)</span>
+        
+        <span class="token comment"># 2. 粗排召回</span>
+        candidates <span class="token operator">=</span> self<span class="token punctuation">.</span>vector_store<span class="token punctuation">.</span>search<span class="token punctuation">(</span>
+            query_embedding<span class="token punctuation">,</span> 
+            top_k<span class="token operator">=</span><span class="token number">200</span><span class="token punctuation">,</span>  <span class="token comment"># 召回更多做 Rerank</span>
+            filters<span class="token operator">=</span>filters
+        <span class="token punctuation">)</span>
+        
+        <span class="token comment"># 3. 精排（Cross-Encoder）</span>
+        reranked <span class="token operator">=</span> self<span class="token punctuation">.</span>retriever<span class="token punctuation">.</span>rerank<span class="token punctuation">(</span>query<span class="token punctuation">,</span> candidates<span class="token punctuation">,</span> top_k<span class="token operator">=</span><span class="token number">50</span><span class="token punctuation">)</span>
+        
+        <span class="token comment"># 4. 时间加权（新记忆提升排名）</span>
+        time_weighted <span class="token operator">=</span> self<span class="token punctuation">.</span>retriever<span class="token punctuation">.</span>apply_time_decay<span class="token punctuation">(</span>reranked<span class="token punctuation">)</span>
+        
+        <span class="token comment"># 5. 返回 Top-K</span>
+        <span class="token keyword">return</span> time_weighted<span class="token punctuation">[</span><span class="token punctuation">:</span>top_k<span class="token punctuation">]</span>
+    
+    <span class="token comment"># ========== 更新链路 ==========</span>
+    <span class="token keyword">def</span> <span class="token function">update</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> memory_id<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> new_content<span class="token punctuation">:</span> <span class="token builtin">str</span> <span class="token operator">=</span> <span class="token boolean">None</span><span class="token punctuation">,</span> 
+               metadata_updates<span class="token punctuation">:</span> Dict <span class="token operator">=</span> <span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        记忆更新流程:
+        1. 获取原记忆
+        2. 检测冲突
+        3. 版本管理（旧版本标记过期）
+        4. 写入新版本
+        """</span>
+        old_entry <span class="token operator">=</span> self<span class="token punctuation">.</span>vector_store<span class="token punctuation">.</span>get<span class="token punctuation">(</span>memory_id<span class="token punctuation">)</span>
+        
+        <span class="token keyword">if</span> new_content<span class="token punctuation">:</span>
+            <span class="token comment"># 检测冲突</span>
+            conflicts <span class="token operator">=</span> self<span class="token punctuation">.</span>updater<span class="token punctuation">.</span>detect_conflicts<span class="token punctuation">(</span>new_content<span class="token punctuation">,</span> old_entry<span class="token punctuation">)</span>
+            <span class="token keyword">if</span> conflicts<span class="token punctuation">:</span>
+                self<span class="token punctuation">.</span>updater<span class="token punctuation">.</span>archive_old_versions<span class="token punctuation">(</span>conflicts<span class="token punctuation">)</span>
+            
+            <span class="token comment"># 生成新 Embedding</span>
+            new_embedding <span class="token operator">=</span> self<span class="token punctuation">.</span>embedder<span class="token punctuation">.</span>embed<span class="token punctuation">(</span>new_content<span class="token punctuation">)</span>
+            
+            <span class="token comment"># 更新向量</span>
+            self<span class="token punctuation">.</span>vector_store<span class="token punctuation">.</span>update<span class="token punctuation">(</span>
+                memory_id<span class="token punctuation">,</span>
+                embedding<span class="token operator">=</span>new_embedding<span class="token punctuation">,</span>
+                content<span class="token operator">=</span>new_content
+            <span class="token punctuation">)</span>
+        
+        <span class="token keyword">if</span> metadata_updates<span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>vector_store<span class="token punctuation">.</span>update_metadata<span class="token punctuation">(</span>memory_id<span class="token punctuation">,</span> metadata_updates<span class="token punctuation">)</span>
+    
+    <span class="token comment"># ========== 遗忘链路 ==========</span>
+    <span class="token keyword">def</span> <span class="token function">forget</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> threshold_days<span class="token punctuation">:</span> <span class="token builtin">int</span> <span class="token operator">=</span> <span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        记忆遗忘流程:
+        1. 扫描所有记忆计算衰减分数
+        2. 低分记忆归档
+        3. 过期记忆清理
+        """</span>
+        all_memories <span class="token operator">=</span> self<span class="token punctuation">.</span>vector_store<span class="token punctuation">.</span>scan<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        
+        <span class="token keyword">for</span> mem <span class="token keyword">in</span> all_memories<span class="token punctuation">:</span>
+            score <span class="token operator">=</span> self<span class="token punctuation">.</span>forgetter<span class="token punctuation">.</span>compute_decay_score<span class="token punctuation">(</span>mem<span class="token punctuation">)</span>
+            
+            <span class="token keyword">if</span> score <span class="token operator">&lt;</span> <span class="token number">0.1</span><span class="token punctuation">:</span>
+                <span class="token comment"># 归档</span>
+                self<span class="token punctuation">.</span>forgetter<span class="token punctuation">.</span>archive<span class="token punctuation">(</span>mem<span class="token punctuation">)</span>
+                self<span class="token punctuation">.</span>vector_store<span class="token punctuation">.</span>delete<span class="token punctuation">(</span>mem<span class="token punctuation">.</span><span class="token builtin">id</span><span class="token punctuation">)</span>
+            <span class="token keyword">elif</span> score <span class="token operator">&lt;</span> <span class="token number">0.3</span><span class="token punctuation">:</span>
+                <span class="token comment"># 降低检索优先级</span>
+                self<span class="token punctuation">.</span>vector_store<span class="token punctuation">.</span>deprioritize<span class="token punctuation">(</span>mem<span class="token punctuation">.</span><span class="token builtin">id</span><span class="token punctuation">)</span>
+    
+    <span class="token comment"># ========== 上下文组装 ==========</span>
+    <span class="token keyword">def</span> <span class="token function">assemble_context</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> query<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> max_tokens<span class="token punctuation">:</span> <span class="token builtin">int</span> <span class="token operator">=</span> <span class="token number">4000</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        为 LLM 调用组装上下文:
+        1. 检索相关记忆
+        2. 按重要性排序
+        3. 在 token 预算内组装
+        """</span>
+        relevant <span class="token operator">=</span> self<span class="token punctuation">.</span>retrieve<span class="token punctuation">(</span>query<span class="token punctuation">,</span> top_k<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">)</span>
+        
+        context_parts <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        current_tokens <span class="token operator">=</span> <span class="token number">0</span>
+        
+        <span class="token keyword">for</span> mem <span class="token keyword">in</span> <span class="token builtin">sorted</span><span class="token punctuation">(</span>relevant<span class="token punctuation">,</span> key<span class="token operator">=</span><span class="token keyword">lambda</span> m<span class="token punctuation">:</span> m<span class="token punctuation">.</span>importance<span class="token punctuation">,</span> reverse<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            mem_tokens <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>mem<span class="token punctuation">.</span>content<span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token number">4</span>  <span class="token comment"># 粗略估算</span>
+            <span class="token keyword">if</span> current_tokens <span class="token operator">+</span> mem_tokens <span class="token operator">&gt;</span> max_tokens<span class="token punctuation">:</span>
+                <span class="token keyword">break</span>
+            context_parts<span class="token punctuation">.</span>append<span class="token punctuation">(</span>mem<span class="token punctuation">.</span>content<span class="token punctuation">)</span>
+            current_tokens <span class="token operator">+=</span> mem_tokens
+        
+        <span class="token keyword">return</span> <span class="token string">"\n\n---\n\n"</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>context_parts<span class="token punctuation">)</span>
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto"><strong>关键技术选型建议</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>推荐方案</th>
+<th>备选方案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Embedding</td>
+<td>BGE-M3（中文）、OpenAI ada-003（英文）</td>
+<td>E5、M3E</td>
+</tr>
+<tr>
+<td>向量数据库</td>
+<td>Milvus（大规模）/ Pinecone（托管）</td>
+<td>Weaviate、Qdrant</td>
+</tr>
+<tr>
+<td>KV 缓存</td>
+<td>Redis</td>
+<td>Memcached</td>
+</tr>
+<tr>
+<td>知识图谱</td>
+<td>Neo4j</td>
+<td>Nebula Graph</td>
+</tr>
+<tr>
+<td>关系数据库</td>
+<td>PostgreSQL</td>
+<td>MySQL</td>
+</tr>
+<tr>
+<td>Reranker</td>
+<td>BGE-Reranker</td>
+<td>Cross-Encoder</td>
+</tr>
+<tr>
+<td>ANN 算法</td>
+<td>HNSW（在线）/ IVF+PQ（离线）</td>
+<td>Flat（小数据）</td>
+</tr>
+</tbody>
+</table>
+<h2 data-heading="2. 延伸追问" dir="auto">2. 延伸追问</h2>
+<ul>
+<li dir="auto"><strong>追问 1</strong>：写入链路中的延迟怎么优化？答：Embedding 和元数据提取可以异步化，主链路只写缓存，后台同步到向量库。</li>
+<li dir="auto"><strong>追问 2</strong>：检索链路中 Reranker 的必要性？答：ANN 召回的粗排精度有限，Reranker 可以提升 Top-K 的相关性 15-30%。</li>
+<li dir="auto"><strong>追问 3</strong>：记忆系统的监控指标？答：写入延迟、检索延迟、召回率、命中率、存储增长率、冲突率等。</li>
+</ul>
+<h2 data-heading="3. 常见误区" dir="auto">3. 常见误区</h2>
+<ul>
+<li dir="auto"><strong>误区 1</strong>：用一个数据库解决所有问题。实际上不同存储有不同擅长的场景。</li>
+<li dir="auto"><strong>误区 2</strong>：忽视写入链路的性能。写入如果太慢会影响用户体验。</li>
+<li dir="auto"><strong>误区 3</strong>：检索只关注相关性。还需要考虑时效性、多样性、可信度等维度。</li>
+</ul>
+<hr>
+<h2 data-heading="4. 相关" dir="auto">4. 相关</h2>
+<script defer src="../../../../../../_assets/script.fad57313884515cf.js"></script>
+</div></div></div>
+    
+    
+    
+  </article></div>
+  </main>
+  <footer class="site-footer"><span>纸上季刊</span><span>缓慢阅读与长篇写作</span></footer>
+</div><div class="html-server-blog-progress html-server-style-lab-progress is-rule" data-blog-progress data-blog-runtime-progress data-progress-state="idle" role="progressbar" aria-label="Loading page" aria-hidden="true"><span class="html-server-blog-progress-track"><i></i><b></b><em></em><em></em><em></em></span></div>
+    <div class="html-server-blog-related-modal" data-blog-related-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-related-close aria-label="Close related articles"></button>
+      <section class="html-server-blog-related-panel" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-related-title">
+        <header><div><span class="html-server-blog-kicker" data-blog-related-kind></span><h2 id="html-server-blog-related-title" data-blog-related-title></h2></div><button type="button" data-blog-related-close aria-label="Close"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <p data-blog-related-count></p>
+        <div class="html-server-blog-related-list" data-blog-related-list></div>
+      </section>
+    </div>
+    <div class="html-server-blog-search-modal" data-blog-search-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-search-close aria-label="Close search"></button>
+      <section class="html-server-blog-search-panel site-dialog" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-search-title">
+        <header class="dialog-head"><div><span class="html-server-blog-kicker">SEARCH</span><h2 id="html-server-blog-search-title">搜索文章</h2></div><button type="button" data-blog-search-close aria-label="关闭"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <label class="search-field"><span>支持标题、标签、系列、目录和属性</span><input id="search-input" type="search" data-blog-global-search placeholder="输入关键词开始搜索" autocomplete="off"></label>
+        <p class="search-summary" id="search-summary" data-blog-search-count>输入关键词开始搜索</p>
+        <div class="html-server-blog-search-results search-results dialog-list" id="search-results" data-blog-search-results></div>
+      </section>
+    </div>
+    <div class="html-server-blog-folder-modal" data-blog-folder-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-folder-close aria-label="Close folders"></button>
+      <section class="html-server-blog-folder-panel site-dialog" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-folder-title">
+        <header class="dialog-head"><div><span class="html-server-blog-kicker">VAULT</span><h2 id="html-server-blog-folder-title" data-blog-folder-title>浏览根目录</h2></div><button type="button" data-blog-folder-close aria-label="关闭"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <nav class="html-server-blog-folder-breadcrumb directory-breadcrumbs" data-blog-folder-breadcrumb aria-label="目录面包屑"></nav>
+        <p data-blog-folder-count></p>
+        <div class="html-server-blog-folder-browser directory-list dialog-list" data-blog-folder-browser></div>
+      </section>
+    </div>
+    <script type="application/json" data-blog-article-index>[]</script>
+    <script type="application/json" data-blog-folder-index data-current-folder="大模型/大模型面试/题集/01-面试题集/02-推理与规划">[]</script>
+    <script type="application/json" data-blog-appearance-contract>{"version":1,"layouts":[{"id":"default","themes":["inherit"]},{"id":"next","themes":["inherit","next-classic","swiss-index","literary-quarterly","terminal-manual","quiet-journal","newspaper-daily","mint-notebook","tailwind-workspace"]},{"id":"butterfly","themes":["inherit","butterfly-colorful","brutal-broadcast","future-signal","field-notes","gallery-canvas","toy-modules","sakura-notes","clear-sky"]},{"id":"akilar","themes":["inherit","akilar-ark"]},{"id":"noionion","themes":["inherit","noionion-original"]},{"id":"kratos","themes":["inherit","kratos-rebirth"]},{"id":"leezhiy","themes":["inherit","leezhiy-next"]},{"id":"daybook","themes":["inherit","daybook-original"]},{"id":"style-lab-swiss","themes":["inherit","swiss-index"]},{"id":"style-lab-literary","themes":["inherit","literary-quarterly"]},{"id":"style-lab-terminal","themes":["inherit","terminal-manual"]},{"id":"style-lab-brutal","themes":["inherit","brutal-broadcast"]},{"id":"style-lab-quiet","themes":["inherit","quiet-journal"]},{"id":"style-lab-newspaper","themes":["inherit","newspaper-daily"]},{"id":"style-lab-future","themes":["inherit","future-signal"]},{"id":"style-lab-field","themes":["inherit","field-notes"]},{"id":"style-lab-gallery","themes":["inherit","gallery-canvas"]},{"id":"style-lab-toy","themes":["inherit","toy-modules"]},{"id":"style-lab-mint","themes":["inherit","mint-notebook"]},{"id":"style-lab-sakura","themes":["inherit","sakura-notes"]},{"id":"style-lab-sky","themes":["inherit","clear-sky"]},{"id":"style-lab-tailwind","themes":["inherit","tailwind-workspace"]}]}</script>
+  </div>
+  <script defer src="../../../../../../_assets/script.905a72eede1c8c41.js"></script>
+</body>
+</html>

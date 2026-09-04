@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en" data-html-server-theme="light" data-blog-layout="style-lab-literary" data-blog-layout-theme="literary-quarterly" data-blog-page-kind="article" data-blog-mobile-zoom="false" data-theme="literary" data-mode="light" data-page="seriesDetail" data-blog-theme-control="style-lab" data-blog-main-loading-class="html-server-blog-main-loading" data-blog-overview-loading-class="html-server-blog-overview-loading" data-blog-folder-loading-class="html-server-blog-folder-loading" data-blog-pagination-scroll="item" data-blog-pin-progress="true" data-blog-outline-shell-selector=".html-server-style-lab-outline" data-blog-outline-auto-hide="true" data-blog-sticky-header-selector=".html-server-style-lab-header,.html-server-lab-swiss-rail" data-blog-scroll-mode="app" data-blog-document-pinning="false" data-blog-document-pinning-filter-regular="false" style="--html-server-navigation-surface-light: #eee9df;--html-server-navigation-surface-dark: #201c18">
+<head><!--html-server-dynamic:start--><meta name="html-server-dynamic-page" data-html-server-dynamic-page data-html-server-dynamic-assertion-mode="every-page" data-html-server-dynamic-cache-ttl-ms="1800000" content="a-WyJzdHlsZS1sYWItbGl0ZXJhcnkiLCJsaXRlcmFyeS1xdWFydGVybHkiXQ"><style data-html-server-dynamic-prepaint>html{--html-server-navigation-surface-active:var(--html-server-navigation-surface-light,var(--html-server-blog-background-light,#f5f7fa));background:var(--html-server-navigation-surface-active)}html[data-html-server-theme="dark"]{--html-server-navigation-surface-active:var(--html-server-navigation-surface-dark,var(--html-server-blog-background-dark,#151515))}html[data-html-server-navigation-entering],html[data-html-server-dynamic-pending]{background:var(--html-server-navigation-surface-active)!important}html[data-html-server-navigation-entering] body,html[data-html-server-dynamic-pending] body{opacity:0!important}html[data-html-server-navigation-entering]::before,html[data-html-server-dynamic-pending]::before{content:"";position:fixed;inset:0;z-index:2147483646;background:var(--html-server-navigation-surface-active);pointer-events:none}html[data-html-server-navigation-entering]::after,html[data-html-server-dynamic-pending]::after{content:"";position:fixed;top:0;left:0;z-index:2147483647;width:38%;height:2px;background:var(--interactive-accent,#8b6f47);box-shadow:0 0 10px currentColor;animation:html-server-navigation-prepaint 1s ease-in-out infinite;pointer-events:none}@keyframes html-server-navigation-prepaint{0%{transform:translateX(-110%)}100%{transform:translateX(370%)}}@media(prefers-reduced-motion:reduce){html[data-html-server-navigation-entering]::after,html[data-html-server-dynamic-pending]::after{animation:none;width:100%;opacity:.7}}</style><script data-blog-navigation-bootstrap>(function(){
+  var root=document.documentElement,key='html-server:navigation-handoff',handoff=null;
+  try{handoff=JSON.parse(sessionStorage.getItem(key)||'null');}catch(error){}
+  var target=location.pathname+location.search;
+  if(handoff&&handoff.target===target&&Date.now()-Number(handoff.createdAt||0)<5000){
+    root.setAttribute('data-html-server-navigation-entering','');
+    var reveal=function(){requestAnimationFrame(function(){requestAnimationFrame(function(){root.removeAttribute('data-html-server-navigation-entering');try{sessionStorage.removeItem(key);}catch(error){}});});};
+    if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',reveal,{once:true});else reveal();
+    setTimeout(function(){root.removeAttribute('data-html-server-navigation-entering');},5000);
+  }else if(handoff){try{sessionStorage.removeItem(key);}catch(error){}}
+})();</script><script data-html-server-dynamic-bootstrap>(()=>{
+const m={"releaseId":"20260904091040909-e54ec6fc6a","appearanceKey":"a-WyJzdHlsZS1sYWItbGl0ZXJhcnkiLCJsaXRlcmFyeS1xdWFydGVybHkiXQ","route":"大模型/DeepSeek V4 源码剖析/第17章-Muon-优化器与-32T-预训练/index.html","outputRootRelativeUrl":"../../../../../../../","siteRootRelativeUrl":"../../../","assertionPolicy":{"mode":"every-page","cacheTtlMs":1800000}},S=1,C="html-server:dynamic-appearance:v1";
+const html=document.documentElement,pending='data-html-server-dynamic-pending';if(!html)return;html.setAttribute(pending,'');
+try{Object.defineProperty(window,'__htmlServerDynamicSiteRoot',{configurable:true,value:new URL(m.siteRootRelativeUrl||m.outputRootRelativeUrl,document.baseURI||location.href).href});}catch(_){}
+const reveal=()=>html.removeAttribute(pending);
+const safe=p=>{p=String(p||'').replace(/\\/g,'/').replace(/^\/+/, '');return !!p&&!p.split('/').includes('..')&&!/^[a-z][a-z\d+.-]*:/i.test(p)};
+const routeUrl=p=>String(p).split('/').map(encodeURIComponent).join('/');
+const get=async u=>{const c=new AbortController(),t=setTimeout(()=>c.abort(),2000);try{const r=await fetch(u,{cache:'no-store',credentials:'same-origin',signal:c.signal});if(!r.ok)throw Error(String(r.status));return await r.json()}finally{clearTimeout(t)}};
+const p=m.assertionPolicy||{},mode=p.mode==='home-only'||p.mode==='cache'?p.mode:'every-page',ttl=Math.max(60000,Number(p.cacheTtlMs)||1800000);
+let storage;try{storage=localStorage}catch(_){}
+const clear=()=>{try{storage&&storage.removeItem(C)}catch(_){}};
+try{Object.defineProperty(window,'HtmlServerDynamicAppearanceCache',{configurable:true,value:{key:C,clear,refresh:()=>{clear();location.reload()}}})}catch(_){}
+const read=()=>{try{const v=JSON.parse(storage&&storage.getItem(C)||'null');return v&&v.schemaVersion===S&&typeof v.appearanceKey==='string'&&typeof v.releaseId==='string'&&safe(v.path)&&Number.isFinite(v.selectionRevision)&&Number.isFinite(v.expiresAt)?v:null}catch(_){return null}};
+const cached=read(),home=m.route==='index.html',reload=(()=>{try{return performance.getEntriesByType('navigation')[0]?.type==='reload'}catch(_){return false}})();
+const cacheValid=!!cached&&cached.releaseId===m.releaseId&&(mode!=='cache'||cached.expiresAt>Date.now()),refresh=mode==='every-page'||(mode==='home-only'&&home)||(mode==='cache'&&(!cacheValid||reload));
+(async()=>{let navigating=false;
+const rootForPage=async()=>{const fallback=window.__htmlServerStaticFallbackRoot,discovered=fallback&&typeof fallback.then==='function'?await fallback:null;return new URL(discovered&&discovered.siteRoot?discovered.siteRoot:m.outputRootRelativeUrl,document.baseURI||location.href)};
+const move=async(key,pathValue,releaseId,canonical)=>{if(key===m.appearanceKey)return false;if(!safe(m.route)||!safe(pathValue))return false;const root=await rootForPage(),encoded=routeUrl(m.route),rel=canonical?encoded:pathValue.replace(/\/+$/,'')+'/'+encoded,guard='html-server-dynamic:'+releaseId+':'+key+':'+m.route;if(sessionStorage.getItem(guard)==='1')return false;const target=new URL(rel,root);target.search=location.search;target.hash=location.hash;sessionStorage.setItem(guard,'1');navigating=true;location.replace(target.href);return true};
+try{
+if(!refresh){if(!cacheValid)return;if(cached.appearanceKey===m.appearanceKey){sessionStorage.removeItem('html-server-dynamic:'+cached.releaseId+':'+cached.appearanceKey+':'+m.route);return;}await move(cached.appearanceKey,cached.path,cached.releaseId,false);return;}
+const root=await rootForPage(),pair=await Promise.all([get(new URL('_config/data.json',root)),get(new URL('_config/release.json',root))]),cfg=pair[0],ptr=pair[1];
+if(cfg.schemaVersion!==S)return;
+if(ptr.schemaVersion!==S||(cfg.selectionRevision!==undefined&&cfg.selectionRevision!==ptr.selectionRevision)||!safe(ptr.manifest))return;
+const man=await get(new URL(ptr.manifest,root));if(man.schemaVersion!==S||man.releaseId!==ptr.releaseId||man.selectionRevision!==ptr.selectionRevision||man.primaryAppearance!==ptr.primaryAppearance||!safe(m.route))return;
+const hit=Object.entries(man.sites||{}).find(([,v])=>v.appearance&&v.appearance.layout===cfg.blogLayout&&v.appearance.theme===cfg.blogLayoutTheme);if(!hit)return;
+const key=hit[0],site=hit[1];if(!Array.isArray(site.routes)||!site.routes.includes(m.route))return;
+if(!safe(site.path))return;const record={schemaVersion:S,appearanceKey:key,layout:site.appearance.layout,theme:site.appearance.theme,path:site.path,releaseId:ptr.releaseId,selectionRevision:ptr.selectionRevision,expiresAt:mode==='home-only'?0:Date.now()+ttl};try{storage&&storage.setItem(C,JSON.stringify(record))}catch(_){}
+const guard='html-server-dynamic:'+ptr.releaseId+':'+key+':'+m.route;if(key===m.appearanceKey){sessionStorage.removeItem(guard);return;}
+await move(key,site.path,ptr.releaseId,key===man.primaryAppearance);
+}catch(_){if(mode!=='every-page'&&cacheValid&&!navigating)await move(cached.appearanceKey,cached.path,cached.releaseId,false).catch(()=>{})}finally{if(!navigating)reveal();}})();
+})();</script><!--html-server-dynamic:end-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  
+  <script defer src="../../../_assets/script.6d4f546be5f896d5.js"></script>
+  <script data-blog-theme-bootstrap>(function(){
+  var root = document.documentElement;
+  var theme = root.getAttribute('data-html-server-theme') || 'light';
+  try {
+    var stored = localStorage.getItem('html-server-blog-theme');
+    if (stored === 'dark' || stored === 'light') theme = stored;
+  } catch (error) {}
+  root.setAttribute('data-html-server-theme', theme);
+  root.classList.toggle('theme-dark', theme === 'dark');
+  root.classList.toggle('theme-light', theme !== 'dark');
+  root.style.backgroundColor = theme === 'dark'
+    ? 'var(--html-server-navigation-surface-dark, var(--html-server-blog-background-dark, #151515))'
+    : 'var(--html-server-navigation-surface-light, var(--html-server-blog-background-light, #f5f7fa))';
+})();</script>
+  
+  <title>第17章：Muon-优化器与-32T-预训练 · Digital Garden</title>
+  <link rel="shortcut icon" href="//obsidian.md/favicon.ico">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Mono:wght@300;400;500&family=IBM+Plex+Sans+Condensed:wght@400;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&family=Manrope:wght@400;600;800&family=Noto+Serif+SC:wght@400;600;800&family=Playfair+Display:wght@600;800&family=Space+Grotesk:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="../../../_assets/blog.css">
+<link rel="preload" as="script" href="../../../_assets/blog.js" fetchpriority="high"><script>window.__htmlServerStaticSearch="../../../_assets/meta.json";window.__htmlServerStaticSidebar="../../../_assets/sidebar.json?v=mtmqp68z-2gf";window.__htmlServerStaticPluginOverrides=window.__htmlServerStaticPluginOverrides||{};Object.assign(window.__htmlServerStaticPluginOverrides["blog-live2d"]||(window.__htmlServerStaticPluginOverrides["blog-live2d"]={}),{"localScriptUrl":"../../../_assets/live2d-widget/L2Dwidget.min.js","localModelUrl":"../../../_assets/live2d-widget/assets/koharu.model.json","assetBaseUrl":"../../../_assets/live2d-widget"});</script></head>
+<body class="theme-light html-server-blog-body" data-blog-layout="style-lab-literary" data-blog-layout-theme="literary-quarterly" data-blog-page-kind="article" data-blog-style-isolation="strict" data-theme="literary" data-mode="light" data-page="seriesDetail" data-blog-theme-control="style-lab" data-blog-main-loading-class="html-server-blog-main-loading" data-blog-overview-loading-class="html-server-blog-overview-loading" data-blog-folder-loading-class="html-server-blog-folder-loading" data-blog-pagination-scroll="item" data-blog-pin-progress="true" data-blog-outline-shell-selector=".html-server-style-lab-outline" data-blog-outline-auto-hide="true" data-blog-sticky-header-selector=".html-server-style-lab-header,.html-server-lab-swiss-rail" data-blog-scroll-mode="app" data-blog-document-pinning="false" data-blog-document-pinning-filter-regular="false" style="--html-server-navigation-surface-light: #eee9df;--html-server-navigation-surface-dark: #201c18">
+  <script data-blog-theme-bootstrap>(function(){
+  var theme = document.documentElement.getAttribute('data-html-server-theme') || 'light';
+  document.body.classList.toggle('theme-dark', theme === 'dark');
+  document.body.classList.toggle('theme-light', theme !== 'dark');
+})();</script>
+  <script type="application/json" data-blog-theme-image-groups>{}</script>
+  
+  <div class="html-server-blog-app">
+    <div class="html-server-style-lab-shell html-server-style-lab-literary">
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="html-server-style-lab-header site-header"><a class="html-server-style-lab-brand brand" href="../../../" aria-label="回到文章列表"><b class="brand-mark">刊</b><span class="brand-copy"><strong>纸上季刊</strong><small>缓慢阅读与长篇写作</small></span></a><button class="menu-toggle" type="button" data-style-lab-menu aria-expanded="false" aria-controls="style-lab-main-nav">菜单</button><nav class="html-server-style-lab-nav main-nav" id="style-lab-main-nav" aria-label="主导航"><button type="button" data-style-lab-route="/">文章</button><button type="button" data-style-lab-route="/tags/">标签</button><button type="button" data-style-lab-route="/series/">系列</button><button type="button" data-style-lab-route="/archive/">归档</button></nav><div class="html-server-style-lab-tools header-tools" aria-label="站点工具"><button class="directory-toggle" type="button" data-blog-folder-open aria-label="打开目录"><span aria-hidden="true">▤</span><span>目录</span></button><button class="search-toggle" type="button" data-blog-search-open aria-label="打开搜索"><span aria-hidden="true">⌕</span><span>搜索</span></button><button class="mode-toggle" type="button" data-blog-theme aria-label="切换明暗主题"><span aria-hidden="true">◐</span><span class="mode-label">黑色</span></button></div></header>
+  <div id="content" class="html-server-style-lab-page series-shell" data-blog-course-page>
+    <aside class="html-server-style-lab-course series-tree" data-blog-course aria-label="Series chapters">
+  <header data-blog-course-header-toggle><a href="../../../series/">SERIES</a><h2>DeepSeek V4 源码剖析</h2><p>大模型/DeepSeek V4 源码剖析 · 23 chapters</p><button type="button" data-blog-course-toggle aria-expanded="false" aria-label="Toggle series chapters"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="m7.5 10 4.5 4 4.5-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></header>
+  <nav class="tree-root" data-blog-course-scroll-handoff><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/%E7%AC%AC1%E7%AB%A0-V4-%E4%B9%8B%E8%B7%AF-%E4%BB%8E-V2-V3-V3.2-%E5%88%B0-V4-%E7%9A%84%E6%9E%B6%E6%9E%84%E6%BC%94%E8%BF%9B/?series=DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第1章：V4-之路-从-V2-V3-V3.2-到-V4-的架构演进">第1章：V4-之路-从-V2-V3-V3.2-到-V4-的架构演进</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/%E7%AC%AC2%E7%AB%A0-MLA-%E8%BF%9B%E9%98%B6-head_dim-512-%E4%B8%8E-grouped-O-%E6%8A%95%E5%BD%B1/?series=DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第2章：MLA-进阶-head_dim-512-与-grouped-O-投影">第2章：MLA-进阶-head_dim-512-与-grouped-O-投影</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/%E7%AC%AC3%E7%AB%A0-Compressor-%E6%BB%91%E7%AA%97%E4%B8%8E-KV-%E5%87%A0%E4%BD%95%E5%8E%8B%E7%BC%A9/?series=DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第3章：Compressor-滑窗与-KV-几何压缩">第3章：Compressor-滑窗与-KV-几何压缩</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/%E7%AC%AC4%E7%AB%A0-Indexer-%E7%A8%80%E7%96%8F%E6%B3%A8%E6%84%8F%E5%8A%9B%E7%9A%84%E5%8F%AF%E5%AD%A6%E8%B7%AF%E7%94%B1/?series=DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第4章：Indexer-稀疏注意力的可学路由">第4章：Indexer-稀疏注意力的可学路由</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/%E7%AC%AC5%E7%AB%A0-sparse_attn-%E4%B8%8E-FlashMLA-V4-%E8%B7%AF%E5%BE%84%E4%B8%8B%E7%9A%84-CUDA-%E5%86%85%E6%A0%B8/?series=DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第5章：sparse_attn-与-FlashMLA-V4-路径下的-CUDA-内核">第5章：sparse_attn-与-FlashMLA-V4-路径下的-CUDA-内核</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/%E7%AC%AC6%E7%AB%A0-YaRN-RoPE-%E4%B8%8E-1M-%E9%95%BF%E4%B8%8A%E4%B8%8B%E6%96%87%E5%B7%A5%E7%A8%8B/?series=DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第6章：YaRN-RoPE-与-1M-长上下文工程">第6章：YaRN-RoPE-与-1M-长上下文工程</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/%E7%AC%AC7%E7%AB%A0-Gate-%E4%B9%8B%E5%8F%98-sqrtsoftplus-noaux_tc-%E4%B8%8E-routed_scaling/?series=DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第7章：Gate-之变-sqrtsoftplus-noaux_tc-与-routed_scaling">第7章：Gate-之变-sqrtsoftplus-noaux_tc-与-routed_scaling</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/%E7%AC%AC8%E7%AB%A0-384-%E4%B8%93%E5%AE%B6%E4%B8%8E-Hash-%E8%B7%AF%E7%94%B1-%E5%89%8D-3-%E5%B1%82%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%AD%A6/?series=DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第8章：384-专家与-Hash-路由-前-3-层为什么不学">第8章：384-专家与-Hash-路由-前-3-层为什么不学</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/%E7%AC%AC9%E7%AB%A0-Expert-%E4%B8%8E%E5%85%B1%E4%BA%AB%E4%B8%93%E5%AE%B6-SwiGLU-clip-%E5%AE%B9%E9%87%8F%E5%B9%B3%E8%A1%A1/?series=DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第9章：Expert-与共享专家-SwiGLU-clip-容量平衡">第9章：Expert-与共享专家-SwiGLU-clip-容量平衡</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/%E7%AC%AC10%E7%AB%A0-Hyper-Connections-%E6%9B%BF%E4%BB%A3%E6%AE%8B%E5%B7%AE%E7%9A%84-hc_mult-%E9%80%9A%E8%B7%AF/?series=DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第10章：Hyper-Connections-替代残差的-hc_mult-通路">第10章：Hyper-Connections-替代残差的-hc_mult-通路</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/%E7%AC%AC11%E7%AB%A0-MTP-%E5%A4%9A-Token-%E9%A2%84%E6%B5%8B%E7%9A%84%E8%AE%AD%E7%BB%83%E6%94%BE%E5%A4%A7%E5%99%A8/?series=DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第11章：MTP-多-Token-预测的训练放大器">第11章：MTP-多-Token-预测的训练放大器</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/%E7%AC%AC12%E7%AB%A0-FP4-e2m1-FP8-e4m3-%E6%B7%B7%E5%90%88%E7%B2%BE%E5%BA%A6%E7%9A%84%E5%87%A0%E4%BD%95/?series=DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第12章：FP4-e2m1-FP8-e4m3-混合精度的几何">第12章：FP4-e2m1-FP8-e4m3-混合精度的几何</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/%E7%AC%AC13%E7%AB%A0-DeepGEMM-FP4-FP8-%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95%E5%86%85%E6%A0%B8/?series=DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第13章：DeepGEMM-FP4-FP8-矩阵乘法内核">第13章：DeepGEMM-FP4-FP8-矩阵乘法内核</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/%E7%AC%AC14%E7%AB%A0-QAT-%E4%B8%8E-act_quant-%E9%87%8F%E5%8C%96%E6%84%9F%E7%9F%A5%E8%AE%AD%E7%BB%83%E5%85%A8%E9%93%BE%E8%B7%AF/?series=DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第14章：QAT-与-act_quant-量化感知训练全链路">第14章：QAT-与-act_quant-量化感知训练全链路</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/%E7%AC%AC15%E7%AB%A0-Tensor-Expert-%E5%B9%B6%E8%A1%8C-ColumnParallel-%E4%B8%8E-RowParallel/?series=DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第15章：Tensor-Expert-并行-ColumnParallel-与-RowParallel">第15章：Tensor-Expert-并行-ColumnParallel-与-RowParallel</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/%E7%AC%AC16%E7%AB%A0-DeepEP-MoE-all-to-all-%E9%80%9A%E4%BF%A1%E5%BA%93/?series=DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第16章：DeepEP-MoE-all-to-all-通信库">第16章：DeepEP-MoE-all-to-all-通信库</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/%E7%AC%AC17%E7%AB%A0-Muon-%E4%BC%98%E5%8C%96%E5%99%A8%E4%B8%8E-32T-%E9%A2%84%E8%AE%AD%E7%BB%83/?series=DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90" aria-current="page"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第17章：Muon-优化器与-32T-预训练">第17章：Muon-优化器与-32T-预训练</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/%E7%AC%AC18%E7%AB%A0-%E4%B8%A4%E9%98%B6%E6%AE%B5%E5%90%8E%E8%AE%AD%E7%BB%83-%E9%A2%86%E5%9F%9F-SFT-RL-on-policy-%E8%92%B8%E9%A6%8F/?series=DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第18章：两阶段后训练-领域-SFT-RL-on-policy-蒸馏">第18章：两阶段后训练-领域-SFT-RL-on-policy-蒸馏</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/%E7%AC%AC19%E7%AB%A0-vLLM-SGLang-FlashMLA-%E4%B8%8A%E7%9A%84-V4-%E9%80%82%E9%85%8D/?series=DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第19章：vLLM-SGLang-FlashMLA-上的-V4-适配">第19章：vLLM-SGLang-FlashMLA-上的-V4-适配</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/%E7%AC%AC20%E7%AB%A0-V4-%E5%9C%A8%E5%BC%80%E6%BA%90%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%89%88%E5%9B%BE%E9%87%8C%E7%9A%84%E4%BD%8D%E7%BD%AE/?series=DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="第20章：V4-在开源大模型版图里的位置">第20章：V4-在开源大模型版图里的位置</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/%E5%89%8D%E8%A8%80-1.6-%E4%B8%87%E4%BA%BF%E5%8F%82%E6%95%B0%E7%9A%84%E5%B7%A5%E7%A8%8B%E7%BE%8E%E5%AD%A6/?series=DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="前言：1.6-万亿参数的工程美学">前言：1.6-万亿参数的工程美学</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/INDEX/?series=DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="章节目录">章节目录</span></a><a class="tree-document" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/README/?series=DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90"><span class="html-server-blog-course-document tree-document-icon" aria-hidden="true"></span><span class="html-server-blog-course-label" data-course-label="DeepSeek V4 源码剖析">DeepSeek V4 源码剖析</span></a></nav>
+</aside>
+    <main class="html-server-blog-main html-server-style-lab-main series-reader" data-blog-main>
+      <div class="article-shell"><aside class="html-server-style-lab-outline article-toc"><nav class="html-server-blog-outline" data-blog-outline aria-label="Article outline">
+  <button class="html-server-blog-outline-toggle" type="button" data-blog-outline-toggle aria-expanded="true" aria-controls="html-server-blog-outline-list"><span>本文目录</span><b aria-hidden="true"><svg viewBox="0 0 20 20" focusable="false"><path d="m4.5 7.25 5.5 5.5 5.5-5.5"/></svg></b></button>
+  <strong>本文目录</strong>
+  <ol id="html-server-blog-outline-list"><li style="--outline-depth:0"><a href="#%E5%BC%95%E5%AD%90%EF%BC%9AAdamW%20%E5%9C%A8%201.6T%20%E8%A7%84%E6%A8%A1%E4%B8%8A%E7%9A%84%E5%B1%80%E9%99%90" data-blog-outline-link>引子：AdamW 在 1.6T 规模上的局限</a></li><li style="--outline-depth:0"><a href="#Muon%20%E7%9A%84%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3" data-blog-outline-link>Muon 的核心思想</a></li><li style="--outline-depth:0"><a href="#17.2%C2%B7%E8%A1%A5%20Muon%20%E5%8D%95%E6%AD%A5%E6%9B%B4%E6%96%B0%E7%9A%84%E6%95%B0%E6%8D%AE%E6%B5%81" data-blog-outline-link>17.2·补 Muon 单步更新的数据流</a></li><li style="--outline-depth:0"><a href="#Muon%20%E4%B8%8E%20AdamW%20%E7%9A%84%E5%AF%B9%E6%AF%94" data-blog-outline-link>Muon 与 AdamW 的对比</a></li><li style="--outline-depth:0"><a href="#V4%20%E8%AE%AD%E7%BB%83%E4%B8%AD%E5%8F%AF%E8%83%BD%E7%9A%84%E6%B7%B7%E5%90%88%E4%BC%98%E5%8C%96%E5%99%A8%E7%AD%96%E7%95%A5" data-blog-outline-link>V4 训练中可能的混合优化器策略</a></li><li style="--outline-depth:0"><a href="#32T%20tokens%20%E9%A2%84%E8%AE%AD%E7%BB%83%EF%BC%9A%E6%95%B0%E6%8D%AE%E8%A7%84%E6%A8%A1%E7%9A%84%E5%87%A0%E4%BD%95" data-blog-outline-link>32T tokens 预训练：数据规模的几何</a></li><li style="--outline-depth:0"><a href="#%E6%95%B0%E6%8D%AE%E7%BB%84%E6%88%90%E7%9A%84%E2%80%9D%E4%BA%94%E5%A4%A7%E6%94%AF%E6%9F%B1%E2%80%9D" data-blog-outline-link>数据组成的”五大支柱”</a></li><li style="--outline-depth:0"><a href="#%E5%AD%A6%E4%B9%A0%E7%8E%87%E4%B8%8E%E8%AE%AD%E7%BB%83%E9%98%B6%E6%AE%B5" data-blog-outline-link>学习率与训练阶段</a></li><li style="--outline-depth:0"><a href="#%E8%AE%AD%E7%BB%83%E7%9B%91%E6%8E%A7%E7%9A%84%E5%85%B3%E9%94%AE%E6%8C%87%E6%A0%87" data-blog-outline-link>训练监控的关键指标</a></li><li style="--outline-depth:0"><a href="#%E5%8A%A8%E6%89%8B%E5%AE%9E%E9%AA%8C%EF%BC%9AMuon%20%E7%9A%84%20mini%20%E5%AE%9E%E7%8E%B0" data-blog-outline-link>动手实验：Muon 的 mini 实现</a></li><li style="--outline-depth:0"><a href="#17.9%C2%B7%E8%A1%A5%20Muon%20%E5%9C%A8%201.6T%20%E8%A7%84%E6%A8%A1%E7%9A%84%E5%B7%A5%E7%A8%8B%E6%8C%91%E6%88%98" data-blog-outline-link>17.9·补 Muon 在 1.6T 规模的工程挑战</a></li><li style="--outline-depth:0"><a href="#17.9%C2%B7%E8%A1%A5%C2%B7%E8%A1%A5%2032T%20tokens%20%E7%9A%84%E7%A1%AC%E4%BB%B6%E6%8A%95%E5%85%A5%E4%BC%B0%E7%AE%97" data-blog-outline-link>17.9·补·补 32T tokens 的硬件投入估算</a></li><li style="--outline-depth:0"><a href="#%E5%BB%B6%E4%BC%B8%E9%98%85%E8%AF%BB" data-blog-outline-link>延伸阅读</a></li><li style="--outline-depth:0"><a href="#17.10%C2%B7%E8%A1%A5%20Muon%20%E5%9C%A8%E7%A4%BE%E5%8C%BA%E4%B8%AD%E7%9A%84%E7%8E%B0%E7%8A%B6%E4%B8%8E%E4%BA%89%E8%AE%AE" data-blog-outline-link>17.10·补 Muon 在社区中的现状与争议</a></li><li style="--outline-depth:0"><a href="#17.10%C2%B7%E8%A1%A5%C2%B7%E8%A1%A5%20Muon%20%E4%B8%8E%E2%80%9D%E8%B6%85%E5%A4%A7%20batch%20size%E2%80%9D%20%E8%AE%AD%E7%BB%83%E7%9A%84%E5%85%B3%E7%B3%BB" data-blog-outline-link>17.10·补·补 Muon 与”超大 batch size” 训练的关系</a></li><li style="--outline-depth:0"><a href="#17.10%C2%B7%E5%BB%B6%E5%B1%95%20Muon%20%E4%B8%8E%E2%80%9D%E8%AE%AD%E7%BB%83%E7%A8%B3%E5%AE%9A%E6%80%A7%E2%80%9D%E7%9A%84%E5%B7%A5%E7%A8%8B%E6%8C%87%E6%A0%87" data-blog-outline-link>17.10·延展 Muon 与”训练稳定性”的工程指标</a></li><li style="--outline-depth:0"><a href="#%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%93" data-blog-outline-link>本章小结</a></li></ol>
+</nav></aside><article class="html-server-blog-article article-body">
+    <nav class="html-server-blog-breadcrumb breadcrumbs" aria-label="Breadcrumb"><a href="../../../" data-blog-folder-path="">Home</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../folders/_/大模型/" data-blog-folder-path="大模型">大模型</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../folders/_/大模型/_/DeepSeek V4 源码剖析/" data-blog-folder-path="大模型/DeepSeek V4 源码剖析">DeepSeek V4 源码剖析</a></nav>
+    <header class="html-server-blog-article-header"><div class="post-meta"><time>Jul 15, 2026</time><span>14 分钟</span><span>最后更新 Jul 15, 2026</span></div><h2>第17章：Muon-优化器与-32T-预训练</h2><p class="article-deck">DeepSeek V4 源码剖析</p><div class="tag-line"><button type="button" data-style-lab-href="../../../tags/ai-models/"># ai-models</button><button type="button" data-style-lab-href="../../../tags/DeepSeek/"># DeepSeek</button><button type="button" data-style-lab-href="../../../tags/%25E7%25B3%25BB%25E5%2588%2597%25E6%2595%2599%25E7%25A8%258B/"># 系列教程</button></div></header>
+    
+    <div class="markdown-reading-view html-server-blog-reading-view article-content"><div class="markdown-preview-view markdown-rendered node-insert-event is-readable-line-width allow-fold-headings allow-fold-lists" tabindex="-1"><div class="markdown-preview-sizer markdown-preview-section"><pre class="frontmatter language-yaml" style="display: none; overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-yaml is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token key atrule">created</span><span class="token punctuation">:</span> 2026<span class="token punctuation">-</span>07<span class="token punctuation">-</span>14 21<span class="token punctuation">:</span><span class="token number">37</span>
+<span class="token key atrule">updated</span><span class="token punctuation">:</span> 2026<span class="token punctuation">-</span>07<span class="token punctuation">-</span>14 21<span class="token punctuation">:</span><span class="token number">37</span>
+<span class="token key atrule">aliases</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> 第17章：Muon<span class="token punctuation">-</span>优化器与<span class="token punctuation">-</span>32T<span class="token punctuation">-</span>预训练
+<span class="token key atrule">title</span><span class="token punctuation">:</span> 第17章：Muon<span class="token punctuation">-</span>优化器与<span class="token punctuation">-</span>32T<span class="token punctuation">-</span>预训练
+<span class="token key atrule">source</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//www.yangyitao.com/books/deepseek<span class="token punctuation">-</span>v4/chapters/17<span class="token punctuation">-</span>muon<span class="token punctuation">-</span>pretrain
+<span class="token key atrule">tags</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> ai<span class="token punctuation">-</span>models
+  <span class="token punctuation">-</span> DeepSeek
+  <span class="token punctuation">-</span> 系列教程
+<span class="token key atrule">type</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> AI
+<span class="token key atrule">category</span><span class="token punctuation">:</span> AI模型/DeepSeek
+<span class="token key atrule">cssclasses</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> ai<span class="token punctuation">-</span>models
+  <span class="token punctuation">-</span> series
+<span class="token key atrule">note</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">series</span><span class="token punctuation">:</span> DeepSeek V4 源码剖析</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout drop-shadow"><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg></div><div class="callout-title-inner">文档定位</div></div><div class="callout-content ab-note">
+<p dir="auto"><strong>AI 整理 + 学习笔记</strong>。原文出自杨艺韬《DeepSeek V4 源码剖析》一书。</p>
+<p dir="auto">原文链接:<a rel="noopener nofollow" class="external-link" href="https://www.yangyitao.com/books/deepseek-v4/chapters/17-muon-pretrain" target="_blank">https://www.yangyitao.com/books/deepseek-v4/chapters/17-muon-pretrain</a><br>
+系列入口:<a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/README/" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/README/" class="internal-link" target="" rel="noopener nofollow">大模型/DeepSeek V4 源码剖析/README</a></p>
+</div></div>
+<p dir="auto">DeepSeek V4 源码剖析</p>
+<p dir="auto">“AdamW was the optimizer of the 2010s. Muon is one of the candidates for the 2020s.” —— 引自一位 ML systems 研究者</p>
+<p dir="auto">V4 的训练栈用 Muon 取代部分 AdamW——一个看似细节的选择，背后是 1.6T MoE 训练成本与稳定性的极致权衡。</p>
+<h2 data-heading="引子：AdamW 在 1.6T 规模上的局限" dir="auto">引子：AdamW 在 1.6T 规模上的局限</h2>
+<p dir="auto">AdamW（Adam with weight decay）从 2017 年问世后，统治了大模型训练近十年。它的工作原理是为每个参数维护两个 moment：</p>
+<ul>
+<li dir="auto">一阶 moment（动量）：梯度的指数移动平均</li>
+<li dir="auto">二阶 moment（方差）：梯度平方的指数移动平均</li>
+</ul>
+<p dir="auto">更新公式：</p>
+<div class="math math-block is-loaded"><mjx-container class="MathJax" jax="CHTML" display="true"><mjx-math display="true" class="MJX-TEX" style="margin-left: 0px; margin-right: 0px;"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-msub space="4"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D703 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D702 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c22C5"></mjx-c></mjx-mo><mjx-mfrac space="3"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-msub><mjx-texatom texclass="ORD"><mjx-mover><mjx-over style="padding-bottom: 0.105em; padding-left: 0.439em; margin-bottom: -0.531em;"><mjx-mo class="mjx-n" style="width: 0px; margin-left: -0.25em;"><mjx-c class="mjx-c5E"></mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-texatom><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow><mjx-msqrt><mjx-sqrt><mjx-surd><mjx-mo class="mjx-sop"><mjx-c class="mjx-c221A TEX-S1"></mjx-c></mjx-mo></mjx-surd><mjx-box style="padding-top: 0.123em;"><mjx-msub><mjx-texatom texclass="ORD"><mjx-mover><mjx-over style="padding-bottom: 0.105em; padding-left: 0.27em; margin-bottom: -0.531em;"><mjx-mo class="mjx-n" style="width: 0px; margin-left: -0.25em;"><mjx-c class="mjx-c5E"></mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D463 TEX-I"></mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-texatom><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-box></mjx-sqrt></mjx-msqrt><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D716 TEX-I"></mjx-c></mjx-mi></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-math></mjx-container></div>
+<p dir="auto">AdamW 在小模型上极稳定，但在 1.6T 规模上有几个问题：</p>
+<p dir="auto"><strong>问题 1：状态显存翻 2 倍</strong></p>
+<p dir="auto">AdamW 的 m / v 与参数同形——对 1.6T 参数意味着多 3.2T 个 32-bit 状态 ≈ 12.8 TB（即便 8-bit 优化器如 bitsandbytes，也要约 3.2 TB）。这对训练集群的 host memory 是巨大压力。</p>
+<p dir="auto"><strong>问题 2：与 FP4 / FP8 weight 的不兼容</strong></p>
+<p dir="auto">AdamW 的更新假设 weight 是连续浮点。V4 的 routed expert 是 FP4 e2m1——只有 16 个离散值。AdamW 的 <code class="code-styler-inline">weight - lr * m/sqrt(v)</code>计算后必须 round 回 FP4 grid，引入舍入误差。</p>
+<p dir="auto"><strong>问题 3：超参敏感</strong></p>
+<p dir="auto">AdamW 的 β1 / β2 / ε / weight decay 在 1.6T 训练中非常敏感——一个错误的 ε 会让训练在某个 step 突然崩溃。这增加训练运维成本。</p>
+<p dir="auto"><strong>问题 4：对 spectral norm 的隐性约束弱</strong></p>
+<p dir="auto">AdamW 通过 weight decay 间接控制 weight 范数。但在 MoE + HC + 稀疏 attention 这种”复杂结构”下，简单的 weight decay 不足以保证训练稳定。</p>
+<p dir="auto"><strong>Muon</strong>通过完全不同的数学路径回应了这些问题。</p>
+<h2 data-heading="Muon 的核心思想" dir="auto">Muon 的核心思想</h2>
+<p dir="auto">Muon (Momentum Orthogonalized by Newton-Schulz) 是 Keller Jordan 在 2024 年通过 blog post + GitHub repo（<a data-tooltip-position="top" aria-label="https://github.com/KellerJordan/Muon" rel="noopener nofollow" class="external-link" href="https://github.com/KellerJordan/Muon" target="_blank">github.com/KellerJordan/Muon</a> ）提出的优化器；后续 Moonshot AI 团队的扩展研究 <a data-tooltip-position="top" aria-label="https://arxiv.org/abs/2502.16982" rel="noopener nofollow" class="external-link" href="https://arxiv.org/abs/2502.16982" target="_blank">“Muon is Scalable for LLM Training”</a> （arXiv:2502.16982，2025-02）把它推到大模型规模的工业验证。它的核心思想：<strong>用矩阵的 spectral norm 约束代替简单的 weight decay</strong>。</p>
+<p dir="auto">Muon 的更新规则可以简化成两步：</p>
+<pre class="language-plaintext" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-plaintext is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">1. 算梯度的动量 m = β · m + g
+2. 把 m 投影到 spectral norm = 1 的矩阵流形上：
+   m_proj = newton_schulz(m)   # 用 Newton-Schulz 迭代算近似 SVD
+3. 更新参数：θ_{t+1} = θ_t - lr · m_proj
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">Newton-Schulz 迭代可以快速逼近 m / ||m||_2（spectral 谱）—— 让动量始终保持单位 spectral norm。</p>
+<p dir="auto">这个看似奇怪的设计有几个好处：</p>
+<ul>
+<li dir="auto"><strong>不需要二阶 moment</strong>：Muon 只需要一阶 m，状态显存少一半</li>
+<li dir="auto"><strong>天然的 weight decay 替代品</strong>：spectral norm 约束防止 weight 范数失控</li>
+<li dir="auto"><strong>对超参不敏感</strong>：lr 几乎是唯一关键超参</li>
+<li dir="auto"><strong>与 FP4 / FP8 兼容</strong>：Newton-Schulz 在 FP32 中算，最后 round 到 weight 的 dtype</li>
+</ul>
+<p dir="auto">V4 是第一个把 Muon 推到 1.6T 工业化训练的开源模型。</p>
+<h2 data-heading="17.2·补 Muon 单步更新的数据流" dir="auto">17.2·补 Muon 单步更新的数据流</h2>
+<p dir="auto">把 Muon 一次 step 的核心计算画清楚：</p>
+<div class="mermaid"><svg id="mc0908b2e9ef75451" width="1714.4453125" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flowchart" height="222" viewBox="0 0 1714.4453125 222" role="graphics-document document" aria-roledescription="flowchart-v2"><style>#mc0908b2e9ef75451{font-family:var(--font-mermaid);font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#mc0908b2e9ef75451 .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#mc0908b2e9ef75451 .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#mc0908b2e9ef75451 .error-icon{fill:#552222;}#mc0908b2e9ef75451 .error-text{fill:#552222;stroke:#552222;}#mc0908b2e9ef75451 .edge-thickness-normal{stroke-width:1px;}#mc0908b2e9ef75451 .edge-thickness-thick{stroke-width:3.5px;}#mc0908b2e9ef75451 .edge-pattern-solid{stroke-dasharray:0;}#mc0908b2e9ef75451 .edge-thickness-invisible{stroke-width:0;fill:none;}#mc0908b2e9ef75451 .edge-pattern-dashed{stroke-dasharray:3;}#mc0908b2e9ef75451 .edge-pattern-dotted{stroke-dasharray:2;}#mc0908b2e9ef75451 .marker{fill:#333333;stroke:#333333;}#mc0908b2e9ef75451 .marker.cross{stroke:#333333;}#mc0908b2e9ef75451 svg{font-family:var(--font-mermaid);font-size:16px;}#mc0908b2e9ef75451 p{margin:0;}#mc0908b2e9ef75451 .label{font-family:var(--font-mermaid);color:#333;}#mc0908b2e9ef75451 .cluster-label text{fill:#333;}#mc0908b2e9ef75451 .cluster-label span{color:#333;}#mc0908b2e9ef75451 .cluster-label span p{background-color:transparent;}#mc0908b2e9ef75451 .label text,#mc0908b2e9ef75451 span{fill:#333;color:#333;}#mc0908b2e9ef75451 .node rect,#mc0908b2e9ef75451 .node circle,#mc0908b2e9ef75451 .node ellipse,#mc0908b2e9ef75451 .node polygon,#mc0908b2e9ef75451 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mc0908b2e9ef75451 .rough-node .label text,#mc0908b2e9ef75451 .node .label text,#mc0908b2e9ef75451 .image-shape .label,#mc0908b2e9ef75451 .icon-shape .label{text-anchor:middle;}#mc0908b2e9ef75451 .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#mc0908b2e9ef75451 .rough-node .label,#mc0908b2e9ef75451 .node .label,#mc0908b2e9ef75451 .image-shape .label,#mc0908b2e9ef75451 .icon-shape .label{text-align:center;}#mc0908b2e9ef75451 .node.clickable{cursor:pointer;}#mc0908b2e9ef75451 .root .anchor path{fill:#333333!important;stroke-width:0;stroke:#333333;}#mc0908b2e9ef75451 .arrowheadPath{fill:#333333;}#mc0908b2e9ef75451 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mc0908b2e9ef75451 .flowchart-link{stroke:#333333;fill:none;}#mc0908b2e9ef75451 .edgeLabel{background-color:rgba(232,232,232, 0.8);text-align:center;}#mc0908b2e9ef75451 .edgeLabel p{background-color:rgba(232,232,232, 0.8);}#mc0908b2e9ef75451 .edgeLabel rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#mc0908b2e9ef75451 .labelBkg{background-color:rgba(232, 232, 232, 0.5);}#mc0908b2e9ef75451 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mc0908b2e9ef75451 .cluster text{fill:#333;}#mc0908b2e9ef75451 .cluster span{color:#333;}#mc0908b2e9ef75451 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:var(--font-mermaid);font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mc0908b2e9ef75451 .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#333;}#mc0908b2e9ef75451 rect.text{fill:none;stroke-width:0;}#mc0908b2e9ef75451 .icon-shape,#mc0908b2e9ef75451 .image-shape{background-color:rgba(232,232,232, 0.8);text-align:center;}#mc0908b2e9ef75451 .icon-shape p,#mc0908b2e9ef75451 .image-shape p{background-color:rgba(232,232,232, 0.8);padding:2px;}#mc0908b2e9ef75451 .icon-shape .label rect,#mc0908b2e9ef75451 .image-shape .label rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#mc0908b2e9ef75451 .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#mc0908b2e9ef75451 .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#mc0908b2e9ef75451 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}#mc0908b2e9ef75451 .compute&gt;*{fill:#312e81!important;stroke:#a78bfa!important;color:#ede9fe!important;}#mc0908b2e9ef75451 .compute span{fill:#312e81!important;stroke:#a78bfa!important;color:#ede9fe!important;}#mc0908b2e9ef75451 .compute tspan{fill:#ede9fe!important;}#mc0908b2e9ef75451 .state&gt;*{fill:#1f2937!important;stroke:#475569!important;color:#cbd5e1!important;}#mc0908b2e9ef75451 .state span{fill:#1f2937!important;stroke:#475569!important;color:#cbd5e1!important;}#mc0908b2e9ef75451 .state tspan{fill:#cbd5e1!important;}</style><g><marker id="mc0908b2e9ef75451-mc0908b2e9ef75451_flowchart-v2-pointEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="mc0908b2e9ef75451-mc0908b2e9ef75451_flowchart-v2-pointStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="4.5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="mc0908b2e9ef75451-mc0908b2e9ef75451_flowchart-v2-circleEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="mc0908b2e9ef75451-mc0908b2e9ef75451_flowchart-v2-circleStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="mc0908b2e9ef75451-mc0908b2e9ef75451_flowchart-v2-crossEnd" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><marker id="mc0908b2e9ef75451-mc0908b2e9ef75451_flowchart-v2-crossStart" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><g class="root"><g class="clusters"></g><g class="edgePaths"><path d="M209.012,47L222.852,47C236.693,47,264.374,47,287.116,51.39C309.859,55.78,327.663,64.56,336.565,68.95L345.467,73.341" id="L_G_Mom_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_G_Mom_0" data-points="W3sieCI6MjA5LjAxMTcxODc1LCJ5Ijo0N30seyJ4IjoyOTIuMDU0Njg3NSwieSI6NDd9LHsieCI6MzQ5LjA1NDY4NzUsInkiOjc1LjEwOTY4MzA1MDg5ODQ3fV0=" marker-end="url(#mc0908b2e9ef75451-mc0908b2e9ef75451_flowchart-v2-pointEnd)"></path><path d="M494.609,111L498.776,111C502.943,111,511.276,111,518.943,111C526.609,111,533.609,111,537.109,111L540.609,111" id="L_Mom_Norm_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_Mom_Norm_0" data-points="W3sieCI6NDk0LjYwOTM3NSwieSI6MTExfSx7IngiOjUxOS42MDkzNzUsInkiOjExMX0seyJ4Ijo1NDQuNjA5Mzc1LCJ5IjoxMTF9XQ==" marker-end="url(#mc0908b2e9ef75451-mc0908b2e9ef75451_flowchart-v2-pointEnd)"></path><path d="M804.609,111L808.776,111C812.943,111,821.276,111,828.943,111C836.609,111,843.609,111,847.109,111L850.609,111" id="L_Norm_NS_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_Norm_NS_0" data-points="W3sieCI6ODA0LjYwOTM3NSwieSI6MTExfSx7IngiOjgyOS42MDkzNzUsInkiOjExMX0seyJ4Ijo4NTQuNjA5Mzc1LCJ5IjoxMTF9XQ==" marker-end="url(#mc0908b2e9ef75451-mc0908b2e9ef75451_flowchart-v2-pointEnd)"></path><path d="M1086.445,111L1090.612,111C1094.779,111,1103.112,111,1110.779,111C1118.445,111,1125.445,111,1128.945,111L1132.445,111" id="L_NS_Spectral_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_NS_Spectral_0" data-points="W3sieCI6MTA4Ni40NDUzMTI1LCJ5IjoxMTF9LHsieCI6MTExMS40NDUzMTI1LCJ5IjoxMTF9LHsieCI6MTEzNi40NDUzMTI1LCJ5IjoxMTF9XQ==" marker-end="url(#mc0908b2e9ef75451-mc0908b2e9ef75451_flowchart-v2-pointEnd)"></path><path d="M1396.445,111L1400.612,111C1404.779,111,1413.112,111,1420.779,111C1428.445,111,1435.445,111,1438.945,111L1442.445,111" id="L_Spectral_Update_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_Spectral_Update_0" data-points="W3sieCI6MTM5Ni40NDUzMTI1LCJ5IjoxMTF9LHsieCI6MTQyMS40NDUzMTI1LCJ5IjoxMTF9LHsieCI6MTQ0Ni40NDUzMTI1LCJ5IjoxMTF9XQ==" marker-end="url(#mc0908b2e9ef75451-mc0908b2e9ef75451_flowchart-v2-pointEnd)"></path><path d="M235.055,175L244.555,175C254.055,175,273.055,175,291.457,170.61C309.859,166.22,327.663,157.44,336.565,153.05L345.467,148.659" id="L_M_state_Mom_0" class="edge-thickness-normal edge-pattern-dotted edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_M_state_Mom_0" data-points="W3sieCI6MjM1LjA1NDY4NzUsInkiOjE3NX0seyJ4IjoyOTIuMDU0Njg3NSwieSI6MTc1fSx7IngiOjM0OS4wNTQ2ODc1LCJ5IjoxNDYuODkwMzE2OTQ5MTAxNTN9XQ==" marker-end="url(#mc0908b2e9ef75451-mc0908b2e9ef75451_flowchart-v2-pointEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" data-id="L_G_Mom_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_Mom_Norm_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_Norm_NS_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_NS_Spectral_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_Spectral_Update_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(292.0546875, 175)"><g class="label" data-id="L_M_state_Mom_0" transform="translate(-32, -12)"><foreignObject width="64" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"><p>每步读写</p></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-G-0" transform="translate(121.52734375, 47)"><rect class="basic label-container" style="" x="-87.484375" y="-39" width="174.96875" height="78"></rect><g class="label" style="" transform="translate(-57.484375, -24)"><rect></rect><foreignObject width="114.96875" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>梯度 g: [out, in]<br>BF16/FP32</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-Mom-1" transform="translate(421.83203125, 111)"><rect class="basic label-container" style="" x="-72.77734375" y="-39" width="145.5546875" height="78"></rect><g class="label" style="" transform="translate(-42.77734375, -24)"><rect></rect><foreignObject width="85.5546875" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>更新动量<br>m = β·m + g</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-Norm-3" transform="translate(674.609375, 111)"><rect class="basic label-container" style="" x="-130" y="-51" width="260" height="102"></rect><g class="label" style="" transform="translate(-100, -36)"><rect></rect><foreignObject width="200" height="72"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;"><span class="nodeLabel"><p>g_normalized = g / (norm+ε)<br>(BF16, 防溢出)</p></span></div></foreignObject></g></g><g class="node default compute" id="flowchart-NS-5" transform="translate(970.52734375, 111)"><rect class="basic label-container" style="fill:#312e81 !important;stroke:#a78bfa !important" x="-115.91796875" y="-39" width="231.8359375" height="78"></rect><g class="label" style="color:#ede9fe !important" transform="translate(-85.91796875, -24)"><rect></rect><foreignObject width="171.8359375" height="48"><div style="color: rgb(237, 233, 254) !important; display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="color:#ede9fe !important" class="nodeLabel"><p>Newton-Schulz 5 步迭代<br>近似 SVD 投影</p></span></div></foreignObject></g></g><g class="node default compute" id="flowchart-Spectral-7" transform="translate(1266.4453125, 111)"><rect class="basic label-container" style="fill:#312e81 !important;stroke:#a78bfa !important" x="-130" y="-39" width="260" height="78"></rect><g class="label" style="color:#ede9fe !important" transform="translate(-100, -24)"><rect></rect><foreignObject width="200" height="48"><div style="color: rgb(237, 233, 254) !important; display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;" xmlns="http://www.w3.org/1999/xhtml"><span style="color:#ede9fe !important" class="nodeLabel"><p>m_spectral: spectral norm ≈ 1</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-Update-9" transform="translate(1576.4453125, 111)"><rect class="basic label-container" style="" x="-130" y="-39" width="260" height="78"></rect><g class="label" style="" transform="translate(-100, -24)"><rect></rect><foreignObject width="200" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;"><span class="nodeLabel"><p>weight ← weight − lr × m_spectral</p></span></div></foreignObject></g></g><g class="node default state" id="flowchart-M_state-10" transform="translate(121.52734375, 175)"><rect class="basic label-container" style="fill:#1f2937 !important;stroke:#475569 !important" x="-113.52734375" y="-39" width="227.0546875" height="78"></rect><g class="label" style="color:#cbd5e1 !important" transform="translate(-83.52734375, -24)"><rect></rect><foreignObject width="167.0546875" height="48"><div style="color: rgb(203, 213, 225) !important; display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="color:#cbd5e1 !important" class="nodeLabel"><p>持久 momentum buffer<br>(只保 m, 不保 v)</p></span></div></foreignObject></g></g></g></g></g></svg></div>
+<p dir="auto">Muon 与 AdamW 的核心差别一目了然：<strong>只维护一阶 m，没有二阶 v</strong>——状态显存减半。Newton-Schulz 取代二阶 moment 的”自适应学习率”作用。</p>
+<h2 data-heading="Muon 与 AdamW 的对比" dir="auto">Muon 与 AdamW 的对比</h2>
+<p dir="auto">把 Muon 与 AdamW 在 V4 训练场景下对比：</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>AdamW</th>
+<th>Muon</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>状态显存</td>
+<td>2× 参数（m, v）</td>
+<td>1× 参数（仅 m）</td>
+</tr>
+<tr>
+<td>关键超参</td>
+<td>lr, β1, β2, ε, wd</td>
+<td>lr (几乎只这一个)</td>
+</tr>
+<tr>
+<td>spectral 约束</td>
+<td>间接（weight decay）</td>
+<td>直接（Newton-Schulz）</td>
+</tr>
+<tr>
+<td>与 FP4/FP8 兼容</td>
+<td>需要适配</td>
+<td>天然兼容</td>
+</tr>
+<tr>
+<td>收敛速度</td>
+<td>中</td>
+<td>快（少 30-50% steps）</td>
+</tr>
+<tr>
+<td>训练稳定性</td>
+<td>中（依赖超参）</td>
+<td>高（spectral 约束兜底）</td>
+</tr>
+<tr>
+<td>数学复杂度</td>
+<td>简单</td>
+<td>中（Newton-Schulz 迭代）</td>
+</tr>
+</tbody>
+</table>
+<p dir="auto">V4 选 Muon 的工程账：</p>
+<ul>
+<li dir="auto">显存节省：1.6T 参数 × 4 bytes = 6.4 TB 状态（FP32 m）—— 节省 6.4 TB host memory</li>
+<li dir="auto">训练加速：少约 30-50% steps（Keller Jordan blog 在 NanoGPT 速跑 ≈ 33%，Moonshot 论文在更大规模上也有相近收益）—— 训练时间显著缩短</li>
+<li dir="auto">超参鲁棒：减少调参成本——大规模训练里调参成本高昂</li>
+</ul>
+<p dir="auto"><strong>代价</strong>：Newton-Schulz 迭代的计算开销（每 step 多约 5-10% FLOPs）。在大规模训练里，FLOPs 不是瓶颈，时间和显存是——所以这个 trade-off 完全划算。</p>
+<h2 data-heading="V4 训练中可能的混合优化器策略" dir="auto">V4 训练中可能的混合优化器策略</h2>
+<p dir="auto">V4 的具体训练源码不公开，但从 README 的”Muon optimizer”声明 + 一般训练实践推测：</p>
+<p dir="auto"><strong>策略一：纯 Muon</strong>所有参数都用 Muon。简单但可能在某些参数（如 LayerNorm γ、bias）上不稳定——这些参数是向量而非矩阵，spectral norm 概念不适用。</p>
+<p dir="auto"><strong>策略二：Muon + AdamW 混合</strong>矩阵参数（Q/K/V weight、Expert weight 等）用 Muon，向量参数（LayerNorm γ、bias）用 AdamW。这是更稳健的工程做法。</p>
+<p dir="auto">V4 大概率走策略二——<code class="code-styler-inline">inference/model.py</code>中的 RMSNorm 参数、bias、ape 等都是 vector 形状，Muon 不适合直接处理。</p>
+<p dir="auto">具体的混合规则（推测）：</p>
+<ul>
+<li dir="auto">weight 矩阵（Linear、Conv 等）：Muon</li>
+<li dir="auto">1D 参数（norm γ、bias、ape）：AdamW</li>
+<li dir="auto">特殊参数（attn_sink、HC 系数等）：AdamW + 较小 lr</li>
+</ul>
+<h2 data-heading="32T tokens 预训练：数据规模的几何" dir="auto">32T tokens 预训练：数据规模的几何</h2>
+<p dir="auto">V4 的 README 写：“Pre-training: 32T+ high-quality and diverse tokens”。32T 这个数字背后的几何含义：</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>32T 是什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>总数据量</td>
+<td>32 × 10^12 tokens</td>
+</tr>
+<tr>
+<td>与 V3 对比</td>
+<td>V3 用 14.8T, V4 翻倍多</td>
+</tr>
+<tr>
+<td>文本量</td>
+<td>假设平均 1.5 byte/token，约 48 TB 原始文本</td>
+</tr>
+<tr>
+<td>训练时长</td>
+<td>1.6T 模型在数千卡上需要数月（具体不详）</td>
+</tr>
+<tr>
+<td>数据成本</td>
+<td>至少几百万美元（爬取 + 清洗 + 标注）</td>
+</tr>
+<tr>
+<td>单 token 单训练 GPU-second</td>
+<td>≈ 0.001 - 0.01 (with 1 epoch and FP4 expert)</td>
+</tr>
+</tbody>
+</table>
+<p dir="auto">V4 为什么需要 32T 而不是 V3 的 14.8T？三个原因（基于第 1 章 §1.8·补 的论证）：</p>
+<ol>
+<li dir="auto"><strong>384 expert + top-6 比 256 + top-8 更稀疏</strong>：每个 expert 见到的 token 比例下降，需要更多总 token 让每个 expert 训练充分</li>
+<li dir="auto"><strong>HC 让模型容量比简单”乘以 4”更接近真相</strong>：更大容量需要更多数据填充</li>
+<li dir="auto"><strong>FP4 expert 训练的精度损失需要更长曲线补偿</strong></li>
+</ol>
+<p dir="auto">这三个原因加在一起，把数据需求从 V3 的 14.8T 推到 V4 的 32T+。</p>
+<h2 data-heading="数据组成的”五大支柱”" dir="auto">数据组成的”五大支柱”</h2>
+<p dir="auto">虽然 V4 没公开具体数据配比，但从 V3 报告 + 公开惯例可以推测预训练数据由 5 个支柱组成：</p>
+<p dir="auto"><strong>支柱一：通用网页 (Common Crawl + 清洗)</strong>占比通常 50-70%。提供”日常语言”语料，让模型学到广泛的世界知识。V4 的高质量数据需求意味着 Common Crawl 经过严格清洗——质量过滤 + 去重 + 安全过滤。</p>
+<p dir="auto"><strong>支柱二：代码 (GitHub + Stack Overflow)</strong>占比 15-25%。代码是逻辑训练的最佳样本——结构清晰、有”对错”、长上下文需求高。V4 在 SWE-bench 类任务的进步暗示这部分数据被加权。</p>
+<p dir="auto"><strong>支柱三：数学与推理 (arXiv / 书籍 / 数学网站)</strong>占比 5-10%。给 Think Max 模式的”推理边界”训练数据。</p>
+<p dir="auto"><strong>支柱四：多语言</strong>占比 10-20%。V4 的中英文同等强表现意味着中英文权重相当 + 一些其他主流语言。</p>
+<p dir="auto"><strong>支柱五：合成数据 (synthetic data)</strong>占比 5-15%。V3 / V3.2 已经大量使用合成数据，V4 沿用——用大模型自身生成训练数据补充薄弱领域。</p>
+<p dir="auto">这 5 个支柱的具体配比是 V4 团队的”训练秘方”——不公开，需要等社区独立复现 / 论文 ablation 才能揭晓。</p>
+<h2 data-heading="学习率与训练阶段" dir="auto">学习率与训练阶段</h2>
+<p dir="auto">V4 的训练曲线（基于 V3 的公开模式 + V4 README 描述）大致分为 3 个阶段：</p>
+<div class="mermaid"><svg id="m64949fb4157f2fa0" width="642.21875" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flowchart" height="118" viewBox="0 0 642.21875 118" role="graphics-document document" aria-roledescription="flowchart-v2"><style>#m64949fb4157f2fa0{font-family:var(--font-mermaid);font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#m64949fb4157f2fa0 .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#m64949fb4157f2fa0 .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#m64949fb4157f2fa0 .error-icon{fill:#552222;}#m64949fb4157f2fa0 .error-text{fill:#552222;stroke:#552222;}#m64949fb4157f2fa0 .edge-thickness-normal{stroke-width:1px;}#m64949fb4157f2fa0 .edge-thickness-thick{stroke-width:3.5px;}#m64949fb4157f2fa0 .edge-pattern-solid{stroke-dasharray:0;}#m64949fb4157f2fa0 .edge-thickness-invisible{stroke-width:0;fill:none;}#m64949fb4157f2fa0 .edge-pattern-dashed{stroke-dasharray:3;}#m64949fb4157f2fa0 .edge-pattern-dotted{stroke-dasharray:2;}#m64949fb4157f2fa0 .marker{fill:#333333;stroke:#333333;}#m64949fb4157f2fa0 .marker.cross{stroke:#333333;}#m64949fb4157f2fa0 svg{font-family:var(--font-mermaid);font-size:16px;}#m64949fb4157f2fa0 p{margin:0;}#m64949fb4157f2fa0 .label{font-family:var(--font-mermaid);color:#333;}#m64949fb4157f2fa0 .cluster-label text{fill:#333;}#m64949fb4157f2fa0 .cluster-label span{color:#333;}#m64949fb4157f2fa0 .cluster-label span p{background-color:transparent;}#m64949fb4157f2fa0 .label text,#m64949fb4157f2fa0 span{fill:#333;color:#333;}#m64949fb4157f2fa0 .node rect,#m64949fb4157f2fa0 .node circle,#m64949fb4157f2fa0 .node ellipse,#m64949fb4157f2fa0 .node polygon,#m64949fb4157f2fa0 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#m64949fb4157f2fa0 .rough-node .label text,#m64949fb4157f2fa0 .node .label text,#m64949fb4157f2fa0 .image-shape .label,#m64949fb4157f2fa0 .icon-shape .label{text-anchor:middle;}#m64949fb4157f2fa0 .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#m64949fb4157f2fa0 .rough-node .label,#m64949fb4157f2fa0 .node .label,#m64949fb4157f2fa0 .image-shape .label,#m64949fb4157f2fa0 .icon-shape .label{text-align:center;}#m64949fb4157f2fa0 .node.clickable{cursor:pointer;}#m64949fb4157f2fa0 .root .anchor path{fill:#333333!important;stroke-width:0;stroke:#333333;}#m64949fb4157f2fa0 .arrowheadPath{fill:#333333;}#m64949fb4157f2fa0 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#m64949fb4157f2fa0 .flowchart-link{stroke:#333333;fill:none;}#m64949fb4157f2fa0 .edgeLabel{background-color:rgba(232,232,232, 0.8);text-align:center;}#m64949fb4157f2fa0 .edgeLabel p{background-color:rgba(232,232,232, 0.8);}#m64949fb4157f2fa0 .edgeLabel rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#m64949fb4157f2fa0 .labelBkg{background-color:rgba(232, 232, 232, 0.5);}#m64949fb4157f2fa0 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#m64949fb4157f2fa0 .cluster text{fill:#333;}#m64949fb4157f2fa0 .cluster span{color:#333;}#m64949fb4157f2fa0 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:var(--font-mermaid);font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#m64949fb4157f2fa0 .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#333;}#m64949fb4157f2fa0 rect.text{fill:none;stroke-width:0;}#m64949fb4157f2fa0 .icon-shape,#m64949fb4157f2fa0 .image-shape{background-color:rgba(232,232,232, 0.8);text-align:center;}#m64949fb4157f2fa0 .icon-shape p,#m64949fb4157f2fa0 .image-shape p{background-color:rgba(232,232,232, 0.8);padding:2px;}#m64949fb4157f2fa0 .icon-shape .label rect,#m64949fb4157f2fa0 .image-shape .label rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#m64949fb4157f2fa0 .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#m64949fb4157f2fa0 .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#m64949fb4157f2fa0 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g><marker id="m64949fb4157f2fa0-m64949fb4157f2fa0_flowchart-v2-pointEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="m64949fb4157f2fa0-m64949fb4157f2fa0_flowchart-v2-pointStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="4.5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="m64949fb4157f2fa0-m64949fb4157f2fa0_flowchart-v2-circleEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="m64949fb4157f2fa0-m64949fb4157f2fa0_flowchart-v2-circleStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="m64949fb4157f2fa0-m64949fb4157f2fa0_flowchart-v2-crossEnd" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><marker id="m64949fb4157f2fa0-m64949fb4157f2fa0_flowchart-v2-crossStart" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><g class="root"><g class="clusters"></g><g class="edgePaths"><path d="M187.25,59L191.417,59C195.583,59,203.917,59,211.583,59C219.25,59,226.25,59,229.75,59L233.25,59" id="L_S1_S2_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_S1_S2_0" data-points="W3sieCI6MTg3LjI1LCJ5Ijo1OX0seyJ4IjoyMTIuMjUsInkiOjU5fSx7IngiOjIzNy4yNSwieSI6NTl9XQ==" marker-end="url(#m64949fb4157f2fa0-m64949fb4157f2fa0_flowchart-v2-pointEnd)"></path><path d="M400.352,59L404.518,59C408.685,59,417.018,59,424.685,59C432.352,59,439.352,59,442.852,59L446.352,59" id="L_S2_S3_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_S2_S3_0" data-points="W3sieCI6NDAwLjM1MTU2MjUsInkiOjU5fSx7IngiOjQyNS4zNTE1NjI1LCJ5Ijo1OX0seyJ4Ijo0NTAuMzUxNTYyNSwieSI6NTl9XQ==" marker-end="url(#m64949fb4157f2fa0-m64949fb4157f2fa0_flowchart-v2-pointEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" data-id="L_S1_S2_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_S2_S3_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-S1-0" transform="translate(97.625, 59)"><rect class="basic label-container" style="" x="-89.625" y="-51" width="179.25" height="102"></rect><g class="label" style="" transform="translate(-59.625, -36)"><rect></rect><foreignObject width="119.25" height="72"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>阶段 1: warm-up<br>~1% steps<br>lr 线性升到 max</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-S2-1" transform="translate(318.80078125, 59)"><rect class="basic label-container" style="" x="-81.55078125" y="-51" width="163.1015625" height="102"></rect><g class="label" style="" transform="translate(-51.55078125, -36)"><rect></rect><foreignObject width="103.1015625" height="72"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>阶段 2: stable<br>~80% steps<br>lr 在 max 附近</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-S3-3" transform="translate(542.28515625, 59)"><rect class="basic label-container" style="" x="-91.93359375" y="-51" width="183.8671875" height="102"></rect><g class="label" style="" transform="translate(-61.93359375, -36)"><rect></rect><foreignObject width="123.8671875" height="72"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>阶段 3: cooldown<br>~19% steps<br>lr 衰减到 min</p></span></div></foreignObject></g></g></g></g></g></svg></div>
+<p dir="auto"><strong>阶段 1 (warm-up)</strong>：从 0 升到 max lr。这是为了避免训练初期的不稳定（随机初始化 + 大 lr = 灾难）。</p>
+<p dir="auto"><strong>阶段 2 (stable)</strong>：lr 保持在 max 附近，做主要训练。这是最长的阶段——大部分参数学习发生在这里。</p>
+<p dir="auto"><strong>阶段 3 (cooldown)</strong>：lr 衰减到一个小值（典型 max 的 1/10）。这个阶段让模型在”低 lr 下精修”——loss 进一步下降。</p>
+<p dir="auto">V4 的 max lr 不公开，但可以从公开 V3 数据推测约在 4e-4 到 1e-3 之间。Muon 优化器对 lr 的敏感度低，这给 V4 的训练 lr 选择留了更大空间。</p>
+<h2 data-heading="训练监控的关键指标" dir="auto">训练监控的关键指标</h2>
+<p dir="auto">大规模 LLM 训练需要监控的关键指标（基于 DeepSeek 公开报告 + 通用训练经验）：</p>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>目的</th>
+<th>危险信号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Per-token loss</td>
+<td>主优化目标</td>
+<td>上升 / 不收敛</td>
+</tr>
+<tr>
+<td>Gradient norm</td>
+<td>训练稳定性</td>
+<td>爆炸（&gt;1.0）/ 消失（&lt;1e-5）</td>
+</tr>
+<tr>
+<td>Per-layer activation norm</td>
+<td>检测层间数值稳定</td>
+<td>某层异常大 / 小</td>
+</tr>
+<tr>
+<td>Expert load (per-layer MoE)</td>
+<td>检测路由均衡</td>
+<td>某 expert 长期 0 load</td>
+</tr>
+<tr>
+<td>Routing entropy</td>
+<td>gate 是否塌陷</td>
+<td>接近 0 (塌陷) 或 ln(n_experts) (退化)</td>
+</tr>
+<tr>
+<td>KV cache hit rate (eval)</td>
+<td>长上下文外推效果</td>
+<td>1M context 下骤降</td>
+</tr>
+<tr>
+<td>MTP acceptance rate</td>
+<td>MTP head 与主 head 一致度</td>
+<td>低于 70% 说明 MTP 训练有问题</td>
+</tr>
+<tr>
+<td>HC pre/post weights</td>
+<td>HC 是否正常学</td>
+<td>comb 矩阵不接近双随机</td>
+</tr>
+<tr>
+<td>FP4 quant error (proxy)</td>
+<td>QAT 是否有效</td>
+<td>量化误差大幅增长</td>
+</tr>
+</tbody>
+</table>
+<p dir="auto">V4 的训练运维必须持续监控这些指标——任何一个异常都需要介入。这是 1.6T 训练的工程复杂度的真实来源。</p>
+<h2 data-heading="动手实验：Muon 的 mini 实现" dir="auto">动手实验：Muon 的 mini 实现</h2>
+<pre class="language-python" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-python is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token keyword">import</span> torch
+
+<span class="token keyword">def</span> <span class="token function">newton_schulz_5</span><span class="token punctuation">(</span>G<span class="token punctuation">,</span> steps<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""5 步 Newton-Schulz 迭代逼近 G 的正交化"""</span>
+    a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">3.4445</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">4.7750</span><span class="token punctuation">,</span> <span class="token number">2.0315</span><span class="token punctuation">)</span>  <span class="token comment"># Keller Jordan 原始 Muon 给的 NS 系数</span>
+    X <span class="token operator">=</span> G<span class="token punctuation">.</span>bfloat16<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token punctuation">(</span>G<span class="token punctuation">.</span>norm<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1e-7</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>steps<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        A <span class="token operator">=</span> X @ X<span class="token punctuation">.</span>transpose<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+        B <span class="token operator">=</span> b <span class="token operator">*</span> A <span class="token operator">+</span> c <span class="token operator">*</span> <span class="token punctuation">(</span>A @ A<span class="token punctuation">)</span>
+        X <span class="token operator">=</span> a <span class="token operator">*</span> X <span class="token operator">+</span> B @ X
+    <span class="token keyword">return</span> X<span class="token punctuation">.</span><span class="token builtin">float</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">class</span> <span class="token class-name">MuonOptimizer</span><span class="token punctuation">(</span>torch<span class="token punctuation">.</span>optim<span class="token punctuation">.</span>Optimizer<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> params<span class="token punctuation">,</span> lr<span class="token operator">=</span><span class="token number">0.01</span><span class="token punctuation">,</span> momentum<span class="token operator">=</span><span class="token number">0.95</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        defaults <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span>lr<span class="token operator">=</span>lr<span class="token punctuation">,</span> momentum<span class="token operator">=</span>momentum<span class="token punctuation">)</span>
+        <span class="token builtin">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span>params<span class="token punctuation">,</span> defaults<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">step</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> group <span class="token keyword">in</span> self<span class="token punctuation">.</span>param_groups<span class="token punctuation">:</span>
+            <span class="token keyword">for</span> p <span class="token keyword">in</span> group<span class="token punctuation">[</span><span class="token string">'params'</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                <span class="token keyword">if</span> p<span class="token punctuation">.</span>grad <span class="token keyword">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+                    <span class="token keyword">continue</span>
+                state <span class="token operator">=</span> self<span class="token punctuation">.</span>state<span class="token punctuation">[</span>p<span class="token punctuation">]</span>
+                <span class="token keyword">if</span> <span class="token string">'momentum_buffer'</span> <span class="token keyword">not</span> <span class="token keyword">in</span> state<span class="token punctuation">:</span>
+                    state<span class="token punctuation">[</span><span class="token string">'momentum_buffer'</span><span class="token punctuation">]</span> <span class="token operator">=</span> torch<span class="token punctuation">.</span>zeros_like<span class="token punctuation">(</span>p<span class="token punctuation">.</span>data<span class="token punctuation">)</span>
+
+                buf <span class="token operator">=</span> state<span class="token punctuation">[</span><span class="token string">'momentum_buffer'</span><span class="token punctuation">]</span>
+                buf<span class="token punctuation">.</span>mul_<span class="token punctuation">(</span>group<span class="token punctuation">[</span><span class="token string">'momentum'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>add_<span class="token punctuation">(</span>p<span class="token punctuation">.</span>grad<span class="token punctuation">)</span>
+
+                <span class="token comment"># 仅对 2D weight 做 Newton-Schulz（向量参数走普通 SGD）</span>
+                <span class="token keyword">if</span> p<span class="token punctuation">.</span>dim<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">:</span>
+                    update <span class="token operator">=</span> newton_schulz_5<span class="token punctuation">(</span>buf<span class="token punctuation">)</span>
+                <span class="token keyword">else</span><span class="token punctuation">:</span>
+                    update <span class="token operator">=</span> buf
+
+                p<span class="token punctuation">.</span>data<span class="token punctuation">.</span>add_<span class="token punctuation">(</span>update<span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token operator">-</span>group<span class="token punctuation">[</span><span class="token string">'lr'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 测试：用 Muon 训练一个简单 Linear 拟合</span>
+torch<span class="token punctuation">.</span>manual_seed<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+W_target <span class="token operator">=</span> torch<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">)</span>
+data_x <span class="token operator">=</span> torch<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">)</span>
+data_y <span class="token operator">=</span> data_x @ W_target<span class="token punctuation">.</span>T
+
+model <span class="token operator">=</span> torch<span class="token punctuation">.</span>nn<span class="token punctuation">.</span>Linear<span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">,</span> bias<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+opt <span class="token operator">=</span> MuonOptimizer<span class="token punctuation">(</span>model<span class="token punctuation">.</span>parameters<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> lr<span class="token operator">=</span><span class="token number">0.05</span><span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> step <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    opt<span class="token punctuation">.</span>zero_grad<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    pred <span class="token operator">=</span> model<span class="token punctuation">(</span>data_x<span class="token punctuation">)</span>
+    loss <span class="token operator">=</span> <span class="token punctuation">(</span>pred <span class="token operator">-</span> data_y<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token builtin">pow</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">.</span>mean<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    loss<span class="token punctuation">.</span>backward<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    opt<span class="token punctuation">.</span>step<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> step <span class="token operator">%</span> <span class="token number">10</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Step </span><span class="token interpolation"><span class="token punctuation">{</span>step<span class="token punctuation">}</span></span><span class="token string">: loss = </span><span class="token interpolation"><span class="token punctuation">{</span>loss<span class="token punctuation">.</span>item<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token format-spec">.4f</span><span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">跑通后会看到 Muon 在简单回归任务上比同样 lr 的 SGD 收敛更快——这是 Newton-Schulz 正交化的”加速”效果。</p>
+<h2 data-heading="17.9·补 Muon 在 1.6T 规模的工程挑战" dir="auto">17.9·补 Muon 在 1.6T 规模的工程挑战</h2>
+<p dir="auto">Muon 最早是 Keller Jordan 在 2024 年发布的 blog + GitHub repo，主要在小规模（&lt; 1B，如 NanoGPT 速跑）上验证；Moonshot 2025-02 的扩展论文也只覆盖到几十 B 级别。V4 把它推到 1.6T 规模面临几个工程挑战：</p>
+<p dir="auto"><strong>挑战 1：Newton-Schulz 在大矩阵上的数值稳定</strong></p>
+<p dir="auto">Newton-Schulz 迭代在 BF16 上跑——大矩阵（如 expert weight 7168×3072）的 spectral norm 计算可能出现 overflow。V4 的应对是 5 步迭代（Muon 默认）+ 严格的输入归一化（<code class="code-styler-inline">G / (G.norm() + 1e-7)</code>）+ 系数选择（3.4445, -4.7750, 2.0315）保证收敛。</p>
+<p dir="auto"><strong>挑战 2：Muon 与 ZeRO 优化器分片的协调</strong></p>
+<p dir="auto">ZeRO-2 / ZeRO-3 把优化器状态分片到不同 rank。Muon 的动量是矩阵——如果分片到不同 rank，Newton-Schulz 必须在分片状态下做。V4 团队大概率定制了 ZeRO-Muon 的协同实现——把 Muon 状态在 rank 间分片，Newton-Schulz 在通信前的本地步骤里完成。</p>
+<p dir="auto"><strong>挑战 3：FP4 expert 的特殊处理</strong></p>
+<p dir="auto">FP4 weight 只有 16 个离散值，Muon 的更新 <code class="code-styler-inline">w - lr × m_proj</code>计算后必须 round 到 FP4 网格。简单 round 会让小更新”被吸收”——V4 大概率用了 stochastic round（按概率 round 到上下相邻值），让小更新有概率”逃出”网格吸收。</p>
+<p dir="auto"><strong>挑战 4：与 QAT 的协同</strong></p>
+<p dir="auto">QAT 让 weight 在训练中保持 BF16（仅 forward 时 fake quantize），优化器更新用 BF16 weight。Muon 的 spectral 投影也作用于 BF16 weight——保证更新方向准确。最后训练完成时再把 BF16 round 到 FP4 存储。这种”训练 BF16 + 存储 FP4” 的策略让 Muon 与 FP4 兼容。</p>
+<p dir="auto"><strong>挑战 5：与 HC / Sinkhorn 的协同</strong></p>
+<p dir="auto">HC 的 Sinkhorn 内部参数（hc_sinkhorn_iters 控制的迭代）已经是个 spectral-like 操作。Muon 的 spectral 约束作用在 weight 上——两者叠加后是否有”过约束”？V4 的实测表明没有——HC 的 Sinkhorn 是 token-level 自适应，Muon 的 spectral 是 weight-level 全局约束，两者作用层级不同、不冲突。</p>
+<p dir="auto">这 5 个挑战的解决方案大部分不公开，但它们的存在本身让 V4 的训练栈成为业界第一个”1.6T + Muon + FP4 + HC”的工业实证——任何后续模型想复制这条路线，都要重新解决这 5 个问题。</p>
+<h2 data-heading="17.9·补·补 32T tokens 的硬件投入估算" dir="auto">17.9·补·补 32T tokens 的硬件投入估算</h2>
+<p dir="auto">把 32T tokens 训练 V4 Pro 的硬件投入做个粗略估算（基于公开数据 + 工程惯例）：</p>
+<p dir="auto"><strong>单 token 训练 FLOPs</strong>：1.6T 总参 × 49B 激活 × 6（forward + backward + optimizer）≈ 300G FLOPs / token（粗略）</p>
+<p dir="auto"><strong>总 FLOPs</strong>：32 × 10^12 × 300 × 10^9 = 9.6 × 10^24 = <strong>9.6 ZettaFLOPs</strong></p>
+<p dir="auto"><strong>硬件</strong>：H100 的 FP8 峰值 ~1300 TFlops，实际利用率 ~50%（混合精度训练 + 通信 + 反向）= ~650 TFlops 有效。</p>
+<p dir="auto"><strong>总 GPU-hour</strong>：9.6 × 10^24 / (650 × 10^12) / 3600 ≈ <strong>400 万 GPU-hour</strong></p>
+<p dir="auto"><strong>集群规模</strong>：如果用 5000 张 H100 持续训：400 万 / 5000 = <strong>800 小时 ≈ 33 天</strong>。如果 10000 张：~17 天。</p>
+<p dir="auto"><strong>电费</strong>：每张 H100 ~700W，5000 张 × 800 小时 = 280 万 kWh，约 <strong>280 万元人民币电费</strong>（按 1 元/kWh）。</p>
+<p dir="auto"><strong>硬件折旧</strong>：5000 张 H100 总价约 <strong>15 亿元</strong>，按 3 年折旧、训练 33 天占用：~5000 万元折旧成本。</p>
+<p dir="auto"><strong>总训练成本估算</strong>：硬件折旧 + 电费 + 数据处理 + 工程师工资 ≈ <strong>5000 万 - 1 亿元人民币</strong>。</p>
+<p dir="auto">这个数字与公开报道的 V3 训练成本（约 600 万美元）量级一致——V4 训练规模 2x V3，成本也 ~2x。这是<strong>全球能负担起这种规模训练的公司不超过 20 家</strong>的真实门槛。</p>
+<p dir="auto">V4 把训练栈开源（Muon / GRPO / 蒸馏方法），但这种规模的算力 + 数据是大多数公司复制不了的。这是为什么”V4 即便开源，也不会让小公司从零训练 V4 类模型”——开源的最大价值是 fine-tune 与部署，不是 from-scratch 复刻。</p>
+<h2 data-heading="延伸阅读" dir="auto">延伸阅读</h2>
+<ul>
+<li dir="auto">Muon 原始工作（Keller Jordan，2024）：<a data-tooltip-position="top" aria-label="https://github.com/KellerJordan/Muon" rel="noopener nofollow" class="external-link" href="https://github.com/KellerJordan/Muon" target="_blank">github.com/KellerJordan/Muon</a> blog post + repo</li>
+<li dir="auto">Muon 大规模扩展研究（Moonshot AI，2025-02）：<a data-tooltip-position="top" aria-label="https://arxiv.org/abs/2502.16982" rel="noopener nofollow" class="external-link" href="https://arxiv.org/abs/2502.16982" target="_blank">“Muon is Scalable for LLM Training”</a> (arXiv:2502.16982) —— 本章主要参考</li>
+<li dir="auto">AdamW 论文（<a data-tooltip-position="top" aria-label="https://arxiv.org/abs/1711.05101" rel="noopener nofollow" class="external-link" href="https://arxiv.org/abs/1711.05101" target="_blank">arXiv:1711.05101</a> ）：AdamW 的源头</li>
+<li dir="auto">DeepSeek-V3 报告（<a data-tooltip-position="top" aria-label="https://arxiv.org/abs/2412.19437" rel="noopener nofollow" class="external-link" href="https://arxiv.org/abs/2412.19437" target="_blank">arXiv:2412.19437</a> ）：V3 的训练配置</li>
+<li dir="auto">Spectral Normalization GAN（<a data-tooltip-position="top" aria-label="https://arxiv.org/abs/1802.05957" rel="noopener nofollow" class="external-link" href="https://arxiv.org/abs/1802.05957" target="_blank">arXiv:1802.05957</a> ）：spectral norm 在训练中的早期应用</li>
+<li dir="auto">本书第 18 章：后训练阶段的优化器选择</li>
+</ul>
+<h2 data-heading="17.10·补 Muon 在社区中的现状与争议" dir="auto">17.10·补 Muon 在社区中的现状与争议</h2>
+<p dir="auto">Muon 是 2024 年提出的新优化器，社区对它的接受度还在演化中。把当前现状梳理一下（截至 2026 年 4 月）：</p>
+<p dir="auto"><strong>支持方观点</strong>：</p>
+<ul>
+<li dir="auto">收敛快、状态显存少（V4 的实测验证）</li>
+<li dir="auto">与低精度训练兼容性好（V4 的 FP4 expert 实证）</li>
+<li dir="auto">Newton-Schulz 数学优雅，spectral 约束有理论基础</li>
+<li dir="auto">Keller Jordan 的 blog 与 Moonshot 扩展论文对 Newton-Schulz 系数与收敛性都有详细推导</li>
+</ul>
+<p dir="auto"><strong>反对方观点</strong>：</p>
+<ul>
+<li dir="auto">Newton-Schulz 系数（3.4445, -4.7750, 2.0315）对不同矩阵形状的鲁棒性未充分验证</li>
+<li dir="auto">spectral 约束可能让某些任务（如 fine-tune）不灵活</li>
+<li dir="auto">社区可复现实验还不够多——大多数实验在小规模上</li>
+<li dir="auto">与 ZeRO / FSDP 等优化器分片框架的协同机制不成熟</li>
+</ul>
+<p dir="auto"><strong>中立观察</strong>：</p>
+<p dir="auto">V4 是 Muon 在 1.6T 规模的第一次工业级使用——它的成功 / 失败都会被社区作为重要 data point。如果 V4 GA 后社区独立复现实验显示 Muon 在多个任务上稳定，Muon 会取代 AdamW 成为新标准；如果出现 V4 训练曲线后期问题归因到 Muon，Muon 的接受度会停滞。</p>
+<p dir="auto"><strong>对工程师的建议</strong>：</p>
+<p dir="auto">如果你做的是 &lt; 100B 规模的训练，AdamW 仍然是稳妥选择——成熟、社区支持广。Muon 适合 100B+ 规模 + 显存敏感 + 可承担”踩坑成本”的场景。等 6-12 个月看 V4 GA 后的社区反馈，再决定是否切换。</p>
+<h2 data-heading="17.10·补·补 Muon 与”超大 batch size” 训练的关系" dir="auto">17.10·补·补 Muon 与”超大 batch size” 训练的关系</h2>
+<p dir="auto">V4 的训练 batch size 没有公开，但合理推测在几千到几万 token 量级。把 Muon 与超大 batch 的关系梳理一下。</p>
+<p dir="auto"><strong>经典训练理论（Adam / AdamW）</strong>：</p>
+<p dir="auto">batch size 大 → 梯度估计准 → 可以用更大 lr。但 lr 不能无限大，因为 Adam 的 ε 在大 lr 下会失效（变成”effectively normalized SGD”）。所以经典 AdamW 训练在 batch &gt; 几百 万 token 时会饱和——增加 batch 不再带来收敛加速。</p>
+<p dir="auto"><strong>Muon 的特点</strong>：</p>
+<p dir="auto">Muon 的 spectral norm 投影让”动量方向” 在大 batch 下更准——更准的梯度方向更能利用 spectral 投影。理论上 Muon 在大 batch 下比 AdamW 表现更好。</p>
+<p dir="auto"><strong>V4 的实战暗示</strong>：</p>
+<p dir="auto">V4 用 32T tokens 训练。如果用 AdamW 的 batch 上限（几百万 token），需要训练步数极多。Muon 让 batch 上限提高，每步处理更多 token——总训练 wall time 缩短。</p>
+<p dir="auto"><strong>对工程师的意义</strong>：</p>
+<p dir="auto">如果你做的是大模型训练（10B+），切到 Muon 后<strong>不要忘了同步增大 batch size</strong>——否则只享受了”显存节省”的红利、没享受”大 batch 加速”的红利。Moonshot 的扩展论文（arXiv:2502.16982）中有具体的 batch size × lr 实验曲线——根据模型规模套用。</p>
+<p dir="auto">如果你做的是 fine-tune（小数据），batch size 受限于数据量——Muon 的大 batch 优势用不上。这种场景下 Muon 与 AdamW 的差异不大。</p>
+<p dir="auto">理解这个关系让你正确使用 Muon——不是”换个优化器” 那么简单，是”换一套训练 hyperparameters”。</p>
+<h2 data-heading="17.10·延展 Muon 与”训练稳定性”的工程指标" dir="auto">17.10·延展 Muon 与”训练稳定性”的工程指标</h2>
+<p dir="auto">V4 用 Muon 训练 1.6T 模型，训练稳定性是工程纪律的核心指标。把训练时实际监控的稳定性指标列出来。</p>
+<p dir="auto"><strong>指标 1：gradient norm</strong></p>
+<p dir="auto">每 step 算梯度的 L2 norm。Muon 的 spectral 投影让梯度方向稳定——norm 应该在一个相对窄的区间波动（如 0.5-2.0）。如果 norm 突然 &gt; 5 或 &lt; 0.1，说明训练出现异常（可能是学习率太大或某个 layer 数值崩溃）。</p>
+<p dir="auto"><strong>指标 2：Newton-Schulz 迭代误差</strong></p>
+<p dir="auto">Muon 内部的 NS 迭代逼近 spectral norm = 1。如果输入梯度过大，NS 5 步可能收敛不到——误差 &gt; 1e-3 时需要警觉。可以增加 NS 步数或 clip 输入。</p>
+<p dir="auto"><strong>指标 3：weight 范数稳定性</strong></p>
+<p dir="auto">每层 weight 的 L2 norm 在训练中应该缓慢变化。如果某层 weight norm 突跳（如某 step 内增加 50%），说明 spectral 约束被破坏。</p>
+<p dir="auto"><strong>指标 4：每层 activation 范数</strong></p>
+<p dir="auto">forward 过程中每层 activation 的 norm 应该稳定（V4 的 Sinkhorn / RMSNorm 保证这一点）。某层 activation norm 异常（变成预期 10x 或 0.1x），说明该层数值出现问题。</p>
+<p dir="auto"><strong>指标 5：bias 漂移率</strong></p>
+<p dir="auto">V4 的 noaux_tc bias 在每个 step 微调。如果某 step 的 bias 调整幅度 &gt; 0.1（典型应该 &lt; 0.01），说明 routing 不均衡——需要检查输入数据分布。</p>
+<p dir="auto"><strong>这些指标的实时监控</strong>：</p>
+<p dir="auto">V4 的训练栈大概率有 wandb 或类似工具实时追踪这些指标。任何一个异常都会触发自动 checkpoint + 暂停训练 + alert ML 团队。</p>
+<p dir="auto">理解这些指标让你在自己的项目里部署”Muon 友好的训练监控”——避免在长训练（数周到数月）后期才发现问题，浪费几百万 GPU-hour。</p>
+<h2 data-heading="本章小结" dir="auto">本章小结</h2>
+<ul>
+<li dir="auto">V4 用 Muon 优化器（部分参数）取代 AdamW——节省状态显存约 50%</li>
+<li dir="auto">Muon 通过 Newton-Schulz 迭代把动量投影到 spectral norm = 1 的流形——隐式正则化</li>
+<li dir="auto">矩阵参数走 Muon、向量参数走 AdamW 的混合策略最稳健</li>
+<li dir="auto">32T tokens 预训练：384 expert + HC 容量 + FP4 训练精度需求三者共同推动</li>
+<li dir="auto">数据由 5 大支柱构成：网页 / 代码 / 数学 / 多语言 / 合成数据</li>
+<li dir="auto">学习率分 3 阶段：warm-up / stable / cooldown</li>
+<li dir="auto">训练监控 9 大关键指标——任何异常都需要介入</li>
+</ul>
+<p dir="auto">第 18 章：两阶段后训练——领域专家培养 + on-policy 蒸馏。</p>
+<script defer src="../../../_assets/script.fad57313884515cf.js"></script>
+</div></div></div>
+    
+    <nav class="html-server-blog-chapter-navigation article-footer" data-blog-chapter-navigation aria-label="Tutorial chapters">
+      <a href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/%E7%AC%AC16%E7%AB%A0-DeepEP-MoE-all-to-all-%E9%80%9A%E4%BF%A1%E5%BA%93/?series=DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90"><small>← Previous</small><strong>第16章：DeepEP-MoE-all-to-all-通信库</strong></a>
+      <a href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/%E7%AC%AC18%E7%AB%A0-%E4%B8%A4%E9%98%B6%E6%AE%B5%E5%90%8E%E8%AE%AD%E7%BB%83-%E9%A2%86%E5%9F%9F-SFT-RL-on-policy-%E8%92%B8%E9%A6%8F/?series=DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90"><small>Next →</small><strong>第18章：两阶段后训练-领域-SFT-RL-on-policy-蒸馏</strong></a>
+    </nav>
+    
+  </article></div>
+    </main>
+  </div>
+  <footer class="site-footer"><span>纸上季刊</span><span>缓慢阅读与长篇写作</span></footer>
+</div><div class="html-server-blog-progress html-server-style-lab-progress is-rule" data-blog-progress data-blog-runtime-progress data-progress-state="idle" role="progressbar" aria-label="Loading page" aria-hidden="true"><span class="html-server-blog-progress-track"><i></i><b></b><em></em><em></em><em></em></span></div>
+    <div class="html-server-blog-related-modal" data-blog-related-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-related-close aria-label="Close related articles"></button>
+      <section class="html-server-blog-related-panel" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-related-title">
+        <header><div><span class="html-server-blog-kicker" data-blog-related-kind></span><h2 id="html-server-blog-related-title" data-blog-related-title></h2></div><button type="button" data-blog-related-close aria-label="Close"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <p data-blog-related-count></p>
+        <div class="html-server-blog-related-list" data-blog-related-list></div>
+      </section>
+    </div>
+    <div class="html-server-blog-search-modal" data-blog-search-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-search-close aria-label="Close search"></button>
+      <section class="html-server-blog-search-panel site-dialog" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-search-title">
+        <header class="dialog-head"><div><span class="html-server-blog-kicker">SEARCH</span><h2 id="html-server-blog-search-title">搜索文章</h2></div><button type="button" data-blog-search-close aria-label="关闭"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <label class="search-field"><span>支持标题、标签、系列、目录和属性</span><input id="search-input" type="search" data-blog-global-search placeholder="输入关键词开始搜索" autocomplete="off"></label>
+        <p class="search-summary" id="search-summary" data-blog-search-count>输入关键词开始搜索</p>
+        <div class="html-server-blog-search-results search-results dialog-list" id="search-results" data-blog-search-results></div>
+      </section>
+    </div>
+    <div class="html-server-blog-folder-modal" data-blog-folder-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-folder-close aria-label="Close folders"></button>
+      <section class="html-server-blog-folder-panel site-dialog" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-folder-title">
+        <header class="dialog-head"><div><span class="html-server-blog-kicker">VAULT</span><h2 id="html-server-blog-folder-title" data-blog-folder-title>浏览根目录</h2></div><button type="button" data-blog-folder-close aria-label="关闭"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <nav class="html-server-blog-folder-breadcrumb directory-breadcrumbs" data-blog-folder-breadcrumb aria-label="目录面包屑"></nav>
+        <p data-blog-folder-count></p>
+        <div class="html-server-blog-folder-browser directory-list dialog-list" data-blog-folder-browser></div>
+      </section>
+    </div>
+    <script type="application/json" data-blog-article-index>[]</script>
+    <script type="application/json" data-blog-folder-index data-current-folder="大模型/DeepSeek V4 源码剖析">[]</script>
+    <script type="application/json" data-blog-appearance-contract>{"version":1,"layouts":[{"id":"default","themes":["inherit"]},{"id":"next","themes":["inherit","next-classic","swiss-index","literary-quarterly","terminal-manual","quiet-journal","newspaper-daily","mint-notebook","tailwind-workspace"]},{"id":"butterfly","themes":["inherit","butterfly-colorful","brutal-broadcast","future-signal","field-notes","gallery-canvas","toy-modules","sakura-notes","clear-sky"]},{"id":"akilar","themes":["inherit","akilar-ark"]},{"id":"noionion","themes":["inherit","noionion-original"]},{"id":"kratos","themes":["inherit","kratos-rebirth"]},{"id":"leezhiy","themes":["inherit","leezhiy-next"]},{"id":"daybook","themes":["inherit","daybook-original"]},{"id":"style-lab-swiss","themes":["inherit","swiss-index"]},{"id":"style-lab-literary","themes":["inherit","literary-quarterly"]},{"id":"style-lab-terminal","themes":["inherit","terminal-manual"]},{"id":"style-lab-brutal","themes":["inherit","brutal-broadcast"]},{"id":"style-lab-quiet","themes":["inherit","quiet-journal"]},{"id":"style-lab-newspaper","themes":["inherit","newspaper-daily"]},{"id":"style-lab-future","themes":["inherit","future-signal"]},{"id":"style-lab-field","themes":["inherit","field-notes"]},{"id":"style-lab-gallery","themes":["inherit","gallery-canvas"]},{"id":"style-lab-toy","themes":["inherit","toy-modules"]},{"id":"style-lab-mint","themes":["inherit","mint-notebook"]},{"id":"style-lab-sakura","themes":["inherit","sakura-notes"]},{"id":"style-lab-sky","themes":["inherit","clear-sky"]},{"id":"style-lab-tailwind","themes":["inherit","tailwind-workspace"]}]}</script>
+  </div>
+  <script defer src="../../../_assets/script.905a72eede1c8c41.js"></script>
+</body>
+</html>

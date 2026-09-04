@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="en" data-html-server-theme="light" data-blog-layout="style-lab-literary" data-blog-layout-theme="literary-quarterly" data-blog-page-kind="article" data-blog-mobile-zoom="false" data-theme="literary" data-mode="light" data-page="article" data-blog-theme-control="style-lab" data-blog-main-loading-class="html-server-blog-main-loading" data-blog-overview-loading-class="html-server-blog-overview-loading" data-blog-folder-loading-class="html-server-blog-folder-loading" data-blog-pagination-scroll="item" data-blog-pin-progress="true" data-blog-outline-shell-selector=".html-server-style-lab-outline" data-blog-outline-auto-hide="true" data-blog-sticky-header-selector=".html-server-style-lab-header,.html-server-lab-swiss-rail" data-blog-scroll-mode="app" data-blog-document-pinning="false" data-blog-document-pinning-filter-regular="false" style="--html-server-navigation-surface-light: #eee9df;--html-server-navigation-surface-dark: #201c18">
+<head><!--html-server-dynamic:start--><meta name="html-server-dynamic-page" data-html-server-dynamic-page data-html-server-dynamic-assertion-mode="every-page" data-html-server-dynamic-cache-ttl-ms="1800000" content="a-WyJzdHlsZS1sYWItbGl0ZXJhcnkiLCJsaXRlcmFyeS1xdWFydGVybHkiXQ"><style data-html-server-dynamic-prepaint>html{--html-server-navigation-surface-active:var(--html-server-navigation-surface-light,var(--html-server-blog-background-light,#f5f7fa));background:var(--html-server-navigation-surface-active)}html[data-html-server-theme="dark"]{--html-server-navigation-surface-active:var(--html-server-navigation-surface-dark,var(--html-server-blog-background-dark,#151515))}html[data-html-server-navigation-entering],html[data-html-server-dynamic-pending]{background:var(--html-server-navigation-surface-active)!important}html[data-html-server-navigation-entering] body,html[data-html-server-dynamic-pending] body{opacity:0!important}html[data-html-server-navigation-entering]::before,html[data-html-server-dynamic-pending]::before{content:"";position:fixed;inset:0;z-index:2147483646;background:var(--html-server-navigation-surface-active);pointer-events:none}html[data-html-server-navigation-entering]::after,html[data-html-server-dynamic-pending]::after{content:"";position:fixed;top:0;left:0;z-index:2147483647;width:38%;height:2px;background:var(--interactive-accent,#8b6f47);box-shadow:0 0 10px currentColor;animation:html-server-navigation-prepaint 1s ease-in-out infinite;pointer-events:none}@keyframes html-server-navigation-prepaint{0%{transform:translateX(-110%)}100%{transform:translateX(370%)}}@media(prefers-reduced-motion:reduce){html[data-html-server-navigation-entering]::after,html[data-html-server-dynamic-pending]::after{animation:none;width:100%;opacity:.7}}</style><script data-blog-navigation-bootstrap>(function(){
+  var root=document.documentElement,key='html-server:navigation-handoff',handoff=null;
+  try{handoff=JSON.parse(sessionStorage.getItem(key)||'null');}catch(error){}
+  var target=location.pathname+location.search;
+  if(handoff&&handoff.target===target&&Date.now()-Number(handoff.createdAt||0)<5000){
+    root.setAttribute('data-html-server-navigation-entering','');
+    var reveal=function(){requestAnimationFrame(function(){requestAnimationFrame(function(){root.removeAttribute('data-html-server-navigation-entering');try{sessionStorage.removeItem(key);}catch(error){}});});};
+    if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',reveal,{once:true});else reveal();
+    setTimeout(function(){root.removeAttribute('data-html-server-navigation-entering');},5000);
+  }else if(handoff){try{sessionStorage.removeItem(key);}catch(error){}}
+})();</script><script data-html-server-dynamic-bootstrap>(()=>{
+const m={"releaseId":"20260904091040909-e54ec6fc6a","appearanceKey":"a-WyJzdHlsZS1sYWItbGl0ZXJhcnkiLCJsaXRlcmFyeS1xdWFydGVybHkiXQ","route":"大模型/大模型面试/面试相关/codebase-architecture/index.html","outputRootRelativeUrl":"../../../../../../../../","siteRootRelativeUrl":"../../../../","assertionPolicy":{"mode":"every-page","cacheTtlMs":1800000}},S=1,C="html-server:dynamic-appearance:v1";
+const html=document.documentElement,pending='data-html-server-dynamic-pending';if(!html)return;html.setAttribute(pending,'');
+try{Object.defineProperty(window,'__htmlServerDynamicSiteRoot',{configurable:true,value:new URL(m.siteRootRelativeUrl||m.outputRootRelativeUrl,document.baseURI||location.href).href});}catch(_){}
+const reveal=()=>html.removeAttribute(pending);
+const safe=p=>{p=String(p||'').replace(/\\/g,'/').replace(/^\/+/, '');return !!p&&!p.split('/').includes('..')&&!/^[a-z][a-z\d+.-]*:/i.test(p)};
+const routeUrl=p=>String(p).split('/').map(encodeURIComponent).join('/');
+const get=async u=>{const c=new AbortController(),t=setTimeout(()=>c.abort(),2000);try{const r=await fetch(u,{cache:'no-store',credentials:'same-origin',signal:c.signal});if(!r.ok)throw Error(String(r.status));return await r.json()}finally{clearTimeout(t)}};
+const p=m.assertionPolicy||{},mode=p.mode==='home-only'||p.mode==='cache'?p.mode:'every-page',ttl=Math.max(60000,Number(p.cacheTtlMs)||1800000);
+let storage;try{storage=localStorage}catch(_){}
+const clear=()=>{try{storage&&storage.removeItem(C)}catch(_){}};
+try{Object.defineProperty(window,'HtmlServerDynamicAppearanceCache',{configurable:true,value:{key:C,clear,refresh:()=>{clear();location.reload()}}})}catch(_){}
+const read=()=>{try{const v=JSON.parse(storage&&storage.getItem(C)||'null');return v&&v.schemaVersion===S&&typeof v.appearanceKey==='string'&&typeof v.releaseId==='string'&&safe(v.path)&&Number.isFinite(v.selectionRevision)&&Number.isFinite(v.expiresAt)?v:null}catch(_){return null}};
+const cached=read(),home=m.route==='index.html',reload=(()=>{try{return performance.getEntriesByType('navigation')[0]?.type==='reload'}catch(_){return false}})();
+const cacheValid=!!cached&&cached.releaseId===m.releaseId&&(mode!=='cache'||cached.expiresAt>Date.now()),refresh=mode==='every-page'||(mode==='home-only'&&home)||(mode==='cache'&&(!cacheValid||reload));
+(async()=>{let navigating=false;
+const rootForPage=async()=>{const fallback=window.__htmlServerStaticFallbackRoot,discovered=fallback&&typeof fallback.then==='function'?await fallback:null;return new URL(discovered&&discovered.siteRoot?discovered.siteRoot:m.outputRootRelativeUrl,document.baseURI||location.href)};
+const move=async(key,pathValue,releaseId,canonical)=>{if(key===m.appearanceKey)return false;if(!safe(m.route)||!safe(pathValue))return false;const root=await rootForPage(),encoded=routeUrl(m.route),rel=canonical?encoded:pathValue.replace(/\/+$/,'')+'/'+encoded,guard='html-server-dynamic:'+releaseId+':'+key+':'+m.route;if(sessionStorage.getItem(guard)==='1')return false;const target=new URL(rel,root);target.search=location.search;target.hash=location.hash;sessionStorage.setItem(guard,'1');navigating=true;location.replace(target.href);return true};
+try{
+if(!refresh){if(!cacheValid)return;if(cached.appearanceKey===m.appearanceKey){sessionStorage.removeItem('html-server-dynamic:'+cached.releaseId+':'+cached.appearanceKey+':'+m.route);return;}await move(cached.appearanceKey,cached.path,cached.releaseId,false);return;}
+const root=await rootForPage(),pair=await Promise.all([get(new URL('_config/data.json',root)),get(new URL('_config/release.json',root))]),cfg=pair[0],ptr=pair[1];
+if(cfg.schemaVersion!==S)return;
+if(ptr.schemaVersion!==S||(cfg.selectionRevision!==undefined&&cfg.selectionRevision!==ptr.selectionRevision)||!safe(ptr.manifest))return;
+const man=await get(new URL(ptr.manifest,root));if(man.schemaVersion!==S||man.releaseId!==ptr.releaseId||man.selectionRevision!==ptr.selectionRevision||man.primaryAppearance!==ptr.primaryAppearance||!safe(m.route))return;
+const hit=Object.entries(man.sites||{}).find(([,v])=>v.appearance&&v.appearance.layout===cfg.blogLayout&&v.appearance.theme===cfg.blogLayoutTheme);if(!hit)return;
+const key=hit[0],site=hit[1];if(!Array.isArray(site.routes)||!site.routes.includes(m.route))return;
+if(!safe(site.path))return;const record={schemaVersion:S,appearanceKey:key,layout:site.appearance.layout,theme:site.appearance.theme,path:site.path,releaseId:ptr.releaseId,selectionRevision:ptr.selectionRevision,expiresAt:mode==='home-only'?0:Date.now()+ttl};try{storage&&storage.setItem(C,JSON.stringify(record))}catch(_){}
+const guard='html-server-dynamic:'+ptr.releaseId+':'+key+':'+m.route;if(key===m.appearanceKey){sessionStorage.removeItem(guard);return;}
+await move(key,site.path,ptr.releaseId,key===man.primaryAppearance);
+}catch(_){if(mode!=='every-page'&&cacheValid&&!navigating)await move(cached.appearanceKey,cached.path,cached.releaseId,false).catch(()=>{})}finally{if(!navigating)reveal();}})();
+})();</script><!--html-server-dynamic:end-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  
+  <script defer src="../../../../_assets/script.6d4f546be5f896d5.js"></script>
+  <script data-blog-theme-bootstrap>(function(){
+  var root = document.documentElement;
+  var theme = root.getAttribute('data-html-server-theme') || 'light';
+  try {
+    var stored = localStorage.getItem('html-server-blog-theme');
+    if (stored === 'dark' || stored === 'light') theme = stored;
+  } catch (error) {}
+  root.setAttribute('data-html-server-theme', theme);
+  root.classList.toggle('theme-dark', theme === 'dark');
+  root.classList.toggle('theme-light', theme !== 'dark');
+  root.style.backgroundColor = theme === 'dark'
+    ? 'var(--html-server-navigation-surface-dark, var(--html-server-blog-background-dark, #151515))'
+    : 'var(--html-server-navigation-surface-light, var(--html-server-blog-background-light, #f5f7fa))';
+})();</script>
+  
+  <title>Codebase architecture · Digital Garden</title>
+  <link rel="shortcut icon" href="//obsidian.md/favicon.ico">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Mono:wght@300;400;500&family=IBM+Plex+Sans+Condensed:wght@400;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&family=Manrope:wght@400;600;800&family=Noto+Serif+SC:wght@400;600;800&family=Playfair+Display:wght@600;800&family=Space+Grotesk:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="../../../../_assets/blog.css">
+<link rel="preload" as="script" href="../../../../_assets/blog.js" fetchpriority="high"><script>window.__htmlServerStaticSearch="../../../../_assets/meta.json";window.__htmlServerStaticSidebar="../../../../_assets/sidebar.json?v=mtmqp68z-2gf";window.__htmlServerStaticPluginOverrides=window.__htmlServerStaticPluginOverrides||{};Object.assign(window.__htmlServerStaticPluginOverrides["blog-live2d"]||(window.__htmlServerStaticPluginOverrides["blog-live2d"]={}),{"localScriptUrl":"../../../../_assets/live2d-widget/L2Dwidget.min.js","localModelUrl":"../../../../_assets/live2d-widget/assets/koharu.model.json","assetBaseUrl":"../../../../_assets/live2d-widget"});</script></head>
+<body class="theme-light html-server-blog-body" data-blog-layout="style-lab-literary" data-blog-layout-theme="literary-quarterly" data-blog-page-kind="article" data-blog-style-isolation="strict" data-theme="literary" data-mode="light" data-page="article" data-blog-theme-control="style-lab" data-blog-main-loading-class="html-server-blog-main-loading" data-blog-overview-loading-class="html-server-blog-overview-loading" data-blog-folder-loading-class="html-server-blog-folder-loading" data-blog-pagination-scroll="item" data-blog-pin-progress="true" data-blog-outline-shell-selector=".html-server-style-lab-outline" data-blog-outline-auto-hide="true" data-blog-sticky-header-selector=".html-server-style-lab-header,.html-server-lab-swiss-rail" data-blog-scroll-mode="app" data-blog-document-pinning="false" data-blog-document-pinning-filter-regular="false" style="--html-server-navigation-surface-light: #eee9df;--html-server-navigation-surface-dark: #201c18">
+  <script data-blog-theme-bootstrap>(function(){
+  var theme = document.documentElement.getAttribute('data-html-server-theme') || 'light';
+  document.body.classList.toggle('theme-dark', theme === 'dark');
+  document.body.classList.toggle('theme-light', theme !== 'dark');
+})();</script>
+  <script type="application/json" data-blog-theme-image-groups>{}</script>
+  
+  <div class="html-server-blog-app">
+    <div class="html-server-style-lab-shell html-server-style-lab-literary">
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="html-server-style-lab-header site-header"><a class="html-server-style-lab-brand brand" href="../../../../" aria-label="回到文章列表"><b class="brand-mark">刊</b><span class="brand-copy"><strong>纸上季刊</strong><small>缓慢阅读与长篇写作</small></span></a><button class="menu-toggle" type="button" data-style-lab-menu aria-expanded="false" aria-controls="style-lab-main-nav">菜单</button><nav class="html-server-style-lab-nav main-nav" id="style-lab-main-nav" aria-label="主导航"><button type="button" data-style-lab-route="/">文章</button><button type="button" data-style-lab-route="/tags/">标签</button><button type="button" data-style-lab-route="/series/">系列</button><button type="button" data-style-lab-route="/archive/">归档</button></nav><div class="html-server-style-lab-tools header-tools" aria-label="站点工具"><button class="directory-toggle" type="button" data-blog-folder-open aria-label="打开目录"><span aria-hidden="true">▤</span><span>目录</span></button><button class="search-toggle" type="button" data-blog-search-open aria-label="打开搜索"><span aria-hidden="true">⌕</span><span>搜索</span></button><button class="mode-toggle" type="button" data-blog-theme aria-label="切换明暗主题"><span aria-hidden="true">◐</span><span class="mode-label">黑色</span></button></div></header>
+  <main id="content" class="html-server-style-lab-page html-server-blog-main html-server-style-lab-main" data-blog-main>
+    <div class="article-shell"><aside class="html-server-style-lab-outline article-toc"><nav class="html-server-blog-outline" data-blog-outline aria-label="Article outline">
+  <button class="html-server-blog-outline-toggle" type="button" data-blog-outline-toggle aria-expanded="true" aria-controls="html-server-blog-outline-list"><span>本文目录</span><b aria-hidden="true"><svg viewBox="0 0 20 20" focusable="false"><path d="m4.5 7.25 5.5 5.5 5.5-5.5"/></svg></b></button>
+  <strong>本文目录</strong>
+  <ol id="html-server-blog-outline-list"><li style="--outline-depth:0"><a href="#Codebase%20architecture" data-blog-outline-link>Codebase architecture</a></li><li style="--outline-depth:1"><a href="#1.%20System%20context" data-blog-outline-link>1. System context</a></li><li style="--outline-depth:1"><a href="#2.%20Repository%20top%20level" data-blog-outline-link>2. Repository top level</a></li><li style="--outline-depth:1"><a href="#3.%20%60src%2F%60%20directory%20reference" data-blog-outline-link>3. `src/` directory reference</a></li><li style="--outline-depth:1"><a href="#4.%20Packaging%20and%20build" data-blog-outline-link>4. Packaging and build</a></li><li style="--outline-depth:1"><a href="#5.%20CLI%20architecture" data-blog-outline-link>5. CLI architecture</a></li><li style="--outline-depth:2"><a href="#5.1.%20Program%20construction" data-blog-outline-link>5.1. Program construction</a></li><li style="--outline-depth:2"><a href="#5.2.%20Startup%20sequence%20(%60runCli%60)" data-blog-outline-link>5.2. Startup sequence (`runCli`)</a></li><li style="--outline-depth:2"><a href="#5.3.%20%60tryRouteCli%60" data-blog-outline-link>5.3. `tryRouteCli`</a></li><li style="--outline-depth:1"><a href="#6.%20Gateway%20architecture" data-blog-outline-link>6. Gateway architecture</a></li><li style="--outline-depth:2"><a href="#6.1.%20Server%20bootstrap" data-blog-outline-link>6.1. Server bootstrap</a></li><li style="--outline-depth:2"><a href="#6.2.%20WebSocket%20request%20routing" data-blog-outline-link>6.2. WebSocket request routing</a></li><li style="--outline-depth:2"><a href="#6.3.%20Core%20gateway%20methods%20(merged%20handler%20map)" data-blog-outline-link>6.3. Core gateway methods (merged handler map)</a></li><li style="--outline-depth:2"><a href="#6.4.%20Channel%20manager" data-blog-outline-link>6.4. Channel manager</a></li><li style="--outline-depth:2"><a href="#6.5.%20Protocol%20and%20typing" data-blog-outline-link>6.5. Protocol and typing</a></li><li style="--outline-depth:2"><a href="#6.6.%20HTTP%20surfaces" data-blog-outline-link>6.6. HTTP surfaces</a></li><li style="--outline-depth:1"><a href="#7.%20Agent%20execution%20path%20(detailed)" data-blog-outline-link>7. Agent execution path (detailed)</a></li><li style="--outline-depth:2"><a href="#7.1.%20Gateway%20to%20embedded%20runner" data-blog-outline-link>7.1. Gateway to embedded runner</a></li><li style="--outline-depth:2"><a href="#7.2.%20Invariants%20for%20transcript%20writes" data-blog-outline-link>7.2. Invariants for transcript writes</a></li><li style="--outline-depth:2"><a href="#7.3.%20CLI%20%60agent%60%20command" data-blog-outline-link>7.3. CLI `agent` command</a></li><li style="--outline-depth:1"><a href="#8.%20Routing%20and%20auto-reply" data-blog-outline-link>8. Routing and auto-reply</a></li><li style="--outline-depth:1"><a href="#9.%20Plugins%20and%20extensions" data-blog-outline-link>9. Plugins and extensions</a></li><li style="--outline-depth:2"><a href="#9.1.%20Load%20order%20(conceptual)" data-blog-outline-link>9.1. Load order (conceptual)</a></li><li style="--outline-depth:2"><a href="#9.2.%20Extension%20package%20rules" data-blog-outline-link>9.2. Extension package rules</a></li><li style="--outline-depth:1"><a href="#10.%20Supporting%20subsystems" data-blog-outline-link>10. Supporting subsystems</a></li><li style="--outline-depth:1"><a href="#11.%20Configuration%20and%20on-disk%20state" data-blog-outline-link>11. Configuration and on-disk state</a></li><li style="--outline-depth:1"><a href="#12.%20Install%20scripts%20(separate%20repo)" data-blog-outline-link>12. Install scripts (separate repo)</a></li><li style="--outline-depth:1"><a href="#13.%20Tests%20and%20quality%20gates" data-blog-outline-link>13. Tests and quality gates</a></li><li style="--outline-depth:1"><a href="#14.%20Related%20documentation" data-blog-outline-link>14. Related documentation</a></li></ol>
+</nav></aside><article class="html-server-blog-article article-body">
+    <nav class="html-server-blog-breadcrumb breadcrumbs" aria-label="Breadcrumb"><a href="../../../../" data-blog-folder-path="">Home</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../../folders/_/大模型/" data-blog-folder-path="大模型">大模型</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../../folders/_/大模型/_/大模型面试/" data-blog-folder-path="大模型/大模型面试">大模型面试</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../../folders/_/大模型/_/大模型面试/_/面试相关/" data-blog-folder-path="大模型/大模型面试/面试相关">面试相关</a></nav>
+    <header class="html-server-blog-article-header"><div class="post-meta"><time>Jul 3, 2026</time><span>7 分钟</span><span>最后更新 Jul 3, 2026</span></div><h2>Codebase architecture</h2><p class="article-deck">Deep map of repository layout, entrypoints, CLI, gateway WS methods, agents, channels, plugins, and supporting subsystems</p></header>
+    
+    <div class="markdown-reading-view html-server-blog-reading-view article-content"><div class="markdown-preview-view markdown-rendered node-insert-event is-readable-line-width allow-fold-headings allow-fold-lists" tabindex="-1"><div class="markdown-preview-sizer markdown-preview-section"><pre class="frontmatter language-yaml" style="display: none; overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-yaml is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token key atrule">summary</span><span class="token punctuation">:</span> <span class="token string">"Deep map of repository layout, entrypoints, CLI, gateway WS methods, agents, channels, plugins, and supporting subsystems"</span>
+<span class="token key atrule">read_when</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> Onboarding to the OpenClaw codebase
+  <span class="token punctuation">-</span> Refactoring cross<span class="token punctuation">-</span>cutting behavior (CLI<span class="token punctuation">,</span> gateway<span class="token punctuation">,</span> routing<span class="token punctuation">,</span> plugins)
+  <span class="token punctuation">-</span> Choosing where to add a feature (core vs extension vs app)
+  <span class="token punctuation">-</span> Tracing a bug from CLI or UI down to gateway and channel code
+<span class="token key atrule">title</span><span class="token punctuation">:</span> <span class="token string">"Codebase architecture"</span></code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<h1 data-heading="Codebase architecture" dir="auto">Codebase architecture</h1>
+<p dir="auto">This page is the <strong>source-level architecture map</strong> for OpenClaw: directories, ownership boundaries, and the main runtime call paths.</p>
+<p dir="auto">Companion pages:</p>
+<ul>
+<li dir="auto"><a class="internal-link" data-href="../../../../concepts/architecture/" href="../../../../concepts/architecture/" target="" rel="noopener nofollow">Gateway architecture</a> — WebSocket roles, pairing, canvas URLs, protocol summary.</li>
+<li dir="auto"><a class="internal-link" data-href="../../../../plugins/architecture/" href="../../../../plugins/architecture/" target="" rel="noopener nofollow">Plugin internals</a> — capability matrix, loader layers, hook ownership, compatibility signals.</li>
+</ul>
+<h2 data-heading="1. System context" dir="auto">1. System context</h2>
+<p dir="auto">OpenClaw ships as an <strong>npm package</strong> (<code class="code-styler-inline">openclaw</code>) with a Node <strong>22+</strong> ESM TypeScript implementation. At a high level:</p>
+<ul>
+<li dir="auto">A <strong>gateway</strong> process owns messaging integrations, exposes a typed <strong>WebSocket</strong> API plus <strong>HTTP</strong> surfaces (control UI, optional OpenAI-compatible HTTP, canvas host, plugin routes).</li>
+<li dir="auto">The <strong><code class="code-styler-inline">openclaw</code> CLI</strong> configures the system, runs doctor checks, talks to the gateway as a client, and can run the gateway in the foreground.</li>
+<li dir="auto"><strong>Plugins</strong> in <code class="code-styler-inline">extensions/*</code> extend channels, model providers, tools, HTTP routes, and hooks. They load through <code class="code-styler-inline">src/plugins/loader.ts</code> and register into a runtime <strong>registry</strong>.</li>
+<li dir="auto"><strong>Native apps</strong> under <code class="code-styler-inline">apps/*</code> are clients of the gateway protocol (not where channel business logic lives).</li>
+</ul>
+<div class="mermaid"><svg id="m02f3bad4c4f4e52e" width="1525.580078125" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flowchart" height="661" viewBox="0 0 1525.580078125 661" role="graphics-document document" aria-roledescription="flowchart-v2"><style>#m02f3bad4c4f4e52e{font-family:var(--font-mermaid);font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#m02f3bad4c4f4e52e .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#m02f3bad4c4f4e52e .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#m02f3bad4c4f4e52e .error-icon{fill:#552222;}#m02f3bad4c4f4e52e .error-text{fill:#552222;stroke:#552222;}#m02f3bad4c4f4e52e .edge-thickness-normal{stroke-width:1px;}#m02f3bad4c4f4e52e .edge-thickness-thick{stroke-width:3.5px;}#m02f3bad4c4f4e52e .edge-pattern-solid{stroke-dasharray:0;}#m02f3bad4c4f4e52e .edge-thickness-invisible{stroke-width:0;fill:none;}#m02f3bad4c4f4e52e .edge-pattern-dashed{stroke-dasharray:3;}#m02f3bad4c4f4e52e .edge-pattern-dotted{stroke-dasharray:2;}#m02f3bad4c4f4e52e .marker{fill:#333333;stroke:#333333;}#m02f3bad4c4f4e52e .marker.cross{stroke:#333333;}#m02f3bad4c4f4e52e svg{font-family:var(--font-mermaid);font-size:16px;}#m02f3bad4c4f4e52e p{margin:0;}#m02f3bad4c4f4e52e .label{font-family:var(--font-mermaid);color:#333;}#m02f3bad4c4f4e52e .cluster-label text{fill:#333;}#m02f3bad4c4f4e52e .cluster-label span{color:#333;}#m02f3bad4c4f4e52e .cluster-label span p{background-color:transparent;}#m02f3bad4c4f4e52e .label text,#m02f3bad4c4f4e52e span{fill:#333;color:#333;}#m02f3bad4c4f4e52e .node rect,#m02f3bad4c4f4e52e .node circle,#m02f3bad4c4f4e52e .node ellipse,#m02f3bad4c4f4e52e .node polygon,#m02f3bad4c4f4e52e .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#m02f3bad4c4f4e52e .rough-node .label text,#m02f3bad4c4f4e52e .node .label text,#m02f3bad4c4f4e52e .image-shape .label,#m02f3bad4c4f4e52e .icon-shape .label{text-anchor:middle;}#m02f3bad4c4f4e52e .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#m02f3bad4c4f4e52e .rough-node .label,#m02f3bad4c4f4e52e .node .label,#m02f3bad4c4f4e52e .image-shape .label,#m02f3bad4c4f4e52e .icon-shape .label{text-align:center;}#m02f3bad4c4f4e52e .node.clickable{cursor:pointer;}#m02f3bad4c4f4e52e .root .anchor path{fill:#333333!important;stroke-width:0;stroke:#333333;}#m02f3bad4c4f4e52e .arrowheadPath{fill:#333333;}#m02f3bad4c4f4e52e .edgePath .path{stroke:#333333;stroke-width:2.0px;}#m02f3bad4c4f4e52e .flowchart-link{stroke:#333333;fill:none;}#m02f3bad4c4f4e52e .edgeLabel{background-color:rgba(232,232,232, 0.8);text-align:center;}#m02f3bad4c4f4e52e .edgeLabel p{background-color:rgba(232,232,232, 0.8);}#m02f3bad4c4f4e52e .edgeLabel rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#m02f3bad4c4f4e52e .labelBkg{background-color:rgba(232, 232, 232, 0.5);}#m02f3bad4c4f4e52e .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#m02f3bad4c4f4e52e .cluster text{fill:#333;}#m02f3bad4c4f4e52e .cluster span{color:#333;}#m02f3bad4c4f4e52e div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:var(--font-mermaid);font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#m02f3bad4c4f4e52e .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#333;}#m02f3bad4c4f4e52e rect.text{fill:none;stroke-width:0;}#m02f3bad4c4f4e52e .icon-shape,#m02f3bad4c4f4e52e .image-shape{background-color:rgba(232,232,232, 0.8);text-align:center;}#m02f3bad4c4f4e52e .icon-shape p,#m02f3bad4c4f4e52e .image-shape p{background-color:rgba(232,232,232, 0.8);padding:2px;}#m02f3bad4c4f4e52e .icon-shape .label rect,#m02f3bad4c4f4e52e .image-shape .label rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#m02f3bad4c4f4e52e .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#m02f3bad4c4f4e52e .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#m02f3bad4c4f4e52e :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g><marker id="m02f3bad4c4f4e52e-m02f3bad4c4f4e52e_flowchart-v2-pointEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="m02f3bad4c4f4e52e-m02f3bad4c4f4e52e_flowchart-v2-pointStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="4.5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="m02f3bad4c4f4e52e-m02f3bad4c4f4e52e_flowchart-v2-circleEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="m02f3bad4c4f4e52e-m02f3bad4c4f4e52e_flowchart-v2-circleStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="m02f3bad4c4f4e52e-m02f3bad4c4f4e52e_flowchart-v2-crossEnd" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><marker id="m02f3bad4c4f4e52e-m02f3bad4c4f4e52e_flowchart-v2-crossStart" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><g class="root"><g class="clusters"><g class="cluster" id="ext" data-look="classic"><rect style="" x="955.1796875" y="549" width="466.8984375" height="104"></rect><g class="cluster-label" transform="translate(1116.08984375, 549)"><foreignObject width="145.078125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5;"><span class="nodeLabel"><p>extensions workspace</p></span></div></foreignObject></g></g><g class="cluster" id="core" data-look="classic"><rect style="" x="8" y="395" width="492.7734375" height="258"></rect><g class="cluster-label" transform="translate(199.73046875, 395)"><foreignObject width="109.3125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5;"><span class="nodeLabel"><p>Core TypeScript</p></span></div></foreignObject></g></g><g class="cluster" id="gateway" data-look="classic"><rect style="" x="520.7734375" y="162" width="996.806640625" height="337"></rect><g class="cluster-label" transform="translate(961.7041015625, 162)"><foreignObject width="114.9453125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5;"><span class="nodeLabel"><p>Gateway process</p></span></div></foreignObject></g></g><g class="cluster" id="clients" data-look="classic"><rect style="" x="448.33984375" y="8" width="984.265625" height="104"></rect><g class="cluster-label" transform="translate(918.24609375, 8)"><foreignObject width="44.453125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5;"><span class="nodeLabel"><p>Clients</p></span></div></foreignObject></g></g></g><g class="edgePaths"><path d="M560.773,87L560.773,91.167C560.773,95.333,560.773,103.667,560.773,112C560.773,120.333,560.773,128.667,560.773,137C560.773,145.333,560.773,153.667,607.41,164.262C654.046,174.857,747.319,187.714,793.956,194.143L840.592,200.572" id="L_CLI_WSS_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_CLI_WSS_0" data-points="W3sieCI6NTYwLjc3MzQzNzUsInkiOjg3fSx7IngiOjU2MC43NzM0Mzc1LCJ5IjoxMTJ9LHsieCI6NTYwLjc3MzQzNzUsInkiOjEzN30seyJ4Ijo1NjAuNzczNDM3NSwieSI6MTYyfSx7IngiOjg0NC41NTQ2ODc1LCJ5IjoyMDEuMTE3OTIyMzc5MTU3NX1d" marker-end="url(#m02f3bad4c4f4e52e-m02f3bad4c4f4e52e_flowchart-v2-pointEnd)"></path><path d="M804.602,87L804.602,91.167C804.602,95.333,804.602,103.667,804.602,112C804.602,120.333,804.602,128.667,804.602,137C804.602,145.333,804.602,153.667,814.67,161.758C824.738,169.849,844.875,177.698,854.944,181.623L865.012,185.547" id="L_Mac_WSS_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_Mac_WSS_0" data-points="W3sieCI6ODA0LjYwMTU2MjUsInkiOjg3fSx7IngiOjgwNC42MDE1NjI1LCJ5IjoxMTJ9LHsieCI6ODA0LjYwMTU2MjUsInkiOjEzN30seyJ4Ijo4MDQuNjAxNTYyNSwieSI6MTYyfSx7IngiOjg2OC43MzkxODI2OTIzMDc3LCJ5IjoxODd9XQ==" marker-end="url(#m02f3bad4c4f4e52e-m02f3bad4c4f4e52e_flowchart-v2-pointEnd)"></path><path d="M1071.414,87L1071.414,91.167C1071.414,95.333,1071.414,103.667,1071.414,112C1071.414,120.333,1071.414,128.667,1071.414,137C1071.414,145.333,1071.414,153.667,1061.346,161.758C1051.277,169.849,1031.14,177.698,1021.072,181.623L1011.003,185.547" id="L_Web_WSS_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_Web_WSS_0" data-points="W3sieCI6MTA3MS40MTQwNjI1LCJ5Ijo4N30seyJ4IjoxMDcxLjQxNDA2MjUsInkiOjExMn0seyJ4IjoxMDcxLjQxNDA2MjUsInkiOjEzN30seyJ4IjoxMDcxLjQxNDA2MjUsInkiOjE2Mn0seyJ4IjoxMDA3LjI3NjQ0MjMwNzY5MjMsInkiOjE4N31d" marker-end="url(#m02f3bad4c4f4e52e-m02f3bad4c4f4e52e_flowchart-v2-pointEnd)"></path><path d="M1309.719,87L1309.719,91.167C1309.719,95.333,1309.719,103.667,1309.719,112C1309.719,120.333,1309.719,128.667,1309.719,137C1309.719,145.333,1309.719,153.667,1264.003,164.229C1218.287,174.791,1126.854,187.582,1081.138,193.977L1035.422,200.372" id="L_Node_WSS_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_Node_WSS_0" data-points="W3sieCI6MTMwOS43MTg3NSwieSI6ODd9LHsieCI6MTMwOS43MTg3NSwieSI6MTEyfSx7IngiOjEzMDkuNzE4NzUsInkiOjEzN30seyJ4IjoxMzA5LjcxODc1LCJ5IjoxNjJ9LHsieCI6MTAzMS40NjA5Mzc1LCJ5IjoyMDAuOTI2NTAxMTg3NDk4Njd9XQ==" marker-end="url(#m02f3bad4c4f4e52e-m02f3bad4c4f4e52e_flowchart-v2-pointEnd)"></path><path d="M938.008,241L938.008,245.167C938.008,249.333,938.008,257.667,946.093,265.712C954.178,273.757,970.348,281.513,978.433,285.392L986.518,289.27" id="L_WSS_GWR_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_WSS_GWR_0" data-points="W3sieCI6OTM4LjAwNzgxMjUsInkiOjI0MX0seyJ4Ijo5MzguMDA3ODEyNSwieSI6MjY2fSx7IngiOjk5MC4xMjQzMjM5MTgyNjkzLCJ5IjoyOTF9XQ==" marker-end="url(#m02f3bad4c4f4e52e-m02f3bad4c4f4e52e_flowchart-v2-pointEnd)"></path><path d="M1254.793,241L1254.793,245.167C1254.793,249.333,1254.793,257.667,1238.742,265.839C1222.692,274.011,1190.591,282.021,1174.54,286.026L1158.49,290.032" id="L_HTTP_GWR_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_HTTP_GWR_0" data-points="W3sieCI6MTI1NC43OTI5Njg3NSwieSI6MjQxfSx7IngiOjEyNTQuNzkyOTY4NzUsInkiOjI2Nn0seyJ4IjoxMTU0LjYwODkyNDI3ODg0NjIsInkiOjI5MX1d" marker-end="url(#m02f3bad4c4f4e52e-m02f3bad4c4f4e52e_flowchart-v2-pointEnd)"></path><path d="M930.848,331.646L876.715,338.039C822.583,344.431,714.319,357.215,660.187,367.774C606.055,378.333,606.055,386.667,556.088,396.828C506.121,406.99,406.187,418.98,356.22,424.975L306.253,430.97" id="L_GWR_Agents_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_GWR_Agents_0" data-points="W3sieCI6OTMwLjg0NzY1NjI1LCJ5IjozMzEuNjQ2MzYxNjkyODc5NX0seyJ4Ijo2MDYuMDU0Njg3NSwieSI6MzcwfSx7IngiOjYwNi4wNTQ2ODc1LCJ5IjozOTV9LHsieCI6MzAyLjI4MTI1LCJ5Ijo0MzEuNDQ2MDIyNjc2MDYzOTN9XQ==" marker-end="url(#m02f3bad4c4f4e52e-m02f3bad4c4f4e52e_flowchart-v2-pointEnd)"></path><path d="M1051.602,345L1052.404,349.167C1053.205,353.333,1054.808,361.667,1055.609,370C1056.41,378.333,1056.41,386.667,1056.41,394.333C1056.41,402,1056.41,409,1056.41,412.5L1056.41,416" id="L_GWR_CM_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_GWR_CM_0" data-points="W3sieCI6MTA1MS42MDI0NjM5NDIzMDc2LCJ5IjozNDV9LHsieCI6MTA1Ni40MTAxNTYyNSwieSI6MzcwfSx7IngiOjEwNTYuNDEwMTU2MjUsInkiOjM5NX0seyJ4IjoxMDU2LjQxMDE1NjI1LCJ5Ijo0MjB9XQ==" marker-end="url(#m02f3bad4c4f4e52e-m02f3bad4c4f4e52e_flowchart-v2-pointEnd)"></path><path d="M1061.653,474L1062.462,478.167C1063.271,482.333,1064.89,490.667,1065.699,499C1066.508,507.333,1066.508,515.667,1066.508,524C1066.508,532.333,1066.508,540.667,1067.183,548.345C1067.859,556.024,1069.209,563.048,1069.885,566.56L1070.56,570.072" id="L_CM_Ch_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_CM_Ch_0" data-points="W3sieCI6MTA2MS42NTMxNzAwNzIxMTU1LCJ5Ijo0NzR9LHsieCI6MTA2Ni41MDc4MTI1LCJ5Ijo0OTl9LHsieCI6MTA2Ni41MDc4MTI1LCJ5Ijo1MjR9LHsieCI6MTA2Ni41MDc4MTI1LCJ5Ijo1NDl9LHsieCI6MTA3MS4zMTU1MDQ4MDc2OTI0LCJ5Ijo1NzR9XQ==" marker-end="url(#m02f3bad4c4f4e52e-m02f3bad4c4f4e52e_flowchart-v2-pointEnd)"></path><path d="M1231.632,474L1222.631,478.167C1213.63,482.333,1195.629,490.667,1186.628,499C1177.627,507.333,1177.627,515.667,1177.627,524C1177.627,532.333,1177.627,540.667,1170.117,548.695C1162.608,556.724,1147.588,564.447,1140.079,568.309L1132.569,572.171" id="L_PR_Ch_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_PR_Ch_0" data-points="W3sieCI6MTIzMS42MzE3OTgzNzc0MDM4LCJ5Ijo0NzR9LHsieCI6MTE3Ny42MjY5NTMxMjUsInkiOjQ5OX0seyJ4IjoxMTc3LjYyNjk1MzEyNSwieSI6NTI0fSx7IngiOjExNzcuNjI2OTUzMTI1LCJ5Ijo1NDl9LHsieCI6MTEyOS4wMTE5ODE2NzA2NzMsInkiOjU3NH1d" marker-end="url(#m02f3bad4c4f4e52e-m02f3bad4c4f4e52e_flowchart-v2-pointEnd)"></path><path d="M1295.149,474L1295.951,478.167C1296.752,482.333,1298.354,490.667,1299.156,499C1299.957,507.333,1299.957,515.667,1299.957,524C1299.957,532.333,1299.957,540.667,1299.957,548.333C1299.957,556,1299.957,563,1299.957,566.5L1299.957,570" id="L_PR_Prov_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_PR_Prov_0" data-points="W3sieCI6MTI5NS4xNDkzMzg5NDIzMDc2LCJ5Ijo0NzR9LHsieCI6MTI5OS45NTcwMzEyNSwieSI6NDk5fSx7IngiOjEyOTkuOTU3MDMxMjUsInkiOjUyNH0seyJ4IjoxMjk5Ljk1NzAzMTI1LCJ5Ijo1NDl9LHsieCI6MTI5OS45NTcwMzEyNSwieSI6NTc0fV0=" marker-end="url(#m02f3bad4c4f4e52e-m02f3bad4c4f4e52e_flowchart-v2-pointEnd)"></path><path d="M163.708,474L162.33,478.167C160.951,482.333,158.194,490.667,156.816,499C155.438,507.333,155.438,515.667,155.438,524C155.438,532.333,155.438,540.667,155.438,548.333C155.438,556,155.438,563,155.438,566.5L155.438,570" id="L_Agents_Route_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_Agents_Route_0" data-points="W3sieCI6MTYzLjcwODIzMzE3MzA3NjkzLCJ5Ijo0NzR9LHsieCI6MTU1LjQzNzUsInkiOjQ5OX0seyJ4IjoxNTUuNDM3NSwieSI6NTI0fSx7IngiOjE1NS40Mzc1LCJ5Ijo1NDl9LHsieCI6MTU1LjQzNzUsInkiOjU3NH1d" marker-end="url(#m02f3bad4c4f4e52e-m02f3bad4c4f4e52e_flowchart-v2-pointEnd)"></path><path d="M231.777,474L240.903,478.167C250.029,482.333,268.281,490.667,277.407,499C286.533,507.333,286.533,515.667,286.533,524C286.533,532.333,286.533,540.667,293.694,548.684C300.854,556.702,315.175,564.404,322.335,568.254L329.496,572.105" id="L_Agents_CFG_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_Agents_CFG_0" data-points="W3sieCI6MjMxLjc3NzE1NTk0OTUxOTIzLCJ5Ijo0NzR9LHsieCI6Mjg2LjUzMzIwMzEyNSwieSI6NDk5fSx7IngiOjI4Ni41MzMyMDMxMjUsInkiOjUyNH0seyJ4IjoyODYuNTMzMjAzMTI1LCJ5Ijo1NDl9LHsieCI6MzMzLjAxODUxNzEyNzQwMzg3LCJ5Ijo1NzR9XQ==" marker-end="url(#m02f3bad4c4f4e52e-m02f3bad4c4f4e52e_flowchart-v2-pointEnd)"></path><path d="M964.27,458.133L907.9,464.944C851.531,471.756,738.793,485.378,650.081,496.356C561.369,507.333,496.684,515.667,464.341,524C431.998,532.333,431.998,540.667,428.546,548.514C425.094,556.361,418.189,563.722,414.737,567.402L411.285,571.083" id="L_CM_CFG_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_CM_CFG_0" data-points="W3sieCI6OTY0LjI2OTUzMTI1LCJ5Ijo0NTguMTMzMzgzNTU4Mjg2NjV9LHsieCI6NjI2LjA1NDY4NzUsInkiOjQ5OX0seyJ4Ijo0MzEuOTk4MDQ2ODc1LCJ5Ijo1MjR9LHsieCI6NDMxLjk5ODA0Njg3NSwieSI6NTQ5fSx7IngiOjQwOC41NDgzMzk4NDM3NSwieSI6NTc0fV0=" marker-end="url(#m02f3bad4c4f4e52e-m02f3bad4c4f4e52e_flowchart-v2-pointEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" data-id="L_CLI_WSS_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_Mac_WSS_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_Web_WSS_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_Node_WSS_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_WSS_GWR_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_HTTP_GWR_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_GWR_Agents_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_GWR_CM_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_CM_Ch_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_PR_Ch_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_PR_Prov_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_Agents_Route_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_Agents_CFG_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_CM_CFG_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-CLI-0" transform="translate(560.7734375, 60)"><rect class="basic label-container" style="" x="-77.43359375" y="-27" width="154.8671875" height="54"></rect><g class="label" style="" transform="translate(-47.43359375, -12)"><rect></rect><foreignObject width="94.8671875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>openclaw CLI</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-Mac-1" transform="translate(804.6015625, 60)"><rect class="basic label-container" style="" x="-116.39453125" y="-27" width="232.7890625" height="54"></rect><g class="label" style="" transform="translate(-86.39453125, -12)"><rect></rect><foreignObject width="172.7890625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>iOS macOS Android apps</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-Web-2" transform="translate(1071.4140625, 60)"><rect class="basic label-container" style="" x="-100.41796875" y="-27" width="200.8359375" height="54"></rect><g class="label" style="" transform="translate(-70.41796875, -12)"><rect></rect><foreignObject width="140.8359375" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>Control UI WebChat</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-Node-3" transform="translate(1309.71875, 60)"><rect class="basic label-container" style="" x="-87.88671875" y="-27" width="175.7734375" height="54"></rect><g class="label" style="" transform="translate(-57.88671875, -12)"><rect></rect><foreignObject width="115.7734375" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>Nodes role node</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-WSS-4" transform="translate(938.0078125, 214)"><rect class="basic label-container" style="" x="-93.453125" y="-27" width="186.90625" height="54"></rect><g class="label" style="" transform="translate(-63.453125, -12)"><rect></rect><foreignObject width="126.90625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>WebSocket server</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-HTTP-5" transform="translate(1254.79296875, 214)"><rect class="basic label-container" style="" x="-73.3515625" y="-27" width="146.703125" height="54"></rect><g class="label" style="" transform="translate(-43.3515625, -12)"><rect></rect><foreignObject width="86.703125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>HTTP server</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-CM-6" transform="translate(1056.41015625, 447)"><rect class="basic label-container" style="" x="-92.140625" y="-27" width="184.28125" height="54"></rect><g class="label" style="" transform="translate(-62.140625, -12)"><rect></rect><foreignObject width="124.28125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>Channel manager</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-GWR-7" transform="translate(1046.41015625, 318)"><rect class="basic label-container" style="" x="-115.5625" y="-27" width="231.125" height="54"></rect><g class="label" style="" transform="translate(-85.5625, -12)"><rect></rect><foreignObject width="171.125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>Gateway request router</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-PR-8" transform="translate(1289.95703125, 447)"><rect class="basic label-container" style="" x="-81.50390625" y="-27" width="163.0078125" height="54"></rect><g class="label" style="" transform="translate(-51.50390625, -12)"><rect></rect><foreignObject width="103.0078125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>Plugin registry</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-Agents-9" transform="translate(172.640625, 447)"><rect class="basic label-container" style="" x="-129.640625" y="-27" width="259.28125" height="54"></rect><g class="label" style="" transform="translate(-99.640625, -12)"><rect></rect><foreignObject width="199.28125" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>agents pi-embedded-runner</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-Route-10" transform="translate(155.4375, 601)"><rect class="basic label-container" style="" x="-95.234375" y="-27" width="190.46875" height="54"></rect><g class="label" style="" transform="translate(-65.234375, -12)"><rect></rect><foreignObject width="130.46875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>routing auto-reply</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-CFG-11" transform="translate(383.22265625, 601)"><rect class="basic label-container" style="" x="-82.55078125" y="-27" width="165.1015625" height="54"></rect><g class="label" style="" transform="translate(-52.55078125, -12)"><rect></rect><foreignObject width="105.1015625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>config sessions</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-Ch-12" transform="translate(1076.5078125, 601)"><rect class="basic label-container" style="" x="-86.328125" y="-27" width="172.65625" height="54"></rect><g class="label" style="" transform="translate(-56.328125, -12)"><rect></rect><foreignObject width="112.65625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>Channel plugins</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-Prov-13" transform="translate(1299.95703125, 601)"><rect class="basic label-container" style="" x="-87.12109375" y="-27" width="174.2421875" height="54"></rect><g class="label" style="" transform="translate(-57.12109375, -12)"><rect></rect><foreignObject width="114.2421875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>Provider plugins</p></span></div></foreignObject></g></g></g></g></g></svg></div>
+<h2 data-heading="2. Repository top level" dir="auto">2. Repository top level</h2>
+<table>
+<thead>
+<tr>
+<th>Path</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="code-styler-inline">src/</code></td>
+<td>All core TypeScript: CLI, gateway, agents, config, routing, plugins, infra, media, tests colocated as <code class="code-styler-inline">*.test.ts</code>.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">extensions/*</code></td>
+<td>Workspace <strong>plugins</strong> (one package per id in normal cases). Each has <code class="code-styler-inline">openclaw.plugin.json</code> and its own <code class="code-styler-inline">package.json</code>.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">apps/</code></td>
+<td>macOS, iOS, Android, and related native projects; consume the gateway protocol.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">docs/</code></td>
+<td>Mintlify documentation. Generated config schema and other artifacts live under <code class="code-styler-inline">docs/.generated/</code>.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">dist/</code></td>
+<td><code class="code-styler-inline">pnpm build</code> output; published package <code class="code-styler-inline">main</code> and <code class="code-styler-inline">exports</code> point here.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">skills/</code></td>
+<td>Bundled skill assets used by the agent stack where configured.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">scripts/</code></td>
+<td>Repo automation (packaging, i18n, commit helpers, and so on).</td>
+</tr>
+</tbody>
+</table>
+<p dir="auto">User-facing docs and UI say <strong>plugin</strong>; the internal directory name <strong><code class="code-styler-inline">extensions/*</code></strong> is kept for tooling and history (see repository guidelines).</p>
+<h2 data-heading="3. `src/` directory reference" dir="auto">3. <code class="code-styler-inline">src/</code> directory reference</h2>
+<p dir="auto">Use this table to decide <strong>where a change belongs</strong>. Paths are repo-root relative.</p>
+<table>
+<thead>
+<tr>
+<th>Directory</th>
+<th>Responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="code-styler-inline">src/acp/</code></td>
+<td>ACP integration: gateway client wiring, session identity helpers used when ACP is enabled.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/agents/</code></td>
+<td>Agent execution: Pi embedded runner, model catalog, tools, auth, transcripts, sandbox, skills snapshots, provider capabilities.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/auto-reply/</code></td>
+<td>Inbound reply pipeline: templating, dispatch, directives, command handling hooks into routing.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/bindings/</code></td>
+<td>Binding helpers shared across surfaces (for example session or channel bindings).</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/bootstrap/</code></td>
+<td>Early boot helpers (for example extra CA certs for child processes).</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/browser/</code></td>
+<td>Browser automation and control server used by gateway and CLI (<code class="code-styler-inline">browser</code> commands).</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/canvas-host/</code></td>
+<td>Agent-editable canvas and A2UI host assets and server glue.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/channels/</code></td>
+<td>Channel plugin types, bundled channel list, registry loaders, catalog, contracts, and shared channel helpers.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/cli/</code></td>
+<td>Commander program, argv helpers, progress UI, gateway argv for daemon, completion, deps.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/commands/</code></td>
+<td>CLI command implementations invoked from <code class="code-styler-inline">src/cli/program/</code> (status, doctor, onboard, gateway, and so on).</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/compat/</code></td>
+<td>Compatibility shims for renames and migrations.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/config/</code></td>
+<td>Config load, merge, schema, validation, per-channel types, sessions store paths, logging config.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/context-engine/</code></td>
+<td>Context assembly and related logic for agent prompts.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/cron/</code></td>
+<td>Scheduled jobs service used by the gateway.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/daemon/</code></td>
+<td>Launch arguments, launchd helpers, and gateway process wiring for supervised runs.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/gateway/</code></td>
+<td>Gateway server implementation, protocol schemas, WS connection handler, HTTP routes, auth, hooks, node registry.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/hooks/</code></td>
+<td>Typed hook definitions and gateway hook dispatch mapping.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/i18n/</code></td>
+<td>CLI and core i18n helpers.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/image-generation/</code></td>
+<td>Image generation provider registry and helpers.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/infra/</code></td>
+<td>Ports, backoff, errors, outbound target resolver, fetch helpers, provider usage logging, shared infra.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/interactive/</code></td>
+<td>Interactive prompts used during configure and onboarding flows.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/link-understanding/</code></td>
+<td>Link unfurling and understanding helpers.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/logging/</code></td>
+<td>Subsystem loggers and structured logging helpers.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/media/</code></td>
+<td>Media pipeline (images, audio normalization, and related utilities).</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/media-understanding/</code></td>
+<td>Media understanding provider registry.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/memory/</code></td>
+<td>Memory backends and prompt sections for long-term recall.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/node-host/</code></td>
+<td>Host-side helpers for paired nodes where applicable.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/pairing/</code></td>
+<td>Pairing stores and helpers shared across channels and gateway.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/plugin-sdk/</code></td>
+<td>Published <strong><code class="code-styler-inline">openclaw/plugin-sdk</code></strong> surface; extensions must depend on this, not on deep <code class="code-styler-inline">src/</code> imports.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/plugins/</code></td>
+<td>Plugin discovery, manifest parsing, loader (jiti), registry, runtime, provider catalog, CLI registration.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/polls/</code></td>
+<td>Polls feature implementation.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/process/</code></td>
+<td>Managed subprocess execution (<code class="code-styler-inline">runExec</code>, timeouts).</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/routing/</code></td>
+<td>Agent route resolution, session keys, account lookup, delivery planning shared with channels.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/runtime.ts</code></td>
+<td>Small shared runtime type (<code class="code-styler-inline">RuntimeEnv</code>) and defaults used across CLI and gateway.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/secrets/</code></td>
+<td>Secret references and provider env resolution.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/security/</code></td>
+<td>Security-related shared helpers.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/sessions/</code></td>
+<td>Session lifecycle helpers outside the pure config store (kill, history HTTP helpers live near gateway).</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/shared/</code></td>
+<td>Cross-cutting small types and helpers.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/terminal/</code></td>
+<td>Tables, palette, safe wrapping for CLI output.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/tts/</code></td>
+<td>Text-to-speech provider registry and types.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/tui/</code></td>
+<td>Terminal UI mode for local use.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/types/</code></td>
+<td>Shared TS types.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/utils.ts</code></td>
+<td>General utilities (including WhatsApp JID helpers and related).</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/web/</code></td>
+<td>Built-in web channel and web-facing glue (not the macOS app).</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/web-search/</code></td>
+<td>Web search provider wiring.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">src/wizard/</code></td>
+<td>Configure wizard session state machine shared with gateway <code class="code-styler-inline">wizard</code> methods.</td>
+</tr>
+</tbody>
+</table>
+<p dir="auto">Files at <code class="code-styler-inline">src/</code> root worth remembering:</p>
+<ul>
+<li dir="auto"><code class="code-styler-inline">src/entry.ts</code> — CLI early argv handling; loads <code class="code-styler-inline">src/cli/run-main.js</code> for full CLI.</li>
+<li dir="auto"><code class="code-styler-inline">src/index.ts</code> — Dual behavior: <strong>library</strong> lazy exports via <code class="code-styler-inline">library.js</code> when imported, <strong>CLI</strong> when executed as main via <code class="code-styler-inline">runLegacyCliEntry</code>.</li>
+<li dir="auto"><code class="code-styler-inline">src/library.ts</code> — Stable programmatic exports (<code class="code-styler-inline">loadConfig</code>, <code class="code-styler-inline">createDefaultDeps</code>, session helpers, and so on).</li>
+</ul>
+<h2 data-heading="4. Packaging and build" dir="auto">4. Packaging and build</h2>
+<ul>
+<li dir="auto"><strong><code class="code-styler-inline">package.json</code></strong> <code class="code-styler-inline">bin.openclaw</code> points at <code class="code-styler-inline">openclaw.mjs</code>, which boots compiled output in <code class="code-styler-inline">dist/</code>.</li>
+<li dir="auto"><strong><code class="code-styler-inline">package.json</code></strong> <code class="code-styler-inline">exports</code> exposes <code class="code-styler-inline">.</code> and many <strong><code class="code-styler-inline">openclaw/plugin-sdk/*</code></strong> subpaths for extensions.</li>
+<li dir="auto"><strong><code class="code-styler-inline">pnpm build</code></strong> produces <code class="code-styler-inline">dist/</code>; gateway and CLI run against this in production installs.</li>
+<li dir="auto">Development uses <strong><code class="code-styler-inline">pnpm openclaw</code></strong> / <strong><code class="code-styler-inline">pnpm dev</code></strong> so contributors rarely run raw <code class="code-styler-inline">dist/</code> locally.</li>
+</ul>
+<h2 data-heading="5. CLI architecture" dir="auto">5. CLI architecture</h2>
+<h3 data-heading="5.1. Program construction" dir="auto">5.1. Program construction</h3>
+<ul>
+<li dir="auto"><code class="code-styler-inline">src/cli/program/build-program.ts</code> — builds the root Commander, enables positional options, wires help, <strong>pre-action hooks</strong>, and calls <code class="code-styler-inline">registerProgramCommands</code>.</li>
+<li dir="auto"><code class="code-styler-inline">src/cli/program/command-registry.ts</code> — <strong>lazy</strong> registration: each top-level command (for example <code class="code-styler-inline">onboard</code>, <code class="code-styler-inline">gateway</code>, <code class="code-styler-inline">doctor</code>) is loaded via dynamic <code class="code-styler-inline">import()</code> when that command is the primary argv target. This keeps cold start fast.</li>
+<li dir="auto"><code class="code-styler-inline">src/cli/program/register.subclis.ts</code> — optional sub-CLIs and additional registration paths.</li>
+<li dir="auto"><code class="code-styler-inline">src/cli/deps.ts</code> — <code class="code-styler-inline">createDefaultDeps()</code> is the shared dependency bucket injected into gateway context and many commands (filesystem, exec, logging).</li>
+</ul>
+<h3 data-heading="5.2. Startup sequence (`runCli`)" dir="auto">5.2. Startup sequence (<code class="code-styler-inline">runCli</code>)</h3>
+<p dir="auto"><code class="code-styler-inline">src/cli/run-main.ts</code>:</p>
+<ol>
+<li dir="auto">Normalizes argv (Windows), parses <strong><code class="code-styler-inline">--profile</code></strong> early, applies profile env.</li>
+<li dir="auto">Loads CLI dotenv quietly, normalizes env, optionally ensures <code class="code-styler-inline">openclaw</code> is on <code class="code-styler-inline">PATH</code>.</li>
+<li dir="auto">Asserts supported Node runtime.</li>
+<li dir="auto">May short-circuit to <strong>root help</strong> or <strong><code class="code-styler-inline">tryRouteCli</code></strong> (special argv routes).</li>
+<li dir="auto">Enables console capture, builds the program, installs unhandled rejection and uncaught exception handlers.</li>
+<li dir="auto">Resolves the <strong>primary command</strong> from argv; if known, registers only that core command module first, then sub-CLIs.</li>
+<li dir="auto">Unless skipped for fast paths, loads validated config and <strong><code class="code-styler-inline">registerPluginCliCommands</code></strong> from <code class="code-styler-inline">src/plugins/cli.ts</code> so plugins contribute CLI flags.</li>
+<li dir="auto">Parses argv with Commander.</li>
+</ol>
+<h3 data-heading="5.3. `tryRouteCli`" dir="auto">5.3. <code class="code-styler-inline">tryRouteCli</code></h3>
+<p dir="auto"><code class="code-styler-inline">src/cli/route.ts</code> handles argv patterns that should not go through the full Commander tree (for example dedicated utilities). Extend here only when the full program tree is intentionally bypassed.</p>
+<h2 data-heading="6. Gateway architecture" dir="auto">6. Gateway architecture</h2>
+<h3 data-heading="6.1. Server bootstrap" dir="auto">6.1. Server bootstrap</h3>
+<ul>
+<li dir="auto"><code class="code-styler-inline">src/gateway/server.impl.ts</code> — <strong><code class="code-styler-inline">startGatewayServer</code></strong>: resolves config at start, constructs <strong>channel manager</strong> via <code class="code-styler-inline">createChannelManager</code> in <code class="code-styler-inline">src/gateway/server-channels.ts</code>, builds HTTP and WebSocket stack through <strong><code class="code-styler-inline">createGatewayRuntimeState</code></strong> (<code class="code-styler-inline">src/gateway/server-runtime-state.ts</code>), wires <strong>node registry</strong>, session subscribers, cron, and reload hooks.</li>
+<li dir="auto"><code class="code-styler-inline">src/gateway/server-startup.ts</code> — <strong><code class="code-styler-inline">startGatewaySidecars</code></strong>: session lock cleanup, optional browser control server, Gmail watcher, model prewarm, <strong>channel start</strong>, internal hooks, <strong>plugin services</strong>, memory backend, restart sentinel wake.</li>
+<li dir="auto"><code class="code-styler-inline">src/gateway/config-reload.ts</code> — config hot reload paths used when operators patch config at runtime.</li>
+</ul>
+<h3 data-heading="6.2. WebSocket request routing" dir="auto">6.2. WebSocket request routing</h3>
+<p dir="auto">All JSON-RPC-style methods flow through <strong><code class="code-styler-inline">handleGatewayRequest</code></strong> in <code class="code-styler-inline">src/gateway/server-methods.ts</code>:</p>
+<ol>
+<li dir="auto"><strong><code class="code-styler-inline">authorizeGatewayMethod</code></strong> — combines <strong>role policy</strong> (<code class="code-styler-inline">src/gateway/role-policy.ts</code>) and <strong>operator scopes</strong> (<code class="code-styler-inline">src/gateway/method-scopes.ts</code>). The <code class="code-styler-inline">health</code> method is special-cased.</li>
+<li dir="auto"><strong>Control-plane write budget</strong> for <code class="code-styler-inline">config.apply</code>, <code class="code-styler-inline">config.patch</code>, <code class="code-styler-inline">update.run</code> (<code class="code-styler-inline">src/gateway/control-plane-rate-limit.ts</code>).</li>
+<li dir="auto">Handler lookup: <strong><code class="code-styler-inline">opts.extraHandlers[method]</code></strong> (plugin-registered gateway methods) first, else <strong><code class="code-styler-inline">coreGatewayHandlers[method]</code></strong>.</li>
+<li dir="auto">The handler runs inside <strong><code class="code-styler-inline">withPluginRuntimeGatewayRequestScope</code></strong> so plugin runtime can call back into the gateway (for example subagent dispatch in <code class="code-styler-inline">src/gateway/server-plugins.ts</code>).</li>
+</ol>
+<h3 data-heading="6.3. Core gateway methods (merged handler map)" dir="auto">6.3. Core gateway methods (merged handler map)</h3>
+<p dir="auto"><code class="code-styler-inline">coreGatewayHandlers</code> spreads the following modules from <code class="code-styler-inline">src/gateway/server-methods.ts</code> (each exports a map keyed by method string):</p>
+<table>
+<thead>
+<tr>
+<th>Module file</th>
+<th>Typical concerns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="code-styler-inline">connect.ts</code></td>
+<td>First-frame handshake, hello snapshot, presence.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">logs.ts</code></td>
+<td>Log tail or query surfaces for control clients.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">voicewake.ts</code></td>
+<td>Voice wake forwarding hooks.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">health.ts</code></td>
+<td>Health and readiness aggregation.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">channels.ts</code></td>
+<td>Channel status, start/stop, probes coordinated with <code class="code-styler-inline">ChannelManager</code>.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">chat.ts</code></td>
+<td>Chat completions style runs, streaming buffers, abort controllers.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">cron.ts</code></td>
+<td>Cron store and scheduling RPC.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">devices.ts</code></td>
+<td>Device identity and pairing flows at the gateway.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">doctor.ts</code></td>
+<td>Doctor checks invoked remotely.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">exec-approvals.ts</code></td>
+<td>Exec approval queue for gated tools.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">web.ts</code></td>
+<td>Web channel and related control.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">models.ts</code></td>
+<td>Model listing and catalog queries.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">config.ts</code></td>
+<td>Config get, apply, patch with auth gates.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">wizard.ts</code></td>
+<td>Configure wizard bridging to <code class="code-styler-inline">src/wizard/</code>.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">talk.ts</code></td>
+<td>Talk or voice-related gateway RPCs.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">tools-catalog.ts</code></td>
+<td>Tool listing for UIs.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">tts.ts</code></td>
+<td>TTS requests.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">skills.ts</code></td>
+<td>Skills discovery and status for sessions.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">sessions.ts</code></td>
+<td>Session CRUD and usage surfaces.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">system.ts</code></td>
+<td>System-level operations (presence, shutdown hooks, and similar).</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">update.ts</code></td>
+<td>In-place update triggers.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">nodes.ts</code> / <code class="code-styler-inline">nodes-pending.ts</code></td>
+<td>Node commands, capabilities, pending approvals.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">push.ts</code></td>
+<td>Mobile or push bridge hooks.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">send.ts</code></td>
+<td>Outbound message send with idempotency.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">usage.ts</code></td>
+<td>Usage stats and billing-related summaries.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">agent.ts</code> / <code class="code-styler-inline">agents.ts</code></td>
+<td>Primary <strong><code class="code-styler-inline">agent</code></strong> run and multi-agent helpers.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">browser.ts</code></td>
+<td>Remote browser automation RPCs.</td>
+</tr>
+</tbody>
+</table>
+<p dir="auto">Plugins may add methods by contributing to <strong><code class="code-styler-inline">extraHandlers</code></strong> during gateway setup (see <code class="code-styler-inline">src/gateway/server-plugins.ts</code> and plugin runtime types).</p>
+<h3 data-heading="6.4. Channel manager" dir="auto">6.4. Channel manager</h3>
+<p dir="auto"><code class="code-styler-inline">src/gateway/server-channels.ts</code> implements <strong><code class="code-styler-inline">createChannelManager</code></strong>:</p>
+<ul>
+<li dir="auto">Tracks per-account <strong>abort controllers</strong>, in-flight <strong>start</strong> promises, and <strong>runtime snapshots</strong> for status APIs.</li>
+<li dir="auto">Uses <strong><code class="code-styler-inline">getChannelPlugin</code></strong> / registry to resolve the implementation for each <code class="code-styler-inline">ChannelId</code>.</li>
+<li dir="auto">Applies restart backoff (<code class="code-styler-inline">CHANNEL_RESTART_POLICY</code>) on failures.</li>
+<li dir="auto">Passes optional <strong><code class="code-styler-inline">PluginRuntime["channel"]</code></strong> into channel gateway contexts so <strong>external</strong> channel plugins can call SDK reply and routing helpers without importing <code class="code-styler-inline">src/**</code> directly.</li>
+</ul>
+<p dir="auto">Bundled channel implementations are imported from <code class="code-styler-inline">extensions/*</code> and listed in <code class="code-styler-inline">src/channels/plugins/bundled.ts</code>. Dynamic resolution for a channel id goes through <strong><code class="code-styler-inline">loadChannelPlugin</code></strong> (<code class="code-styler-inline">src/channels/plugins/load.ts</code>), which reads the <strong>active plugin registry</strong> (<code class="code-styler-inline">getActivePluginRegistry()</code>).</p>
+<h3 data-heading="6.5. Protocol and typing" dir="auto">6.5. Protocol and typing</h3>
+<ul>
+<li dir="auto"><code class="code-styler-inline">src/gateway/protocol/</code> — TypeBox schemas, error codes, and shared request and event types. JSON Schema generation and Swift model codegen consume this layer.</li>
+<li dir="auto"><code class="code-styler-inline">src/gateway/server/ws-connection/</code> — Frame handling, auth context, message handler pipeline after the socket connects.</li>
+</ul>
+<h3 data-heading="6.6. HTTP surfaces" dir="auto">6.6. HTTP surfaces</h3>
+<p dir="auto">HTTP entry and feature flags are split across:</p>
+<ul>
+<li dir="auto"><code class="code-styler-inline">src/gateway/server-http.ts</code> and related helpers for static control UI, OpenAI-compatible endpoints when enabled, sessions history endpoints, plugin HTTP routers (<code class="code-styler-inline">src/gateway/server/plugins-http/</code>), TLS, and security headers.</li>
+</ul>
+<p dir="auto">Exact routes change over time; when adding HTTP APIs, follow existing patterns in <code class="code-styler-inline">src/gateway/</code> and mirror documentation in <code class="code-styler-inline">docs/gateway/</code> when user-visible.</p>
+<h2 data-heading="7. Agent execution path (detailed)" dir="auto">7. Agent execution path (detailed)</h2>
+<h3 data-heading="7.1. Gateway to embedded runner" dir="auto">7.1. Gateway to embedded runner</h3>
+<ol>
+<li dir="auto"><strong><code class="code-styler-inline">agent</code></strong> WS method lands in <code class="code-styler-inline">src/gateway/server-methods/agent.ts</code>.</li>
+<li dir="auto">The handler resolves <strong>session key</strong>, <strong>workspace</strong>, <strong>routing</strong>, <strong>delivery</strong> options, <strong>idempotency</strong>, and <strong>pairing</strong> policy, then calls <strong><code class="code-styler-inline">dispatchAgentRunFromGateway</code></strong>.</li>
+<li dir="auto">That calls <strong><code class="code-styler-inline">agentCommandFromIngress</code></strong> with an <strong>ingress</strong> object describing the originating channel, account, thread, images, thinking level, lane, and optional overrides.</li>
+<li dir="auto"><strong><code class="code-styler-inline">agentCommandFromIngress</code></strong> lives in <strong><code class="code-styler-inline">src/agents/agent-command.ts</code></strong> and is re-exported from <strong><code class="code-styler-inline">src/commands/agent.ts</code></strong> (gateway and OpenAI-compatible HTTP import the commands barrel). It prepares execution via <strong><code class="code-styler-inline">prepareAgentCommandExecution</code></strong> and <strong><code class="code-styler-inline">runAgentAttempt</code></strong> in the same module.</li>
+<li dir="auto"><strong><code class="code-styler-inline">runEmbeddedPiAgent</code></strong> (<code class="code-styler-inline">src/agents/pi-embedded-runner/run.ts</code>) performs the actual model loop, tool calls, streaming callbacks, and transcript writes.</li>
+</ol>
+<h3 data-heading="7.2. Invariants for transcript writes" dir="auto">7.2. Invariants for transcript writes</h3>
+<p dir="auto">Gateway server method code and tests emphasize: <strong>Pi session JSONL</strong> must preserve the <code class="code-styler-inline">parentId</code> chain. Use <strong><code class="code-styler-inline">SessionManager.appendMessage</code></strong> (or a wrapper) rather than ad hoc JSONL appends. See <code class="code-styler-inline">src/gateway/server-methods/AGENTS.md</code> in the repo.</p>
+<h3 data-heading="7.3. CLI `agent` command" dir="auto">7.3. CLI <code class="code-styler-inline">agent</code> command</h3>
+<p dir="auto"><code class="code-styler-inline">src/cli/program/register.agent.ts</code> registers <strong><code class="code-styler-inline">openclaw agent</code></strong>. The default path calls <strong><code class="code-styler-inline">src/commands/agent-via-gateway.ts</code></strong> so the CLI acts as a <strong>gateway client</strong> (same server-side <strong><code class="code-styler-inline">agent</code></strong> method as WebChat and other clients). With <strong><code class="code-styler-inline">--local</code></strong>, the CLI runs the <strong>embedded</strong> stack in-process via <strong><code class="code-styler-inline">src/agents/agent-command.ts</code></strong> instead of remote WS.</p>
+<h2 data-heading="8. Routing and auto-reply" dir="auto">8. Routing and auto-reply</h2>
+<ul>
+<li dir="auto"><strong><code class="code-styler-inline">src/routing/</code></strong> — Session key derivation, account normalization, route tables, delivery target resolution. Used by both gateway agent ingress and channels when deciding which agent workspace should answer.</li>
+<li dir="auto"><strong><code class="code-styler-inline">src/auto-reply/</code></strong> — Reply templates, <strong><code class="code-styler-inline">getReplyFromConfig</code></strong>, directive parsing, and the bridge from inbound messages to <strong>dispatch</strong> paths that ultimately trigger agent runs or quick replies.</li>
+</ul>
+<h2 data-heading="9. Plugins and extensions" dir="auto">9. Plugins and extensions</h2>
+<h3 data-heading="9.1. Load order (conceptual)" dir="auto">9.1. Load order (conceptual)</h3>
+<ol>
+<li dir="auto"><strong>Discovery</strong> — <code class="code-styler-inline">src/plugins/discovery.ts</code> enumerates candidates from config, workspace, global roots, and bundled extensions.</li>
+<li dir="auto"><strong>Manifests</strong> — <code class="code-styler-inline">src/plugins/manifest-registry.ts</code> reads <strong><code class="code-styler-inline">openclaw.plugin.json</code></strong> (native manifest) and supported bundle formats.</li>
+<li dir="auto"><strong>Load</strong> — <code class="code-styler-inline">src/plugins/loader.ts</code> <strong><code class="code-styler-inline">loadOpenClawPlugins</code></strong> uses <strong>jiti</strong> with a carefully constructed alias map (<code class="code-styler-inline">src/plugins/sdk-alias.ts</code>) so <code class="code-styler-inline">openclaw/plugin-sdk/*</code> resolves to the in-repo SDK without letting extensions import arbitrary core internals.</li>
+<li dir="auto"><strong>Activate</strong> — registry entries record providers, channels, tools, gateway methods, HTTP routes, and hooks. <strong><code class="code-styler-inline">setActivePluginRegistry</code></strong> publishes the registry for channel loaders and runtime.</li>
+</ol>
+<h3 data-heading="9.2. Extension package rules" dir="auto">9.2. Extension package rules</h3>
+<p dir="auto">Inside <code class="code-styler-inline">extensions/&lt;id&gt;/</code>:</p>
+<ul>
+<li dir="auto">Put runtime dependencies in that package <strong><code class="code-styler-inline">dependencies</code></strong> (not the repo root), and avoid <strong><code class="code-styler-inline">workspace:*</code></strong> in dependencies for npm compatibility in plugin installs.</li>
+<li dir="auto">Production code should import <strong><code class="code-styler-inline">openclaw/plugin-sdk/*</code></strong> and local barrels (<code class="code-styler-inline">api.ts</code>, <code class="code-styler-inline">runtime-api.ts</code>), not <strong><code class="code-styler-inline">src/</code></strong> paths from another package.</li>
+</ul>
+<p dir="auto">See <a class="internal-link" data-href="../../../../plugins/architecture/" href="../../../../plugins/architecture/" target="" rel="noopener nofollow">Plugin internals</a> for capability shapes, hook-only plugins, and compatibility labels surfaced in <strong><code class="code-styler-inline">openclaw doctor</code></strong> and <strong><code class="code-styler-inline">openclaw plugins inspect</code></strong>.</p>
+<h2 data-heading="10. Supporting subsystems" dir="auto">10. Supporting subsystems</h2>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Entry concepts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Memory</strong></td>
+<td><code class="code-styler-inline">src/memory/</code> — prompt sections, optional backends started from gateway sidecars.</td>
+</tr>
+<tr>
+<td><strong>Context engine</strong></td>
+<td><code class="code-styler-inline">src/context-engine/</code> — prompt context assembly for agents.</td>
+</tr>
+<tr>
+<td><strong>Media</strong></td>
+<td><code class="code-styler-inline">src/media/</code> — inbound media normalization; understanding registry under <code class="code-styler-inline">src/media-understanding/</code>.</td>
+</tr>
+<tr>
+<td><strong>Browser</strong></td>
+<td><code class="code-styler-inline">src/browser/</code> — Playwright-based automation; CLI and gateway share server context patterns.</td>
+</tr>
+<tr>
+<td><strong>Canvas</strong></td>
+<td><code class="code-styler-inline">src/canvas-host/</code> — HTTP host for agent-created canvases and A2UI bundles (<code class="code-styler-inline">pnpm canvas:a2ui:bundle</code> when changing bundled UI).</td>
+</tr>
+<tr>
+<td><strong>Cron</strong></td>
+<td><code class="code-styler-inline">src/cron/</code> — scheduled tasks; gateway exposes cron methods and persists store paths.</td>
+</tr>
+<tr>
+<td><strong>TTS</strong></td>
+<td><code class="code-styler-inline">src/tts/</code> — provider registry for speech output.</td>
+</tr>
+<tr>
+<td><strong>Image generation</strong></td>
+<td><code class="code-styler-inline">src/image-generation/</code> — provider registry for image tools.</td>
+</tr>
+<tr>
+<td><strong>ACP</strong></td>
+<td><code class="code-styler-inline">src/acp/</code> — optional ACP bridge behavior when enabled in config.</td>
+</tr>
+<tr>
+<td><strong>Daemon</strong></td>
+<td><code class="code-styler-inline">src/daemon/</code> — supervised gateway argv and macOS launch integration helpers.</td>
+</tr>
+<tr>
+<td><strong>Pairing</strong></td>
+<td><code class="code-styler-inline">src/pairing/</code> — shared pairing stores feeding gateway device flows.</td>
+</tr>
+</tbody>
+</table>
+<h2 data-heading="11. Configuration and on-disk state" dir="auto">11. Configuration and on-disk state</h2>
+<ul>
+<li dir="auto"><strong>Config</strong> loads from <code class="code-styler-inline">src/config/config.ts</code> with schema validation and merge rules; generated docs live under <code class="code-styler-inline">docs/.generated/</code> and drift checks run via <strong><code class="code-styler-inline">pnpm config:docs:check</code></strong> when schema changes.</li>
+<li dir="auto"><strong>Sessions</strong> metadata is JSON-backed under <code class="code-styler-inline">src/config/sessions/</code> helpers; default state dir is under <strong><code class="code-styler-inline">~/.openclaw/</code></strong> for installs (see user-facing security notes in docs: never commit real paths or tokens).</li>
+</ul>
+<h2 data-heading="12. Install scripts (separate repo)" dir="auto">12. Install scripts (separate repo)</h2>
+<p dir="auto">Install scripts served from <strong><code class="code-styler-inline">https://openclaw.ai/*</code></strong> live in the sibling <strong><code class="code-styler-inline">openclaw.ai</code></strong> repository (<code class="code-styler-inline">public/install.sh</code>, and related). Core repo changes that affect install UX often need a coordinated change there.</p>
+<h2 data-heading="13. Tests and quality gates" dir="auto">13. Tests and quality gates</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="code-styler-inline">pnpm check</code></td>
+<td>Lint and format (oxlint, oxfmt).</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">pnpm test</code></td>
+<td>Vitest across the repo; prefer <strong><code class="code-styler-inline">pnpm test -- &lt;path&gt; -t "name"</code></strong> for scoped runs.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">pnpm build</code></td>
+<td>TypeScript compile to <code class="code-styler-inline">dist/</code>; required when changes affect exports, bundling, or lazy import boundaries.</td>
+</tr>
+<tr>
+<td><code class="code-styler-inline">pnpm tsgo</code></td>
+<td>Typecheck pass used in CI workflows.</td>
+</tr>
+</tbody>
+</table>
+<p dir="auto">Gateway-heavy changes should include or extend tests beside <code class="code-styler-inline">src/gateway/*.test.ts</code>. Channel changes should consider <strong>all</strong> bundled and extension channels when touching shared routing or pairing.</p>
+<h2 data-heading="14. Related documentation" dir="auto">14. Related documentation</h2>
+<ul>
+<li dir="auto"><a class="internal-link" data-href="../../../../concepts/architecture/" href="../../../../concepts/architecture/" target="" rel="noopener nofollow">Gateway architecture</a></li>
+<li dir="auto"><a class="internal-link" data-href="../../../../plugins/architecture/" href="../../../../plugins/architecture/" target="" rel="noopener nofollow">Plugin internals</a></li>
+<li dir="auto"><a class="internal-link" data-href="../../../../channels/channel-routing/" href="../../../../channels/channel-routing/" target="" rel="noopener nofollow">Channel routing</a></li>
+<li dir="auto"><a class="internal-link" data-href="../../../../gateway/protocol/" href="../../../../gateway/protocol/" target="" rel="noopener nofollow">Gateway protocol</a></li>
+<li dir="auto"><a class="internal-link" data-href="../../../../channels/pairing/" href="../../../../channels/pairing/" target="" rel="noopener nofollow">Pairing</a></li>
+<li dir="auto"><a class="internal-link" data-href="../../../../help/testing/" href="../../../../help/testing/" target="" rel="noopener nofollow">Testing</a></li>
+<li dir="auto"><a class="internal-link" data-href="../../../../configuration/" href="../../../../configuration/" target="" rel="noopener nofollow">Configuration</a></li>
+</ul>
+<script defer src="../../../../_assets/script.fad57313884515cf.js"></script>
+</div></div></div>
+    
+    
+    
+  </article></div>
+  </main>
+  <footer class="site-footer"><span>纸上季刊</span><span>缓慢阅读与长篇写作</span></footer>
+</div><div class="html-server-blog-progress html-server-style-lab-progress is-rule" data-blog-progress data-blog-runtime-progress data-progress-state="idle" role="progressbar" aria-label="Loading page" aria-hidden="true"><span class="html-server-blog-progress-track"><i></i><b></b><em></em><em></em><em></em></span></div>
+    <div class="html-server-blog-related-modal" data-blog-related-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-related-close aria-label="Close related articles"></button>
+      <section class="html-server-blog-related-panel" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-related-title">
+        <header><div><span class="html-server-blog-kicker" data-blog-related-kind></span><h2 id="html-server-blog-related-title" data-blog-related-title></h2></div><button type="button" data-blog-related-close aria-label="Close"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <p data-blog-related-count></p>
+        <div class="html-server-blog-related-list" data-blog-related-list></div>
+      </section>
+    </div>
+    <div class="html-server-blog-search-modal" data-blog-search-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-search-close aria-label="Close search"></button>
+      <section class="html-server-blog-search-panel site-dialog" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-search-title">
+        <header class="dialog-head"><div><span class="html-server-blog-kicker">SEARCH</span><h2 id="html-server-blog-search-title">搜索文章</h2></div><button type="button" data-blog-search-close aria-label="关闭"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <label class="search-field"><span>支持标题、标签、系列、目录和属性</span><input id="search-input" type="search" data-blog-global-search placeholder="输入关键词开始搜索" autocomplete="off"></label>
+        <p class="search-summary" id="search-summary" data-blog-search-count>输入关键词开始搜索</p>
+        <div class="html-server-blog-search-results search-results dialog-list" id="search-results" data-blog-search-results></div>
+      </section>
+    </div>
+    <div class="html-server-blog-folder-modal" data-blog-folder-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-folder-close aria-label="Close folders"></button>
+      <section class="html-server-blog-folder-panel site-dialog" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-folder-title">
+        <header class="dialog-head"><div><span class="html-server-blog-kicker">VAULT</span><h2 id="html-server-blog-folder-title" data-blog-folder-title>浏览根目录</h2></div><button type="button" data-blog-folder-close aria-label="关闭"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <nav class="html-server-blog-folder-breadcrumb directory-breadcrumbs" data-blog-folder-breadcrumb aria-label="目录面包屑"></nav>
+        <p data-blog-folder-count></p>
+        <div class="html-server-blog-folder-browser directory-list dialog-list" data-blog-folder-browser></div>
+      </section>
+    </div>
+    <script type="application/json" data-blog-article-index>[]</script>
+    <script type="application/json" data-blog-folder-index data-current-folder="大模型/大模型面试/面试相关">[]</script>
+    <script type="application/json" data-blog-appearance-contract>{"version":1,"layouts":[{"id":"default","themes":["inherit"]},{"id":"next","themes":["inherit","next-classic","swiss-index","literary-quarterly","terminal-manual","quiet-journal","newspaper-daily","mint-notebook","tailwind-workspace"]},{"id":"butterfly","themes":["inherit","butterfly-colorful","brutal-broadcast","future-signal","field-notes","gallery-canvas","toy-modules","sakura-notes","clear-sky"]},{"id":"akilar","themes":["inherit","akilar-ark"]},{"id":"noionion","themes":["inherit","noionion-original"]},{"id":"kratos","themes":["inherit","kratos-rebirth"]},{"id":"leezhiy","themes":["inherit","leezhiy-next"]},{"id":"daybook","themes":["inherit","daybook-original"]},{"id":"style-lab-swiss","themes":["inherit","swiss-index"]},{"id":"style-lab-literary","themes":["inherit","literary-quarterly"]},{"id":"style-lab-terminal","themes":["inherit","terminal-manual"]},{"id":"style-lab-brutal","themes":["inherit","brutal-broadcast"]},{"id":"style-lab-quiet","themes":["inherit","quiet-journal"]},{"id":"style-lab-newspaper","themes":["inherit","newspaper-daily"]},{"id":"style-lab-future","themes":["inherit","future-signal"]},{"id":"style-lab-field","themes":["inherit","field-notes"]},{"id":"style-lab-gallery","themes":["inherit","gallery-canvas"]},{"id":"style-lab-toy","themes":["inherit","toy-modules"]},{"id":"style-lab-mint","themes":["inherit","mint-notebook"]},{"id":"style-lab-sakura","themes":["inherit","sakura-notes"]},{"id":"style-lab-sky","themes":["inherit","clear-sky"]},{"id":"style-lab-tailwind","themes":["inherit","tailwind-workspace"]}]}</script>
+  </div>
+  <script defer src="../../../../_assets/script.905a72eede1c8c41.js"></script>
+</body>
+</html>

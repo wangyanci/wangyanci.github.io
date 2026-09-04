@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en" data-html-server-theme="light" data-blog-layout="style-lab-literary" data-blog-layout-theme="literary-quarterly" data-blog-page-kind="article" data-blog-mobile-zoom="false" data-theme="literary" data-mode="light" data-page="article" data-blog-theme-control="style-lab" data-blog-main-loading-class="html-server-blog-main-loading" data-blog-overview-loading-class="html-server-blog-overview-loading" data-blog-folder-loading-class="html-server-blog-folder-loading" data-blog-pagination-scroll="item" data-blog-pin-progress="true" data-blog-outline-shell-selector=".html-server-style-lab-outline" data-blog-outline-auto-hide="true" data-blog-sticky-header-selector=".html-server-style-lab-header,.html-server-lab-swiss-rail" data-blog-scroll-mode="app" data-blog-document-pinning="false" data-blog-document-pinning-filter-regular="false" style="--html-server-navigation-surface-light: #eee9df;--html-server-navigation-surface-dark: #201c18">
+<head><!--html-server-dynamic:start--><meta name="html-server-dynamic-page" data-html-server-dynamic-page data-html-server-dynamic-assertion-mode="every-page" data-html-server-dynamic-cache-ttl-ms="1800000" content="a-WyJzdHlsZS1sYWItbGl0ZXJhcnkiLCJsaXRlcmFyeS1xdWFydGVybHkiXQ"><style data-html-server-dynamic-prepaint>html{--html-server-navigation-surface-active:var(--html-server-navigation-surface-light,var(--html-server-blog-background-light,#f5f7fa));background:var(--html-server-navigation-surface-active)}html[data-html-server-theme="dark"]{--html-server-navigation-surface-active:var(--html-server-navigation-surface-dark,var(--html-server-blog-background-dark,#151515))}html[data-html-server-navigation-entering],html[data-html-server-dynamic-pending]{background:var(--html-server-navigation-surface-active)!important}html[data-html-server-navigation-entering] body,html[data-html-server-dynamic-pending] body{opacity:0!important}html[data-html-server-navigation-entering]::before,html[data-html-server-dynamic-pending]::before{content:"";position:fixed;inset:0;z-index:2147483646;background:var(--html-server-navigation-surface-active);pointer-events:none}html[data-html-server-navigation-entering]::after,html[data-html-server-dynamic-pending]::after{content:"";position:fixed;top:0;left:0;z-index:2147483647;width:38%;height:2px;background:var(--interactive-accent,#8b6f47);box-shadow:0 0 10px currentColor;animation:html-server-navigation-prepaint 1s ease-in-out infinite;pointer-events:none}@keyframes html-server-navigation-prepaint{0%{transform:translateX(-110%)}100%{transform:translateX(370%)}}@media(prefers-reduced-motion:reduce){html[data-html-server-navigation-entering]::after,html[data-html-server-dynamic-pending]::after{animation:none;width:100%;opacity:.7}}</style><script data-blog-navigation-bootstrap>(function(){
+  var root=document.documentElement,key='html-server:navigation-handoff',handoff=null;
+  try{handoff=JSON.parse(sessionStorage.getItem(key)||'null');}catch(error){}
+  var target=location.pathname+location.search;
+  if(handoff&&handoff.target===target&&Date.now()-Number(handoff.createdAt||0)<5000){
+    root.setAttribute('data-html-server-navigation-entering','');
+    var reveal=function(){requestAnimationFrame(function(){requestAnimationFrame(function(){root.removeAttribute('data-html-server-navigation-entering');try{sessionStorage.removeItem(key);}catch(error){}});});};
+    if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',reveal,{once:true});else reveal();
+    setTimeout(function(){root.removeAttribute('data-html-server-navigation-entering');},5000);
+  }else if(handoff){try{sessionStorage.removeItem(key);}catch(error){}}
+})();</script><script data-html-server-dynamic-bootstrap>(()=>{
+const m={"releaseId":"20260904091040909-e54ec6fc6a","appearanceKey":"a-WyJzdHlsZS1sYWItbGl0ZXJhcnkiLCJsaXRlcmFyeS1xdWFydGVybHkiXQ","route":"大模型/大模型面试/题集/00-Meta/MOCs/Agent基础概念MOC/index.html","outputRootRelativeUrl":"../../../../../../../../../../","siteRootRelativeUrl":"../../../../../../","assertionPolicy":{"mode":"every-page","cacheTtlMs":1800000}},S=1,C="html-server:dynamic-appearance:v1";
+const html=document.documentElement,pending='data-html-server-dynamic-pending';if(!html)return;html.setAttribute(pending,'');
+try{Object.defineProperty(window,'__htmlServerDynamicSiteRoot',{configurable:true,value:new URL(m.siteRootRelativeUrl||m.outputRootRelativeUrl,document.baseURI||location.href).href});}catch(_){}
+const reveal=()=>html.removeAttribute(pending);
+const safe=p=>{p=String(p||'').replace(/\\/g,'/').replace(/^\/+/, '');return !!p&&!p.split('/').includes('..')&&!/^[a-z][a-z\d+.-]*:/i.test(p)};
+const routeUrl=p=>String(p).split('/').map(encodeURIComponent).join('/');
+const get=async u=>{const c=new AbortController(),t=setTimeout(()=>c.abort(),2000);try{const r=await fetch(u,{cache:'no-store',credentials:'same-origin',signal:c.signal});if(!r.ok)throw Error(String(r.status));return await r.json()}finally{clearTimeout(t)}};
+const p=m.assertionPolicy||{},mode=p.mode==='home-only'||p.mode==='cache'?p.mode:'every-page',ttl=Math.max(60000,Number(p.cacheTtlMs)||1800000);
+let storage;try{storage=localStorage}catch(_){}
+const clear=()=>{try{storage&&storage.removeItem(C)}catch(_){}};
+try{Object.defineProperty(window,'HtmlServerDynamicAppearanceCache',{configurable:true,value:{key:C,clear,refresh:()=>{clear();location.reload()}}})}catch(_){}
+const read=()=>{try{const v=JSON.parse(storage&&storage.getItem(C)||'null');return v&&v.schemaVersion===S&&typeof v.appearanceKey==='string'&&typeof v.releaseId==='string'&&safe(v.path)&&Number.isFinite(v.selectionRevision)&&Number.isFinite(v.expiresAt)?v:null}catch(_){return null}};
+const cached=read(),home=m.route==='index.html',reload=(()=>{try{return performance.getEntriesByType('navigation')[0]?.type==='reload'}catch(_){return false}})();
+const cacheValid=!!cached&&cached.releaseId===m.releaseId&&(mode!=='cache'||cached.expiresAt>Date.now()),refresh=mode==='every-page'||(mode==='home-only'&&home)||(mode==='cache'&&(!cacheValid||reload));
+(async()=>{let navigating=false;
+const rootForPage=async()=>{const fallback=window.__htmlServerStaticFallbackRoot,discovered=fallback&&typeof fallback.then==='function'?await fallback:null;return new URL(discovered&&discovered.siteRoot?discovered.siteRoot:m.outputRootRelativeUrl,document.baseURI||location.href)};
+const move=async(key,pathValue,releaseId,canonical)=>{if(key===m.appearanceKey)return false;if(!safe(m.route)||!safe(pathValue))return false;const root=await rootForPage(),encoded=routeUrl(m.route),rel=canonical?encoded:pathValue.replace(/\/+$/,'')+'/'+encoded,guard='html-server-dynamic:'+releaseId+':'+key+':'+m.route;if(sessionStorage.getItem(guard)==='1')return false;const target=new URL(rel,root);target.search=location.search;target.hash=location.hash;sessionStorage.setItem(guard,'1');navigating=true;location.replace(target.href);return true};
+try{
+if(!refresh){if(!cacheValid)return;if(cached.appearanceKey===m.appearanceKey){sessionStorage.removeItem('html-server-dynamic:'+cached.releaseId+':'+cached.appearanceKey+':'+m.route);return;}await move(cached.appearanceKey,cached.path,cached.releaseId,false);return;}
+const root=await rootForPage(),pair=await Promise.all([get(new URL('_config/data.json',root)),get(new URL('_config/release.json',root))]),cfg=pair[0],ptr=pair[1];
+if(cfg.schemaVersion!==S)return;
+if(ptr.schemaVersion!==S||(cfg.selectionRevision!==undefined&&cfg.selectionRevision!==ptr.selectionRevision)||!safe(ptr.manifest))return;
+const man=await get(new URL(ptr.manifest,root));if(man.schemaVersion!==S||man.releaseId!==ptr.releaseId||man.selectionRevision!==ptr.selectionRevision||man.primaryAppearance!==ptr.primaryAppearance||!safe(m.route))return;
+const hit=Object.entries(man.sites||{}).find(([,v])=>v.appearance&&v.appearance.layout===cfg.blogLayout&&v.appearance.theme===cfg.blogLayoutTheme);if(!hit)return;
+const key=hit[0],site=hit[1];if(!Array.isArray(site.routes)||!site.routes.includes(m.route))return;
+if(!safe(site.path))return;const record={schemaVersion:S,appearanceKey:key,layout:site.appearance.layout,theme:site.appearance.theme,path:site.path,releaseId:ptr.releaseId,selectionRevision:ptr.selectionRevision,expiresAt:mode==='home-only'?0:Date.now()+ttl};try{storage&&storage.setItem(C,JSON.stringify(record))}catch(_){}
+const guard='html-server-dynamic:'+ptr.releaseId+':'+key+':'+m.route;if(key===m.appearanceKey){sessionStorage.removeItem(guard);return;}
+await move(key,site.path,ptr.releaseId,key===man.primaryAppearance);
+}catch(_){if(mode!=='every-page'&&cacheValid&&!navigating)await move(cached.appearanceKey,cached.path,cached.releaseId,false).catch(()=>{})}finally{if(!navigating)reveal();}})();
+})();</script><!--html-server-dynamic:end-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  
+  <script defer src="../../../../../../_assets/script.6d4f546be5f896d5.js"></script>
+  <script data-blog-theme-bootstrap>(function(){
+  var root = document.documentElement;
+  var theme = root.getAttribute('data-html-server-theme') || 'light';
+  try {
+    var stored = localStorage.getItem('html-server-blog-theme');
+    if (stored === 'dark' || stored === 'light') theme = stored;
+  } catch (error) {}
+  root.setAttribute('data-html-server-theme', theme);
+  root.classList.toggle('theme-dark', theme === 'dark');
+  root.classList.toggle('theme-light', theme !== 'dark');
+  root.style.backgroundColor = theme === 'dark'
+    ? 'var(--html-server-navigation-surface-dark, var(--html-server-blog-background-dark, #151515))'
+    : 'var(--html-server-navigation-surface-light, var(--html-server-blog-background-light, #f5f7fa))';
+})();</script>
+  
+  <title>Agent 基础概念 MOC · Digital Garden</title>
+  <link rel="shortcut icon" href="//obsidian.md/favicon.ico">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Mono:wght@300;400;500&family=IBM+Plex+Sans+Condensed:wght@400;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&family=Manrope:wght@400;600;800&family=Noto+Serif+SC:wght@400;600;800&family=Playfair+Display:wght@600;800&family=Space+Grotesk:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="../../../../../../_assets/blog.css">
+<link rel="preload" as="script" href="../../../../../../_assets/blog.js" fetchpriority="high"><script>window.__htmlServerStaticSearch="../../../../../../_assets/meta.json";window.__htmlServerStaticSidebar="../../../../../../_assets/sidebar.json?v=mtmqp68z-2gf";window.__htmlServerStaticPluginOverrides=window.__htmlServerStaticPluginOverrides||{};Object.assign(window.__htmlServerStaticPluginOverrides["blog-live2d"]||(window.__htmlServerStaticPluginOverrides["blog-live2d"]={}),{"localScriptUrl":"../../../../../../_assets/live2d-widget/L2Dwidget.min.js","localModelUrl":"../../../../../../_assets/live2d-widget/assets/koharu.model.json","assetBaseUrl":"../../../../../../_assets/live2d-widget"});</script></head>
+<body class="theme-light html-server-blog-body" data-blog-layout="style-lab-literary" data-blog-layout-theme="literary-quarterly" data-blog-page-kind="article" data-blog-style-isolation="strict" data-theme="literary" data-mode="light" data-page="article" data-blog-theme-control="style-lab" data-blog-main-loading-class="html-server-blog-main-loading" data-blog-overview-loading-class="html-server-blog-overview-loading" data-blog-folder-loading-class="html-server-blog-folder-loading" data-blog-pagination-scroll="item" data-blog-pin-progress="true" data-blog-outline-shell-selector=".html-server-style-lab-outline" data-blog-outline-auto-hide="true" data-blog-sticky-header-selector=".html-server-style-lab-header,.html-server-lab-swiss-rail" data-blog-scroll-mode="app" data-blog-document-pinning="false" data-blog-document-pinning-filter-regular="false" style="--html-server-navigation-surface-light: #eee9df;--html-server-navigation-surface-dark: #201c18">
+  <script data-blog-theme-bootstrap>(function(){
+  var theme = document.documentElement.getAttribute('data-html-server-theme') || 'light';
+  document.body.classList.toggle('theme-dark', theme === 'dark');
+  document.body.classList.toggle('theme-light', theme !== 'dark');
+})();</script>
+  <script type="application/json" data-blog-theme-image-groups>{}</script>
+  
+  <div class="html-server-blog-app">
+    <div class="html-server-style-lab-shell html-server-style-lab-literary">
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="html-server-style-lab-header site-header"><a class="html-server-style-lab-brand brand" href="../../../../../../" aria-label="回到文章列表"><b class="brand-mark">刊</b><span class="brand-copy"><strong>纸上季刊</strong><small>缓慢阅读与长篇写作</small></span></a><button class="menu-toggle" type="button" data-style-lab-menu aria-expanded="false" aria-controls="style-lab-main-nav">菜单</button><nav class="html-server-style-lab-nav main-nav" id="style-lab-main-nav" aria-label="主导航"><button type="button" data-style-lab-route="/">文章</button><button type="button" data-style-lab-route="/tags/">标签</button><button type="button" data-style-lab-route="/series/">系列</button><button type="button" data-style-lab-route="/archive/">归档</button></nav><div class="html-server-style-lab-tools header-tools" aria-label="站点工具"><button class="directory-toggle" type="button" data-blog-folder-open aria-label="打开目录"><span aria-hidden="true">▤</span><span>目录</span></button><button class="search-toggle" type="button" data-blog-search-open aria-label="打开搜索"><span aria-hidden="true">⌕</span><span>搜索</span></button><button class="mode-toggle" type="button" data-blog-theme aria-label="切换明暗主题"><span aria-hidden="true">◐</span><span class="mode-label">黑色</span></button></div></header>
+  <main id="content" class="html-server-style-lab-page html-server-blog-main html-server-style-lab-main" data-blog-main>
+    <div class="article-shell"><aside class="html-server-style-lab-outline article-toc"><nav class="html-server-blog-outline" data-blog-outline aria-label="Article outline">
+  <button class="html-server-blog-outline-toggle" type="button" data-blog-outline-toggle aria-expanded="true" aria-controls="html-server-blog-outline-list"><span>本文目录</span><b aria-hidden="true"><svg viewBox="0 0 20 20" focusable="false"><path d="m4.5 7.25 5.5 5.5 5.5-5.5"/></svg></b></button>
+  <strong>本文目录</strong>
+  <ol id="html-server-blog-outline-list"><li style="--outline-depth:0"><a href="#Agent%20%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%20MOC" data-blog-outline-link>Agent 基础概念 MOC</a></li><li style="--outline-depth:1"><a href="#%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5%E9%80%9F%E8%A7%88" data-blog-outline-link>核心概念速览</a></li><li style="--outline-depth:1"><a href="#%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86" data-blog-outline-link>面试题集</a></li><li style="--outline-depth:2"><a href="#%E5%9F%BA%E7%A1%80%20(Fundamental)%20%E2%80%94%206%E9%A2%98" data-blog-outline-link>基础 (Fundamental) — 6题</a></li><li style="--outline-depth:2"><a href="#%E4%B8%AD%E7%BA%A7%20(Intermediate)%20%E2%80%94%206%E9%A2%98" data-blog-outline-link>中级 (Intermediate) — 6题</a></li><li style="--outline-depth:2"><a href="#%E9%AB%98%E7%BA%A7%20(Advanced)%20%E2%80%94%205%E9%A2%98" data-blog-outline-link>高级 (Advanced) — 5题</a></li><li style="--outline-depth:1"><a href="#%E7%9F%A5%E8%AF%86%E5%9C%B0%E5%9B%BE" data-blog-outline-link>知识地图</a></li><li style="--outline-depth:1"><a href="#%E7%9B%B8%E5%85%B3%20MOC" data-blog-outline-link>相关 MOC</a></li></ol>
+</nav></aside><article class="html-server-blog-article article-body">
+    <nav class="html-server-blog-breadcrumb breadcrumbs" aria-label="Breadcrumb"><a href="../../../../../../" data-blog-folder-path="">Home</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../../../../folders/_/大模型/" data-blog-folder-path="大模型">大模型</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../../../../folders/_/大模型/_/大模型面试/" data-blog-folder-path="大模型/大模型面试">大模型面试</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../../../../folders/_/大模型/_/大模型面试/_/题集/" data-blog-folder-path="大模型/大模型面试/题集">题集</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../../../../folders/_/大模型/_/大模型面试/_/题集/_/00-Meta/" data-blog-folder-path="大模型/大模型面试/题集/00-Meta">00-Meta</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../../../../folders/_/大模型/_/大模型面试/_/题集/_/00-Meta/_/MOCs/" data-blog-folder-path="大模型/大模型面试/题集/00-Meta/MOCs">MOCs</a></nav>
+    <header class="html-server-blog-article-header"><div class="post-meta"><time>Jul 3, 2026</time><span>2 分钟</span><span>最后更新 Jul 3, 2026</span></div><h2>Agent 基础概念 MOC</h2><p class="article-deck">Navigation: 总纲MOC | 目录</p><div class="tag-line"><button type="button" data-style-lab-href="../../../../../../tags/meta%252Fmoc/"># meta/moc</button><button type="button" data-style-lab-href="../../../../../../tags/agent%252F%25E5%259F%25BA%25E7%25A1%2580%25E6%25A6%2582%25E5%25BF%25B5/"># agent/基础概念</button></div></header>
+    
+    <div class="markdown-reading-view html-server-blog-reading-view article-content"><div class="markdown-preview-view markdown-rendered node-insert-event is-readable-line-width allow-fold-headings allow-fold-lists" tabindex="-1"><div class="markdown-preview-sizer markdown-preview-section"><pre class="frontmatter language-yaml" style="display: none; overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-yaml is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token key atrule">title</span><span class="token punctuation">:</span> <span class="token string">"Agent 基础概念 MOC"</span>
+<span class="token key atrule">type</span><span class="token punctuation">:</span> moc
+<span class="token key atrule">topic</span><span class="token punctuation">:</span> <span class="token string">"Agent基础概念"</span>
+<span class="token key atrule">tags</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> meta/moc
+  <span class="token punctuation">-</span> agent/基础概念</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto"><strong>Navigation</strong>: <a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/00-Meta/MOCs/%E6%80%BB%E7%BA%B2MOC/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/00-Meta/MOCs/%E6%80%BB%E7%BA%B2MOC/" class="internal-link" target="" rel="noopener nofollow">总纲MOC</a> | <a data-tooltip-position="top" aria-label="01-面试题集/01-Agent基础概念/" data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/00-Meta/MOCs/Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5MOC/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/00-Meta/MOCs/Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5MOC/" class="internal-link" target="" rel="noopener nofollow">目录</a></p>
+<h1 data-heading="Agent 基础概念 MOC" dir="auto">Agent 基础概念 MOC</h1>
+<blockquote dir="auto">
+<p>Agent 的核心定义、四大组件、工作循环、以及 ReAct、Reflection 等关键机制。共 <strong>17 题</strong>，覆盖基础到高级。</p>
+</blockquote>
+<hr>
+<h2 data-heading="核心概念速览" dir="auto">核心概念速览</h2>
+<ul>
+<li dir="auto"><a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/02-%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/%E6%A6%82%E5%BF%B5%E8%A7%A3%E6%9E%90/Agent%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/02-%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/%E6%A6%82%E5%BF%B5%E8%A7%A3%E6%9E%90/Agent%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/" class="internal-link" target="" rel="noopener nofollow">Agent核心概念</a> — Agent 的定义、公式与本质特征</li>
+<li dir="auto"><a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/02-%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/%E6%A6%82%E5%BF%B5%E8%A7%A3%E6%9E%90/ReAct%E6%A1%86%E6%9E%B6%E8%AF%A6%E8%A7%A3/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/02-%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/%E6%A6%82%E5%BF%B5%E8%A7%A3%E6%9E%90/ReAct%E6%A1%86%E6%9E%B6%E8%AF%A6%E8%A7%A3/" class="internal-link" target="" rel="noopener nofollow">ReAct框架详解</a> — Thought-Action-Observation 循环详解</li>
+<li dir="auto"><a data-tooltip-position="top" aria-label="01-面试题集/01-Agent基础概念/Q03-四大核心组件" data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/01-Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Q03-%E5%9B%9B%E5%A4%A7%E6%A0%B8%E5%BF%83%E7%BB%84%E4%BB%B6/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/01-Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Q03-%E5%9B%9B%E5%A4%A7%E6%A0%B8%E5%BF%83%E7%BB%84%E4%BB%B6/" class="internal-link" target="" rel="noopener nofollow">四大核心组件</a> — Planning、Memory、Tools、Action</li>
+</ul>
+<hr>
+<h2 data-heading="面试题集" dir="auto">面试题集</h2>
+<h3 data-heading="基础 (Fundamental) — 6题" dir="auto">基础 (Fundamental) — 6题</h3>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>题目</th>
+<th>重要性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a data-tooltip-position="top" aria-label="Q01-什么是AI-Agent" data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/01-Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Q01-%E4%BB%80%E4%B9%88%E6%98%AFAI-Agent/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/01-Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Q01-%E4%BB%80%E4%B9%88%E6%98%AFAI-Agent/" class="internal-link" target="" rel="noopener nofollow">Q01</a></td>
+<td>什么是 AI Agent？标准定义和核心公式</td>
+<td>high</td>
+</tr>
+<tr>
+<td><a data-tooltip-position="top" aria-label="Q02-Agent与LLM调用区别" data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/01-Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Q02-Agent%E4%B8%8ELLM%E8%B0%83%E7%94%A8%E5%8C%BA%E5%88%AB/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/01-Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Q02-Agent%E4%B8%8ELLM%E8%B0%83%E7%94%A8%E5%8C%BA%E5%88%AB/" class="internal-link" target="" rel="noopener nofollow">Q02</a></td>
+<td>Agent 与普通 LLM 调用的本质区别</td>
+<td>high</td>
+</tr>
+<tr>
+<td><a data-tooltip-position="top" aria-label="Q03-四大核心组件" data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/01-Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Q03-%E5%9B%9B%E5%A4%A7%E6%A0%B8%E5%BF%83%E7%BB%84%E4%BB%B6/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/01-Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Q03-%E5%9B%9B%E5%A4%A7%E6%A0%B8%E5%BF%83%E7%BB%84%E4%BB%B6/" class="internal-link" target="" rel="noopener nofollow">Q03</a></td>
+<td>四大核心组件及各自职责</td>
+<td>high</td>
+</tr>
+<tr>
+<td><a data-tooltip-position="top" aria-label="Q04-Agent工作循环" data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/01-Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Q04-Agent%E5%B7%A5%E4%BD%9C%E5%BE%AA%E7%8E%AF/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/01-Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Q04-Agent%E5%B7%A5%E4%BD%9C%E5%BE%AA%E7%8E%AF/" class="internal-link" target="" rel="noopener nofollow">Q04</a></td>
+<td>感知→规划→执行→反思的完整流程</td>
+<td>high</td>
+</tr>
+<tr>
+<td><a data-tooltip-position="top" aria-label="Q05-自主性与状态性" data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/01-Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Q05-%E8%87%AA%E4%B8%BB%E6%80%A7%E4%B8%8E%E7%8A%B6%E6%80%81%E6%80%A7/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/01-Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Q05-%E8%87%AA%E4%B8%BB%E6%80%A7%E4%B8%8E%E7%8A%B6%E6%80%81%E6%80%A7/" class="internal-link" target="" rel="noopener nofollow">Q05</a></td>
+<td>自主性体现与状态性定义</td>
+<td>medium</td>
+</tr>
+<tr>
+<td><a data-tooltip-position="top" aria-label="Q06-Agent智能水平分类" data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/01-Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Q06-Agent%E6%99%BA%E8%83%BD%E6%B0%B4%E5%B9%B3%E5%88%86%E7%B1%BB/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/01-Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Q06-Agent%E6%99%BA%E8%83%BD%E6%B0%B4%E5%B9%B3%E5%88%86%E7%B1%BB/" class="internal-link" target="" rel="noopener nofollow">Q06</a></td>
+<td>Agent 按智能水平分类及特点</td>
+<td>medium</td>
+</tr>
+</tbody>
+</table>
+<h3 data-heading="中级 (Intermediate) — 6题" dir="auto">中级 (Intermediate) — 6题</h3>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>题目</th>
+<th>重要性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a data-tooltip-position="top" aria-label="Q07-ReAct框架" data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/01-Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Q07-ReAct%E6%A1%86%E6%9E%B6/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/01-Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Q07-ReAct%E6%A1%86%E6%9E%B6/" class="internal-link" target="" rel="noopener nofollow">Q07</a></td>
+<td>ReAct 框架的 Thought-Action-Observation 循环</td>
+<td>high</td>
+</tr>
+<tr>
+<td><a data-tooltip-position="top" aria-label="Q08-记忆系统设计" data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/01-Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Q08-%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/01-Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Q08-%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" class="internal-link" target="" rel="noopener nofollow">Q08</a></td>
+<td>短期记忆与长期记忆的设计与实现</td>
+<td>high</td>
+</tr>
+<tr>
+<td><a data-tooltip-position="top" aria-label="Q09-工具调用与Function-Calling" data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/01-Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Q09-%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8%E4%B8%8EFunction-Calling/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/01-Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Q09-%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8%E4%B8%8EFunction-Calling/" class="internal-link" target="" rel="noopener nofollow">Q09</a></td>
+<td>Tool Use 与 Function Calling 原理</td>
+<td>high</td>
+</tr>
+<tr>
+<td><a data-tooltip-position="top" aria-label="Q10-ReAct-vs-Plan-and-Execute" data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/01-Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Q10-ReAct-vs-Plan-and-Execute/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/01-Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Q10-ReAct-vs-Plan-and-Execute/" class="internal-link" target="" rel="noopener nofollow">Q10</a></td>
+<td>ReAct vs Plan-and-Execute 模式选择</td>
+<td>high</td>
+</tr>
+<tr>
+<td><a data-tooltip-position="top" aria-label="Q11-Planner规划模块" data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/01-Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Q11-Planner%E8%A7%84%E5%88%92%E6%A8%A1%E5%9D%97/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/01-Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Q11-Planner%E8%A7%84%E5%88%92%E6%A8%A1%E5%9D%97/" class="internal-link" target="" rel="noopener nofollow">Q11</a></td>
+<td>Planner 规划模块的主流方法</td>
+<td>medium</td>
+</tr>
+<tr>
+<td><a data-tooltip-position="top" aria-label="Q12-Reflection反思机制" data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/01-Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Q12-Reflection%E5%8F%8D%E6%80%9D%E6%9C%BA%E5%88%B6/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/01-Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Q12-Reflection%E5%8F%8D%E6%80%9D%E6%9C%BA%E5%88%B6/" class="internal-link" target="" rel="noopener nofollow">Q12</a></td>
+<td>Reflection / Reflexion 自我反思机制</td>
+<td>high</td>
+</tr>
+</tbody>
+</table>
+<h3 data-heading="高级 (Advanced) — 5题" dir="auto">高级 (Advanced) — 5题</h3>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>题目</th>
+<th>重要性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a data-tooltip-position="top" aria-label="Q13-生产级状态机设计" data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/01-Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Q13-%E7%94%9F%E4%BA%A7%E7%BA%A7%E7%8A%B6%E6%80%81%E6%9C%BA%E8%AE%BE%E8%AE%A1/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/01-Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Q13-%E7%94%9F%E4%BA%A7%E7%BA%A7%E7%8A%B6%E6%80%81%E6%9C%BA%E8%AE%BE%E8%AE%A1/" class="internal-link" target="" rel="noopener nofollow">Q13</a></td>
+<td>生产级 Agent 状态机设计</td>
+<td>high</td>
+</tr>
+<tr>
+<td><a data-tooltip-position="top" aria-label="Q14-分层记忆架构" data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/01-Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Q14-%E5%88%86%E5%B1%82%E8%AE%B0%E5%BF%86%E6%9E%B6%E6%9E%84/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/01-Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Q14-%E5%88%86%E5%B1%82%E8%AE%B0%E5%BF%86%E6%9E%B6%E6%9E%84/" class="internal-link" target="" rel="noopener nofollow">Q14</a></td>
+<td>分层记忆架构的工程挑战</td>
+<td>high</td>
+</tr>
+<tr>
+<td><a data-tooltip-position="top" aria-label="Q15-工具系统扩展性与安全性" data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/01-Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Q15-%E5%B7%A5%E5%85%B7%E7%B3%BB%E7%BB%9F%E6%89%A9%E5%B1%95%E6%80%A7%E4%B8%8E%E5%AE%89%E5%85%A8%E6%80%A7/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/01-Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Q15-%E5%B7%A5%E5%85%B7%E7%B3%BB%E7%BB%9F%E6%89%A9%E5%B1%95%E6%80%A7%E4%B8%8E%E5%AE%89%E5%85%A8%E6%80%A7/" class="internal-link" target="" rel="noopener nofollow">Q15</a></td>
+<td>工具系统扩展性与安全性设计</td>
+<td>medium</td>
+</tr>
+<tr>
+<td><a data-tooltip-position="top" aria-label="Q16-Agent评估体系" data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/01-Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Q16-Agent%E8%AF%84%E4%BC%B0%E4%BD%93%E7%B3%BB/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/01-Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Q16-Agent%E8%AF%84%E4%BC%B0%E4%BD%93%E7%B3%BB/" class="internal-link" target="" rel="noopener nofollow">Q16</a></td>
+<td>Agent 评估体系 vs 传统 LLM 评估</td>
+<td>medium</td>
+</tr>
+<tr>
+<td><a data-tooltip-position="top" aria-label="Q17-Agent设计最佳实践" data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/01-Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Q17-Agent%E8%AE%BE%E8%AE%A1%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/01-%E9%9D%A2%E8%AF%95%E9%A2%98%E9%9B%86/01-Agent%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/Q17-Agent%E8%AE%BE%E8%AE%A1%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/" class="internal-link" target="" rel="noopener nofollow">Q17</a></td>
+<td>Agent 设计最佳实践与常见陷阱</td>
+<td>high</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 data-heading="知识地图" dir="auto">知识地图</h2>
+<pre style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">AI Agent 基础
+├── 核心定义
+│   ├── [[Q01-什么是AI-Agent|什么是AI Agent]]
+│   ├── [[Q02-Agent与LLM调用区别|与LLM调用区别]]
+│   └── [[Q06-Agent智能水平分类|智能水平分类]]
+├── 核心组件
+│   ├── [[Q03-四大核心组件|四大组件概览]]
+│   ├── [[Q04-Agent工作循环|工作循环]]
+│   ├── [[Q05-自主性与状态性|自主性与状态性]]
+│   ├── [[Q09-工具调用与Function-Calling|工具调用]]
+│   └── [[Q11-Planner规划模块|Planner规划]]
+├── 核心范式
+│   ├── [[Q07-ReAct框架|ReAct框架]]
+│   ├── [[Q10-ReAct-vs-Plan-and-Execute|Plan-and-Execute]]
+│   ├── [[Q12-Reflection反思机制|Reflection反思]]
+│   └── [[Q16-Agent评估体系|评估体系]]
+└── 进阶设计
+    ├── [[Q13-生产级状态机设计|状态机设计]]
+    ├── [[Q14-分层记忆架构|记忆架构]]
+    ├── [[Q15-工具系统扩展性与安全性|工具安全]]
+    └── [[Q17-Agent设计最佳实践|最佳实践]]
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<hr>
+<h2 data-heading="相关 MOC" dir="auto">相关 MOC</h2>
+<ul>
+<li dir="auto"><a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/00-Meta/MOCs/%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92MOC/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/00-Meta/MOCs/%E6%8E%A8%E7%90%86%E4%B8%8E%E8%A7%84%E5%88%92MOC/" class="internal-link" target="" rel="noopener nofollow">推理与规划MOC</a> — CoT、ToT、ReAct 等推理范式</li>
+<li dir="auto"><a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/00-Meta/MOCs/Memory%E6%9C%BA%E5%88%B6MOC/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/00-Meta/MOCs/Memory%E6%9C%BA%E5%88%B6MOC/" class="internal-link" target="" rel="noopener nofollow">Memory机制MOC</a> — 记忆系统的深度专题</li>
+<li dir="auto"><a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/00-Meta/MOCs/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8%E4%B8%8EMCP%20MOC/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/00-Meta/MOCs/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8%E4%B8%8EMCP%20MOC/" class="internal-link" target="" rel="noopener nofollow">工具调用与MCP MOC</a> — Function Calling 与 MCP 协议</li>
+<li dir="auto"><a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/00-Meta/MOCs/%E4%B8%BB%E6%B5%81%E6%A1%86%E6%9E%B6MOC/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/00-Meta/MOCs/%E4%B8%BB%E6%B5%81%E6%A1%86%E6%9E%B6MOC/" class="internal-link" target="" rel="noopener nofollow">主流框架MOC</a> — LangChain、CrewAI 等框架实现</li>
+</ul>
+<script defer src="../../../../../../_assets/script.fad57313884515cf.js"></script>
+</div></div></div>
+    
+    
+    
+  </article></div>
+  </main>
+  <footer class="site-footer"><span>纸上季刊</span><span>缓慢阅读与长篇写作</span></footer>
+</div><div class="html-server-blog-progress html-server-style-lab-progress is-rule" data-blog-progress data-blog-runtime-progress data-progress-state="idle" role="progressbar" aria-label="Loading page" aria-hidden="true"><span class="html-server-blog-progress-track"><i></i><b></b><em></em><em></em><em></em></span></div>
+    <div class="html-server-blog-related-modal" data-blog-related-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-related-close aria-label="Close related articles"></button>
+      <section class="html-server-blog-related-panel" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-related-title">
+        <header><div><span class="html-server-blog-kicker" data-blog-related-kind></span><h2 id="html-server-blog-related-title" data-blog-related-title></h2></div><button type="button" data-blog-related-close aria-label="Close"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <p data-blog-related-count></p>
+        <div class="html-server-blog-related-list" data-blog-related-list></div>
+      </section>
+    </div>
+    <div class="html-server-blog-search-modal" data-blog-search-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-search-close aria-label="Close search"></button>
+      <section class="html-server-blog-search-panel site-dialog" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-search-title">
+        <header class="dialog-head"><div><span class="html-server-blog-kicker">SEARCH</span><h2 id="html-server-blog-search-title">搜索文章</h2></div><button type="button" data-blog-search-close aria-label="关闭"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <label class="search-field"><span>支持标题、标签、系列、目录和属性</span><input id="search-input" type="search" data-blog-global-search placeholder="输入关键词开始搜索" autocomplete="off"></label>
+        <p class="search-summary" id="search-summary" data-blog-search-count>输入关键词开始搜索</p>
+        <div class="html-server-blog-search-results search-results dialog-list" id="search-results" data-blog-search-results></div>
+      </section>
+    </div>
+    <div class="html-server-blog-folder-modal" data-blog-folder-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-folder-close aria-label="Close folders"></button>
+      <section class="html-server-blog-folder-panel site-dialog" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-folder-title">
+        <header class="dialog-head"><div><span class="html-server-blog-kicker">VAULT</span><h2 id="html-server-blog-folder-title" data-blog-folder-title>浏览根目录</h2></div><button type="button" data-blog-folder-close aria-label="关闭"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <nav class="html-server-blog-folder-breadcrumb directory-breadcrumbs" data-blog-folder-breadcrumb aria-label="目录面包屑"></nav>
+        <p data-blog-folder-count></p>
+        <div class="html-server-blog-folder-browser directory-list dialog-list" data-blog-folder-browser></div>
+      </section>
+    </div>
+    <script type="application/json" data-blog-article-index>[]</script>
+    <script type="application/json" data-blog-folder-index data-current-folder="大模型/大模型面试/题集/00-Meta/MOCs">[]</script>
+    <script type="application/json" data-blog-appearance-contract>{"version":1,"layouts":[{"id":"default","themes":["inherit"]},{"id":"next","themes":["inherit","next-classic","swiss-index","literary-quarterly","terminal-manual","quiet-journal","newspaper-daily","mint-notebook","tailwind-workspace"]},{"id":"butterfly","themes":["inherit","butterfly-colorful","brutal-broadcast","future-signal","field-notes","gallery-canvas","toy-modules","sakura-notes","clear-sky"]},{"id":"akilar","themes":["inherit","akilar-ark"]},{"id":"noionion","themes":["inherit","noionion-original"]},{"id":"kratos","themes":["inherit","kratos-rebirth"]},{"id":"leezhiy","themes":["inherit","leezhiy-next"]},{"id":"daybook","themes":["inherit","daybook-original"]},{"id":"style-lab-swiss","themes":["inherit","swiss-index"]},{"id":"style-lab-literary","themes":["inherit","literary-quarterly"]},{"id":"style-lab-terminal","themes":["inherit","terminal-manual"]},{"id":"style-lab-brutal","themes":["inherit","brutal-broadcast"]},{"id":"style-lab-quiet","themes":["inherit","quiet-journal"]},{"id":"style-lab-newspaper","themes":["inherit","newspaper-daily"]},{"id":"style-lab-future","themes":["inherit","future-signal"]},{"id":"style-lab-field","themes":["inherit","field-notes"]},{"id":"style-lab-gallery","themes":["inherit","gallery-canvas"]},{"id":"style-lab-toy","themes":["inherit","toy-modules"]},{"id":"style-lab-mint","themes":["inherit","mint-notebook"]},{"id":"style-lab-sakura","themes":["inherit","sakura-notes"]},{"id":"style-lab-sky","themes":["inherit","clear-sky"]},{"id":"style-lab-tailwind","themes":["inherit","tailwind-workspace"]}]}</script>
+  </div>
+  <script defer src="../../../../../../_assets/script.905a72eede1c8c41.js"></script>
+</body>
+</html>

@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="en" data-html-server-theme="light" data-blog-layout="style-lab-literary" data-blog-layout-theme="literary-quarterly" data-blog-page-kind="article" data-blog-mobile-zoom="false" data-theme="literary" data-mode="light" data-page="article" data-blog-theme-control="style-lab" data-blog-main-loading-class="html-server-blog-main-loading" data-blog-overview-loading-class="html-server-blog-overview-loading" data-blog-folder-loading-class="html-server-blog-folder-loading" data-blog-pagination-scroll="item" data-blog-pin-progress="true" data-blog-outline-shell-selector=".html-server-style-lab-outline" data-blog-outline-auto-hide="true" data-blog-sticky-header-selector=".html-server-style-lab-header,.html-server-lab-swiss-rail" data-blog-scroll-mode="app" data-blog-document-pinning="false" data-blog-document-pinning-filter-regular="false" style="--html-server-navigation-surface-light: #eee9df;--html-server-navigation-surface-dark: #201c18">
+<head><!--html-server-dynamic:start--><meta name="html-server-dynamic-page" data-html-server-dynamic-page data-html-server-dynamic-assertion-mode="every-page" data-html-server-dynamic-cache-ttl-ms="1800000" content="a-WyJzdHlsZS1sYWItbGl0ZXJhcnkiLCJsaXRlcmFyeS1xdWFydGVybHkiXQ"><style data-html-server-dynamic-prepaint>html{--html-server-navigation-surface-active:var(--html-server-navigation-surface-light,var(--html-server-blog-background-light,#f5f7fa));background:var(--html-server-navigation-surface-active)}html[data-html-server-theme="dark"]{--html-server-navigation-surface-active:var(--html-server-navigation-surface-dark,var(--html-server-blog-background-dark,#151515))}html[data-html-server-navigation-entering],html[data-html-server-dynamic-pending]{background:var(--html-server-navigation-surface-active)!important}html[data-html-server-navigation-entering] body,html[data-html-server-dynamic-pending] body{opacity:0!important}html[data-html-server-navigation-entering]::before,html[data-html-server-dynamic-pending]::before{content:"";position:fixed;inset:0;z-index:2147483646;background:var(--html-server-navigation-surface-active);pointer-events:none}html[data-html-server-navigation-entering]::after,html[data-html-server-dynamic-pending]::after{content:"";position:fixed;top:0;left:0;z-index:2147483647;width:38%;height:2px;background:var(--interactive-accent,#8b6f47);box-shadow:0 0 10px currentColor;animation:html-server-navigation-prepaint 1s ease-in-out infinite;pointer-events:none}@keyframes html-server-navigation-prepaint{0%{transform:translateX(-110%)}100%{transform:translateX(370%)}}@media(prefers-reduced-motion:reduce){html[data-html-server-navigation-entering]::after,html[data-html-server-dynamic-pending]::after{animation:none;width:100%;opacity:.7}}</style><script data-blog-navigation-bootstrap>(function(){
+  var root=document.documentElement,key='html-server:navigation-handoff',handoff=null;
+  try{handoff=JSON.parse(sessionStorage.getItem(key)||'null');}catch(error){}
+  var target=location.pathname+location.search;
+  if(handoff&&handoff.target===target&&Date.now()-Number(handoff.createdAt||0)<5000){
+    root.setAttribute('data-html-server-navigation-entering','');
+    var reveal=function(){requestAnimationFrame(function(){requestAnimationFrame(function(){root.removeAttribute('data-html-server-navigation-entering');try{sessionStorage.removeItem(key);}catch(error){}});});};
+    if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',reveal,{once:true});else reveal();
+    setTimeout(function(){root.removeAttribute('data-html-server-navigation-entering');},5000);
+  }else if(handoff){try{sessionStorage.removeItem(key);}catch(error){}}
+})();</script><script data-html-server-dynamic-bootstrap>(()=>{
+const m={"releaseId":"20260904091040909-e54ec6fc6a","appearanceKey":"a-WyJzdHlsZS1sYWItbGl0ZXJhcnkiLCJsaXRlcmFyeS1xdWFydGVybHkiXQ","route":"大模型/大模型面试/题集/02-核心知识/代码实践/多Agent协作实现/index.html","outputRootRelativeUrl":"../../../../../../../../../../","siteRootRelativeUrl":"../../../../../../","assertionPolicy":{"mode":"every-page","cacheTtlMs":1800000}},S=1,C="html-server:dynamic-appearance:v1";
+const html=document.documentElement,pending='data-html-server-dynamic-pending';if(!html)return;html.setAttribute(pending,'');
+try{Object.defineProperty(window,'__htmlServerDynamicSiteRoot',{configurable:true,value:new URL(m.siteRootRelativeUrl||m.outputRootRelativeUrl,document.baseURI||location.href).href});}catch(_){}
+const reveal=()=>html.removeAttribute(pending);
+const safe=p=>{p=String(p||'').replace(/\\/g,'/').replace(/^\/+/, '');return !!p&&!p.split('/').includes('..')&&!/^[a-z][a-z\d+.-]*:/i.test(p)};
+const routeUrl=p=>String(p).split('/').map(encodeURIComponent).join('/');
+const get=async u=>{const c=new AbortController(),t=setTimeout(()=>c.abort(),2000);try{const r=await fetch(u,{cache:'no-store',credentials:'same-origin',signal:c.signal});if(!r.ok)throw Error(String(r.status));return await r.json()}finally{clearTimeout(t)}};
+const p=m.assertionPolicy||{},mode=p.mode==='home-only'||p.mode==='cache'?p.mode:'every-page',ttl=Math.max(60000,Number(p.cacheTtlMs)||1800000);
+let storage;try{storage=localStorage}catch(_){}
+const clear=()=>{try{storage&&storage.removeItem(C)}catch(_){}};
+try{Object.defineProperty(window,'HtmlServerDynamicAppearanceCache',{configurable:true,value:{key:C,clear,refresh:()=>{clear();location.reload()}}})}catch(_){}
+const read=()=>{try{const v=JSON.parse(storage&&storage.getItem(C)||'null');return v&&v.schemaVersion===S&&typeof v.appearanceKey==='string'&&typeof v.releaseId==='string'&&safe(v.path)&&Number.isFinite(v.selectionRevision)&&Number.isFinite(v.expiresAt)?v:null}catch(_){return null}};
+const cached=read(),home=m.route==='index.html',reload=(()=>{try{return performance.getEntriesByType('navigation')[0]?.type==='reload'}catch(_){return false}})();
+const cacheValid=!!cached&&cached.releaseId===m.releaseId&&(mode!=='cache'||cached.expiresAt>Date.now()),refresh=mode==='every-page'||(mode==='home-only'&&home)||(mode==='cache'&&(!cacheValid||reload));
+(async()=>{let navigating=false;
+const rootForPage=async()=>{const fallback=window.__htmlServerStaticFallbackRoot,discovered=fallback&&typeof fallback.then==='function'?await fallback:null;return new URL(discovered&&discovered.siteRoot?discovered.siteRoot:m.outputRootRelativeUrl,document.baseURI||location.href)};
+const move=async(key,pathValue,releaseId,canonical)=>{if(key===m.appearanceKey)return false;if(!safe(m.route)||!safe(pathValue))return false;const root=await rootForPage(),encoded=routeUrl(m.route),rel=canonical?encoded:pathValue.replace(/\/+$/,'')+'/'+encoded,guard='html-server-dynamic:'+releaseId+':'+key+':'+m.route;if(sessionStorage.getItem(guard)==='1')return false;const target=new URL(rel,root);target.search=location.search;target.hash=location.hash;sessionStorage.setItem(guard,'1');navigating=true;location.replace(target.href);return true};
+try{
+if(!refresh){if(!cacheValid)return;if(cached.appearanceKey===m.appearanceKey){sessionStorage.removeItem('html-server-dynamic:'+cached.releaseId+':'+cached.appearanceKey+':'+m.route);return;}await move(cached.appearanceKey,cached.path,cached.releaseId,false);return;}
+const root=await rootForPage(),pair=await Promise.all([get(new URL('_config/data.json',root)),get(new URL('_config/release.json',root))]),cfg=pair[0],ptr=pair[1];
+if(cfg.schemaVersion!==S)return;
+if(ptr.schemaVersion!==S||(cfg.selectionRevision!==undefined&&cfg.selectionRevision!==ptr.selectionRevision)||!safe(ptr.manifest))return;
+const man=await get(new URL(ptr.manifest,root));if(man.schemaVersion!==S||man.releaseId!==ptr.releaseId||man.selectionRevision!==ptr.selectionRevision||man.primaryAppearance!==ptr.primaryAppearance||!safe(m.route))return;
+const hit=Object.entries(man.sites||{}).find(([,v])=>v.appearance&&v.appearance.layout===cfg.blogLayout&&v.appearance.theme===cfg.blogLayoutTheme);if(!hit)return;
+const key=hit[0],site=hit[1];if(!Array.isArray(site.routes)||!site.routes.includes(m.route))return;
+if(!safe(site.path))return;const record={schemaVersion:S,appearanceKey:key,layout:site.appearance.layout,theme:site.appearance.theme,path:site.path,releaseId:ptr.releaseId,selectionRevision:ptr.selectionRevision,expiresAt:mode==='home-only'?0:Date.now()+ttl};try{storage&&storage.setItem(C,JSON.stringify(record))}catch(_){}
+const guard='html-server-dynamic:'+ptr.releaseId+':'+key+':'+m.route;if(key===m.appearanceKey){sessionStorage.removeItem(guard);return;}
+await move(key,site.path,ptr.releaseId,key===man.primaryAppearance);
+}catch(_){if(mode!=='every-page'&&cacheValid&&!navigating)await move(cached.appearanceKey,cached.path,cached.releaseId,false).catch(()=>{})}finally{if(!navigating)reveal();}})();
+})();</script><!--html-server-dynamic:end-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  
+  <script defer src="../../../../../../_assets/script.6d4f546be5f896d5.js"></script>
+  <script data-blog-theme-bootstrap>(function(){
+  var root = document.documentElement;
+  var theme = root.getAttribute('data-html-server-theme') || 'light';
+  try {
+    var stored = localStorage.getItem('html-server-blog-theme');
+    if (stored === 'dark' || stored === 'light') theme = stored;
+  } catch (error) {}
+  root.setAttribute('data-html-server-theme', theme);
+  root.classList.toggle('theme-dark', theme === 'dark');
+  root.classList.toggle('theme-light', theme !== 'dark');
+  root.style.backgroundColor = theme === 'dark'
+    ? 'var(--html-server-navigation-surface-dark, var(--html-server-blog-background-dark, #151515))'
+    : 'var(--html-server-navigation-surface-light, var(--html-server-blog-background-light, #f5f7fa))';
+})();</script>
+  
+  <title>多Agent协作实现 · Digital Garden</title>
+  <link rel="shortcut icon" href="//obsidian.md/favicon.ico">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Mono:wght@300;400;500&family=IBM+Plex+Sans+Condensed:wght@400;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&family=Manrope:wght@400;600;800&family=Noto+Serif+SC:wght@400;600;800&family=Playfair+Display:wght@600;800&family=Space+Grotesk:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="../../../../../../_assets/blog.css">
+<link rel="preload" as="script" href="../../../../../../_assets/blog.js" fetchpriority="high"><script>window.__htmlServerStaticSearch="../../../../../../_assets/meta.json";window.__htmlServerStaticSidebar="../../../../../../_assets/sidebar.json?v=mtmqp68z-2gf";window.__htmlServerStaticPluginOverrides=window.__htmlServerStaticPluginOverrides||{};Object.assign(window.__htmlServerStaticPluginOverrides["blog-live2d"]||(window.__htmlServerStaticPluginOverrides["blog-live2d"]={}),{"localScriptUrl":"../../../../../../_assets/live2d-widget/L2Dwidget.min.js","localModelUrl":"../../../../../../_assets/live2d-widget/assets/koharu.model.json","assetBaseUrl":"../../../../../../_assets/live2d-widget"});</script></head>
+<body class="theme-light html-server-blog-body" data-blog-layout="style-lab-literary" data-blog-layout-theme="literary-quarterly" data-blog-page-kind="article" data-blog-style-isolation="strict" data-theme="literary" data-mode="light" data-page="article" data-blog-theme-control="style-lab" data-blog-main-loading-class="html-server-blog-main-loading" data-blog-overview-loading-class="html-server-blog-overview-loading" data-blog-folder-loading-class="html-server-blog-folder-loading" data-blog-pagination-scroll="item" data-blog-pin-progress="true" data-blog-outline-shell-selector=".html-server-style-lab-outline" data-blog-outline-auto-hide="true" data-blog-sticky-header-selector=".html-server-style-lab-header,.html-server-lab-swiss-rail" data-blog-scroll-mode="app" data-blog-document-pinning="false" data-blog-document-pinning-filter-regular="false" style="--html-server-navigation-surface-light: #eee9df;--html-server-navigation-surface-dark: #201c18">
+  <script data-blog-theme-bootstrap>(function(){
+  var theme = document.documentElement.getAttribute('data-html-server-theme') || 'light';
+  document.body.classList.toggle('theme-dark', theme === 'dark');
+  document.body.classList.toggle('theme-light', theme !== 'dark');
+})();</script>
+  <script type="application/json" data-blog-theme-image-groups>{}</script>
+  
+  <div class="html-server-blog-app">
+    <div class="html-server-style-lab-shell html-server-style-lab-literary">
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="html-server-style-lab-header site-header"><a class="html-server-style-lab-brand brand" href="../../../../../../" aria-label="回到文章列表"><b class="brand-mark">刊</b><span class="brand-copy"><strong>纸上季刊</strong><small>缓慢阅读与长篇写作</small></span></a><button class="menu-toggle" type="button" data-style-lab-menu aria-expanded="false" aria-controls="style-lab-main-nav">菜单</button><nav class="html-server-style-lab-nav main-nav" id="style-lab-main-nav" aria-label="主导航"><button type="button" data-style-lab-route="/">文章</button><button type="button" data-style-lab-route="/tags/">标签</button><button type="button" data-style-lab-route="/series/">系列</button><button type="button" data-style-lab-route="/archive/">归档</button></nav><div class="html-server-style-lab-tools header-tools" aria-label="站点工具"><button class="directory-toggle" type="button" data-blog-folder-open aria-label="打开目录"><span aria-hidden="true">▤</span><span>目录</span></button><button class="search-toggle" type="button" data-blog-search-open aria-label="打开搜索"><span aria-hidden="true">⌕</span><span>搜索</span></button><button class="mode-toggle" type="button" data-blog-theme aria-label="切换明暗主题"><span aria-hidden="true">◐</span><span class="mode-label">黑色</span></button></div></header>
+  <main id="content" class="html-server-style-lab-page html-server-blog-main html-server-style-lab-main" data-blog-main>
+    <div class="article-shell"><aside class="html-server-style-lab-outline article-toc"><nav class="html-server-blog-outline" data-blog-outline aria-label="Article outline">
+  <button class="html-server-blog-outline-toggle" type="button" data-blog-outline-toggle aria-expanded="true" aria-controls="html-server-blog-outline-list"><span>本文目录</span><b aria-hidden="true"><svg viewBox="0 0 20 20" focusable="false"><path d="m4.5 7.25 5.5 5.5 5.5-5.5"/></svg></b></button>
+  <strong>本文目录</strong>
+  <ol id="html-server-blog-outline-list"><li style="--outline-depth:0"><a href="#%E5%A4%9A%20Agent%20%E5%8D%8F%E4%BD%9C%E5%AE%9E%E7%8E%B0%EF%BC%88CrewAI%EF%BC%89" data-blog-outline-link>多 Agent 协作实现（CrewAI）</a></li><li style="--outline-depth:1"><a href="#1.%20%E4%B8%80%E3%80%81%E9%A1%B9%E7%9B%AE%E6%A6%82%E8%BF%B0" data-blog-outline-link>1. 一、项目概述</a></li><li style="--outline-depth:1"><a href="#2.%20%E4%BA%8C%E3%80%81%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87" data-blog-outline-link>2. 二、环境准备</a></li><li style="--outline-depth:1"><a href="#3.%20%E4%B8%89%E3%80%81%E5%AE%8C%E6%95%B4%E9%A1%B9%E7%9B%AE%E5%AE%9E%E7%8E%B0" data-blog-outline-link>3. 三、完整项目实现</a></li><li style="--outline-depth:2"><a href="#3.1.%20%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84" data-blog-outline-link>3.1. 项目结构</a></li><li style="--outline-depth:2"><a href="#3.2.%20%E5%B7%A5%E5%85%B7%E5%AE%9A%E4%B9%89" data-blog-outline-link>3.2. 工具定义</a></li><li style="--outline-depth:2"><a href="#3.3.%20Agent%20%E5%AE%9A%E4%B9%89" data-blog-outline-link>3.3. Agent 定义</a></li><li style="--outline-depth:2"><a href="#3.4.%20%E4%BB%BB%E5%8A%A1%E5%AE%9A%E4%B9%89" data-blog-outline-link>3.4. 任务定义</a></li><li style="--outline-depth:2"><a href="#3.5.%20Crew%20%E7%BC%96%E6%8E%92" data-blog-outline-link>3.5. Crew 编排</a></li><li style="--outline-depth:2"><a href="#3.6.%20%E4%B8%BB%E7%A8%8B%E5%BA%8F" data-blog-outline-link>3.6. 主程序</a></li><li style="--outline-depth:1"><a href="#4.%20%E5%9B%9B%E3%80%81%E8%BF%90%E8%A1%8C%E7%A4%BA%E4%BE%8B" data-blog-outline-link>4. 四、运行示例</a></li><li style="--outline-depth:1"><a href="#5.%20%E4%BA%94%E3%80%81%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E7%82%B9" data-blog-outline-link>5. 五、相关知识点</a></li></ol>
+</nav></aside><article class="html-server-blog-article article-body">
+    <nav class="html-server-blog-breadcrumb breadcrumbs" aria-label="Breadcrumb"><a href="../../../../../../" data-blog-folder-path="">Home</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../../../../folders/_/大模型/" data-blog-folder-path="大模型">大模型</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../../../../folders/_/大模型/_/大模型面试/" data-blog-folder-path="大模型/大模型面试">大模型面试</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../../../../folders/_/大模型/_/大模型面试/_/题集/" data-blog-folder-path="大模型/大模型面试/题集">题集</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../../../../folders/_/大模型/_/大模型面试/_/题集/_/02-核心知识/" data-blog-folder-path="大模型/大模型面试/题集/02-核心知识">02-核心知识</a><span class="html-server-blog-breadcrumb-separator">/</span><a href="../../../../../../folders/_/大模型/_/大模型面试/_/题集/_/02-核心知识/_/代码实践/" data-blog-folder-path="大模型/大模型面试/题集/02-核心知识/代码实践">代码实践</a></nav>
+    <header class="html-server-blog-article-header"><div class="post-meta"><time>Jul 6, 2026</time><span>6 分钟</span><span>最后更新 Jul 6, 2026</span></div><h2>多Agent协作实现</h2><p class="article-deck">Navigation: AI Agent MOC | 多智能体协作模式 | CrewAI-vs-AutoGen</p><div class="tag-line"><button type="button" data-style-lab-href="../../../../../../tags/agent%252Fmulti-agent/"># agent/multi-agent</button><button type="button" data-style-lab-href="../../../../../../tags/type%252Fpractice/"># type/practice</button><button type="button" data-style-lab-href="../../../../../../tags/diff%252Fadvanced/"># diff/advanced</button><button type="button" data-style-lab-href="../../../../../../tags/code%252Fpython/"># code/python</button></div></header>
+    
+    <div class="markdown-reading-view html-server-blog-reading-view article-content"><div class="markdown-preview-view markdown-rendered node-insert-event is-readable-line-width allow-fold-headings allow-fold-lists" tabindex="-1"><div class="markdown-preview-sizer markdown-preview-section"><pre class="frontmatter language-yaml" style="display: none; overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-yaml is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token key atrule">title</span><span class="token punctuation">:</span> <span class="token string">"多Agent协作实现"</span>
+<span class="token key atrule">type</span><span class="token punctuation">:</span> practice
+<span class="token key atrule">topic</span><span class="token punctuation">:</span> <span class="token string">"代码实践"</span>
+<span class="token key atrule">difficulty</span><span class="token punctuation">:</span> <span class="token string">"advanced"</span>
+<span class="token key atrule">importance</span><span class="token punctuation">:</span> high
+<span class="token key atrule">tags</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> agent/multi<span class="token punctuation">-</span>agent
+  <span class="token punctuation">-</span> type/practice
+  <span class="token punctuation">-</span> diff/advanced
+  <span class="token punctuation">-</span> code/python</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto"><strong>Navigation</strong>: <a data-href="AI Agent MOC" href="AI Agent MOC" class="internal-link" target="" rel="noopener nofollow">AI Agent MOC</a> | <a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/02-%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/%E6%9E%B6%E6%9E%84%E6%A8%A1%E5%BC%8F/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%8D%8F%E4%BD%9C%E6%A8%A1%E5%BC%8F/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/02-%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/%E6%9E%B6%E6%9E%84%E6%A8%A1%E5%BC%8F/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%8D%8F%E4%BD%9C%E6%A8%A1%E5%BC%8F/" class="internal-link" target="" rel="noopener nofollow">多智能体协作模式</a> | <a data-href="CrewAI-vs-AutoGen" href="CrewAI-vs-AutoGen" class="internal-link" target="" rel="noopener nofollow">CrewAI-vs-AutoGen</a></p>
+<h1 data-heading="多 Agent 协作实现（CrewAI）" dir="auto">多 Agent 协作实现（CrewAI）</h1>
+<h2 data-heading="1. 一、项目概述" dir="auto">1. 一、项目概述</h2>
+<p dir="auto">本文提供完整的 CrewAI 多 Agent 协作系统实现，包含：</p>
+<ul>
+<li dir="auto">Agent 角色定义</li>
+<li dir="auto">任务编排</li>
+<li dir="auto">工具集成</li>
+<li dir="auto">完整项目结构</li>
+</ul>
+<h2 data-heading="2. 二、环境准备" dir="auto">2. 二、环境准备</h2>
+<pre class="language-bash" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-bash is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">pip <span class="token function">install</span> crewai crewai-tools langchain-openai
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<h2 data-heading="3. 三、完整项目实现" dir="auto">3. 三、完整项目实现</h2>
+<h3 data-heading="3.1. 项目结构" dir="auto">3.1. 项目结构</h3>
+<pre style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">project/
+├── agents/
+│   ├── __init__.py
+│   ├── researcher.py    # 研究员 Agent
+│   ├── writer.py        # 写作 Agent
+│   └── reviewer.py      # 审校 Agent
+├── tasks/
+│   ├── __init__.py
+│   ├── research_task.py # 研究任务
+│   ├── write_task.py    # 写作任务
+│   └── review_task.py   # 审校任务
+├── tools/
+│   ├── __init__.py
+│   └── search_tools.py  # 搜索工具
+├── crew.py              # Crew 编排
+└── main.py              # 入口
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<h3 data-heading="3.2. 工具定义" dir="auto">3.2. 工具定义</h3>
+<pre class="language-python" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-python is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token triple-quoted-string string">"""
+tools/search_tools.py
+自定义搜索工具
+"""</span>
+
+<span class="token keyword">from</span> crewai_tools <span class="token keyword">import</span> BaseTool
+<span class="token keyword">from</span> typing <span class="token keyword">import</span> Type<span class="token punctuation">,</span> Optional
+<span class="token keyword">from</span> pydantic <span class="token keyword">import</span> BaseModel<span class="token punctuation">,</span> Field
+<span class="token keyword">import</span> requests
+
+
+<span class="token keyword">class</span> <span class="token class-name">SearchInput</span><span class="token punctuation">(</span>BaseModel<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""搜索工具输入参数"""</span>
+    query<span class="token punctuation">:</span> <span class="token builtin">str</span> <span class="token operator">=</span> Field<span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">,</span> description<span class="token operator">=</span><span class="token string">"搜索查询"</span><span class="token punctuation">)</span>
+    max_results<span class="token punctuation">:</span> <span class="token builtin">int</span> <span class="token operator">=</span> Field<span class="token punctuation">(</span>default<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">,</span> description<span class="token operator">=</span><span class="token string">"最大结果数"</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">class</span> <span class="token class-name">WebSearchTool</span><span class="token punctuation">(</span>BaseTool<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""网页搜索工具"""</span>
+    
+    name<span class="token punctuation">:</span> <span class="token builtin">str</span> <span class="token operator">=</span> <span class="token string">"web_search"</span>
+    description<span class="token punctuation">:</span> <span class="token builtin">str</span> <span class="token operator">=</span> <span class="token string">"使用搜索引擎查询信息"</span>
+    args_schema<span class="token punctuation">:</span> Type<span class="token punctuation">[</span>BaseModel<span class="token punctuation">]</span> <span class="token operator">=</span> SearchInput
+    
+    <span class="token keyword">def</span> <span class="token function">_run</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> query<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> max_results<span class="token punctuation">:</span> <span class="token builtin">int</span> <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        执行搜索
+        
+        实际项目中应使用 SerpAPI、Bing API 等
+        这里模拟搜索结果
+        """</span>
+        <span class="token comment"># 模拟搜索结果</span>
+        mock_results <span class="token operator">=</span> <span class="token punctuation">{</span>
+            <span class="token string">"Python"</span><span class="token punctuation">:</span> <span class="token string">"Python 是一种高级编程语言，由 Guido van Rossum 于 1991 年创建。"</span><span class="token punctuation">,</span>
+            <span class="token string">"机器学习"</span><span class="token punctuation">:</span> <span class="token string">"机器学习是 AI 的分支，通过数据训练模型进行预测和决策。"</span><span class="token punctuation">,</span>
+            <span class="token string">"深度学习"</span><span class="token punctuation">:</span> <span class="token string">"深度学习使用多层神经网络，在图像识别、NLP 等领域表现优异。"</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span>
+        
+        results <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> key<span class="token punctuation">,</span> value <span class="token keyword">in</span> mock_results<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> query<span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">in</span> key<span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">or</span> query<span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">in</span> value<span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                results<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"[</span><span class="token interpolation"><span class="token punctuation">{</span>key<span class="token punctuation">}</span></span><span class="token string">] </span><span class="token interpolation"><span class="token punctuation">{</span>value<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+        
+        <span class="token keyword">if</span> <span class="token keyword">not</span> results<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token string-interpolation"><span class="token string">f"未找到关于 '</span><span class="token interpolation"><span class="token punctuation">{</span>query<span class="token punctuation">}</span></span><span class="token string">' 的直接结果。请尝试其他关键词。"</span></span>
+        
+        <span class="token keyword">return</span> <span class="token string">"\n\n"</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>results<span class="token punctuation">[</span><span class="token punctuation">:</span>max_results<span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">class</span> <span class="token class-name">DocumentSearchTool</span><span class="token punctuation">(</span>BaseTool<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""文档搜索工具"""</span>
+    
+    name<span class="token punctuation">:</span> <span class="token builtin">str</span> <span class="token operator">=</span> <span class="token string">"document_search"</span>
+    description<span class="token punctuation">:</span> <span class="token builtin">str</span> <span class="token operator">=</span> <span class="token string">"在内部文档中搜索信息"</span>
+    args_schema<span class="token punctuation">:</span> Type<span class="token punctuation">[</span>BaseModel<span class="token punctuation">]</span> <span class="token operator">=</span> SearchInput
+    
+    <span class="token comment"># 模拟内部知识库</span>
+    KNOWLEDGE_BASE <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">"公司介绍"</span><span class="token punctuation">:</span> <span class="token string">"我们是一家专注于 AI 技术的科技公司，成立于 2020 年。"</span><span class="token punctuation">,</span>
+        <span class="token string">"产品信息"</span><span class="token punctuation">:</span> <span class="token string">"我们的主要产品包括 AI Agent 平台和智能客服系统。"</span><span class="token punctuation">,</span>
+        <span class="token string">"技术栈"</span><span class="token punctuation">:</span> <span class="token string">"我们使用 Python、LangChain、CrewAI 等技术构建产品。"</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">def</span> <span class="token function">_run</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> query<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> max_results<span class="token punctuation">:</span> <span class="token builtin">int</span> <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""在内部文档中搜索"""</span>
+        results <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> key<span class="token punctuation">,</span> value <span class="token keyword">in</span> self<span class="token punctuation">.</span>KNOWLEDGE_BASE<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> query<span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">in</span> key<span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">or</span> query<span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">in</span> value<span class="token punctuation">.</span>lower<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                results<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"[</span><span class="token interpolation"><span class="token punctuation">{</span>key<span class="token punctuation">}</span></span><span class="token string">] </span><span class="token interpolation"><span class="token punctuation">{</span>value<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+        
+        <span class="token keyword">if</span> <span class="token keyword">not</span> results<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token string-interpolation"><span class="token string">f"内部文档中未找到 '</span><span class="token interpolation"><span class="token punctuation">{</span>query<span class="token punctuation">}</span></span><span class="token string">' 相关信息。"</span></span>
+        
+        <span class="token keyword">return</span> <span class="token string">"\n\n"</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>results<span class="token punctuation">[</span><span class="token punctuation">:</span>max_results<span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<h3 data-heading="3.3. Agent 定义" dir="auto">3.3. Agent 定义</h3>
+<pre class="language-python" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-python is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token triple-quoted-string string">"""
+agents/researcher.py
+研究员 Agent
+"""</span>
+
+<span class="token keyword">from</span> crewai <span class="token keyword">import</span> Agent
+<span class="token keyword">from</span> tools<span class="token punctuation">.</span>search_tools <span class="token keyword">import</span> WebSearchTool<span class="token punctuation">,</span> DocumentSearchTool
+
+
+<span class="token keyword">def</span> <span class="token function">create_researcher</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> Agent<span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    创建研究员 Agent
+    
+    负责信息收集和调研
+    """</span>
+    <span class="token keyword">return</span> Agent<span class="token punctuation">(</span>
+        role<span class="token operator">=</span><span class="token string">"高级研究员"</span><span class="token punctuation">,</span>
+        goal<span class="token operator">=</span><span class="token string">"深入调研指定主题，收集全面、准确的信息"</span><span class="token punctuation">,</span>
+        backstory<span class="token operator">=</span><span class="token triple-quoted-string string">"""你是一位经验丰富的研究员，擅长信息检索和分析。
+你做事严谨，注重细节，能够从多个来源收集信息并进行综合分析。
+你总是确保信息的准确性和时效性。"""</span><span class="token punctuation">,</span>
+        verbose<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span>
+        allow_delegation<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span>
+        tools<span class="token operator">=</span><span class="token punctuation">[</span>WebSearchTool<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> DocumentSearchTool<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token punctuation">)</span>
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<pre class="language-python" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-python is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token triple-quoted-string string">"""
+agents/writer.py
+写作 Agent
+"""</span>
+
+<span class="token keyword">from</span> crewai <span class="token keyword">import</span> Agent
+
+
+<span class="token keyword">def</span> <span class="token function">create_writer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> Agent<span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    创建写作 Agent
+    
+    负责内容创作
+    """</span>
+    <span class="token keyword">return</span> Agent<span class="token punctuation">(</span>
+        role<span class="token operator">=</span><span class="token string">"专业写作专家"</span><span class="token punctuation">,</span>
+        goal<span class="token operator">=</span><span class="token string">"将研究内容转化为高质量、易读的文章"</span><span class="token punctuation">,</span>
+        backstory<span class="token operator">=</span><span class="token triple-quoted-string string">"""你是一位资深写作专家，擅长将复杂的技术内容
+转化为通俗易懂的文章。你的写作风格清晰、结构合理、引人入胜。
+你能够根据不同受众调整写作风格。"""</span><span class="token punctuation">,</span>
+        verbose<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span>
+        allow_delegation<span class="token operator">=</span><span class="token boolean">False</span>
+    <span class="token punctuation">)</span>
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<pre class="language-python" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-python is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token triple-quoted-string string">"""
+agents/reviewer.py
+审校 Agent
+"""</span>
+
+<span class="token keyword">from</span> crewai <span class="token keyword">import</span> Agent
+
+
+<span class="token keyword">def</span> <span class="token function">create_reviewer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> Agent<span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    创建审校 Agent
+    
+    负责质量检查
+    """</span>
+    <span class="token keyword">return</span> Agent<span class="token punctuation">(</span>
+        role<span class="token operator">=</span><span class="token string">"内容审校专家"</span><span class="token punctuation">,</span>
+        goal<span class="token operator">=</span><span class="token string">"确保内容的准确性、完整性和可读性"</span><span class="token punctuation">,</span>
+        backstory<span class="token operator">=</span><span class="token triple-quoted-string string">"""你是一位严格的审校专家，对内容质量有很高的要求。
+你擅长发现事实错误、逻辑漏洞和表达不清的地方。
+你的反馈总是具体、建设性的。"""</span><span class="token punctuation">,</span>
+        verbose<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span>
+        allow_delegation<span class="token operator">=</span><span class="token boolean">False</span>
+    <span class="token punctuation">)</span>
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<h3 data-heading="3.4. 任务定义" dir="auto">3.4. 任务定义</h3>
+<pre class="language-python" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-python is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token triple-quoted-string string">"""
+tasks/research_task.py
+研究任务
+"""</span>
+
+<span class="token keyword">from</span> crewai <span class="token keyword">import</span> Task
+<span class="token keyword">from</span> agents<span class="token punctuation">.</span>researcher <span class="token keyword">import</span> create_researcher
+
+
+<span class="token keyword">def</span> <span class="token function">create_research_task</span><span class="token punctuation">(</span>topic<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> Task<span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    创建研究任务
+    
+    Args:
+        topic: 研究主题
+    """</span>
+    researcher <span class="token operator">=</span> create_researcher<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    <span class="token keyword">return</span> Task<span class="token punctuation">(</span>
+        description<span class="token operator">=</span><span class="token string-interpolation"><span class="token string">f"""对以下主题进行深入研究：</span><span class="token interpolation"><span class="token punctuation">{</span>topic<span class="token punctuation">}</span></span><span class="token string">
+
+要求：
+1. 收集该主题的核心概念和关键信息
+2. 查找相关的技术细节和最新进展
+3. 整理主要观点和关键数据
+4. 识别该主题的重要性和应用场景
+
+请提供一份结构化的研究报告，包含：
+- 主题概述
+- 核心概念解释
+- 关键数据和事实
+- 最新进展
+- 应用场景
+"""</span></span><span class="token punctuation">,</span>
+        expected_output<span class="token operator">=</span><span class="token string">"一份详细、结构化的研究报告，包含主题的所有关键信息"</span><span class="token punctuation">,</span>
+        agent<span class="token operator">=</span>researcher
+    <span class="token punctuation">)</span>
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<pre class="language-python" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-python is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token triple-quoted-string string">"""
+tasks/write_task.py
+写作任务
+"""</span>
+
+<span class="token keyword">from</span> crewai <span class="token keyword">import</span> Task
+<span class="token keyword">from</span> agents<span class="token punctuation">.</span>writer <span class="token keyword">import</span> create_writer
+
+
+<span class="token keyword">def</span> <span class="token function">create_write_task</span><span class="token punctuation">(</span>topic<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> Task<span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    创建写作任务
+    
+    Args:
+        topic: 写作主题
+    """</span>
+    writer <span class="token operator">=</span> create_writer<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    <span class="token keyword">return</span> Task<span class="token punctuation">(</span>
+        description<span class="token operator">=</span><span class="token string-interpolation"><span class="token string">f"""基于提供的研究报告，撰写一篇关于 '</span><span class="token interpolation"><span class="token punctuation">{</span>topic<span class="token punctuation">}</span></span><span class="token string">' 的高质量文章。
+
+写作要求：
+1. 标题吸引人且准确反映内容
+2. 开头引人入胜，快速抓住读者注意力
+3. 结构清晰，使用小标题分段
+4. 语言通俗易懂，避免过于学术化
+5. 适当使用例子和比喻帮助理解
+6. 结尾有总结和展望
+7. 字数在 1500-2000 字之间
+
+文章格式：
+# 标题
+
+## 引言
+...
+
+## 主体内容
+...
+
+## 总结与展望
+...
+"""</span></span><span class="token punctuation">,</span>
+        expected_output<span class="token operator">=</span><span class="token string">"一篇结构完整、内容丰富的文章，Markdown 格式"</span><span class="token punctuation">,</span>
+        agent<span class="token operator">=</span>writer<span class="token punctuation">,</span>
+        context<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>  <span class="token comment"># 将在运行时填充研究报告</span>
+    <span class="token punctuation">)</span>
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<pre class="language-python" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-python is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token triple-quoted-string string">"""
+tasks/review_task.py
+审校任务
+"""</span>
+
+<span class="token keyword">from</span> crewai <span class="token keyword">import</span> Task
+<span class="token keyword">from</span> agents<span class="token punctuation">.</span>reviewer <span class="token keyword">import</span> create_reviewer
+
+
+<span class="token keyword">def</span> <span class="token function">create_review_task</span><span class="token punctuation">(</span>topic<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> Task<span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    创建审校任务
+    
+    Args:
+        topic: 审校主题
+    """</span>
+    reviewer <span class="token operator">=</span> create_reviewer<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    <span class="token keyword">return</span> Task<span class="token punctuation">(</span>
+        description<span class="token operator">=</span><span class="token string-interpolation"><span class="token string">f"""审校关于 '</span><span class="token interpolation"><span class="token punctuation">{</span>topic<span class="token punctuation">}</span></span><span class="token string">' 的文章，确保内容质量。
+
+审校维度：
+1. 事实准确性：检查所有数据和事实是否正确
+2. 逻辑完整性：检查论证是否完整、逻辑是否通顺
+3. 表达清晰度：检查语言是否清晰、简洁
+4. 结构合理性：检查文章结构是否合理
+5. 格式规范性：检查 Markdown 格式是否正确
+
+输出要求：
+- 如果有问题，列出具体问题并提供修改建议
+- 如果质量合格，确认通过并给出简要评价
+- 提供改进建议（如有）
+"""</span></span><span class="token punctuation">,</span>
+        expected_output<span class="token operator">=</span><span class="token string">"审校报告，包含问题列表（如有）和修改建议"</span><span class="token punctuation">,</span>
+        agent<span class="token operator">=</span>reviewer<span class="token punctuation">,</span>
+        context<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>  <span class="token comment"># 将在运行时填充文章</span>
+    <span class="token punctuation">)</span>
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<h3 data-heading="3.5. Crew 编排" dir="auto">3.5. Crew 编排</h3>
+<pre class="language-python" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-python is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token triple-quoted-string string">"""
+crew.py
+Crew 编排
+"""</span>
+
+<span class="token keyword">from</span> crewai <span class="token keyword">import</span> Crew<span class="token punctuation">,</span> Process
+<span class="token keyword">from</span> agents<span class="token punctuation">.</span>researcher <span class="token keyword">import</span> create_researcher
+<span class="token keyword">from</span> agents<span class="token punctuation">.</span>writer <span class="token keyword">import</span> create_writer
+<span class="token keyword">from</span> agents<span class="token punctuation">.</span>reviewer <span class="token keyword">import</span> create_reviewer
+<span class="token keyword">from</span> tasks<span class="token punctuation">.</span>research_task <span class="token keyword">import</span> create_research_task
+<span class="token keyword">from</span> tasks<span class="token punctuation">.</span>write_task <span class="token keyword">import</span> create_write_task
+<span class="token keyword">from</span> tasks<span class="token punctuation">.</span>review_task <span class="token keyword">import</span> create_review_task
+
+
+<span class="token keyword">class</span> <span class="token class-name">ContentCreationCrew</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    内容创作团队
+    
+    研究员 + 写作专家 + 审校专家 协作完成内容创作
+    """</span>
+    
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> topic<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">,</span> process_type<span class="token punctuation">:</span> <span class="token builtin">str</span> <span class="token operator">=</span> <span class="token string">"sequential"</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>topic <span class="token operator">=</span> topic
+        self<span class="token punctuation">.</span>process_type <span class="token operator">=</span> process_type
+        
+        <span class="token comment"># 创建 Agent</span>
+        self<span class="token punctuation">.</span>researcher <span class="token operator">=</span> create_researcher<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>writer <span class="token operator">=</span> create_writer<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>reviewer <span class="token operator">=</span> create_reviewer<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        
+        <span class="token comment"># 创建任务</span>
+        self<span class="token punctuation">.</span>research_task <span class="token operator">=</span> create_research_task<span class="token punctuation">(</span>topic<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>write_task <span class="token operator">=</span> create_write_task<span class="token punctuation">(</span>topic<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>review_task <span class="token operator">=</span> create_review_task<span class="token punctuation">(</span>topic<span class="token punctuation">)</span>
+        
+        <span class="token comment"># 设置任务依赖</span>
+        self<span class="token punctuation">.</span>write_task<span class="token punctuation">.</span>context <span class="token operator">=</span> <span class="token punctuation">[</span>self<span class="token punctuation">.</span>research_task<span class="token punctuation">]</span>
+        self<span class="token punctuation">.</span>review_task<span class="token punctuation">.</span>context <span class="token operator">=</span> <span class="token punctuation">[</span>self<span class="token punctuation">.</span>write_task<span class="token punctuation">]</span>
+    
+    <span class="token keyword">def</span> <span class="token function">run</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        运行 Crew
+        
+        Returns:
+            最终结果
+        """</span>
+        <span class="token comment"># 选择流程类型</span>
+        process <span class="token operator">=</span> Process<span class="token punctuation">.</span>sequential
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>process_type <span class="token operator">==</span> <span class="token string">"hierarchical"</span><span class="token punctuation">:</span>
+            process <span class="token operator">=</span> Process<span class="token punctuation">.</span>hierarchical
+        
+        <span class="token comment"># 创建 Crew</span>
+        crew <span class="token operator">=</span> Crew<span class="token punctuation">(</span>
+            agents<span class="token operator">=</span><span class="token punctuation">[</span>self<span class="token punctuation">.</span>researcher<span class="token punctuation">,</span> self<span class="token punctuation">.</span>writer<span class="token punctuation">,</span> self<span class="token punctuation">.</span>reviewer<span class="token punctuation">]</span><span class="token punctuation">,</span>
+            tasks<span class="token operator">=</span><span class="token punctuation">[</span>self<span class="token punctuation">.</span>research_task<span class="token punctuation">,</span> self<span class="token punctuation">.</span>write_task<span class="token punctuation">,</span> self<span class="token punctuation">.</span>review_task<span class="token punctuation">]</span><span class="token punctuation">,</span>
+            process<span class="token operator">=</span>process<span class="token punctuation">,</span>
+            verbose<span class="token operator">=</span><span class="token boolean">True</span>
+        <span class="token punctuation">)</span>
+        
+        <span class="token comment"># 执行</span>
+        result <span class="token operator">=</span> crew<span class="token punctuation">.</span>kickoff<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        
+        <span class="token keyword">return</span> result
+
+
+<span class="token keyword">class</span> <span class="token class-name">ParallelResearchCrew</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    并行研究团队
+    
+    多个研究员同时从不同角度研究，然后汇总
+    """</span>
+    
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> topic<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>topic <span class="token operator">=</span> topic
+    
+    <span class="token keyword">def</span> <span class="token function">run</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">str</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""并行执行研究"""</span>
+        <span class="token comment"># 创建多个研究员（不同角度）</span>
+        tech_researcher <span class="token operator">=</span> Agent<span class="token punctuation">(</span>
+            role<span class="token operator">=</span><span class="token string">"技术研究专家"</span><span class="token punctuation">,</span>
+            goal<span class="token operator">=</span><span class="token string-interpolation"><span class="token string">f"从技术角度深入研究 </span><span class="token interpolation"><span class="token punctuation">{</span>self<span class="token punctuation">.</span>topic<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">,</span>
+            backstory<span class="token operator">=</span><span class="token string">"你专注于技术实现和架构分析"</span><span class="token punctuation">,</span>
+            verbose<span class="token operator">=</span><span class="token boolean">True</span>
+        <span class="token punctuation">)</span>
+        
+        market_researcher <span class="token operator">=</span> Agent<span class="token punctuation">(</span>
+            role<span class="token operator">=</span><span class="token string">"市场研究专家"</span><span class="token punctuation">,</span>
+            goal<span class="token operator">=</span><span class="token string-interpolation"><span class="token string">f"从市场角度研究 </span><span class="token interpolation"><span class="token punctuation">{</span>self<span class="token punctuation">.</span>topic<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">,</span>
+            backstory<span class="token operator">=</span><span class="token string">"你专注于市场趋势和商业应用"</span><span class="token punctuation">,</span>
+            verbose<span class="token operator">=</span><span class="token boolean">True</span>
+        <span class="token punctuation">)</span>
+        
+        <span class="token comment"># 创建任务</span>
+        tech_task <span class="token operator">=</span> Task<span class="token punctuation">(</span>
+            description<span class="token operator">=</span><span class="token string-interpolation"><span class="token string">f"从技术角度研究 </span><span class="token interpolation"><span class="token punctuation">{</span>self<span class="token punctuation">.</span>topic<span class="token punctuation">}</span></span><span class="token string">，关注技术原理和实现"</span></span><span class="token punctuation">,</span>
+            expected_output<span class="token operator">=</span><span class="token string">"技术分析报告"</span><span class="token punctuation">,</span>
+            agent<span class="token operator">=</span>tech_researcher
+        <span class="token punctuation">)</span>
+        
+        market_task <span class="token operator">=</span> Task<span class="token punctuation">(</span>
+            description<span class="token operator">=</span><span class="token string-interpolation"><span class="token string">f"从市场角度研究 </span><span class="token interpolation"><span class="token punctuation">{</span>self<span class="token punctuation">.</span>topic<span class="token punctuation">}</span></span><span class="token string">，关注应用场景和商业价值"</span></span><span class="token punctuation">,</span>
+            expected_output<span class="token operator">=</span><span class="token string">"市场分析报告"</span><span class="token punctuation">,</span>
+            agent<span class="token operator">=</span>market_researcher
+        <span class="token punctuation">)</span>
+        
+        <span class="token comment"># 汇总 Agent</span>
+        synthesizer <span class="token operator">=</span> Agent<span class="token punctuation">(</span>
+            role<span class="token operator">=</span><span class="token string">"研究汇总专家"</span><span class="token punctuation">,</span>
+            goal<span class="token operator">=</span><span class="token string">"整合多个研究报告"</span><span class="token punctuation">,</span>
+            backstory<span class="token operator">=</span><span class="token string">"你擅长整合多来源信息"</span><span class="token punctuation">,</span>
+            verbose<span class="token operator">=</span><span class="token boolean">True</span>
+        <span class="token punctuation">)</span>
+        
+        synthesize_task <span class="token operator">=</span> Task<span class="token punctuation">(</span>
+            description<span class="token operator">=</span><span class="token string">"整合技术和市场研究报告，形成综合报告"</span><span class="token punctuation">,</span>
+            expected_output<span class="token operator">=</span><span class="token string">"综合研究报告"</span><span class="token punctuation">,</span>
+            agent<span class="token operator">=</span>synthesizer<span class="token punctuation">,</span>
+            context<span class="token operator">=</span><span class="token punctuation">[</span>tech_task<span class="token punctuation">,</span> market_task<span class="token punctuation">]</span>
+        <span class="token punctuation">)</span>
+        
+        <span class="token comment"># 并行执行</span>
+        crew <span class="token operator">=</span> Crew<span class="token punctuation">(</span>
+            agents<span class="token operator">=</span><span class="token punctuation">[</span>tech_researcher<span class="token punctuation">,</span> market_researcher<span class="token punctuation">,</span> synthesizer<span class="token punctuation">]</span><span class="token punctuation">,</span>
+            tasks<span class="token operator">=</span><span class="token punctuation">[</span>tech_task<span class="token punctuation">,</span> market_task<span class="token punctuation">,</span> synthesize_task<span class="token punctuation">]</span><span class="token punctuation">,</span>
+            process<span class="token operator">=</span>Process<span class="token punctuation">.</span>parallel<span class="token punctuation">,</span>
+            verbose<span class="token operator">=</span><span class="token boolean">True</span>
+        <span class="token punctuation">)</span>
+        
+        <span class="token keyword">return</span> crew<span class="token punctuation">.</span>kickoff<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<h3 data-heading="3.6. 主程序" dir="auto">3.6. 主程序</h3>
+<pre class="language-python" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-python is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token triple-quoted-string string">"""
+main.py
+入口文件
+"""</span>
+
+<span class="token keyword">from</span> crew <span class="token keyword">import</span> ContentCreationCrew<span class="token punctuation">,</span> ParallelResearchCrew
+
+
+<span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""主程序"""</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"🤖 多 Agent 协作系统"</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"="</span> <span class="token operator">*</span> <span class="token number">60</span><span class="token punctuation">)</span>
+    
+    <span class="token comment"># 获取主题</span>
+    topic <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"请输入研究主题: "</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    <span class="token keyword">if</span> <span class="token keyword">not</span> topic<span class="token punctuation">:</span>
+        topic <span class="token operator">=</span> <span class="token string">"AI Agent 技术"</span>
+    
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"\n📋 主题: </span><span class="token interpolation"><span class="token punctuation">{</span>topic<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"请选择模式:"</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"1. 顺序模式 (研究 → 写作 → 审校)"</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"2. 层级模式 (Manager 协调)"</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"3. 并行研究 (多角度同时研究)"</span><span class="token punctuation">)</span>
+    
+    choice <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"请选择 (1/2/3): "</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    <span class="token keyword">if</span> choice <span class="token operator">==</span> <span class="token string">"3"</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"\n🚀 启动并行研究..."</span><span class="token punctuation">)</span>
+        crew <span class="token operator">=</span> ParallelResearchCrew<span class="token punctuation">(</span>topic<span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        process <span class="token operator">=</span> <span class="token string">"sequential"</span> <span class="token keyword">if</span> choice <span class="token operator">==</span> <span class="token string">"1"</span> <span class="token keyword">else</span> <span class="token string">"hierarchical"</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"\n🚀 启动 </span><span class="token interpolation"><span class="token punctuation">{</span>process<span class="token punctuation">}</span></span><span class="token string"> 模式..."</span></span><span class="token punctuation">)</span>
+        crew <span class="token operator">=</span> ContentCreationCrew<span class="token punctuation">(</span>topic<span class="token punctuation">,</span> process_type<span class="token operator">=</span>process<span class="token punctuation">)</span>
+    
+    <span class="token comment"># 运行</span>
+    result <span class="token operator">=</span> crew<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    
+    <span class="token comment"># 输出结果</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"\n"</span> <span class="token operator">+</span> <span class="token string">"="</span> <span class="token operator">*</span> <span class="token number">60</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"✅ 任务完成!"</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"="</span> <span class="token operator">*</span> <span class="token number">60</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
+    main<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<h2 data-heading="4. 四、运行示例" dir="auto">4. 四、运行示例</h2>
+<pre class="language-bash" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-bash is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token comment"># 运行内容创作流程</span>
+python main.py
+
+<span class="token comment"># 输入主题</span>
+<span class="token comment"># 选择模式</span>
+<span class="token comment"># 查看协作过程</span>
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<h2 data-heading="5. 五、相关知识点" dir="auto">5. 五、相关知识点</h2>
+<ul>
+<li dir="auto"><a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/02-%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/%E6%9E%B6%E6%9E%84%E6%A8%A1%E5%BC%8F/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%8D%8F%E4%BD%9C%E6%A8%A1%E5%BC%8F/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/02-%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/%E6%9E%B6%E6%9E%84%E6%A8%A1%E5%BC%8F/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%8D%8F%E4%BD%9C%E6%A8%A1%E5%BC%8F/" class="internal-link" target="" rel="noopener nofollow">多智能体协作模式</a> — 多 Agent 协作理论</li>
+<li dir="auto"><a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/02-%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/%E5%AF%B9%E6%AF%94%E5%88%86%E6%9E%90/%E6%A1%86%E6%9E%B6%E5%AF%B9%E6%AF%94-CrewAI-vs-AutoGen/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/02-%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/%E5%AF%B9%E6%AF%94%E5%88%86%E6%9E%90/%E6%A1%86%E6%9E%B6%E5%AF%B9%E6%AF%94-CrewAI-vs-AutoGen/" class="internal-link" target="" rel="noopener nofollow">框架对比-CrewAI-vs-AutoGen</a> — CrewAI 与 AutoGen 对比</li>
+<li dir="auto"><a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/02-%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/%E6%A6%82%E5%BF%B5%E8%A7%A3%E6%9E%90/Agent%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/" href="../../../../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E9%9D%A2%E8%AF%95/%E9%A2%98%E9%9B%86/02-%E6%A0%B8%E5%BF%83%E7%9F%A5%E8%AF%86/%E6%A6%82%E5%BF%B5%E8%A7%A3%E6%9E%90/Agent%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/" class="internal-link" target="" rel="noopener nofollow">Agent核心概念</a> — Agent 核心概念</li>
+</ul>
+<script defer src="../../../../../../_assets/script.fad57313884515cf.js"></script>
+</div></div></div>
+    
+    
+    
+  </article></div>
+  </main>
+  <footer class="site-footer"><span>纸上季刊</span><span>缓慢阅读与长篇写作</span></footer>
+</div><div class="html-server-blog-progress html-server-style-lab-progress is-rule" data-blog-progress data-blog-runtime-progress data-progress-state="idle" role="progressbar" aria-label="Loading page" aria-hidden="true"><span class="html-server-blog-progress-track"><i></i><b></b><em></em><em></em><em></em></span></div>
+    <div class="html-server-blog-related-modal" data-blog-related-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-related-close aria-label="Close related articles"></button>
+      <section class="html-server-blog-related-panel" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-related-title">
+        <header><div><span class="html-server-blog-kicker" data-blog-related-kind></span><h2 id="html-server-blog-related-title" data-blog-related-title></h2></div><button type="button" data-blog-related-close aria-label="Close"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <p data-blog-related-count></p>
+        <div class="html-server-blog-related-list" data-blog-related-list></div>
+      </section>
+    </div>
+    <div class="html-server-blog-search-modal" data-blog-search-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-search-close aria-label="Close search"></button>
+      <section class="html-server-blog-search-panel site-dialog" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-search-title">
+        <header class="dialog-head"><div><span class="html-server-blog-kicker">SEARCH</span><h2 id="html-server-blog-search-title">搜索文章</h2></div><button type="button" data-blog-search-close aria-label="关闭"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <label class="search-field"><span>支持标题、标签、系列、目录和属性</span><input id="search-input" type="search" data-blog-global-search placeholder="输入关键词开始搜索" autocomplete="off"></label>
+        <p class="search-summary" id="search-summary" data-blog-search-count>输入关键词开始搜索</p>
+        <div class="html-server-blog-search-results search-results dialog-list" id="search-results" data-blog-search-results></div>
+      </section>
+    </div>
+    <div class="html-server-blog-folder-modal" data-blog-folder-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-folder-close aria-label="Close folders"></button>
+      <section class="html-server-blog-folder-panel site-dialog" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-folder-title">
+        <header class="dialog-head"><div><span class="html-server-blog-kicker">VAULT</span><h2 id="html-server-blog-folder-title" data-blog-folder-title>浏览根目录</h2></div><button type="button" data-blog-folder-close aria-label="关闭"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <nav class="html-server-blog-folder-breadcrumb directory-breadcrumbs" data-blog-folder-breadcrumb aria-label="目录面包屑"></nav>
+        <p data-blog-folder-count></p>
+        <div class="html-server-blog-folder-browser directory-list dialog-list" data-blog-folder-browser></div>
+      </section>
+    </div>
+    <script type="application/json" data-blog-article-index>[]</script>
+    <script type="application/json" data-blog-folder-index data-current-folder="大模型/大模型面试/题集/02-核心知识/代码实践">[]</script>
+    <script type="application/json" data-blog-appearance-contract>{"version":1,"layouts":[{"id":"default","themes":["inherit"]},{"id":"next","themes":["inherit","next-classic","swiss-index","literary-quarterly","terminal-manual","quiet-journal","newspaper-daily","mint-notebook","tailwind-workspace"]},{"id":"butterfly","themes":["inherit","butterfly-colorful","brutal-broadcast","future-signal","field-notes","gallery-canvas","toy-modules","sakura-notes","clear-sky"]},{"id":"akilar","themes":["inherit","akilar-ark"]},{"id":"noionion","themes":["inherit","noionion-original"]},{"id":"kratos","themes":["inherit","kratos-rebirth"]},{"id":"leezhiy","themes":["inherit","leezhiy-next"]},{"id":"daybook","themes":["inherit","daybook-original"]},{"id":"style-lab-swiss","themes":["inherit","swiss-index"]},{"id":"style-lab-literary","themes":["inherit","literary-quarterly"]},{"id":"style-lab-terminal","themes":["inherit","terminal-manual"]},{"id":"style-lab-brutal","themes":["inherit","brutal-broadcast"]},{"id":"style-lab-quiet","themes":["inherit","quiet-journal"]},{"id":"style-lab-newspaper","themes":["inherit","newspaper-daily"]},{"id":"style-lab-future","themes":["inherit","future-signal"]},{"id":"style-lab-field","themes":["inherit","field-notes"]},{"id":"style-lab-gallery","themes":["inherit","gallery-canvas"]},{"id":"style-lab-toy","themes":["inherit","toy-modules"]},{"id":"style-lab-mint","themes":["inherit","mint-notebook"]},{"id":"style-lab-sakura","themes":["inherit","sakura-notes"]},{"id":"style-lab-sky","themes":["inherit","clear-sky"]},{"id":"style-lab-tailwind","themes":["inherit","tailwind-workspace"]}]}</script>
+  </div>
+  <script defer src="../../../../../../_assets/script.905a72eede1c8c41.js"></script>
+</body>
+</html>
