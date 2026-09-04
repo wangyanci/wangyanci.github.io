@@ -1,0 +1,14 @@
+# html-server 插件的构建产物，不推送到 GitHub Pages
+_releases/
+.html-server-publish.trace.log
+.html-server-publish-stat.json
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 编辑器临时文件
+*.swp
+*.swo
+*~
+*.tmp
