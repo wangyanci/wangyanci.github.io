@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="en" data-html-server-theme="light" data-blog-layout="leezhiy" data-blog-layout-theme="leezhiy-next" data-blog-page-kind="article" data-blog-mobile-zoom="false" data-blog-drawer-side="right" data-blog-theme-control="system" data-blog-search-variant="source" data-blog-sticky-swap-selector=".leezhiy-sidebar-inner" data-leezhiy-title-underline="slide" data-blog-scroll-mode="window" data-blog-document-pinning="false" data-blog-document-pinning-filter-regular="false" style="--html-server-navigation-surface-light: #f5f7fa;--html-server-navigation-surface-dark: #151515">
+<head><!--html-server-dynamic:start--><meta name="html-server-dynamic-page" data-html-server-dynamic-page data-html-server-dynamic-assertion-mode="every-page" data-html-server-dynamic-cache-ttl-ms="1800000" content="a-WyJsZWV6aGl5IiwibGVlemhpeS1uZXh0Il0"><style data-html-server-dynamic-prepaint>html{--html-server-navigation-surface-active:var(--html-server-navigation-surface-light,var(--html-server-blog-background-light,#f5f7fa));background:var(--html-server-navigation-surface-active)}html[data-html-server-theme="dark"]{--html-server-navigation-surface-active:var(--html-server-navigation-surface-dark,var(--html-server-blog-background-dark,#151515))}html[data-html-server-navigation-entering],html[data-html-server-dynamic-pending]{background:var(--html-server-navigation-surface-active)!important}html[data-html-server-navigation-entering] body,html[data-html-server-dynamic-pending] body{opacity:0!important}html[data-html-server-navigation-entering]::before,html[data-html-server-dynamic-pending]::before{content:"";position:fixed;inset:0;z-index:2147483646;background:var(--html-server-navigation-surface-active);pointer-events:none}html[data-html-server-navigation-entering]::after,html[data-html-server-dynamic-pending]::after{content:"";position:fixed;top:0;left:0;z-index:2147483647;width:38%;height:2px;background:var(--interactive-accent,#8b6f47);box-shadow:0 0 10px currentColor;animation:html-server-navigation-prepaint 1s ease-in-out infinite;pointer-events:none}@keyframes html-server-navigation-prepaint{0%{transform:translateX(-110%)}100%{transform:translateX(370%)}}@media(prefers-reduced-motion:reduce){html[data-html-server-navigation-entering]::after,html[data-html-server-dynamic-pending]::after{animation:none;width:100%;opacity:.7}}</style><script data-blog-navigation-bootstrap>(function(){
+  var root=document.documentElement,key='html-server:navigation-handoff',handoff=null;
+  try{handoff=JSON.parse(sessionStorage.getItem(key)||'null');}catch(error){}
+  var target=location.pathname+location.search;
+  if(handoff&&handoff.target===target&&Date.now()-Number(handoff.createdAt||0)<5000){
+    root.setAttribute('data-html-server-navigation-entering','');
+    var reveal=function(){requestAnimationFrame(function(){requestAnimationFrame(function(){root.removeAttribute('data-html-server-navigation-entering');try{sessionStorage.removeItem(key);}catch(error){}});});};
+    if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',reveal,{once:true});else reveal();
+    setTimeout(function(){root.removeAttribute('data-html-server-navigation-entering');},5000);
+  }else if(handoff){try{sessionStorage.removeItem(key);}catch(error){}}
+})();</script><script data-html-server-dynamic-bootstrap>(()=>{
+const m={"releaseId":"20260904091040909-e54ec6fc6a","appearanceKey":"a-WyJsZWV6aGl5IiwibGVlemhpeS1uZXh0Il0","route":"大模型/CUDA 算子工程：手写 FlashAttention v2 之路/第-5-章-Reduction-从-atomic-到-cluster-reduce/index.html","outputRootRelativeUrl":"../../../../../../../","siteRootRelativeUrl":"../../../","assertionPolicy":{"mode":"every-page","cacheTtlMs":1800000}},S=1,C="html-server:dynamic-appearance:v1";
+const html=document.documentElement,pending='data-html-server-dynamic-pending';if(!html)return;html.setAttribute(pending,'');
+try{Object.defineProperty(window,'__htmlServerDynamicSiteRoot',{configurable:true,value:new URL(m.siteRootRelativeUrl||m.outputRootRelativeUrl,document.baseURI||location.href).href});}catch(_){}
+const reveal=()=>html.removeAttribute(pending);
+const safe=p=>{p=String(p||'').replace(/\\/g,'/').replace(/^\/+/, '');return !!p&&!p.split('/').includes('..')&&!/^[a-z][a-z\d+.-]*:/i.test(p)};
+const routeUrl=p=>String(p).split('/').map(encodeURIComponent).join('/');
+const get=async u=>{const c=new AbortController(),t=setTimeout(()=>c.abort(),2000);try{const r=await fetch(u,{cache:'no-store',credentials:'same-origin',signal:c.signal});if(!r.ok)throw Error(String(r.status));return await r.json()}finally{clearTimeout(t)}};
+const p=m.assertionPolicy||{},mode=p.mode==='home-only'||p.mode==='cache'?p.mode:'every-page',ttl=Math.max(60000,Number(p.cacheTtlMs)||1800000);
+let storage;try{storage=localStorage}catch(_){}
+const clear=()=>{try{storage&&storage.removeItem(C)}catch(_){}};
+try{Object.defineProperty(window,'HtmlServerDynamicAppearanceCache',{configurable:true,value:{key:C,clear,refresh:()=>{clear();location.reload()}}})}catch(_){}
+const read=()=>{try{const v=JSON.parse(storage&&storage.getItem(C)||'null');return v&&v.schemaVersion===S&&typeof v.appearanceKey==='string'&&typeof v.releaseId==='string'&&safe(v.path)&&Number.isFinite(v.selectionRevision)&&Number.isFinite(v.expiresAt)?v:null}catch(_){return null}};
+const cached=read(),home=m.route==='index.html',reload=(()=>{try{return performance.getEntriesByType('navigation')[0]?.type==='reload'}catch(_){return false}})();
+const cacheValid=!!cached&&cached.releaseId===m.releaseId&&(mode!=='cache'||cached.expiresAt>Date.now()),refresh=mode==='every-page'||(mode==='home-only'&&home)||(mode==='cache'&&(!cacheValid||reload));
+(async()=>{let navigating=false;
+const rootForPage=async()=>{const fallback=window.__htmlServerStaticFallbackRoot,discovered=fallback&&typeof fallback.then==='function'?await fallback:null;return new URL(discovered&&discovered.siteRoot?discovered.siteRoot:m.outputRootRelativeUrl,document.baseURI||location.href)};
+const move=async(key,pathValue,releaseId,canonical)=>{if(key===m.appearanceKey)return false;if(!safe(m.route)||!safe(pathValue))return false;const root=await rootForPage(),encoded=routeUrl(m.route),rel=canonical?encoded:pathValue.replace(/\/+$/,'')+'/'+encoded,guard='html-server-dynamic:'+releaseId+':'+key+':'+m.route;if(sessionStorage.getItem(guard)==='1')return false;const target=new URL(rel,root);target.search=location.search;target.hash=location.hash;sessionStorage.setItem(guard,'1');navigating=true;location.replace(target.href);return true};
+try{
+if(!refresh){if(!cacheValid)return;if(cached.appearanceKey===m.appearanceKey){sessionStorage.removeItem('html-server-dynamic:'+cached.releaseId+':'+cached.appearanceKey+':'+m.route);return;}await move(cached.appearanceKey,cached.path,cached.releaseId,false);return;}
+const root=await rootForPage(),pair=await Promise.all([get(new URL('_config/data.json',root)),get(new URL('_config/release.json',root))]),cfg=pair[0],ptr=pair[1];
+if(cfg.schemaVersion!==S)return;
+if(ptr.schemaVersion!==S||(cfg.selectionRevision!==undefined&&cfg.selectionRevision!==ptr.selectionRevision)||!safe(ptr.manifest))return;
+const man=await get(new URL(ptr.manifest,root));if(man.schemaVersion!==S||man.releaseId!==ptr.releaseId||man.selectionRevision!==ptr.selectionRevision||man.primaryAppearance!==ptr.primaryAppearance||!safe(m.route))return;
+const hit=Object.entries(man.sites||{}).find(([,v])=>v.appearance&&v.appearance.layout===cfg.blogLayout&&v.appearance.theme===cfg.blogLayoutTheme);if(!hit)return;
+const key=hit[0],site=hit[1];if(!Array.isArray(site.routes)||!site.routes.includes(m.route))return;
+if(!safe(site.path))return;const record={schemaVersion:S,appearanceKey:key,layout:site.appearance.layout,theme:site.appearance.theme,path:site.path,releaseId:ptr.releaseId,selectionRevision:ptr.selectionRevision,expiresAt:mode==='home-only'?0:Date.now()+ttl};try{storage&&storage.setItem(C,JSON.stringify(record))}catch(_){}
+const guard='html-server-dynamic:'+ptr.releaseId+':'+key+':'+m.route;if(key===m.appearanceKey){sessionStorage.removeItem(guard);return;}
+await move(key,site.path,ptr.releaseId,key===man.primaryAppearance);
+}catch(_){if(mode!=='every-page'&&cacheValid&&!navigating)await move(cached.appearanceKey,cached.path,cached.releaseId,false).catch(()=>{})}finally{if(!navigating)reveal();}})();
+})();</script><!--html-server-dynamic:end-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  
+  <script defer src="../../../_assets/script.3b49c39b508edacb.js"></script>
+  <script data-blog-theme-bootstrap>(function(){
+  var root = document.documentElement;
+  var theme = root.getAttribute('data-html-server-theme') || 'light';
+  try {
+    var stored = localStorage.getItem('html-server-blog-theme');
+    if (stored === 'dark' || stored === 'light') theme = stored;
+  } catch (error) {}
+  root.setAttribute('data-html-server-theme', theme);
+  root.classList.toggle('theme-dark', theme === 'dark');
+  root.classList.toggle('theme-light', theme !== 'dark');
+  root.style.backgroundColor = theme === 'dark'
+    ? 'var(--html-server-navigation-surface-dark, var(--html-server-blog-background-dark, #151515))'
+    : 'var(--html-server-navigation-surface-light, var(--html-server-blog-background-light, #f5f7fa))';
+})();</script>
+  
+  <title>第5章：Reduction-从-atomic-到-cluster-reduce · Leezhiy Blog</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../_assets/leezhiy-assets/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../_assets/leezhiy-assets/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../_assets/leezhiy-assets/favicon-16x16-next.png">
+  <link rel="mask-icon" href="../../../_assets/leezhiy-assets/logo.svg" color="#222">
+  <link rel="stylesheet" href="../../../_assets/leezhiy-assets/pace-theme-minimal.min.css">
+  <script src="../../../_assets/leezhiy-assets/pace.min.js"></script>
+  <link rel="stylesheet" href="../../../_assets/blog.css">
+<link rel="preload" as="script" href="../../../_assets/blog.js" fetchpriority="high"><script>window.__htmlServerStaticSearch="../../../_assets/meta.json";window.__htmlServerStaticSidebar="../../../_assets/sidebar.json?v=mtmqj868-2gf";window.__htmlServerStaticInteractions={"comments":"../../../_assets/blog-interactions/comments.json","views":"../../../_assets/blog-interactions/views.json"};window.__htmlServerStaticPluginOverrides=window.__htmlServerStaticPluginOverrides||{};Object.assign(window.__htmlServerStaticPluginOverrides["blog-live2d"]||(window.__htmlServerStaticPluginOverrides["blog-live2d"]={}),{"localScriptUrl":"../../../_assets/live2d-widget/L2Dwidget.min.js","localModelUrl":"../../../_assets/live2d-widget/assets/koharu.model.json","assetBaseUrl":"../../../_assets/live2d-widget"});</script></head>
+<body class="theme-light html-server-blog-body" data-blog-layout="leezhiy" data-blog-layout-theme="leezhiy-next" data-blog-page-kind="article" data-blog-style-isolation="strict" data-blog-drawer-side="right" data-blog-theme-control="system" data-blog-search-variant="source" data-blog-sticky-swap-selector=".leezhiy-sidebar-inner" data-leezhiy-title-underline="slide" data-blog-scroll-mode="window" data-blog-document-pinning="false" data-blog-document-pinning-filter-regular="false" style="--html-server-navigation-surface-light: #f5f7fa;--html-server-navigation-surface-dark: #151515">
+  <script data-blog-theme-bootstrap>(function(){
+  var theme = document.documentElement.getAttribute('data-html-server-theme') || 'light';
+  document.body.classList.toggle('theme-dark', theme === 'dark');
+  document.body.classList.toggle('theme-light', theme !== 'dark');
+})();</script>
+  <script type="application/json" data-blog-theme-image-groups>{}</script>
+  
+  <div class="html-server-blog-app">
+    <link rel="stylesheet" href="../../../_assets/leezhiy-assets/needsharebutton.min.css" data-leezhiy-share-styles><div class="leezhiy-container" data-blog-course-page>
+  <div class="leezhiy-headband"></div>
+  <header class="leezhiy-header html-server-blog-site-header"><div class="leezhiy-header-inner"><button class="leezhiy-nav-toggle" type="button" data-leezhiy-nav-toggle aria-label="切换导航"><i></i><i></i><i></i></button><div class="site-brand-container"><div class="site-meta"><a class="brand html-server-blog-site-brand" href="../../../" title="Leezhiy Blog"><span></span><h1 class="site-title">Leezhiy Blog</h1><span></span></a><p class="site-subtitle" title="我秃了，也变强了">我秃了，也变强了</p></div></div><nav class="leezhiy-site-nav html-server-blog-primary-navigation" data-blog-primary-navigation aria-label="主导航"><ul class="main-menu menu">
+  <li class="menu-item menu-item-home"><a href="../../../"><i class="fa fa-home fa-fw leezhiy-icon" aria-hidden="true"></i><span>首页</span></a></li>
+  <li class="menu-item menu-item-archives"><a href="../../../archives/"><i class="fa fa-archive fa-fw leezhiy-icon" aria-hidden="true"></i><span>归档</span></a></li>
+  <li class="menu-item menu-item-categories"><a href="../../../categories/"><i class="fa fa-th fa-fw leezhiy-icon" aria-hidden="true"></i><span>分类</span></a></li>
+  <li class="menu-item menu-item-tags"><a href="../../../tags/"><i class="fa fa-tags fa-fw leezhiy-icon" aria-hidden="true"></i><span>标签</span></a></li>
+  <li class="menu-item menu-item-about"><a href="../../../custom-name/"><i class="fa fa-user fa-fw leezhiy-icon" aria-hidden="true"></i><span>关于</span></a></li>
+  <li class="menu-item menu-item-search"><button type="button" data-blog-search-open><i class="fa fa-search fa-fw leezhiy-icon" aria-hidden="true"></i><span>搜索</span></button></li>
+</ul></nav></div></header>
+  <button type="button" class="leezhiy-sidebar-dimmer html-server-blog-scrim" data-blog-scrim aria-label="关闭导航"></button>
+  <div class="leezhiy-main-inner"><main class="html-server-blog-main leezhiy-content" data-blog-main><article class="html-server-blog-article leezhiy-post-block leezhiy-article" data-blog-interaction-page="大模型/CUDA 算子工程：手写 FlashAttention v2 之路/第-5-章-Reduction-从-atomic-到-cluster-reduce.md"><header><h1>第5章：Reduction-从-atomic-到-cluster-reduce</h1><div class="leezhiy-post-meta post-meta"><span class="post-meta-item"><span class="post-meta-item-icon"><i class="far fa-calendar"></i></span><span class="post-meta-item-text">发表于</span><time title="创建时间：2026-07-14 21:42:44" itemprop="dateCreated datePublished" datetime="2026-07-14T21:42:44+08:00">2026-07-14</time></span><span class="post-meta-item"><span class="post-meta-item-icon"><i class="far fa-folder"></i></span><span class="post-meta-item-text">分类于</span><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="../../../categories/大模型/" itemprop="url" rel="index"><span itemprop="name">大模型</span></a></span>，<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="../../../categories/大模型/CUDA 算子工程：手写 FlashAttention v2 之路/" itemprop="url" rel="index"><span itemprop="name">CUDA 算子工程：手写 FlashAttention v2 之路</span></a></span></span><span id="/%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/%E7%AC%AC-5-%E7%AB%A0-Reduction-%E4%BB%8E-atomic-%E5%88%B0-cluster-reduce/" class="post-meta-item leancloud_visitors" data-flag-title="第5章：Reduction-从-atomic-到-cluster-reduce" title="阅读次数"><span class="post-meta-item-icon"><i class="fa fa-eye"></i></span><span class="post-meta-item-text">阅读次数：</span><span class="leancloud-visitors-count" data-blog-interaction-visits data-blog-interaction-path="大模型/CUDA 算子工程：手写 FlashAttention v2 之路/第-5-章-Reduction-从-atomic-到-cluster-reduce.md">0</span></span><span class="post-meta-item"><span class="post-meta-item-icon"><i class="far fa-comment"></i></span><span class="post-meta-item-text">Valine：</span><a title="valine" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/%E7%AC%AC-5-%E7%AB%A0-Reduction-%E4%BB%8E-atomic-%E5%88%B0-cluster-reduce/#valine-comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/%E7%AC%AC-5-%E7%AB%A0-Reduction-%E4%BB%8E-atomic-%E5%88%B0-cluster-reduce/" itemprop="commentCount" data-blog-interaction-comments data-blog-interaction-path="大模型/CUDA 算子工程：手写 FlashAttention v2 之路/第-5-章-Reduction-从-atomic-到-cluster-reduce.md">0</span></a></span><span class="post-meta-item" title="本文字数"><span class="post-meta-item-icon"><i class="far fa-file-word"></i></span><span>3.0k</span></span><span class="post-meta-item" title="阅读时长"><span class="post-meta-item-icon"><i class="far fa-clock"></i></span><span>8 分钟</span></span></div></header><div class="markdown-reading-view html-server-blog-reading-view"><div class="markdown-preview-view markdown-rendered"><div class="markdown-preview-sizer markdown-preview-section"><pre class="frontmatter language-yaml" style="display: none; overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-yaml is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token key atrule">created</span><span class="token punctuation">:</span> 2026<span class="token punctuation">-</span>07<span class="token punctuation">-</span>14 21<span class="token punctuation">:</span><span class="token number">43</span>
+<span class="token key atrule">updated</span><span class="token punctuation">:</span> 2026<span class="token punctuation">-</span>07<span class="token punctuation">-</span>14 21<span class="token punctuation">:</span><span class="token number">43</span>
+<span class="token key atrule">aliases</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> 第5章：Reduction<span class="token punctuation">-</span>从<span class="token punctuation">-</span>atomic<span class="token punctuation">-</span>到<span class="token punctuation">-</span>cluster<span class="token punctuation">-</span>reduce
+<span class="token key atrule">title</span><span class="token punctuation">:</span> 第5章：Reduction<span class="token punctuation">-</span>从<span class="token punctuation">-</span>atomic<span class="token punctuation">-</span>到<span class="token punctuation">-</span>cluster<span class="token punctuation">-</span>reduce
+<span class="token key atrule">source</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//www.yangyitao.com/books/cuda/chapters/05<span class="token punctuation">-</span>reduction
+<span class="token key atrule">tags</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> gpu<span class="token punctuation">-</span>computing
+  <span class="token punctuation">-</span> CUDA
+  <span class="token punctuation">-</span> 系列教程
+<span class="token key atrule">type</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> AI
+<span class="token key atrule">category</span><span class="token punctuation">:</span> GPU计算/CUDA
+<span class="token key atrule">cssclasses</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> gpu<span class="token punctuation">-</span>computing
+  <span class="token punctuation">-</span> series
+<span class="token key atrule">note</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">series</span><span class="token punctuation">:</span> CUDA 算子工程：手写 FlashAttention v2 之路</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout drop-shadow"><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg></div><div class="callout-title-inner">文档定位</div></div><div class="callout-content ab-note">
+<p dir="auto"><strong>AI 整理 + 学习笔记</strong>。原文出自杨艺韬《CUDA 算子工程：手写 FlashAttention v2 之路》一书。</p>
+<p dir="auto">原文链接:<a rel="noopener nofollow" class="external-link" href="https://www.yangyitao.com/books/cuda/chapters/05-reduction" target="_blank">https://www.yangyitao.com/books/cuda/chapters/05-reduction</a><br>
+系列入口:<a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/README/" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/README/" class="internal-link" target="" rel="noopener nofollow">大模型/CUDA 算子工程：手写 FlashAttention v2 之路/README</a></p>
+</div></div>
+<p dir="auto">CUDA 算子工程：手写 FlashAttention v2 之路</p>
+<p dir="auto">"If you can write a fast reduction, you understand GPU programming."<br>
+——CUDA 社区的不成文谚语</p>
+<h2 data-heading="为什么 Reduction 是入门第一题" dir="auto">为什么 Reduction 是入门第一题</h2>
+<p dir="auto">Reduction（归约）就是把一组数压成一个数——求和、求最大、求最小、求积。听起来简单，但在 GPU 上写好它需要把第 1-4 章的几乎所有概念都用上：</p>
+<ul>
+<li dir="auto"><strong>SIMT 与 warp</strong>：reduce 的核心是"32 个值合并成 1 个值"。</li>
+<li dir="auto"><strong>SMEM 与 bank conflict</strong>：跨 warp 的 partial sum 通过 SMEM 交换。</li>
+<li dir="auto"><strong>Warp Shuffle</strong>：warp 内的 reduce 不应该走 SMEM。</li>
+<li dir="auto"><strong>Coalesced 访存</strong>：HBM 读取需要 coalesced。</li>
+<li dir="auto"><strong>Vectorized load</strong>：用 <code class="code-styler-inline">float4</code>提升指令带宽。</li>
+<li dir="auto"><strong>Cluster Reduce</strong>（Hopper 新）：跨 block 协作。</li>
+<li dir="auto"><strong>算术强度</strong>：reduce 是极端 bandwidth-bound（AI ≈ 0.25），优化目标是逼近 HBM 峰值带宽。</li>
+</ul>
+<p dir="auto">Mark Harris 在 2007 年发表过一份经典的 reduction 优化教程（NVIDIA Webinar），把朴素 reduce 一步步优化了 7 个版本。这一章我们沿着他的思路，再加上 Volta 之后的 warp shuffle、Hopper 的 cluster reduce，给读者一份"现代版 Mark Harris reduce"。</p>
+<p dir="auto">最终目标：<strong>对 1 亿个 float 求和，达到 3+ TB/s（91%+ HBM 峰值）</strong>。</p>
+<h2 data-heading="V0：朴素 atomic 版" dir="auto">V0：朴素 atomic 版</h2>
+<p dir="auto">最直观的写法：每个线程读一个元素，atomic 加到全局结果上。</p>
+<pre class="language-text" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-text is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">__global__ void reduce_v0(const float* arr, float* out, int N) {
+    int tid = blockIdx.x * blockDim.x + threadIdx.x;
+    if (tid &lt; N) {
+        atomicAdd(out, arr[tid]);
+    }
+}
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">性能：<strong>~50 GB/s</strong>（H100, N=1e8）。这是带宽峰值的 1.5%——惨不忍睹。</p>
+<p dir="auto">为什么这么慢？因为 <strong>N 个线程同时 atomic add 到一个全局变量上</strong>，HBM 上的 atomic 操作完全串行化。N=1e8 时这是 1 亿次原子操作，相当于一个全局锁被 1 亿次抢锁。</p>
+<p dir="auto">教训：<strong>永远不要在 reduce 的最内层用全局 atomic</strong>。atomic 应该是分层归约的最后一步，且参与 atomic 的元素数量 &lt;&lt; SM 数量。</p>
+<h2 data-heading="V1：Block 内 SMEM 归约" dir="auto">V1：Block 内 SMEM 归约</h2>
+<p dir="auto">把 reduce 拆成两步：先在 block 内把一组元素归约成一个数（写到 partial sum 数组），再启动第二个 kernel 把 partial sum 归约成最终结果。</p>
+<pre class="language-text" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-text is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">__global__ void reduce_v1(const float* arr, float* partial, int N) {
+    __shared__ float smem[256];
+    int tid = threadIdx.x;
+    int gid = blockIdx.x * blockDim.x + tid;
+    smem[tid] = (gid &lt; N) ? arr[gid] : 0.0f;
+    __syncthreads();
+
+    // Block 内分层归约
+    for (int s = 1; s &lt; blockDim.x; s *= 2) {
+        if (tid % (2 * s) == 0) {
+            smem[tid] += smem[tid + s];
+        }
+        __syncthreads();
+    }
+
+    if (tid == 0) partial[blockIdx.x] = smem[0];
+}
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">性能：<strong>~700 GB/s</strong>。比 v0 提升 14 倍——主要是不再全局 atomic 了。</p>
+<p dir="auto">但 700 GB/s 还是只有峰值的 21%。问题在哪？看这段代码的关键瓶颈：</p>
+<pre class="language-text" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-text is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">if (tid % (2 * s) == 0) { ... }
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">这一行触发<strong>严重的 warp divergence</strong>：</p>
+<ul>
+<li dir="auto">s=1 时：tid=0,2,4,6,...30 活跃（16 个），tid=1,3,5,...31 闲置 → 50% divergence。</li>
+<li dir="auto">s=2 时：tid=0,4,8,...28 活跃（8 个），其余闲置 → 75% divergence。</li>
+<li dir="auto">s=4 时：tid=0,8,16,24 活跃（4 个）。</li>
+<li dir="auto">...</li>
+<li dir="auto">s=64 时：只有 tid=0 活跃。</li>
+</ul>
+<p dir="auto">虽然 warp 内"活跃 lane 数减少"不会直接降低带宽（带宽瓶颈在 HBM 读），但<strong>算术单元利用率下降</strong>会让整个 kernel 变长。</p>
+<h2 data-heading="V2：避免 warp divergence" dir="auto">V2：避免 warp divergence</h2>
+<p dir="auto">把分层方式改一下：<strong>让前 N/2 个线程做加法，避免奇偶交替</strong>。</p>
+<pre class="language-text" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-text is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">__global__ void reduce_v2(const float* arr, float* partial, int N) {
+    __shared__ float smem[256];
+    int tid = threadIdx.x;
+    int gid = blockIdx.x * blockDim.x + tid;
+    smem[tid] = (gid &lt; N) ? arr[gid] : 0.0f;
+    __syncthreads();
+
+    // 关键: 让前 s 个线程做加法
+    for (int s = blockDim.x / 2; s &gt; 0; s &gt;&gt;= 1) {
+        if (tid &lt; s) {
+            smem[tid] += smem[tid + s];
+        }
+        __syncthreads();
+    }
+
+    if (tid == 0) partial[blockIdx.x] = smem[0];
+}
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">现在 warp divergence 大幅降低：</p>
+<ul>
+<li dir="auto">s=128 时：tid=0..127 活跃（4 个完整 warp），tid=128..255 闲置（4 个完整 warp）。<strong>整个 warp 同进同退，无 warp 内 divergence</strong>。</li>
+<li dir="auto">s=64 时：tid=0..63 活跃（2 个完整 warp）。</li>
+<li dir="auto">s=32 时：tid=0..31 活跃（1 个完整 warp）。</li>
+<li dir="auto">s=16 时：tid=0..15 活跃（半个 warp，开始有 divergence）。</li>
+</ul>
+<p dir="auto">只有最后几个迭代（s ≤ 16）有 divergence——这部分量级很小，影响不大。</p>
+<p dir="auto">性能：<strong>~1100 GB/s</strong>。从 21% 提升到 33%。</p>
+<p dir="auto">但还有个隐藏问题：<strong>SMEM bank conflict</strong>。看这一句：</p>
+<pre class="language-text" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-text is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">smem[tid] += smem[tid + s];
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">s=1 时，tid 范围 0..127。读 <code class="code-styler-inline">smem[tid+1]</code>时：</p>
+<ul>
+<li dir="auto">tid=0 读 smem[1] (bank 1)</li>
+<li dir="auto">tid=1 读 smem[2] (bank 2)</li>
+<li dir="auto">...</li>
+<li dir="auto">tid=31 读 smem[32] (bank 0)</li>
+</ul>
+<p dir="auto">虽然不是 32-way conflict，但读 <code class="code-styler-inline">smem[tid+1]</code>的访问模式和读 <code class="code-styler-inline">smem[tid]</code>重叠了——硬件需要两次发射。SMEM 的"sequential"读写本身有 conflict。</p>
+<p dir="auto">实际上 NVIDIA 编译器会自动 unroll 最后几次循环，处理这种边界。但写代码的时候应该意识到这种成本存在。</p>
+<h2 data-heading="V3：每线程读多个元素" dir="auto">V3：每线程读多个元素</h2>
+<p dir="auto">reduce 的算术强度只有 0.25 FLOPs/byte——意味着每读 1 字节做 0.25 次加法。如果<strong>每线程读多个元素</strong>，可以摊薄"读元素到 SMEM"的开销。</p>
+<pre class="language-text" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-text is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">__global__ void reduce_v3(const float* arr, float* partial, int N) {
+    __shared__ float smem[256];
+    int tid = threadIdx.x;
+    int gid = blockIdx.x * (blockDim.x * 2) + tid;
+
+    // 每线程读 2 个元素, 直接相加
+    float v = 0.0f;
+    if (gid &lt; N) v += arr[gid];
+    if (gid + blockDim.x &lt; N) v += arr[gid + blockDim.x];
+    smem[tid] = v;
+    __syncthreads();
+
+    for (int s = blockDim.x / 2; s &gt; 0; s &gt;&gt;= 1) {
+        if (tid &lt; s) {
+            smem[tid] += smem[tid + s];
+        }
+        __syncthreads();
+    }
+
+    if (tid == 0) partial[blockIdx.x] = smem[0];
+}
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">每个 block 现在处理 <code class="code-styler-inline">2 * blockDim.x</code>个元素而不是 <code class="code-styler-inline">blockDim.x</code>个，grid_size 减半。性能：<strong>~1500 GB/s</strong>（45%）。</p>
+<p dir="auto">如果每线程读 4 个元素：</p>
+<pre class="language-text" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-text is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">float v = 0.0f;
+v += arr[gid];
+v += arr[gid + blockDim.x];
+v += arr[gid + blockDim.x * 2];
+v += arr[gid + blockDim.x * 3];
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">性能：<strong>~1800 GB/s</strong>（54%）。继续提升，但收益递减。</p>
+<h2 data-heading="V4：Vectorized Load 用 float4" dir="auto">V4：Vectorized Load 用 float4</h2>
+<p dir="auto">把"每线程读 4 个 float"换成"每线程读 1 个 float4"——这一行代码的改动让指令带宽减为 1/4：</p>
+<pre class="language-text" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-text is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">__global__ void reduce_v4(const float* arr, float* partial, int N) {
+    __shared__ float smem[256];
+    int tid = threadIdx.x;
+    int gid = blockIdx.x * blockDim.x + tid;
+
+    // Vectorized: 一次读 16 字节
+    float4 v = (gid * 4 + 4 &lt;= N) ?
+        *reinterpret_cast&lt;const float4*&gt;(&amp;arr[gid * 4]) :
+        make_float4(0, 0, 0, 0);
+    float local = v.x + v.y + v.z + v.w;
+    smem[tid] = local;
+    __syncthreads();
+
+    for (int s = blockDim.x / 2; s &gt; 0; s &gt;&gt;= 1) {
+        if (tid &lt; s) {
+            smem[tid] += smem[tid + s];
+        }
+        __syncthreads();
+    }
+
+    if (tid == 0) partial[blockIdx.x] = smem[0];
+}
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">性能：<strong>~2400 GB/s</strong>（72%）。一行代码（<code class="code-styler-inline">float4</code>替代 <code class="code-styler-inline">float</code>）的改动带来 30% 的提升。</p>
+<h2 data-heading="V5：Warp Shuffle 替代 SMEM 归约" dir="auto">V5：Warp Shuffle 替代 SMEM 归约</h2>
+<p dir="auto">到现在为止 block 内归约还在用 SMEM。但 warp 内的归约其实可以用 warp shuffle，<strong>无需 SMEM、无需同步</strong>：</p>
+<pre class="language-text" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-text is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">__inline__ __device__ float warp_reduce(float val) {
+    for (int offset = 16; offset &gt; 0; offset &gt;&gt;= 1) {
+        val += __shfl_xor_sync(0xFFFFFFFF, val, offset);
+    }
+    return val;
+}
+
+__global__ void reduce_v5(const float* arr, float* partial, int N) {
+    int tid = threadIdx.x;
+    int gid = blockIdx.x * blockDim.x + tid;
+
+    // 1. 每线程 vectorized load + 局部 sum
+    float4 v = (gid * 4 + 4 &lt;= N) ?
+        *reinterpret_cast&lt;const float4*&gt;(&amp;arr[gid * 4]) :
+        make_float4(0, 0, 0, 0);
+    float local = v.x + v.y + v.z + v.w;
+
+    // 2. Warp 内归约 (无 SMEM!)
+    local = warp_reduce(local);
+
+    // 3. 每个 warp 的 lane 0 写到 SMEM
+    __shared__ float warp_sums[8];  // blockDim.x / 32 = 8 warps
+    int warp_id = tid / 32;
+    int lane_id = tid % 32;
+    if (lane_id == 0) warp_sums[warp_id] = local;
+    __syncthreads();
+
+    // 4. Warp 0 归约 8 个 warp_sum
+    if (warp_id == 0) {
+        local = (lane_id &lt; 8) ? warp_sums[lane_id] : 0.0f;
+        local = warp_reduce(local);  // 实际只需要 3 次 shuffle (8 -&gt; 1)
+        if (lane_id == 0) partial[blockIdx.x] = local;
+    }
+}
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">关键变化：</p>
+<ol>
+<li dir="auto"><strong>warp 内 5 次 <code class="code-styler-inline">__shfl_xor_sync</code>替代了 5 次 SMEM 读+写+sync</strong>——约 5 倍快。</li>
+<li dir="auto"><strong>block 内只有一次 <code class="code-styler-inline">__syncthreads</code></strong>（写 warp_sums 之后）。</li>
+</ol>
+<p dir="auto">性能：<strong>~2800 GB/s</strong>（84%）。</p>
+<h2 data-heading="V6：移除 partial 数组，直接 atomic" dir="auto">V6：移除 partial 数组，直接 atomic</h2>
+<p dir="auto">V1-V5 都需要两个 kernel：第一个算 partial，第二个把 partial 数组归约成最终结果。两个 kernel 的开销和中间数组的 HBM 访问让性能受限。</p>
+<p dir="auto">如果每个 block 已经把自己的 partial sum 算到一个 float 了，这个数已经很小（几百到几千个）——这时候<strong>用 atomic 就没问题了</strong>：</p>
+<pre class="language-text" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-text is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">__global__ void reduce_v6(const float* arr, float* out, int N) {
+    int tid = threadIdx.x;
+    int gid = blockIdx.x * blockDim.x + tid;
+
+    float4 v = (gid * 4 + 4 &lt;= N) ?
+        *reinterpret_cast&lt;const float4*&gt;(&amp;arr[gid * 4]) :
+        make_float4(0, 0, 0, 0);
+    float local = v.x + v.y + v.z + v.w;
+    local = warp_reduce(local);
+
+    __shared__ float warp_sums[8];
+    int warp_id = tid / 32;
+    int lane_id = tid % 32;
+    if (lane_id == 0) warp_sums[warp_id] = local;
+    __syncthreads();
+
+    if (warp_id == 0) {
+        local = (lane_id &lt; 8) ? warp_sums[lane_id] : 0.0f;
+        local = warp_reduce(local);
+        // 关键: 不写中间数组, 直接 atomic
+        if (lane_id == 0) atomicAdd(out, local);
+    }
+}
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">少了一次 kernel launch + 一次中间数组 HBM 访问。grid_size 大约 1e8 / 1024 ≈ 1e5，每个 block 一次 atomicAdd，atomic 数量从 v0 的 1e8 降到 1e5——<strong>降低 1000 倍</strong>，几乎不会成为瓶颈。</p>
+<p dir="auto">性能：<strong>~3050 GB/s</strong>（91%）。已经非常接近 HBM 峰值。</p>
+<h2 data-heading="V7：Cluster Reduce（Hopper）" dir="auto">V7：Cluster Reduce（Hopper）</h2>
+<p dir="auto">Hopper 的 Cluster 让我们可以<strong>进一步把 atomic 数量再降低一个数量级</strong>——把 cluster 内 16 个 block 的 partial sum 在分布式 SMEM 内汇总，再 atomic 出去。</p>
+<pre class="language-text" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-text is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">#include &lt;cooperative_groups.h&gt;
+namespace cg = cooperative_groups;
+
+__global__ void __cluster_dims__(16, 1, 1)
+reduce_v7(const float* arr, float* out, int N) {
+    auto cluster = cg::this_cluster();
+    auto block = cg::this_thread_block();
+    int tid = threadIdx.x;
+    int gid = (cluster.block_rank() + cluster.dim_blocks() * blockIdx.x)
+              * blockDim.x + tid;
+
+    // 1-3. 同 v6: vectorized load + warp reduce + block reduce
+    float4 v = (gid * 4 + 4 &lt;= N) ?
+        *reinterpret_cast&lt;const float4*&gt;(&amp;arr[gid * 4]) :
+        make_float4(0, 0, 0, 0);
+    float local = v.x + v.y + v.z + v.w;
+    local = warp_reduce(local);
+
+    __shared__ float block_sum;
+    __shared__ float warp_sums[8];
+    int warp_id = tid / 32;
+    int lane_id = tid % 32;
+    if (lane_id == 0) warp_sums[warp_id] = local;
+    __syncthreads();
+    if (warp_id == 0) {
+        local = (lane_id &lt; 8) ? warp_sums[lane_id] : 0.0f;
+        local = warp_reduce(local);
+        if (lane_id == 0) block_sum = local;
+    }
+    __syncthreads();
+
+    // 4. Cluster 内汇总: block 0 收集所有 block 的 block_sum
+    cluster.sync();  // 等所有 block 都写完 block_sum
+    if (cluster.block_rank() == 0 &amp;&amp; warp_id == 0) {
+        float total = 0.0f;
+        for (int b = lane_id; b &lt; cluster.dim_blocks(); b += 32) {
+            float* peer = cluster.map_shared_rank(&amp;block_sum, b);
+            total += *peer;
+        }
+        // warp 内归约这个 total
+        total = warp_reduce(total);
+        if (lane_id == 0) atomicAdd(out, total);
+    }
+}
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">Cluster=16 时，每 16 个 block 共享一次 atomic，atomic 总数从 v6 的 ~1e5 降到 ~6e3——再降 16 倍。</p>
+<p dir="auto">性能：<strong>~3250 GB/s</strong>（97%）。已经几乎贴着 HBM 峰值。</p>
+<h2 data-heading="性能对比与小结" dir="auto">性能对比与小结</h2>
+<p dir="auto">把 7 个版本的性能放在一张表里：</p>
+<table>
+<thead>
+<tr>
+<th>版本</th>
+<th>优化点</th>
+<th>带宽 (GB/s)</th>
+<th>% HBM 峰值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>v0</td>
+<td>朴素 + 全局 atomic</td>
+<td>50</td>
+<td>1.5%</td>
+</tr>
+<tr>
+<td>v1</td>
+<td>Block 内 SMEM 归约</td>
+<td>700</td>
+<td>21%</td>
+</tr>
+<tr>
+<td>v2</td>
+<td>避免 warp divergence</td>
+<td>1100</td>
+<td>33%</td>
+</tr>
+<tr>
+<td>v3</td>
+<td>每线程读 4 元素</td>
+<td>1800</td>
+<td>54%</td>
+</tr>
+<tr>
+<td>v4</td>
+<td>float4 vectorized</td>
+<td>2400</td>
+<td>72%</td>
+</tr>
+<tr>
+<td>v5</td>
+<td>Warp shuffle</td>
+<td>2800</td>
+<td>84%</td>
+</tr>
+<tr>
+<td>v6</td>
+<td>直接 atomic, 无中间数组</td>
+<td>3050</td>
+<td>91%</td>
+</tr>
+<tr>
+<td>v7</td>
+<td>Cluster reduce (Hopper)</td>
+<td>3250</td>
+<td>97%</td>
+</tr>
+</tbody>
+</table>
+<p dir="auto">数字是 H100 SXM5、CUDA 12.3、N=1e8 的典型测量值；不同版本驱动 / 输入大小可能有 ±5% 偏差。</p>
+<p dir="auto">从 1.5% 到 97%——<strong>同一个算法，65 倍的性能差距</strong>。这就是 GPU 编程的现实：<strong>正确性容易，性能难</strong>。一个看似"小改动"（比如 vectorized load）背后藏着对硬件的深刻理解。</p>
+<div class="mermaid"><svg id="m58970e779a6a26ab" width="1231.3125" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flowchart" height="70" viewBox="0 0 1231.3125 70" role="graphics-document document" aria-roledescription="flowchart-v2"><style>#m58970e779a6a26ab{font-family:var(--font-mermaid);font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#m58970e779a6a26ab .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#m58970e779a6a26ab .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#m58970e779a6a26ab .error-icon{fill:#552222;}#m58970e779a6a26ab .error-text{fill:#552222;stroke:#552222;}#m58970e779a6a26ab .edge-thickness-normal{stroke-width:1px;}#m58970e779a6a26ab .edge-thickness-thick{stroke-width:3.5px;}#m58970e779a6a26ab .edge-pattern-solid{stroke-dasharray:0;}#m58970e779a6a26ab .edge-thickness-invisible{stroke-width:0;fill:none;}#m58970e779a6a26ab .edge-pattern-dashed{stroke-dasharray:3;}#m58970e779a6a26ab .edge-pattern-dotted{stroke-dasharray:2;}#m58970e779a6a26ab .marker{fill:#333333;stroke:#333333;}#m58970e779a6a26ab .marker.cross{stroke:#333333;}#m58970e779a6a26ab svg{font-family:var(--font-mermaid);font-size:16px;}#m58970e779a6a26ab p{margin:0;}#m58970e779a6a26ab .label{font-family:var(--font-mermaid);color:#333;}#m58970e779a6a26ab .cluster-label text{fill:#333;}#m58970e779a6a26ab .cluster-label span{color:#333;}#m58970e779a6a26ab .cluster-label span p{background-color:transparent;}#m58970e779a6a26ab .label text,#m58970e779a6a26ab span{fill:#333;color:#333;}#m58970e779a6a26ab .node rect,#m58970e779a6a26ab .node circle,#m58970e779a6a26ab .node ellipse,#m58970e779a6a26ab .node polygon,#m58970e779a6a26ab .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#m58970e779a6a26ab .rough-node .label text,#m58970e779a6a26ab .node .label text,#m58970e779a6a26ab .image-shape .label,#m58970e779a6a26ab .icon-shape .label{text-anchor:middle;}#m58970e779a6a26ab .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#m58970e779a6a26ab .rough-node .label,#m58970e779a6a26ab .node .label,#m58970e779a6a26ab .image-shape .label,#m58970e779a6a26ab .icon-shape .label{text-align:center;}#m58970e779a6a26ab .node.clickable{cursor:pointer;}#m58970e779a6a26ab .root .anchor path{fill:#333333!important;stroke-width:0;stroke:#333333;}#m58970e779a6a26ab .arrowheadPath{fill:#333333;}#m58970e779a6a26ab .edgePath .path{stroke:#333333;stroke-width:2.0px;}#m58970e779a6a26ab .flowchart-link{stroke:#333333;fill:none;}#m58970e779a6a26ab .edgeLabel{background-color:rgba(232,232,232, 0.8);text-align:center;}#m58970e779a6a26ab .edgeLabel p{background-color:rgba(232,232,232, 0.8);}#m58970e779a6a26ab .edgeLabel rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#m58970e779a6a26ab .labelBkg{background-color:rgba(232, 232, 232, 0.5);}#m58970e779a6a26ab .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#m58970e779a6a26ab .cluster text{fill:#333;}#m58970e779a6a26ab .cluster span{color:#333;}#m58970e779a6a26ab div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:var(--font-mermaid);font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#m58970e779a6a26ab .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#333;}#m58970e779a6a26ab rect.text{fill:none;stroke-width:0;}#m58970e779a6a26ab .icon-shape,#m58970e779a6a26ab .image-shape{background-color:rgba(232,232,232, 0.8);text-align:center;}#m58970e779a6a26ab .icon-shape p,#m58970e779a6a26ab .image-shape p{background-color:rgba(232,232,232, 0.8);padding:2px;}#m58970e779a6a26ab .icon-shape .label rect,#m58970e779a6a26ab .image-shape .label rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#m58970e779a6a26ab .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#m58970e779a6a26ab .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#m58970e779a6a26ab :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g><marker id="m58970e779a6a26ab-m58970e779a6a26ab_flowchart-v2-pointEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="m58970e779a6a26ab-m58970e779a6a26ab_flowchart-v2-pointStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="4.5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="m58970e779a6a26ab-m58970e779a6a26ab_flowchart-v2-circleEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="m58970e779a6a26ab-m58970e779a6a26ab_flowchart-v2-circleStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="m58970e779a6a26ab-m58970e779a6a26ab_flowchart-v2-crossEnd" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><marker id="m58970e779a6a26ab-m58970e779a6a26ab_flowchart-v2-crossStart" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><g class="root"><g class="clusters"></g><g class="edgePaths"><path d="M121.305,35L125.471,35C129.638,35,137.971,35,145.638,35C153.305,35,160.305,35,163.805,35L167.305,35" id="L_V0_V1_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_V0_V1_0" data-points="W3sieCI6MTIxLjMwNDY4NzUsInkiOjM1fSx7IngiOjE0Ni4zMDQ2ODc1LCJ5IjozNX0seyJ4IjoxNzEuMzA0Njg3NSwieSI6MzV9XQ==" marker-end="url(#m58970e779a6a26ab-m58970e779a6a26ab_flowchart-v2-pointEnd)"></path><path d="M278.734,35L282.901,35C287.068,35,295.401,35,303.068,35C310.734,35,317.734,35,321.234,35L324.734,35" id="L_V1_V2_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_V1_V2_0" data-points="W3sieCI6Mjc4LjczNDM3NSwieSI6MzV9LHsieCI6MzAzLjczNDM3NSwieSI6MzV9LHsieCI6MzI4LjczNDM3NSwieSI6MzV9XQ==" marker-end="url(#m58970e779a6a26ab-m58970e779a6a26ab_flowchart-v2-pointEnd)"></path><path d="M436.164,35L440.331,35C444.497,35,452.831,35,460.497,35C468.164,35,475.164,35,478.664,35L482.164,35" id="L_V2_V3_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_V2_V3_0" data-points="W3sieCI6NDM2LjE2NDA2MjUsInkiOjM1fSx7IngiOjQ2MS4xNjQwNjI1LCJ5IjozNX0seyJ4Ijo0ODYuMTY0MDYyNSwieSI6MzV9XQ==" marker-end="url(#m58970e779a6a26ab-m58970e779a6a26ab_flowchart-v2-pointEnd)"></path><path d="M593.594,35L597.76,35C601.927,35,610.26,35,617.927,35C625.594,35,632.594,35,636.094,35L639.594,35" id="L_V3_V4_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_V3_V4_0" data-points="W3sieCI6NTkzLjU5Mzc1LCJ5IjozNX0seyJ4Ijo2MTguNTkzNzUsInkiOjM1fSx7IngiOjY0My41OTM3NSwieSI6MzV9XQ==" marker-end="url(#m58970e779a6a26ab-m58970e779a6a26ab_flowchart-v2-pointEnd)"></path><path d="M751.023,35L755.19,35C759.357,35,767.69,35,775.357,35C783.023,35,790.023,35,793.523,35L797.023,35" id="L_V4_V5_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_V4_V5_0" data-points="W3sieCI6NzUxLjAyMzQzNzUsInkiOjM1fSx7IngiOjc3Ni4wMjM0Mzc1LCJ5IjozNX0seyJ4Ijo4MDEuMDIzNDM3NSwieSI6MzV9XQ==" marker-end="url(#m58970e779a6a26ab-m58970e779a6a26ab_flowchart-v2-pointEnd)"></path><path d="M908.453,35L912.62,35C916.786,35,925.12,35,932.786,35C940.453,35,947.453,35,950.953,35L954.453,35" id="L_V5_V6_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_V5_V6_0" data-points="W3sieCI6OTA4LjQ1MzEyNSwieSI6MzV9LHsieCI6OTMzLjQ1MzEyNSwieSI6MzV9LHsieCI6OTU4LjQ1MzEyNSwieSI6MzV9XQ==" marker-end="url(#m58970e779a6a26ab-m58970e779a6a26ab_flowchart-v2-pointEnd)"></path><path d="M1065.883,35L1070.049,35C1074.216,35,1082.549,35,1090.216,35C1097.883,35,1104.883,35,1108.383,35L1111.883,35" id="L_V6_V7_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_V6_V7_0" data-points="W3sieCI6MTA2NS44ODI4MTI1LCJ5IjozNX0seyJ4IjoxMDkwLjg4MjgxMjUsInkiOjM1fSx7IngiOjExMTUuODgyODEyNSwieSI6MzV9XQ==" marker-end="url(#m58970e779a6a26ab-m58970e779a6a26ab_flowchart-v2-pointEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" data-id="L_V0_V1_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_V1_V2_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_V2_V3_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_V3_V4_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_V4_V5_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_V5_V6_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_V6_V7_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-V0-0" transform="translate(64.65234375, 35)"><rect class="basic label-container" style="fill:#fee2e2 !important" x="-56.65234375" y="-27" width="113.3046875" height="54"></rect><g class="label" style="" transform="translate(-26.65234375, -12)"><rect></rect><foreignObject width="53.3046875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>v0 1.5%</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-V1-1" transform="translate(225.01953125, 35)"><rect class="basic label-container" style="" x="-53.71484375" y="-27" width="107.4296875" height="54"></rect><g class="label" style="" transform="translate(-23.71484375, -12)"><rect></rect><foreignObject width="47.4296875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>v1 21%</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-V2-3" transform="translate(382.44921875, 35)"><rect class="basic label-container" style="" x="-53.71484375" y="-27" width="107.4296875" height="54"></rect><g class="label" style="" transform="translate(-23.71484375, -12)"><rect></rect><foreignObject width="47.4296875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>v2 33%</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-V3-5" transform="translate(539.87890625, 35)"><rect class="basic label-container" style="" x="-53.71484375" y="-27" width="107.4296875" height="54"></rect><g class="label" style="" transform="translate(-23.71484375, -12)"><rect></rect><foreignObject width="47.4296875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>v3 54%</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-V4-7" transform="translate(697.30859375, 35)"><rect class="basic label-container" style="" x="-53.71484375" y="-27" width="107.4296875" height="54"></rect><g class="label" style="" transform="translate(-23.71484375, -12)"><rect></rect><foreignObject width="47.4296875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>v4 72%</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-V5-9" transform="translate(854.73828125, 35)"><rect class="basic label-container" style="" x="-53.71484375" y="-27" width="107.4296875" height="54"></rect><g class="label" style="" transform="translate(-23.71484375, -12)"><rect></rect><foreignObject width="47.4296875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>v5 84%</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-V6-11" transform="translate(1012.16796875, 35)"><rect class="basic label-container" style="" x="-53.71484375" y="-27" width="107.4296875" height="54"></rect><g class="label" style="" transform="translate(-23.71484375, -12)"><rect></rect><foreignObject width="47.4296875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>v6 91%</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-V7-13" transform="translate(1169.59765625, 35)"><rect class="basic label-container" style="fill:#bbf7d0 !important" x="-53.71484375" y="-27" width="107.4296875" height="54"></rect><g class="label" style="" transform="translate(-23.71484375, -12)"><rect></rect><foreignObject width="47.4296875" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>v7 97%</p></span></div></foreignObject></g></g></g></g></g></svg></div>
+<h2 data-heading="这一章给我们的工程哲学" dir="auto">这一章给我们的工程哲学</h2>
+<p dir="auto">读到这里读者应该感受到一种"层层压榨"的工程哲学：</p>
+<ol>
+<li dir="auto"><strong>永远先看 Roofline</strong>：reduce 是带宽 bound，目标是逼近 3.35 TB/s 峰值。</li>
+<li dir="auto"><strong>从 atomic 开始往下挖</strong>：全局 atomic → 分层 atomic → cluster atomic。</li>
+<li dir="auto"><strong>从访存开始往下挖</strong>：单 float → vectorized → 多元素 unroll。</li>
+<li dir="auto"><strong>从同步开始往下挖</strong>：每步 sync → 每 warp 一次 sync → cluster sync。</li>
+<li dir="auto"><strong>从指令带宽开始往下挖</strong>：每条指令处理更多数据，减少指令总数。</li>
+</ol>
+<p dir="auto">这五条线索贯穿 LLM 算子的所有优化场景。GEMM、Softmax、LayerNorm、FA2——它们的优化思路都是这五条的某种组合。</p>
+<p dir="auto"><strong>特别值得记住的两个反直觉事实</strong>：</p>
+<ul>
+<li dir="auto"><strong>同样的 SMEM 读写次数下，warp shuffle 比 SMEM 快 5 倍</strong>——因为 shuffle 是寄存器到寄存器，SMEM 是寄存器→SMEM→寄存器。</li>
+<li dir="auto"><strong>Cluster Reduce 不是为了 reduce 本身</strong>——它的真正价值在于"避免一次额外 kernel launch"。kernel launch 在 small data 时是隐藏的瓶颈。</li>
+</ul>
+<p dir="auto">第 6 章我们把这一套手艺用到 Softmax 上。Softmax 的核心也是 reduction（找 max + 求 exp sum），但比纯 reduce 多一个数值稳定性的问题——这正好是 Online Softmax 要解决的，也是 FA2 算法的灵魂。</p>
+<p dir="auto"><strong>本章动手练习</strong>：</p>
+<ol>
+<li dir="auto">在 H100 / A100 上把 v0..v7 都实现一遍，记录每个版本的实际带宽。</li>
+<li dir="auto">用 Nsight Compute 看 v3 vs v4 的 <code class="code-styler-inline">lts__t_sectors_op_read.sum.per_second</code>指标差异。</li>
+<li dir="auto">思考：如果 reduce 的不是 sum 而是 max，需要改哪些地方？为什么 max 的 atomic 没有 sum 的快？</li>
+</ol>
+<script defer src="../../../_assets/script.fad57313884515cf.js"></script>
+</div></div></div><div class="leezhiy-popular-posts-header">相关文章</div><ul class="leezhiy-popular-posts"><li class="leezhiy-popular-posts-item"><div><a href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/INDEX/" rel="bookmark">章节目录</a></div></li><li class="leezhiy-popular-posts-item"><div><a href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/README/" rel="bookmark">CUDA 算子工程：手写 FlashAttention v2 之路</a></div></li><li class="leezhiy-popular-posts-item"><div><a href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/%E7%AC%AC-21-%E7%AB%A0-%E6%80%A7%E8%83%BD%E9%99%B7%E9%98%B1%E4%B8%8E%E5%8F%8D%E6%A8%A1%E5%BC%8F/" rel="bookmark">第21章：性能陷阱与反模式</a></div></li><li class="leezhiy-popular-posts-item"><div><a href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/%E7%AC%AC-20-%E7%AB%A0-PTX-%E4%B8%8E-SASS-%E7%BC%96%E8%AF%91%E5%99%A8%E5%88%B0%E5%BA%95%E5%B9%B2%E4%BA%86%E4%BB%80%E4%B9%88/" rel="bookmark">第20章：PTX-与-SASS-编译器到底干了什么</a></div></li><li class="leezhiy-popular-posts-item"><div><a href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/%E7%AC%AC-19-%E7%AB%A0-Nsight-Compute-Systems-%E5%AE%9E%E6%88%98/" rel="bookmark">第19章：Nsight-Compute-Systems-实战</a></div></li></ul><div class="leezhiy-post-widgets"><div id="needsharebutton-postbottom" class="leezhiy-share-postbottom need-share-button" data-leezhiy-share><button type="button" class="btn" data-leezhiy-share-toggle aria-label="分享页面" aria-expanded="false"><i class="fa fa-share-alt fa-fw leezhiy-icon" aria-hidden="true"></i></button><span class="leezhiy-share-panel need-share-button_dropdown need-share-button_dropdown-bottom-center" aria-hidden="true"><button type="button" class="need-share-button_link need-share-button_weibo icon-weibo" data-leezhiy-share-network="weibo" title="Weibo" aria-label="Weibo" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_wechat icon-wechat" data-leezhiy-share-network="wechat" title="Wechat" aria-label="Wechat" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_douban icon-douban" data-leezhiy-share-network="douban" title="Douban" aria-label="Douban" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_qqzone icon-qqzone" data-leezhiy-share-network="qqzone" title="QQZone" aria-label="QQZone" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_twitter social-twitter" data-leezhiy-share-network="twitter" title="Twitter" aria-label="Twitter" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_facebook social-facebook" data-leezhiy-share-network="facebook" title="Facebook" aria-label="Facebook" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_linkedin social-linkedin" data-leezhiy-share-network="linkedin" title="Linkedin" aria-label="Linkedin" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_mailto social-mailto" data-leezhiy-share-network="mailto" title="Mailto" aria-label="Mailto" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_reddit social-reddit" data-leezhiy-share-network="reddit" title="Reddit" aria-label="Reddit" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_delicious social-delicious" data-leezhiy-share-network="delicious" title="Delicious" aria-label="Delicious" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_stumbleupon social-stumbleupon" data-leezhiy-share-network="stumbleupon" title="StumbleUpon" aria-label="StumbleUpon" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_pinterest social-pinterest" data-leezhiy-share-network="pinterest" title="Pinterest" aria-label="Pinterest" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_googleplus social-googleplus" data-leezhiy-share-network="googleplus" title="GooglePlus" aria-label="GooglePlus" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_tumblr social-tumblr" data-leezhiy-share-network="tumblr" title="Tumblr" aria-label="Tumblr" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_googlebookmarks social-googlebookmarks" data-leezhiy-share-network="googlebookmarks" title="GoogleBookmarks" aria-label="GoogleBookmarks" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_newsvine social-newsvine" data-leezhiy-share-network="newsvine" title="Newsvine" aria-label="Newsvine" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_evernote social-evernote" data-leezhiy-share-network="evernote" title="Evernote" aria-label="Evernote" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_friendfeed social-friendfeed" data-leezhiy-share-network="friendfeed" title="Friendfeed" aria-label="Friendfeed" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_vkontakte social-vkontakte" data-leezhiy-share-network="vkontakte" title="Vkontakte" aria-label="Vkontakte" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_odnoklassniki social-odnoklassniki" data-leezhiy-share-network="odnoklassniki" title="Odnoklassniki" aria-label="Odnoklassniki" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_mailru social-mailru" data-leezhiy-share-network="mailru" title="Mailru" aria-label="Mailru" tabindex="-1"></button></span></div></div><div class="leezhiy-reward-container"><div>Buy me a cup of milkshake 🍨.</div><button type="button" data-leezhiy-reward-toggle aria-expanded="false">打赏</button><div class="leezhiy-qr" data-leezhiy-reward-panel hidden><div><img src="../../../_assets/leezhiy-assets/wechatpay.png" alt="微信支付" loading="eager" decoding="async"><p>微信支付</p></div><div><img src="../../../_assets/leezhiy-assets/alipay.png" alt="支付宝" loading="lazy" decoding="async"><p>支付宝</p></div></div></div><div class="leezhiy-article-end">------------- 💖 🌞 本 文 结 束 😚 感 谢 您 的 阅 读 🌞 💖 -------------</div><ul class="leezhiy-post-copyright"><li><strong>本文作者： </strong>Li Zhiyuan</li><li><strong>本文链接：</strong><a href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/%E7%AC%AC-5-%E7%AB%A0-Reduction-%E4%BB%8E-atomic-%E5%88%B0-cluster-reduce/">/%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/%E7%AC%AC-5-%E7%AB%A0-Reduction-%E4%BB%8E-atomic-%E5%88%B0-cluster-reduce/</a></li><li><strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</li></ul><div class="leezhiy-followme"><p>欢迎关注我的其它发布渠道</p><div class="leezhiy-social-list"><a target="_blank" rel="noopener" href="../../../_assets/leezhiy-assets/wechat_channel.png"><span>◉</span><small>WeChat</small></a><a href="../../../atom.xml"><span>◔</span><small>RSS</small></a></div></div><footer class="leezhiy-post-footer"><div class="leezhiy-post-tags"><a href="../../../tags/gpu-computing/" rel="tag"><i class="fa fa-tags fa-fw leezhiy-icon" aria-hidden="true"></i>gpu-computing</a><a href="../../../tags/CUDA/" rel="tag"><i class="fa fa-tags fa-fw leezhiy-icon" aria-hidden="true"></i>CUDA</a><a href="../../../tags/系列教程/" rel="tag"><i class="fa fa-tags fa-fw leezhiy-icon" aria-hidden="true"></i>系列教程</a></div><nav class="html-server-blog-chapter-navigation" data-blog-chapter-navigation aria-label="Tutorial chapters">
+      <a href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/%E7%AC%AC-4-%E7%AB%A0-%E5%86%85%E5%AD%98%E5%B1%82%E7%BA%A7%E4%B8%8E%E4%BB%A3%E4%BB%B7%E8%A1%A8/?series=CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF"><small>← Previous</small><strong>第4章：内存层级与代价表</strong></a>
+      <a href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF/%E7%AC%AC-6-%E7%AB%A0-Softmax-%E4%B8%8E-Online-Softmax/?series=CUDA%20%E7%AE%97%E5%AD%90%E5%B7%A5%E7%A8%8B%EF%BC%9A%E6%89%8B%E5%86%99%20FlashAttention%20v2%20%E4%B9%8B%E8%B7%AF"><small>Next →</small><strong>第6章：Softmax-与-Online-Softmax</strong></a>
+    </nav></footer></article><section class="comments leezhiy-comments" id="valine-comments"><div class="v html-server-leezhiy-comments" data-blog-comments data-blog-comment-path="大模型/CUDA 算子工程：手写 FlashAttention v2 之路/第-5-章-Reduction-从-atomic-到-cluster-reduce.md" data-blog-comment-preview-mode="overlay"><div class="vpanel"><form class="vwrap" data-blog-comment-form data-blog-comment-custom-validation novalidate>
+  <div class="vheader item3"><input name="nick" required maxlength="40" autocomplete="nickname" placeholder="昵称" class="vnick vinput"><input name="email" type="email" maxlength="120" autocomplete="email" placeholder="邮箱" class="vmail vinput"><input name="website" type="url" maxlength="200" autocomplete="url" placeholder="网址(http://)" class="vlink vinput"></div>
+  <div class="vedit" data-blog-comment-editor><textarea name="comment" required maxlength="500" class="veditor vinput" data-blog-comment-default-placeholder="聊五分钱的天吗？|ω･)و ̑̑༉" placeholder="聊五分钱的天吗？|ω･)و ̑̑༉"></textarea><div class="vrow"><div class="vcol vcol-60 status-bar"><span data-blog-comment-replying hidden></span><button class="cancel-reply-btn" type="button" data-blog-comment-cancel hidden>取消回复</button></div><div class="vcol vcol-40 vctrl text-right"><button type="button" class="vicon vemoji-btn" data-blog-comment-emoji title="表情" aria-expanded="false"><svg class="vicon-svg" viewBox="0 0 1024 1024" aria-hidden="true" width="22" height="22"><path d="M512 1024a512 512 0 1 1 512-512 512 512 0 0 1-512 512zm0-967.1A455.1 455.1 0 1 0 967.1 512 455.1 455.1 0 0 0 512 56.9zM312.9 512a85.3 85.3 0 1 1 85.3-85.3 85.3 85.3 0 0 1-85.3 85.3zm199.1 256a142.2 142.2 0 0 1-142.2-142.2 28.4 28.4 0 0 1 56.9 0 85.3 85.3 0 0 0 170.6 0 28.4 28.4 0 0 1 56.9 0A142.2 142.2 0 0 1 512 768z"></path></svg></button><button type="button" class="vicon vpreview-btn" data-blog-comment-preview title="预览" aria-pressed="false"><svg class="vicon-svg" viewBox="0 0 1024 1024" aria-hidden="true" width="22" height="22"><path d="M502.4 935.4a29.5 29.5 0 1 1 0 59.1h-361C79.9 994.5 29.5 946.3 29.5 886.2V137.8C29.5 77.7 80 29.5 141.4 29.5h741.2c61.4 0 111.9 48.2 111.9 108.3v300.3a29.5 29.5 0 1 1-59.1 0V137.8c0-26.9-23.4-49.2-52.8-49.2H141.4c-29.4 0-52.8 22.3-52.8 49.2v748.4c0 26.9 23.4 49.2 52.8 49.2h361zM649.8 846.8a216.6 216.6 0 1 0 0-433.2 216.6 216.6 0 0 0 0 433.2zm0 59.1a275.7 275.7 0 1 1 0-551.4 275.7 275.7 0 0 1 0 551.4z"></path></svg></button></div></div></div>
+  <div class="vrow" data-blog-comment-actions><div class="vcol vcol-30"><a class="vicon markdown-link" href="https://guides.github.com/features/mastering-markdown/" target="_blank" rel="noopener noreferrer" aria-label="Markdown is supported" title="Markdown is supported"><svg class="markdown" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14.85 3H1.15C.52 3 0 3.52 0 4.15v7.69C0 12.48.52 13 1.15 13h13.69c.64 0 1.15-.52 1.15-1.15v-7.7C16 3.52 15.48 3 14.85 3zM9 11H7V8L5.5 9.92 4 8v3H2V5h2l1.5 2L7 5h2v6zm2.99.5L9.5 8H11V5h2v3h1.5l-2.51 3.5z"></path></svg></a></div><div class="vcol vcol-70 text-right"><button type="submit" class="vsubmit vbtn" title="Cmd|Ctrl+Enter">提交</button></div></div><div class="vemojis" data-blog-comment-emoji-panel hidden aria-label="选择表情"></div><div class="vinput vpreview markdown-rendered" data-blog-comment-preview-panel data-blog-comment-preview-renderer="markdown-it" hidden aria-live="polite"></div><span class="vempty" data-blog-comment-error hidden></span><span class="vvalidation" data-blog-comment-validation role="alert" aria-live="assertive" hidden><i aria-hidden="true">!</i><span data-blog-comment-validation-message></span></span>
+</form></div><div class="vcount" data-blog-comment-count-container hidden><span class="vnum" data-blog-comments-total>0</span> 评论</div><div class="vcards" data-blog-comment-items aria-live="polite"></div><template data-blog-comment-item-template>
+  <article class="vcard" data-blog-comment-item><span class="vimg" data-blog-comment-avatar></span><div class="vh"><div class="vhead"><strong class="vnick" data-blog-comment-nick></strong><span data-blog-comment-extras></span></div><div class="vmeta"><span class="vtime" data-blog-comment-meta data-blog-comment-time-format="valine-1.4.4"></span><span class="vactions"><button type="button" class="vlike" data-blog-comment-like aria-label="点赞" title="点赞"></button><button type="button" class="vat" data-blog-comment-reply aria-label="回复" title="回复">回复</button></span></div><div class="vcontent markdown-rendered" data-blog-comment-content></div><div class="vreply-wrapper"></div><div class="vquote" data-blog-comment-replies></div></div></article>
+</template><template data-blog-comment-empty-template><p class="vempty" data-blog-comment-empty>来发评论吧~</p></template><div class="vcopy txt-right">Powered By <a href="https://valine.js.org/" target="_blank" rel="noopener noreferrer">Valine</a><br>v1.4.4</div></div></section></main><aside class="leezhiy-sidebar html-server-blog-sidebar" data-blog-sidebar><div class="leezhiy-sidebar-inner affix-top"><ul class="sidebar-nav motion-element"><li class="sidebar-nav-toc sidebar-nav-active">文章目录</li><li class="sidebar-nav-overview">站点概览</li></ul><div class="post-toc-wrap sidebar-panel sidebar-panel-active"><nav class="html-server-blog-outline leezhiy-post-toc post-toc motion-element" data-blog-outline aria-label="文章目录"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%20Reduction%20%E6%98%AF%E5%85%A5%E9%97%A8%E7%AC%AC%E4%B8%80%E9%A2%98" data-blog-outline-link><span class="nav-text">为什么 Reduction 是入门第一题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#V0%EF%BC%9A%E6%9C%B4%E7%B4%A0%20atomic%20%E7%89%88" data-blog-outline-link><span class="nav-text">V0：朴素 atomic 版</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#V1%EF%BC%9ABlock%20%E5%86%85%20SMEM%20%E5%BD%92%E7%BA%A6" data-blog-outline-link><span class="nav-text">V1：Block 内 SMEM 归约</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#V2%EF%BC%9A%E9%81%BF%E5%85%8D%20warp%20divergence" data-blog-outline-link><span class="nav-text">V2：避免 warp divergence</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#V3%EF%BC%9A%E6%AF%8F%E7%BA%BF%E7%A8%8B%E8%AF%BB%E5%A4%9A%E4%B8%AA%E5%85%83%E7%B4%A0" data-blog-outline-link><span class="nav-text">V3：每线程读多个元素</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#V4%EF%BC%9AVectorized%20Load%20%E7%94%A8%20float4" data-blog-outline-link><span class="nav-text">V4：Vectorized Load 用 float4</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#V5%EF%BC%9AWarp%20Shuffle%20%E6%9B%BF%E4%BB%A3%20SMEM%20%E5%BD%92%E7%BA%A6" data-blog-outline-link><span class="nav-text">V5：Warp Shuffle 替代 SMEM 归约</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#V6%EF%BC%9A%E7%A7%BB%E9%99%A4%20partial%20%E6%95%B0%E7%BB%84%EF%BC%8C%E7%9B%B4%E6%8E%A5%20atomic" data-blog-outline-link><span class="nav-text">V6：移除 partial 数组，直接 atomic</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#V7%EF%BC%9ACluster%20Reduce%EF%BC%88Hopper%EF%BC%89" data-blog-outline-link><span class="nav-text">V7：Cluster Reduce（Hopper）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94%E4%B8%8E%E5%B0%8F%E7%BB%93" data-blog-outline-link><span class="nav-text">性能对比与小结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%99%E4%B8%80%E7%AB%A0%E7%BB%99%E6%88%91%E4%BB%AC%E7%9A%84%E5%B7%A5%E7%A8%8B%E5%93%B2%E5%AD%A6" data-blog-outline-link><span class="nav-text">这一章给我们的工程哲学</span></a></li></ol></nav></div><div class="site-overview-wrap sidebar-panel"><div class="leezhiy-overview" data-blog-overview data-blog-overview-dynamic="true" aria-busy="true"><div class="leezhiy-site-author"><img src="../../../_assets/leezhiy-assets/avatar.jpg" alt="Li Zhiyuan"><strong>Li Zhiyuan</strong><p title="程序，搞起来很轻松的，就是头冷">程序，搞起来很轻松的，就是头冷</p></div><nav class="leezhiy-site-state" data-blog-profile-counts><span class="html-server-blog-skeleton html-server-blog-skeleton-line"></span><span class="html-server-blog-skeleton html-server-blog-skeleton-line"></span><span class="html-server-blog-skeleton html-server-blog-skeleton-line"></span></nav><div class="leezhiy-author-links"><span class="leezhiy-author-link-item"><a href="https://github.com/leezhiy" title="GitHub → https://github.com/leezhiy" rel="noopener" target="_blank"><i class="fab fa-github fa-fw leezhiy-icon" aria-hidden="true"></i>GitHub</a></span><span class="leezhiy-author-link-item"><a href="mailto:18500754397@163.com" title="E-Mail → mailto:18500754397@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw leezhiy-icon" aria-hidden="true"></i>E-Mail</a></span><span class="leezhiy-author-link-item"><a href="https://weibo.com/5678634433" title="微博 → https://weibo.com/5678634433" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw leezhiy-icon" aria-hidden="true"></i>微博</a></span><span class="leezhiy-author-link-item"><a href="https://www.zhihu.com/people/li-zhi-yuan-13-7" title="知乎 → https://www.zhihu.com/people/li-zhi-yuan-13-7" rel="noopener" target="_blank"><i class="fa fa-globe fa-fw leezhiy-icon" aria-hidden="true"></i>知乎</a></span><span class="leezhiy-author-link-item"><a href="https://gitee.com/leezhiy" title="Gitee → https://gitee.com/leezhiy" rel="noopener" target="_blank"><i class="fab fa-git fa-fw leezhiy-icon" aria-hidden="true"></i>Gitee</a></span><span class="leezhiy-author-link-item"><a href="https://music.163.com/#/user/home?id=131550901" title="网易云 → https://music.163.com/#/user/home?id=131550901" rel="noopener" target="_blank"><i class="fa fa-music fa-fw leezhiy-icon" aria-hidden="true"></i>网易云</a></span></div><a class="leezhiy-license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener"><img src="../../../_assets/leezhiy-assets/cc-by-nc-sa.svg" alt="Creative Commons"></a><div class="leezhiy-blogroll"><strong>🔗 友情连接</strong><a href="https://music.163.com/#/user/home?id=131550901" target="_blank" rel="noopener">😆 网易云音乐 😆</a></div><div class="leezhiy-sidebar-data" hidden><div data-blog-overview-tags><span class="html-server-blog-skeleton html-server-blog-skeleton-line"></span></div><div data-blog-overview-series><span class="html-server-blog-skeleton html-server-blog-skeleton-line"></span></div><ol data-blog-overview-archive><li><span class="html-server-blog-skeleton html-server-blog-skeleton-line"></span></li></ol></div></div></div><button type="button" class="back-to-top" data-blog-scroll-top data-leezhiy-smooth-scroll-top><span data-leezhiy-scroll-percent>0%</span></button></div></aside></div>
+  <footer class="leezhiy-footer"><p>Tip: 本站电脑访问体验更佳耶 ♡</p><small>© 2015 – 2026 Leezhiy Blog · Powered by Obsidian HTML Server</small><span class="leezhiy-runtime-hooks" hidden><button data-blog-menu></button><button data-blog-folder-open></button><button data-blog-theme></button></span></footer>
+  <a href="https://github.com/leezhiy" class="leezhiy-github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0 0 115 115h15l12 27 108 108V0Z"/><path class="octo-arm" d="M128.3 109c-14.5-9.3-9.3-19.4-9.3-19.4 3-6.9 1.5-11 1.5-11-1.3-6.6 2.9-2.3 2.9-2.3 3.9 4.6 2.1 11 2.1 11-2.6 10.3 5.1 14.6 8.9 15.9"/><path class="octo-body" d="M115 115c3.8 1.5 4.8.4 4.8.4l13.9-13.8c3.2-2.4 6.2-3.2 8.5-3-8.4-10.6-14.7-24.2 1.6-40.6 4.7-4.6 10.2-6.8 15.9-7 1.5-3.9 4.4-8.2 11.7-10.9 0 0 4.7 2.4 7.4 16.1 8.7 4.8 16.2 12.3 21.3 21.4 13.7 2.6 16.2 7.3 16.2 7.3-3.6 8.2-9.4 11.1-10.9 11.7-.3 5.8-2.4 11.2-7.1 15.9-16.4 16.4-30 10-40.6 1.6.2 2.8-1 6.8-5 10.8L141 136.5c-1.2 1.2.6 5.4.8 5.3Z"/></svg></a><div id="needsharebutton-float" class="leezhiy-share-float need-share-button" data-leezhiy-share><button type="button" class="btn" data-leezhiy-share-toggle aria-label="分享页面" aria-expanded="false"><i class="fa fa-share-alt fa-fw leezhiy-icon" aria-hidden="true"></i></button><span class="leezhiy-share-panel need-share-button_dropdown need-share-button_dropdown-box-horizontal need-share-button_dropdown-middle-right" aria-hidden="true"><button type="button" class="need-share-button_link-box need-share-button_link need-share-button_weibo icon-weibo" data-leezhiy-share-network="weibo" title="Weibo" aria-label="Weibo" tabindex="-1"></button><button type="button" class="need-share-button_link-box need-share-button_link need-share-button_wechat icon-wechat" data-leezhiy-share-network="wechat" title="Wechat" aria-label="Wechat" tabindex="-1"></button><button type="button" class="need-share-button_link-box need-share-button_link need-share-button_douban icon-douban" data-leezhiy-share-network="douban" title="Douban" aria-label="Douban" tabindex="-1"></button><button type="button" class="need-share-button_link-box need-share-button_link need-share-button_qqzone icon-qqzone" data-leezhiy-share-network="qqzone" title="QQZone" aria-label="QQZone" tabindex="-1"></button><button type="button" class="need-share-button_link-box need-share-button_link need-share-button_twitter social-twitter" data-leezhiy-share-network="twitter" title="Twitter" aria-label="Twitter" tabindex="-1"></button><button type="button" class="need-share-button_link-box need-share-button_link need-share-button_facebook social-facebook" data-leezhiy-share-network="facebook" title="Facebook" aria-label="Facebook" tabindex="-1"></button><button type="button" class="need-share-button_link-box need-share-button_link need-share-button_linkedin social-linkedin" data-leezhiy-share-network="linkedin" title="Linkedin" aria-label="Linkedin" tabindex="-1"></button></span></div><section class="leezhiy-music-player aplayer aplayer-withlist aplayer-fixed" data-blog-music-player data-music-state="loading" data-music-collapsed="true" data-music-list-open="false" data-music-playing="false" data-music-loading="false" data-music-has-lrc="false" data-music-lrc-visible="false" data-music-order-state="random" data-music-loop-state="all" aria-label="音乐播放器">
+  <div class="aplayer-body">
+    <div class="aplayer-pic" data-music-cover><button type="button" class="aplayer-button aplayer-play" data-music-play aria-label="播放"><span class="aplayer-state-play"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 16 31" aria-hidden="true"><path d="M15.552 15.168q0.448 0.32 0.448 0.832 0 0.448-0.448 0.768l-13.696 8.512q-0.768 0.512-1.312 0.192t-0.544-1.28v-16.448q0-0.96 0.544-1.28t1.312 0.192z"></path></svg></span><span class="aplayer-state-pause"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 17 32" aria-hidden="true"><path d="M14.080 4.8q2.88 0 2.88 2.048v18.24q0 2.112-2.88 2.112t-2.88-2.112v-18.24q0-2.048 2.88-2.048zM2.88 4.8q2.88 0 2.88 2.048v18.24q0 2.112-2.88 2.112t-2.88-2.112v-18.24q0-2.048 2.88-2.048z"></path></svg></span></button></div>
+    <div class="aplayer-info"><div class="aplayer-music"><span class="aplayer-title" data-music-title>No audio</span> <span class="aplayer-author" data-music-author></span></div><div class="aplayer-controller"><div class="aplayer-bar-wrap" data-music-progress><div class="aplayer-bar"><div class="aplayer-loaded" data-music-loaded></div><div class="aplayer-played" data-music-played><span class="aplayer-thumb" data-music-progress-thumb><span class="aplayer-loading-icon"></span></span></div></div></div><div class="aplayer-time"><span class="aplayer-time-inner"><span class="aplayer-ptime" data-music-current-time>00:00</span> / <span class="aplayer-dtime" data-music-duration>00:00</span></span><button type="button" class="aplayer-icon aplayer-icon-back" data-music-prev aria-label="上一首"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32" aria-hidden="true"><path d="M25.468 6.947c-0.326-0.172-0.724-0.151-1.030 0.057l-6.438 4.38v-3.553c0-0.371-0.205-0.71-0.532-0.884-0.326-0.172-0.724-0.151-1.030 0.057l-12 8.164c-0.274 0.186-0.438 0.496-0.438 0.827s0.164 0.641 0.438 0.827l12 8.168c0.169 0.115 0.365 0.174 0.562 0.174 0.16 0 0.321-0.038 0.468-0.116 0.327-0.173 0.532-0.514 0.532-0.884v-3.556l6.438 4.382c0.169 0.115 0.365 0.174 0.562 0.174 0.16 0 0.321-0.038 0.468-0.116 0.327-0.173 0.532-0.514 0.532-0.884v-16.333c0-0.371-0.205-0.71-0.532-0.884z"></path></svg></button><button type="button" class="aplayer-icon aplayer-icon-play" data-music-play aria-label="播放"><span class="aplayer-state-play"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 16 31" aria-hidden="true"><path d="M15.552 15.168q0.448 0.32 0.448 0.832 0 0.448-0.448 0.768l-13.696 8.512q-0.768 0.512-1.312 0.192t-0.544-1.28v-16.448q0-0.96 0.544-1.28t1.312 0.192z"></path></svg></span><span class="aplayer-state-pause"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 17 32" aria-hidden="true"><path d="M14.080 4.8q2.88 0 2.88 2.048v18.24q0 2.112-2.88 2.112t-2.88-2.112v-18.24q0-2.048 2.88-2.048zM2.88 4.8q2.88 0 2.88 2.048v18.24q0 2.112-2.88 2.112t-2.88-2.112v-18.24q0-2.048 2.88-2.048z"></path></svg></span></button><button type="button" class="aplayer-icon aplayer-icon-forward" data-music-next aria-label="下一首"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32" aria-hidden="true"><path d="M25.468 6.947c-0.326-0.172-0.724-0.151-1.030 0.057l-6.438 4.38v-3.553c0-0.371-0.205-0.71-0.532-0.884-0.326-0.172-0.724-0.151-1.030 0.057l-12 8.164c-0.274 0.186-0.438 0.496-0.438 0.827s0.164 0.641 0.438 0.827l12 8.168c0.169 0.115 0.365 0.174 0.562 0.174 0.16 0 0.321-0.038 0.468-0.116 0.327-0.173 0.532-0.514 0.532-0.884v-3.556l6.438 4.382c0.169 0.115 0.365 0.174 0.562 0.174 0.16 0 0.321-0.038 0.468-0.116 0.327-0.173 0.532-0.514 0.532-0.884v-16.333c0-0.371-0.205-0.71-0.532-0.884z"></path></svg></button><div class="aplayer-volume-wrap"><button type="button" class="aplayer-icon aplayer-icon-volume-down" data-music-volume-toggle aria-label="静音"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 28 32" aria-hidden="true"><path d="M13.728 6.272v19.456q0 0.448-0.352 0.8t-0.8 0.32-0.8-0.32l-5.952-5.952h-4.672q-0.48 0-0.8-0.352t-0.352-0.8v-6.848q0-0.48 0.352-0.8t0.8-0.352h4.672l5.952-5.952q0.32-0.32 0.8-0.32t0.8 0.32 0.352 0.8zM20.576 16q0 1.344-0.768 2.528t-2.016 1.664q-0.16 0.096-0.448 0.096-0.448 0-0.8-0.32t-0.32-0.832q0-0.384 0.192-0.64t0.544-0.448 0.608-0.384 0.512-0.64 0.192-1.024-0.192-1.024-0.512-0.64-0.608-0.384-0.544-0.448-0.192-0.64q0-0.48 0.32-0.832t0.8-0.32q0.288 0 0.448 0.096 1.248 0.48 2.016 1.664t0.768 2.528z"></path></svg></button><div class="aplayer-volume-bar-wrap"><div class="aplayer-volume-bar" data-music-volume><div class="aplayer-volume" data-music-volume-level></div></div></div></div><button type="button" class="aplayer-icon aplayer-icon-order" data-music-order aria-label="播放顺序"><span class="aplayer-order-list"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32" aria-hidden="true"><path d="M0.622 18.334h19.54v7.55l11.052-9.412-11.052-9.413v7.549h-19.54v3.725z"></path></svg></span><span class="aplayer-order-random"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32" aria-hidden="true"><path d="M22.667 4l7 6-7 6 7 6-7 6v-4h-3.653l-3.76-3.76 2.827-2.827 2.587 2.587h2v-8h-2l-12 12h-6v-4h4.347l12-12h3.653v-4zM2.667 8h6l3.76 3.76-2.827 2.827-2.587-2.587h-4.347v-4z"></path></svg></span></button><button type="button" class="aplayer-icon aplayer-icon-loop" data-music-loop aria-label="循环模式"><span class="aplayer-loop-all"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 29 32" aria-hidden="true"><path d="M9.333 9.333h13.333v4l5.333-5.333-5.333-5.333v4h-16v8h2.667v-5.333zM22.667 22.667h-13.333v-4l-5.333 5.333 5.333 5.333v-4h16v-8h-2.667v5.333z"></path></svg></span><span class="aplayer-loop-one"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 33 32" aria-hidden="true"><path d="M9.333 9.333h13.333v4l5.333-5.333-5.333-5.333v4h-16v8h2.667v-5.333zM22.667 22.667h-13.333v-4l-5.333 5.333 5.333 5.333v-4h16v-8h-2.667v5.333zM17.333 20v-8h-1.333l-2.667 1.333v1.333h2v5.333h2z"></path></svg></span><span class="aplayer-loop-none"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 29 32" aria-hidden="true"><path d="M2.667 7.027l1.707-1.693 22.293 22.293-1.693 1.707-4-4h-11.64v4l-5.333-5.333 5.333-5.333v4h8.973l-8.973-8.973v0.973h-2.667v-3.64l-4-4zM22.667 17.333h2.667v5.573l-2.667-2.667v-2.907zM22.667 6.667v-4l5.333 5.333-5.333 5.333v-4h-10.907l-2.667-2.667h13.573z"></path></svg></span></button><button type="button" class="aplayer-icon aplayer-icon-menu" data-music-menu aria-label="歌单" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 22 32" aria-hidden="true"><path d="M20.8 14.4q0.704 0 1.152 0.48t0.448 1.12-0.48 1.12-1.12 0.48h-19.2q-0.64 0-1.12-0.48t-0.48-1.12 0.448-1.12 1.152-0.48h19.2zM1.6 11.2q-0.64 0-1.12-0.48t-0.48-1.12 0.448-1.12 1.152-0.48h19.2q0.704 0 1.152 0.48t0.448 1.12-0.48 1.12-1.12 0.48h-19.2zM20.8 20.8q0.704 0 1.152 0.48t0.448 1.12-0.48 1.12-1.12 0.48h-19.2q-0.64 0-1.12-0.48t-0.48-1.12 0.448-1.12 1.152-0.48h19.2z"></path></svg></button><button type="button" class="aplayer-icon aplayer-icon-lrc" data-music-lrc-toggle aria-label="歌词"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32" aria-hidden="true"><path d="M26.667 5.333h-21.333c-1.472 0-2.667 1.194-2.667 2.667v16c0 1.472 1.194 2.667 2.667 2.667h21.333c1.472 0 2.667-1.194 2.667-2.667v-16c0-1.472-1.194-2.667-2.667-2.667zM5.333 16h5.333v2.667h-5.333v-2.667zM18.667 24h-13.333v-2.667h13.333v2.667zM26.667 24h-5.333v-2.667h5.333v2.667zM26.667 18.667h-13.333v-2.667h13.333v2.667z"></path></svg></button></div></div></div>
+    <div class="aplayer-notice" data-music-notice hidden></div><div class="aplayer-miniswitcher"><button type="button" class="aplayer-icon" data-music-narrow aria-label="展开播放器" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32" aria-hidden="true"><path d="M22 16l-10.105-10.6-1.895 1.987 8.211 8.613-8.211 8.612 1.895 1.988 8.211-8.613z"></path></svg></button></div>
+  </div>
+  <div class="aplayer-lrc" data-music-lrc><div class="aplayer-lrc-contents" data-music-lrc-contents></div></div>
+  <div class="leezhiy-music-list aplayer-list" data-music-list aria-hidden="true"><ol data-music-list-items></ol><template data-music-list-item-template><li data-music-list-item tabindex="0" role="button"><span class="aplayer-list-cur" data-music-list-current></span><span class="aplayer-list-index" data-music-list-index></span><span class="aplayer-list-title" data-music-list-title></span><span class="aplayer-list-author" data-music-list-author></span></li></template></div>
+  <audio preload="auto"></audio>
+</section><div class="moon-menu" data-leezhiy-moon-menu><div class="moon-menu-items"><div class="moon-menu-item" data-blog-scroll-bottom role="button" tabindex="0" aria-label="滚动到底部"><i class="leezhiy-icon fa fa-chevron-down"></i></div><div class="moon-menu-item" data-blog-scroll-top data-leezhiy-smooth-scroll-top role="button" tabindex="0" aria-label="回到顶部"><i class="leezhiy-icon fa fa-chevron-up"></i></div><div class="moon-menu-item" data-leezhiy-comment-jump role="button" tabindex="0" aria-label="查看评论"><i class="leezhiy-icon fa fa-comments"></i></div><button class="moon-menu-item" type="button" data-blog-theme aria-label="切换明暗主题" title="切换明暗主题">◐</button></div><div class="moon-menu-button" data-leezhiy-moon-toggle role="button" tabindex="0" aria-label="页面工具" aria-expanded="false"><svg class="moon-menu-svg"><circle class="moon-menu-cricle" cx="50%" cy="50%" r="44%"></circle><circle class="moon-menu-border" cx="50%" cy="50%" r="48%"></circle><g class="moon-menu-points"><circle class="moon-menu-point" r=".2rem" cx="0" cy="-.8rem"></circle><circle class="moon-menu-point" r=".2rem"></circle><circle class="moon-menu-point" r=".2rem" cx="0" cy=".8rem"></circle></g></svg><div class="moon-menu-icon"></div><div class="moon-menu-text"></div></div></div><canvas class="fireworks" data-leezhiy-fireworks></canvas><script src="../../../_assets/leezhiy-assets/anime.min.js"></script>
+</div><div class="reading-progress-bar leezhiy-reading-progress" data-blog-progress data-leezhiy-reading-progress role="progressbar" aria-label="Reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+    <div class="html-server-blog-related-modal" data-blog-related-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-related-close aria-label="Close related articles"></button>
+      <section class="html-server-blog-related-panel" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-related-title">
+        <header><div><span class="html-server-blog-kicker" data-blog-related-kind></span><h2 id="html-server-blog-related-title" data-blog-related-title></h2></div><button type="button" data-blog-related-close aria-label="Close"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <p data-blog-related-count></p>
+        <div class="html-server-blog-related-list" data-blog-related-list></div>
+      </section>
+    </div>
+    <div class="html-server-blog-search-modal search-pop-overlay leezhiy-search-pop-overlay" data-blog-search-modal hidden><div class="popup search-popup leezhiy-search-popup" role="dialog" aria-modal="true" aria-labelledby="leezhiy-search-title"><div class="search-header leezhiy-search-header"><span class="search-icon leezhiy-search-icon" aria-hidden="true"><i class="fa fa-search"></i></span><form class="search-input-container leezhiy-search-input-container" data-blog-search-form><label id="leezhiy-search-title" class="leezhiy-visually-hidden" for="search-input">搜索文章</label><input id="search-input" class="search-input leezhiy-search-input" type="search" data-blog-global-search placeholder="搜索..." autocomplete="off" autocapitalize="off" spellcheck="false"></form><button class="popup-btn-close leezhiy-search-close" type="button" data-blog-search-close aria-label="关闭"><i class="fa fa-times-circle"></i></button></div><div id="search-result" class="leezhiy-search-result" data-blog-search-results></div><p class="leezhiy-search-count" data-blog-search-count aria-live="polite" hidden></p></div></div>
+    <div class="html-server-blog-folder-modal" data-blog-folder-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-folder-close aria-label="Close folders"></button>
+      <section class="html-server-blog-folder-panel site-dialog" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-folder-title">
+        <header class="dialog-head"><div><span class="html-server-blog-kicker">VAULT</span><h2 id="html-server-blog-folder-title" data-blog-folder-title>浏览根目录</h2></div><button type="button" data-blog-folder-close aria-label="关闭"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <nav class="html-server-blog-folder-breadcrumb directory-breadcrumbs" data-blog-folder-breadcrumb aria-label="目录面包屑"></nav>
+        <p data-blog-folder-count></p>
+        <div class="html-server-blog-folder-browser directory-list dialog-list" data-blog-folder-browser></div>
+      </section>
+    </div>
+    <script type="application/json" data-blog-article-index>[]</script>
+    <script type="application/json" data-blog-folder-index data-current-folder="大模型/CUDA 算子工程：手写 FlashAttention v2 之路">[]</script>
+    <script type="application/json" data-blog-appearance-contract>{"version":1,"layouts":[{"id":"default","themes":["inherit"]},{"id":"next","themes":["inherit","next-classic","swiss-index","literary-quarterly","terminal-manual","quiet-journal","newspaper-daily","mint-notebook","tailwind-workspace"]},{"id":"butterfly","themes":["inherit","butterfly-colorful","brutal-broadcast","future-signal","field-notes","gallery-canvas","toy-modules","sakura-notes","clear-sky"]},{"id":"akilar","themes":["inherit","akilar-ark"]},{"id":"noionion","themes":["inherit","noionion-original"]},{"id":"kratos","themes":["inherit","kratos-rebirth"]},{"id":"leezhiy","themes":["inherit","leezhiy-next"]},{"id":"daybook","themes":["inherit","daybook-original"]},{"id":"style-lab-swiss","themes":["inherit","swiss-index"]},{"id":"style-lab-literary","themes":["inherit","literary-quarterly"]},{"id":"style-lab-terminal","themes":["inherit","terminal-manual"]},{"id":"style-lab-brutal","themes":["inherit","brutal-broadcast"]},{"id":"style-lab-quiet","themes":["inherit","quiet-journal"]},{"id":"style-lab-newspaper","themes":["inherit","newspaper-daily"]},{"id":"style-lab-future","themes":["inherit","future-signal"]},{"id":"style-lab-field","themes":["inherit","field-notes"]},{"id":"style-lab-gallery","themes":["inherit","gallery-canvas"]},{"id":"style-lab-toy","themes":["inherit","toy-modules"]},{"id":"style-lab-mint","themes":["inherit","mint-notebook"]},{"id":"style-lab-sakura","themes":["inherit","sakura-notes"]},{"id":"style-lab-sky","themes":["inherit","clear-sky"]},{"id":"style-lab-tailwind","themes":["inherit","tailwind-workspace"]}]}</script>
+  </div>
+  <script defer src="../../../_assets/script.c366180856be9831.js"></script>
+</body>
+</html>

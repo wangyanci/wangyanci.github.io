@@ -1,0 +1,597 @@
+<!doctype html>
+<html lang="en" data-html-server-theme="light" data-blog-layout="leezhiy" data-blog-layout-theme="leezhiy-next" data-blog-page-kind="article" data-blog-mobile-zoom="false" data-blog-drawer-side="right" data-blog-theme-control="system" data-blog-search-variant="source" data-blog-sticky-swap-selector=".leezhiy-sidebar-inner" data-leezhiy-title-underline="slide" data-blog-scroll-mode="window" data-blog-document-pinning="false" data-blog-document-pinning-filter-regular="false" style="--html-server-navigation-surface-light: #f5f7fa;--html-server-navigation-surface-dark: #151515">
+<head><!--html-server-dynamic:start--><meta name="html-server-dynamic-page" data-html-server-dynamic-page data-html-server-dynamic-assertion-mode="every-page" data-html-server-dynamic-cache-ttl-ms="1800000" content="a-WyJsZWV6aGl5IiwibGVlemhpeS1uZXh0Il0"><style data-html-server-dynamic-prepaint>html{--html-server-navigation-surface-active:var(--html-server-navigation-surface-light,var(--html-server-blog-background-light,#f5f7fa));background:var(--html-server-navigation-surface-active)}html[data-html-server-theme="dark"]{--html-server-navigation-surface-active:var(--html-server-navigation-surface-dark,var(--html-server-blog-background-dark,#151515))}html[data-html-server-navigation-entering],html[data-html-server-dynamic-pending]{background:var(--html-server-navigation-surface-active)!important}html[data-html-server-navigation-entering] body,html[data-html-server-dynamic-pending] body{opacity:0!important}html[data-html-server-navigation-entering]::before,html[data-html-server-dynamic-pending]::before{content:"";position:fixed;inset:0;z-index:2147483646;background:var(--html-server-navigation-surface-active);pointer-events:none}html[data-html-server-navigation-entering]::after,html[data-html-server-dynamic-pending]::after{content:"";position:fixed;top:0;left:0;z-index:2147483647;width:38%;height:2px;background:var(--interactive-accent,#8b6f47);box-shadow:0 0 10px currentColor;animation:html-server-navigation-prepaint 1s ease-in-out infinite;pointer-events:none}@keyframes html-server-navigation-prepaint{0%{transform:translateX(-110%)}100%{transform:translateX(370%)}}@media(prefers-reduced-motion:reduce){html[data-html-server-navigation-entering]::after,html[data-html-server-dynamic-pending]::after{animation:none;width:100%;opacity:.7}}</style><script data-blog-navigation-bootstrap>(function(){
+  var root=document.documentElement,key='html-server:navigation-handoff',handoff=null;
+  try{handoff=JSON.parse(sessionStorage.getItem(key)||'null');}catch(error){}
+  var target=location.pathname+location.search;
+  if(handoff&&handoff.target===target&&Date.now()-Number(handoff.createdAt||0)<5000){
+    root.setAttribute('data-html-server-navigation-entering','');
+    var reveal=function(){requestAnimationFrame(function(){requestAnimationFrame(function(){root.removeAttribute('data-html-server-navigation-entering');try{sessionStorage.removeItem(key);}catch(error){}});});};
+    if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',reveal,{once:true});else reveal();
+    setTimeout(function(){root.removeAttribute('data-html-server-navigation-entering');},5000);
+  }else if(handoff){try{sessionStorage.removeItem(key);}catch(error){}}
+})();</script><script data-html-server-dynamic-bootstrap>(()=>{
+const m={"releaseId":"20260904091040909-e54ec6fc6a","appearanceKey":"a-WyJsZWV6aGl5IiwibGVlemhpeS1uZXh0Il0","route":"大模型/DeepSeek V4 源码剖析/第20章-V4-在开源大模型版图里的位置/index.html","outputRootRelativeUrl":"../../../../../../../","siteRootRelativeUrl":"../../../","assertionPolicy":{"mode":"every-page","cacheTtlMs":1800000}},S=1,C="html-server:dynamic-appearance:v1";
+const html=document.documentElement,pending='data-html-server-dynamic-pending';if(!html)return;html.setAttribute(pending,'');
+try{Object.defineProperty(window,'__htmlServerDynamicSiteRoot',{configurable:true,value:new URL(m.siteRootRelativeUrl||m.outputRootRelativeUrl,document.baseURI||location.href).href});}catch(_){}
+const reveal=()=>html.removeAttribute(pending);
+const safe=p=>{p=String(p||'').replace(/\\/g,'/').replace(/^\/+/, '');return !!p&&!p.split('/').includes('..')&&!/^[a-z][a-z\d+.-]*:/i.test(p)};
+const routeUrl=p=>String(p).split('/').map(encodeURIComponent).join('/');
+const get=async u=>{const c=new AbortController(),t=setTimeout(()=>c.abort(),2000);try{const r=await fetch(u,{cache:'no-store',credentials:'same-origin',signal:c.signal});if(!r.ok)throw Error(String(r.status));return await r.json()}finally{clearTimeout(t)}};
+const p=m.assertionPolicy||{},mode=p.mode==='home-only'||p.mode==='cache'?p.mode:'every-page',ttl=Math.max(60000,Number(p.cacheTtlMs)||1800000);
+let storage;try{storage=localStorage}catch(_){}
+const clear=()=>{try{storage&&storage.removeItem(C)}catch(_){}};
+try{Object.defineProperty(window,'HtmlServerDynamicAppearanceCache',{configurable:true,value:{key:C,clear,refresh:()=>{clear();location.reload()}}})}catch(_){}
+const read=()=>{try{const v=JSON.parse(storage&&storage.getItem(C)||'null');return v&&v.schemaVersion===S&&typeof v.appearanceKey==='string'&&typeof v.releaseId==='string'&&safe(v.path)&&Number.isFinite(v.selectionRevision)&&Number.isFinite(v.expiresAt)?v:null}catch(_){return null}};
+const cached=read(),home=m.route==='index.html',reload=(()=>{try{return performance.getEntriesByType('navigation')[0]?.type==='reload'}catch(_){return false}})();
+const cacheValid=!!cached&&cached.releaseId===m.releaseId&&(mode!=='cache'||cached.expiresAt>Date.now()),refresh=mode==='every-page'||(mode==='home-only'&&home)||(mode==='cache'&&(!cacheValid||reload));
+(async()=>{let navigating=false;
+const rootForPage=async()=>{const fallback=window.__htmlServerStaticFallbackRoot,discovered=fallback&&typeof fallback.then==='function'?await fallback:null;return new URL(discovered&&discovered.siteRoot?discovered.siteRoot:m.outputRootRelativeUrl,document.baseURI||location.href)};
+const move=async(key,pathValue,releaseId,canonical)=>{if(key===m.appearanceKey)return false;if(!safe(m.route)||!safe(pathValue))return false;const root=await rootForPage(),encoded=routeUrl(m.route),rel=canonical?encoded:pathValue.replace(/\/+$/,'')+'/'+encoded,guard='html-server-dynamic:'+releaseId+':'+key+':'+m.route;if(sessionStorage.getItem(guard)==='1')return false;const target=new URL(rel,root);target.search=location.search;target.hash=location.hash;sessionStorage.setItem(guard,'1');navigating=true;location.replace(target.href);return true};
+try{
+if(!refresh){if(!cacheValid)return;if(cached.appearanceKey===m.appearanceKey){sessionStorage.removeItem('html-server-dynamic:'+cached.releaseId+':'+cached.appearanceKey+':'+m.route);return;}await move(cached.appearanceKey,cached.path,cached.releaseId,false);return;}
+const root=await rootForPage(),pair=await Promise.all([get(new URL('_config/data.json',root)),get(new URL('_config/release.json',root))]),cfg=pair[0],ptr=pair[1];
+if(cfg.schemaVersion!==S)return;
+if(ptr.schemaVersion!==S||(cfg.selectionRevision!==undefined&&cfg.selectionRevision!==ptr.selectionRevision)||!safe(ptr.manifest))return;
+const man=await get(new URL(ptr.manifest,root));if(man.schemaVersion!==S||man.releaseId!==ptr.releaseId||man.selectionRevision!==ptr.selectionRevision||man.primaryAppearance!==ptr.primaryAppearance||!safe(m.route))return;
+const hit=Object.entries(man.sites||{}).find(([,v])=>v.appearance&&v.appearance.layout===cfg.blogLayout&&v.appearance.theme===cfg.blogLayoutTheme);if(!hit)return;
+const key=hit[0],site=hit[1];if(!Array.isArray(site.routes)||!site.routes.includes(m.route))return;
+if(!safe(site.path))return;const record={schemaVersion:S,appearanceKey:key,layout:site.appearance.layout,theme:site.appearance.theme,path:site.path,releaseId:ptr.releaseId,selectionRevision:ptr.selectionRevision,expiresAt:mode==='home-only'?0:Date.now()+ttl};try{storage&&storage.setItem(C,JSON.stringify(record))}catch(_){}
+const guard='html-server-dynamic:'+ptr.releaseId+':'+key+':'+m.route;if(key===m.appearanceKey){sessionStorage.removeItem(guard);return;}
+await move(key,site.path,ptr.releaseId,key===man.primaryAppearance);
+}catch(_){if(mode!=='every-page'&&cacheValid&&!navigating)await move(cached.appearanceKey,cached.path,cached.releaseId,false).catch(()=>{})}finally{if(!navigating)reveal();}})();
+})();</script><!--html-server-dynamic:end-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  
+  <script defer src="../../../_assets/script.3b49c39b508edacb.js"></script>
+  <script data-blog-theme-bootstrap>(function(){
+  var root = document.documentElement;
+  var theme = root.getAttribute('data-html-server-theme') || 'light';
+  try {
+    var stored = localStorage.getItem('html-server-blog-theme');
+    if (stored === 'dark' || stored === 'light') theme = stored;
+  } catch (error) {}
+  root.setAttribute('data-html-server-theme', theme);
+  root.classList.toggle('theme-dark', theme === 'dark');
+  root.classList.toggle('theme-light', theme !== 'dark');
+  root.style.backgroundColor = theme === 'dark'
+    ? 'var(--html-server-navigation-surface-dark, var(--html-server-blog-background-dark, #151515))'
+    : 'var(--html-server-navigation-surface-light, var(--html-server-blog-background-light, #f5f7fa))';
+})();</script>
+  
+  <title>第20章：V4-在开源大模型版图里的位置 · Leezhiy Blog</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../_assets/leezhiy-assets/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../_assets/leezhiy-assets/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../_assets/leezhiy-assets/favicon-16x16-next.png">
+  <link rel="mask-icon" href="../../../_assets/leezhiy-assets/logo.svg" color="#222">
+  <link rel="stylesheet" href="../../../_assets/leezhiy-assets/pace-theme-minimal.min.css">
+  <script src="../../../_assets/leezhiy-assets/pace.min.js"></script>
+  <link rel="stylesheet" href="../../../_assets/blog.css">
+<link rel="preload" as="script" href="../../../_assets/blog.js" fetchpriority="high"><script>window.__htmlServerStaticSearch="../../../_assets/meta.json";window.__htmlServerStaticSidebar="../../../_assets/sidebar.json?v=mtmqj868-2gf";window.__htmlServerStaticInteractions={"comments":"../../../_assets/blog-interactions/comments.json","views":"../../../_assets/blog-interactions/views.json"};window.__htmlServerStaticPluginOverrides=window.__htmlServerStaticPluginOverrides||{};Object.assign(window.__htmlServerStaticPluginOverrides["blog-live2d"]||(window.__htmlServerStaticPluginOverrides["blog-live2d"]={}),{"localScriptUrl":"../../../_assets/live2d-widget/L2Dwidget.min.js","localModelUrl":"../../../_assets/live2d-widget/assets/koharu.model.json","assetBaseUrl":"../../../_assets/live2d-widget"});</script></head>
+<body class="theme-light html-server-blog-body" data-blog-layout="leezhiy" data-blog-layout-theme="leezhiy-next" data-blog-page-kind="article" data-blog-style-isolation="strict" data-blog-drawer-side="right" data-blog-theme-control="system" data-blog-search-variant="source" data-blog-sticky-swap-selector=".leezhiy-sidebar-inner" data-leezhiy-title-underline="slide" data-blog-scroll-mode="window" data-blog-document-pinning="false" data-blog-document-pinning-filter-regular="false" style="--html-server-navigation-surface-light: #f5f7fa;--html-server-navigation-surface-dark: #151515">
+  <script data-blog-theme-bootstrap>(function(){
+  var theme = document.documentElement.getAttribute('data-html-server-theme') || 'light';
+  document.body.classList.toggle('theme-dark', theme === 'dark');
+  document.body.classList.toggle('theme-light', theme !== 'dark');
+})();</script>
+  <script type="application/json" data-blog-theme-image-groups>{}</script>
+  
+  <div class="html-server-blog-app">
+    <link rel="stylesheet" href="../../../_assets/leezhiy-assets/needsharebutton.min.css" data-leezhiy-share-styles><div class="leezhiy-container" data-blog-course-page>
+  <div class="leezhiy-headband"></div>
+  <header class="leezhiy-header html-server-blog-site-header"><div class="leezhiy-header-inner"><button class="leezhiy-nav-toggle" type="button" data-leezhiy-nav-toggle aria-label="切换导航"><i></i><i></i><i></i></button><div class="site-brand-container"><div class="site-meta"><a class="brand html-server-blog-site-brand" href="../../../" title="Leezhiy Blog"><span></span><h1 class="site-title">Leezhiy Blog</h1><span></span></a><p class="site-subtitle" title="我秃了，也变强了">我秃了，也变强了</p></div></div><nav class="leezhiy-site-nav html-server-blog-primary-navigation" data-blog-primary-navigation aria-label="主导航"><ul class="main-menu menu">
+  <li class="menu-item menu-item-home"><a href="../../../"><i class="fa fa-home fa-fw leezhiy-icon" aria-hidden="true"></i><span>首页</span></a></li>
+  <li class="menu-item menu-item-archives"><a href="../../../archives/"><i class="fa fa-archive fa-fw leezhiy-icon" aria-hidden="true"></i><span>归档</span></a></li>
+  <li class="menu-item menu-item-categories"><a href="../../../categories/"><i class="fa fa-th fa-fw leezhiy-icon" aria-hidden="true"></i><span>分类</span></a></li>
+  <li class="menu-item menu-item-tags"><a href="../../../tags/"><i class="fa fa-tags fa-fw leezhiy-icon" aria-hidden="true"></i><span>标签</span></a></li>
+  <li class="menu-item menu-item-about"><a href="../../../custom-name/"><i class="fa fa-user fa-fw leezhiy-icon" aria-hidden="true"></i><span>关于</span></a></li>
+  <li class="menu-item menu-item-search"><button type="button" data-blog-search-open><i class="fa fa-search fa-fw leezhiy-icon" aria-hidden="true"></i><span>搜索</span></button></li>
+</ul></nav></div></header>
+  <button type="button" class="leezhiy-sidebar-dimmer html-server-blog-scrim" data-blog-scrim aria-label="关闭导航"></button>
+  <div class="leezhiy-main-inner"><main class="html-server-blog-main leezhiy-content" data-blog-main><article class="html-server-blog-article leezhiy-post-block leezhiy-article" data-blog-interaction-page="大模型/DeepSeek V4 源码剖析/第20章-V4-在开源大模型版图里的位置.md"><header><h1>第20章：V4-在开源大模型版图里的位置</h1><div class="leezhiy-post-meta post-meta"><span class="post-meta-item"><span class="post-meta-item-icon"><i class="far fa-calendar"></i></span><span class="post-meta-item-text">发表于</span><time title="创建时间：2026-07-14 21:37:11" itemprop="dateCreated datePublished" datetime="2026-07-14T21:37:11+08:00">2026-07-14</time></span><span class="post-meta-item"><span class="post-meta-item-icon"><i class="far fa-folder"></i></span><span class="post-meta-item-text">分类于</span><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="../../../categories/大模型/" itemprop="url" rel="index"><span itemprop="name">大模型</span></a></span>，<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="../../../categories/大模型/DeepSeek V4 源码剖析/" itemprop="url" rel="index"><span itemprop="name">DeepSeek V4 源码剖析</span></a></span></span><span id="/%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/%E7%AC%AC20%E7%AB%A0-V4-%E5%9C%A8%E5%BC%80%E6%BA%90%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%89%88%E5%9B%BE%E9%87%8C%E7%9A%84%E4%BD%8D%E7%BD%AE/" class="post-meta-item leancloud_visitors" data-flag-title="第20章：V4-在开源大模型版图里的位置" title="阅读次数"><span class="post-meta-item-icon"><i class="fa fa-eye"></i></span><span class="post-meta-item-text">阅读次数：</span><span class="leancloud-visitors-count" data-blog-interaction-visits data-blog-interaction-path="大模型/DeepSeek V4 源码剖析/第20章-V4-在开源大模型版图里的位置.md">0</span></span><span class="post-meta-item"><span class="post-meta-item-icon"><i class="far fa-comment"></i></span><span class="post-meta-item-text">Valine：</span><a title="valine" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/%E7%AC%AC20%E7%AB%A0-V4-%E5%9C%A8%E5%BC%80%E6%BA%90%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%89%88%E5%9B%BE%E9%87%8C%E7%9A%84%E4%BD%8D%E7%BD%AE/#valine-comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/%E7%AC%AC20%E7%AB%A0-V4-%E5%9C%A8%E5%BC%80%E6%BA%90%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%89%88%E5%9B%BE%E9%87%8C%E7%9A%84%E4%BD%8D%E7%BD%AE/" itemprop="commentCount" data-blog-interaction-comments data-blog-interaction-path="大模型/DeepSeek V4 源码剖析/第20章-V4-在开源大模型版图里的位置.md">0</span></a></span><span class="post-meta-item" title="本文字数"><span class="post-meta-item-icon"><i class="far fa-file-word"></i></span><span>4.7k</span></span><span class="post-meta-item" title="阅读时长"><span class="post-meta-item-icon"><i class="far fa-clock"></i></span><span>12 分钟</span></span></div></header><div class="markdown-reading-view html-server-blog-reading-view"><div class="markdown-preview-view markdown-rendered"><div class="markdown-preview-sizer markdown-preview-section"><pre class="frontmatter language-yaml" style="display: none; overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-yaml is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token key atrule">created</span><span class="token punctuation">:</span> 2026<span class="token punctuation">-</span>07<span class="token punctuation">-</span>14 21<span class="token punctuation">:</span><span class="token number">37</span>
+<span class="token key atrule">updated</span><span class="token punctuation">:</span> 2026<span class="token punctuation">-</span>07<span class="token punctuation">-</span>14 21<span class="token punctuation">:</span><span class="token number">37</span>
+<span class="token key atrule">aliases</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> 第20章：V4<span class="token punctuation">-</span>在开源大模型版图里的位置
+<span class="token key atrule">title</span><span class="token punctuation">:</span> 第20章：V4<span class="token punctuation">-</span>在开源大模型版图里的位置
+<span class="token key atrule">source</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//www.yangyitao.com/books/deepseek<span class="token punctuation">-</span>v4/chapters/20<span class="token punctuation">-</span>ecosystem
+<span class="token key atrule">tags</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> ai<span class="token punctuation">-</span>models
+  <span class="token punctuation">-</span> DeepSeek
+  <span class="token punctuation">-</span> 系列教程
+<span class="token key atrule">type</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> AI
+<span class="token key atrule">category</span><span class="token punctuation">:</span> AI模型/DeepSeek
+<span class="token key atrule">cssclasses</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> ai<span class="token punctuation">-</span>models
+  <span class="token punctuation">-</span> series
+<span class="token key atrule">note</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">series</span><span class="token punctuation">:</span> DeepSeek V4 源码剖析</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout drop-shadow"><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg></div><div class="callout-title-inner">文档定位</div></div><div class="callout-content ab-note">
+<p dir="auto"><strong>AI 整理 + 学习笔记</strong>。原文出自杨艺韬《DeepSeek V4 源码剖析》一书。</p>
+<p dir="auto">原文链接:<a rel="noopener nofollow" class="external-link" href="https://www.yangyitao.com/books/deepseek-v4/chapters/20-ecosystem" target="_blank">https://www.yangyitao.com/books/deepseek-v4/chapters/20-ecosystem</a><br>
+系列入口:<a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/README/" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/README/" class="internal-link" target="" rel="noopener nofollow">大模型/DeepSeek V4 源码剖析/README</a></p>
+</div></div>
+<p dir="auto">DeepSeek V4 源码剖析</p>
+<p dir="auto">“Each model is a snapshot. The trajectory of all snapshots together is the field.” —— 引自一位 LLM 史学者</p>
+<p dir="auto">拆完 V4 的源码之后，我们要走出”放大镜”，回到地图——V4 在 2026 年开源大模型版图里到底处在什么位置？接下来 12-18 个月会怎样演进？</p>
+<h2 data-heading="2026 年开源 LLM 版图" dir="auto">2026 年开源 LLM 版图</h2>
+<p dir="auto">把 2026 年 4 月的主流开源 LLM 按”架构 / 上下文 / 训练栈” 三个维度摆出来：</p>
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>总参/激活</th>
+<th>上下文</th>
+<th>Attention</th>
+<th>MoE</th>
+<th>精度</th>
+<th>协议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DeepSeek V4 Pro</td>
+<td>1.6T / 49B</td>
+<td>1M</td>
+<td>MLA + sparse + 滑窗</td>
+<td>384 / top-6</td>
+<td>FP4 + FP8</td>
+<td>MIT</td>
+</tr>
+<tr>
+<td>DeepSeek V4 Flash</td>
+<td>284B / 13B</td>
+<td>1M</td>
+<td>MLA + sparse + 滑窗</td>
+<td>smaller MoE</td>
+<td>FP4 + FP8</td>
+<td>MIT</td>
+</tr>
+<tr>
+<td>Qwen3-MoE-Max</td>
+<td>~700B / 35B</td>
+<td>256K</td>
+<td>dense MLA</td>
+<td>~128 / top-6</td>
+<td>FP8</td>
+<td>Apache</td>
+</tr>
+<tr>
+<td>Llama 4 Behemoth</td>
+<td>~2T / ~80B</td>
+<td>1M</td>
+<td>dense + GQA</td>
+<td>~64 / top-1-2</td>
+<td>BF16/FP8</td>
+<td>Llama Community</td>
+</tr>
+<tr>
+<td>Mistral Magnum</td>
+<td>~480B / 22B</td>
+<td>128K</td>
+<td>dense + GQA</td>
+<td>dense</td>
+<td>BF16</td>
+<td>Apache</td>
+</tr>
+<tr>
+<td>Gemma 3.5</td>
+<td>70B (dense)</td>
+<td>1M</td>
+<td>dense + sliding</td>
+<td>-</td>
+<td>BF16</td>
+<td>Gemma</td>
+</tr>
+<tr>
+<td>GLM-5 (清华)</td>
+<td>~600B (推测)</td>
+<td>256K</td>
+<td>dense MLA-like</td>
+<td>dense / MoE 待定</td>
+<td>BF16/FP8</td>
+<td>Apache</td>
+</tr>
+</tbody>
+</table>
+<p dir="auto">V4 在三个维度上<strong>唯一</strong>：</p>
+<ul>
+<li dir="auto"><strong>唯一 1.6T MoE + 1M context + 稀疏 attention</strong>的开源模型</li>
+<li dir="auto"><strong>唯一 FP4 expert + FP8 linear</strong>的混合精度方案</li>
+<li dir="auto"><strong>唯一 MIT 许可</strong>的旗舰开源 LLM（Qwen 是 Apache，Llama 是 Llama Community，Gemma 是 Gemma）</li>
+</ul>
+<p dir="auto">这三条让 V4 在”长上下文 + 价格敏感 + 自由商用”三重需求下几乎没有竞争对手。</p>
+<h2 data-heading="20.1·补 V4 在 2026 年开源 LLM 版图中的”坐标”" dir="auto">20.1·补 V4 在 2026 年开源 LLM 版图中的”坐标”</h2>
+<p dir="auto">把 V4 Pro / V4 Flash 与同期主要竞争者放到”上下文长度 × 总参数量”的二维坐标上：</p>
+<pre class="language-text" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-text is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">quadrantChart
+  title 2026 年 4 月开源 LLM 坐标（上下文 × 总参数量）
+  x-axis "上下文长度 (log)" --&gt; "1M+"
+  y-axis "总参数 (log)" --&gt; "2T+"
+  quadrant-1 "大参数 + 长上下文 (V4 Pro 的甜区)"
+  quadrant-2 "大参数 + 短上下文 (Mistral Magnum)"
+  quadrant-3 "小参数 + 短上下文 (端侧模型)"
+  quadrant-4 "小参数 + 长上下文 (V4 Flash, Gemma)"
+  "DeepSeek V4 Pro": [0.95, 0.85]
+  "DeepSeek V4 Flash": [0.95, 0.45]
+  "Llama 4 Behemoth": [0.85, 0.95]
+  "Qwen3-MoE-Max": [0.55, 0.6]
+  "Mistral Magnum": [0.4, 0.5]
+  "Gemma 3.5": [0.85, 0.15]
+  "Qwen3-7B": [0.35, 0.05]
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">V4 Pro 在右上角——“1M context + 1.6T 参数”几乎无对手。V4 Flash 在右中——“1M context + 中等参数”也很独特。Llama 4 Behemoth 与 V4 Pro 接近，但因为 dense 架构 KV 占用更大，长 context 部署成本远高。</p>
+<p dir="auto">这张坐标图给”什么场景选 V4” 提供了视觉判断——你的需求落在右半区时 V4 是首选，左半区有更便宜的选择。</p>
+<h2 data-heading="V4 vs Qwen3 / Llama 4 / Mistral 实战对比" dir="auto">V4 vs Qwen3 / Llama 4 / Mistral 实战对比</h2>
+<p dir="auto">把 V4 与三个主要竞争对手做实战对比（基于公开 benchmark + V4 README 数字）：</p>
+<h3 data-heading="长文档分析（200K-1M context）" dir="auto">长文档分析（200K-1M context）</h3>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>V4 Pro</th>
+<th>Qwen3-MoE-Max</th>
+<th>Llama 4 Behemoth</th>
+<th>Gemma 3.5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1M context 支持</td>
+<td>✅</td>
+<td>❌ (只到 256K)</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>KV cache 体积</td>
+<td>极低 (2-9 GB)</td>
+<td>中</td>
+<td>高 (50+ GB)</td>
+<td>中</td>
+</tr>
+<tr>
+<td>单卡部署可行性</td>
+<td>高 (Pro 8 卡, Flash 2 卡)</td>
+<td>中</td>
+<td>低 (需 16+ 卡)</td>
+<td>高 (单卡)</td>
+</tr>
+<tr>
+<td>Token 价格</td>
+<td>极低</td>
+<td>低</td>
+<td>中</td>
+<td>-</td>
+</tr>
+<tr>
+<td>综合推荐</td>
+<td>首选</td>
+<td>中文场景</td>
+<td>闭源生态对接</td>
+<td>端侧/单卡</td>
+</tr>
+</tbody>
+</table>
+<h3 data-heading="推理与代码任务（&lt;128K context）" dir="auto">推理与代码任务（&lt;128K context）</h3>
+<p dir="auto">V4 / Qwen3 / Llama 4 / Mistral 在 128K 以内的能力差异更小——这是”大家都能做好”的领域。选型主要看：</p>
+<ul>
+<li dir="auto">价格：V4 Pro 与 Flash 的 token 价显著低于 Llama 4 / Mistral 商用价</li>
+<li dir="auto">中文支持：V4 / Qwen3 强于 Llama 4 / Mistral</li>
+<li dir="auto">推理深度：V4 的 Think Max 模式与 Qwen3 的 think 模式接近，强于 Llama 4 / Mistral 的”无显式 thinking”</li>
+</ul>
+<h3 data-heading="实时对话与端侧" dir="auto">实时对话与端侧</h3>
+<p dir="auto">V4 在这个领域<strong>不是首选</strong>——尺寸太大，Flash 也仍需多卡。Gemma 3.5 / Qwen3-7B / Llama 4 Scout 是更合适的选择。</p>
+<h2 data-heading="V4 对商业模式的冲击" dir="auto">V4 对商业模式的冲击</h2>
+<p dir="auto">V4 的发布对几个商业模式产生显著冲击：</p>
+<h3 data-heading="闭源 LLM API 服务" dir="auto">闭源 LLM API 服务</h3>
+<p dir="auto">V4 Pro 的 token 价（ <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mn class="mjx-n"><mjx-c class="mjx-c30"></mjx-c><mjx-c class="mjx-c2E"></mjx-c><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c34"></mjx-c><mjx-c class="mjx-c35"></mjx-c></mjx-mn><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2F"></mjx-c></mjx-mo></mjx-texatom><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D440 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45D TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D462 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo></mjx-math></mjx-container></span> 3.48/M output）显著低于 GPT-5.5 / Claude Opus 4.7 的同等长上下文价格。这意味着：</p>
+<ul>
+<li dir="auto">中等规模 SaaS 公司从闭源切到 V4 自建可以节省 50-80% 推理成本</li>
+<li dir="auto">长文档处理类产品（合同分析、研究报告生成）尤其受益</li>
+<li dir="auto">对延迟极敏感的产品（实时对话、客服）仍然倾向闭源（更稳定的延迟保证）</li>
+</ul>
+<h3 data-heading="模型代理 API（中转）" dir="auto">模型代理 API（中转）</h3>
+<p dir="auto">之前依赖”OpenRouter / 多模型聚合 API” 的产品，现在可以直接对接 V4 ——绕过中间层，进一步降本。</p>
+<h3 data-heading="训练即服务" dir="auto">训练即服务</h3>
+<p dir="auto">V4 把 1.6T MoE 训练栈开源（Muon + GRPO + on-policy 蒸馏的工程方案在公开 paper 中），降低了”自训类似规模模型”的门槛。但 32T tokens 的数据 + 训练算力仍是巨大壁垒——大多数公司仍会选择 fine-tune V4 而非 from-scratch 训练。</p>
+<h3 data-heading="长上下文专用模型" dir="auto">长上下文专用模型</h3>
+<p dir="auto">之前给”100K+ context 任务” 单独训练的小模型（比如 Anthropic 的 100K Claude variant）的市场价值下降——V4 的 1M context 已经覆盖大部分场景。</p>
+<h2 data-heading="V4 推动的 4 个研究方向" dir="auto">V4 推动的 4 个研究方向</h2>
+<p dir="auto">V4 的源码 + 训练栈开源后，会推动几个研究方向加速：</p>
+<h3 data-heading="方向 1：稀疏 attention 的进一步优化" dir="auto">方向 1：稀疏 attention 的进一步优化</h3>
+<p dir="auto">V4 的 Indexer + sparse_attn 是 1.6T 规模的工业实证。预计 12 个月内会有：</p>
+<ul>
+<li dir="auto">更高效的 score net（替代 V4 的 Indexer）</li>
+<li dir="auto">自适应 ratio（运行时根据 prompt 调 compress_ratio）</li>
+<li dir="auto">与 Mamba/SSM 的混合架构</li>
+</ul>
+<h3 data-heading="方向 2：FP4 / 更低精度训练" dir="auto">方向 2：FP4 / 更低精度训练</h3>
+<p dir="auto">V4 是第一个把 FP4 expert 推到 1.6T 规模的开源模型。预计后续会有：</p>
+<ul>
+<li dir="auto">全 FP4 训练（不只是 expert）</li>
+<li dir="auto">FP3 / FP2 训练的可行性研究</li>
+<li dir="auto">更激进的 ue6m0 / ue4m0 scale 格式</li>
+</ul>
+<h3 data-heading="方向 3：Hyper-Connections 的拓展" dir="auto">方向 3：Hyper-Connections 的拓展</h3>
+<p dir="auto">V4 的 HC 是 hc_mult=4。预计后续工作会探索：</p>
+<ul>
+<li dir="auto">更高 hc_mult（8 / 16）的可行性</li>
+<li dir="auto">HC 在小模型上的效果（V4 是首次工业化，小模型上效果未知）</li>
+<li dir="auto">与其他残差变体（Highway / DenseNet）的混合</li>
+</ul>
+<h3 data-heading="方向 4：多领域专家 + 蒸馏 pipeline" dir="auto">方向 4：多领域专家 + 蒸馏 pipeline</h3>
+<p dir="auto">V4 的两阶段后训练是 R1 路线的一般化。预计会被广泛复制到：</p>
+<ul>
+<li dir="auto">多语言专家（每语言一个专家）</li>
+<li dir="auto">多模态专家（文本 / 视觉 / 音频）</li>
+<li dir="auto">多任务专家（聊天 / 推理 / 工具使用）</li>
+</ul>
+<p dir="auto">每个方向都会催生新的开源模型——V4 成为一代”标杆 + 起点”。</p>
+<h2 data-heading="V5 可能的方向（推测）" dir="auto">V5 可能的方向（推测）</h2>
+<p dir="auto">基于 V2 → V3 → V3.2 → V4 的演进规律，对 V5 做一个<strong>有依据的推测</strong>——只是推测，作者没有任何内部信息：</p>
+<p dir="auto"><strong>推测 1：原生多模态</strong></p>
+<p dir="auto">V4 是纯文本。下一代很可能加视觉 / 音频编码器——继承 V4 的 1.6T MoE backbone，前面接专门的视觉 tokenizer（类似 Qwen-VL 模式）。</p>
+<p dir="auto"><strong>推测 2：Mamba/SSM 混合</strong></p>
+<p dir="auto">V4 已经把 Compressor 做得像”非 recurrent 状态压缩”。V5 可能正式引入 SSM 层——某些层走 Mamba2，某些层走 V4 attention，混合架构。</p>
+<p dir="auto"><strong>推测 3：3M / 10M context</strong></p>
+<p dir="auto">V4 的 1M context 在 float32 精度下接近极限。V5 可能：</p>
+<ul>
+<li dir="auto">用 float64 计算 freqs_cis 支持 10M</li>
+<li dir="auto">引入”层级 KV”（更多 ratio 层级，比如 1024 倍压缩）</li>
+<li dir="auto">探索”按需检索 KV”（不存全部 KV，按需从外部检索）</li>
+</ul>
+<p dir="auto"><strong>推测 4：FP4 全栈训练 + 更激进精度</strong></p>
+<p dir="auto">V4 是 FP4 expert + FP8 linear。V5 可能：</p>
+<ul>
+<li dir="auto">全 FP4（包括 linear / attention）</li>
+<li dir="auto">引入 FP6（精度与显存的折中）</li>
+<li dir="auto">与 NVIDIA 下一代硬件（B300 ?）的原生 FP4 / FP6 指令深度集成</li>
+</ul>
+<p dir="auto"><strong>推测 5：在线学习 / 持续预训练</strong></p>
+<p dir="auto">V4 是”训完一次就发布”。V5 可能引入：</p>
+<ul>
+<li dir="auto">持续预训练（持续学新数据）</li>
+<li dir="auto">在线 fine-tune（用户反馈实时纳入）</li>
+<li dir="auto">federated 训练（多方共训不分享原始数据）</li>
+</ul>
+<p dir="auto">这些都是<strong>纯推测</strong>——读者请保持适度怀疑。</p>
+<h2 data-heading="20.5·补 V4 之前的 DeepSeek 模型谱系" dir="auto">20.5·补 V4 之前的 DeepSeek 模型谱系</h2>
+<p dir="auto">把 V2 → V3 → V3.2-Exp → V4 这条谱系用 timeline 画出来：</p>
+<pre class="language-text" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-text is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">timeline
+  title DeepSeek 模型谱系（2024-2026）
+  2024-05 : DeepSeek V2 (236B/21B) - MLA + DeepSeekMoE 奠基
+  2024-12 : DeepSeek V3 (671B/37B) - 256 expert + FP8 训练
+  2025-01 : DeepSeek R1 - 长链推理 + GRPO
+  2025-09 : DeepSeek V3.2-Exp - DSA 稀疏注意力实验
+  2026-04 : DeepSeek V4 Pro/Flash (1.6T/49B) - HC + 稀疏 + FP4
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">每代之间的”工程跳跃”：</p>
+<ul>
+<li dir="auto">V2 → V3：MoE 容量翻 3 倍（64 → 256 expert）+ FP8 训练栈成熟</li>
+<li dir="auto">V3 → R1：训练目标从”通用”到”推理专长”</li>
+<li dir="auto">R1 → V3.2-Exp：把推理能力的训练经验回流到 base 模型 + 稀疏注意力试验</li>
+<li dir="auto">V3.2-Exp → V4：把所有累积的”稀疏 / FP4 / HC / 多领域后训练” 一次性集成</li>
+</ul>
+<p dir="auto">理解这条演进让你<strong>预测 V5 的方向</strong>——大概率是”V4 + 视觉模态 + 多模态 SFT/RL + 更长上下文”。</p>
+<h2 data-heading="中国 AI 开源运动的时代位置" dir="auto">中国 AI 开源运动的时代位置</h2>
+<p dir="auto">V4 不只是一个模型——它是<strong>中国 AI 开源运动的一个里程碑</strong>。把它放在更大的时代脉络看：</p>
+<table>
+<thead>
+<tr>
+<th>时间</th>
+<th>事件</th>
+<th>时代意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2023 年</td>
+<td>Llama 2 开源</td>
+<td>西方开源开始转向”商业可用”</td>
+</tr>
+<tr>
+<td>2024 年初</td>
+<td>Llama 3</td>
+<td>70B 大模型开源标杆</td>
+</tr>
+<tr>
+<td>2024 年 5</td>
+<td>DeepSeek V2</td>
+<td>中国第一个 frontier 级 MoE 开源</td>
+</tr>
+<tr>
+<td>2024 年 12</td>
+<td>DeepSeek V3</td>
+<td>671B MoE + FP8 训练栈</td>
+</tr>
+<tr>
+<td>2025 年 1</td>
+<td>DeepSeek R1</td>
+<td>长链推理开源震撼</td>
+</tr>
+<tr>
+<td>2025 年 9</td>
+<td>DeepSeek V3.2-Exp</td>
+<td>稀疏 attention 工业化预热</td>
+</tr>
+<tr>
+<td>2026 年 4</td>
+<td>DeepSeek V4 Pro/Flash</td>
+<td>1.6T MoE + 1M + MIT 全开源</td>
+</tr>
+</tbody>
+</table>
+<p dir="auto">V4 把”开源 + 完全自由商用 + 旗舰能力”三者首次叠加。这种”开源到极致”的路线对全球 AI 生态的长期影响——超出本书技术范围，但值得每个关心 AI 的人持续观察。</p>
+<h2 data-heading="给读者的”读完本书之后做什么”" dir="auto">给读者的”读完本书之后做什么”</h2>
+<p dir="auto">读完这本书的 20 章，你已经具备本书前言里承诺的 5 项能力（§3·补）。接下来的具体行动建议：</p>
+<p dir="auto"><strong>短期（接下来 1-4 周）</strong>：</p>
+<ol>
+<li dir="auto">把 V4 的 <code class="code-styler-inline">inference/model.py</code>完整读一遍，对照本书的章节标记每段代码的位置</li>
+<li dir="auto">跑一遍本书的 9 个动手实验，验证你对源码的理解</li>
+<li dir="auto">在 vLLM / SGLang 仓库里搜 “DeepseekV4”，跟踪最新 PR 进展</li>
+</ol>
+<p dir="auto"><strong>中期（1-3 个月）</strong>：</p>
+<ol>
+<li dir="auto">用 V4 部署一个小型项目（个人长文档分析、代码助手等），积累生产经验</li>
+<li dir="auto">关注 V4 GA 发布——届时本书会出第二版补充 GA 与 Preview 的差异</li>
+<li dir="auto">阅读本书引用的 30+ 篇延伸论文中你最感兴趣的 5-10 篇</li>
+</ol>
+<p dir="auto"><strong>长期（3-12 个月）</strong>：</p>
+<ol>
+<li dir="auto">跟进 V5 / V6 的发布——用本书学到的”读源码”方法论快速吃透新版本</li>
+<li dir="auto">关注 V4 推动的 4 个研究方向（§20.4），选 1-2 个深入</li>
+<li dir="auto">把”读源码”的能力迁移到其他领域——本书的方法论不限于 V4</li>
+</ol>
+<h2 data-heading="章末：把一切串起来" dir="auto">章末：把一切串起来</h2>
+<p dir="auto">V4 的故事可以浓缩成一句话：</p>
+<p dir="auto"><strong>“用稀疏注意力 + 超连接 + FP4 expert + Muon 优化器，把 1.6T MoE 在 1M context 下做到对手 1/3 的价格——MIT 开源给所有人。”</strong></p>
+<p dir="auto">但这句话要展开成 20 章源码剖析，是因为每一个工程决策的背后都有几代模型踩过的坑、几种替代方案的取舍、几张并行图谱的协调。</p>
+<p dir="auto">这本书的目标不是让你”记住 V4 的所有细节”——而是让你<strong>学会读 V4 的源码</strong>：知道哪些细节重要，哪些细节是历史包袱，哪些细节会在 V5 中被取代。</p>
+<p dir="auto">LLM 演进的速度远超任何技术领域。读完这本书，你会发现 V5 / V6 / V7 出来时，读源码的方法是一样的——只是地图换了几个标记点。</p>
+<p dir="auto">“The architecture changes. The reading skill is forever.”</p>
+<p dir="auto">写到这里，杨艺韬讲堂《DeepSeek V4 源码剖析》全书完。</p>
+<h2 data-heading="全书延伸阅读总目录" dir="auto">全书延伸阅读总目录</h2>
+<p dir="auto">把全书 20 章引用的关键资料汇总——按主题分类：</p>
+<p dir="auto"><strong>V4 核心仓库</strong>：</p>
+<ul>
+<li dir="auto"><code class="code-styler-inline">huggingface.co/deepseek-ai/DeepSeek-V4-Pro</code>— 模型权重 + 源码 + 技术报告</li>
+<li dir="auto"><code class="code-styler-inline">github.com/deepseek-ai/FlashMLA</code>— sparse_attn kernel</li>
+<li dir="auto"><code class="code-styler-inline">github.com/deepseek-ai/DeepGEMM</code>— FP4/FP8 GEMM</li>
+<li dir="auto"><code class="code-styler-inline">github.com/deepseek-ai/DeepEP</code>— MoE all-to-all</li>
+</ul>
+<p dir="auto"><strong>DeepSeek 系列论文</strong>：</p>
+<ul>
+<li dir="auto">DeepSeek-V2: <a data-tooltip-position="top" aria-label="https://arxiv.org/abs/2405.04434" rel="noopener nofollow" class="external-link" href="https://arxiv.org/abs/2405.04434" target="_blank">arXiv:2405.04434</a></li>
+<li dir="auto">DeepSeek-V3: <a data-tooltip-position="top" aria-label="https://arxiv.org/abs/2412.19437" rel="noopener nofollow" class="external-link" href="https://arxiv.org/abs/2412.19437" target="_blank">arXiv:2412.19437</a></li>
+<li dir="auto">DeepSeekMoE: <a data-tooltip-position="top" aria-label="https://arxiv.org/abs/2401.06066" rel="noopener nofollow" class="external-link" href="https://arxiv.org/abs/2401.06066" target="_blank">arXiv:2401.06066</a></li>
+<li dir="auto">DeepSeek-R1: <a data-tooltip-position="top" aria-label="https://arxiv.org/abs/2501.12948" rel="noopener nofollow" class="external-link" href="https://arxiv.org/abs/2501.12948" target="_blank">arXiv:2501.12948</a></li>
+<li dir="auto">DeepSeekMath (GRPO): <a data-tooltip-position="top" aria-label="https://arxiv.org/abs/2402.03300" rel="noopener nofollow" class="external-link" href="https://arxiv.org/abs/2402.03300" target="_blank">arXiv:2402.03300</a></li>
+</ul>
+<p dir="auto"><strong>核心论文</strong>：</p>
+<ul>
+<li dir="auto">YaRN: <a data-tooltip-position="top" aria-label="https://arxiv.org/abs/2309.00071" rel="noopener nofollow" class="external-link" href="https://arxiv.org/abs/2309.00071" target="_blank">arXiv:2309.00071</a></li>
+<li dir="auto">Hyper-Connections: <a data-tooltip-position="top" aria-label="https://arxiv.org/abs/2409.19606" rel="noopener nofollow" class="external-link" href="https://arxiv.org/abs/2409.19606" target="_blank">arXiv:2409.19606</a></li>
+<li dir="auto">Muon: <a data-tooltip-position="top" aria-label="https://arxiv.org/abs/2502.16982" rel="noopener nofollow" class="external-link" href="https://arxiv.org/abs/2502.16982" target="_blank">arXiv:2502.16982</a></li>
+<li dir="auto">Native Sparse Attention: <a data-tooltip-position="top" aria-label="https://arxiv.org/abs/2502.11089" rel="noopener nofollow" class="external-link" href="https://arxiv.org/abs/2502.11089" target="_blank">arXiv:2502.11089</a></li>
+<li dir="auto">QuaRot (Hadamard 量化): <a data-tooltip-position="top" aria-label="https://arxiv.org/abs/2404.00456" rel="noopener nofollow" class="external-link" href="https://arxiv.org/abs/2404.00456" target="_blank">arXiv:2404.00456</a></li>
+</ul>
+<p dir="auto"><strong>杨艺韬讲堂相关卷</strong>：</p>
+<ul>
+<li dir="auto">《<a data-tooltip-position="top" aria-label="https://www.yangyitao.com/books/vllm/" rel="noopener nofollow" class="external-link" href="https://www.yangyitao.com/books/vllm/" target="_blank">vLLM 推理内核深度解析</a> 》——推理引擎对偶</li>
+<li dir="auto">《<a data-tooltip-position="top" aria-label="https://www.yangyitao.com/books/pytorch/" rel="noopener nofollow" class="external-link" href="https://www.yangyitao.com/books/pytorch/" target="_blank">PyTorch 内核源码剖析</a> 》——框架对偶</li>
+<li dir="auto">《<a data-tooltip-position="top" aria-label="https://www.yangyitao.com/books/evals/" rel="noopener nofollow" class="external-link" href="https://www.yangyitao.com/books/evals/" target="_blank">LLM 评估工程</a> 》——训练-评估对偶</li>
+</ul>
+<h2 data-heading="20.9·补 V4 与”小模型死亡论”的对话" dir="auto">20.9·补 V4 与”小模型死亡论”的对话</h2>
+<p dir="auto">V4 之前几年里有一种说法：“小模型快死了——大模型 + 蒸馏会让 7B / 13B 这种规模无法竞争”。V4 出来后这个说法<strong>部分被证伪、部分被强化</strong>。</p>
+<p dir="auto"><strong>部分被证伪</strong>：</p>
+<p dir="auto">V4 Pro 的 token 价已经压到与”7B 闭源 API”接近的水平——这意味着小模型的”价格优势”在 V4 时代被严重削弱。直接用 V4 比”自部署 7B” 更便宜、更强。</p>
+<p dir="auto"><strong>部分被强化</strong>：</p>
+<p dir="auto">V4 Flash（284B / 13B 激活）证明了”模型大小 ≠ 推理成本”。Flash 的激活参数与 13B dense 模型相当，但能力远超——MoE 让”小激活参数 = 高能力”成为可能。这强化了”未来主流是 MoE 而非 dense” 的趋势。</p>
+<p dir="auto"><strong>真正的影响</strong>：</p>
+<p dir="auto">小模型不会死，但<strong>非 MoE 小模型会变得边缘</strong>。未来的主流模型形态是：</p>
+<ul>
+<li dir="auto">旗舰：1T+ MoE（V4 Pro 这一档）</li>
+<li dir="auto">主力：200-500B MoE，13-30B 激活（V4 Flash 这一档）</li>
+<li dir="auto">端侧：3-10B dense（手机、笔记本、边缘）</li>
+</ul>
+<p dir="auto">中间档（30-100B dense）会被 MoE 模型吃掉——它们的激活参数与 V4 Flash 相当，但能力差距大。</p>
+<p dir="auto"><strong>对开源生态的影响</strong>：</p>
+<p dir="auto">Hugging Face 上 30-70B dense 模型会逐渐被 MoE 替代。Llama 4 / Qwen3 已经在向这个方向走——它们的旗舰都是 MoE。V4 是这个趋势的”提前到达”——证明 1.6T MoE 不只是研究品，而是可部署的生产系统。</p>
+<h2 data-heading="20.9·补·补 给”准备进 LLM 领域的开发者” 的一句话" dir="auto">20.9·补·补 给”准备进 LLM 领域的开发者” 的一句话</h2>
+<p dir="auto">如果你刚开始进 LLM 领域，读这本书的最后 page 时，给一个<strong>最实用的建议</strong>：</p>
+<p dir="auto"><strong>读完一本好的源码书，比读 100 篇博客有用。</strong></p>
+<p dir="auto">V4 的开源源码 + 完整技术报告 + 三个工程仓库（FlashMLA / DeepGEMM / DeepEP），是过去 5 年 LLM 工程化的”集大成”。任何博客 / 视频教程都是从这些一手材料里”二手”出来的——你直接读源码，就站在了离真相最近的位置。</p>
+<p dir="auto">这本书的目的不是替代源码——而是给你一份”读源码的地图”。读完地图后，你应该能独立打开 <code class="code-styler-inline">inference/model.py</code>，从第一行读到最后一行，每一行都能联系到本书的某个章节。</p>
+<p dir="auto">这是技术的复利——一旦你能直接读源码，每一个新模型（V5 / V6 / Llama 5 / Qwen 4）都是几小时的事，而不是几周。</p>
+<h2 data-heading="20.9·延展 V4 给”未读源码就用 LLM”的工程师的一句话" dir="auto">20.9·延展 V4 给”未读源码就用 LLM”的工程师的一句话</h2>
+<p dir="auto">最后一段写给那些”用 LLM 但从来没读过 LLM 源码”的工程师——这部分人是开发者社区的多数，是这本书可能 indirectly 影响的目标。</p>
+<p dir="auto">如果你属于这类人——会调 OpenAI API、会写 prompt、知道 RAG 是什么、用过 LangChain，但从来没真正打开过任何 LLM 模型的源码——你可能想问：<strong>我有必要读 V4 源码吗？</strong></p>
+<p dir="auto">我的回答是：<strong>不一定要全读，但应该至少读一遍 inference/model.py</strong>。</p>
+<p dir="auto">理由：</p>
+<p dir="auto">LLM 不是”魔法”。它是 800 行 Python + CUDA 的工程产物。你每次调 ChatGPT API、写 RAG 流程、做 fine-tune，背后都是这种代码在跑。你不读这些代码不会让产品做不出来——但你永远停留在”用别人的工具” 的层次。</p>
+<p dir="auto">读完一遍 inference/model.py（哪怕只是粗读，理解 80% 也够），你会获得几个具体能力：</p>
+<ul>
+<li dir="auto">看到任何 LLM 论文，能立刻知道它在源码哪个位置改动</li>
+<li dir="auto">评估 LLM 公司的”声称”（“我们的模型比 V4 快 2 倍”）时有判断基础</li>
+<li dir="auto">设计产品功能时知道”哪些是 LLM 容易做、哪些是 LLM 难做”</li>
+<li dir="auto">跟 LLM 工程师交流时有共同语言，不会被术语云遮蔽</li>
+</ul>
+<p dir="auto">这种能力对<strong>任何长期在 AI 领域工作的工程师</strong>都是基础。读不读 V4 是个人选择——但如果你打算在 AI 领域工作 5 年以上，强烈建议你读。</p>
+<p dir="auto">这本书是”读 V4 的导览”。读完导览后真正打开 inference/model.py，你会发现它出乎意料地清晰——因为你已经知道每一段在做什么、为什么这样做。</p>
+<h2 data-heading="20.9·拓展 给”做 AI 创业” 的开发者一句" dir="auto">20.9·拓展 给”做 AI 创业” 的开发者一句</h2>
+<p dir="auto">读这本书的另一类读者是”做 AI 创业 / 副业产品” 的开发者。给这类读者一句具体建议：</p>
+<p dir="auto"><strong>在 V4 时代，不要从训练大模型开始</strong>。</p>
+<p dir="auto">历史上每个新硬件 / 新模型时代都有人想”做下一个 OpenAI”——结果失败比例 99%+。资本、数据、算力、团队任何一个短板都让这种创业失败。</p>
+<p dir="auto">V4 的开源（MIT 许可）让 AI 创业的”基础原料”几乎免费——你直接用 V4 / Qwen3 / Llama 4 这些开源模型，跳过训练阶段。这意味着：</p>
+<ul>
+<li dir="auto"><strong>不要训练</strong>：投资回报远远不够</li>
+<li dir="auto"><strong>专注产品</strong>：你的优势在哪个领域、哪些用户、什么 workflow</li>
+<li dir="auto"><strong>fine-tune 而不是 from-scratch</strong>：如果你确实需要垂类模型，LoRA fine-tune 几小时搞定，预算 &lt; $100</li>
+<li dir="auto"><strong>多模型并存</strong>：选 V4 用于长 context、选 Qwen3 / Llama 4 / Gemma 用于短 context、自己搭路由器</li>
+</ul>
+<p dir="auto">具体到产品形态：</p>
+<ul>
+<li dir="auto">法律 / 合同分析：V4 + RAG + 行业知识库 → 有市场</li>
+<li dir="auto">个人助理 / 日记 / 记账：V4 / Flash 太大，选小模型 + 端侧</li>
+<li dir="auto">代码 IDE 插件：V4 在仓库级理解上有独特优势（1M context）</li>
+<li dir="auto">长视频 / 长文档处理：V4 是当前最佳选择</li>
+<li dir="auto">实时聊天：V4 不是首选，选小模型 + 高并发</li>
+</ul>
+<p dir="auto">V4 不会让你的产品自动赢——但它把”让你的产品成为可能” 的门槛大幅降低了。</p>
+<h2 data-heading="全书最后一段" dir="auto">全书最后一段</h2>
+<p dir="auto">写一本”V4 源码剖析”，在 V4 发布第 4 天就动笔，写到 20 章合计约 50,000+ 中文字、20+ 张 mermaid 图、100+ 段源码引用。这本书不会是关于 V4 的最完整资料——技术报告 + 公开 PR + 社区分析最终都会比一本书更全。</p>
+<p dir="auto">但这本书希望成为：<strong>关于 V4 最早出版、最坚持源码原教旨主义、最强调”读源码方法论而不是 V4 知识点”的中文专著</strong>。</p>
+<p dir="auto">如果你读完这 20 章，能在面对下一代开源 LLM 的源码时，<strong>第一反应是打开 model.py 而不是搜索博客</strong>——这本书的全部目的就达成了。</p>
+<p dir="auto">写于 2026 年 4 月 28 日，杭州。</p>
+<p dir="auto">——杨艺韬</p>
+<p dir="auto">全书完。下一卷见。</p>
+<script defer src="../../../_assets/script.fad57313884515cf.js"></script>
+</div></div></div><div class="leezhiy-popular-posts-header">相关文章</div><ul class="leezhiy-popular-posts"><li class="leezhiy-popular-posts-item"><div><a href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/INDEX/" rel="bookmark">章节目录</a></div></li><li class="leezhiy-popular-posts-item"><div><a href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/README/" rel="bookmark">DeepSeek V4 源码剖析</a></div></li><li class="leezhiy-popular-posts-item"><div><a href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/%E7%AC%AC19%E7%AB%A0-vLLM-SGLang-FlashMLA-%E4%B8%8A%E7%9A%84-V4-%E9%80%82%E9%85%8D/" rel="bookmark">第19章：vLLM-SGLang-FlashMLA-上的-V4-适配</a></div></li><li class="leezhiy-popular-posts-item"><div><a href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/%E7%AC%AC18%E7%AB%A0-%E4%B8%A4%E9%98%B6%E6%AE%B5%E5%90%8E%E8%AE%AD%E7%BB%83-%E9%A2%86%E5%9F%9F-SFT-RL-on-policy-%E8%92%B8%E9%A6%8F/" rel="bookmark">第18章：两阶段后训练-领域-SFT-RL-on-policy-蒸馏</a></div></li><li class="leezhiy-popular-posts-item"><div><a href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/%E7%AC%AC17%E7%AB%A0-Muon-%E4%BC%98%E5%8C%96%E5%99%A8%E4%B8%8E-32T-%E9%A2%84%E8%AE%AD%E7%BB%83/" rel="bookmark">第17章：Muon-优化器与-32T-预训练</a></div></li></ul><div class="leezhiy-post-widgets"><div id="needsharebutton-postbottom" class="leezhiy-share-postbottom need-share-button" data-leezhiy-share><button type="button" class="btn" data-leezhiy-share-toggle aria-label="分享页面" aria-expanded="false"><i class="fa fa-share-alt fa-fw leezhiy-icon" aria-hidden="true"></i></button><span class="leezhiy-share-panel need-share-button_dropdown need-share-button_dropdown-bottom-center" aria-hidden="true"><button type="button" class="need-share-button_link need-share-button_weibo icon-weibo" data-leezhiy-share-network="weibo" title="Weibo" aria-label="Weibo" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_wechat icon-wechat" data-leezhiy-share-network="wechat" title="Wechat" aria-label="Wechat" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_douban icon-douban" data-leezhiy-share-network="douban" title="Douban" aria-label="Douban" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_qqzone icon-qqzone" data-leezhiy-share-network="qqzone" title="QQZone" aria-label="QQZone" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_twitter social-twitter" data-leezhiy-share-network="twitter" title="Twitter" aria-label="Twitter" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_facebook social-facebook" data-leezhiy-share-network="facebook" title="Facebook" aria-label="Facebook" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_linkedin social-linkedin" data-leezhiy-share-network="linkedin" title="Linkedin" aria-label="Linkedin" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_mailto social-mailto" data-leezhiy-share-network="mailto" title="Mailto" aria-label="Mailto" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_reddit social-reddit" data-leezhiy-share-network="reddit" title="Reddit" aria-label="Reddit" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_delicious social-delicious" data-leezhiy-share-network="delicious" title="Delicious" aria-label="Delicious" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_stumbleupon social-stumbleupon" data-leezhiy-share-network="stumbleupon" title="StumbleUpon" aria-label="StumbleUpon" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_pinterest social-pinterest" data-leezhiy-share-network="pinterest" title="Pinterest" aria-label="Pinterest" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_googleplus social-googleplus" data-leezhiy-share-network="googleplus" title="GooglePlus" aria-label="GooglePlus" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_tumblr social-tumblr" data-leezhiy-share-network="tumblr" title="Tumblr" aria-label="Tumblr" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_googlebookmarks social-googlebookmarks" data-leezhiy-share-network="googlebookmarks" title="GoogleBookmarks" aria-label="GoogleBookmarks" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_newsvine social-newsvine" data-leezhiy-share-network="newsvine" title="Newsvine" aria-label="Newsvine" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_evernote social-evernote" data-leezhiy-share-network="evernote" title="Evernote" aria-label="Evernote" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_friendfeed social-friendfeed" data-leezhiy-share-network="friendfeed" title="Friendfeed" aria-label="Friendfeed" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_vkontakte social-vkontakte" data-leezhiy-share-network="vkontakte" title="Vkontakte" aria-label="Vkontakte" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_odnoklassniki social-odnoklassniki" data-leezhiy-share-network="odnoklassniki" title="Odnoklassniki" aria-label="Odnoklassniki" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_mailru social-mailru" data-leezhiy-share-network="mailru" title="Mailru" aria-label="Mailru" tabindex="-1"></button></span></div></div><div class="leezhiy-reward-container"><div>Buy me a cup of milkshake 🍨.</div><button type="button" data-leezhiy-reward-toggle aria-expanded="false">打赏</button><div class="leezhiy-qr" data-leezhiy-reward-panel hidden><div><img src="../../../_assets/leezhiy-assets/wechatpay.png" alt="微信支付" loading="eager" decoding="async"><p>微信支付</p></div><div><img src="../../../_assets/leezhiy-assets/alipay.png" alt="支付宝" loading="lazy" decoding="async"><p>支付宝</p></div></div></div><div class="leezhiy-article-end">------------- 💖 🌞 本 文 结 束 😚 感 谢 您 的 阅 读 🌞 💖 -------------</div><ul class="leezhiy-post-copyright"><li><strong>本文作者： </strong>Li Zhiyuan</li><li><strong>本文链接：</strong><a href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/%E7%AC%AC20%E7%AB%A0-V4-%E5%9C%A8%E5%BC%80%E6%BA%90%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%89%88%E5%9B%BE%E9%87%8C%E7%9A%84%E4%BD%8D%E7%BD%AE/">/%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/%E7%AC%AC20%E7%AB%A0-V4-%E5%9C%A8%E5%BC%80%E6%BA%90%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%89%88%E5%9B%BE%E9%87%8C%E7%9A%84%E4%BD%8D%E7%BD%AE/</a></li><li><strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</li></ul><div class="leezhiy-followme"><p>欢迎关注我的其它发布渠道</p><div class="leezhiy-social-list"><a target="_blank" rel="noopener" href="../../../_assets/leezhiy-assets/wechat_channel.png"><span>◉</span><small>WeChat</small></a><a href="../../../atom.xml"><span>◔</span><small>RSS</small></a></div></div><footer class="leezhiy-post-footer"><div class="leezhiy-post-tags"><a href="../../../tags/ai-models/" rel="tag"><i class="fa fa-tags fa-fw leezhiy-icon" aria-hidden="true"></i>ai-models</a><a href="../../../tags/DeepSeek/" rel="tag"><i class="fa fa-tags fa-fw leezhiy-icon" aria-hidden="true"></i>DeepSeek</a><a href="../../../tags/系列教程/" rel="tag"><i class="fa fa-tags fa-fw leezhiy-icon" aria-hidden="true"></i>系列教程</a></div><nav class="html-server-blog-chapter-navigation" data-blog-chapter-navigation aria-label="Tutorial chapters">
+      <a href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/%E7%AC%AC19%E7%AB%A0-vLLM-SGLang-FlashMLA-%E4%B8%8A%E7%9A%84-V4-%E9%80%82%E9%85%8D/?series=DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90"><small>← Previous</small><strong>第19章：vLLM-SGLang-FlashMLA-上的-V4-适配</strong></a>
+      <a href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90/%E5%89%8D%E8%A8%80-1.6-%E4%B8%87%E4%BA%BF%E5%8F%82%E6%95%B0%E7%9A%84%E5%B7%A5%E7%A8%8B%E7%BE%8E%E5%AD%A6/?series=DeepSeek%20V4%20%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90"><small>Next →</small><strong>前言：1.6-万亿参数的工程美学</strong></a>
+    </nav></footer></article><section class="comments leezhiy-comments" id="valine-comments"><div class="v html-server-leezhiy-comments" data-blog-comments data-blog-comment-path="大模型/DeepSeek V4 源码剖析/第20章-V4-在开源大模型版图里的位置.md" data-blog-comment-preview-mode="overlay"><div class="vpanel"><form class="vwrap" data-blog-comment-form data-blog-comment-custom-validation novalidate>
+  <div class="vheader item3"><input name="nick" required maxlength="40" autocomplete="nickname" placeholder="昵称" class="vnick vinput"><input name="email" type="email" maxlength="120" autocomplete="email" placeholder="邮箱" class="vmail vinput"><input name="website" type="url" maxlength="200" autocomplete="url" placeholder="网址(http://)" class="vlink vinput"></div>
+  <div class="vedit" data-blog-comment-editor><textarea name="comment" required maxlength="500" class="veditor vinput" data-blog-comment-default-placeholder="聊五分钱的天吗？|ω･)و ̑̑༉" placeholder="聊五分钱的天吗？|ω･)و ̑̑༉"></textarea><div class="vrow"><div class="vcol vcol-60 status-bar"><span data-blog-comment-replying hidden></span><button class="cancel-reply-btn" type="button" data-blog-comment-cancel hidden>取消回复</button></div><div class="vcol vcol-40 vctrl text-right"><button type="button" class="vicon vemoji-btn" data-blog-comment-emoji title="表情" aria-expanded="false"><svg class="vicon-svg" viewBox="0 0 1024 1024" aria-hidden="true" width="22" height="22"><path d="M512 1024a512 512 0 1 1 512-512 512 512 0 0 1-512 512zm0-967.1A455.1 455.1 0 1 0 967.1 512 455.1 455.1 0 0 0 512 56.9zM312.9 512a85.3 85.3 0 1 1 85.3-85.3 85.3 85.3 0 0 1-85.3 85.3zm199.1 256a142.2 142.2 0 0 1-142.2-142.2 28.4 28.4 0 0 1 56.9 0 85.3 85.3 0 0 0 170.6 0 28.4 28.4 0 0 1 56.9 0A142.2 142.2 0 0 1 512 768z"></path></svg></button><button type="button" class="vicon vpreview-btn" data-blog-comment-preview title="预览" aria-pressed="false"><svg class="vicon-svg" viewBox="0 0 1024 1024" aria-hidden="true" width="22" height="22"><path d="M502.4 935.4a29.5 29.5 0 1 1 0 59.1h-361C79.9 994.5 29.5 946.3 29.5 886.2V137.8C29.5 77.7 80 29.5 141.4 29.5h741.2c61.4 0 111.9 48.2 111.9 108.3v300.3a29.5 29.5 0 1 1-59.1 0V137.8c0-26.9-23.4-49.2-52.8-49.2H141.4c-29.4 0-52.8 22.3-52.8 49.2v748.4c0 26.9 23.4 49.2 52.8 49.2h361zM649.8 846.8a216.6 216.6 0 1 0 0-433.2 216.6 216.6 0 0 0 0 433.2zm0 59.1a275.7 275.7 0 1 1 0-551.4 275.7 275.7 0 0 1 0 551.4z"></path></svg></button></div></div></div>
+  <div class="vrow" data-blog-comment-actions><div class="vcol vcol-30"><a class="vicon markdown-link" href="https://guides.github.com/features/mastering-markdown/" target="_blank" rel="noopener noreferrer" aria-label="Markdown is supported" title="Markdown is supported"><svg class="markdown" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14.85 3H1.15C.52 3 0 3.52 0 4.15v7.69C0 12.48.52 13 1.15 13h13.69c.64 0 1.15-.52 1.15-1.15v-7.7C16 3.52 15.48 3 14.85 3zM9 11H7V8L5.5 9.92 4 8v3H2V5h2l1.5 2L7 5h2v6zm2.99.5L9.5 8H11V5h2v3h1.5l-2.51 3.5z"></path></svg></a></div><div class="vcol vcol-70 text-right"><button type="submit" class="vsubmit vbtn" title="Cmd|Ctrl+Enter">提交</button></div></div><div class="vemojis" data-blog-comment-emoji-panel hidden aria-label="选择表情"></div><div class="vinput vpreview markdown-rendered" data-blog-comment-preview-panel data-blog-comment-preview-renderer="markdown-it" hidden aria-live="polite"></div><span class="vempty" data-blog-comment-error hidden></span><span class="vvalidation" data-blog-comment-validation role="alert" aria-live="assertive" hidden><i aria-hidden="true">!</i><span data-blog-comment-validation-message></span></span>
+</form></div><div class="vcount" data-blog-comment-count-container hidden><span class="vnum" data-blog-comments-total>0</span> 评论</div><div class="vcards" data-blog-comment-items aria-live="polite"></div><template data-blog-comment-item-template>
+  <article class="vcard" data-blog-comment-item><span class="vimg" data-blog-comment-avatar></span><div class="vh"><div class="vhead"><strong class="vnick" data-blog-comment-nick></strong><span data-blog-comment-extras></span></div><div class="vmeta"><span class="vtime" data-blog-comment-meta data-blog-comment-time-format="valine-1.4.4"></span><span class="vactions"><button type="button" class="vlike" data-blog-comment-like aria-label="点赞" title="点赞"></button><button type="button" class="vat" data-blog-comment-reply aria-label="回复" title="回复">回复</button></span></div><div class="vcontent markdown-rendered" data-blog-comment-content></div><div class="vreply-wrapper"></div><div class="vquote" data-blog-comment-replies></div></div></article>
+</template><template data-blog-comment-empty-template><p class="vempty" data-blog-comment-empty>来发评论吧~</p></template><div class="vcopy txt-right">Powered By <a href="https://valine.js.org/" target="_blank" rel="noopener noreferrer">Valine</a><br>v1.4.4</div></div></section></main><aside class="leezhiy-sidebar html-server-blog-sidebar" data-blog-sidebar><div class="leezhiy-sidebar-inner affix-top"><ul class="sidebar-nav motion-element"><li class="sidebar-nav-toc sidebar-nav-active">文章目录</li><li class="sidebar-nav-overview">站点概览</li></ul><div class="post-toc-wrap sidebar-panel sidebar-panel-active"><nav class="html-server-blog-outline leezhiy-post-toc post-toc motion-element" data-blog-outline aria-label="文章目录"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2026%20%E5%B9%B4%E5%BC%80%E6%BA%90%20LLM%20%E7%89%88%E5%9B%BE" data-blog-outline-link><span class="nav-text">2026 年开源 LLM 版图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20.1%C2%B7%E8%A1%A5%20V4%20%E5%9C%A8%202026%20%E5%B9%B4%E5%BC%80%E6%BA%90%20LLM%20%E7%89%88%E5%9B%BE%E4%B8%AD%E7%9A%84%E2%80%9D%E5%9D%90%E6%A0%87%E2%80%9D" data-blog-outline-link><span class="nav-text">20.1·补 V4 在 2026 年开源 LLM 版图中的”坐标”</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#V4%20vs%20Qwen3%20%2F%20Llama%204%20%2F%20Mistral%20%E5%AE%9E%E6%88%98%E5%AF%B9%E6%AF%94" data-blog-outline-link><span class="nav-text">V4 vs Qwen3 / Llama 4 / Mistral 实战对比</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%95%BF%E6%96%87%E6%A1%A3%E5%88%86%E6%9E%90%EF%BC%88200K-1M%20context%EF%BC%89" data-blog-outline-link><span class="nav-text">长文档分析（200K-1M context）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A8%E7%90%86%E4%B8%8E%E4%BB%A3%E7%A0%81%E4%BB%BB%E5%8A%A1%EF%BC%88%3C128K%20context%EF%BC%89" data-blog-outline-link><span class="nav-text">推理与代码任务（&lt;128K context）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E6%97%B6%E5%AF%B9%E8%AF%9D%E4%B8%8E%E7%AB%AF%E4%BE%A7" data-blog-outline-link><span class="nav-text">实时对话与端侧</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#V4%20%E5%AF%B9%E5%95%86%E4%B8%9A%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%86%B2%E5%87%BB" data-blog-outline-link><span class="nav-text">V4 对商业模式的冲击</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AD%E6%BA%90%20LLM%20API%20%E6%9C%8D%E5%8A%A1" data-blog-outline-link><span class="nav-text">闭源 LLM API 服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E4%BB%A3%E7%90%86%20API%EF%BC%88%E4%B8%AD%E8%BD%AC%EF%BC%89" data-blog-outline-link><span class="nav-text">模型代理 API（中转）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%AD%E7%BB%83%E5%8D%B3%E6%9C%8D%E5%8A%A1" data-blog-outline-link><span class="nav-text">训练即服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%95%BF%E4%B8%8A%E4%B8%8B%E6%96%87%E4%B8%93%E7%94%A8%E6%A8%A1%E5%9E%8B" data-blog-outline-link><span class="nav-text">长上下文专用模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#V4%20%E6%8E%A8%E5%8A%A8%E7%9A%84%204%20%E4%B8%AA%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91" data-blog-outline-link><span class="nav-text">V4 推动的 4 个研究方向</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E5%90%91%201%EF%BC%9A%E7%A8%80%E7%96%8F%20attention%20%E7%9A%84%E8%BF%9B%E4%B8%80%E6%AD%A5%E4%BC%98%E5%8C%96" data-blog-outline-link><span class="nav-text">方向 1：稀疏 attention 的进一步优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E5%90%91%202%EF%BC%9AFP4%20%2F%20%E6%9B%B4%E4%BD%8E%E7%B2%BE%E5%BA%A6%E8%AE%AD%E7%BB%83" data-blog-outline-link><span class="nav-text">方向 2：FP4 / 更低精度训练</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E5%90%91%203%EF%BC%9AHyper-Connections%20%E7%9A%84%E6%8B%93%E5%B1%95" data-blog-outline-link><span class="nav-text">方向 3：Hyper-Connections 的拓展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E5%90%91%204%EF%BC%9A%E5%A4%9A%E9%A2%86%E5%9F%9F%E4%B8%93%E5%AE%B6%20%2B%20%E8%92%B8%E9%A6%8F%20pipeline" data-blog-outline-link><span class="nav-text">方向 4：多领域专家 + 蒸馏 pipeline</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#V5%20%E5%8F%AF%E8%83%BD%E7%9A%84%E6%96%B9%E5%90%91%EF%BC%88%E6%8E%A8%E6%B5%8B%EF%BC%89" data-blog-outline-link><span class="nav-text">V5 可能的方向（推测）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20.5%C2%B7%E8%A1%A5%20V4%20%E4%B9%8B%E5%89%8D%E7%9A%84%20DeepSeek%20%E6%A8%A1%E5%9E%8B%E8%B0%B1%E7%B3%BB" data-blog-outline-link><span class="nav-text">20.5·补 V4 之前的 DeepSeek 模型谱系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%AD%E5%9B%BD%20AI%20%E5%BC%80%E6%BA%90%E8%BF%90%E5%8A%A8%E7%9A%84%E6%97%B6%E4%BB%A3%E4%BD%8D%E7%BD%AE" data-blog-outline-link><span class="nav-text">中国 AI 开源运动的时代位置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%99%E8%AF%BB%E8%80%85%E7%9A%84%E2%80%9D%E8%AF%BB%E5%AE%8C%E6%9C%AC%E4%B9%A6%E4%B9%8B%E5%90%8E%E5%81%9A%E4%BB%80%E4%B9%88%E2%80%9D" data-blog-outline-link><span class="nav-text">给读者的”读完本书之后做什么”</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AB%A0%E6%9C%AB%EF%BC%9A%E6%8A%8A%E4%B8%80%E5%88%87%E4%B8%B2%E8%B5%B7%E6%9D%A5" data-blog-outline-link><span class="nav-text">章末：把一切串起来</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%A8%E4%B9%A6%E5%BB%B6%E4%BC%B8%E9%98%85%E8%AF%BB%E6%80%BB%E7%9B%AE%E5%BD%95" data-blog-outline-link><span class="nav-text">全书延伸阅读总目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20.9%C2%B7%E8%A1%A5%20V4%20%E4%B8%8E%E2%80%9D%E5%B0%8F%E6%A8%A1%E5%9E%8B%E6%AD%BB%E4%BA%A1%E8%AE%BA%E2%80%9D%E7%9A%84%E5%AF%B9%E8%AF%9D" data-blog-outline-link><span class="nav-text">20.9·补 V4 与”小模型死亡论”的对话</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20.9%C2%B7%E8%A1%A5%C2%B7%E8%A1%A5%20%E7%BB%99%E2%80%9D%E5%87%86%E5%A4%87%E8%BF%9B%20LLM%20%E9%A2%86%E5%9F%9F%E7%9A%84%E5%BC%80%E5%8F%91%E8%80%85%E2%80%9D%20%E7%9A%84%E4%B8%80%E5%8F%A5%E8%AF%9D" data-blog-outline-link><span class="nav-text">20.9·补·补 给”准备进 LLM 领域的开发者” 的一句话</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20.9%C2%B7%E5%BB%B6%E5%B1%95%20V4%20%E7%BB%99%E2%80%9D%E6%9C%AA%E8%AF%BB%E6%BA%90%E7%A0%81%E5%B0%B1%E7%94%A8%20LLM%E2%80%9D%E7%9A%84%E5%B7%A5%E7%A8%8B%E5%B8%88%E7%9A%84%E4%B8%80%E5%8F%A5%E8%AF%9D" data-blog-outline-link><span class="nav-text">20.9·延展 V4 给”未读源码就用 LLM”的工程师的一句话</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20.9%C2%B7%E6%8B%93%E5%B1%95%20%E7%BB%99%E2%80%9D%E5%81%9A%20AI%20%E5%88%9B%E4%B8%9A%E2%80%9D%20%E7%9A%84%E5%BC%80%E5%8F%91%E8%80%85%E4%B8%80%E5%8F%A5" data-blog-outline-link><span class="nav-text">20.9·拓展 给”做 AI 创业” 的开发者一句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%A8%E4%B9%A6%E6%9C%80%E5%90%8E%E4%B8%80%E6%AE%B5" data-blog-outline-link><span class="nav-text">全书最后一段</span></a></li></ol></nav></div><div class="site-overview-wrap sidebar-panel"><div class="leezhiy-overview" data-blog-overview data-blog-overview-dynamic="true" aria-busy="true"><div class="leezhiy-site-author"><img src="../../../_assets/leezhiy-assets/avatar.jpg" alt="Li Zhiyuan"><strong>Li Zhiyuan</strong><p title="程序，搞起来很轻松的，就是头冷">程序，搞起来很轻松的，就是头冷</p></div><nav class="leezhiy-site-state" data-blog-profile-counts><span class="html-server-blog-skeleton html-server-blog-skeleton-line"></span><span class="html-server-blog-skeleton html-server-blog-skeleton-line"></span><span class="html-server-blog-skeleton html-server-blog-skeleton-line"></span></nav><div class="leezhiy-author-links"><span class="leezhiy-author-link-item"><a href="https://github.com/leezhiy" title="GitHub → https://github.com/leezhiy" rel="noopener" target="_blank"><i class="fab fa-github fa-fw leezhiy-icon" aria-hidden="true"></i>GitHub</a></span><span class="leezhiy-author-link-item"><a href="mailto:18500754397@163.com" title="E-Mail → mailto:18500754397@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw leezhiy-icon" aria-hidden="true"></i>E-Mail</a></span><span class="leezhiy-author-link-item"><a href="https://weibo.com/5678634433" title="微博 → https://weibo.com/5678634433" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw leezhiy-icon" aria-hidden="true"></i>微博</a></span><span class="leezhiy-author-link-item"><a href="https://www.zhihu.com/people/li-zhi-yuan-13-7" title="知乎 → https://www.zhihu.com/people/li-zhi-yuan-13-7" rel="noopener" target="_blank"><i class="fa fa-globe fa-fw leezhiy-icon" aria-hidden="true"></i>知乎</a></span><span class="leezhiy-author-link-item"><a href="https://gitee.com/leezhiy" title="Gitee → https://gitee.com/leezhiy" rel="noopener" target="_blank"><i class="fab fa-git fa-fw leezhiy-icon" aria-hidden="true"></i>Gitee</a></span><span class="leezhiy-author-link-item"><a href="https://music.163.com/#/user/home?id=131550901" title="网易云 → https://music.163.com/#/user/home?id=131550901" rel="noopener" target="_blank"><i class="fa fa-music fa-fw leezhiy-icon" aria-hidden="true"></i>网易云</a></span></div><a class="leezhiy-license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener"><img src="../../../_assets/leezhiy-assets/cc-by-nc-sa.svg" alt="Creative Commons"></a><div class="leezhiy-blogroll"><strong>🔗 友情连接</strong><a href="https://music.163.com/#/user/home?id=131550901" target="_blank" rel="noopener">😆 网易云音乐 😆</a></div><div class="leezhiy-sidebar-data" hidden><div data-blog-overview-tags><span class="html-server-blog-skeleton html-server-blog-skeleton-line"></span></div><div data-blog-overview-series><span class="html-server-blog-skeleton html-server-blog-skeleton-line"></span></div><ol data-blog-overview-archive><li><span class="html-server-blog-skeleton html-server-blog-skeleton-line"></span></li></ol></div></div></div><button type="button" class="back-to-top" data-blog-scroll-top data-leezhiy-smooth-scroll-top><span data-leezhiy-scroll-percent>0%</span></button></div></aside></div>
+  <footer class="leezhiy-footer"><p>Tip: 本站电脑访问体验更佳耶 ♡</p><small>© 2015 – 2026 Leezhiy Blog · Powered by Obsidian HTML Server</small><span class="leezhiy-runtime-hooks" hidden><button data-blog-menu></button><button data-blog-folder-open></button><button data-blog-theme></button></span></footer>
+  <a href="https://github.com/leezhiy" class="leezhiy-github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0 0 115 115h15l12 27 108 108V0Z"/><path class="octo-arm" d="M128.3 109c-14.5-9.3-9.3-19.4-9.3-19.4 3-6.9 1.5-11 1.5-11-1.3-6.6 2.9-2.3 2.9-2.3 3.9 4.6 2.1 11 2.1 11-2.6 10.3 5.1 14.6 8.9 15.9"/><path class="octo-body" d="M115 115c3.8 1.5 4.8.4 4.8.4l13.9-13.8c3.2-2.4 6.2-3.2 8.5-3-8.4-10.6-14.7-24.2 1.6-40.6 4.7-4.6 10.2-6.8 15.9-7 1.5-3.9 4.4-8.2 11.7-10.9 0 0 4.7 2.4 7.4 16.1 8.7 4.8 16.2 12.3 21.3 21.4 13.7 2.6 16.2 7.3 16.2 7.3-3.6 8.2-9.4 11.1-10.9 11.7-.3 5.8-2.4 11.2-7.1 15.9-16.4 16.4-30 10-40.6 1.6.2 2.8-1 6.8-5 10.8L141 136.5c-1.2 1.2.6 5.4.8 5.3Z"/></svg></a><div id="needsharebutton-float" class="leezhiy-share-float need-share-button" data-leezhiy-share><button type="button" class="btn" data-leezhiy-share-toggle aria-label="分享页面" aria-expanded="false"><i class="fa fa-share-alt fa-fw leezhiy-icon" aria-hidden="true"></i></button><span class="leezhiy-share-panel need-share-button_dropdown need-share-button_dropdown-box-horizontal need-share-button_dropdown-middle-right" aria-hidden="true"><button type="button" class="need-share-button_link-box need-share-button_link need-share-button_weibo icon-weibo" data-leezhiy-share-network="weibo" title="Weibo" aria-label="Weibo" tabindex="-1"></button><button type="button" class="need-share-button_link-box need-share-button_link need-share-button_wechat icon-wechat" data-leezhiy-share-network="wechat" title="Wechat" aria-label="Wechat" tabindex="-1"></button><button type="button" class="need-share-button_link-box need-share-button_link need-share-button_douban icon-douban" data-leezhiy-share-network="douban" title="Douban" aria-label="Douban" tabindex="-1"></button><button type="button" class="need-share-button_link-box need-share-button_link need-share-button_qqzone icon-qqzone" data-leezhiy-share-network="qqzone" title="QQZone" aria-label="QQZone" tabindex="-1"></button><button type="button" class="need-share-button_link-box need-share-button_link need-share-button_twitter social-twitter" data-leezhiy-share-network="twitter" title="Twitter" aria-label="Twitter" tabindex="-1"></button><button type="button" class="need-share-button_link-box need-share-button_link need-share-button_facebook social-facebook" data-leezhiy-share-network="facebook" title="Facebook" aria-label="Facebook" tabindex="-1"></button><button type="button" class="need-share-button_link-box need-share-button_link need-share-button_linkedin social-linkedin" data-leezhiy-share-network="linkedin" title="Linkedin" aria-label="Linkedin" tabindex="-1"></button></span></div><section class="leezhiy-music-player aplayer aplayer-withlist aplayer-fixed" data-blog-music-player data-music-state="loading" data-music-collapsed="true" data-music-list-open="false" data-music-playing="false" data-music-loading="false" data-music-has-lrc="false" data-music-lrc-visible="false" data-music-order-state="random" data-music-loop-state="all" aria-label="音乐播放器">
+  <div class="aplayer-body">
+    <div class="aplayer-pic" data-music-cover><button type="button" class="aplayer-button aplayer-play" data-music-play aria-label="播放"><span class="aplayer-state-play"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 16 31" aria-hidden="true"><path d="M15.552 15.168q0.448 0.32 0.448 0.832 0 0.448-0.448 0.768l-13.696 8.512q-0.768 0.512-1.312 0.192t-0.544-1.28v-16.448q0-0.96 0.544-1.28t1.312 0.192z"></path></svg></span><span class="aplayer-state-pause"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 17 32" aria-hidden="true"><path d="M14.080 4.8q2.88 0 2.88 2.048v18.24q0 2.112-2.88 2.112t-2.88-2.112v-18.24q0-2.048 2.88-2.048zM2.88 4.8q2.88 0 2.88 2.048v18.24q0 2.112-2.88 2.112t-2.88-2.112v-18.24q0-2.048 2.88-2.048z"></path></svg></span></button></div>
+    <div class="aplayer-info"><div class="aplayer-music"><span class="aplayer-title" data-music-title>No audio</span> <span class="aplayer-author" data-music-author></span></div><div class="aplayer-controller"><div class="aplayer-bar-wrap" data-music-progress><div class="aplayer-bar"><div class="aplayer-loaded" data-music-loaded></div><div class="aplayer-played" data-music-played><span class="aplayer-thumb" data-music-progress-thumb><span class="aplayer-loading-icon"></span></span></div></div></div><div class="aplayer-time"><span class="aplayer-time-inner"><span class="aplayer-ptime" data-music-current-time>00:00</span> / <span class="aplayer-dtime" data-music-duration>00:00</span></span><button type="button" class="aplayer-icon aplayer-icon-back" data-music-prev aria-label="上一首"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32" aria-hidden="true"><path d="M25.468 6.947c-0.326-0.172-0.724-0.151-1.030 0.057l-6.438 4.38v-3.553c0-0.371-0.205-0.71-0.532-0.884-0.326-0.172-0.724-0.151-1.030 0.057l-12 8.164c-0.274 0.186-0.438 0.496-0.438 0.827s0.164 0.641 0.438 0.827l12 8.168c0.169 0.115 0.365 0.174 0.562 0.174 0.16 0 0.321-0.038 0.468-0.116 0.327-0.173 0.532-0.514 0.532-0.884v-3.556l6.438 4.382c0.169 0.115 0.365 0.174 0.562 0.174 0.16 0 0.321-0.038 0.468-0.116 0.327-0.173 0.532-0.514 0.532-0.884v-16.333c0-0.371-0.205-0.71-0.532-0.884z"></path></svg></button><button type="button" class="aplayer-icon aplayer-icon-play" data-music-play aria-label="播放"><span class="aplayer-state-play"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 16 31" aria-hidden="true"><path d="M15.552 15.168q0.448 0.32 0.448 0.832 0 0.448-0.448 0.768l-13.696 8.512q-0.768 0.512-1.312 0.192t-0.544-1.28v-16.448q0-0.96 0.544-1.28t1.312 0.192z"></path></svg></span><span class="aplayer-state-pause"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 17 32" aria-hidden="true"><path d="M14.080 4.8q2.88 0 2.88 2.048v18.24q0 2.112-2.88 2.112t-2.88-2.112v-18.24q0-2.048 2.88-2.048zM2.88 4.8q2.88 0 2.88 2.048v18.24q0 2.112-2.88 2.112t-2.88-2.112v-18.24q0-2.048 2.88-2.048z"></path></svg></span></button><button type="button" class="aplayer-icon aplayer-icon-forward" data-music-next aria-label="下一首"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32" aria-hidden="true"><path d="M25.468 6.947c-0.326-0.172-0.724-0.151-1.030 0.057l-6.438 4.38v-3.553c0-0.371-0.205-0.71-0.532-0.884-0.326-0.172-0.724-0.151-1.030 0.057l-12 8.164c-0.274 0.186-0.438 0.496-0.438 0.827s0.164 0.641 0.438 0.827l12 8.168c0.169 0.115 0.365 0.174 0.562 0.174 0.16 0 0.321-0.038 0.468-0.116 0.327-0.173 0.532-0.514 0.532-0.884v-3.556l6.438 4.382c0.169 0.115 0.365 0.174 0.562 0.174 0.16 0 0.321-0.038 0.468-0.116 0.327-0.173 0.532-0.514 0.532-0.884v-16.333c0-0.371-0.205-0.71-0.532-0.884z"></path></svg></button><div class="aplayer-volume-wrap"><button type="button" class="aplayer-icon aplayer-icon-volume-down" data-music-volume-toggle aria-label="静音"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 28 32" aria-hidden="true"><path d="M13.728 6.272v19.456q0 0.448-0.352 0.8t-0.8 0.32-0.8-0.32l-5.952-5.952h-4.672q-0.48 0-0.8-0.352t-0.352-0.8v-6.848q0-0.48 0.352-0.8t0.8-0.352h4.672l5.952-5.952q0.32-0.32 0.8-0.32t0.8 0.32 0.352 0.8zM20.576 16q0 1.344-0.768 2.528t-2.016 1.664q-0.16 0.096-0.448 0.096-0.448 0-0.8-0.32t-0.32-0.832q0-0.384 0.192-0.64t0.544-0.448 0.608-0.384 0.512-0.64 0.192-1.024-0.192-1.024-0.512-0.64-0.608-0.384-0.544-0.448-0.192-0.64q0-0.48 0.32-0.832t0.8-0.32q0.288 0 0.448 0.096 1.248 0.48 2.016 1.664t0.768 2.528z"></path></svg></button><div class="aplayer-volume-bar-wrap"><div class="aplayer-volume-bar" data-music-volume><div class="aplayer-volume" data-music-volume-level></div></div></div></div><button type="button" class="aplayer-icon aplayer-icon-order" data-music-order aria-label="播放顺序"><span class="aplayer-order-list"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32" aria-hidden="true"><path d="M0.622 18.334h19.54v7.55l11.052-9.412-11.052-9.413v7.549h-19.54v3.725z"></path></svg></span><span class="aplayer-order-random"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32" aria-hidden="true"><path d="M22.667 4l7 6-7 6 7 6-7 6v-4h-3.653l-3.76-3.76 2.827-2.827 2.587 2.587h2v-8h-2l-12 12h-6v-4h4.347l12-12h3.653v-4zM2.667 8h6l3.76 3.76-2.827 2.827-2.587-2.587h-4.347v-4z"></path></svg></span></button><button type="button" class="aplayer-icon aplayer-icon-loop" data-music-loop aria-label="循环模式"><span class="aplayer-loop-all"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 29 32" aria-hidden="true"><path d="M9.333 9.333h13.333v4l5.333-5.333-5.333-5.333v4h-16v8h2.667v-5.333zM22.667 22.667h-13.333v-4l-5.333 5.333 5.333 5.333v-4h16v-8h-2.667v5.333z"></path></svg></span><span class="aplayer-loop-one"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 33 32" aria-hidden="true"><path d="M9.333 9.333h13.333v4l5.333-5.333-5.333-5.333v4h-16v8h2.667v-5.333zM22.667 22.667h-13.333v-4l-5.333 5.333 5.333 5.333v-4h16v-8h-2.667v5.333zM17.333 20v-8h-1.333l-2.667 1.333v1.333h2v5.333h2z"></path></svg></span><span class="aplayer-loop-none"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 29 32" aria-hidden="true"><path d="M2.667 7.027l1.707-1.693 22.293 22.293-1.693 1.707-4-4h-11.64v4l-5.333-5.333 5.333-5.333v4h8.973l-8.973-8.973v0.973h-2.667v-3.64l-4-4zM22.667 17.333h2.667v5.573l-2.667-2.667v-2.907zM22.667 6.667v-4l5.333 5.333-5.333 5.333v-4h-10.907l-2.667-2.667h13.573z"></path></svg></span></button><button type="button" class="aplayer-icon aplayer-icon-menu" data-music-menu aria-label="歌单" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 22 32" aria-hidden="true"><path d="M20.8 14.4q0.704 0 1.152 0.48t0.448 1.12-0.48 1.12-1.12 0.48h-19.2q-0.64 0-1.12-0.48t-0.48-1.12 0.448-1.12 1.152-0.48h19.2zM1.6 11.2q-0.64 0-1.12-0.48t-0.48-1.12 0.448-1.12 1.152-0.48h19.2q0.704 0 1.152 0.48t0.448 1.12-0.48 1.12-1.12 0.48h-19.2zM20.8 20.8q0.704 0 1.152 0.48t0.448 1.12-0.48 1.12-1.12 0.48h-19.2q-0.64 0-1.12-0.48t-0.48-1.12 0.448-1.12 1.152-0.48h19.2z"></path></svg></button><button type="button" class="aplayer-icon aplayer-icon-lrc" data-music-lrc-toggle aria-label="歌词"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32" aria-hidden="true"><path d="M26.667 5.333h-21.333c-1.472 0-2.667 1.194-2.667 2.667v16c0 1.472 1.194 2.667 2.667 2.667h21.333c1.472 0 2.667-1.194 2.667-2.667v-16c0-1.472-1.194-2.667-2.667-2.667zM5.333 16h5.333v2.667h-5.333v-2.667zM18.667 24h-13.333v-2.667h13.333v2.667zM26.667 24h-5.333v-2.667h5.333v2.667zM26.667 18.667h-13.333v-2.667h13.333v2.667z"></path></svg></button></div></div></div>
+    <div class="aplayer-notice" data-music-notice hidden></div><div class="aplayer-miniswitcher"><button type="button" class="aplayer-icon" data-music-narrow aria-label="展开播放器" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32" aria-hidden="true"><path d="M22 16l-10.105-10.6-1.895 1.987 8.211 8.613-8.211 8.612 1.895 1.988 8.211-8.613z"></path></svg></button></div>
+  </div>
+  <div class="aplayer-lrc" data-music-lrc><div class="aplayer-lrc-contents" data-music-lrc-contents></div></div>
+  <div class="leezhiy-music-list aplayer-list" data-music-list aria-hidden="true"><ol data-music-list-items></ol><template data-music-list-item-template><li data-music-list-item tabindex="0" role="button"><span class="aplayer-list-cur" data-music-list-current></span><span class="aplayer-list-index" data-music-list-index></span><span class="aplayer-list-title" data-music-list-title></span><span class="aplayer-list-author" data-music-list-author></span></li></template></div>
+  <audio preload="auto"></audio>
+</section><div class="moon-menu" data-leezhiy-moon-menu><div class="moon-menu-items"><div class="moon-menu-item" data-blog-scroll-bottom role="button" tabindex="0" aria-label="滚动到底部"><i class="leezhiy-icon fa fa-chevron-down"></i></div><div class="moon-menu-item" data-blog-scroll-top data-leezhiy-smooth-scroll-top role="button" tabindex="0" aria-label="回到顶部"><i class="leezhiy-icon fa fa-chevron-up"></i></div><div class="moon-menu-item" data-leezhiy-comment-jump role="button" tabindex="0" aria-label="查看评论"><i class="leezhiy-icon fa fa-comments"></i></div><button class="moon-menu-item" type="button" data-blog-theme aria-label="切换明暗主题" title="切换明暗主题">◐</button></div><div class="moon-menu-button" data-leezhiy-moon-toggle role="button" tabindex="0" aria-label="页面工具" aria-expanded="false"><svg class="moon-menu-svg"><circle class="moon-menu-cricle" cx="50%" cy="50%" r="44%"></circle><circle class="moon-menu-border" cx="50%" cy="50%" r="48%"></circle><g class="moon-menu-points"><circle class="moon-menu-point" r=".2rem" cx="0" cy="-.8rem"></circle><circle class="moon-menu-point" r=".2rem"></circle><circle class="moon-menu-point" r=".2rem" cx="0" cy=".8rem"></circle></g></svg><div class="moon-menu-icon"></div><div class="moon-menu-text"></div></div></div><canvas class="fireworks" data-leezhiy-fireworks></canvas><script src="../../../_assets/leezhiy-assets/anime.min.js"></script>
+</div><div class="reading-progress-bar leezhiy-reading-progress" data-blog-progress data-leezhiy-reading-progress role="progressbar" aria-label="Reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+    <div class="html-server-blog-related-modal" data-blog-related-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-related-close aria-label="Close related articles"></button>
+      <section class="html-server-blog-related-panel" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-related-title">
+        <header><div><span class="html-server-blog-kicker" data-blog-related-kind></span><h2 id="html-server-blog-related-title" data-blog-related-title></h2></div><button type="button" data-blog-related-close aria-label="Close"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <p data-blog-related-count></p>
+        <div class="html-server-blog-related-list" data-blog-related-list></div>
+      </section>
+    </div>
+    <div class="html-server-blog-search-modal search-pop-overlay leezhiy-search-pop-overlay" data-blog-search-modal hidden><div class="popup search-popup leezhiy-search-popup" role="dialog" aria-modal="true" aria-labelledby="leezhiy-search-title"><div class="search-header leezhiy-search-header"><span class="search-icon leezhiy-search-icon" aria-hidden="true"><i class="fa fa-search"></i></span><form class="search-input-container leezhiy-search-input-container" data-blog-search-form><label id="leezhiy-search-title" class="leezhiy-visually-hidden" for="search-input">搜索文章</label><input id="search-input" class="search-input leezhiy-search-input" type="search" data-blog-global-search placeholder="搜索..." autocomplete="off" autocapitalize="off" spellcheck="false"></form><button class="popup-btn-close leezhiy-search-close" type="button" data-blog-search-close aria-label="关闭"><i class="fa fa-times-circle"></i></button></div><div id="search-result" class="leezhiy-search-result" data-blog-search-results></div><p class="leezhiy-search-count" data-blog-search-count aria-live="polite" hidden></p></div></div>
+    <div class="html-server-blog-folder-modal" data-blog-folder-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-folder-close aria-label="Close folders"></button>
+      <section class="html-server-blog-folder-panel site-dialog" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-folder-title">
+        <header class="dialog-head"><div><span class="html-server-blog-kicker">VAULT</span><h2 id="html-server-blog-folder-title" data-blog-folder-title>浏览根目录</h2></div><button type="button" data-blog-folder-close aria-label="关闭"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <nav class="html-server-blog-folder-breadcrumb directory-breadcrumbs" data-blog-folder-breadcrumb aria-label="目录面包屑"></nav>
+        <p data-blog-folder-count></p>
+        <div class="html-server-blog-folder-browser directory-list dialog-list" data-blog-folder-browser></div>
+      </section>
+    </div>
+    <script type="application/json" data-blog-article-index>[]</script>
+    <script type="application/json" data-blog-folder-index data-current-folder="大模型/DeepSeek V4 源码剖析">[]</script>
+    <script type="application/json" data-blog-appearance-contract>{"version":1,"layouts":[{"id":"default","themes":["inherit"]},{"id":"next","themes":["inherit","next-classic","swiss-index","literary-quarterly","terminal-manual","quiet-journal","newspaper-daily","mint-notebook","tailwind-workspace"]},{"id":"butterfly","themes":["inherit","butterfly-colorful","brutal-broadcast","future-signal","field-notes","gallery-canvas","toy-modules","sakura-notes","clear-sky"]},{"id":"akilar","themes":["inherit","akilar-ark"]},{"id":"noionion","themes":["inherit","noionion-original"]},{"id":"kratos","themes":["inherit","kratos-rebirth"]},{"id":"leezhiy","themes":["inherit","leezhiy-next"]},{"id":"daybook","themes":["inherit","daybook-original"]},{"id":"style-lab-swiss","themes":["inherit","swiss-index"]},{"id":"style-lab-literary","themes":["inherit","literary-quarterly"]},{"id":"style-lab-terminal","themes":["inherit","terminal-manual"]},{"id":"style-lab-brutal","themes":["inherit","brutal-broadcast"]},{"id":"style-lab-quiet","themes":["inherit","quiet-journal"]},{"id":"style-lab-newspaper","themes":["inherit","newspaper-daily"]},{"id":"style-lab-future","themes":["inherit","future-signal"]},{"id":"style-lab-field","themes":["inherit","field-notes"]},{"id":"style-lab-gallery","themes":["inherit","gallery-canvas"]},{"id":"style-lab-toy","themes":["inherit","toy-modules"]},{"id":"style-lab-mint","themes":["inherit","mint-notebook"]},{"id":"style-lab-sakura","themes":["inherit","sakura-notes"]},{"id":"style-lab-sky","themes":["inherit","clear-sky"]},{"id":"style-lab-tailwind","themes":["inherit","tailwind-workspace"]}]}</script>
+  </div>
+  <script defer src="../../../_assets/script.c366180856be9831.js"></script>
+</body>
+</html>

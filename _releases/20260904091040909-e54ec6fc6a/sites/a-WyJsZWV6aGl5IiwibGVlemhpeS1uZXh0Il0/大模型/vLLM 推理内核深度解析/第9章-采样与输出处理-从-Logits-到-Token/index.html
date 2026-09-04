@@ -1,0 +1,1146 @@
+<!doctype html>
+<html lang="en" data-html-server-theme="light" data-blog-layout="leezhiy" data-blog-layout-theme="leezhiy-next" data-blog-page-kind="article" data-blog-mobile-zoom="false" data-blog-drawer-side="right" data-blog-theme-control="system" data-blog-search-variant="source" data-blog-sticky-swap-selector=".leezhiy-sidebar-inner" data-leezhiy-title-underline="slide" data-blog-scroll-mode="window" data-blog-document-pinning="false" data-blog-document-pinning-filter-regular="false" style="--html-server-navigation-surface-light: #f5f7fa;--html-server-navigation-surface-dark: #151515">
+<head><!--html-server-dynamic:start--><meta name="html-server-dynamic-page" data-html-server-dynamic-page data-html-server-dynamic-assertion-mode="every-page" data-html-server-dynamic-cache-ttl-ms="1800000" content="a-WyJsZWV6aGl5IiwibGVlemhpeS1uZXh0Il0"><style data-html-server-dynamic-prepaint>html{--html-server-navigation-surface-active:var(--html-server-navigation-surface-light,var(--html-server-blog-background-light,#f5f7fa));background:var(--html-server-navigation-surface-active)}html[data-html-server-theme="dark"]{--html-server-navigation-surface-active:var(--html-server-navigation-surface-dark,var(--html-server-blog-background-dark,#151515))}html[data-html-server-navigation-entering],html[data-html-server-dynamic-pending]{background:var(--html-server-navigation-surface-active)!important}html[data-html-server-navigation-entering] body,html[data-html-server-dynamic-pending] body{opacity:0!important}html[data-html-server-navigation-entering]::before,html[data-html-server-dynamic-pending]::before{content:"";position:fixed;inset:0;z-index:2147483646;background:var(--html-server-navigation-surface-active);pointer-events:none}html[data-html-server-navigation-entering]::after,html[data-html-server-dynamic-pending]::after{content:"";position:fixed;top:0;left:0;z-index:2147483647;width:38%;height:2px;background:var(--interactive-accent,#8b6f47);box-shadow:0 0 10px currentColor;animation:html-server-navigation-prepaint 1s ease-in-out infinite;pointer-events:none}@keyframes html-server-navigation-prepaint{0%{transform:translateX(-110%)}100%{transform:translateX(370%)}}@media(prefers-reduced-motion:reduce){html[data-html-server-navigation-entering]::after,html[data-html-server-dynamic-pending]::after{animation:none;width:100%;opacity:.7}}</style><script data-blog-navigation-bootstrap>(function(){
+  var root=document.documentElement,key='html-server:navigation-handoff',handoff=null;
+  try{handoff=JSON.parse(sessionStorage.getItem(key)||'null');}catch(error){}
+  var target=location.pathname+location.search;
+  if(handoff&&handoff.target===target&&Date.now()-Number(handoff.createdAt||0)<5000){
+    root.setAttribute('data-html-server-navigation-entering','');
+    var reveal=function(){requestAnimationFrame(function(){requestAnimationFrame(function(){root.removeAttribute('data-html-server-navigation-entering');try{sessionStorage.removeItem(key);}catch(error){}});});};
+    if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',reveal,{once:true});else reveal();
+    setTimeout(function(){root.removeAttribute('data-html-server-navigation-entering');},5000);
+  }else if(handoff){try{sessionStorage.removeItem(key);}catch(error){}}
+})();</script><script data-html-server-dynamic-bootstrap>(()=>{
+const m={"releaseId":"20260904091040909-e54ec6fc6a","appearanceKey":"a-WyJsZWV6aGl5IiwibGVlemhpeS1uZXh0Il0","route":"大模型/vLLM 推理内核深度解析/第9章-采样与输出处理-从-Logits-到-Token/index.html","outputRootRelativeUrl":"../../../../../../../","siteRootRelativeUrl":"../../../","assertionPolicy":{"mode":"every-page","cacheTtlMs":1800000}},S=1,C="html-server:dynamic-appearance:v1";
+const html=document.documentElement,pending='data-html-server-dynamic-pending';if(!html)return;html.setAttribute(pending,'');
+try{Object.defineProperty(window,'__htmlServerDynamicSiteRoot',{configurable:true,value:new URL(m.siteRootRelativeUrl||m.outputRootRelativeUrl,document.baseURI||location.href).href});}catch(_){}
+const reveal=()=>html.removeAttribute(pending);
+const safe=p=>{p=String(p||'').replace(/\\/g,'/').replace(/^\/+/, '');return !!p&&!p.split('/').includes('..')&&!/^[a-z][a-z\d+.-]*:/i.test(p)};
+const routeUrl=p=>String(p).split('/').map(encodeURIComponent).join('/');
+const get=async u=>{const c=new AbortController(),t=setTimeout(()=>c.abort(),2000);try{const r=await fetch(u,{cache:'no-store',credentials:'same-origin',signal:c.signal});if(!r.ok)throw Error(String(r.status));return await r.json()}finally{clearTimeout(t)}};
+const p=m.assertionPolicy||{},mode=p.mode==='home-only'||p.mode==='cache'?p.mode:'every-page',ttl=Math.max(60000,Number(p.cacheTtlMs)||1800000);
+let storage;try{storage=localStorage}catch(_){}
+const clear=()=>{try{storage&&storage.removeItem(C)}catch(_){}};
+try{Object.defineProperty(window,'HtmlServerDynamicAppearanceCache',{configurable:true,value:{key:C,clear,refresh:()=>{clear();location.reload()}}})}catch(_){}
+const read=()=>{try{const v=JSON.parse(storage&&storage.getItem(C)||'null');return v&&v.schemaVersion===S&&typeof v.appearanceKey==='string'&&typeof v.releaseId==='string'&&safe(v.path)&&Number.isFinite(v.selectionRevision)&&Number.isFinite(v.expiresAt)?v:null}catch(_){return null}};
+const cached=read(),home=m.route==='index.html',reload=(()=>{try{return performance.getEntriesByType('navigation')[0]?.type==='reload'}catch(_){return false}})();
+const cacheValid=!!cached&&cached.releaseId===m.releaseId&&(mode!=='cache'||cached.expiresAt>Date.now()),refresh=mode==='every-page'||(mode==='home-only'&&home)||(mode==='cache'&&(!cacheValid||reload));
+(async()=>{let navigating=false;
+const rootForPage=async()=>{const fallback=window.__htmlServerStaticFallbackRoot,discovered=fallback&&typeof fallback.then==='function'?await fallback:null;return new URL(discovered&&discovered.siteRoot?discovered.siteRoot:m.outputRootRelativeUrl,document.baseURI||location.href)};
+const move=async(key,pathValue,releaseId,canonical)=>{if(key===m.appearanceKey)return false;if(!safe(m.route)||!safe(pathValue))return false;const root=await rootForPage(),encoded=routeUrl(m.route),rel=canonical?encoded:pathValue.replace(/\/+$/,'')+'/'+encoded,guard='html-server-dynamic:'+releaseId+':'+key+':'+m.route;if(sessionStorage.getItem(guard)==='1')return false;const target=new URL(rel,root);target.search=location.search;target.hash=location.hash;sessionStorage.setItem(guard,'1');navigating=true;location.replace(target.href);return true};
+try{
+if(!refresh){if(!cacheValid)return;if(cached.appearanceKey===m.appearanceKey){sessionStorage.removeItem('html-server-dynamic:'+cached.releaseId+':'+cached.appearanceKey+':'+m.route);return;}await move(cached.appearanceKey,cached.path,cached.releaseId,false);return;}
+const root=await rootForPage(),pair=await Promise.all([get(new URL('_config/data.json',root)),get(new URL('_config/release.json',root))]),cfg=pair[0],ptr=pair[1];
+if(cfg.schemaVersion!==S)return;
+if(ptr.schemaVersion!==S||(cfg.selectionRevision!==undefined&&cfg.selectionRevision!==ptr.selectionRevision)||!safe(ptr.manifest))return;
+const man=await get(new URL(ptr.manifest,root));if(man.schemaVersion!==S||man.releaseId!==ptr.releaseId||man.selectionRevision!==ptr.selectionRevision||man.primaryAppearance!==ptr.primaryAppearance||!safe(m.route))return;
+const hit=Object.entries(man.sites||{}).find(([,v])=>v.appearance&&v.appearance.layout===cfg.blogLayout&&v.appearance.theme===cfg.blogLayoutTheme);if(!hit)return;
+const key=hit[0],site=hit[1];if(!Array.isArray(site.routes)||!site.routes.includes(m.route))return;
+if(!safe(site.path))return;const record={schemaVersion:S,appearanceKey:key,layout:site.appearance.layout,theme:site.appearance.theme,path:site.path,releaseId:ptr.releaseId,selectionRevision:ptr.selectionRevision,expiresAt:mode==='home-only'?0:Date.now()+ttl};try{storage&&storage.setItem(C,JSON.stringify(record))}catch(_){}
+const guard='html-server-dynamic:'+ptr.releaseId+':'+key+':'+m.route;if(key===m.appearanceKey){sessionStorage.removeItem(guard);return;}
+await move(key,site.path,ptr.releaseId,key===man.primaryAppearance);
+}catch(_){if(mode!=='every-page'&&cacheValid&&!navigating)await move(cached.appearanceKey,cached.path,cached.releaseId,false).catch(()=>{})}finally{if(!navigating)reveal();}})();
+})();</script><!--html-server-dynamic:end-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  
+  <script defer src="../../../_assets/script.3b49c39b508edacb.js"></script>
+  <script data-blog-theme-bootstrap>(function(){
+  var root = document.documentElement;
+  var theme = root.getAttribute('data-html-server-theme') || 'light';
+  try {
+    var stored = localStorage.getItem('html-server-blog-theme');
+    if (stored === 'dark' || stored === 'light') theme = stored;
+  } catch (error) {}
+  root.setAttribute('data-html-server-theme', theme);
+  root.classList.toggle('theme-dark', theme === 'dark');
+  root.classList.toggle('theme-light', theme !== 'dark');
+  root.style.backgroundColor = theme === 'dark'
+    ? 'var(--html-server-navigation-surface-dark, var(--html-server-blog-background-dark, #151515))'
+    : 'var(--html-server-navigation-surface-light, var(--html-server-blog-background-light, #f5f7fa))';
+})();</script>
+  
+  <title>第9章：采样与输出处理-从-Logits-到-Token · Leezhiy Blog</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="../../../_assets/leezhiy-assets/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../../_assets/leezhiy-assets/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../../_assets/leezhiy-assets/favicon-16x16-next.png">
+  <link rel="mask-icon" href="../../../_assets/leezhiy-assets/logo.svg" color="#222">
+  <link rel="stylesheet" href="../../../_assets/leezhiy-assets/pace-theme-minimal.min.css">
+  <script src="../../../_assets/leezhiy-assets/pace.min.js"></script>
+  <link rel="stylesheet" href="../../../_assets/blog.css">
+<link rel="preload" as="script" href="../../../_assets/blog.js" fetchpriority="high"><script>window.__htmlServerStaticSearch="../../../_assets/meta.json";window.__htmlServerStaticSidebar="../../../_assets/sidebar.json?v=mtmqj868-2gf";window.__htmlServerStaticInteractions={"comments":"../../../_assets/blog-interactions/comments.json","views":"../../../_assets/blog-interactions/views.json"};window.__htmlServerStaticPluginOverrides=window.__htmlServerStaticPluginOverrides||{};Object.assign(window.__htmlServerStaticPluginOverrides["blog-live2d"]||(window.__htmlServerStaticPluginOverrides["blog-live2d"]={}),{"localScriptUrl":"../../../_assets/live2d-widget/L2Dwidget.min.js","localModelUrl":"../../../_assets/live2d-widget/assets/koharu.model.json","assetBaseUrl":"../../../_assets/live2d-widget"});</script></head>
+<body class="theme-light html-server-blog-body" data-blog-layout="leezhiy" data-blog-layout-theme="leezhiy-next" data-blog-page-kind="article" data-blog-style-isolation="strict" data-blog-drawer-side="right" data-blog-theme-control="system" data-blog-search-variant="source" data-blog-sticky-swap-selector=".leezhiy-sidebar-inner" data-leezhiy-title-underline="slide" data-blog-scroll-mode="window" data-blog-document-pinning="false" data-blog-document-pinning-filter-regular="false" style="--html-server-navigation-surface-light: #f5f7fa;--html-server-navigation-surface-dark: #151515">
+  <script data-blog-theme-bootstrap>(function(){
+  var theme = document.documentElement.getAttribute('data-html-server-theme') || 'light';
+  document.body.classList.toggle('theme-dark', theme === 'dark');
+  document.body.classList.toggle('theme-light', theme !== 'dark');
+})();</script>
+  <script type="application/json" data-blog-theme-image-groups>{}</script>
+  
+  <div class="html-server-blog-app">
+    <link rel="stylesheet" href="../../../_assets/leezhiy-assets/needsharebutton.min.css" data-leezhiy-share-styles><div class="leezhiy-container" data-blog-course-page>
+  <div class="leezhiy-headband"></div>
+  <header class="leezhiy-header html-server-blog-site-header"><div class="leezhiy-header-inner"><button class="leezhiy-nav-toggle" type="button" data-leezhiy-nav-toggle aria-label="切换导航"><i></i><i></i><i></i></button><div class="site-brand-container"><div class="site-meta"><a class="brand html-server-blog-site-brand" href="../../../" title="Leezhiy Blog"><span></span><h1 class="site-title">Leezhiy Blog</h1><span></span></a><p class="site-subtitle" title="我秃了，也变强了">我秃了，也变强了</p></div></div><nav class="leezhiy-site-nav html-server-blog-primary-navigation" data-blog-primary-navigation aria-label="主导航"><ul class="main-menu menu">
+  <li class="menu-item menu-item-home"><a href="../../../"><i class="fa fa-home fa-fw leezhiy-icon" aria-hidden="true"></i><span>首页</span></a></li>
+  <li class="menu-item menu-item-archives"><a href="../../../archives/"><i class="fa fa-archive fa-fw leezhiy-icon" aria-hidden="true"></i><span>归档</span></a></li>
+  <li class="menu-item menu-item-categories"><a href="../../../categories/"><i class="fa fa-th fa-fw leezhiy-icon" aria-hidden="true"></i><span>分类</span></a></li>
+  <li class="menu-item menu-item-tags"><a href="../../../tags/"><i class="fa fa-tags fa-fw leezhiy-icon" aria-hidden="true"></i><span>标签</span></a></li>
+  <li class="menu-item menu-item-about"><a href="../../../custom-name/"><i class="fa fa-user fa-fw leezhiy-icon" aria-hidden="true"></i><span>关于</span></a></li>
+  <li class="menu-item menu-item-search"><button type="button" data-blog-search-open><i class="fa fa-search fa-fw leezhiy-icon" aria-hidden="true"></i><span>搜索</span></button></li>
+</ul></nav></div></header>
+  <button type="button" class="leezhiy-sidebar-dimmer html-server-blog-scrim" data-blog-scrim aria-label="关闭导航"></button>
+  <div class="leezhiy-main-inner"><main class="html-server-blog-main leezhiy-content" data-blog-main><article class="html-server-blog-article leezhiy-post-block leezhiy-article" data-blog-interaction-page="大模型/vLLM 推理内核深度解析/第9章-采样与输出处理-从-Logits-到-Token.md"><header><h1>第9章：采样与输出处理-从-Logits-到-Token</h1><div class="leezhiy-post-meta post-meta"><span class="post-meta-item"><span class="post-meta-item-icon"><i class="far fa-calendar"></i></span><span class="post-meta-item-text">发表于</span><time title="创建时间：2026-07-14 20:48:32" itemprop="dateCreated datePublished" datetime="2026-07-14T20:48:32+08:00">2026-07-14</time></span><span class="post-meta-item"><span class="post-meta-item-icon"><i class="far fa-folder"></i></span><span class="post-meta-item-text">分类于</span><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="../../../categories/大模型/" itemprop="url" rel="index"><span itemprop="name">大模型</span></a></span>，<span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="../../../categories/大模型/vLLM 推理内核深度解析/" itemprop="url" rel="index"><span itemprop="name">vLLM 推理内核深度解析</span></a></span></span><span id="/%E5%A4%A7%E6%A8%A1%E5%9E%8B/vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/%E7%AC%AC9%E7%AB%A0-%E9%87%87%E6%A0%B7%E4%B8%8E%E8%BE%93%E5%87%BA%E5%A4%84%E7%90%86-%E4%BB%8E-Logits-%E5%88%B0-Token/" class="post-meta-item leancloud_visitors" data-flag-title="第9章：采样与输出处理-从-Logits-到-Token" title="阅读次数"><span class="post-meta-item-icon"><i class="fa fa-eye"></i></span><span class="post-meta-item-text">阅读次数：</span><span class="leancloud-visitors-count" data-blog-interaction-visits data-blog-interaction-path="大模型/vLLM 推理内核深度解析/第9章-采样与输出处理-从-Logits-到-Token.md">0</span></span><span class="post-meta-item"><span class="post-meta-item-icon"><i class="far fa-comment"></i></span><span class="post-meta-item-text">Valine：</span><a title="valine" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/%E7%AC%AC9%E7%AB%A0-%E9%87%87%E6%A0%B7%E4%B8%8E%E8%BE%93%E5%87%BA%E5%A4%84%E7%90%86-%E4%BB%8E-Logits-%E5%88%B0-Token/#valine-comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/%E5%A4%A7%E6%A8%A1%E5%9E%8B/vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/%E7%AC%AC9%E7%AB%A0-%E9%87%87%E6%A0%B7%E4%B8%8E%E8%BE%93%E5%87%BA%E5%A4%84%E7%90%86-%E4%BB%8E-Logits-%E5%88%B0-Token/" itemprop="commentCount" data-blog-interaction-comments data-blog-interaction-path="大模型/vLLM 推理内核深度解析/第9章-采样与输出处理-从-Logits-到-Token.md">0</span></a></span><span class="post-meta-item" title="本文字数"><span class="post-meta-item-icon"><i class="far fa-file-word"></i></span><span>9.8k</span></span><span class="post-meta-item" title="阅读时长"><span class="post-meta-item-icon"><i class="far fa-clock"></i></span><span>25 分钟</span></span></div></header><div class="markdown-reading-view html-server-blog-reading-view"><div class="markdown-preview-view markdown-rendered"><div class="markdown-preview-sizer markdown-preview-section"><pre class="frontmatter language-yaml" style="display: none; overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-yaml is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token key atrule">created</span><span class="token punctuation">:</span> 2026<span class="token punctuation">-</span>07<span class="token punctuation">-</span>14 20<span class="token punctuation">:</span><span class="token number">48</span>
+<span class="token key atrule">updated</span><span class="token punctuation">:</span> 2026<span class="token punctuation">-</span>07<span class="token punctuation">-</span>14 20<span class="token punctuation">:</span><span class="token number">48</span>
+<span class="token key atrule">aliases</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> 第9章：采样与输出处理<span class="token punctuation">-</span>从<span class="token punctuation">-</span>Logits<span class="token punctuation">-</span>到<span class="token punctuation">-</span>Token
+<span class="token key atrule">title</span><span class="token punctuation">:</span> 第9章：采样与输出处理<span class="token punctuation">-</span>从<span class="token punctuation">-</span>Logits<span class="token punctuation">-</span>到<span class="token punctuation">-</span>Token
+<span class="token key atrule">source</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//www.yangyitao.com/books/vllm/chapters/09<span class="token punctuation">-</span>sampling
+<span class="token key atrule">tags</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> ai<span class="token punctuation">-</span>infra
+  <span class="token punctuation">-</span> vLLM
+  <span class="token punctuation">-</span> 系列教程
+<span class="token key atrule">type</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> AI
+<span class="token key atrule">category</span><span class="token punctuation">:</span> AI基础设施/vLLM
+<span class="token key atrule">cssclasses</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> ai<span class="token punctuation">-</span>infra
+  <span class="token punctuation">-</span> series
+<span class="token key atrule">note</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">series</span><span class="token punctuation">:</span> vLLM 推理内核深度解析</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<div data-callout-metadata="" data-callout-fold="" data-callout="info" class="callout drop-shadow"><div class="callout-title" dir="auto"><div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-info"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg></div><div class="callout-title-inner">文档定位</div></div><div class="callout-content ab-note">
+<p dir="auto"><strong>AI 整理 + 学习笔记</strong>。原文出自杨艺韬《vLLM 推理内核深度解析》一书。</p>
+<p dir="auto">原文链接:<a rel="noopener nofollow" class="external-link" href="https://www.yangyitao.com/books/vllm/chapters/09-sampling" target="_blank">https://www.yangyitao.com/books/vllm/chapters/09-sampling</a><br>
+系列入口:<a data-href="%E5%A4%A7%E6%A8%A1%E5%9E%8B/vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/README/" href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/README/" class="internal-link" target="" rel="noopener nofollow">大模型/vLLM 推理内核深度解析/README</a></p>
+</div></div>
+<p dir="auto">vLLM 推理内核深度解析</p>
+<p dir="auto">“The beauty of randomness lies not in chaos, but in controlled unpredictability.”</p>
+<p dir="auto">“采样是 LLM 推理的<strong>最后一公里</strong>——一个 150K 维的概率分布，压缩成一个整数 token id。这最后一步的工程质量，决定了模型’看起来有多聪明’。”</p>
+<p dir="auto">本章要点</p>
+<ul>
+<li dir="auto">理解模型前向输出的 Logits 如何经过 logit 处理器 → 采样 → 停止检查三阶段变成最终 token</li>
+<li dir="auto">读懂 <code class="code-styler-inline">Sampler.forward</code>的 6 步流水线：dtype 转换、allowed_token_ids 白名单、bad_words 排除、logits_bias 偏置、penalty 惩罚、sample</li>
+<li dir="auto">掌握 temperature / top-k / top-p / min-p 四种策略的数学定义与使用场景</li>
+<li dir="auto">看懂 <code class="code-styler-inline">torch.where</code>如何在一个 batch 里无缝混合贪心和随机采样</li>
+<li dir="auto">理解 <code class="code-styler-inline">logprobs</code>为什么从<strong>修改前</strong>的 logits 计算——这是一个容易被忽视但很关键的设计</li>
+<li dir="auto">掌握 per-request <code class="code-styler-inline">torch.Generator</code>如何保证 <code class="code-styler-inline">seed</code>参数的可复现性</li>
+<li dir="auto">学会结构化输出（JSON Schema / XGrammar）的约束采样原理</li>
+<li dir="auto">看懂 stop 词跨 token 匹配如何靠尾部缓冲和 <code class="code-styler-inline">StopChecker</code>处理</li>
+<li dir="auto">理解停止检测”晚一拍”（overshoot 一个 token）在异步流水线里的必要代价</li>
+<li dir="auto">拿到四个典型场景的采样参数 preset：代码生成 / 创意写作 / JSON 结构化输出 / RAG 问答</li>
+</ul>
+<h2 data-heading="从 Logits 到 Token：一条三阶段流水线" dir="auto">从 Logits 到 Token：一条三阶段流水线</h2>
+<h3 data-heading="150,000 维的选择题" dir="auto">150,000 维的选择题</h3>
+<p dir="auto">每一次模型前向（forward pass），最终输出的不是 token，而是一个巨大的张量——<strong>Logits</strong>，形状为 <code class="code-styler-inline">[batch_size, vocab_size]</code>。对于 Llama-3，vocab_size=128,256。对于 Qwen-2.5，vocab_size=151,936。每一行代表一个请求在词表上的”得分”分布（未归一化）。</p>
+<p dir="auto">想象一下：模型把整个词表打分，每个 token 得到一个实数值。现在要从这 15 万个候选中选一个。怎么选？</p>
+<ul>
+<li dir="auto">选得分最高的那个？——会得到 deterministic 但可能重复、呆板的输出</li>
+<li dir="auto">按得分比例随机选？——保留多样性但可能选到离谱的 token</li>
+<li dir="auto">只在前 K 名里选？先设个质量门槛，再随机选？</li>
+</ul>
+<p dir="auto">每种策略背后都对应一个数学原理和一组用户场景。这就是采样层要解决的问题。</p>
+<h3 data-heading="三阶段流水线" dir="auto">三阶段流水线</h3>
+<p dir="auto">从 Logits 到最终采样出的 Token，要走完一条严格的流水线：</p>
+<div class="mermaid"><svg id="m4326d864944799da" width="1253.265625" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flowchart" height="270" viewBox="0 0 1253.265625 270" role="graphics-document document" aria-roledescription="flowchart-v2"><style>#m4326d864944799da{font-family:var(--font-mermaid);font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#m4326d864944799da .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#m4326d864944799da .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#m4326d864944799da .error-icon{fill:#552222;}#m4326d864944799da .error-text{fill:#552222;stroke:#552222;}#m4326d864944799da .edge-thickness-normal{stroke-width:1px;}#m4326d864944799da .edge-thickness-thick{stroke-width:3.5px;}#m4326d864944799da .edge-pattern-solid{stroke-dasharray:0;}#m4326d864944799da .edge-thickness-invisible{stroke-width:0;fill:none;}#m4326d864944799da .edge-pattern-dashed{stroke-dasharray:3;}#m4326d864944799da .edge-pattern-dotted{stroke-dasharray:2;}#m4326d864944799da .marker{fill:#333333;stroke:#333333;}#m4326d864944799da .marker.cross{stroke:#333333;}#m4326d864944799da svg{font-family:var(--font-mermaid);font-size:16px;}#m4326d864944799da p{margin:0;}#m4326d864944799da .label{font-family:var(--font-mermaid);color:#333;}#m4326d864944799da .cluster-label text{fill:#333;}#m4326d864944799da .cluster-label span{color:#333;}#m4326d864944799da .cluster-label span p{background-color:transparent;}#m4326d864944799da .label text,#m4326d864944799da span{fill:#333;color:#333;}#m4326d864944799da .node rect,#m4326d864944799da .node circle,#m4326d864944799da .node ellipse,#m4326d864944799da .node polygon,#m4326d864944799da .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#m4326d864944799da .rough-node .label text,#m4326d864944799da .node .label text,#m4326d864944799da .image-shape .label,#m4326d864944799da .icon-shape .label{text-anchor:middle;}#m4326d864944799da .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#m4326d864944799da .rough-node .label,#m4326d864944799da .node .label,#m4326d864944799da .image-shape .label,#m4326d864944799da .icon-shape .label{text-align:center;}#m4326d864944799da .node.clickable{cursor:pointer;}#m4326d864944799da .root .anchor path{fill:#333333!important;stroke-width:0;stroke:#333333;}#m4326d864944799da .arrowheadPath{fill:#333333;}#m4326d864944799da .edgePath .path{stroke:#333333;stroke-width:2.0px;}#m4326d864944799da .flowchart-link{stroke:#333333;fill:none;}#m4326d864944799da .edgeLabel{background-color:rgba(232,232,232, 0.8);text-align:center;}#m4326d864944799da .edgeLabel p{background-color:rgba(232,232,232, 0.8);}#m4326d864944799da .edgeLabel rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#m4326d864944799da .labelBkg{background-color:rgba(232, 232, 232, 0.5);}#m4326d864944799da .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#m4326d864944799da .cluster text{fill:#333;}#m4326d864944799da .cluster span{color:#333;}#m4326d864944799da div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:var(--font-mermaid);font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#m4326d864944799da .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#333;}#m4326d864944799da rect.text{fill:none;stroke-width:0;}#m4326d864944799da .icon-shape,#m4326d864944799da .image-shape{background-color:rgba(232,232,232, 0.8);text-align:center;}#m4326d864944799da .icon-shape p,#m4326d864944799da .image-shape p{background-color:rgba(232,232,232, 0.8);padding:2px;}#m4326d864944799da .icon-shape .label rect,#m4326d864944799da .image-shape .label rect{opacity:0.5;background-color:rgba(232,232,232, 0.8);fill:rgba(232,232,232, 0.8);}#m4326d864944799da .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#m4326d864944799da .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#m4326d864944799da :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g><marker id="m4326d864944799da-m4326d864944799da_flowchart-v2-pointEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="m4326d864944799da-m4326d864944799da_flowchart-v2-pointStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="4.5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker><marker id="m4326d864944799da-m4326d864944799da_flowchart-v2-circleEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="m4326d864944799da-m4326d864944799da_flowchart-v2-circleStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></circle></marker><marker id="m4326d864944799da-m4326d864944799da_flowchart-v2-crossEnd" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><marker id="m4326d864944799da-m4326d864944799da_flowchart-v2-crossStart" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"></path></marker><g class="root"><g class="clusters"></g><g class="edgePaths"><path d="M172.438,124.257L188.71,117.381C204.982,110.505,237.526,96.752,269.404,89.876C301.281,83,332.492,83,348.098,83L363.703,83" id="L_L_LP_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_L_LP_0" data-points="W3sieCI6MTcyLjQzNzUsInkiOjEyNC4yNTY3NjU1NjE4NzgyOH0seyJ4IjoyNzAuMDcwMzEyNSwieSI6ODN9LHsieCI6MzY3LjcwMzEyNSwieSI6ODN9XQ==" marker-end="url(#m4326d864944799da-m4326d864944799da_flowchart-v2-pointEnd)"></path><path d="M571.578,83L575.745,83C579.911,83,588.245,83,595.911,83C603.578,83,610.578,83,614.078,83L617.578,83" id="L_LP_S_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_LP_S_0" data-points="W3sieCI6NTcxLjU3ODEyNSwieSI6ODN9LHsieCI6NTk2LjU3ODEyNSwieSI6ODN9LHsieCI6NjIxLjU3ODEyNSwieSI6ODN9XQ==" marker-end="url(#m4326d864944799da-m4326d864944799da_flowchart-v2-pointEnd)"></path><path d="M853.68,83L857.846,83C862.013,83,870.346,83,878.013,83C885.68,83,892.68,83,896.18,83L899.68,83" id="L_S_T_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_S_T_0" data-points="W3sieCI6ODUzLjY3OTY4NzUsInkiOjgzfSx7IngiOjg3OC42Nzk2ODc1LCJ5Ijo4M30seyJ4Ijo5MDMuNjc5Njg3NSwieSI6ODN9XQ==" marker-end="url(#m4326d864944799da-m4326d864944799da_flowchart-v2-pointEnd)"></path><path d="M1024.188,83L1028.354,83C1032.521,83,1040.854,83,1048.521,83C1056.188,83,1063.188,83,1066.688,83L1070.188,83" id="L_T_SC_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_T_SC_0" data-points="W3sieCI6MTAyNC4xODc1LCJ5Ijo4M30seyJ4IjoxMDQ5LjE4NzUsInkiOjgzfSx7IngiOjEwNzQuMTg3NSwieSI6ODN9XQ==" marker-end="url(#m4326d864944799da-m4326d864944799da_flowchart-v2-pointEnd)"></path><path d="M172.438,193.743L188.71,200.619C204.982,207.495,237.526,221.248,270.447,228.124C303.368,235,336.667,235,353.316,235L369.965,235" id="L_L_LG_0" class="edge-thickness-normal edge-pattern-dotted edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_L_LG_0" data-points="W3sieCI6MTcyLjQzNzUsInkiOjE5My43NDMyMzQ0MzgxMjE3fSx7IngiOjI3MC4wNzAzMTI1LCJ5IjoyMzV9LHsieCI6MzczLjk2NDg0Mzc1LCJ5IjoyMzV9XQ==" marker-end="url(#m4326d864944799da-m4326d864944799da_flowchart-v2-pointEnd)"></path></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" data-id="L_L_LP_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_LP_S_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_S_T_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_T_SC_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(270.0703125, 235)"><g class="label" data-id="L_L_LG_0" transform="translate(-72.6328125, -24)"><foreignObject width="145.265625" height="48"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"><p>分支：原始 logprobs<br>（用于 API 返回）</p></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-L-0" transform="translate(90.21875, 159)"><rect class="basic label-container" style="fill:#8b5cf6 !important;stroke:none !important" x="-82.21875" y="-39" width="164.4375" height="78"></rect><g class="label" style="color:#fff !important" transform="translate(-52.21875, -24)"><rect></rect><foreignObject width="104.4375" height="48"><div style="color: rgb(255, 255, 255) !important; display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="color:#fff !important" class="nodeLabel"><p>Logits<br>[batch, vocab]</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-LP-1" transform="translate(469.640625, 83)"><rect class="basic label-container" style="fill:#f59e0b !important;stroke:none !important" x="-101.9375" y="-75" width="203.875" height="150"></rect><g class="label" style="color:#fff !important" transform="translate(-71.9375, -60)"><rect></rect><foreignObject width="143.875" height="120"><div style="color: rgb(255, 255, 255) !important; display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="color:#fff !important" class="nodeLabel"><p>Logit 处理器层<br>· allowed_token_ids<br>· bad_words<br>· logits_bias<br>· penalties</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-S-3" transform="translate(737.62890625, 83)"><rect class="basic label-container" style="fill:#3b82f6 !important;stroke:none !important" x="-116.05078125" y="-63" width="232.1015625" height="126"></rect><g class="label" style="color:#fff !important" transform="translate(-86.05078125, -48)"><rect></rect><foreignObject width="172.1015625" height="96"><div style="color: rgb(255, 255, 255) !important; display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="color:#fff !important" class="nodeLabel"><p>采样层<br>· temperature<br>· min_p / top_k / top_p<br>· multinomial / argmax</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-T-5" transform="translate(963.93359375, 83)"><rect class="basic label-container" style="fill:#10b981 !important;stroke:none !important" x="-60.25390625" y="-27" width="120.5078125" height="54"></rect><g class="label" style="color:#fff !important" transform="translate(-30.25390625, -12)"><rect></rect><foreignObject width="60.5078125" height="24"><div style="color: rgb(255, 255, 255) !important; display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="color:#fff !important" class="nodeLabel"><p>Token ID</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-SC-7" transform="translate(1159.7265625, 83)"><rect class="basic label-container" style="fill:#ec4899 !important;stroke:none !important" x="-85.5390625" y="-75" width="171.078125" height="150"></rect><g class="label" style="color:#fff !important" transform="translate(-55.5390625, -60)"><rect></rect><foreignObject width="111.078125" height="120"><div style="color: rgb(255, 255, 255) !important; display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;" xmlns="http://www.w3.org/1999/xhtml"><span style="color:#fff !important" class="nodeLabel"><p>停止检测<br>· EOS<br>· max_tokens<br>· stop strings<br>· stop token ids</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-LG-9" transform="translate(469.640625, 235)"><rect class="basic label-container" style="" x="-95.67578125" y="-27" width="191.3515625" height="54"></rect><g class="label" style="" transform="translate(-65.67578125, -12)"><rect></rect><foreignObject width="131.3515625" height="24"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>compute_logprobs</p></span></div></foreignObject></g></g></g></g></g></svg></div>
+<p dir="auto">这张图是整章的骨架——每个方框在 vLLM 源码里都对应 <code class="code-styler-inline">vllm/v1/sample/</code>下的一个模块。</p>
+<p dir="auto">三阶段的职责分工：</p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>输入</th>
+<th>输出</th>
+<th>关键操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Logit 处理器</td>
+<td>logits</td>
+<td>修改后的 logits</td>
+<td>掩码、偏置、惩罚</td>
+</tr>
+<tr>
+<td>采样</td>
+<td>修改后的 logits</td>
+<td>token id</td>
+<td>温度、截断、随机/贪心</td>
+</tr>
+<tr>
+<td>停止检测</td>
+<td>token id + 历史</td>
+<td>继续 / FINISH</td>
+<td>EOS、长度、字符串匹配</td>
+</tr>
+</tbody>
+</table>
+<h3 data-heading="`Sampler.forward`的 6 步" dir="auto"><code class="code-styler-inline">Sampler.forward</code>的 6 步</h3>
+<pre class="language-python" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-python is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token comment"># vllm/v1/sample/sampler.py（概念性简化）</span>
+<span class="token keyword">class</span> <span class="token class-name">Sampler</span><span class="token punctuation">(</span>nn<span class="token punctuation">.</span>Module<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">forward</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> logits<span class="token punctuation">:</span> torch<span class="token punctuation">.</span>Tensor<span class="token punctuation">,</span> sampling_metadata<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> SamplerOutput<span class="token punctuation">:</span>
+        <span class="token comment"># 0. 先保存"原始 logprobs"（在任何修改前）</span>
+        raw_logprobs <span class="token operator">=</span> <span class="token boolean">None</span>
+        <span class="token keyword">if</span> sampling_metadata<span class="token punctuation">.</span>max_num_logprobs <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            raw_logprobs <span class="token operator">=</span> self<span class="token punctuation">.</span>compute_logprobs<span class="token punctuation">(</span>logits<span class="token punctuation">)</span>
+
+        <span class="token comment"># 1. 转 float32 —— 后面的 penalty 运算精度敏感</span>
+        logits <span class="token operator">=</span> logits<span class="token punctuation">.</span>to<span class="token punctuation">(</span>torch<span class="token punctuation">.</span>float32<span class="token punctuation">)</span>
+
+        <span class="token comment"># 2. 白名单过滤</span>
+        logits <span class="token operator">=</span> self<span class="token punctuation">.</span>apply_allowed_token_ids<span class="token punctuation">(</span>logits<span class="token punctuation">,</span> sampling_metadata<span class="token punctuation">)</span>
+
+        <span class="token comment"># 3. 禁词排除</span>
+        logits <span class="token operator">=</span> self<span class="token punctuation">.</span>apply_bad_words<span class="token punctuation">(</span>logits<span class="token punctuation">,</span> sampling_metadata<span class="token punctuation">)</span>
+
+        <span class="token comment"># 4. logit_bias 偏置</span>
+        logits <span class="token operator">=</span> self<span class="token punctuation">.</span>apply_logits_bias<span class="token punctuation">(</span>logits<span class="token punctuation">,</span> sampling_metadata<span class="token punctuation">)</span>
+
+        <span class="token comment"># 5. 惩罚（min_tokens / repetition / frequency / presence）</span>
+        logits <span class="token operator">=</span> self<span class="token punctuation">.</span>apply_penalties<span class="token punctuation">(</span>logits<span class="token punctuation">,</span> sampling_metadata<span class="token punctuation">)</span>
+
+        <span class="token comment"># 6. 采样（贪心 or 随机）</span>
+        sampled <span class="token operator">=</span> self<span class="token punctuation">.</span>sample<span class="token punctuation">(</span>logits<span class="token punctuation">,</span> sampling_metadata<span class="token punctuation">)</span>
+
+        <span class="token keyword">return</span> SamplerOutput<span class="token punctuation">(</span>
+            sampled_token_ids<span class="token operator">=</span>sampled<span class="token punctuation">.</span>unsqueeze<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            logprobs_tensors<span class="token operator">=</span>make_logprobs<span class="token punctuation">(</span>raw_logprobs<span class="token punctuation">,</span> sampled<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span>
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">这 6 步的源码锚点在 <code class="code-styler-inline">vllm/v1/sample/sampler.py:21-72</code>。几个细节比”采样就是 softmax 后抽一个 token”更重要：<code class="code-styler-inline">raw_logprobs</code>在任何惩罚和温度缩放前计算；logits 先转成 float32；<code class="code-styler-inline">allowed_token_ids</code>、<code class="code-styler-inline">bad_words</code>、<code class="code-styler-inline">logit_bias</code>、<code class="code-styler-inline">min_tokens</code>和三类 penalty 都在采样前改 logits；FlashInfer 采样可能返回 int32，所以最终会先转 long 兼容后续索引，再转回 int32 减少输出张量体积。不要给这段逻辑写固定毫秒数，采样开销会随 vocab size、batch、是否请求 logprobs、是否启用 top-p 排序、是否有 seed、是否走 FlashInfer 变化。</p>
+<h3 data-heading="一个关键设计：logprobs 来自原始 logits" dir="auto">一个关键设计：logprobs 来自原始 logits</h3>
+<p dir="auto">注意步骤 0——<strong>在任何修改之前</strong>就先算了 <code class="code-styler-inline">raw_logprobs</code>。这是一个容易被忽视但非常重要的设计决策。</p>
+<p dir="auto">如果用户请求返回 <code class="code-styler-inline">logprobs</code>（OpenAI API 的 <code class="code-styler-inline">logprobs=true</code>），他们期望看到的是<strong>模型自己的置信度</strong>，而不是经过温度缩放、惩罚调整后的”假”概率。如果在 apply_penalties 后再算 logprobs，返回的数值就会被 temperature、penalty 污染，对下游应用（比如用 logprobs 做 confidence scoring 的系统）是误导。</p>
+<p dir="auto"><strong>vLLM 的正解</strong>：logprobs 永远反映模型原始的数值，采样用的是调整后的分布。两条路径独立，接口契约清晰。</p>
+<p dir="auto">这种”<strong>保留原始真相</strong>”的设计哲学在 vLLM 里多处体现——KV Cache 的引用计数、Scheduler 的 num_computed_tokens，都是”真实状态”优先，衍生信息让位。</p>
+<h3 data-heading="`SamplingParams`先把用户输入规范化" dir="auto"><code class="code-styler-inline">SamplingParams</code>先把用户输入规范化</h3>
+<p dir="auto">采样层不是直接拿 OpenAI JSON 字段开干。用户参数会先进入 <code class="code-styler-inline">vllm/sampling_params.py</code>，在那里被规范化和校验。这个文件当前 598 行，是采样 API 的契约层。</p>
+<table>
+<thead>
+<tr>
+<th>输入情况</th>
+<th>源码处理</th>
+<th>为什么重要</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>temperature=None</td>
+<td>from_optional() 改成 1.0</td>
+<td>API 层可以传空，engine 层看到稳定默认值</td>
+</tr>
+<tr>
+<td>seed=-1</td>
+<td><strong>post_init</strong>() 改成 None</td>
+<td>兼容”禁用 seed”的调用习惯</td>
+</tr>
+<tr>
+<td>stop 是字符串</td>
+<td>统一包装成 list</td>
+<td>后续 stop 检查只处理列表</td>
+</tr>
+<tr>
+<td>stop_token_ids=None</td>
+<td>统一变成空列表</td>
+<td>避免热路径反复判空</td>
+</tr>
+<tr>
+<td>bad_words=None</td>
+<td>统一变成空列表</td>
+<td>后续 tokenizer 转换逻辑更简单</td>
+</tr>
+<tr>
+<td>logprobs=True</td>
+<td>转成 1</td>
+<td>兼容布尔式 OpenAI 参数</td>
+</tr>
+<tr>
+<td>prompt_logprobs=True</td>
+<td>转成 1</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>logit_bias token key 是字符串</td>
+<td>int(token)，bias clamp 到 [-100, 100]</td>
+<td>兼容 JSON 对象 key 只能是字符串的场景</td>
+</tr>
+<tr>
+<td>temperature &lt; _SAMPLING_EPS</td>
+<td>top_p=1.0、top_k=-1、min_p=0.0</td>
+<td>贪心采样下截断策略无意义</td>
+</tr>
+</tbody>
+</table>
+<p dir="auto">校验同样在这一层完成：presence/frequency penalty 必须在 <code class="code-styler-inline">[-2, 2]</code>，<code class="code-styler-inline">repetition_penalty</code>必须大于 0，<code class="code-styler-inline">top_p</code>必须在 <code class="code-styler-inline">(0, 1]</code>，<code class="code-styler-inline">top_k</code>只能是 <code class="code-styler-inline">-1</code>或至少 1 的整数，<code class="code-styler-inline">min_p</code>必须在 <code class="code-styler-inline">[0, 1]</code>，<code class="code-styler-inline">min_tokens</code>不能超过 <code class="code-styler-inline">max_tokens</code>。这让 GPU sampler 可以假设输入已经合法，不在热路径里做业务级参数解释。</p>
+<h2 data-heading="四种核心采样策略" dir="auto">四种核心采样策略</h2>
+<h3 data-heading="Temperature：分布的”尖锐度”调节" dir="auto">Temperature：分布的”尖锐度”调节</h3>
+<p dir="auto">温度缩放是 LLM 采样里最基础的旋钮：</p>
+<div class="math math-block is-loaded"><mjx-container class="MathJax" jax="CHTML" display="true"><mjx-math display="true" class="MJX-TEX" style="margin-left: 0px; margin-right: 0px;"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45D TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mfrac space="4"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow><mjx-mi class="mjx-n"><mjx-c class="mjx-c65"></mjx-c><mjx-c class="mjx-c78"></mjx-c><mjx-c class="mjx-c70"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2061"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c2113"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2F"></mjx-c></mjx-mo></mjx-texatom><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D447 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow><mjx-munder limits="false"><mjx-mo class="mjx-sop"><mjx-c class="mjx-c2211 TEX-S1"></mjx-c></mjx-mo><mjx-script style="vertical-align: -0.285em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-munder><mjx-mi class="mjx-n" space="2"><mjx-c class="mjx-c65"></mjx-c><mjx-c class="mjx-c78"></mjx-c><mjx-c class="mjx-c70"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2061"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c2113"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2F"></mjx-c></mjx-mo></mjx-texatom><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D447 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-math></mjx-container></div>
+<ul>
+<li dir="auto"><span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D447 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3C"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-math></mjx-container></span> ：分布变尖锐。高概率 token 的相对优势被放大，生成更确定但可能呆板</li>
+<li dir="auto"><span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D447 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-math></mjx-container></span> ：分布不变（softmax 标准形态）</li>
+<li dir="auto"><span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D447 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3E"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-math></mjx-container></span> ：分布变平。低概率 token 的相对机会增加，生成更多样但可能胡言乱语</li>
+<li dir="auto"><span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D447 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-math></mjx-container></span> ：退化为 argmax（贪心采样）</li>
+</ul>
+<p dir="auto">生产中的典型值：</p>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>temperature</th>
+<th>理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>代码生成</td>
+<td>0.2-0.4</td>
+<td>要求准确，允许很小的多样性</td>
+</tr>
+<tr>
+<td>数学推理</td>
+<td>0.0-0.3</td>
+<td>答案通常唯一，高 T 会引入错误</td>
+</tr>
+<tr>
+<td>问答系统</td>
+<td>0.5-0.7</td>
+<td>平衡准确与表达多样</td>
+</tr>
+<tr>
+<td>创意写作</td>
+<td>0.8-1.2</td>
+<td>鼓励新颖表达</td>
+</tr>
+<tr>
+<td>对话 / 角色扮演</td>
+<td>0.7-1.0</td>
+<td>对话需要自然的不确定性</td>
+</tr>
+<tr>
+<td>摘要提取</td>
+<td>0.1-0.3</td>
+<td>忠实原文，低创造</td>
+</tr>
+<tr>
+<td>翻译</td>
+<td>0.2-0.5</td>
+<td>语义准确 &gt; 创意表达</td>
+</tr>
+</tbody>
+</table>
+<p dir="auto"><strong>注意</strong>：temperature=0 在 vLLM 里会直接走 argmax 快速路径，不走 exp/softmax。详见 9.3.3。</p>
+<h3 data-heading="Top-k：硬截断候选集" dir="auto">Top-k：硬截断候选集</h3>
+<p dir="auto">从 Logits 里只保留<strong>得分最高的 k 个 token</strong>，其余置为负无穷：</p>
+<pre class="language-plaintext" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-plaintext is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">top_k = 50  → 只在 top 50 个候选中采样
+top_k = 1   → 等价于 greedy
+top_k = -1  → 不启用（使用全词表）
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">Top-k 的好处是”防止低概率 token 的长尾噪音”——大模型词表 150K+，即使每个 token 的概率很小，累计起来总有几千个 token 的概率和超过 0.1%，采到它们就等于”用 0.0001% 概率的 token 产生了一段文字”，大概率是垃圾。</p>
+<p dir="auto">Top-k 的缺点是<strong>不自适应</strong>——固定 k=50 在”模型非常确定”的位置（top-1 概率 0.95）显得多余，在”模型不确定”的位置（top-1 概率 0.01）又可能砍掉太多好选项。</p>
+<h3 data-heading="Top-p (Nucleus Sampling)：动态的累计阈值" dir="auto">Top-p (Nucleus Sampling)：动态的累计阈值</h3>
+<p dir="auto">不固定候选数量，而是按累计概率阈值切：<strong>排序后从大到小累计，累计概率到 p 就停</strong>。</p>
+<pre class="language-plaintext" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-plaintext is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">top_p = 0.9  → 保留累计概率达到 90% 的最小候选集
+top_p = 0.5  → 只保留最有可能的那一半概率质量
+top_p = 1.0  → 不启用（保留全词表）
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">Top-p 自适应：</p>
+<ul>
+<li dir="auto">模型确定时（top-1 概率 0.9）：候选集可能只有 1-2 个 token</li>
+<li dir="auto">模型不确定时（top-1 概率 0.05）：候选集可能有几百个 token</li>
+</ul>
+<p dir="auto">相比 Top-k 更”聪明”。生产实践里 top-p=0.9 或 0.95 是安全选择。</p>
+<h3 data-heading="Min-p：更激进的自适应阈值" dir="auto">Min-p：更激进的自适应阈值</h3>
+<p dir="auto">Min-p 是 2023 年提出的相对较新策略（Nguyen et al., arXiv:2407.01082）：</p>
+<div class="math math-block is-loaded"><mjx-container class="MathJax" jax="CHTML" display="true"><mjx-math display="true" class="MJX-TEX" style="margin-left: 0px; margin-right: 0px;"><mjx-mtext class="mjx-n"><mjx-utext variant="normal" style="font-family: MJXZERO, serif;">保</mjx-utext><mjx-utext variant="normal" style="font-family: MJXZERO, serif;">留</mjx-utext><mjx-c class="mjx-cA0"></mjx-c></mjx-mtext><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi><mjx-mstyle><mjx-mspace style="width: 0.278em;"></mjx-mspace></mjx-mstyle><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c27FA"></mjx-c></mjx-mo><mjx-mstyle><mjx-mspace style="width: 0.278em;"></mjx-mspace></mjx-mstyle><mjx-msub space="4"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45D TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2265"></mjx-c></mjx-mo><mjx-munder space="4"><mjx-row><mjx-base><mjx-mo class="mjx-n"><mjx-c class="mjx-c6D"></mjx-c><mjx-c class="mjx-c69"></mjx-c><mjx-c class="mjx-c6E"></mjx-c></mjx-mo></mjx-base></mjx-row><mjx-row><mjx-under style="padding-top: 0.287em; padding-left: 0.656em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45D TEX-I"></mjx-c></mjx-mi></mjx-under></mjx-row></mjx-munder><mjx-mo class="mjx-n" space="2"><mjx-c class="mjx-c22C5"></mjx-c></mjx-mo><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45D TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c6D"></mjx-c><mjx-c class="mjx-c61"></mjx-c><mjx-c class="mjx-c78"></mjx-c></mjx-mo></mjx-texatom></mjx-script></mjx-msub></mjx-math></mjx-container></div>
+<p dir="auto">其中 <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45D TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c6D"></mjx-c><mjx-c class="mjx-c61"></mjx-c><mjx-c class="mjx-c78"></mjx-c></mjx-mo></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-munder space="4" limits="false"><mjx-mo class="mjx-n"><mjx-c class="mjx-c6D"></mjx-c><mjx-c class="mjx-c61"></mjx-c><mjx-c class="mjx-c78"></mjx-c></mjx-mo><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-munder><mjx-msub space="2"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45D TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math></mjx-container></span> 。</p>
+<ul>
+<li dir="auto">模型确定时（ <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45D TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c6D"></mjx-c><mjx-c class="mjx-c61"></mjx-c><mjx-c class="mjx-c78"></mjx-c></mjx-mo></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c30"></mjx-c><mjx-c class="mjx-c2E"></mjx-c><mjx-c class="mjx-c39"></mjx-c></mjx-mn></mjx-math></mjx-container></span>, min_p=0.1）→ 只保留 <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45D TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2265"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c30"></mjx-c><mjx-c class="mjx-c2E"></mjx-c><mjx-c class="mjx-c30"></mjx-c><mjx-c class="mjx-c39"></mjx-c></mjx-mn></mjx-math></mjx-container></span> 的 token（极少的 2-3 个）</li>
+<li dir="auto">模型不确定时（ <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45D TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c6D"></mjx-c><mjx-c class="mjx-c61"></mjx-c><mjx-c class="mjx-c78"></mjx-c></mjx-mo></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c30"></mjx-c><mjx-c class="mjx-c2E"></mjx-c><mjx-c class="mjx-c30"></mjx-c><mjx-c class="mjx-c35"></mjx-c></mjx-mn></mjx-math></mjx-container></span>, min_p=0.1）→ 保留 <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45D TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2265"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c30"></mjx-c><mjx-c class="mjx-c2E"></mjx-c><mjx-c class="mjx-c30"></mjx-c><mjx-c class="mjx-c30"></mjx-c><mjx-c class="mjx-c35"></mjx-c></mjx-mn></mjx-math></mjx-container></span> 的 token（几十个候选）</li>
+</ul>
+<p dir="auto">相比 top-p，min-p 在”尾部平坦”场景下更严格（top-p 会让累计 90% 包含一大片差不多概率的 token，min-p 按相对最大值卡，自动排除”相对较差”的那些）。</p>
+<p dir="auto">生产实战里 min-p=0.05 或 0.1 常和较高 temperature 搭配使用，目的是在保留表达多样性的同时过滤相对最大概率太低的尾部 token。vLLM 的 <code class="code-styler-inline">SamplingParams</code>里 <code class="code-styler-inline">min_p</code>默认是 0.0，取值范围在 <code class="code-styler-inline">_verify_args()</code>中被限制为 <code class="code-styler-inline">[0, 1]</code>；当 temperature 进入贪心路径时，<code class="code-styler-inline">__post_init__()</code>会把 <code class="code-styler-inline">min_p</code>重置为 0.0，因为贪心采样下相对概率阈值没有意义。</p>
+<h3 data-heading="四种策略总对比" dir="auto">四种策略总对比</h3>
+<table>
+<thead>
+<tr>
+<th>策略</th>
+<th>候选集大小</th>
+<th>自适应</th>
+<th>开销</th>
+<th>最佳搭档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Greedy (T=0)</td>
+<td>1</td>
+<td>否</td>
+<td>最低</td>
+<td>max_tokens</td>
+</tr>
+<tr>
+<td>Temperature</td>
+<td>全词表</td>
+<td>否</td>
+<td>中</td>
+<td>top-p / top-k</td>
+</tr>
+<tr>
+<td>Top-k</td>
+<td>固定 k</td>
+<td>否</td>
+<td>中（需排序）</td>
+<td>temperature</td>
+</tr>
+<tr>
+<td>Top-p</td>
+<td>动态</td>
+<td>是</td>
+<td>中（需排序）</td>
+<td>temperature</td>
+</tr>
+<tr>
+<td>Min-p</td>
+<td>动态</td>
+<td>是</td>
+<td>中</td>
+<td>temperature=0.7+</td>
+</tr>
+</tbody>
+</table>
+<h3 data-heading="组合使用" dir="auto">组合使用</h3>
+<p dir="auto">top-k、top-p、min-p 可以<strong>串联使用</strong>。vLLM 的顺序是：temperature → min-p → (top-k + top-p)。</p>
+<pre class="language-python" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-python is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token comment"># 在 sampler.sample() 里</span>
+logits <span class="token operator">=</span> apply_temperature<span class="token punctuation">(</span>logits<span class="token punctuation">,</span> temperature<span class="token punctuation">)</span>
+logits <span class="token operator">=</span> apply_min_p<span class="token punctuation">(</span>logits<span class="token punctuation">,</span> min_p<span class="token punctuation">)</span>
+logits <span class="token operator">=</span> topk_topp_sampler<span class="token punctuation">(</span>logits<span class="token punctuation">,</span> top_k<span class="token punctuation">,</span> top_p<span class="token punctuation">,</span> generators<span class="token punctuation">)</span>  <span class="token comment"># top-k 和 top-p 在同一 kernel 里</span>
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">为什么 top-k 和 top-p 合在同一个函数里？看 <code class="code-styler-inline">vllm/v1/sample/ops/topk_topp_sampler.py:170-207</code>：如果只启用 top-k，会走 <code class="code-styler-inline">apply_top_k_only()</code>，避免对整个词表排序；如果启用 top-p，函数需要先按 logits 排序、算 softmax 和累计概率，再把 mask scatter 回原词表顺序。两者放在一起不是为了抽象好看，而是为了按参数组合选择代价更低的路径。</p>
+<h2 data-heading="批量采样的 GPU 向量化" dir="auto">批量采样的 GPU 向量化</h2>
+<h3 data-heading="朴素实现的问题" dir="auto">朴素实现的问题</h3>
+<p dir="auto">最直观的写法是”<strong>for 每个请求，按它的参数采样</strong>”：</p>
+<pre class="language-python" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-python is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token keyword">for</span> i<span class="token punctuation">,</span> req <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>batch<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    p <span class="token operator">=</span> softmax<span class="token punctuation">(</span>logits<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">/</span> req<span class="token punctuation">.</span>temperature<span class="token punctuation">)</span>
+    p <span class="token operator">=</span> apply_top_k<span class="token punctuation">(</span>p<span class="token punctuation">,</span> req<span class="token punctuation">.</span>top_k<span class="token punctuation">)</span>
+    p <span class="token operator">=</span> apply_top_p<span class="token punctuation">(</span>p<span class="token punctuation">,</span> req<span class="token punctuation">.</span>top_p<span class="token punctuation">)</span>
+    sampled<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> torch<span class="token punctuation">.</span>multinomial<span class="token punctuation">(</span>p<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">看起来清楚，但 GPU 上的致命问题是：每个请求单独处理会破坏 batch，带来更多 Python 调度、张量切片和小 kernel 调用。采样层的目标不是把公式写得最直观，而是把同一个 batch 里的不同采样参数打包成张量，让 GPU 一次处理尽可能多的行。</p>
+<h3 data-heading="向量化思路" dir="auto">向量化思路</h3>
+<p dir="auto">vLLM 的做法：<strong>把 per-request 参数打包成向量</strong>，一次 kernel 处理全 batch：</p>
+<pre class="language-python" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-python is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token comment"># temperatures: [B]（每请求一个 scalar）</span>
+<span class="token comment"># min_p_values: [B]</span>
+<span class="token comment"># top_k_values: [B]</span>
+<span class="token comment"># top_p_values: [B]</span>
+
+logits <span class="token operator">=</span> logits <span class="token operator">/</span> temperatures<span class="token punctuation">.</span>unsqueeze<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>            <span class="token comment"># broadcasting</span>
+logits <span class="token operator">=</span> apply_min_p<span class="token punctuation">(</span>logits<span class="token punctuation">,</span> min_p_values<span class="token punctuation">)</span>             <span class="token comment"># 按 batch broadcast</span>
+logits <span class="token operator">=</span> apply_top_k_top_p<span class="token punctuation">(</span>logits<span class="token punctuation">,</span> top_k_values<span class="token punctuation">,</span> top_p_values<span class="token punctuation">)</span>
+sampled <span class="token operator">=</span> torch<span class="token punctuation">.</span>multinomial<span class="token punctuation">(</span>probs<span class="token punctuation">,</span> num_samples<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span>  <span class="token comment"># 一次完成全 batch</span>
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">V1 源码里的实现不是所有步骤都写成自定义 CUDA kernel。<code class="code-styler-inline">apply_min_p()</code>直接用 PyTorch softmax、amax、broadcast 和 bool mask；<code class="code-styler-inline">apply_top_k_top_p()</code>用 PyTorch sort/topk/cumsum/masked_fill；最终随机采样由 <code class="code-styler-inline">TopKTopPSampler</code>选择普通 PyTorch 路径或 FlashInfer 路径。重点是这些操作都以 batch 张量为单位执行，而不是在 Python 里逐请求循环。</p>
+<h3 data-heading="混合 batch：贪心 + 随机的并存" dir="auto">混合 batch：贪心 + 随机的并存</h3>
+<p dir="auto">一个 batch 里有些请求 temperature=0（贪心），另一些 temperature=0.8（随机）。怎么办？</p>
+<p dir="auto">朴素思路 1：分组处理——按温度把 batch 分两组，各自跑。这引入了分组的 CPU 开销，还可能导致内存重排。</p>
+<p dir="auto">朴素思路 2：统一当随机采样处理——对 temperature=0 的请求，把温度改成 1e-10，让它”几乎” argmax。但这会触发真的 multinomial 采样，数值不稳定。</p>
+<p dir="auto"><strong>vLLM 的精妙解法</strong>：<strong>两条路径都跑一遍，<code class="code-styler-inline">torch.where</code>混合</strong>：</p>
+<pre class="language-python" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-python is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token keyword">def</span> <span class="token function">sample</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> logits<span class="token punctuation">,</span> sampling_metadata<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 快速路径：全贪心</span>
+    <span class="token keyword">if</span> sampling_metadata<span class="token punctuation">.</span>all_greedy<span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>greedy_sample<span class="token punctuation">(</span>logits<span class="token punctuation">)</span>
+
+    <span class="token comment"># 快速路径：全随机</span>
+    <span class="token keyword">if</span> sampling_metadata<span class="token punctuation">.</span>all_random<span class="token punctuation">:</span>
+        logits <span class="token operator">=</span> self<span class="token punctuation">.</span>apply_temperature<span class="token punctuation">(</span>logits<span class="token punctuation">,</span> sampling_metadata<span class="token punctuation">.</span>temperature<span class="token punctuation">)</span>
+        logits <span class="token operator">=</span> self<span class="token punctuation">.</span>apply_min_p<span class="token punctuation">(</span>logits<span class="token punctuation">,</span> sampling_metadata<span class="token punctuation">.</span>min_p<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>topk_topp_sampler<span class="token punctuation">(</span>logits<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># 混合路径：两条路径都跑，用 where 合并</span>
+    greedy_sampled <span class="token operator">=</span> self<span class="token punctuation">.</span>greedy_sample<span class="token punctuation">(</span>logits<span class="token punctuation">)</span>  <span class="token comment"># argmax，极快</span>
+
+    logits_for_random <span class="token operator">=</span> self<span class="token punctuation">.</span>apply_temperature<span class="token punctuation">(</span>logits<span class="token punctuation">,</span> sampling_metadata<span class="token punctuation">.</span>temperature<span class="token punctuation">)</span>
+    logits_for_random <span class="token operator">=</span> self<span class="token punctuation">.</span>apply_min_p<span class="token punctuation">(</span>logits_for_random<span class="token punctuation">,</span> sampling_metadata<span class="token punctuation">.</span>min_p<span class="token punctuation">)</span>
+    random_sampled <span class="token operator">=</span> self<span class="token punctuation">.</span>topk_topp_sampler<span class="token punctuation">(</span>logits_for_random<span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># temperature &lt; eps 的请求用贪心结果，其余用随机结果</span>
+    <span class="token keyword">return</span> torch<span class="token punctuation">.</span>where<span class="token punctuation">(</span>
+        sampling_metadata<span class="token punctuation">.</span>temperature <span class="token operator">&lt;</span> _SAMPLING_EPS<span class="token punctuation">,</span>
+        greedy_sampled<span class="token punctuation">,</span>
+        random_sampled<span class="token punctuation">,</span>
+        out<span class="token operator">=</span>greedy_sampled<span class="token punctuation">,</span>  <span class="token comment"># 原地操作</span>
+    <span class="token punctuation">)</span>
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">几个精妙之处：</p>
+<p dir="auto"><strong>1. <code class="code-styler-inline">torch.where</code>把选择留在张量层完成</strong>——不用把 batch 拆成 greedy 组和 random 组，也不用在 Python 层重排请求。</p>
+<p dir="auto"><strong>2. <code class="code-styler-inline">out=greedy_sampled</code></strong>——原地写入，复用已有张量，避免额外内存分配。</p>
+<p dir="auto"><strong>3. 两条路径都跑</strong>看起来浪费，但：</p>
+<ul>
+<li dir="auto">greedy 路径只是一次 <code class="code-styler-inline">argmax</code></li>
+<li dir="auto">相比拆 batch、重排索引、再合并结果，多做一次 greedy 候选通常更简单，也更符合 GPU 批处理形态</li>
+</ul>
+<p dir="auto">这种”<strong>不优化最少 FLOPs，而优化 kernel 数</strong>”的思路，是 GPU 编程和 CPU 编程的根本差异。</p>
+<h3 data-heading="`all_greedy`与 `all_random`快速路径" dir="auto"><code class="code-styler-inline">all_greedy</code>与 <code class="code-styler-inline">all_random</code>快速路径</h3>
+<p dir="auto">极端情况下整个 batch 参数一致（比如 API server 场景下大多数请求都用默认参数），vLLM 提供两条超快通道：</p>
+<pre class="language-python" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-python is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token keyword">if</span> sampling_metadata<span class="token punctuation">.</span>all_greedy<span class="token punctuation">:</span>
+    <span class="token keyword">return</span> logits<span class="token punctuation">.</span>argmax<span class="token punctuation">(</span>dim<span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span>view<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment"># 1 个 kernel 调用</span>
+
+<span class="token keyword">if</span> sampling_metadata<span class="token punctuation">.</span>all_random<span class="token punctuation">:</span>
+    <span class="token comment"># 直接走随机采样路径，不做 where</span>
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">通过在 <code class="code-styler-inline">SamplingMetadata</code>里维护 <code class="code-styler-inline">all_greedy: bool</code>和 <code class="code-styler-inline">all_random: bool</code>标志，一次判断就能跳过不需要的半条路径。全贪心直接返回 <code class="code-styler-inline">argmax</code>，全随机不创建 greedy 候选；只有混合 batch 才同时算两条候选再用 <code class="code-styler-inline">torch.where</code>合并。</p>
+<h3 data-heading="GPU 编程的”三条心法”" dir="auto">GPU 编程的”三条心法”</h3>
+<p dir="auto">本节的所有优化技巧可以浓缩为三条心法：</p>
+<ol>
+<li dir="auto"><strong>kernel 数比 FLOPs 重要</strong>：多做重复计算换一次少 launch 是赚的</li>
+<li dir="auto"><strong>分支是敌人</strong>：用 <code class="code-styler-inline">where</code>替代 <code class="code-styler-inline">if</code>，用 <code class="code-styler-inline">mask</code>替代 <code class="code-styler-inline">filter</code></li>
+<li dir="auto"><strong>batch 维度优先向量化</strong>：永远先问”能不能 batch 一起做”</li>
+</ol>
+<p dir="auto">这三条不仅适用于 LLM 采样，也适用于所有 GPU 代码。</p>
+<h2 data-heading="Logit 处理器详解" dir="auto">Logit 处理器详解</h2>
+<p dir="auto">回到步骤 2-5 的 logit 处理器。每个都是针对特定使用场景的微调。</p>
+<h3 data-heading="`allowed_token_ids`：白名单约束" dir="auto"><code class="code-styler-inline">allowed_token_ids</code>：白名单约束</h3>
+<p dir="auto">给定一个允许的 token 集合，其他所有 token 的 logit 置为 -inf。</p>
+<p dir="auto"><strong>典型用途</strong>：限制输出只能是”yes/no”、“A/B/C/D”、特定词表（金融词、法律术语）。</p>
+<pre class="language-python" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-python is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">sampling_params <span class="token operator">=</span> SamplingParams<span class="token punctuation">(</span>
+    allowed_token_ids<span class="token operator">=</span><span class="token punctuation">[</span>tokenizer<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">"yes"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> tokenizer<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">"no"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    temperature<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>
+    max_tokens<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+<span class="token comment"># 生成结果只能是 "yes" 或 "no"</span>
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">这比后处理”强制匹配”更可靠——后处理需要 LLM 先生成一段文字再 parse，allowed_token_ids 直接从源头锁死。</p>
+<h3 data-heading="`bad_words`和 `stop_token_ids`：禁词" dir="auto"><code class="code-styler-inline">bad_words</code>和 <code class="code-styler-inline">stop_token_ids</code>：禁词</h3>
+<p dir="auto">“禁词”指定某些 token 永远不能被采样（logit 置 -inf）。用于 content filter、风险词屏蔽。</p>
+<pre class="language-python" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-python is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">sampling_params <span class="token operator">=</span> SamplingParams<span class="token punctuation">(</span>
+    bad_words<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"代词1"</span><span class="token punctuation">,</span> <span class="token string">"词组 2"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>  <span class="token comment"># 字符串级</span>
+    <span class="token comment"># or</span>
+    stop_token_ids<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">29898</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">]</span><span class="token punctuation">,</span>     <span class="token comment"># token id 级</span>
+<span class="token punctuation">)</span>
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">注意 <code class="code-styler-inline">bad_words</code>和 <code class="code-styler-inline">stop_token_ids</code>的区别：</p>
+<ul>
+<li dir="auto"><code class="code-styler-inline">bad_words</code>：禁止采样到，如果采样到会被屏蔽（生成会继续）</li>
+<li dir="auto"><code class="code-styler-inline">stop_token_ids</code>：触发停止（生成在这里结束）</li>
+</ul>
+<h3 data-heading="`logits_bias`：细粒度偏置" dir="auto"><code class="code-styler-inline">logits_bias</code>：细粒度偏置</h3>
+<p dir="auto">给指定 token 的 logit 加一个常数偏置：</p>
+<pre class="language-python" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-python is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">sampling_params <span class="token operator">=</span> SamplingParams<span class="token punctuation">(</span>
+    logit_bias<span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">12345</span><span class="token punctuation">:</span> <span class="token operator">+</span><span class="token number">100.0</span><span class="token punctuation">,</span> <span class="token number">67890</span><span class="token punctuation">:</span> <span class="token operator">-</span><span class="token number">100.0</span><span class="token punctuation">}</span><span class="token punctuation">,</span>  <span class="token comment"># token id → bias</span>
+<span class="token punctuation">)</span>
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">正值鼓励这个 token、负值抑制。常用于：</p>
+<ul>
+<li dir="auto">Logit-based 白名单（让某些 token 更可能出现而不是强制）</li>
+<li dir="auto">风险控制（抑制敏感词但不完全禁用）</li>
+<li dir="auto">OpenAI API 兼容（openai SDK 就支持这个字段）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>偏置值</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+100 或更大</td>
+<td>强制出现（近似 allowed_token_ids）</td>
+</tr>
+<tr>
+<td>+1 到 +5</td>
+<td>明显鼓励</td>
+</tr>
+<tr>
+<td>-1 到 -5</td>
+<td>明显抑制</td>
+</tr>
+<tr>
+<td>-100 或更小</td>
+<td>几乎禁用（近似 bad_words）</td>
+</tr>
+</tbody>
+</table>
+<h3 data-heading="Penalty 家族" dir="auto">Penalty 家族</h3>
+<p dir="auto">vLLM 支持三种 penalty：</p>
+<p dir="auto"><strong>Repetition Penalty</strong>（重复惩罚）：</p>
+<div class="math math-block is-loaded"><mjx-container class="MathJax" jax="CHTML" display="true"><mjx-math display="true" class="MJX-TEX" style="margin-left: 0px; margin-right: 0px;"><mjx-msubsup><mjx-mi class="mjx-i"><mjx-c class="mjx-c2113"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.247em; margin-left: 0px;"><mjx-mo class="mjx-var" size="s"><mjx-c class="mjx-c2032"></mjx-c></mjx-mo><mjx-spacer style="margin-top: 0.223em;"></mjx-spacer><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msubsup><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mrow space="4"><mjx-mo class="mjx-n"><mjx-stretchy-v class="mjx-c7B" style="height: 3.4em; vertical-align: -1.45em;"><mjx-beg><mjx-c></mjx-c></mjx-beg><mjx-ext><mjx-c></mjx-c></mjx-ext><mjx-mid><mjx-c></mjx-c></mjx-mid><mjx-ext><mjx-c></mjx-c></mjx-ext><mjx-end><mjx-c></mjx-c></mjx-end><mjx-mark></mjx-mark></mjx-stretchy-v></mjx-mo><mjx-mtable style="min-width: 14.974em;"><mjx-table><mjx-itable><mjx-mtr><mjx-mtd style="text-align: left; padding-right: 0.5em; padding-bottom: 0.1em;"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c2113"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2F"></mjx-c></mjx-mo></mjx-texatom><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D70C TEX-I"></mjx-c></mjx-mi><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align: left; padding-left: 0.5em; padding-bottom: 0.1em;"><mjx-mtext class="mjx-n"><mjx-c class="mjx-c69"></mjx-c><mjx-c class="mjx-c66"></mjx-c><mjx-c class="mjx-cA0"></mjx-c></mjx-mtext><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2208"></mjx-c></mjx-mo><mjx-mtext class="mjx-n" space="4"><mjx-c class="mjx-c70"></mjx-c><mjx-c class="mjx-c61"></mjx-c><mjx-c class="mjx-c73"></mjx-c><mjx-c class="mjx-c74"></mjx-c><mjx-c class="mjx-c20"></mjx-c><mjx-c class="mjx-c74"></mjx-c><mjx-c class="mjx-c6F"></mjx-c><mjx-c class="mjx-c6B"></mjx-c><mjx-c class="mjx-c65"></mjx-c><mjx-c class="mjx-c6E"></mjx-c><mjx-c class="mjx-c73"></mjx-c><mjx-c class="mjx-c20"></mjx-c><mjx-c class="mjx-c61"></mjx-c><mjx-c class="mjx-c6E"></mjx-c><mjx-c class="mjx-c64"></mjx-c><mjx-c class="mjx-cA0"></mjx-c></mjx-mtext><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c2113"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3E"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c30"></mjx-c></mjx-mn><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr><mjx-mtd style="text-align: left; padding-right: 0.5em; padding-top: 0.1em; padding-bottom: 0.1em;"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c2113"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c22C5"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D70C TEX-I"></mjx-c></mjx-mi><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align: left; padding-left: 0.5em; padding-top: 0.1em; padding-bottom: 0.1em;"><mjx-mtext class="mjx-n"><mjx-c class="mjx-c69"></mjx-c><mjx-c class="mjx-c66"></mjx-c><mjx-c class="mjx-cA0"></mjx-c></mjx-mtext><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2208"></mjx-c></mjx-mo><mjx-mtext class="mjx-n" space="4"><mjx-c class="mjx-c70"></mjx-c><mjx-c class="mjx-c61"></mjx-c><mjx-c class="mjx-c73"></mjx-c><mjx-c class="mjx-c74"></mjx-c><mjx-c class="mjx-c20"></mjx-c><mjx-c class="mjx-c74"></mjx-c><mjx-c class="mjx-c6F"></mjx-c><mjx-c class="mjx-c6B"></mjx-c><mjx-c class="mjx-c65"></mjx-c><mjx-c class="mjx-c6E"></mjx-c><mjx-c class="mjx-c73"></mjx-c><mjx-c class="mjx-c20"></mjx-c><mjx-c class="mjx-c61"></mjx-c><mjx-c class="mjx-c6E"></mjx-c><mjx-c class="mjx-c64"></mjx-c><mjx-c class="mjx-cA0"></mjx-c></mjx-mtext><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c2113"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2264"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c30"></mjx-c></mjx-mn><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr><mjx-mtd style="text-align: left; padding-right: 0.5em; padding-top: 0.1em;"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c2113"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align: left; padding-left: 0.5em; padding-top: 0.1em;"><mjx-mtext class="mjx-n"><mjx-c class="mjx-c6F"></mjx-c><mjx-c class="mjx-c74"></mjx-c><mjx-c class="mjx-c68"></mjx-c><mjx-c class="mjx-c65"></mjx-c><mjx-c class="mjx-c72"></mjx-c><mjx-c class="mjx-c77"></mjx-c><mjx-c class="mjx-c69"></mjx-c><mjx-c class="mjx-c73"></mjx-c><mjx-c class="mjx-c65"></mjx-c></mjx-mtext><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr></mjx-itable></mjx-table></mjx-mtable><mjx-mo class="mjx-n" style="vertical-align: 0.25em;"></mjx-mo></mjx-mrow></mjx-math></mjx-container></div>
+<p dir="auto"><span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D70C TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3E"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-math></mjx-container></span> 抑制重复， <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D70C TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3C"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-math></mjx-container></span> 鼓励重复。典型值 1.1-1.2（轻微抑制）。注意 <span class="math math-inline is-loaded"><mjx-container class="MathJax" jax="CHTML"><mjx-math class="MJX-TEX"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D70C TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c2E"></mjx-c><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-math></mjx-container></span> 时完全不生效。</p>
+<p dir="auto"><strong>Frequency Penalty</strong>（按频率）：按 past token 出现的<strong>次数</strong>惩罚。出现 5 次的 token 比出现 1 次的惩罚更重。</p>
+<p dir="auto"><strong>Presence Penalty</strong>（按存在与否）：只要出现过就惩罚，不管几次。</p>
+<p dir="auto">三者可以组合。生产中 <code class="code-styler-inline">repetition_penalty=1.1</code>最常用，能有效减少 LLM 的”复读机”现象。</p>
+<h3 data-heading="`min_tokens`Penalty：强制长度下限" dir="auto"><code class="code-styler-inline">min_tokens</code>Penalty：强制长度下限</h3>
+<p dir="auto">用户要求”至少 100 个 token”。怎么实现？</p>
+<p dir="auto">vLLM 的做法：在第 0 到 min_tokens 个 token 的采样里，<strong>强制把 EOS token 的 logit 置 -inf</strong>。这样模型不可能选到 EOS，被迫继续生成。等超过 min_tokens 后才解除这个约束。</p>
+<pre class="language-python" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-python is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">sampling_params <span class="token operator">=</span> SamplingParams<span class="token punctuation">(</span>
+    min_tokens<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">,</span>
+    max_tokens<span class="token operator">=</span><span class="token number">500</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+<span class="token comment"># 生成不会在前 100 个 token 里结束（即使模型很想）</span>
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<h3 data-heading="`bad_words`和 `logit_bias`的真实实现细节" dir="auto"><code class="code-styler-inline">bad_words</code>和 <code class="code-styler-inline">logit_bias</code>的真实实现细节</h3>
+<p dir="auto"><code class="code-styler-inline">bad_words</code>不是把一个词的所有 token 永久屏蔽。看 <code class="code-styler-inline">vllm/v1/sample/ops/bad_words.py</code>，它保存的是 token 序列列表。每步采样前只检查”当前已生成 token 的尾部是否等于 bad word 的前缀”；只有前缀匹配时，才把 bad word 最后一个 token 的 logit 置为 <code class="code-styler-inline">-inf</code>。例如禁用 token 序列 <code class="code-styler-inline">[10, 20, 30]</code>时，只有当前尾部已经是 <code class="code-styler-inline">[10, 20]</code>，才会屏蔽 <code class="code-styler-inline">30</code>。这样可以禁止完整词组，又不会把 <code class="code-styler-inline">30</code>这个 token 在所有上下文里全局禁掉。</p>
+<p dir="auto"><code class="code-styler-inline">logit_bias</code>则更直接：<code class="code-styler-inline">sampler.py</code>里遍历每个请求的 bias dict，检查 token id 是否越界，然后对对应 logit 做加法。源码维护注释明确说当前实现 “extremely inefficient”，未来可以做 PyTorch C++ op 或优化 bias layout。这提醒我们：<code class="code-styler-inline">logit_bias</code>适合少量 token 的细粒度偏置，不适合把成千上万个 token 当作动态词表约束来用；如果要做大词表白名单，<code class="code-styler-inline">allowed_token_ids</code>的 mask 语义更清晰。</p>
+<p dir="auto">这两者和 <code class="code-styler-inline">allowed_token_ids</code>的区别可以总结成：</p>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>粒度</th>
+<th>语义</th>
+<th>典型用法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>allowed_token_ids</td>
+<td>静态 token 集合</td>
+<td>只允许这些 token</td>
+<td>分类、选择题、极窄输出空间</td>
+</tr>
+<tr>
+<td>bad_words</td>
+<td>token 序列</td>
+<td>禁止生成完整词/词组</td>
+<td>内容过滤、避免特定短语</td>
+</tr>
+<tr>
+<td>logit_bias</td>
+<td>单 token 加减分</td>
+<td>鼓励或抑制，不一定硬约束</td>
+<td>OpenAI 兼容、轻量倾向控制</td>
+</tr>
+<tr>
+<td>min_tokens</td>
+<td>stop token 集合</td>
+<td>长度未达标前禁止停</td>
+<td>摘要、长回答、格式模板</td>
+</tr>
+</tbody>
+</table>
+<h2 data-heading="Per-Request RNG：让 seed 真正可复现" dir="auto">Per-Request RNG：让 seed 真正可复现</h2>
+<p dir="auto">OpenAI API 支持 <code class="code-styler-inline">seed</code>参数——相同的 <code class="code-styler-inline">seed + prompt + params</code>应该产生相同输出。如何实现？</p>
+<h3 data-heading="全局 RNG 的问题" dir="auto">全局 RNG 的问题</h3>
+<p dir="auto">如果整个 batch 用同一个 <code class="code-styler-inline">torch.Generator</code>：</p>
+<ul>
+<li dir="auto">请求 A 先到，它消耗 RNG 状态 N 次</li>
+<li dir="auto">请求 B 后到，它的”第 1 次采样”实际用的是 RNG 的第 N+1 个状态</li>
+<li dir="auto">结果：相同 seed、相同 prompt 的请求 B，结果依赖”它前面有多少请求”——<strong>不可复现</strong></li>
+</ul>
+<h3 data-heading="Per-Request Generator" dir="auto">Per-Request Generator</h3>
+<p dir="auto">vLLM 为<strong>每个请求维护独立的 <code class="code-styler-inline">torch.Generator</code></strong>：</p>
+<pre class="language-python" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-python is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token comment"># vllm/v1/sample/metadata.py</span>
+<span class="token decorator annotation punctuation">@dataclass</span>
+<span class="token keyword">class</span> <span class="token class-name">SamplingMetadata</span><span class="token punctuation">:</span>
+    generators<span class="token punctuation">:</span> <span class="token builtin">dict</span><span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">,</span> torch<span class="token punctuation">.</span>Generator<span class="token punctuation">]</span>  <span class="token comment"># req_index → generator</span>
+    <span class="token comment"># ... 另外 13 个字段：temperature/top_p/top_k/min_p/penalties 等</span>
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">创建请求时：</p>
+<pre class="language-python" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-python is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token keyword">if</span> sampling_params<span class="token punctuation">.</span>seed <span class="token keyword">is</span> <span class="token keyword">not</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
+    generator <span class="token operator">=</span> torch<span class="token punctuation">.</span>Generator<span class="token punctuation">(</span>device<span class="token operator">=</span><span class="token string">"cuda"</span><span class="token punctuation">)</span>
+    generator<span class="token punctuation">.</span>manual_seed<span class="token punctuation">(</span>sampling_params<span class="token punctuation">.</span>seed<span class="token punctuation">)</span>
+    sampling_metadata<span class="token punctuation">.</span>generators<span class="token punctuation">[</span>req_index<span class="token punctuation">]</span> <span class="token operator">=</span> generator
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto"><strong>注意这个字典是”稀疏”的</strong>——只有<strong>显式指定了 seed 的请求</strong>才在里面。没指定 seed 的请求（典型的 chat 场景）根本不进字典——这是下一节性能优化的关键前提。</p>
+<h3 data-heading="真实采样算法：为什么不是 `torch.multinomial`" dir="auto">真实采样算法：为什么不是 <code class="code-styler-inline">torch.multinomial</code></h3>
+<p dir="auto">看到”从 probs 分布采一个 token”直觉上会想 <code class="code-styler-inline">torch.multinomial(probs, 1, generator=...)</code>——这也是大多数博客、教程里展示的写法。但打开 <code class="code-styler-inline">vllm/v1/sample/ops/topk_topp_sampler.py:238</code>的 <code class="code-styler-inline">random_sample</code>会发现 vLLM 压根没用 multinomial：</p>
+<pre class="language-python" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-python is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token keyword">def</span> <span class="token function">random_sample</span><span class="token punctuation">(</span>probs<span class="token punctuation">,</span> generators<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""We use this function instead of torch.multinomial because
+    torch.multinomial causes CPU-GPU synchronization."""</span>
+    q <span class="token operator">=</span> torch<span class="token punctuation">.</span>empty_like<span class="token punctuation">(</span>probs<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>generators<span class="token punctuation">)</span> <span class="token operator">!=</span> probs<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        q<span class="token punctuation">.</span>exponential_<span class="token punctuation">(</span><span class="token punctuation">)</span>                          <span class="token comment"># 没 seed：全局一把填</span>
+    <span class="token keyword">if</span> generators<span class="token punctuation">:</span>
+        <span class="token keyword">for</span> i<span class="token punctuation">,</span> generator <span class="token keyword">in</span> generators<span class="token punctuation">.</span>items<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>   <span class="token comment"># 有 seed：只改这些位置</span>
+            q<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>exponential_<span class="token punctuation">(</span>generator<span class="token operator">=</span>generator<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> probs<span class="token punctuation">.</span>div_<span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">.</span>argmax<span class="token punctuation">(</span>dim<span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span>view<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">两个关键优化：</p>
+<p dir="auto"><strong>1. 用 Gumbel-max 取代 multinomial</strong>。<code class="code-styler-inline">torch.multinomial</code>在 GPU 上实际实现走一次同步（它要知道 CDF 的累计和位置，这种”累积扫描再二分”的操作会触发一次 CPU-GPU sync，整个 Python 主循环被迫 wait）。替代方案——<strong>对每个候选位置加一份 Exponential(1) 噪声 <code class="code-styler-inline">q</code>，然后取 <code class="code-styler-inline">argmax(probs / q)</code></strong>——数学上等价于 categorical sampling（Gumbel-max trick 的一个变体：<code class="code-styler-inline">-log q</code>恰好服从 Gumbel 分布、<code class="code-styler-inline">argmax(log p - log q) = argmax(p/q)</code>），但全程只有 element-wise ops + argmax，<strong>无 CPU-GPU 同步</strong>。在一个 decode 步里 batch 512 个请求时，这一刀能省几百微秒的 dispatch 等待。</p>
+<p dir="auto"><strong>2. 稀疏 seed 的混合填充策略</strong>（line 248-253 的 <code class="code-styler-inline">NOTE(woosuk)</code>）——真实 batch 里”大多数请求没自定义 seed、少数有”是常态：</p>
+<ul>
+<li dir="auto">如果 <code class="code-styler-inline">generators</code>字典的键数 <code class="code-styler-inline">!=</code>batch 大小，说明至少有一个请求没 seed——那就先 <code class="code-styler-inline">q.exponential_()</code><strong>用全局默认 RNG 批量填充整个 q</strong>（一次 CUDA kernel 搞定所有位置）。</li>
+<li dir="auto">再对 <code class="code-styler-inline">generators</code>里有条目的那几个位置 <code class="code-styler-inline">q[i].exponential_(generator=generator)</code><strong>逐个覆盖</strong>——只对”有 seed 的少数位置”做串行操作。</li>
+</ul>
+<p dir="auto">这是典型的”<strong>乐观批处理 + 少数补偿</strong>”模式：不为了少数可复现请求牺牲大多数普通请求的批处理性能。代价是多写一次 q[i]（那几个位置被填两次），但 batch 中 seeded 请求通常 &lt; 5%，总体是净胜。</p>
+<h3 data-heading="可复现性的边界" dir="auto">可复现性的边界</h3>
+<p dir="auto">即使有 seed，也不能保证<strong>跨硬件、跨版本</strong>可复现：</p>
+<table>
+<thead>
+<tr>
+<th>变化</th>
+<th>是否影响可复现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>同 GPU、同 vLLM 版本</td>
+<td>✓ 可复现</td>
+</tr>
+<tr>
+<td>不同 batch 大小（同 GPU）</td>
+<td>✓ 可复现（per-request RNG 保证）</td>
+</tr>
+<tr>
+<td>不同 GPU 型号</td>
+<td>✗ 可能有 bit 级差异（cuBLAS 算法选择）</td>
+</tr>
+<tr>
+<td>不同 vLLM 版本</td>
+<td>✗ kernel 实现可能变</td>
+</tr>
+<tr>
+<td>不同 dtype（FP16/BF16）</td>
+<td>✗ 数值路径不同</td>
+</tr>
+</tbody>
+</table>
+<p dir="auto">所以 <code class="code-styler-inline">seed</code>保证的是”同一部署内的可复现”，不是”跨部署的 bit-exact”。</p>
+<h3 data-heading="`logprobs=0`也有语义" dir="auto"><code class="code-styler-inline">logprobs=0</code>也有语义</h3>
+<p dir="auto">OpenAI 风格的 <code class="code-styler-inline">logprobs</code>有一个容易误解的点：<code class="code-styler-inline">logprobs=0</code>不是”不返回 logprobs”，而是”只返回 sampled token 自己的 logprob”。<code class="code-styler-inline">SamplingParams</code>文档也写明：只要 <code class="code-styler-inline">logprobs</code>是非 <code class="code-styler-inline">None</code>，响应就包含被选中 token 的 log probability；如果请求 <code class="code-styler-inline">logprobs=k</code>，还会额外给出最多 k 个最可能 token，因此返回元素可能达到 <code class="code-styler-inline">k+1</code>。</p>
+<p dir="auto">V1 的 <code class="code-styler-inline">gather_logprobs()</code>正是按这个契约写的。它先对原始 <code class="code-styler-inline">raw_logprobs</code>做 <code class="code-styler-inline">torch.topk(logprobs, num_logprobs)</code>；然后用 <code class="code-styler-inline">gather()</code>取 sampled token 自己的 logprob；最后把 sampled token id/logprob 和 top-k token id/logprob 拼在一起。同时它还计算 <code class="code-styler-inline">token_ranks = (logprobs &gt;= token_logprobs).sum(-1)</code>，也就是 sampled token 在全词表里的 rank。这个 rank 对调试很有用：如果一个业务请求采到了 rank 很靠后的 token，通常说明 temperature/top-p/min-p 或 penalty 组合让分布变得很散。</p>
+<p dir="auto">这也解释了为什么 §9.1.4 说 logprobs 要从原始 logits 算。如果用户用 logprobs 做 rerank、置信度、拒答判断或审计，他们要看的应该是模型本来的排序，而不是经过 repetition penalty 或 temperature 改写后的采样分布。采样可以有业务偏置，观测值必须尽量保持可解释。</p>
+<h2 data-heading="结构化输出：约束采样" dir="auto">结构化输出：约束采样</h2>
+<p dir="auto">越来越多的场景需要 LLM 输出<strong>严格结构化</strong>的内容：JSON、XML、SQL。自由生成很容易产生破损的 JSON（少个括号、多个逗号）。</p>
+<h3 data-heading="Guided Decoding 原理" dir="auto">Guided Decoding 原理</h3>
+<p dir="auto">核心思想：<strong>在每一步采样前，根据”当前 JSON 解析状态”约束可采样的 token 集合</strong>。</p>
+<p dir="auto">举例：模型已生成 <code class="code-styler-inline">{"name": "Alice", "age":</code>，下一个 token 必须是：</p>
+<ul>
+<li dir="auto">空格 ``</li>
+<li dir="auto">或者直接数字 <code class="code-styler-inline">0-9</code></li>
+<li dir="auto">或者字符串 <code class="code-styler-inline">"...</code></li>
+<li dir="auto"><strong>绝对不能</strong>是 <code class="code-styler-inline">{</code>/ <code class="code-styler-inline">[</code>/ <code class="code-styler-inline">,</code></li>
+</ul>
+<p dir="auto">实现方式：把”合法 token 集合”之外的 token logit 置 -inf。它和 <code class="code-styler-inline">allowed_token_ids</code>的思想相同，但合法集合不是用户一次性给定的静态列表，而是由当前生成到哪一个语法状态动态决定。</p>
+<h3 data-heading="FSM-based 约束" dir="auto">FSM-based 约束</h3>
+<p dir="auto">JSON schema 的约束本质可以看成一个随生成状态变化的自动机。每个状态对应”当前接受哪些字符或 token”。当前本地 vLLM V1 结构化输出目录是 <code class="code-styler-inline">vllm/v1/structured_output/</code>，主要有 XGrammar 和 Microsoft Guidance 两个后端；Outlines 相关逻辑仍能在 <code class="code-styler-inline">vllm/model_executor/guided_decoding/outlines_logits_processors.py</code>这类旧路径看到，但本章讲 V1 主线时应以 <code class="code-styler-inline">structured_output/</code>为准。</p>
+<p dir="auto"><strong>XGrammar</strong>：</p>
+<pre class="language-python" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-python is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">sampling_params <span class="token operator">=</span> SamplingParams<span class="token punctuation">(</span>
+    guided_decoding<span class="token operator">=</span>GuidedDecodingParams<span class="token punctuation">(</span>
+        json<span class="token operator">=</span>json_schema<span class="token punctuation">,</span>
+        backend<span class="token operator">=</span><span class="token string">"xgrammar"</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto"><strong>Guidance</strong>：</p>
+<pre class="language-python" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-python is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">sampling_params <span class="token operator">=</span> SamplingParams<span class="token punctuation">(</span>
+    guided_decoding<span class="token operator">=</span>GuidedDecodingParams<span class="token punctuation">(</span>
+        json<span class="token operator">=</span>json_schema<span class="token punctuation">,</span>
+        backend<span class="token operator">=</span><span class="token string">"guidance"</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">两个 V1 后端在源码里的分工：</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>XGrammar</th>
+<th>Guidance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主要文件</td>
+<td>backend_xgrammar.py</td>
+<td>backend_guidance.py</td>
+</tr>
+<tr>
+<td>本地行数</td>
+<td>299</td>
+<td>215</td>
+</tr>
+<tr>
+<td>角色</td>
+<td>接入 XGrammar 编译和匹配能力</td>
+<td>接入 Guidance 的 schema/grammar 匹配能力</td>
+</tr>
+<tr>
+<td>共同抽象</td>
+<td>通过 backend_types.py 暴露统一后端接口</td>
+<td>通过 backend_types.py 暴露统一后端接口</td>
+</tr>
+</tbody>
+</table>
+<p dir="auto">生产建议不是”永远选某一个后端”，而是先用目标 schema、目标模型和目标输出长度压测。结构化输出的成本包含 grammar/schema 编译、每步合法 token 计算、logit mask 应用和失败重试策略；schema 越复杂，约束越细，越不能把自由生成的吞吐直接套过来。</p>
+<h3 data-heading="CUDA Graph 的挑战" dir="auto">CUDA Graph 的挑战</h3>
+<p dir="auto">Guided Decoding 的 logit mask 是<strong>动态变化的</strong>（每 step 都要重新计算合法 token 集），而 CUDA Graph 需要<strong>固定 shape</strong>。</p>
+<p dir="auto">vLLM 的妥协是把 structured output 当作采样层的动态约束来处理，而不是假设每一步都有同一张 mask。工程上要记住：结构化输出提升的是格式可靠性，不是免费功能；如果一条服务同时承载自由问答和复杂 JSON schema 生成，最好在压测和限流上分开看。</p>
+<h2 data-heading="停止条件检测：四类 + 一个微妙的晚一拍" dir="auto">停止条件检测：四类 + 一个微妙的晚一拍</h2>
+<h3 data-heading="四种停止条件" dir="auto">四种停止条件</h3>
+<ol>
+<li dir="auto"><strong>EOS token</strong>：模型输出了 tokenizer 的 <code class="code-styler-inline">eos_token_id</code></li>
+<li dir="auto"><strong>max_tokens</strong>：生成达到用户指定上限</li>
+<li dir="auto"><strong>stop_token_ids</strong>：用户指定的特定 token id（比如一些模型用 <code class="code-styler-inline">&lt;|end|&gt;</code>作自定义终止符）</li>
+<li dir="auto"><strong>stop 字符串</strong>：生成文本里出现了用户指定的字符串</li>
+</ol>
+<p dir="auto">前三种很好判断（数值比较）。第四种——<strong>stop 字符串匹配</strong>——是真正有挑战的。</p>
+<h3 data-heading="stop 字符串跨 token 问题" dir="auto">stop 字符串跨 token 问题</h3>
+<p dir="auto">假设 stop 字符串是 <code class="code-styler-inline">"\n\n"</code>（两个换行）。生成到某 step 产出 <code class="code-styler-inline">"\n"</code>——这时能判停吗？不能。得看下一 step 是不是还产出 <code class="code-styler-inline">"\n"</code>。</p>
+<p dir="auto">但 token 和字符不一一对应。有些 tokenizer 可能把 <code class="code-styler-inline">"\n\n"</code>编成一个 token，有些编成两个。stop 字符串的匹配必须发生在<strong>解码后的字符串上</strong>，而不是 token id 上。</p>
+<pre class="language-python" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-python is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;"><span class="token comment"># 维护累积的解码字符串</span>
+decoded_so_far <span class="token operator">=</span> detokenize<span class="token punctuation">(</span>output_token_ids<span class="token punctuation">)</span>
+
+<span class="token comment"># 每产出新 token 后，检查尾部</span>
+<span class="token keyword">for</span> stop_str <span class="token keyword">in</span> sampling_params<span class="token punctuation">.</span>stop<span class="token punctuation">:</span>
+    <span class="token keyword">if</span> decoded_so_far<span class="token punctuation">.</span>endswith<span class="token punctuation">(</span>stop_str<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> FINISH_STOP
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto"><strong>边界情况</strong>：<code class="code-styler-inline">"\n"</code>是 <code class="code-styler-inline">"\n\n"</code>的前缀。新产出的这个 <code class="code-styler-inline">"\n"</code>可能是 stop 字符串的”开始”，也可能不是。当前 V1 不是用 KMP 状态机维护每个 stop 串的状态，而是在 <code class="code-styler-inline">SamplingParams.__post_init__()</code>里设置 <code class="code-styler-inline">output_text_buffer_length = max_stop_len - 1</code>，detokenizer 输出时保留足够长的尾部缓冲；<code class="code-styler-inline">StopChecker.check_stop_strings()</code>再从”本次新增字符附近往前一点”的位置调用字符串 <code class="code-styler-inline">find()</code>。这比 KMP 朴素，但实现简单，且 stop 字符串通常很短，瓶颈不在这里。</p>
+<h3 data-heading="“晚一拍”的异步流水线代价" dir="auto">“晚一拍”的异步流水线代价</h3>
+<p dir="auto">回顾 ch02：V1 的异步流水线把”调度下一拍”和”GPU 算当前拍”叠加起来跑。这意味着——<strong>在发现本拍 stop 之前，下一拍已经开始了</strong>。</p>
+<pre class="language-plaintext" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-plaintext is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">step N  : GPU 算出了 "\n\n"（stop 命中）
+step N+1: CPU 已经开始调度，GPU 开始算第 N+1 拍
+
+update_from_output @ step N+1 开头：
+  检查 step N 的输出 → 发现 stop → 标记 FINISHED
+  但 step N+1 的计算已经在做，它的结果会被丢弃
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<p dir="auto">这一个被浪费的 token 就是”<strong>overshoot</strong>”——V1 为了流水线并行付出的代价。源码里 <code class="code-styler-inline">OutputProcessor</code>如果发现 detokenizer 命中了 stop string，而 EngineCore 还没把请求标成 finished，会把该请求加入 <code class="code-styler-inline">reqs_to_abort</code>，让后端停止后续执行。浪费多少取决于流水线深度、每轮调度 token 数和发现 stop 的位置，不能写成固定比例；但这个设计把 stop 字符串这种前端文本语义和后端 token 调度清楚地拆开了。</p>
+<h3 data-heading="V1 把 token stop 和 string stop 分给两层" dir="auto">V1 把 token stop 和 string stop 分给两层</h3>
+<p dir="auto">V1 的停止检测分两段，这一点比 V0 更值得注意。</p>
+<p dir="auto">第一段在 EngineCore/scheduler 侧，<code class="code-styler-inline">vllm/v1/core/sched/utils.py:5-22</code>的 <code class="code-styler-inline">check_stop()</code>只处理 token 级条件：达到 <code class="code-styler-inline">max_model_len</code>或 <code class="code-styler-inline">max_tokens</code>，命中 EOS，命中 <code class="code-styler-inline">stop_token_ids</code>。这些条件都只依赖 token id 和计数，后端可以在不 detokenize 的情况下立即停止。</p>
+<p dir="auto">第二段在前端 OutputProcessor/Detokenizer 侧。<code class="code-styler-inline">vllm/v1/engine/output_processor.py:339-372</code>先接收 EngineCore 输出，再调用 <code class="code-styler-inline">IncrementalDetokenizer.update()</code>把 token 增量解成文本并检查 stop string。如果命中 stop string，前端把 <code class="code-styler-inline">finish_reason</code>改成 STOP，把 <code class="code-styler-inline">stop_reason</code>改成命中的字符串；如果 EngineCore 还不知道这个请求已经结束，前端会把 request id 放进 <code class="code-styler-inline">reqs_to_abort</code>，下一轮通知后端清理。</p>
+<p dir="auto">这种拆分的好处是：高频、简单、纯 token 的停止条件留在后端热路径；需要 tokenizer 和字符串语义的 stop string 留在前端处理。代价是 stop string 可能晚一点被后端知道，但避免了每个 GPU step 都把完整字符串逻辑塞进调度器。</p>
+<h2 data-heading="四个场景的采样参数 preset" dir="auto">四个场景的采样参数 preset</h2>
+<h3 data-heading="代码生成" dir="auto">代码生成</h3>
+<pre class="language-python" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-python is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">SamplingParams<span class="token punctuation">(</span>
+    temperature<span class="token operator">=</span><span class="token number">0.2</span><span class="token punctuation">,</span>
+    top_p<span class="token operator">=</span><span class="token number">0.95</span><span class="token punctuation">,</span>
+    max_tokens<span class="token operator">=</span><span class="token number">2048</span><span class="token punctuation">,</span>
+    repetition_penalty<span class="token operator">=</span><span class="token number">1.05</span><span class="token punctuation">,</span>  <span class="token comment"># 抑制循环</span>
+    stop<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"\n\n```"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>          <span class="token comment"># 常见代码 markdown 结尾</span>
+<span class="token punctuation">)</span>
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<h3 data-heading="创意写作" dir="auto">创意写作</h3>
+<pre class="language-python" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-python is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">SamplingParams<span class="token punctuation">(</span>
+    temperature<span class="token operator">=</span><span class="token number">0.9</span><span class="token punctuation">,</span>
+    top_p<span class="token operator">=</span><span class="token number">0.95</span><span class="token punctuation">,</span>
+    min_p<span class="token operator">=</span><span class="token number">0.05</span><span class="token punctuation">,</span>  <span class="token comment"># 轻度过滤长尾</span>
+    repetition_penalty<span class="token operator">=</span><span class="token number">1.1</span><span class="token punctuation">,</span>
+    max_tokens<span class="token operator">=</span><span class="token number">4096</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<h3 data-heading="JSON 结构化输出" dir="auto">JSON 结构化输出</h3>
+<pre class="language-python" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-python is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">SamplingParams<span class="token punctuation">(</span>
+    temperature<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>  <span class="token comment"># 严格确定性</span>
+    max_tokens<span class="token operator">=</span><span class="token number">2048</span><span class="token punctuation">,</span>
+    guided_decoding<span class="token operator">=</span>GuidedDecodingParams<span class="token punctuation">(</span>
+        json<span class="token operator">=</span>my_schema<span class="token punctuation">,</span>
+        backend<span class="token operator">=</span><span class="token string">"xgrammar"</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<h3 data-heading="RAG 问答" dir="auto">RAG 问答</h3>
+<pre class="language-python" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-python is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">SamplingParams<span class="token punctuation">(</span>
+    temperature<span class="token operator">=</span><span class="token number">0.3</span><span class="token punctuation">,</span>
+    top_p<span class="token operator">=</span><span class="token number">0.9</span><span class="token punctuation">,</span>
+    max_tokens<span class="token operator">=</span><span class="token number">512</span><span class="token punctuation">,</span>
+    stop<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"\n\nQuestion:"</span><span class="token punctuation">,</span> <span class="token string">"\n\nUser:"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>  <span class="token comment"># 防止模型自问自答</span>
+    presence_penalty<span class="token operator">=</span><span class="token number">0.3</span><span class="token punctuation">,</span>                  <span class="token comment"># 鼓励覆盖新话题</span>
+<span class="token punctuation">)</span>
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<h3 data-heading="多轮对话" dir="auto">多轮对话</h3>
+<pre class="language-python" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-python is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">SamplingParams<span class="token punctuation">(</span>
+    temperature<span class="token operator">=</span><span class="token number">0.7</span><span class="token punctuation">,</span>
+    top_p<span class="token operator">=</span><span class="token number">0.9</span><span class="token punctuation">,</span>
+    max_tokens<span class="token operator">=</span><span class="token number">1024</span><span class="token punctuation">,</span>
+    frequency_penalty<span class="token operator">=</span><span class="token number">0.3</span><span class="token punctuation">,</span>  <span class="token comment"># 减少多轮里的重复</span>
+    stop<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"&lt;|user|&gt;"</span><span class="token punctuation">,</span> <span class="token string">"&lt;|system|&gt;"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<h3 data-heading="翻译" dir="auto">翻译</h3>
+<pre class="language-python" style="overflow-x: hidden !important; padding: 6px 12px 8px !important;"><code class="language-python is-loaded" style="display: block !important; width: 100% !important; min-width: 0px !important; overflow-x: auto !important; white-space: pre !important; overflow-wrap: normal !important; max-width: 100% !important; box-sizing: border-box !important; padding: 4px 0px 2px !important;">SamplingParams<span class="token punctuation">(</span>
+    temperature<span class="token operator">=</span><span class="token number">0.3</span><span class="token punctuation">,</span>
+    top_p<span class="token operator">=</span><span class="token number">0.95</span><span class="token punctuation">,</span>
+    max_tokens<span class="token operator">=</span><span class="token number">2048</span><span class="token punctuation">,</span>
+    <span class="token comment"># 翻译无需 penalty，忠实原文</span>
+<span class="token punctuation">)</span>
+</code><button class="copy-code-button" aria-label="复制代码" title="复制代码"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre>
+<h3 data-heading="preset 只是起点，不是 SLA" dir="auto">preset 只是起点，不是 SLA</h3>
+<p dir="auto">上面这些 preset 只能作为初始值。真正上线时，要按以下顺序调，而不是一次性把所有旋钮都打开。</p>
+<ol>
+<li dir="auto">先决定是否需要确定性。代码补全、JSON、分类、RAG 答案通常偏低温；创意写作、角色扮演、头脑风暴才需要较高 temperature。只要 temperature 进入贪心路径，<code class="code-styler-inline">SamplingParams</code>会自动把 top-p、top-k、min-p 关掉，所以不要写”temperature=0 + min_p=0.1”这种看起来精致、实际无效的配置。</li>
+<li dir="auto">再决定候选集约束。top-p 更适合通用自然语言，top-k 更像一个硬上限，min-p 更适合高温下防止尾部 token 混入。三者可以组合，但组合越多，越难解释某次输出为什么被过滤。</li>
+<li dir="auto">最后再加 penalty。presence/frequency/repetition penalty 都会改变 logits，过高会让模型避开本来应该重复的专有名词、变量名、术语和引用。尤其是 RAG，重复原文关键词往往是好事，不应该为了”看起来不重复”把 penalty 设太高。</li>
+<li dir="auto">如果打开 logprobs，要把响应体积和 GPU 到 CPU 的转移成本算进去。<code class="code-styler-inline">gather_logprobs()</code>需要 top-k、gather、rank，并把结果给上层协议层消费；它对调试和置信度有价值，但不应默认给所有高 QPS 请求打开。</li>
+<li dir="auto">如果使用 structured output，最好把它当成单独流量类型压测。它改变的是每一步可采样 token 集合，不是普通自由生成加一个后处理 JSON parse。复杂 schema 的 TTFT、TPOT 和失败率要单独看。</li>
+</ol>
+<p dir="auto">一个实用的线上流程是：先用低风险默认参数跑通业务，再只改变一个旋钮做 A/B，观察输出质量、拒答率、重复率、TTFT/TPOT、平均输出长度和人工标注结果。采样参数不是”模型性格”的玄学开关，而是一组会改变概率分布、响应体积和后端成本的工程参数。</p>
+<h2 data-heading="常见 5 种采样反模式" dir="auto">常见 5 种采样反模式</h2>
+<table>
+<thead>
+<tr>
+<th>反模式</th>
+<th>问题</th>
+<th>正确做法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>温度 0 + min-p</td>
+<td>矛盾（0 温度意味着 argmax，min-p 无意义）</td>
+<td>temperature=0 时不设其他策略</td>
+</tr>
+<tr>
+<td>temperature 很高 + 没 top-k/top-p</td>
+<td>输出崩坏，出乱码</td>
+<td>高温必须配 top-p 约束</td>
+</tr>
+<tr>
+<td>给创意任务设 T=0.1</td>
+<td>输出呆板，用户抱怨”太机器”</td>
+<td>按任务调 T，别一刀切</td>
+</tr>
+<tr>
+<td>repetition_penalty 设得过高（&gt;1.5）</td>
+<td>影响正常用词，输出变扭曲</td>
+<td>1.0-1.2 之间微调</td>
+</tr>
+<tr>
+<td>stop 字符串太长（100+ 字符）</td>
+<td>匹配开销大，且容易出 bug</td>
+<td>保持 &lt;20 字符，用明显分隔符</td>
+</tr>
+</tbody>
+</table>
+<h3 data-heading="生产排查：从现象反推采样层" dir="auto">生产排查：从现象反推采样层</h3>
+<p dir="auto">采样问题经常被误判成”模型能力不行”。实际上很多线上异常可以先从采样层排一遍：</p>
+<table>
+<thead>
+<tr>
+<th>现象</th>
+<th>优先检查</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>输出过早结束</td>
+<td>min_tokens、stop、stop_token_ids、EOS</td>
+<td>stop string 可能命中模板分隔符，stop token ids 也可能包含模型特殊 token</td>
+</tr>
+<tr>
+<td>输出一直不停</td>
+<td>ignore_eos、max_tokens、stop 字符串是否拼错</td>
+<td>忽略 EOS 或 stop 文本与 tokenizer 输出不一致，会让请求只能靠长度结束</td>
+</tr>
+<tr>
+<td>JSON 经常坏</td>
+<td>structured output 是否真的启用；schema 是否过宽</td>
+<td>只靠 prompt 要求 JSON，不等于约束采样</td>
+</tr>
+<tr>
+<td>重复严重</td>
+<td>repetition_penalty、frequency/presence penalty、temperature</td>
+<td>低温和无 penalty 容易复读，但 penalty 太高也会伤正常术语</td>
+</tr>
+<tr>
+<td>输出发散</td>
+<td>temperature、top_p、min_p、top_k</td>
+<td>高温无截断最容易让尾部 token 混入</td>
+</tr>
+<tr>
+<td>相同 seed 仍不同</td>
+<td>vLLM 版本、硬件、dtype、参数是否完全一致</td>
+<td>seed 只保证同部署内尽量复现，不保证跨版本 bit-exact</td>
+</tr>
+<tr>
+<td>logprobs 看起来和采样不一致</td>
+<td>是否理解 raw logits vs adjusted logits</td>
+<td>V1 logprobs 默认来自原始 logits，采样来自调整后 logits</td>
+</tr>
+</tbody>
+</table>
+<p dir="auto">排查时有两个实用技巧。</p>
+<p dir="auto">第一，把一次失败请求的 <code class="code-styler-inline">SamplingParams</code>打出来，确认 <code class="code-styler-inline">__post_init__()</code>后的真实值，而不是只看客户端传入值。最典型的坑是 temperature 进入贪心路径后，top-p、top-k、min-p 已经被重置；另一个坑是 <code class="code-styler-inline">logit_bias</code>的 JSON key 原本是字符串，到 engine 层会转成 int 并 clamp 到 [-100, 100]。</p>
+<p dir="auto">第二，给采样问题准备最小复现 prompt。不要用完整业务链路复现，因为检索上下文、系统提示、工具调用和 chat template 都会改变 token 分布。一个好的最小复现包含：模型名、prompt、完整 <code class="code-styler-inline">SamplingParams</code>、是否启用 structured output、vLLM 版本、GPU/dtype、输出 token ids 和文本。只要能稳定复现，再去看 <code class="code-styler-inline">sampler.py</code>、<code class="code-styler-inline">topk_topp_sampler.py</code>、<code class="code-styler-inline">detokenizer.py</code>，定位会快很多。</p>
+<h2 data-heading="源码面积：`vllm/v1/sample/`和 `structured_output/`" dir="auto">源码面积：<code class="code-styler-inline">vllm/v1/sample/</code>和 <code class="code-styler-inline">structured_output/</code></h2>
+<p dir="auto">把本章涉及的两个相关目录按当前本地源码统计：</p>
+<p dir="auto"><strong><code class="code-styler-inline">vllm/v1/sample/</code>8 文件 1627 行</strong>——</p>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>行</th>
+<th>角色</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rejection_sampler.py</td>
+<td>631</td>
+<td>本目录最大——但不属于本章主题——是 ch12 投机解码的拒绝采样核心（已在 ch12 §12.8.1 详细分析）</td>
+</tr>
+<tr>
+<td>topk_topp_sampler.py</td>
+<td>315</td>
+<td>§9.2 的 top-k / top-p kernel 主体</td>
+</tr>
+<tr>
+<td>sampler.py</td>
+<td>270</td>
+<td>Sampler.forward 6 步主流程（§9.1.3）+ apply_allowed / apply_bias 等 inline 处理</td>
+</tr>
+<tr>
+<td>tpu/sampler.py</td>
+<td>154</td>
+<td>TPU 专用 Sampler——本章未提的板块</td>
+</tr>
+<tr>
+<td>tpu/metadata.py</td>
+<td>118</td>
+<td>TPU 专用 SamplingMetadata</td>
+</tr>
+<tr>
+<td>ops/penalties.py</td>
+<td>58</td>
+<td>repetition / frequency / presence penalty 实现</td>
+</tr>
+<tr>
+<td>metadata.py</td>
+<td>43</td>
+<td>SamplingMetadata 类只有 43 行——只是个 dataclass-like 容器、所有逻辑在 sampler.py</td>
+</tr>
+<tr>
+<td>ops/bad_words.py</td>
+<td>38</td>
+<td>禁词处理</td>
+</tr>
+<tr>
+<td>合计</td>
+<td>1627</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p dir="auto"><strong><code class="code-styler-inline">vllm/v1/structured_output/</code>6 文件 981 行</strong>——</p>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>行</th>
+<th>角色</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>backend_xgrammar.py</td>
+<td>299</td>
+<td>XGrammar 后端（Outlines 之外的另一种 FSM 实现）</td>
+</tr>
+<tr>
+<td>backend_guidance.py</td>
+<td>215</td>
+<td>本章未提的板块——Microsoft Guidance 后端</td>
+</tr>
+<tr>
+<td>utils.py</td>
+<td>174</td>
+<td>工具</td>
+</tr>
+<tr>
+<td><strong>init</strong>.py</td>
+<td>113</td>
+<td>入口</td>
+</tr>
+<tr>
+<td>backend_types.py</td>
+<td>96</td>
+<td>Backend 抽象</td>
+</tr>
+<tr>
+<td>request.py</td>
+<td>84</td>
+<td>Per-request 状态</td>
+</tr>
+</tbody>
+</table>
+<p dir="auto"><code class="code-styler-inline">vllm/sampling_params.py</code>598 行（top-level、非 v1）——是 <code class="code-styler-inline">SamplingParams</code>用户 API 的 dataclass + 验证逻辑——所有用户面对的 temperature / top_p / top_k / penalties / stop / seed 字段都在这一文件。</p>
+<p dir="auto"><strong>两条值得记住的物理事实</strong>——</p>
+<ol>
+<li dir="auto"><strong>本章 §9.4 “Logit 处理器” 在源码里不是单一文件</strong>——而是分散在 6 个位置（已在源码导航纠正）——其中 V1 主路径只有 ops/penalties.py 58 + ops/bad_words.py 38 = <strong>96 行</strong>——剩下的是 sampler.py 内联（apply_allowed_token_ids / apply_bias 直接写在 forward 里）+ V0 遗留 + entrypoints OpenAI 映射；<strong>§9.4 抽象成 “处理器” 概念但实际是分散的内联函数</strong>——和 LangChain <code class="code-styler-inline">tools/base.py</code>1157 行集中写法形成对比、是”<strong>抽象 vs 内联</strong>”取舍的另一面</li>
+<li dir="auto"><strong><code class="code-styler-inline">structured_output/</code>有两套 V1 后端：xgrammar 299 + guidance 215</strong>——<code class="code-styler-inline">backend_guidance.py</code>215 行是接入 Guidance schema/grammar 匹配能力的适配层；vLLM 通过 <code class="code-styler-inline">backend_types.py</code>96 行的抽象层让两套后端可插拔——<strong>多 backend 同款架构纪律</strong>（与 §1.6.1 attention backends + §16 punica 后端同款）</li>
+</ol>
+<p dir="auto"><strong>串联 ch12</strong>：<code class="code-styler-inline">rejection_sampler.py</code>631 行主要服务投机解码，本章只需要知道它也会复用采样约束能力。真正的 V1 普通采样主线在 <code class="code-styler-inline">sampler.py</code>270 行和 <code class="code-styler-inline">ops/topk_topp_sampler.py</code>315 行。</p>
+<h2 data-heading="本章小结" dir="auto">本章小结</h2>
+<p dir="auto">采样是 LLM 推理的”<strong>最后一公里</strong>”，看似简单但工程细节密集：</p>
+<ul>
+<li dir="auto"><strong>三阶段管线</strong>：logit 处理器 → 采样策略 → 停止检测</li>
+<li dir="auto"><strong>6 步 forward</strong>：dtype / allowed / bad_words / bias / penalties / sample</li>
+<li dir="auto"><strong>logprobs 用原始 logits</strong>：保证 API 返回值反映模型真实置信度</li>
+<li dir="auto"><strong>四大策略</strong>：temperature（尖锐度）、top-k（硬截断）、top-p（累计阈值）、min-p（相对阈值）</li>
+<li dir="auto"><strong>混合 batch</strong>：贪心+随机共存，<code class="code-styler-inline">torch.where</code>是关键</li>
+<li dir="auto"><strong>快速路径</strong>：<code class="code-styler-inline">all_greedy</code>/ <code class="code-styler-inline">all_random</code>跳过混合逻辑</li>
+<li dir="auto"><strong>per-request RNG</strong>：让 <code class="code-styler-inline">seed</code>参数真正可复现，和请求顺序无关</li>
+<li dir="auto"><strong>penalty 家族</strong>：repetition / frequency / presence，控制重复</li>
+<li dir="auto"><strong>结构化输出</strong>：XGrammar / Guidance 动态约束，logit masking</li>
+<li dir="auto"><strong>stop 字符串</strong>：尾部缓冲 + <code class="code-styler-inline">StopChecker.check_stop_strings()</code>，不是 KMP 状态机</li>
+<li dir="auto"><strong>“晚一拍” overshoot</strong>：异步流水线 trade-off，发现 stop string 后由前端 abort 后端请求</li>
+</ul>
+<p dir="auto"><strong>一句话记忆</strong>：</p>
+<p dir="auto"><strong>Logits 是 15 万维的选择题，采样是挑一个答案的算法——温度决定分布胖瘦，top-k/p 决定候选多少，penalty 决定”别重复自己”，stop 决定何时收场。</strong></p>
+<p dir="auto">到这里，采样层的主线已经完整：用户给 <code class="code-styler-inline">SamplingParams</code>，V1 把它压成 <code class="code-styler-inline">SamplingMetadata</code>，sampler 在 GPU 张量上完成约束、惩罚、截断和随机选择，OutputProcessor 再把 token 还原成文本并检查停止条件。后续读 ch12 投机解码时，要把 rejection sampler 看成”复用同一套采样语义的多 token 验证器”。</p>
+<p dir="auto"><strong>源码导航</strong></p>
+<ul>
+<li dir="auto">SamplingParams：<code class="code-styler-inline">vllm/sampling_params.py</code></li>
+<li dir="auto">V1 Sampler：<code class="code-styler-inline">vllm/v1/sample/sampler.py</code></li>
+<li dir="auto">SamplingMetadata：<code class="code-styler-inline">vllm/v1/sample/metadata.py</code></li>
+<li dir="auto">Top-k/Top-p kernel：<code class="code-styler-inline">vllm/v1/sample/ops/topk_topp_sampler.py</code></li>
+<li dir="auto">Logit 处理器：<strong>没有单一的 <code class="code-styler-inline">vllm/v1/sample/logits_processor.py</code></strong>——本章 §9.4 讨论的逻辑分散在：<code class="code-styler-inline">vllm/v1/sample/sampler.py</code>（主流程内联 apply_allowed_token_ids / apply_bias）+ <code class="code-styler-inline">vllm/v1/sample/ops/penalties.py</code>（58 行 penalty 实现）+ <code class="code-styler-inline">vllm/v1/sample/ops/bad_words.py</code>（38 行）+ V0 遗留 <code class="code-styler-inline">vllm/logits_process.py</code>（121 行）+ <code class="code-styler-inline">vllm/model_executor/layers/logits_processor.py</code>（196 行 model 层 logits 处理）+ <code class="code-styler-inline">vllm/entrypoints/openai/logits_processors.py</code>（89 行 OpenAI 参数映射）。</li>
+<li dir="auto">Guided Decoding：<code class="code-styler-inline">vllm/v1/structured_output/</code></li>
+<li dir="auto">OpenAI API 参数映射：<code class="code-styler-inline">vllm/entrypoints/openai/protocol.py</code></li>
+</ul>
+<p dir="auto"><strong>论文</strong></p>
+<ul>
+<li dir="auto">Holtzman et al., “The Curious Case of Neural Text Degeneration” (Top-p sampling), ICLR 2020 (arXiv:1904.09751)</li>
+<li dir="auto">Nguyen et al., “Min P Sampling: Balancing Creativity and Coherence at High Temperature”, 2024 (arXiv:2407.01082)</li>
+<li dir="auto">Willard &amp; Louf, “Efficient Guided Generation for Large Language Models” (guided generation), 2023 (arXiv:2307.09702)</li>
+</ul>
+<script defer src="../../../_assets/script.fad57313884515cf.js"></script>
+</div></div></div><div class="leezhiy-popular-posts-header">相关文章</div><ul class="leezhiy-popular-posts"><li class="leezhiy-popular-posts-item"><div><a href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/INDEX/" rel="bookmark">章节目录</a></div></li><li class="leezhiy-popular-posts-item"><div><a href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/README/" rel="bookmark">vLLM 推理内核深度解析</a></div></li><li class="leezhiy-popular-posts-item"><div><a href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/%E7%AC%AC18%E7%AB%A0-%E8%AE%BE%E8%AE%A1%E5%93%B2%E5%AD%A6%E4%B8%8E%E6%9E%B6%E6%9E%84%E6%99%BA%E6%85%A7/" rel="bookmark">第18章：设计哲学与架构智慧</a></div></li><li class="leezhiy-popular-posts-item"><div><a href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/%E7%AC%AC17%E7%AB%A0-API-%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8E%E7%94%9F%E4%BA%A7%E9%83%A8%E7%BD%B2/" rel="bookmark">第17章：API-服务器与生产部署</a></div></li><li class="leezhiy-popular-posts-item"><div><a href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/%E7%AC%AC16%E7%AB%A0-LoRA-%E9%80%82%E9%85%8D%E5%99%A8%E7%83%AD%E5%88%87%E6%8D%A2-%E4%B8%80%E4%B8%AA%E5%BC%95%E6%93%8E%E6%89%BF%E8%BD%BD%E5%A4%9A%E4%B8%AA%E5%BE%AE%E8%B0%83/" rel="bookmark">第16章：LoRA-适配器热切换-一个引擎承载多个微调</a></div></li></ul><div class="leezhiy-post-widgets"><div id="needsharebutton-postbottom" class="leezhiy-share-postbottom need-share-button" data-leezhiy-share><button type="button" class="btn" data-leezhiy-share-toggle aria-label="分享页面" aria-expanded="false"><i class="fa fa-share-alt fa-fw leezhiy-icon" aria-hidden="true"></i></button><span class="leezhiy-share-panel need-share-button_dropdown need-share-button_dropdown-bottom-center" aria-hidden="true"><button type="button" class="need-share-button_link need-share-button_weibo icon-weibo" data-leezhiy-share-network="weibo" title="Weibo" aria-label="Weibo" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_wechat icon-wechat" data-leezhiy-share-network="wechat" title="Wechat" aria-label="Wechat" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_douban icon-douban" data-leezhiy-share-network="douban" title="Douban" aria-label="Douban" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_qqzone icon-qqzone" data-leezhiy-share-network="qqzone" title="QQZone" aria-label="QQZone" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_twitter social-twitter" data-leezhiy-share-network="twitter" title="Twitter" aria-label="Twitter" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_facebook social-facebook" data-leezhiy-share-network="facebook" title="Facebook" aria-label="Facebook" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_linkedin social-linkedin" data-leezhiy-share-network="linkedin" title="Linkedin" aria-label="Linkedin" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_mailto social-mailto" data-leezhiy-share-network="mailto" title="Mailto" aria-label="Mailto" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_reddit social-reddit" data-leezhiy-share-network="reddit" title="Reddit" aria-label="Reddit" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_delicious social-delicious" data-leezhiy-share-network="delicious" title="Delicious" aria-label="Delicious" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_stumbleupon social-stumbleupon" data-leezhiy-share-network="stumbleupon" title="StumbleUpon" aria-label="StumbleUpon" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_pinterest social-pinterest" data-leezhiy-share-network="pinterest" title="Pinterest" aria-label="Pinterest" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_googleplus social-googleplus" data-leezhiy-share-network="googleplus" title="GooglePlus" aria-label="GooglePlus" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_tumblr social-tumblr" data-leezhiy-share-network="tumblr" title="Tumblr" aria-label="Tumblr" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_googlebookmarks social-googlebookmarks" data-leezhiy-share-network="googlebookmarks" title="GoogleBookmarks" aria-label="GoogleBookmarks" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_newsvine social-newsvine" data-leezhiy-share-network="newsvine" title="Newsvine" aria-label="Newsvine" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_evernote social-evernote" data-leezhiy-share-network="evernote" title="Evernote" aria-label="Evernote" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_friendfeed social-friendfeed" data-leezhiy-share-network="friendfeed" title="Friendfeed" aria-label="Friendfeed" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_vkontakte social-vkontakte" data-leezhiy-share-network="vkontakte" title="Vkontakte" aria-label="Vkontakte" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_odnoklassniki social-odnoklassniki" data-leezhiy-share-network="odnoklassniki" title="Odnoklassniki" aria-label="Odnoklassniki" tabindex="-1"></button><button type="button" class="need-share-button_link need-share-button_mailru social-mailru" data-leezhiy-share-network="mailru" title="Mailru" aria-label="Mailru" tabindex="-1"></button></span></div></div><div class="leezhiy-reward-container"><div>Buy me a cup of milkshake 🍨.</div><button type="button" data-leezhiy-reward-toggle aria-expanded="false">打赏</button><div class="leezhiy-qr" data-leezhiy-reward-panel hidden><div><img src="../../../_assets/leezhiy-assets/wechatpay.png" alt="微信支付" loading="eager" decoding="async"><p>微信支付</p></div><div><img src="../../../_assets/leezhiy-assets/alipay.png" alt="支付宝" loading="lazy" decoding="async"><p>支付宝</p></div></div></div><div class="leezhiy-article-end">------------- 💖 🌞 本 文 结 束 😚 感 谢 您 的 阅 读 🌞 💖 -------------</div><ul class="leezhiy-post-copyright"><li><strong>本文作者： </strong>Li Zhiyuan</li><li><strong>本文链接：</strong><a href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/%E7%AC%AC9%E7%AB%A0-%E9%87%87%E6%A0%B7%E4%B8%8E%E8%BE%93%E5%87%BA%E5%A4%84%E7%90%86-%E4%BB%8E-Logits-%E5%88%B0-Token/">/%E5%A4%A7%E6%A8%A1%E5%9E%8B/vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/%E7%AC%AC9%E7%AB%A0-%E9%87%87%E6%A0%B7%E4%B8%8E%E8%BE%93%E5%87%BA%E5%A4%84%E7%90%86-%E4%BB%8E-Logits-%E5%88%B0-Token/</a></li><li><strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</li></ul><div class="leezhiy-followme"><p>欢迎关注我的其它发布渠道</p><div class="leezhiy-social-list"><a target="_blank" rel="noopener" href="../../../_assets/leezhiy-assets/wechat_channel.png"><span>◉</span><small>WeChat</small></a><a href="../../../atom.xml"><span>◔</span><small>RSS</small></a></div></div><footer class="leezhiy-post-footer"><div class="leezhiy-post-tags"><a href="../../../tags/ai-infra/" rel="tag"><i class="fa fa-tags fa-fw leezhiy-icon" aria-hidden="true"></i>ai-infra</a><a href="../../../tags/vLLM/" rel="tag"><i class="fa fa-tags fa-fw leezhiy-icon" aria-hidden="true"></i>vLLM</a><a href="../../../tags/系列教程/" rel="tag"><i class="fa fa-tags fa-fw leezhiy-icon" aria-hidden="true"></i>系列教程</a></div><nav class="html-server-blog-chapter-navigation" data-blog-chapter-navigation aria-label="Tutorial chapters">
+      <a href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/%E7%AC%AC8%E7%AB%A0-ModelRunner-%E4%BB%8E-SchedulerOutput-%E5%88%B0-GPU-Kernel/?series=vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90"><small>← Previous</small><strong>第8章：ModelRunner-从-SchedulerOutput-到-GPU-Kernel</strong></a>
+      <a href="../../../%E5%A4%A7%E6%A8%A1%E5%9E%8B/vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90/%E7%AC%AC10%E7%AB%A0-%E5%89%8D%E7%BC%80%E7%BC%93%E5%AD%98-%E9%BB%98%E8%AE%A4%E5%BC%80%E5%90%AF%E7%9A%84%E9%9B%B6%E5%BC%80%E9%94%80%E5%8A%A0%E9%80%9F/?series=vLLM%20%E6%8E%A8%E7%90%86%E5%86%85%E6%A0%B8%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90"><small>Next →</small><strong>第10章：前缀缓存-默认开启的零开销加速</strong></a>
+    </nav></footer></article><section class="comments leezhiy-comments" id="valine-comments"><div class="v html-server-leezhiy-comments" data-blog-comments data-blog-comment-path="大模型/vLLM 推理内核深度解析/第9章-采样与输出处理-从-Logits-到-Token.md" data-blog-comment-preview-mode="overlay"><div class="vpanel"><form class="vwrap" data-blog-comment-form data-blog-comment-custom-validation novalidate>
+  <div class="vheader item3"><input name="nick" required maxlength="40" autocomplete="nickname" placeholder="昵称" class="vnick vinput"><input name="email" type="email" maxlength="120" autocomplete="email" placeholder="邮箱" class="vmail vinput"><input name="website" type="url" maxlength="200" autocomplete="url" placeholder="网址(http://)" class="vlink vinput"></div>
+  <div class="vedit" data-blog-comment-editor><textarea name="comment" required maxlength="500" class="veditor vinput" data-blog-comment-default-placeholder="聊五分钱的天吗？|ω･)و ̑̑༉" placeholder="聊五分钱的天吗？|ω･)و ̑̑༉"></textarea><div class="vrow"><div class="vcol vcol-60 status-bar"><span data-blog-comment-replying hidden></span><button class="cancel-reply-btn" type="button" data-blog-comment-cancel hidden>取消回复</button></div><div class="vcol vcol-40 vctrl text-right"><button type="button" class="vicon vemoji-btn" data-blog-comment-emoji title="表情" aria-expanded="false"><svg class="vicon-svg" viewBox="0 0 1024 1024" aria-hidden="true" width="22" height="22"><path d="M512 1024a512 512 0 1 1 512-512 512 512 0 0 1-512 512zm0-967.1A455.1 455.1 0 1 0 967.1 512 455.1 455.1 0 0 0 512 56.9zM312.9 512a85.3 85.3 0 1 1 85.3-85.3 85.3 85.3 0 0 1-85.3 85.3zm199.1 256a142.2 142.2 0 0 1-142.2-142.2 28.4 28.4 0 0 1 56.9 0 85.3 85.3 0 0 0 170.6 0 28.4 28.4 0 0 1 56.9 0A142.2 142.2 0 0 1 512 768z"></path></svg></button><button type="button" class="vicon vpreview-btn" data-blog-comment-preview title="预览" aria-pressed="false"><svg class="vicon-svg" viewBox="0 0 1024 1024" aria-hidden="true" width="22" height="22"><path d="M502.4 935.4a29.5 29.5 0 1 1 0 59.1h-361C79.9 994.5 29.5 946.3 29.5 886.2V137.8C29.5 77.7 80 29.5 141.4 29.5h741.2c61.4 0 111.9 48.2 111.9 108.3v300.3a29.5 29.5 0 1 1-59.1 0V137.8c0-26.9-23.4-49.2-52.8-49.2H141.4c-29.4 0-52.8 22.3-52.8 49.2v748.4c0 26.9 23.4 49.2 52.8 49.2h361zM649.8 846.8a216.6 216.6 0 1 0 0-433.2 216.6 216.6 0 0 0 0 433.2zm0 59.1a275.7 275.7 0 1 1 0-551.4 275.7 275.7 0 0 1 0 551.4z"></path></svg></button></div></div></div>
+  <div class="vrow" data-blog-comment-actions><div class="vcol vcol-30"><a class="vicon markdown-link" href="https://guides.github.com/features/mastering-markdown/" target="_blank" rel="noopener noreferrer" aria-label="Markdown is supported" title="Markdown is supported"><svg class="markdown" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14.85 3H1.15C.52 3 0 3.52 0 4.15v7.69C0 12.48.52 13 1.15 13h13.69c.64 0 1.15-.52 1.15-1.15v-7.7C16 3.52 15.48 3 14.85 3zM9 11H7V8L5.5 9.92 4 8v3H2V5h2l1.5 2L7 5h2v6zm2.99.5L9.5 8H11V5h2v3h1.5l-2.51 3.5z"></path></svg></a></div><div class="vcol vcol-70 text-right"><button type="submit" class="vsubmit vbtn" title="Cmd|Ctrl+Enter">提交</button></div></div><div class="vemojis" data-blog-comment-emoji-panel hidden aria-label="选择表情"></div><div class="vinput vpreview markdown-rendered" data-blog-comment-preview-panel data-blog-comment-preview-renderer="markdown-it" hidden aria-live="polite"></div><span class="vempty" data-blog-comment-error hidden></span><span class="vvalidation" data-blog-comment-validation role="alert" aria-live="assertive" hidden><i aria-hidden="true">!</i><span data-blog-comment-validation-message></span></span>
+</form></div><div class="vcount" data-blog-comment-count-container hidden><span class="vnum" data-blog-comments-total>0</span> 评论</div><div class="vcards" data-blog-comment-items aria-live="polite"></div><template data-blog-comment-item-template>
+  <article class="vcard" data-blog-comment-item><span class="vimg" data-blog-comment-avatar></span><div class="vh"><div class="vhead"><strong class="vnick" data-blog-comment-nick></strong><span data-blog-comment-extras></span></div><div class="vmeta"><span class="vtime" data-blog-comment-meta data-blog-comment-time-format="valine-1.4.4"></span><span class="vactions"><button type="button" class="vlike" data-blog-comment-like aria-label="点赞" title="点赞"></button><button type="button" class="vat" data-blog-comment-reply aria-label="回复" title="回复">回复</button></span></div><div class="vcontent markdown-rendered" data-blog-comment-content></div><div class="vreply-wrapper"></div><div class="vquote" data-blog-comment-replies></div></div></article>
+</template><template data-blog-comment-empty-template><p class="vempty" data-blog-comment-empty>来发评论吧~</p></template><div class="vcopy txt-right">Powered By <a href="https://valine.js.org/" target="_blank" rel="noopener noreferrer">Valine</a><br>v1.4.4</div></div></section></main><aside class="leezhiy-sidebar html-server-blog-sidebar" data-blog-sidebar><div class="leezhiy-sidebar-inner affix-top"><ul class="sidebar-nav motion-element"><li class="sidebar-nav-toc sidebar-nav-active">文章目录</li><li class="sidebar-nav-overview">站点概览</li></ul><div class="post-toc-wrap sidebar-panel sidebar-panel-active"><nav class="html-server-blog-outline leezhiy-post-toc post-toc motion-element" data-blog-outline aria-label="文章目录"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%8E%20Logits%20%E5%88%B0%20Token%EF%BC%9A%E4%B8%80%E6%9D%A1%E4%B8%89%E9%98%B6%E6%AE%B5%E6%B5%81%E6%B0%B4%E7%BA%BF" data-blog-outline-link><span class="nav-text">从 Logits 到 Token：一条三阶段流水线</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#150%2C000%20%E7%BB%B4%E7%9A%84%E9%80%89%E6%8B%A9%E9%A2%98" data-blog-outline-link><span class="nav-text">150,000 维的选择题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E9%98%B6%E6%AE%B5%E6%B5%81%E6%B0%B4%E7%BA%BF" data-blog-outline-link><span class="nav-text">三阶段流水线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%60Sampler.forward%60%E7%9A%84%206%20%E6%AD%A5" data-blog-outline-link><span class="nav-text">`Sampler.forward`的 6 步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E5%85%B3%E9%94%AE%E8%AE%BE%E8%AE%A1%EF%BC%9Alogprobs%20%E6%9D%A5%E8%87%AA%E5%8E%9F%E5%A7%8B%20logits" data-blog-outline-link><span class="nav-text">一个关键设计：logprobs 来自原始 logits</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%60SamplingParams%60%E5%85%88%E6%8A%8A%E7%94%A8%E6%88%B7%E8%BE%93%E5%85%A5%E8%A7%84%E8%8C%83%E5%8C%96" data-blog-outline-link><span class="nav-text">`SamplingParams`先把用户输入规范化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B%E7%A7%8D%E6%A0%B8%E5%BF%83%E9%87%87%E6%A0%B7%E7%AD%96%E7%95%A5" data-blog-outline-link><span class="nav-text">四种核心采样策略</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Temperature%EF%BC%9A%E5%88%86%E5%B8%83%E7%9A%84%E2%80%9D%E5%B0%96%E9%94%90%E5%BA%A6%E2%80%9D%E8%B0%83%E8%8A%82" data-blog-outline-link><span class="nav-text">Temperature：分布的”尖锐度”调节</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Top-k%EF%BC%9A%E7%A1%AC%E6%88%AA%E6%96%AD%E5%80%99%E9%80%89%E9%9B%86" data-blog-outline-link><span class="nav-text">Top-k：硬截断候选集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Top-p%20(Nucleus%20Sampling)%EF%BC%9A%E5%8A%A8%E6%80%81%E7%9A%84%E7%B4%AF%E8%AE%A1%E9%98%88%E5%80%BC" data-blog-outline-link><span class="nav-text">Top-p (Nucleus Sampling)：动态的累计阈值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Min-p%EF%BC%9A%E6%9B%B4%E6%BF%80%E8%BF%9B%E7%9A%84%E8%87%AA%E9%80%82%E5%BA%94%E9%98%88%E5%80%BC" data-blog-outline-link><span class="nav-text">Min-p：更激进的自适应阈值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E7%A7%8D%E7%AD%96%E7%95%A5%E6%80%BB%E5%AF%B9%E6%AF%94" data-blog-outline-link><span class="nav-text">四种策略总对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%84%E5%90%88%E4%BD%BF%E7%94%A8" data-blog-outline-link><span class="nav-text">组合使用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%B9%E9%87%8F%E9%87%87%E6%A0%B7%E7%9A%84%20GPU%20%E5%90%91%E9%87%8F%E5%8C%96" data-blog-outline-link><span class="nav-text">批量采样的 GPU 向量化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%B4%E7%B4%A0%E5%AE%9E%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98" data-blog-outline-link><span class="nav-text">朴素实现的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E5%8C%96%E6%80%9D%E8%B7%AF" data-blog-outline-link><span class="nav-text">向量化思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%B7%E5%90%88%20batch%EF%BC%9A%E8%B4%AA%E5%BF%83%20%2B%20%E9%9A%8F%E6%9C%BA%E7%9A%84%E5%B9%B6%E5%AD%98" data-blog-outline-link><span class="nav-text">混合 batch：贪心 + 随机的并存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%60all_greedy%60%E4%B8%8E%20%60all_random%60%E5%BF%AB%E9%80%9F%E8%B7%AF%E5%BE%84" data-blog-outline-link><span class="nav-text">`all_greedy`与 `all_random`快速路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GPU%20%E7%BC%96%E7%A8%8B%E7%9A%84%E2%80%9D%E4%B8%89%E6%9D%A1%E5%BF%83%E6%B3%95%E2%80%9D" data-blog-outline-link><span class="nav-text">GPU 编程的”三条心法”</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Logit%20%E5%A4%84%E7%90%86%E5%99%A8%E8%AF%A6%E8%A7%A3" data-blog-outline-link><span class="nav-text">Logit 处理器详解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%60allowed_token_ids%60%EF%BC%9A%E7%99%BD%E5%90%8D%E5%8D%95%E7%BA%A6%E6%9D%9F" data-blog-outline-link><span class="nav-text">`allowed_token_ids`：白名单约束</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%60bad_words%60%E5%92%8C%20%60stop_token_ids%60%EF%BC%9A%E7%A6%81%E8%AF%8D" data-blog-outline-link><span class="nav-text">`bad_words`和 `stop_token_ids`：禁词</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%60logits_bias%60%EF%BC%9A%E7%BB%86%E7%B2%92%E5%BA%A6%E5%81%8F%E7%BD%AE" data-blog-outline-link><span class="nav-text">`logits_bias`：细粒度偏置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Penalty%20%E5%AE%B6%E6%97%8F" data-blog-outline-link><span class="nav-text">Penalty 家族</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%60min_tokens%60Penalty%EF%BC%9A%E5%BC%BA%E5%88%B6%E9%95%BF%E5%BA%A6%E4%B8%8B%E9%99%90" data-blog-outline-link><span class="nav-text">`min_tokens`Penalty：强制长度下限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%60bad_words%60%E5%92%8C%20%60logit_bias%60%E7%9A%84%E7%9C%9F%E5%AE%9E%E5%AE%9E%E7%8E%B0%E7%BB%86%E8%8A%82" data-blog-outline-link><span class="nav-text">`bad_words`和 `logit_bias`的真实实现细节</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Per-Request%20RNG%EF%BC%9A%E8%AE%A9%20seed%20%E7%9C%9F%E6%AD%A3%E5%8F%AF%E5%A4%8D%E7%8E%B0" data-blog-outline-link><span class="nav-text">Per-Request RNG：让 seed 真正可复现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A8%E5%B1%80%20RNG%20%E7%9A%84%E9%97%AE%E9%A2%98" data-blog-outline-link><span class="nav-text">全局 RNG 的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Per-Request%20Generator" data-blog-outline-link><span class="nav-text">Per-Request Generator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9C%9F%E5%AE%9E%E9%87%87%E6%A0%B7%E7%AE%97%E6%B3%95%EF%BC%9A%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E6%98%AF%20%60torch.multinomial%60" data-blog-outline-link><span class="nav-text">真实采样算法：为什么不是 `torch.multinomial`</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E5%A4%8D%E7%8E%B0%E6%80%A7%E7%9A%84%E8%BE%B9%E7%95%8C" data-blog-outline-link><span class="nav-text">可复现性的边界</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%60logprobs%3D0%60%E4%B9%9F%E6%9C%89%E8%AF%AD%E4%B9%89" data-blog-outline-link><span class="nav-text">`logprobs=0`也有语义</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E5%8C%96%E8%BE%93%E5%87%BA%EF%BC%9A%E7%BA%A6%E6%9D%9F%E9%87%87%E6%A0%B7" data-blog-outline-link><span class="nav-text">结构化输出：约束采样</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Guided%20Decoding%20%E5%8E%9F%E7%90%86" data-blog-outline-link><span class="nav-text">Guided Decoding 原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FSM-based%20%E7%BA%A6%E6%9D%9F" data-blog-outline-link><span class="nav-text">FSM-based 约束</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CUDA%20Graph%20%E7%9A%84%E6%8C%91%E6%88%98" data-blog-outline-link><span class="nav-text">CUDA Graph 的挑战</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%81%9C%E6%AD%A2%E6%9D%A1%E4%BB%B6%E6%A3%80%E6%B5%8B%EF%BC%9A%E5%9B%9B%E7%B1%BB%20%2B%20%E4%B8%80%E4%B8%AA%E5%BE%AE%E5%A6%99%E7%9A%84%E6%99%9A%E4%B8%80%E6%8B%8D" data-blog-outline-link><span class="nav-text">停止条件检测：四类 + 一个微妙的晚一拍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E7%A7%8D%E5%81%9C%E6%AD%A2%E6%9D%A1%E4%BB%B6" data-blog-outline-link><span class="nav-text">四种停止条件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stop%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%B7%A8%20token%20%E9%97%AE%E9%A2%98" data-blog-outline-link><span class="nav-text">stop 字符串跨 token 问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%80%9C%E6%99%9A%E4%B8%80%E6%8B%8D%E2%80%9D%E7%9A%84%E5%BC%82%E6%AD%A5%E6%B5%81%E6%B0%B4%E7%BA%BF%E4%BB%A3%E4%BB%B7" data-blog-outline-link><span class="nav-text">“晚一拍”的异步流水线代价</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#V1%20%E6%8A%8A%20token%20stop%20%E5%92%8C%20string%20stop%20%E5%88%86%E7%BB%99%E4%B8%A4%E5%B1%82" data-blog-outline-link><span class="nav-text">V1 把 token stop 和 string stop 分给两层</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B%E4%B8%AA%E5%9C%BA%E6%99%AF%E7%9A%84%E9%87%87%E6%A0%B7%E5%8F%82%E6%95%B0%20preset" data-blog-outline-link><span class="nav-text">四个场景的采样参数 preset</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90" data-blog-outline-link><span class="nav-text">代码生成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E6%84%8F%E5%86%99%E4%BD%9C" data-blog-outline-link><span class="nav-text">创意写作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSON%20%E7%BB%93%E6%9E%84%E5%8C%96%E8%BE%93%E5%87%BA" data-blog-outline-link><span class="nav-text">JSON 结构化输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RAG%20%E9%97%AE%E7%AD%94" data-blog-outline-link><span class="nav-text">RAG 问答</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E8%BD%AE%E5%AF%B9%E8%AF%9D" data-blog-outline-link><span class="nav-text">多轮对话</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BF%BB%E8%AF%91" data-blog-outline-link><span class="nav-text">翻译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#preset%20%E5%8F%AA%E6%98%AF%E8%B5%B7%E7%82%B9%EF%BC%8C%E4%B8%8D%E6%98%AF%20SLA" data-blog-outline-link><span class="nav-text">preset 只是起点，不是 SLA</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%205%20%E7%A7%8D%E9%87%87%E6%A0%B7%E5%8F%8D%E6%A8%A1%E5%BC%8F" data-blog-outline-link><span class="nav-text">常见 5 种采样反模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E4%BA%A7%E6%8E%92%E6%9F%A5%EF%BC%9A%E4%BB%8E%E7%8E%B0%E8%B1%A1%E5%8F%8D%E6%8E%A8%E9%87%87%E6%A0%B7%E5%B1%82" data-blog-outline-link><span class="nav-text">生产排查：从现象反推采样层</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%BA%90%E7%A0%81%E9%9D%A2%E7%A7%AF%EF%BC%9A%60vllm%2Fv1%2Fsample%2F%60%E5%92%8C%20%60structured_output%2F%60" data-blog-outline-link><span class="nav-text">源码面积：`vllm/v1/sample/`和 `structured_output/`</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%AC%E7%AB%A0%E5%B0%8F%E7%BB%93" data-blog-outline-link><span class="nav-text">本章小结</span></a></li></ol></nav></div><div class="site-overview-wrap sidebar-panel"><div class="leezhiy-overview" data-blog-overview data-blog-overview-dynamic="true" aria-busy="true"><div class="leezhiy-site-author"><img src="../../../_assets/leezhiy-assets/avatar.jpg" alt="Li Zhiyuan"><strong>Li Zhiyuan</strong><p title="程序，搞起来很轻松的，就是头冷">程序，搞起来很轻松的，就是头冷</p></div><nav class="leezhiy-site-state" data-blog-profile-counts><span class="html-server-blog-skeleton html-server-blog-skeleton-line"></span><span class="html-server-blog-skeleton html-server-blog-skeleton-line"></span><span class="html-server-blog-skeleton html-server-blog-skeleton-line"></span></nav><div class="leezhiy-author-links"><span class="leezhiy-author-link-item"><a href="https://github.com/leezhiy" title="GitHub → https://github.com/leezhiy" rel="noopener" target="_blank"><i class="fab fa-github fa-fw leezhiy-icon" aria-hidden="true"></i>GitHub</a></span><span class="leezhiy-author-link-item"><a href="mailto:18500754397@163.com" title="E-Mail → mailto:18500754397@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw leezhiy-icon" aria-hidden="true"></i>E-Mail</a></span><span class="leezhiy-author-link-item"><a href="https://weibo.com/5678634433" title="微博 → https://weibo.com/5678634433" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw leezhiy-icon" aria-hidden="true"></i>微博</a></span><span class="leezhiy-author-link-item"><a href="https://www.zhihu.com/people/li-zhi-yuan-13-7" title="知乎 → https://www.zhihu.com/people/li-zhi-yuan-13-7" rel="noopener" target="_blank"><i class="fa fa-globe fa-fw leezhiy-icon" aria-hidden="true"></i>知乎</a></span><span class="leezhiy-author-link-item"><a href="https://gitee.com/leezhiy" title="Gitee → https://gitee.com/leezhiy" rel="noopener" target="_blank"><i class="fab fa-git fa-fw leezhiy-icon" aria-hidden="true"></i>Gitee</a></span><span class="leezhiy-author-link-item"><a href="https://music.163.com/#/user/home?id=131550901" title="网易云 → https://music.163.com/#/user/home?id=131550901" rel="noopener" target="_blank"><i class="fa fa-music fa-fw leezhiy-icon" aria-hidden="true"></i>网易云</a></span></div><a class="leezhiy-license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener"><img src="../../../_assets/leezhiy-assets/cc-by-nc-sa.svg" alt="Creative Commons"></a><div class="leezhiy-blogroll"><strong>🔗 友情连接</strong><a href="https://music.163.com/#/user/home?id=131550901" target="_blank" rel="noopener">😆 网易云音乐 😆</a></div><div class="leezhiy-sidebar-data" hidden><div data-blog-overview-tags><span class="html-server-blog-skeleton html-server-blog-skeleton-line"></span></div><div data-blog-overview-series><span class="html-server-blog-skeleton html-server-blog-skeleton-line"></span></div><ol data-blog-overview-archive><li><span class="html-server-blog-skeleton html-server-blog-skeleton-line"></span></li></ol></div></div></div><button type="button" class="back-to-top" data-blog-scroll-top data-leezhiy-smooth-scroll-top><span data-leezhiy-scroll-percent>0%</span></button></div></aside></div>
+  <footer class="leezhiy-footer"><p>Tip: 本站电脑访问体验更佳耶 ♡</p><small>© 2015 – 2026 Leezhiy Blog · Powered by Obsidian HTML Server</small><span class="leezhiy-runtime-hooks" hidden><button data-blog-menu></button><button data-blog-folder-open></button><button data-blog-theme></button></span></footer>
+  <a href="https://github.com/leezhiy" class="leezhiy-github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0 0 115 115h15l12 27 108 108V0Z"/><path class="octo-arm" d="M128.3 109c-14.5-9.3-9.3-19.4-9.3-19.4 3-6.9 1.5-11 1.5-11-1.3-6.6 2.9-2.3 2.9-2.3 3.9 4.6 2.1 11 2.1 11-2.6 10.3 5.1 14.6 8.9 15.9"/><path class="octo-body" d="M115 115c3.8 1.5 4.8.4 4.8.4l13.9-13.8c3.2-2.4 6.2-3.2 8.5-3-8.4-10.6-14.7-24.2 1.6-40.6 4.7-4.6 10.2-6.8 15.9-7 1.5-3.9 4.4-8.2 11.7-10.9 0 0 4.7 2.4 7.4 16.1 8.7 4.8 16.2 12.3 21.3 21.4 13.7 2.6 16.2 7.3 16.2 7.3-3.6 8.2-9.4 11.1-10.9 11.7-.3 5.8-2.4 11.2-7.1 15.9-16.4 16.4-30 10-40.6 1.6.2 2.8-1 6.8-5 10.8L141 136.5c-1.2 1.2.6 5.4.8 5.3Z"/></svg></a><div id="needsharebutton-float" class="leezhiy-share-float need-share-button" data-leezhiy-share><button type="button" class="btn" data-leezhiy-share-toggle aria-label="分享页面" aria-expanded="false"><i class="fa fa-share-alt fa-fw leezhiy-icon" aria-hidden="true"></i></button><span class="leezhiy-share-panel need-share-button_dropdown need-share-button_dropdown-box-horizontal need-share-button_dropdown-middle-right" aria-hidden="true"><button type="button" class="need-share-button_link-box need-share-button_link need-share-button_weibo icon-weibo" data-leezhiy-share-network="weibo" title="Weibo" aria-label="Weibo" tabindex="-1"></button><button type="button" class="need-share-button_link-box need-share-button_link need-share-button_wechat icon-wechat" data-leezhiy-share-network="wechat" title="Wechat" aria-label="Wechat" tabindex="-1"></button><button type="button" class="need-share-button_link-box need-share-button_link need-share-button_douban icon-douban" data-leezhiy-share-network="douban" title="Douban" aria-label="Douban" tabindex="-1"></button><button type="button" class="need-share-button_link-box need-share-button_link need-share-button_qqzone icon-qqzone" data-leezhiy-share-network="qqzone" title="QQZone" aria-label="QQZone" tabindex="-1"></button><button type="button" class="need-share-button_link-box need-share-button_link need-share-button_twitter social-twitter" data-leezhiy-share-network="twitter" title="Twitter" aria-label="Twitter" tabindex="-1"></button><button type="button" class="need-share-button_link-box need-share-button_link need-share-button_facebook social-facebook" data-leezhiy-share-network="facebook" title="Facebook" aria-label="Facebook" tabindex="-1"></button><button type="button" class="need-share-button_link-box need-share-button_link need-share-button_linkedin social-linkedin" data-leezhiy-share-network="linkedin" title="Linkedin" aria-label="Linkedin" tabindex="-1"></button></span></div><section class="leezhiy-music-player aplayer aplayer-withlist aplayer-fixed" data-blog-music-player data-music-state="loading" data-music-collapsed="true" data-music-list-open="false" data-music-playing="false" data-music-loading="false" data-music-has-lrc="false" data-music-lrc-visible="false" data-music-order-state="random" data-music-loop-state="all" aria-label="音乐播放器">
+  <div class="aplayer-body">
+    <div class="aplayer-pic" data-music-cover><button type="button" class="aplayer-button aplayer-play" data-music-play aria-label="播放"><span class="aplayer-state-play"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 16 31" aria-hidden="true"><path d="M15.552 15.168q0.448 0.32 0.448 0.832 0 0.448-0.448 0.768l-13.696 8.512q-0.768 0.512-1.312 0.192t-0.544-1.28v-16.448q0-0.96 0.544-1.28t1.312 0.192z"></path></svg></span><span class="aplayer-state-pause"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 17 32" aria-hidden="true"><path d="M14.080 4.8q2.88 0 2.88 2.048v18.24q0 2.112-2.88 2.112t-2.88-2.112v-18.24q0-2.048 2.88-2.048zM2.88 4.8q2.88 0 2.88 2.048v18.24q0 2.112-2.88 2.112t-2.88-2.112v-18.24q0-2.048 2.88-2.048z"></path></svg></span></button></div>
+    <div class="aplayer-info"><div class="aplayer-music"><span class="aplayer-title" data-music-title>No audio</span> <span class="aplayer-author" data-music-author></span></div><div class="aplayer-controller"><div class="aplayer-bar-wrap" data-music-progress><div class="aplayer-bar"><div class="aplayer-loaded" data-music-loaded></div><div class="aplayer-played" data-music-played><span class="aplayer-thumb" data-music-progress-thumb><span class="aplayer-loading-icon"></span></span></div></div></div><div class="aplayer-time"><span class="aplayer-time-inner"><span class="aplayer-ptime" data-music-current-time>00:00</span> / <span class="aplayer-dtime" data-music-duration>00:00</span></span><button type="button" class="aplayer-icon aplayer-icon-back" data-music-prev aria-label="上一首"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32" aria-hidden="true"><path d="M25.468 6.947c-0.326-0.172-0.724-0.151-1.030 0.057l-6.438 4.38v-3.553c0-0.371-0.205-0.71-0.532-0.884-0.326-0.172-0.724-0.151-1.030 0.057l-12 8.164c-0.274 0.186-0.438 0.496-0.438 0.827s0.164 0.641 0.438 0.827l12 8.168c0.169 0.115 0.365 0.174 0.562 0.174 0.16 0 0.321-0.038 0.468-0.116 0.327-0.173 0.532-0.514 0.532-0.884v-3.556l6.438 4.382c0.169 0.115 0.365 0.174 0.562 0.174 0.16 0 0.321-0.038 0.468-0.116 0.327-0.173 0.532-0.514 0.532-0.884v-16.333c0-0.371-0.205-0.71-0.532-0.884z"></path></svg></button><button type="button" class="aplayer-icon aplayer-icon-play" data-music-play aria-label="播放"><span class="aplayer-state-play"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 16 31" aria-hidden="true"><path d="M15.552 15.168q0.448 0.32 0.448 0.832 0 0.448-0.448 0.768l-13.696 8.512q-0.768 0.512-1.312 0.192t-0.544-1.28v-16.448q0-0.96 0.544-1.28t1.312 0.192z"></path></svg></span><span class="aplayer-state-pause"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 17 32" aria-hidden="true"><path d="M14.080 4.8q2.88 0 2.88 2.048v18.24q0 2.112-2.88 2.112t-2.88-2.112v-18.24q0-2.048 2.88-2.048zM2.88 4.8q2.88 0 2.88 2.048v18.24q0 2.112-2.88 2.112t-2.88-2.112v-18.24q0-2.048 2.88-2.048z"></path></svg></span></button><button type="button" class="aplayer-icon aplayer-icon-forward" data-music-next aria-label="下一首"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32" aria-hidden="true"><path d="M25.468 6.947c-0.326-0.172-0.724-0.151-1.030 0.057l-6.438 4.38v-3.553c0-0.371-0.205-0.71-0.532-0.884-0.326-0.172-0.724-0.151-1.030 0.057l-12 8.164c-0.274 0.186-0.438 0.496-0.438 0.827s0.164 0.641 0.438 0.827l12 8.168c0.169 0.115 0.365 0.174 0.562 0.174 0.16 0 0.321-0.038 0.468-0.116 0.327-0.173 0.532-0.514 0.532-0.884v-3.556l6.438 4.382c0.169 0.115 0.365 0.174 0.562 0.174 0.16 0 0.321-0.038 0.468-0.116 0.327-0.173 0.532-0.514 0.532-0.884v-16.333c0-0.371-0.205-0.71-0.532-0.884z"></path></svg></button><div class="aplayer-volume-wrap"><button type="button" class="aplayer-icon aplayer-icon-volume-down" data-music-volume-toggle aria-label="静音"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 28 32" aria-hidden="true"><path d="M13.728 6.272v19.456q0 0.448-0.352 0.8t-0.8 0.32-0.8-0.32l-5.952-5.952h-4.672q-0.48 0-0.8-0.352t-0.352-0.8v-6.848q0-0.48 0.352-0.8t0.8-0.352h4.672l5.952-5.952q0.32-0.32 0.8-0.32t0.8 0.32 0.352 0.8zM20.576 16q0 1.344-0.768 2.528t-2.016 1.664q-0.16 0.096-0.448 0.096-0.448 0-0.8-0.32t-0.32-0.832q0-0.384 0.192-0.64t0.544-0.448 0.608-0.384 0.512-0.64 0.192-1.024-0.192-1.024-0.512-0.64-0.608-0.384-0.544-0.448-0.192-0.64q0-0.48 0.32-0.832t0.8-0.32q0.288 0 0.448 0.096 1.248 0.48 2.016 1.664t0.768 2.528z"></path></svg></button><div class="aplayer-volume-bar-wrap"><div class="aplayer-volume-bar" data-music-volume><div class="aplayer-volume" data-music-volume-level></div></div></div></div><button type="button" class="aplayer-icon aplayer-icon-order" data-music-order aria-label="播放顺序"><span class="aplayer-order-list"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32" aria-hidden="true"><path d="M0.622 18.334h19.54v7.55l11.052-9.412-11.052-9.413v7.549h-19.54v3.725z"></path></svg></span><span class="aplayer-order-random"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32" aria-hidden="true"><path d="M22.667 4l7 6-7 6 7 6-7 6v-4h-3.653l-3.76-3.76 2.827-2.827 2.587 2.587h2v-8h-2l-12 12h-6v-4h4.347l12-12h3.653v-4zM2.667 8h6l3.76 3.76-2.827 2.827-2.587-2.587h-4.347v-4z"></path></svg></span></button><button type="button" class="aplayer-icon aplayer-icon-loop" data-music-loop aria-label="循环模式"><span class="aplayer-loop-all"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 29 32" aria-hidden="true"><path d="M9.333 9.333h13.333v4l5.333-5.333-5.333-5.333v4h-16v8h2.667v-5.333zM22.667 22.667h-13.333v-4l-5.333 5.333 5.333 5.333v-4h16v-8h-2.667v5.333z"></path></svg></span><span class="aplayer-loop-one"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 33 32" aria-hidden="true"><path d="M9.333 9.333h13.333v4l5.333-5.333-5.333-5.333v4h-16v8h2.667v-5.333zM22.667 22.667h-13.333v-4l-5.333 5.333 5.333 5.333v-4h16v-8h-2.667v5.333zM17.333 20v-8h-1.333l-2.667 1.333v1.333h2v5.333h2z"></path></svg></span><span class="aplayer-loop-none"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 29 32" aria-hidden="true"><path d="M2.667 7.027l1.707-1.693 22.293 22.293-1.693 1.707-4-4h-11.64v4l-5.333-5.333 5.333-5.333v4h8.973l-8.973-8.973v0.973h-2.667v-3.64l-4-4zM22.667 17.333h2.667v5.573l-2.667-2.667v-2.907zM22.667 6.667v-4l5.333 5.333-5.333 5.333v-4h-10.907l-2.667-2.667h13.573z"></path></svg></span></button><button type="button" class="aplayer-icon aplayer-icon-menu" data-music-menu aria-label="歌单" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 22 32" aria-hidden="true"><path d="M20.8 14.4q0.704 0 1.152 0.48t0.448 1.12-0.48 1.12-1.12 0.48h-19.2q-0.64 0-1.12-0.48t-0.48-1.12 0.448-1.12 1.152-0.48h19.2zM1.6 11.2q-0.64 0-1.12-0.48t-0.48-1.12 0.448-1.12 1.152-0.48h19.2q0.704 0 1.152 0.48t0.448 1.12-0.48 1.12-1.12 0.48h-19.2zM20.8 20.8q0.704 0 1.152 0.48t0.448 1.12-0.48 1.12-1.12 0.48h-19.2q-0.64 0-1.12-0.48t-0.48-1.12 0.448-1.12 1.152-0.48h19.2z"></path></svg></button><button type="button" class="aplayer-icon aplayer-icon-lrc" data-music-lrc-toggle aria-label="歌词"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32" aria-hidden="true"><path d="M26.667 5.333h-21.333c-1.472 0-2.667 1.194-2.667 2.667v16c0 1.472 1.194 2.667 2.667 2.667h21.333c1.472 0 2.667-1.194 2.667-2.667v-16c0-1.472-1.194-2.667-2.667-2.667zM5.333 16h5.333v2.667h-5.333v-2.667zM18.667 24h-13.333v-2.667h13.333v2.667zM26.667 24h-5.333v-2.667h5.333v2.667zM26.667 18.667h-13.333v-2.667h13.333v2.667z"></path></svg></button></div></div></div>
+    <div class="aplayer-notice" data-music-notice hidden></div><div class="aplayer-miniswitcher"><button type="button" class="aplayer-icon" data-music-narrow aria-label="展开播放器" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32" aria-hidden="true"><path d="M22 16l-10.105-10.6-1.895 1.987 8.211 8.613-8.211 8.612 1.895 1.988 8.211-8.613z"></path></svg></button></div>
+  </div>
+  <div class="aplayer-lrc" data-music-lrc><div class="aplayer-lrc-contents" data-music-lrc-contents></div></div>
+  <div class="leezhiy-music-list aplayer-list" data-music-list aria-hidden="true"><ol data-music-list-items></ol><template data-music-list-item-template><li data-music-list-item tabindex="0" role="button"><span class="aplayer-list-cur" data-music-list-current></span><span class="aplayer-list-index" data-music-list-index></span><span class="aplayer-list-title" data-music-list-title></span><span class="aplayer-list-author" data-music-list-author></span></li></template></div>
+  <audio preload="auto"></audio>
+</section><div class="moon-menu" data-leezhiy-moon-menu><div class="moon-menu-items"><div class="moon-menu-item" data-blog-scroll-bottom role="button" tabindex="0" aria-label="滚动到底部"><i class="leezhiy-icon fa fa-chevron-down"></i></div><div class="moon-menu-item" data-blog-scroll-top data-leezhiy-smooth-scroll-top role="button" tabindex="0" aria-label="回到顶部"><i class="leezhiy-icon fa fa-chevron-up"></i></div><div class="moon-menu-item" data-leezhiy-comment-jump role="button" tabindex="0" aria-label="查看评论"><i class="leezhiy-icon fa fa-comments"></i></div><button class="moon-menu-item" type="button" data-blog-theme aria-label="切换明暗主题" title="切换明暗主题">◐</button></div><div class="moon-menu-button" data-leezhiy-moon-toggle role="button" tabindex="0" aria-label="页面工具" aria-expanded="false"><svg class="moon-menu-svg"><circle class="moon-menu-cricle" cx="50%" cy="50%" r="44%"></circle><circle class="moon-menu-border" cx="50%" cy="50%" r="48%"></circle><g class="moon-menu-points"><circle class="moon-menu-point" r=".2rem" cx="0" cy="-.8rem"></circle><circle class="moon-menu-point" r=".2rem"></circle><circle class="moon-menu-point" r=".2rem" cx="0" cy=".8rem"></circle></g></svg><div class="moon-menu-icon"></div><div class="moon-menu-text"></div></div></div><canvas class="fireworks" data-leezhiy-fireworks></canvas><script src="../../../_assets/leezhiy-assets/anime.min.js"></script>
+</div><div class="reading-progress-bar leezhiy-reading-progress" data-blog-progress data-leezhiy-reading-progress role="progressbar" aria-label="Reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+    <div class="html-server-blog-related-modal" data-blog-related-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-related-close aria-label="Close related articles"></button>
+      <section class="html-server-blog-related-panel" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-related-title">
+        <header><div><span class="html-server-blog-kicker" data-blog-related-kind></span><h2 id="html-server-blog-related-title" data-blog-related-title></h2></div><button type="button" data-blog-related-close aria-label="Close"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <p data-blog-related-count></p>
+        <div class="html-server-blog-related-list" data-blog-related-list></div>
+      </section>
+    </div>
+    <div class="html-server-blog-search-modal search-pop-overlay leezhiy-search-pop-overlay" data-blog-search-modal hidden><div class="popup search-popup leezhiy-search-popup" role="dialog" aria-modal="true" aria-labelledby="leezhiy-search-title"><div class="search-header leezhiy-search-header"><span class="search-icon leezhiy-search-icon" aria-hidden="true"><i class="fa fa-search"></i></span><form class="search-input-container leezhiy-search-input-container" data-blog-search-form><label id="leezhiy-search-title" class="leezhiy-visually-hidden" for="search-input">搜索文章</label><input id="search-input" class="search-input leezhiy-search-input" type="search" data-blog-global-search placeholder="搜索..." autocomplete="off" autocapitalize="off" spellcheck="false"></form><button class="popup-btn-close leezhiy-search-close" type="button" data-blog-search-close aria-label="关闭"><i class="fa fa-times-circle"></i></button></div><div id="search-result" class="leezhiy-search-result" data-blog-search-results></div><p class="leezhiy-search-count" data-blog-search-count aria-live="polite" hidden></p></div></div>
+    <div class="html-server-blog-folder-modal" data-blog-folder-modal hidden>
+      <button class="html-server-blog-related-backdrop" type="button" data-blog-folder-close aria-label="Close folders"></button>
+      <section class="html-server-blog-folder-panel site-dialog" role="dialog" aria-modal="true" aria-labelledby="html-server-blog-folder-title">
+        <header class="dialog-head"><div><span class="html-server-blog-kicker">VAULT</span><h2 id="html-server-blog-folder-title" data-blog-folder-title>浏览根目录</h2></div><button type="button" data-blog-folder-close aria-label="关闭"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path d="M6.75 6.75 17.25 17.25M17.25 6.75 6.75 17.25" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header>
+        <nav class="html-server-blog-folder-breadcrumb directory-breadcrumbs" data-blog-folder-breadcrumb aria-label="目录面包屑"></nav>
+        <p data-blog-folder-count></p>
+        <div class="html-server-blog-folder-browser directory-list dialog-list" data-blog-folder-browser></div>
+      </section>
+    </div>
+    <script type="application/json" data-blog-article-index>[]</script>
+    <script type="application/json" data-blog-folder-index data-current-folder="大模型/vLLM 推理内核深度解析">[]</script>
+    <script type="application/json" data-blog-appearance-contract>{"version":1,"layouts":[{"id":"default","themes":["inherit"]},{"id":"next","themes":["inherit","next-classic","swiss-index","literary-quarterly","terminal-manual","quiet-journal","newspaper-daily","mint-notebook","tailwind-workspace"]},{"id":"butterfly","themes":["inherit","butterfly-colorful","brutal-broadcast","future-signal","field-notes","gallery-canvas","toy-modules","sakura-notes","clear-sky"]},{"id":"akilar","themes":["inherit","akilar-ark"]},{"id":"noionion","themes":["inherit","noionion-original"]},{"id":"kratos","themes":["inherit","kratos-rebirth"]},{"id":"leezhiy","themes":["inherit","leezhiy-next"]},{"id":"daybook","themes":["inherit","daybook-original"]},{"id":"style-lab-swiss","themes":["inherit","swiss-index"]},{"id":"style-lab-literary","themes":["inherit","literary-quarterly"]},{"id":"style-lab-terminal","themes":["inherit","terminal-manual"]},{"id":"style-lab-brutal","themes":["inherit","brutal-broadcast"]},{"id":"style-lab-quiet","themes":["inherit","quiet-journal"]},{"id":"style-lab-newspaper","themes":["inherit","newspaper-daily"]},{"id":"style-lab-future","themes":["inherit","future-signal"]},{"id":"style-lab-field","themes":["inherit","field-notes"]},{"id":"style-lab-gallery","themes":["inherit","gallery-canvas"]},{"id":"style-lab-toy","themes":["inherit","toy-modules"]},{"id":"style-lab-mint","themes":["inherit","mint-notebook"]},{"id":"style-lab-sakura","themes":["inherit","sakura-notes"]},{"id":"style-lab-sky","themes":["inherit","clear-sky"]},{"id":"style-lab-tailwind","themes":["inherit","tailwind-workspace"]}]}</script>
+  </div>
+  <script defer src="../../../_assets/script.c366180856be9831.js"></script>
+</body>
+</html>
