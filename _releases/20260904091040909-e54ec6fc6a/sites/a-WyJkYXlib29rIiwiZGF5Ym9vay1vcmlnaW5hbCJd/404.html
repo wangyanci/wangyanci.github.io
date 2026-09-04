@@ -1,0 +1,57 @@
+<!--html-server-static-fallback:start--><style data-html-server-static-fallback-prepaint>html[data-html-server-static-fallback-pending]{visibility:hidden!important}</style><script data-html-server-static-fallback-bootstrap>(()=>{
+const html=document.documentElement,pending='data-html-server-static-fallback-pending',assetPath="_assets/blog.css";
+if(!html)return;html.setAttribute(pending,'');
+const candidates=[];let candidate=new URL('./',location.href);
+for(let depth=0;depth<64;depth++){candidates.push(candidate);const parent=new URL('../',candidate);if(parent.href===candidate.href)break;candidate=parent;}
+const request=async(url,kind)=>{const controller=typeof AbortController==='function'?new AbortController():null,timer=setTimeout(()=>controller&&controller.abort(),2500);try{const response=await fetch(url,{method:kind==='asset'?'HEAD':'GET',cache:'no-store',credentials:'same-origin',signal:controller&&controller.signal});if(!response.ok)return false;if(kind==='asset')return /text\/css/i.test(response.headers.get('content-type')||'');const value=await response.json();return value&&value.schemaVersion===1;}catch(_){return false;}finally{clearTimeout(timer);}};
+const discover=Promise.all(candidates.map(async(root)=>({root,asset:await request(new URL(assetPath,root),'asset'),config:await request(new URL('_config/data.json',root),'config')}))).then(results=>{const asset=(results.find(item=>item.asset)||results[0]).root,site=(results.find(item=>item.config)||{root:asset}).root;return{assetRoot:asset.href,siteRoot:site.href};});
+window.__htmlServerStaticFallbackRoot=discover;
+const restore=async roots=>{const base=document.createElement('base');base.setAttribute('data-html-server-static-fallback-base','');base.href=roots.assetRoot;document.head.prepend(base);
+const styleLoads=[];document.querySelectorAll('[data-html-server-static-fallback-href]').forEach(node=>{const value=node.getAttribute('data-html-server-static-fallback-href');if(value!==null){if(node.matches('link[rel="stylesheet"]'))styleLoads.push(new Promise(resolve=>{node.addEventListener('load',resolve,{once:true});node.addEventListener('error',resolve,{once:true});}));node.setAttribute('href',value);node.removeAttribute('data-html-server-static-fallback-href');}});
+const scripts=Array.from(document.querySelectorAll('script[data-html-server-static-fallback-src]'));
+for(const script of scripts){await new Promise(resolve=>{const value=script.getAttribute('data-html-server-static-fallback-src');if(value===null){resolve();return;}script.addEventListener('load',resolve,{once:true});script.addEventListener('error',resolve,{once:true});script.async=false;script.setAttribute('src',value);script.removeAttribute('data-html-server-static-fallback-src');});}
+document.querySelectorAll('[data-html-server-static-fallback-src]').forEach(node=>{const value=node.getAttribute('data-html-server-static-fallback-src');if(value!==null){node.setAttribute('src',value);node.removeAttribute('data-html-server-static-fallback-src');}});
+await Promise.all(styleLoads);
+};
+discover.then(restore).catch(()=>{}).finally(()=>html.removeAttribute(pending));
+})();</script><!--html-server-static-fallback:end--><!--html-server-dynamic:start--><meta name="html-server-dynamic-page" data-html-server-dynamic-page data-html-server-dynamic-assertion-mode="every-page" data-html-server-dynamic-cache-ttl-ms="1800000" content="a-WyJkYXlib29rIiwiZGF5Ym9vay1vcmlnaW5hbCJd"><style data-html-server-dynamic-prepaint>html{--html-server-navigation-surface-active:var(--html-server-navigation-surface-light,var(--html-server-blog-background-light,#f5f7fa));background:var(--html-server-navigation-surface-active)}html[data-html-server-theme="dark"]{--html-server-navigation-surface-active:var(--html-server-navigation-surface-dark,var(--html-server-blog-background-dark,#151515))}html[data-html-server-navigation-entering],html[data-html-server-dynamic-pending]{background:var(--html-server-navigation-surface-active)!important}html[data-html-server-navigation-entering] body,html[data-html-server-dynamic-pending] body{opacity:0!important}html[data-html-server-navigation-entering]::before,html[data-html-server-dynamic-pending]::before{content:"";position:fixed;inset:0;z-index:2147483646;background:var(--html-server-navigation-surface-active);pointer-events:none}html[data-html-server-navigation-entering]::after,html[data-html-server-dynamic-pending]::after{content:"";position:fixed;top:0;left:0;z-index:2147483647;width:38%;height:2px;background:var(--interactive-accent,#8b6f47);box-shadow:0 0 10px currentColor;animation:html-server-navigation-prepaint 1s ease-in-out infinite;pointer-events:none}@keyframes html-server-navigation-prepaint{0%{transform:translateX(-110%)}100%{transform:translateX(370%)}}@media(prefers-reduced-motion:reduce){html[data-html-server-navigation-entering]::after,html[data-html-server-dynamic-pending]::after{animation:none;width:100%;opacity:.7}}</style><script data-blog-navigation-bootstrap>(function(){
+  var root=document.documentElement,key='html-server:navigation-handoff',handoff=null;
+  try{handoff=JSON.parse(sessionStorage.getItem(key)||'null');}catch(error){}
+  var target=location.pathname+location.search;
+  if(handoff&&handoff.target===target&&Date.now()-Number(handoff.createdAt||0)<5000){
+    root.setAttribute('data-html-server-navigation-entering','');
+    var reveal=function(){requestAnimationFrame(function(){requestAnimationFrame(function(){root.removeAttribute('data-html-server-navigation-entering');try{sessionStorage.removeItem(key);}catch(error){}});});};
+    if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',reveal,{once:true});else reveal();
+    setTimeout(function(){root.removeAttribute('data-html-server-navigation-entering');},5000);
+  }else if(handoff){try{sessionStorage.removeItem(key);}catch(error){}}
+})();</script><script data-html-server-dynamic-bootstrap>(()=>{
+const m={"releaseId":"20260904091040909-e54ec6fc6a","appearanceKey":"a-WyJkYXlib29rIiwiZGF5Ym9vay1vcmlnaW5hbCJd","route":"404.html","outputRootRelativeUrl":"../../../../","siteRootRelativeUrl":"./","assertionPolicy":{"mode":"every-page","cacheTtlMs":1800000}},S=1,C="html-server:dynamic-appearance:v1";
+const html=document.documentElement,pending='data-html-server-dynamic-pending';if(!html)return;html.setAttribute(pending,'');
+try{Object.defineProperty(window,'__htmlServerDynamicSiteRoot',{configurable:true,value:new URL(m.siteRootRelativeUrl||m.outputRootRelativeUrl,document.baseURI||location.href).href});}catch(_){}
+const reveal=()=>html.removeAttribute(pending);
+const safe=p=>{p=String(p||'').replace(/\\/g,'/').replace(/^\/+/, '');return !!p&&!p.split('/').includes('..')&&!/^[a-z][a-z\d+.-]*:/i.test(p)};
+const routeUrl=p=>String(p).split('/').map(encodeURIComponent).join('/');
+const get=async u=>{const c=new AbortController(),t=setTimeout(()=>c.abort(),2000);try{const r=await fetch(u,{cache:'no-store',credentials:'same-origin',signal:c.signal});if(!r.ok)throw Error(String(r.status));return await r.json()}finally{clearTimeout(t)}};
+const p=m.assertionPolicy||{},mode=p.mode==='home-only'||p.mode==='cache'?p.mode:'every-page',ttl=Math.max(60000,Number(p.cacheTtlMs)||1800000);
+let storage;try{storage=localStorage}catch(_){}
+const clear=()=>{try{storage&&storage.removeItem(C)}catch(_){}};
+try{Object.defineProperty(window,'HtmlServerDynamicAppearanceCache',{configurable:true,value:{key:C,clear,refresh:()=>{clear();location.reload()}}})}catch(_){}
+const read=()=>{try{const v=JSON.parse(storage&&storage.getItem(C)||'null');return v&&v.schemaVersion===S&&typeof v.appearanceKey==='string'&&typeof v.releaseId==='string'&&safe(v.path)&&Number.isFinite(v.selectionRevision)&&Number.isFinite(v.expiresAt)?v:null}catch(_){return null}};
+const cached=read(),home=m.route==='index.html',reload=(()=>{try{return performance.getEntriesByType('navigation')[0]?.type==='reload'}catch(_){return false}})();
+const cacheValid=!!cached&&cached.releaseId===m.releaseId&&(mode!=='cache'||cached.expiresAt>Date.now()),refresh=mode==='every-page'||(mode==='home-only'&&home)||(mode==='cache'&&(!cacheValid||reload));
+(async()=>{let navigating=false;
+const rootForPage=async()=>{const fallback=window.__htmlServerStaticFallbackRoot,discovered=fallback&&typeof fallback.then==='function'?await fallback:null;return new URL(discovered&&discovered.siteRoot?discovered.siteRoot:m.outputRootRelativeUrl,document.baseURI||location.href)};
+const move=async(key,pathValue,releaseId,canonical)=>{if(key===m.appearanceKey)return false;if(!safe(m.route)||!safe(pathValue))return false;const root=await rootForPage(),encoded=routeUrl(m.route),rel=canonical?encoded:pathValue.replace(/\/+$/,'')+'/'+encoded,guard='html-server-dynamic:'+releaseId+':'+key+':'+m.route;if(sessionStorage.getItem(guard)==='1')return false;const target=new URL(rel,root);target.search=location.search;target.hash=location.hash;sessionStorage.setItem(guard,'1');navigating=true;location.replace(target.href);return true};
+try{
+if(!refresh){if(!cacheValid)return;if(cached.appearanceKey===m.appearanceKey){sessionStorage.removeItem('html-server-dynamic:'+cached.releaseId+':'+cached.appearanceKey+':'+m.route);return;}await move(cached.appearanceKey,cached.path,cached.releaseId,false);return;}
+const root=await rootForPage(),pair=await Promise.all([get(new URL('_config/data.json',root)),get(new URL('_config/release.json',root))]),cfg=pair[0],ptr=pair[1];
+if(cfg.schemaVersion!==S)return;
+if(ptr.schemaVersion!==S||(cfg.selectionRevision!==undefined&&cfg.selectionRevision!==ptr.selectionRevision)||!safe(ptr.manifest))return;
+const man=await get(new URL(ptr.manifest,root));if(man.schemaVersion!==S||man.releaseId!==ptr.releaseId||man.selectionRevision!==ptr.selectionRevision||man.primaryAppearance!==ptr.primaryAppearance||!safe(m.route))return;
+const hit=Object.entries(man.sites||{}).find(([,v])=>v.appearance&&v.appearance.layout===cfg.blogLayout&&v.appearance.theme===cfg.blogLayoutTheme);if(!hit)return;
+const key=hit[0],site=hit[1];if(!Array.isArray(site.routes)||!site.routes.includes(m.route))return;
+if(!safe(site.path))return;const record={schemaVersion:S,appearanceKey:key,layout:site.appearance.layout,theme:site.appearance.theme,path:site.path,releaseId:ptr.releaseId,selectionRevision:ptr.selectionRevision,expiresAt:mode==='home-only'?0:Date.now()+ttl};try{storage&&storage.setItem(C,JSON.stringify(record))}catch(_){}
+const guard='html-server-dynamic:'+ptr.releaseId+':'+key+':'+m.route;if(key===m.appearanceKey){sessionStorage.removeItem(guard);return;}
+await move(key,site.path,ptr.releaseId,key===man.primaryAppearance);
+}catch(_){if(mode!=='every-page'&&cacheValid&&!navigating)await move(cached.appearanceKey,cached.path,cached.releaseId,false).catch(()=>{})}finally{if(!navigating)reveal();}})();
+})();</script><!--html-server-dynamic:end-->Not Found
