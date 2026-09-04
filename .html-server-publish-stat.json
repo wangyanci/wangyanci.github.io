@@ -1,0 +1,29 @@
+{
+  "running": false,
+  "force": true,
+  "total": 4095,
+  "completed": 4095,
+  "rendered": 4087,
+  "skipped": 0,
+  "copied": 8,
+  "failed": 0,
+  "current": "",
+  "outputDirectory": "/Users/wangyanci/obsidian/职学札记/.html-server-publish",
+  "startedAt": 1788513040904,
+  "markdownCache": {
+    "mode": "disk",
+    "entries": 453,
+    "hits": 3207,
+    "misses": 0,
+    "failures": 0,
+    "delegateRenderMs": 0,
+    "diskBytes": 71709522,
+    "diskWrites": 0,
+    "invalidated": 0,
+    "created": 0,
+    "metadataRejects": 0,
+    "contentRejects": 0,
+    "pruned": 0
+  },
+  "finishedAt": 1788513459101
+}

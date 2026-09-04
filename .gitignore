@@ -1,7 +1,5 @@
-# html-server 插件的构建产物，不推送到 GitHub Pages
-_releases/
+# 只排除构建追踪日志（其它全部推送，包括 _releases 和隐藏文件）
 .html-server-publish.trace.log
-.html-server-publish-stat.json
 
 # 系统文件
 .DS_Store
